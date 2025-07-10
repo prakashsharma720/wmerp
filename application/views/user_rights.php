@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                  	<div class="tab-pane  active show" id="rolewise">
 	                  		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Meenus/addRoleRights">
 			                  	<div class="row col-md-12">
-			                  		<label> Select Role</label>
+			                  		<label> <?= $this->lang->line('select_role') ?></label>
 			                  		<div class="col-md-6 rolewise">
 			                  			 <?php  
 					            			echo form_dropdown('role_id', $roles)
@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                  <div class="tab-pane  show" id="empwise">
 	                  	<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Meenus/addEmployeeRights">
 		                  	<div class="row col-md-12">
-			                  	<label> Select Employee</label>
+			                  	<label> <?= $this->lang->line('select_employee') ?></label>
 			                  		<div class="col-md-6 empwise">
 			                  			 <?php  
 					            			echo form_dropdown('employee_id', $employees)

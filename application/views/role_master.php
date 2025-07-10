@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('role_master') ?></h3>
         <div class="pull-right ">
 			
 
@@ -40,12 +40,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">			        		  	
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Role Name</label>
-					                <input type="text"  placeholder="Enter Role name" name="role" class="form-control" value="<?= $role?>" required autofocus>
+					            	<label class="control-label"><?= $this->lang->line('role_name') ?></label>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_role_name') ?>" name="role" class="form-control" value="<?= $role?>" required autofocus>
 					            </div>
 								<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Authority</label>
-					                <input type="number"  placeholder="authority level" name="auth_id" class="form-control"  value="<?= $auth_id?>" required autofocus>
+					            	<label class="control-label"><?= $this->lang->line('authority') ?></label>
+					                <input type="number"  placeholder="<?= $this->lang->line('enter_authority') ?>" name="auth_id" class="form-control"  value="<?= $auth_id?>" required autofocus>
 					            </div>
 					        </div>
 					        <span class="help-block"></span>
@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit"  class="btn btn-primary btn-block" >Save</button>
+					            	<button type="submit"  class="btn btn-primary btn-block" ><?= $this->lang->line('submit') ?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -72,14 +72,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				
 				 <!-- /form -->
 				<div class="col-md-6">
-					<h5> Role List</h5>
+					<h5> <?= $this->lang->line('role_list') ?></h5>
 					<table id="example" class="table table-bordered table-striped" style="width:100%;">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th style="width: 90%;"> Roles</th>
+								<th> <?= $this->lang->line('sr_no') ?></th>
+								<th style="width: 90%;"> <?= $this->lang->line('roles') ?></th>
 								
-								<th> Action</th>
+								<th> <?= $this->lang->line('action') ?></th>
 								
 							</tr>
 						</thead>
