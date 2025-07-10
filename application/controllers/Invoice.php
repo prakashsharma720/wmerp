@@ -9,7 +9,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 // 
 // require_once APPPATH . "/third_party/PHPExcel.php";
 require_once APPPATH . 'third_party/phpqrcode/qrlib.php';
-Class Invoice extends CI_Controller {
+Class Invoice extends MY_Controller {
 
 public function __construct() {
     
