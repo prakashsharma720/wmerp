@@ -43,12 +43,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <table id="example1" class="table table-bordered table-striped">
           <thead>
            <tr>
-                <th > Sr.No.</th>
-                <th> Mineral Name</th>
-                <th> Grade Name</th>
-                <th> Packing Type</th>
-                <th> Packing</th>
-                <th> Action</th>
+               <th><?= $this->lang->line('sr_no') ?></th>
+<th><?= $this->lang->line('mineral_name') ?></th>
+<th><?= $this->lang->line('grade_name') ?></th>
+<th><?= $this->lang->line('packing_type') ?></th>
+<th><?= $this->lang->line('packing') ?></th>
+<th><?= $this->lang->line('action') ?></th>
               </tr>
           </thead>
           <tbody>
