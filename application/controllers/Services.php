@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Services extends CI_Controller {
+Class Services extends MY_Controller {
 
 public function __construct() {
 parent::__construct();

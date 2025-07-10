@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Employee_Review extends CI_Controller {
+Class Employee_Review extends MY_Controller {
 
   public function __construct() {
     parent::__construct();

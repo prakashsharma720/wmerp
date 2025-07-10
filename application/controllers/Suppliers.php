@@ -4,7 +4,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 //print_r(BASEPATH);exit;
-Class Suppliers extends CI_Controller {
+Class Suppliers extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
