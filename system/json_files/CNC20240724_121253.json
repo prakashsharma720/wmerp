@@ -1,0 +1,93 @@
+[
+    {
+        "Version": "1.01",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "B2B",
+            "IgstOnIntra": "N",
+            "RegRev": "N",
+            "EcmGstin": null
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "CNC/F/227",
+            "Dt": "22/07/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "08AABFC2155P1ZA",
+            "LglNm": "CHOUDHARY & COMPANY",
+            "Addr1": "B-133, M.I.A., MADRI",
+            "Addr2": "B-133, M.I.A., MADRI",
+            "Loc": "B-133, M.I.A., MADRI, UDAIPUR",
+            "Pin": 313003,
+            "Stcd": "08",
+            "Ph": null,
+            "Em": "accounts@cnco.co.in"
+        },
+        "BuyerDtls": {
+            "Gstin": "27AAACP4156B1ZS",
+            "LglNm": "Pidilite Industries Ltd.",
+            "Addr1": "Ramkrishna Mandir Road, Off M V Road",
+            "Addr2": "Andheri East, Kondivita village",
+            "Loc": "Mumbai",
+            "Pin": 400059,
+            "Pos": "27",
+            "Stcd": "27",
+            "Ph": null,
+            "Em": null
+        },
+        "ValDtls": {
+            "AssVal": 220800,
+            "IgstVal": 11040,
+            "CgstVal": 0,
+            "SgstVal": 0,
+            "CesVal": 0,
+            "StCesVal": 0,
+            "Discount": 0,
+            "OthChrg": 0,
+            "RndOffAmt": 0,
+            "TotInvVal": 231840
+        },
+        "RefDtls": {
+            "InvRm": "NICGEPP2.0"
+        },
+        "EwbDtls": {
+            "TransId": null,
+            "TransName": "Pragati Cargo Movers",
+            "TransMode": "1",
+            "Distance": 931,
+            "TransDocNo": "6951",
+            "TransDocDt": "22/07/2024",
+            "VehNo": "RJ27GE1998",
+            "VehType": "R"
+        },
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "MINERAL TALC POWDER",
+                "IsServc": "N",
+                "HsnCd": "25262000",
+                "Qty": 12,
+                "FreeQty": 0,
+                "Unit": "MTS",
+                "UnitPrice": 18400,
+                "TotAmt": 220800,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 220800,
+                "GstRt": 5,
+                "IgstAmt": 11040,
+                "CgstAmt": 0,
+                "SgstAmt": 0,
+                "CesRt": 0,
+                "CesAmt": 0,
+                "CesNonAdvlAmt": 0,
+                "StateCesRt": 0,
+                "StateCesAmt": 0,
+                "StateCesNonAdvlAmt": 0,
+                "OthChrg": 0,
+                "TotItemVal": 231840
+            }
+        ]
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "Version": "1.01",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "B2B",
+            "IgstOnIntra": "N",
+            "RegRev": "N",
+            "EcmGstin": null
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "CNC/E/004",
+            "Dt": "30/03/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "08AABFC2155P1ZA",
+            "LglNm": "CHOUDHARY & COMPANY",
+            "Addr1": "B-133, M.I.A., MADRI",
+            "Addr2": "B-133, M.I.A., MADRI",
+            "Loc": "B-133, M.I.A., MADRI, UDAIPUR",
+            "Pin": 313003,
+            "Stcd": "08",
+            "Ph": null,
+            "Em": "accounts@cnco.co.in"
+        },
+        "BuyerDtls": {
+            "Gstin": "24AAACB5724H1Z0",
+            "LglNm": "3 M India Ltd. CCP",
+            "Addr1": "Sub Plot No.08",
+            "Addr2": "Moriaya Industrial Estate,  Sanand",
+            "Loc": "Ahmedabad (Gujarat)",
+            "Pin": 313001,
+            "Pos": "24",
+            "Stcd": "24",
+            "Ph": null,
+            "Em": null
+        },
+        "ShipDtls": {
+            "Gstin": "24AAACB5724H1Z0",
+            "LglNm": "3 M India Ltd. CCP",
+            "Addr1": "Sub Plot No.08",
+            "Addr2": "Moriaya Industrial Estate,  Sanand",
+            "Loc": "Ahmedabad (Gujarat)",
+            "Pin": 313001,
+            "Stcd": "24"
+        },
+        "ValDtls": {
+            "AssVal": 6500,
+            "IgstVal": 0,
+            "CgstVal": 162.5,
+            "SgstVal": 162.5,
+            "CesVal": 0,
+            "StCesVal": 0,
+            "Discount": 0,
+            "OthChrg": 0,
+            "RndOffAmt": 0,
+            "TotInvVal": 6825
+        },
+        "RefDtls": {
+            "InvRm": "NICGEPP2.0"
+        },
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "MINERAL TALC POWDER",
+                "IsServc": "N",
+                "HsnCd": "25262000",
+                "Qty": 10,
+                "FreeQty": 0,
+                "Unit": "MTS",
+                "UnitPrice": 12000,
+                "TotAmt": 120000,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 120000,
+                "GstRt": 18,
+                "IgstAmt": 0,
+                "CgstAmt": 10800,
+                "SgstAmt": 10800,
+                "CesRt": 0,
+                "CesAmt": 0,
+                "CesNonAdvlAmt": 0,
+                "StateCesRt": 0,
+                "StateCesAmt": 0,
+                "StateCesNonAdvlAmt": 0,
+                "OthChrg": 0,
+                "TotItemVal": 141600
+            },
+            {
+                "SlNo": "2",
+                "PrdDesc": "Transport",
+                "IsServc": "Y",
+                "HsnCd": "996781",
+                "Qty": 2.5,
+                "FreeQty": 0,
+                "Unit": "MTS",
+                "UnitPrice": 100,
+                "TotAmt": 250,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 250,
+                "GstRt": 5,
+                "IgstAmt": 0,
+                "CgstAmt": 6.25,
+                "SgstAmt": 6.25,
+                "CesRt": 0,
+                "CesAmt": 0,
+                "CesNonAdvlAmt": 0,
+                "StateCesRt": 0,
+                "StateCesAmt": 0,
+                "StateCesNonAdvlAmt": 0,
+                "OthChrg": 0,
+                "TotItemVal": 262.5
+            }
+        ],
+        "EwbDtls": {
+            "TransId": null,
+            "TransName": "Jai Laxmi Transport Company",
+            "TransMode": "1",
+            "Distance": 415,
+            "TransDocNo": "254987",
+            "TransDocDt": "30/03/2024",
+            "VehNo": "PB01LK2587",
+            "VehType": "R"
+        }
+    }
+]

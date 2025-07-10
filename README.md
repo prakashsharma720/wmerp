@@ -1,0 +1,5 @@
+# dream-erp
+ 
+ALTER TABLE `employees` ADD `account_holder_name` VARCHAR(200) NOT NULL AFTER `salary`, ADD `bank_name` TEXT NOT NULL AFTER `account_holder_name`, ADD `account_number` TEXT NOT NULL AFTER `bank_name`, ADD `ifsc_code` VARCHAR(200) NOT NULL AFTER `account_number`, ADD `branch_name` VARCHAR(200) NOT NULL AFTER `ifsc_code`, ADD `account_type` VARCHAR(200) NOT NULL AFTER `branch_name`;
+
+ALTER TABLE `employees` ADD `upi_id` VARCHAR(200) NULL AFTER `account_type`, ADD `hra` DECIMAL(10,2) NOT NULL AFTER `upi_id`, ADD `c_allowance` DECIMAL(10,2) NOT NULL AFTER `hra`, ADD `m_allowance` DECIMAL(10,2) NOT NULL AFTER `c_allowance`, ADD `o_allowance` DECIMAL(10,2) NOT NULL AFTER `m_allowance`, ADD `uan` VARCHAR(100) NOT NULL AFTER `o_allowance`, ADD `pf` VARCHAR(100) NOT NULL AFTER `uan`, ADD `esi` VARCHAR(100) NOT NULL AFTER `pf`;

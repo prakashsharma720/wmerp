@@ -1,0 +1,160 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CI API Auth",
+		"_postman_id": "7c64c6b2-f034-3b3b-8ac3-51a4a69aa758",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User : Login",
+			"request": {
+				"url": "http://localhost/CI_admin_panel/index.php/api/Authentication/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "hemendra387@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "456456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "http://localhost/zoo/ci_api_auth/index.php/api/Authentication/login"
+			},
+			"response": []
+		},
+		{
+			"name": "User : Registration",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "admin",
+						"password": "1234",
+						"saveHelperData": true,
+						"showPassword": false
+					}
+				},
+				"url": "http://localhost/CI_admin_panel/index.php/api/Authentication/registration",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46MTIzNA==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Hemendra",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Shaktawat",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "hemendra387@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "456",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "8003836264",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "http://localhost/zoo/ci_api_auth/index.php/api/Authentication/registration"
+			},
+			"response": []
+		},
+		{
+			"name": "User : Get by ID",
+			"request": {
+				"url": "http://localhost/CI_admin_panel/index.php/api/Authentication/user/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost/ci_api_auth/index.php/api/Authentication/user/1"
+			},
+			"response": []
+		},
+		{
+			"name": "User : Update",
+			"request": {
+				"url": "http://localhost/CI_admin_panel/index.php/api/Authentication/userUpdate",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "456456",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "http://localhost/ci_api_auth/index.php/api/Authentication/userUpdate"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,202 @@
+[
+    {
+        "Version": "1.1",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "",
+            "IgstOnIntra": "N",
+            "RegRev": "N",
+            "EcmGstin": null
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "CNC/A/11",
+            "Dt": "06/03/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "08AABFC2155P1ZA",
+            "LglNm": "CHOUDHARY & COMPANY",
+            "Addr1": "B-133, M.I.A., MADRI",
+            "Addr2": "B-133, M.I.A., MADRI",
+            "Loc": "B-133, M.I.A., MADRI, UDAIPUR",
+            "Pin": 313003,
+            "Stcd": "08",
+            "Ph": null,
+            "Em": "accounts@cnco.co.in"
+        },
+        "BuyerDtls": {
+            "Gstin": "24ANDPS7174D1ZY",
+            "LglNm": "Venus Enterprises",
+            "Addr1": "1st Floor, Gala No-119, Vapi Co.Op Indl Society Ltd., GIDC, Plot No.-99, Vapi-39",
+            "Addr2": null,
+            "Loc": "Vapi (Gujarat)",
+            "Pin": 0,
+            "Pos": "24",
+            "Stcd": "24",
+            "Ph": null,
+            "Em": null
+        },
+        "ShipDtls": {
+            "Gstin": "24ANDPS7174D1ZY",
+            "LglNm": "Venus Enterprises",
+            "Addr1": null,
+            "Addr2": "6195, Dist.Valsad (Gujarat)  ",
+            "Loc": "Vapi (Gujarat)",
+            "Pin": 0,
+            "Stcd": "24"
+        },
+        "ValDtls": {
+            "AssVal": 9062.5,
+            "IgstVal": 815.63,
+            "CgstVal": 0,
+            "SgstVal": 0,
+            "CesVal": 0,
+            "StCesVal": 0,
+            "Discount": 0,
+            "OthChrg": 0,
+            "RndOffAmt": 13,
+            "TotInvVal": 9878
+        },
+        "EwbDtls": {
+            "TransId": "08AXJPS5620G2Z8",
+            "TransName": "Pragati Cargo Movers",
+            "TransMode": "1",
+            "Distance": 480,
+            "TransDocNo": "5884",
+            "TransDocDt": "06/03/2024",
+            "VehNo": "RJ27PB8585",
+            "VehType": "R"
+        },
+        "RefDtls": {
+            "InvRm": "NICGEPP2.0"
+        },
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "MINERAL CALCITE POWDER",
+                "IsServc": "N",
+                "HsnCd": "25309030",
+                "Qty": 6.25,
+                "FreeQty": 0,
+                "Unit": "MTS",
+                "UnitPrice": 1450,
+                "TotAmt": 9062.5,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 9062.5,
+                "GstRt": 0,
+                "IgstAmt": 0,
+                "CgstAmt": 0,
+                "SgstAmt": 0,
+                "CesRt": 0,
+                "CesAmt": 0,
+                "CesNonAdvlAmt": 0,
+                "StateCesRt": 0,
+                "StateCesAmt": 0,
+                "StateCesNonAdvlAmt": 0,
+                "OthChrg": 0,
+                "TotItemVal": 9062.5
+            }
+        ]
+    },
+    {
+        "Version": "1.1",
+        "TranDtls": {
+            "TaxSch": "GST",
+            "SupTyp": "",
+            "IgstOnIntra": "N",
+            "RegRev": "N",
+            "EcmGstin": null
+        },
+        "DocDtls": {
+            "Typ": "INV",
+            "No": "CNC/A/10",
+            "Dt": "06/03/2024"
+        },
+        "SellerDtls": {
+            "Gstin": "08AABFC2155P1ZA",
+            "LglNm": "CHOUDHARY & COMPANY",
+            "Addr1": "B-133, M.I.A., MADRI",
+            "Addr2": "B-133, M.I.A., MADRI",
+            "Loc": "B-133, M.I.A., MADRI, UDAIPUR",
+            "Pin": 313003,
+            "Stcd": "08",
+            "Ph": null,
+            "Em": "accounts@cnco.co.in"
+        },
+        "BuyerDtls": {
+            "Gstin": "27AAACP4156B1ZS",
+            "LglNm": "B.G. Enterprises- Unit-1",
+            "Addr1": "Pidilite Industries Limited  Regent Chambers, 7th Floor, 208, Nariman Point,  Ja",
+            "Addr2": null,
+            "Loc": "Taloja (Maharashtra)",
+            "Pin": 0,
+            "Pos": "27",
+            "Stcd": "27",
+            "Ph": null,
+            "Em": null
+        },
+        "ShipDtls": {
+            "Gstin": "08EGMPS5847G1FG",
+            "LglNm": "Yash industries",
+            "Addr1": "Muskowl LLP, Near Pacific university",
+            "Addr2": "Airport Road , debari",
+            "Loc": "Debari, Udaipur",
+            "Pin": 313001,
+            "Stcd": "8"
+        },
+        "ValDtls": {
+            "AssVal": 3000,
+            "IgstVal": 0,
+            "CgstVal": 75,
+            "SgstVal": 75,
+            "CesVal": 0,
+            "StCesVal": 0,
+            "Discount": 0,
+            "OthChrg": 0,
+            "RndOffAmt": 0,
+            "TotInvVal": 3150
+        },
+        "EwbDtls": {
+            "TransId": "07ABCDE1234K1AZ",
+            "TransName": "Ajanta Road lines",
+            "TransMode": "1",
+            "Distance": 300,
+            "TransDocNo": "1478",
+            "TransDocDt": "06/03/2024",
+            "VehNo": "RJ27BN2541",
+            "VehType": "R"
+        },
+        "RefDtls": {
+            "InvRm": "NICGEPP2.0"
+        },
+        "ItemList": [
+            {
+                "SlNo": "1",
+                "PrdDesc": "MINERAL CALCITE POWDER",
+                "IsServc": "N",
+                "HsnCd": "25309030",
+                "Qty": 1.25,
+                "FreeQty": 0,
+                "Unit": "MTS",
+                "UnitPrice": 2400,
+                "TotAmt": 3000,
+                "Discount": 0,
+                "PreTaxVal": 0,
+                "AssAmt": 3000,
+                "GstRt": 0,
+                "IgstAmt": 0,
+                "CgstAmt": 0,
+                "SgstAmt": 0,
+                "CesRt": 0,
+                "CesAmt": 0,
+                "CesNonAdvlAmt": 0,
+                "StateCesRt": 0,
+                "StateCesAmt": 0,
+                "StateCesNonAdvlAmt": 0,
+                "OthChrg": 0,
+                "TotItemVal": 3000
+            }
+        ]
+    }
+]
