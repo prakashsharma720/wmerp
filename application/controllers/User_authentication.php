@@ -1,7 +1,7 @@
 <?php
 //session_start(); //we need to start session in order to access it through CI
 
-Class User_authentication extends CI_Controller {
+Class User_authentication extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -29,11 +29,11 @@ $this->load->model('login_database');
 $this->load->model('notifications_model');
 $this->load->model('master_model');
 
-if(!$this->session->userdata('site_language')){
-	$this->session->set_userdata('site_language', 'english');
-}
-// Load the selected language
-$this->lang->load('admin', $this->session->userdata('site_language'));
+// if(!$this->session->userdata('site_language')){
+// 	$this->session->set_userdata('site_language', 'english');
+// }
+// // Load the selected language
+// $this->lang->load('admin', $this->session->userdata('site_language'));
 
 // $this->load->library('input');
 

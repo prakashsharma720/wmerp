@@ -63,8 +63,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      </div> <!-- /.card-body -->
 	      	<div class="card-body">
 	      		 <ul class="nav nav-pills ml-auto p-2">
-                  <li class="nav-item"><a class="nav-link active show rose_wise" href="#rolewise" data-toggle="tab" > Role Wise </a></li>
-                  <li class="nav-item emp_wise"><a class="nav-link" href="#empwise" data-toggle="tab"> Employee Wise</a></li>
+                  <li class="nav-item"><a class="nav-link active show rose_wise" href="#rolewise" data-toggle="tab" > <?= $this->lang->line('role_wise') ?> </a></li>
+                  <li class="nav-item emp_wise"><a class="nav-link" href="#empwise" data-toggle="tab"> <?= $this->lang->line('employee_wise') ?></a></li>
 
                 </ul>               
 		            <div class="tab-content">
