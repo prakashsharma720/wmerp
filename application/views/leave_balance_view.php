@@ -31,10 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<table  class="table table-bordered table-striped">
 										<thead>
 											<tr>
-												<th> Sr.No. </th>
-												<th> Employee </th>
-												<th> Leave Taken / Alloted</th>
-				                <th> Religious Leave (2 Per Year) </th>
+												<th> <?= $this->lang->line('sr_no') ?></th>
+												<th> <?= $this->lang->line('employee') ?> </th>
+												<th> <?= $this->lang->line('leave_taken_alloted') ?></th>
+				                <th><?= $this->lang->line('religious_leave') ?> </th>
 											</tr>
 										</thead>
 										<tbody>
