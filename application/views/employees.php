@@ -39,13 +39,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 action="<?php echo base_url(); ?>index.php/Employees/add_new_employee" enctype="multipart/form-data">
                 <div class="card-header p-2">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab">Personal
-                                Details</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Bank Details</a>
+                        <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><?= $this->lang->line('bank_details') ?></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab">Salary Details</a>
+                        <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab"><?= $this->lang->line('salary_details') ?></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab">Other Details</a>
+                        <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $this->lang->line('other_details') ?></a>
                         </li>
                       
                     </ul>
@@ -369,7 +368,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="row col-md-12">
                                 <div class="col-md-12 col-sm-12 ">
                                     <label class="control-label" style="visibility: hidden;"> Name</label><br>
-                                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
                                 </div>
                             </div>
                         </div>
