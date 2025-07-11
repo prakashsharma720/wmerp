@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?= $this->lang->line('workers_list') ?> 
       </span>
        <div class="button-group float-right">
     
@@ -49,14 +49,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> Name </th>
-              <th> Code </th>
-              <th style="white-space: nowrap;"> Mobile</th>
-              <th style="white-space: nowrap;"> Role</th>
-              <th style="white-space: nowrap;"> Department</th>
-              <th style="white-space: nowrap;"> Photo</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th ><?= $this->lang->line('sr_no') ?></th>
+              <th> <?= $this->lang->line('name') ?> </th>
+              <th> <?= $this->lang->line('code') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('mobile') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('role') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('photo') ?></th>
+              <th style="white-space: nowrap;width: 20%;">  <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>

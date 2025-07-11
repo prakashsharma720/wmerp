@@ -77,7 +77,7 @@ table {
         <div class="card-header">
             <div class="row">
                 <div class="col-md-4">
-                    <h3 class="card-title mb-0"> <?= $title ?></h3>
+                    <h3 class="card-title mb-0"> <?= $this->lang->line('attendance_calculation') ?></h3>
 
                 </div>
                 <div class="col-md-5"></div>
@@ -89,12 +89,12 @@ table {
 
 
                         <div class="col-md-3">
-                            <label class="control-label">Select Month</label>
+                            <label class="control-label"><?= $this->lang->line('select_month') ?></label>
                             <?php echo form_dropdown('month_id', $months, '', 'id="month_id" required="required" class="form-control"'); ?>
                         </div>
 
                         <div class="col-md-4">
-                            <label class="control-label">Select Employee</label>
+                            <label class="control-label"><?= $this->lang->line('select_employee') ?></label>
                             <?php echo form_dropdown('emp_id', $employees, '', 'id="emp_id" required="required" class="form-control"'); ?>
                         </div>
 
@@ -102,7 +102,7 @@ table {
                             <label class="control-label"> </label>
 
                             <button type="submit" class="btn btn-primary btn-block">
-                                <b>Calculate</b>
+                                <b><?= $this->lang->line('calculate') ?></b>
                             </button>
                         </div>
                     </div>
@@ -115,16 +115,16 @@ table {
                 <table id="example1" class="table table-bordered " style="width:100%">
                     <thead>
                         <tr>
-                            <th> Sr.No.</th>
-                            <th> Employee Name</th>
-                            <th> Month</th>
-                            <th> Payable Days</th>
-                            <th> TDS</th>
-                            <th> PF</th>
-                            <th> Other Cuts</th>
-                            <th> ECS</th>
-                            <th> Total Salary</th>
-                            <th>Action</th>
+                            <th> <?= $this->lang->line('sr_no') ?></th>
+                            <th> <?= $this->lang->line('employee_name') ?></th>
+                            <th> <?= $this->lang->line('month') ?></th>
+                            <th> <?= $this->lang->line('payable_days') ?></th>
+                            <th> <?= $this->lang->line('tds') ?></th>
+                            <th> <?= $this->lang->line('pf') ?></th>
+                            <th> <?= $this->lang->line('other_cuts') ?></th>
+                            <th> <?= $this->lang->line('ecs') ?></th>
+                            <th> <?= $this->lang->line('total_salary') ?></th>
+                            <th><?= $this->lang->line('action') ?></th>
 
                         </tr>
                     </thead>
