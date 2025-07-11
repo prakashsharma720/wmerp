@@ -27,13 +27,13 @@
                 <div class="row">
                     <div class="col-md-4">
                         <h3 class="card-title mb-0"> <?= $title ?></h3>
-                        <h5 class="mb-0"> Total Employee- <strong><?= $totalemployees;?></strong></h5>
+                        <h5 class="mb-0"> <?= $this->lang->line('total_employee') ?> <strong><?= $totalemployees;?></strong></h5>
 
                     </div>
                     <div class="col-md-5"></div>
                     <div class="col-md-3 pull-right">
                         <a href="<?php echo base_url(); ?>index.php/PayrollController/add/" class="btn btn-success"><i
-                                class="fa fa-plus"></i> Add Employee</a>
+                                class="fa fa-plus"></i> <?= $this->lang->line('add_employee') ?></a>
                     </div>
                 </div>
                 <div class="">
@@ -52,10 +52,10 @@
                             <table class="table table-bordered table-striped text-center">
                                 <thead>
                                     <tr>
-                                        <th>Date</th>
-                                        <th>Total Absent</th>
-                                        <th>Total Present</th>
-                                        <th>Action</th>
+                                        <th><?= $this->lang->line('date') ?></th>
+                                        <th><?= $this->lang->line('total_absent') ?></th>
+                                        <th><?= $this->lang->line('total_present') ?></th>
+                                        <th><?= $this->lang->line('action') ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,8 +70,8 @@
                                                 class="btn btn-md btn-warning btnViewAttendance"
                                                 data-date="<?= $obj['date'] ?>" data-toggle="modal"
                                                 data-target="#attendanceModal<?php echo $obj['id']?>">
-                                                <i class="fa fa-eye"></i> View </button>
-                                            <a href="<?php echo base_url(); ?>index.php/PayrollController/edit/<?php echo $obj['date']; ?>" class="btn btn-md btn-primary"> <i class="fa fa-edit"></i> Edit  </a>
+                                                <i class="fa fa-eye"></i> <?= $this->lang->line('view') ?> </button>
+                                            <a href="<?php echo base_url(); ?>index.php/PayrollController/edit/<?php echo $obj['date']; ?>" class="btn btn-md btn-primary"> <i class="fa fa-edit"></i> <?= $this->lang->line('edit') ?>  </a>
                                             <div class="modal fade" id="attendanceModal<?php echo $obj['id']?>"
                                                 tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog">
