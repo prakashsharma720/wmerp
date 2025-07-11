@@ -250,7 +250,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label"><?= $this->lang->line('type') ?><span class="required">*</span></label>
+                                        <label class="control-label"><?= $this->lang->line('account_type') ?><span class="required">*</span></label>
                                         <select name="account_type" class="form-control">
                                             <option value="">Select Type</option>
 
@@ -280,19 +280,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="form-group">
                                 <div class="row col-md-12">
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label">Basic Salary<span class="required">*</span></label>
+                                        <label class="control-label"><?= $this->lang->line('upi_id') ?><span class="required">*</span></label>
                                         <input type="text" name="salary" class="form-control " value=""
                                             placeholder="Basic Salary" autofocus>
 
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label">HRA</label>
+                                        <label class="control-label"><?= $this->lang->line('hra') ?></label>
                                         <input type="text" name="hra" class="form-control " value=""
                                             placeholder="HRA" autofocus>
 
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label">Conveyance Allowance</label>
+                                        <label class="control-label"><?= $this->lang->line('conveyance_allowance') ?></label>
                                         <input type="text" name="c_allowance" class="form-control " value=""
                                             placeholder="Conveyance Allowance" autofocus>
 
@@ -303,19 +303,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="form-group">
                                 <div class="row col-md-12">
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label">Medical Allowance</label>
+                                        <label class="control-label"><?= $this->lang->line('medical_allowance') ?></label>
                                         <input type="text" name="m_allowance" class="form-control " value=""
                                             placeholder="Medical Allowance" autofocus>
 
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label">Other Allowance</label>
+                                        <label class="control-label"><?= $this->lang->line('other_allowance') ?></label>
                                         <input type="text" name="o_allowance" class="form-control " value=""
                                             placeholder="Other Allowance" autofocus>
 
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label">Total Net Salary</label>
+                                        <label class="control-label"><?= $this->lang->line('total_net_salary') ?></label>
                                         <input type="text" name="total_net_salary" class="form-control " value=""
                                             placeholder="Total Net Salary" autofocus>
 
@@ -331,7 +331,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="form-group">
                                 <div class="row col-md-12">
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label">Emergency Mobile No <span
+                                        <label class="control-label"><?= $this->lang->line('emergency_mobile_no') ?> <span
                                                 class="required">*</span></label>
                                         <input type="text" placeholder="Enter Emergency mobile" name="emobile_no"
                                             class="form-control mobile" minlenght="10" maxlength="10"
@@ -339,13 +339,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             value="" required autofocus>
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label"> Emergency Name <span
+                                        <label class="control-label"><?= $this->lang->line('emergency_name') ?><span
                                                 class="required">*</span></label>
                                         <input type="text" placeholder="Enter Emergency name" name="ename"
                                             class="form-control" required autofocus>
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label"> UAN No. </label>
+                                        <label class="control-label"> <?= $this->lang->line('uan_no') ?> </label>
                                         <input type="text" placeholder="Enter UAN Number" name="uan"
                                             class="form-control" required autofocus>
                                     </div>
@@ -355,12 +355,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row col-md-12">
                                    
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label"> PF No. </label>
+                                        <label class="control-label"> <?= $this->lang->line('pf_no') ?> </label>
                                         <input type="text" placeholder="Enter PF Number" name="pf"
                                             class="form-control" required autofocus>
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
-                                        <label class="control-label"> ESI No.</label>
+                                        <label class="control-label"> <?= $this->lang->line('esi_no') ?></label>
                                         <input type="text" placeholder="Enter ESI Number" name="esi"
                                             class="form-control" required autofocus>
                                     </div>
