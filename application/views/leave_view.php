@@ -39,13 +39,13 @@ $data=explode('?', $current_page);
                     <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
                         <?php if(!empty($filtered_value)){ foreach ($filtered_value as $key => $value) { ?>
                         <input type="hidden" name="<?= $key ?>" value="<?=$value ?>"> <?php } }?>
-                        <button type="submit" class="btn btn-info"> Export </button>
+                        <button type="submit" class="btn btn-info">  <?= $this->lang->line('export') ?> </button>
                     </form>
                 </div>
                 &nbsp;
                 <div>
                     <a class="btn btn-xs btn-primary " href="<?php echo base_url(); ?>index.php/Leave/create">
-                        <i class="fa fa-plus"></i> Apply For Leave
+                        <i class="fa fa-plus"></i>  <?= $this->lang->line('apply_for_leave') ?>
                     </a>
                 </div>
             </div>
