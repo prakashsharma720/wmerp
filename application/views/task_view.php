@@ -29,7 +29,7 @@ $data=explode('?', $current_page);
       <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?>
+            <span class="card-title"> <?= $this->lang->line('task_history') ?>
             </span>
             <div class="pull-right d-flex" style="margin-left:5px;">
                 <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i

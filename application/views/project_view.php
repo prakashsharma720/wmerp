@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $page_title ?></h3>
+        <h3 class="card-title"> <?= $this->lang->line('daily_task_master') ?></h3>
         <div class="pull-right ">
 			
 

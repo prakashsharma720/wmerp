@@ -26,7 +26,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-4">
-                        <h3 class="card-title mb-0"> <?= $title ?></h3>
+                        <h3 class="card-title mb-0">  <?= $this->lang->line('attendance_lis') ?></h3>
                         <h5 class="mb-0"> <?= $this->lang->line('total_employee') ?> <strong><?= $totalemployees;?></strong></h5>
 
                     </div>

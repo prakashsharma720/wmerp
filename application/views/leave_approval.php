@@ -32,8 +32,7 @@ $data=explode('?', $current_page);
   <div class="card card-primary card-outline">
     <div class="card-header">
       <span class="card-title">
-        <?php  echo $title; ?>
-      </span>
+<?= $this->lang->line('leave_approval') ?>      </span>
       <div class="pull-right d-flex">
         <div>          
           <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
@@ -300,7 +299,7 @@ $data=explode('?', $current_page);
 
           <?php  }} else{ ?>
               <tr>
-                <td colspan="100"> <h5 style="text-align: center;"> No Leads Found</h5></td>
+                <td colspan="100"> <h5 style="text-align: center;"> <?= $this->lang->line('no_leads_found') ?></h5></td>
               </tr>
            <?php  }?>
           </tbody>

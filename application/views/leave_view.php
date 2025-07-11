@@ -32,7 +32,7 @@ $data=explode('?', $current_page);
     <div class="card card-primary card-outline">
         <div class="card-header">
             <span class="card-title">
-                <?php  echo $title; ?>
+              <?= $this->lang->line('leave_history') ?>
             </span>
             <div class="pull-right d-flex">
                 <div>
@@ -76,7 +76,7 @@ $data=explode('?', $current_page);
                     </div>
 
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label"> <?= $this->lang->line('search_by_status') ?> </label>
+                        <label class="control-label"><?= $this->lang->line('search') ?> </label>
                         <select name="leave_status" class="form-control select2">
                             <option value="">Select Status</option>
                             <option

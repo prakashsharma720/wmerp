@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title"><?= $title ?></h3>
+            <h3 class="card-title"><?= $this->lang->line('add_new_employee') ?></h3>
             <div class="pull-right error_msg">
                 <?php echo validation_errors();?>
                 <?php if (isset($message_display)) {
@@ -367,7 +367,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                             <div class="row col-md-12">
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label class="control-label" style="visibility: hidden;"> Name</label><br>
+                                    <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
                                     <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
                                 </div>
                             </div>

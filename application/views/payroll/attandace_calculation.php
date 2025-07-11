@@ -77,7 +77,7 @@ table {
         <div class="card-header">
             <div class="row">
                 <div class="col-md-4">
-                    <h3 class="card-title mb-0"> <?= $title ?></h3>
+                    <h3 class="card-title mb-0"> <?= $this->lang->line('attendance_calculation') ?></h3>
 
                 </div>
                 <div class="col-md-5"></div>
