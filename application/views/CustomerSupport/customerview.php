@@ -134,11 +134,11 @@ $data=explode('?', $current_page);
 
 
                                                   <select name="status" class="form-control">
-                                                        <option value="">Select Status</option>
-                                                        <option value="Open" <?= ($obj['status'] == 'Open') ? 'selected' : '' ?>>Open</option>
-                                                        <option value="InProcess" <?= ($obj['status'] == 'InProcess') ? 'selected' : '' ?>>InProcess</option>
-                                                        <option value="Closed" <?= ($obj['status'] == 'Closed') ? 'selected' : '' ?>>Closed</option>
-                                                        <option value="Resolved" <?= ($obj['status'] == 'Resolved') ? 'selected' : '' ?>>Resolved</option>
+                                                        <option value=""><?=$this ->lang ->line('select_status')?></option>
+                                                        <option value="Open" <?= ($obj['status'] == 'Open') ? 'selected' : '' ?>><?=$this ->lang ->line('open')?></option>
+                                                        <option value="InProcess" <?= ($obj['status'] == 'InProcess') ? 'selected' : '' ?>><?=$this ->lang ->line('inprocess')?></option>
+                                                        <option value="Closed" <?= ($obj['status'] == 'Closed') ? 'selected' : '' ?>><?=$this ->lang ->line('closed')?></option>
+                                                        <option value="Resolved" <?= ($obj['status'] == 'Resolved') ? 'selected' : '' ?>><?=$this ->lang ->line('resolved')?></option>
                                                     </select>
 
                                                 </div>
@@ -146,7 +146,7 @@ $data=explode('?', $current_page);
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary"> <?= $this->lang->line('submit') ?> </button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    Cancel </button>
+                                                    <?=$this ->lang ->line('cancel')?> </button>
                                             </div>
                                         </div>
                                     </form>
