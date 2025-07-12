@@ -49,14 +49,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> Name </th>
-              <th> Code </th>
-              <th style="white-space: nowrap;"> Mobile</th>
-              <th style="white-space: nowrap;"> Role</th>
-              <th style="white-space: nowrap;"> Department</th>
-              <th style="white-space: nowrap;"> Photo</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th ><?=$this ->lang->line('sr_no')?></th>
+              <th> <?=$this ->lang->line('name')?> </th>
+              <th><?=$this ->lang->line('code')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('mobile')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang->line('role')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang->line('department')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang->line('photo')?></th>
+              <th style="white-space: nowrap;width: 20%;"><?=$this ->lang->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -109,7 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang->line('conform_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -117,8 +117,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p>Are you sure, you want to delete worker <b><?php echo $obj['name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang->line('yes')?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?=$this ->lang->line('no')?> </button>
                           </div>
                         </div>
                         </form>

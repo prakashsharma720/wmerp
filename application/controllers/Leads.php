@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 //session_start(); //we need to start session in order to access it through CI
 
-Class Leads extends CI_Controller {
+Class Leads extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();

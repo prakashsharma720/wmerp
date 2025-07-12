@@ -16,7 +16,7 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('success')): ?>
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
     <?php echo $this->session->flashdata('success'); ?>
 </div>
 <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -25,7 +25,7 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('failed')): ?>
 <div class="alert alert-error alert-dismissible ">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
     <?php echo $this->session->flashdata('failed'); ?>
 </div>
 <?php endif; ?>
@@ -39,7 +39,7 @@ $data=explode('?', $current_page);
             <div class="pull-right">
                 <a class="btn btn-xs btn-primary "
                     href="<?php echo base_url(); ?>index.php/CustomerSupport_controller/add">
-                    <i class="fa fa-plus"></i> Create</a>
+                    <i class="fa fa-plus"></i> <?= $this->lang->line('create') ?></a>
             </div>
         </div>
 
@@ -54,16 +54,16 @@ $data=explode('?', $current_page);
                     <tr>
                         <th><input type="checkbox" id="master"></th>
 
-                        <th> Sr.No.</th>
-                        <th> Date</th>
-                        <th> Complaint Category</th>
-                        <th>Order Id</th>
-                        <th>Ticket</th>
-                        <th>Customer name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Status</th>
-                        <th> Action</th>
+                        <th> <?= $this->lang->line('sr_no') ?></th>
+                        <th><?= $this->lang->line('date') ?></th>
+                        <th> <?= $this->lang->line('complaint_category') ?></th>
+                        <th><?= $this->lang->line('order_id') ?></th>
+                        <th><?= $this->lang->line('ticket') ?></th>
+                        <th><?= $this->lang->line('customer_name') ?></th>
+                        <th><?= $this->lang->line('email') ?></th>
+                        <th><?= $this->lang->line('phone') ?></th>
+                        <th><?= $this->lang->line('status') ?></th>
+                        <th> <?= $this->lang->line('action') ?></th>
                     </tr>
                 </thead>
                 <tbody> <?php 
@@ -125,7 +125,7 @@ $data=explode('?', $current_page);
 
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title"> Change Status </h4>
+                                                <h4 class="modal-title"><?= $this->lang->line('change_status') ?> </h4>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
                                             </div>
@@ -144,7 +144,7 @@ $data=explode('?', $current_page);
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary"> Submit </button>
+                                                <button type="submit" class="btn btn-primary"> <?= $this->lang->line('submit') ?> </button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
                                                     Cancel </button>
                                             </div>

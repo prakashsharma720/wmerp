@@ -16,7 +16,7 @@ $data=explode('?', $current_page);
  <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -25,7 +25,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -45,9 +45,9 @@ $data=explode('?', $current_page);
       <form method="get" id="filterForm">
       <div class="row">
           <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label">Supplier Category <span class="required">*</span></label>
+                  <label  class="control-label"><?=$this ->lang ->line('supplier_category')?> <span class="required">*</span></label>
                   <select name="categories_id" class="form-control select2 category" >
-                     <option value="0">Select Category</option>
+                     <option value="0"><?=$this ->lang ->line('select_category')?></option>
                         <?php
                          if ($categories): ?> 
                           <?php 
@@ -60,14 +60,14 @@ $data=explode('?', $current_page);
                                   <?php endif;   ?>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?=$this ->lang ->line('no_result')?></option>
                         <?php endif; ?>
                     </select>
                 </div>
               <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Supplier <span class="required">*</span></label>
+                <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?> <span class="required">*</span></label>
                 <select name="supplier_id" class="form-control select2 suppliers" >
-                    <option value="0"> Select Supplier</option>
+                    <option value="0"> <?=$this ->lang ->line('select_supplier')?></option>
                     <?php
                          if ($all_suppliers): ?> 
                           <?php 
@@ -94,12 +94,12 @@ $data=explode('?', $current_page);
                                   <?php endif;   ?>
                                    <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?=$this ->lang ->line('no_result')?></option>
                         <?php endif; ?>
                 </select>
               </div>
                <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Category of Approval</label>
+                    <label  class="control-label"> <?=$this ->lang ->line('category_of_approval')?></label>
                     <?php  $app_cat = array(
                        'No' => 'Select Option',
                           'A' => 'A',
@@ -120,10 +120,10 @@ $data=explode('?', $current_page);
                 <!--      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">-->
                 <!--</div>-->
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?></label><br>
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?></a>
               </div>
           </div>
         </form>
@@ -133,14 +133,14 @@ $data=explode('?', $current_page);
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> Name </th>
-              <th> Category </th>
-              <th style="white-space: nowrap;"> Contact Person </th>
-              <th> Email</th>
-              <th> Mobile</th>
-              <th> Approval Category</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th> <?=$this ->lang ->line('name')?> </th>
+              <th> <?=$this ->lang ->line('category')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('contact_person')?></th>
+              <th> <?=$this ->lang ->line('email')?></th>
+              <th> <?=$this ->lang ->line('mobile')?></th>
+              <th> <?=$this ->lang ->line(' approval_category')?></th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -186,7 +186,7 @@ $data=explode('?', $current_page);
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"><?php echo $obj['supplier_name'];?> Details </h4>
+                             <h4 class="modal-title"><?php echo $obj['supplier_name'];?> <?=$this ->lang ->line('details')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -194,11 +194,11 @@ $data=explode('?', $current_page);
                             <div class="row">
                                 <div class="col-md-12">
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> Suplier Code :</label>
+                                    <label class="control-label"> <?=$this ->lang ->line('supplier_code')?> :</label>
                                     <span> <?php echo $supplier_id_code;?></span>
                                   </div>
                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> Contact Person :</label>
+                                    <label class="control-label"><?=$this ->lang ->line('contact_person')?> :</label>
                                       <span> <?php echo $obj['contact_person'];?></span>
                                   </div>
                                 </div>
@@ -206,11 +206,11 @@ $data=explode('?', $current_page);
                              <div class="row">
                                 <div class="col-md-12">
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Email :</label>
+                                    <label class="control-label"><?=$this ->lang ->line('email')?> :</label>
                                     <span> <?php echo $obj['email'];?></span>
                                   </div>
                                   <div class="col-md-6 col-sm-6 ">
-                                      <label class="control-label">Mobile :</label>
+                                      <label class="control-label"><?=$this ->lang ->line('mobile')?> :</label>
                                       <span> <?php echo $obj['mobile_no'];?></span>
                                   </div>
                                 </div> 
@@ -218,11 +218,11 @@ $data=explode('?', $current_page);
                              <div class="row">
                                 <div class="col-md-12">
                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> Website :</label>
+                                    <label class="control-label"> <?=$this ->lang ->line('website')?>:</label>
                                     <span> <?php echo $obj['website'];?></span>
                                   </div>
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> TDS :</label>
+                                    <label class="control-label"> <?=$this ->lang ->line('tds')?>:</label>
                                     <span> <?php echo $obj['tds'];?></span>
                                   </div>
                               </div>  
@@ -230,11 +230,11 @@ $data=explode('?', $current_page);
                             <div class="row">
                                 <div class="col-md-12">
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">GST No :</label>
+                                    <label class="control-label"><?=$this ->lang ->line('gst_no')?> :</label>
                                     <span> <?php echo $obj['gst_no'];?></span>
                                   </div>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> PAN No :</label>
+                                    <label class="control-label"> <?=$this ->lang ->line('pan_no')?> :</label>
                                     <span> <?php echo $obj['pan_no'];?></span>
                                   </div>
                               </div>                              
@@ -242,7 +242,7 @@ $data=explode('?', $current_page);
                            <div class="row">
                                 <div class="col-md-12">
                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Category of Approval :</label>
+                                    <label class="control-label"><?=$this ->lang ->line('category_of_approval')?> :</label>
                                     <span> <?php echo $obj['category_of_approval'];?></span>
                                   </div>
                               </div>                              
@@ -251,11 +251,11 @@ $data=explode('?', $current_page);
                            <div class="row">
                                 <div class="col-md-12">
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Approved On:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('approved_on')?>:</label>
                                     <span><?php echo date('d-M-Y',strtotime($obj['date_of_approval'])); ?></span>
                                   </div>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Next Evaluation Date:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('next_evalution_date')?>:</label>
                                     <span> <?php echo date('d-M-Y',strtotime($obj['date_of_evalution'])); ?></span>
                                     
                                   </div>
@@ -264,11 +264,11 @@ $data=explode('?', $current_page);
                            <div class="row">
                                 <div class="col-md-12">
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Bank Name:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('bank_name')?>:</label>
                                     <span> <?php echo $obj['bank_name'];?></span>
                                   </div>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Branch Name:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('branch_name')?>:</label>
                                     <span> <?php echo $obj['branch_name'];?></span>
                                   </div>
                               </div>                              
@@ -276,11 +276,11 @@ $data=explode('?', $current_page);
                            <div class="row">
                                 <div class="col-md-12">
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">IFSC Code:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('ifsc_code')?>:</label>
                                     <span> <?php echo $obj['ifsc_code'];?></span>
                                   </div>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Account No:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('account_no')?></label>
                                     <span> <?php echo $obj['account_no'];?></span>
                                   </div>
                               </div>                              
@@ -288,11 +288,11 @@ $data=explode('?', $current_page);
                            <div class="row">
                                 <div class="col-md-12">
                                    <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Country:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('country')?>:</label>
                                     <span> <?php echo $obj['country'];?></span>
                                   </div>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">State:</label>
+                                    <label class="control-label"><?=$this ->lang ->line('state')?>:</label>
                                     <span> <?php echo $obj['state'];?></span>
                                   </div>
                               </div>                              
@@ -301,11 +301,11 @@ $data=explode('?', $current_page);
                            <div class="row">
                                 <div class="col-md-12">
                                      <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">City :</label>
+                                    <label class="control-label"><?=$this ->lang ->line('city')?> :</label>
                                     <span> <?php echo $obj['city'];?></span>
                                   </div>
                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Address :</label>
+                                    <label class="control-label"><?=$this ->lang ->line('address')?> :</label>
                                     <span> <?php echo $obj['address'];?></span>
                                   </div>
                               </div>                              
@@ -318,7 +318,7 @@ $data=explode('?', $current_page);
                           </div>      -->
                         </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang ->line('close')?></button>
                           </div>
                         </div>
                       </div>
@@ -329,16 +329,16 @@ $data=explode('?', $current_page);
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete supplier <b><?php echo $obj['supplier_name'];?> </b>? </p>
+                            <p><?=$this ->lang ->line('delete_supplier_confirm')?><b><?php echo $obj['supplier_name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang ->line('yes')?></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?=$this ->lang ->line('no')?> </button>
                           </div>
                         </div>
                         </form>

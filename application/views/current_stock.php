@@ -6,7 +6,7 @@ $base_url=  base_url();
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?> !</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ $base_url=  base_url();
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?> !</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -34,10 +34,10 @@ $base_url=  base_url();
           <thead>
             <tr>
               <th >Sr.No.</th>
-              <th style="white-space: nowrap;">  Material Description </th>
-              <th style="white-space: nowrap;">  Total In Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Total Out Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Available Qty (Unit)</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('material_description')?> </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_in_qty')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_out_qty')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('available_qty')?>  </th>
             </tr>
           </thead>
           <tbody>

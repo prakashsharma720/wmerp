@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Purchase_order extends CI_Controller {
+Class Purchase_order extends MY_Controller {
 
 public function __construct() {
 parent::__construct();

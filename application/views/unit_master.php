@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">
 				        	<div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
-					            	<label class="control-label">Unit Name</label>
+					            	<label class="control-label"><?=$this ->lang->line('unit_name')?></label>
 					                <input type="text"  placeholder="Enter unit name" name="unit_name" class="form-control" value="<?= $unit_name?>" required autofocus>
 					            </div>
 					        </div>
@@ -46,18 +46,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
-					            	<label class="control-label">Status</label>
+					            	<label class="control-label"><?=$this ->lang->line('status')?></label>
 					               <select class="form-control" name="flag">
-					               		<option value="0"> Active</option>
-					               		<option value="1"> De-active</option>
+					               		<option value="0"> <?=$this ->lang->line('active')?></option>
+					               		<option value="1"><?=$this ->lang->line('de_active')?></option>
 					               </select>
 					            </div>
 				        	</div>
 				        <?php } ?>
 				           <div class="row col-md-12">
 					            <div class="col-md-8 col-sm-8 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('save')?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -70,9 +70,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th> Unit Name</th>
-								<th> Action</th>
+								<th><?=$this ->lang->line('sr_no')?></th>
+								<th> <?=$this ->lang->line('unit_name')?></th>
+								<th><?=$this ->lang->line('action')?></th>
 							</tr>
 						</thead>
 						<tbody>

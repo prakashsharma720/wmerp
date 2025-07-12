@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class General_plant_chemicals extends CI_Controller {
+Class General_plant_chemicals extends MY_Controller {
 
 public function __construct() {
 parent::__construct();

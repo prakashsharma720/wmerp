@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Production_registers extends CI_Controller {
+Class Production_registers extends MY_Controller {
 
 public function __construct() {
 parent::__construct();

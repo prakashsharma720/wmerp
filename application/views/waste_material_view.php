@@ -41,13 +41,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tr>
               <th><input type="checkbox" id="master"></th>
               <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Register No </th>
-              <th style="white-space: nowrap;"> Date  </th>
-              <th style="white-space: nowrap;"> Department </th>
-              <th style="white-space: nowrap;"> Total Waste Material</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('register_no')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang->line('date')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang->line('department')?></th>
+              <th style="white-space: nowrap;"><?=$this ->lang->line('total_waste_material')?></th>
               <!--<th style="white-space: nowrap;"> Total Waste Qty</th>-->
-              <th style="white-space: nowrap;"> Incharge Name </th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('incharge_name')?> </th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -89,7 +89,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"> Waste Material Register (<?php echo $inv_number1 ?>) Details </h4>
+                             <h4 class="modal-title"> <?=$this ->lang->line('waste_material_register')?> (<?php echo $inv_number1 ?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -101,9 +101,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-4"> Material Name </div>
-                                 <div class="col-md-4">  Party Name </div>
-                                <div class="col-md-3"> Qty  </div>
+                                <div class="col-md-4"> <?=$this ->lang->line('material_name')?> </div>
+                                 <div class="col-md-4"> <?=$this ->lang->line('party_name')?> </div>
+                                <div class="col-md-3"> <?=$this ->lang->line('qty')?></div>
                               </div>
 
                                     <?php
@@ -144,7 +144,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            <div class="row col-md-12" >
                              
                               <div class="col-md-6">
-                                <label class="control-label"> Total Waste Materials : </label>
+                                <label class="control-label"> <?=$this ->lang->line('total_waste_materials')?> : </label>
                                 <span > <?php echo $obj['total_waste_materials']?></span>
                               </div>
                                <!-- <div class="col-md-4">
@@ -156,13 +156,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   </span>
                               </div>-->
                                <div class="col-md-6">
-                                <label class="control-label">  Department: </label>
+                                <label class="control-label"> <?=$this ->lang->line('department')?>: </label>
                                 <span > <?php echo $obj['department']?></span>
                               </div>
                               
                             </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang->line('close')?></button>
                           </div>
                         </div>
                       </div>
@@ -173,7 +173,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang->line('conform_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -181,8 +181,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p>Are you sure, you want to delete this Record <b><?php echo $inv_number1;?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"><?=$this ->lang->line('yes')?></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang->line('no')?></button>
                           </div>
                         </div>
                         </form>

@@ -1,5 +1,5 @@
 <?php
-Class Machinary_equipments extends CI_Controller {
+Class Machinary_equipments extends MY_Controller {
 
 	public function __construct(){
 

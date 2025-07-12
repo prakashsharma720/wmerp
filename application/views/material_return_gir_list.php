@@ -44,9 +44,9 @@ $data=explode('?', $current_page);
 	<form method="get" id="filterForm">
       <div class="row">
           <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label">Category <span class="required">*</span></label>
+                  <label  class="control-label"><?=$this ->lang ->line('category')?>  <span class="required">*</span></label>
                   <select name="categories_id" class="form-control select2 category" >
-                     <option value="0">Select Category</option>
+                     <option value="0"><?=$this ->lang ->line('select_category')?> </option>
                         <?php
                          if ($categories): ?> 
                           <?php 
@@ -59,15 +59,15 @@ $data=explode('?', $current_page);
                                   <?php endif;   ?>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?=$this ->lang ->line('no_result')?> </option>
                         <?php endif; ?>
                     </select>
             </div>
 			
             <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Supplier <span class="required">*</span></label>
+                <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?>  <span class="required">*</span></label>
                 <select name="supplier_id" class="form-control select2 suppliers" >
-                    <option value="0"> Select Supplier</option>
+                    <option value="0"> <?=$this ->lang ->line('select_supplier')?> </option>
                     <?php
                          if ($all_suppliers): ?> 
                           <?php 
@@ -80,14 +80,14 @@ $data=explode('?', $current_page);
                                   <?php endif;   ?>
                                    <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?=$this ->lang ->line('no_result')?> </option>
                         <?php endif; ?>
                 </select>
 			</div>
             <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"> Material Return Register Number <span class="required">*</span></label>
+                <label  class="control-label"> <?=$this ->lang ->line('material_return_register_no')?>  <span class="required">*</span></label>
                 <select name="gir_no" class="form-control select2 suppliers" >
-                    <option value="0"> Select GIR Number</option>
+                    <option value="0"> <?=$this ->lang ->line('select_gir_no')?> r</option>
                     <?php
                          if ($gir_nos): ?> 
                           <?php 
@@ -100,25 +100,25 @@ $data=explode('?', $current_page);
                                   <?php endif;   ?>
                                    <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?=$this ->lang ->line('no_result')?> </option>
                         <?php endif; ?>
                 </select>
 			</div>
         </div>
                 <div class="row">
                   <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"> <?=$this ->lang ->line('from_date')?> </label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?=$this ->lang ->line('upto_date')?> </label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
+                   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?> </label><br>
                   <input type="submit" class="btn btn-primary" value="Search" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?> </a>
               </div>
           </div>
         </form>
@@ -128,13 +128,13 @@ $data=explode('?', $current_page);
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th style="white-space: nowrap;">Sr.No.</th>
-              <th style="white-space: nowrap;"> GIR No </th>
-              <th style="white-space: nowrap;"> Invoice/Challan No </th>
-              <th style="white-space: nowrap;"> Supplier Name </th>
-              <th style="white-space: nowrap;"> Date </th>
-              <th style="white-space: nowrap;">Total Qty</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('sr_no')?> .</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('gir_no')?>  </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('invoice_no')?>  </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('supplier_name')?>  </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('date')?>  </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('total_qty')?> </th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?> </th>
             </tr>
           </thead>
           <tbody>
@@ -193,9 +193,9 @@ $data=explode('?', $current_page);
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-3">Item Name</div>
-                                <div class="col-md-3">Qty </div>
-                                <div class="col-md-5">Description </div>
+                                <div class="col-md-3"><?=$this ->lang ->line('item_name')?> </div>
+                                <div class="col-md-3"><?=$this ->lang ->line('qty')?>  </div>
+                                <div class="col-md-5"><?=$this ->lang ->line('description')?>  </div>
                               </div>
 
                                     <?php
@@ -217,14 +217,14 @@ $data=explode('?', $current_page);
                                   margin: 0px;
                                   margin-bottom: 6px;" >
                               <div class="col-md-6">
-                                <label class="control-label"> Material Received Throught : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('material_received_throught')?>  : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['material_received_from']; 
                                         ?>
                                   </span>
                               </div><div class="col-md-6">
-                                <label class="control-label"> Comment : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('comment')?>  : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['comments']; 
@@ -234,7 +234,7 @@ $data=explode('?', $current_page);
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang ->line('close')?> </button>
                           </div>
                         </div>
                       </div>

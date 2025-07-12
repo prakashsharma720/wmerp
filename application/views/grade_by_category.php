@@ -11,6 +11,6 @@
                     <?php endif;   ?>
             <?php   endforeach;  ?>
         <?php else: ?>
-            <option value="">No result</option>
+            <option value=""><?=$this ->lang->line('no_result')?></option>
         <?php endif; ?>
    
