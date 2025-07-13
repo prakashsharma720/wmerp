@@ -151,7 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <span style="color:red;font-size:13px"> (Please Put Second part of address only , Maximum Length 80 Characters.)</span>
                             </div> -->
                             <div class="col-md-4 col-sm-4">
-                                <label class="control-label"><?=$this ->lang ->line('billing_address')?>1</label>
+                                <label class="control-label">billing address 1</label>
                                 <textarea type="text" placeholder="Enter Billing address" name="shipping_address"
                                     class="form-control" rows="2" required autofocus autocomplete="off"
                                     style="resize: none;" oninput="checkMaxLength(this, 'billingAddressError1')"></textarea>
@@ -160,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
                             <div class="col-md-4 col-sm-4">
-                                <label class="control-label"><?=$this ->lang ->line('billing_address')?> 2</label>
+                                <label class="control-label">billing address 2</label>
                                 <textarea type="text" placeholder="Enter Billing address" name="billing_address"
                                     class="form-control" rows="2" required autofocus autocomplete="off"
                                     style="resize: none;" oninput="checkMaxLength(this, 'billingAddressError2')"></textarea>
@@ -182,7 +182,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="form-group">
                         <div class="row col-md-12">
                             <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> <?=$this ->lang ->line('gst_regis_status')?> </label>
+                            <label class="control-label"> <?=$this ->lang ->line('gst_registration_status')?> </label>
                                 <div class="form-check">
                                     <input class="form-check-input gst_status" type="radio" name="gst_status"
                                         value="Yes" checked> Yes</input>
@@ -214,13 +214,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     class="form-control" value="" autofocus autocomplete="off">
                             </div>
                             <div class="col-md-4 col-sm-4 ">
-                                <label class="control-label"> Buyer Item Code </label>
+                                <label class="control-label"><?=$this ->lang ->line('buyer_item_code')?> </label>
                                 <textarea type="text" placeholder="Enter Buyer Item Code " name="buyer_item_code"
                                     class="form-control" rows="3" value="" autofocus autocomplete="off"
                                     style="resize: none;"></textarea>
                             </div>
                             <div class="col-md-4 col-sm-4 ">
-                                <label class="control-label"> Destination (Loc) </label>
+                                <label class="control-label"> <?=$this ->lang ->line('destination')?> (Loc) </label>
                                 <textarea type="text" placeholder="Enter Destination" name="destination"
                                     class="form-control" rows="3" value="" autofocus autocomplete="off"
                                     style="resize: none;"></textarea>
