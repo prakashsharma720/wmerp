@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        	<input type="hidden" name="categories_id" value="<?= $value['id'] ?>" >
 
 						                        	<input type="hidden" name="code" value="<?= $service_code_view ?>" >
-						                        <label class="control-label"> <?= $value['category_name'] ?> Name</label>
+						                        <label class="control-label"> <?= $value['category_name'] ?> <?=$this ->lang->line('name')?></label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>

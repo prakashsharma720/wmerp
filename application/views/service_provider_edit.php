@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"> Edit service_provider</h3>
+        <h3 class="card-title"> <?= $this->lang->line('edit_service_provider') ?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 
@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 						<div class="col-md-4 col-sm-4">
-			            	<label class="control-label"> Category</label>
+			            	<label class="control-label"><?= $this->lang->line('category') ?></label>
 			            	<select name="categories_id" class="form-control select2 " >
 					                <?php
 					                 if ($categories): ?> 
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
@@ -52,15 +52,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	        			?>
 						   	<div class="col-md-4 col-sm-4 ">
-				        		<label class="control-label"> Service Provider Type </label>
+				        		<label class="control-label"> <?= $this->lang->line('service_provider_type') ?> </label>
 				        			<div class="form-check">
-					               		<input class="form-check-input service_provider_type" type="radio" name="service_provider_type" value="New" <?php echo $new; ?> > New</input>
+					               		<input class="form-check-input service_provider_type" type="radio" name="service_provider_type" value="New" <?php echo $new; ?> > <?= $this->lang->line('new') ?></input>
 					               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					               		<input class="form-check-input service_provider_type" type="radio" name="service_provider_type" value="Existing" <?php echo $existing; ?> > Existing</input>
+					               		<input class="form-check-input service_provider_type" type="radio" name="service_provider_type" value="Existing" <?php echo $existing; ?> ><?= $this->lang->line('existing') ?></input>
 			            		</div>
 			            	</div>
 						<div class="col-md-4 col-sm-4 category_of_approval">
-			            	<label  class="control-label"> Category of Approval</label>
+			            	<label  class="control-label"> <?= $this->lang->line('category_of_approval') ?></label>
 			            	<?php  $categories = array(
 				                  'No' => 'Select Option',
 				                  'A' => 'A',
@@ -77,16 +77,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    <div class="form-group">
 		        	<div class="row col-md-12">
 					<div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> Registration Date</label>
+			            	<label  class="control-label"> <?= $this->lang->line('registration_date') ?></label>
 			            	  <input type="text" data-date-formate="dd-mm-yyyy" name="reg_date" class="form-control date-picker" value="<?php echo date('d-m-Y',strtotime($current[0]->reg_date)); ?>" placeholder="dd-mm-yyyy" autofocus  required autocomplete="off">
 
 			            </div>
 						<div class="col-md-4 col-sm-4">
-			            	<label class="control-label">Service Provider Name</label>
+			            	<label class="control-label"><?= $this->lang->line('service_provider_name') ?></label>
 							<input type="text" id="firstName" placeholder="Enter name" name="service_provider_name" class="form-control" value="<?php echo $current[0]->service_provider_name; ?>" autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4">
-			            	<label  class="control-label">Service Provider Code</label>
+			            	<label  class="control-label"><?= $this->lang->line('service_provider_code') ?></label>
 									<input type="text"  name="sp_code" class="form-control" value="<?= $service_provider_code?>"  autofocus readonly="readonly">
 						            <input type="hidden" name="service_provider_code" value="<?php echo $sp_code;?>">					            </div>  
 		        	</div>
@@ -94,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="form-group">
 		        	<div class="row col-md-12">
 				 	<div class="col-md-4 col-sm-4">
-			            	<label class="control-label"> Contact Person</label>
+			            	<label class="control-label"><?= $this->lang->line('contact_person') ?></label>
 							<div class="input-group input-group-lg">
 				                <div class="input-group-prepend">
 				                  <select name="prefix"  required="required">
@@ -110,7 +110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 								
@@ -119,11 +119,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 						</div>
 		        		<div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> Email</label>
+			            	<label  class="control-label"> <?= $this->lang->line('email') ?></label>
 			                <input type="email" id="lastName" placeholder="Enter email" name="email" class="form-control" value="<?php echo $current[0]->email; ?>" autofocus>
 			            </div>
 		        		<div class="col-md-4 col-sm-4">
-			            	<label class="control-label"> Mobile</label>
+			            	<label class="control-label"> <?= $this->lang->line('mobile') ?></label>
 			                <input type="text" id="firstName" placeholder="Enter mobile" name="mobile_no" class="form-control" value="<?php echo $current[0]->mobile_no; ?>" autofocus>
 			            </div>
 						</div>
@@ -131,7 +131,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		         <div class="form-group">
 		        	<div class="row col-md-12">
 							<div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> Country</label>
+			            	<label  class="control-label"> <?= $this->lang->line('country') ?></label>
 			            	<?php  
 			            		echo form_dropdown('country_id', $countries,$current[0]->country_id)
 			            	?>

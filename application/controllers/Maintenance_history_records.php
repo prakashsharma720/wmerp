@@ -1,5 +1,5 @@
 <?php
-Class Maintenance_history_records extends my_Controller {
+Class Maintenance_history_records extends MY_Controller {
 
 	public function __construct(){
 
