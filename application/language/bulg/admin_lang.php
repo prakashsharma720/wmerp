@@ -335,6 +335,15 @@ $lang['manufactured_by'] = 'Произведено от';
 $lang['name'] = 'Име';
 $lang['size'] = 'Размер';
 $lang['action'] = 'Действие';
+$lang['name_of_employee'] = 'Име на служителя';
+$lang['select_employee'] = 'Изберете служител';
+
+$lang['name_of_department'] = 'Име на отдел';
+$lang['select_department'] = 'Изберете отдел';
+
+$lang['requisition_status'] = 'Статус на заявката';
+
+$lang['no_result'] = 'Няма резултати';
 
 $lang['showing_entries'] = 'Показване на записи от 1 до 10 от общо 29';
 $lang['previous'] = 'Предишна';
@@ -355,6 +364,7 @@ $lang['upto_date'] = 'До дата';
 $lang['search'] = 'Търси';
 $lang['reset'] = 'Нулирай';
 $lang['export'] = 'Експортиране';
+$lang['confirm_delete'] = 'Сигурни ли сте, че искате да изтриете менюто';
 
 // Sample 
 // $lang['acetic_acid'] = 'Оцетна киселина';

@@ -277,7 +277,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                           <div class="form-group">
                             <div class="row col-md-12">
                               <label class="control-label"><?= $this->lang->line('comment'); ?>  </label>
-                              <textarea class="form-control Comment" rows="2" placeholder="Enter Reason here" name="approve_comment"></textarea>
+                              <textarea class="form-control Comment" rows="2" placeholder="<?= $this->lang->line('enter_reason_here') ?>" name="approve_comment"></textarea>
                             </div>
                           </div>
                         </div>

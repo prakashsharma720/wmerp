@@ -76,8 +76,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </td> 
                                         <td>
                                             <select class="form-control" name="status_of_work[]" >
-                                              <option value="Pending" > Pending</option>
-                                              <option value="Completed" > Completed </option>
+                                              <option value="Pending" > <?= $this->lang->line('pending') ?></option>
+                                              <option value="Completed" > <?= $this->lang->line('completed') ?> </option>
                                            </select>
                                         </td>
                                        <td >

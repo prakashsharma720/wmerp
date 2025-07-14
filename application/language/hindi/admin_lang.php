@@ -3155,6 +3155,15 @@ $lang['view_list'] = 'सूची देखें';
 $lang['invoices'] = 'चालान';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
+$lang['name_of_employee'] = 'कर्मचारी का नाम';
+$lang['select_employee'] = 'कर्मचारी चुनें';
+
+$lang['name_of_department'] = 'विभाग का नाम';
+$lang['select_department'] = 'विभाग चुनें';
+
+$lang['requisition_status'] = 'अनुरोध की स्थिति';
+
+$lang['no_result'] = 'कोई परिणाम नहीं';
 
 // Stock Registers
 $lang['stock_registers'] = 'स्टॉक रजिस्टर';
@@ -3176,6 +3185,7 @@ $lang['upto_date'] = 'समाप्ति तिथि';
 $lang['search'] = 'खोजें';
 $lang['reset'] = 'रीसेट';
 $lang['export'] = 'निर्यात करें';
+$lang['confirm_delete'] = 'क्या आप वाकई इस मेनू को हटाना चाहते हैं';
 
 
 // FG Stock (Finished Goods)

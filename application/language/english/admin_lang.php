@@ -29,9 +29,20 @@ $lang['upto_date'] = 'Upto Date';
 $lang['search'] = 'Search';
 $lang['reset'] = 'Reset';
 $lang['export'] = 'Export';
+$lang['confirm_delete'] = 'Are you sure, you want to delete menu';
 
 
 $lang['opening_stock_qty'] = 'Opening Stock Quantity';
+$lang['name_of_employee'] = 'Name of Employee';
+$lang['select_employee'] = 'Select Employee';
+
+$lang['name_of_department'] = 'Name of Department';
+$lang['select_department'] = 'Select Department';
+
+$lang['requisition_status'] = 'Requisition Status';
+
+$lang['no_result'] = 'No result';
+
 
 // https://wmerp.yashdreamsoft.com/index.php/Employees/edit/4
 
