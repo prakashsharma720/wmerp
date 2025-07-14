@@ -26,20 +26,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Process_logsheets/add_new_record">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date Of Process <span class="required">*</span></label>
+			            	<label class="control-label"> <?= $this->lang->line('date_of_process') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> PSL Number <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('psl_number') ?>r <span class="required">*</span></label>
 			            	
 			            	<input type="text" class="form-control" value="<?= $pl_number_view ?>" autocomplete="off" autofocus readonly >
 			            	<input type="hidden" name="pl_number" value="<?= $pl_number ?>">
 			            </div>
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"> <?= $this->lang->line('department') ?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?= $this->lang->line('select_department') ?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -52,16 +52,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 		        	</div>
 			        <div class="row col-md-12 ">
 		            	<div class="col-md-6 col-sm-6">
-		            		 <label  class="control-label"> Mill No <span class="required">*</span></label>
+		            		 <label  class="control-label"> <?= $this->lang->line('mill_no') ?> <span class="required">*</span></label>
 		            		<select name="mill_no" class="form-control" required="required">
-								<option value=""> Select Mill No</option>
+								<option value=""> <?= $this->lang->line('select_mill_no') ?></option>
 				                <?php
 				                 if ($equipments): ?> 
 				                  <?php 
@@ -74,13 +74,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                        <?php endif;   ?>
 				                    <?php   endforeach;  ?>
 				                <?php else: ?>
-				                    <option value="0">No result</option>
+				                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 				                <?php endif; ?>
 				            </select>
 		            	</div>
 		            	<div class="col-md-6 col-sm-6">
-				            <label  class="control-label"> Remarks</label>
-				    		<textarea class="form-control " rows="2" placeholder="Enter Remarks here" name="remarks" ></textarea>
+				            <label  class="control-label"> <?= $this->lang->line('remarks') ?></label>
+				    		<textarea class="form-control " rows="2" placeholder="<?= $this->lang->line('enter_remarks_here') ?>" name="remarks" ></textarea>
 			    		</div>
 			        </div>
 					<br>
@@ -92,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        				<tr>
 			        					<th >#</th>
 			        					<th > M/c Start Date-Time </th> 
-			        					<th > Finsh Good </th>
+			        					<th > <?= $this->lang->line('finish_good') ?> </th>
 			        					<th > Lot No.</th>
 			        					<th > Batch No.</th>
 										<th > Previous Bag No</th> 
