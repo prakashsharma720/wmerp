@@ -32,7 +32,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?>
+            <span class="card-title"><?= $this->lang->line('customer_data') ?> 
             </span>
 
 
@@ -53,7 +53,6 @@ $data=explode('?', $current_page);
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="master"></th>
-
                         <th> <?= $this->lang->line('sr_no') ?></th>
                         <th><?= $this->lang->line('date') ?></th>
                         <th> <?= $this->lang->line('complaint_category') ?></th>

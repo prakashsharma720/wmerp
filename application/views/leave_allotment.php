@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                    <h3 class="card-title"> <?= $title ?></h3>
+                    <h3 class="card-title"> <?= $this->lang->line('leave_allotment') ?></h3>
                     <div class="pull-right error_msg">
                         <?php echo validation_errors();?>
                         <?php if (isset($message_display)) {
@@ -36,16 +36,16 @@
                 <div class="row">
                     <div class="col-md-4">                            
                         <div class="col-md-12">
-                            <label class="control-label">Leave Allotment Month</label>
+                            <label class="control-label"> <?= $this->lang->line('leave_allotment_month') ?></label>
                             <?php echo form_dropdown('month_id', $months,'','required="required"'); ?>
                         </div>
                         <div class="table-responsive">
                             <table width="100%"  class="table table-bordered table-striped" id="sample_table1">
                                 <thead width="100%">
                                     <tr width="100%">
-                                        <th width="80%"> Employee </th>
-                                        <th width="10%"> Leave Count </th>
-                                        <th width="10%"> Action </th>
+                                        <th width="80%">  <?= $this->lang->line('employee') ?> </th>
+                                        <th width="10%">  <?= $this->lang->line('leave_count') ?> </th>
+                                        <th width="10%">  <?= $this->lang->line('action') ?> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,7 +67,7 @@
                             </table>
                             <div class="col-md-12" width="100%">
                                 <button type="submit" class="btn btn-primary btn-block">
-                                    <b>Save</b>
+                                    <b> <?= $this->lang->line('submit') ?></b>
                                 </button>
                             </div>
                         </div>
@@ -78,10 +78,10 @@
                             <table id="example1" class="table table-bordered table-striped"  width="100%">
                                 <thead>
                                     <tr>
-                                        <th>Employee</th>
-                                        <th>Count</th>
-                                        <th>Month</th>
-                                        <th>Year</th>
+                                        <th> <?= $this->lang->line('employee') ?></th>
+                                        <th> <?= $this->lang->line('count') ?></th>
+                                        <th> <?= $this->lang->line('month') ?></th>
+                                        <th> <?= $this->lang->line('year') ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>

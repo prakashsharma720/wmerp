@@ -2,8 +2,8 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-// Class Workers extends CI_Controller {
-class Workers extends MY_Controller {
+Class Workers extends MY_Controller {
+  
 public function __construct() {
 parent::__construct();
 if(!$this->session->userdata['logged_in']['id']){

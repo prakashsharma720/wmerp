@@ -16,13 +16,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/add_new_fg">
 				    			<div class="row col-md-12">
 					         	  	<div class="col-md-6">
-						            	<!-- <label class="control-label"> Finish Good Code</label> -->
+
 						            	<label class="control-label"> <?= $this->lang->line('finish_good_code') ?></label>
 						                <input type="text"  name="finishgood_code" class="form-control" value="<?= $finish_good_code?>"  autofocus readonly="readonly">
 						                <input type="hidden" name="fg_code" value="<?php echo $fg_code;?>">
 						        	</div>
 									 <div class="col-md-6">
-						            	<!-- <label class="control-label"> Grade Name</label> -->
+
 						            	<label class="control-label"> <?= $this->lang->line('grade_name') ?></label>
 						                <input type="text"  placeholder="<?= $this->lang->line('enter_grade_name') ?>" name="grade_name" class="form-control" value="" required autofocus>
 						        </div>

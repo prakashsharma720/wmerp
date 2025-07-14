@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $page_title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('holidays_master') ?></h3>
         <div class="pull-right ">
 			
 
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">			        		  	
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Title Name</label>
+					            	<label class="control-label"><?= $this->lang->line('title_name') ?></label>
 					                <input type="text"  placeholder="Enter Title Name " name="title" class="form-control" value="<?= $title?>" required autofocus>
 					            </div>
 					            <?php 
@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					              }; 
 					             ?>
 							<div class="col-md-12 col-sm-12">
-							<label  class="control-label"> Date</label>
+							<label  class="control-label"> <?= $this->lang->line('date') ?></label>
 							<input type="text" value="<?= $holiday_date ?>" data-date-formate="dd-mm-yyyy" name="holiday_date" class="form-control date-picker" placeholder="dd-mm-yyyy"  autocomplete="off" autocomplete="off">
 					</div>
 					        </div>
@@ -74,8 +74,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <?php } ?>
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit"  class="btn btn-primary btn-block" >Save</button>
+					            	<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+					            	<button type="submit"  class="btn btn-primary btn-block" ><?= $this->lang->line('submit') ?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -90,15 +90,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<?php } else {?>
 			<div class="col-md-12">
 				<?php } ?>
-					<h5>Holiday List</h5>
+					<h5><?= $this->lang->line('holiday_list') ?></h5>
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th style="width:70%;"> Title</th>
-								<th style="width:30%;"> Date</th>
+								<th> <?= $this->lang->line('sr_no') ?></th>
+								<th style="width:70%;"> <?= $this->lang->line('title') ?></th>
+								<th style="width:30%;"><?= $this->lang->line('date') ?></th>
 								<?php if(($role_id !='5') && ($role_id !='4')) { ?>
-                                <th> Action</th>
+                                <th> <?= $this->lang->line('action') ?></th>
 								<?php }?>
 								
 							</tr>
