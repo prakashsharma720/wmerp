@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <th colspan="6"> <h4 style="text-align: center">Issue Slip </h4></th>
                           </tr>
                           <tr>
-            							<th colspan="1">Requisition Date :</th>
+            							<th colspan="1"><?=$this ->lang ->line('requisition_date')?> :</th>
                           <td colspan="2"> <?= $current['0']['date']?> </td>		
             						  <th colspan="1">Issue Date :</th>
                           <td colspan="2"> <?= $current['0']['transaction_date']?> </td>
@@ -98,12 +98,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <table class="table table-bordered " id="maintable" >
                     <thead style="background-color: #e8e8e8;">
                     <tr>
-                      <th> S.No.</th>
-                      <th> Material Description</th>
-                      <th>Unit</th>
-                      <th>Requisition Quantity</th>
-                      <th>Issue Quantity</th>
-                      <th>Pending Quantity</th>
+                      <th> <?=$this ->lang ->line('sr_no')?>.</th>
+                      <th> <?=$this ->lang ->line('material_description')?></th>
+                      <th><?=$this ->lang ->line('units')?></th>
+                      <th><?=$this ->lang ->line('requisition_qty')?></th>
+                      <th><?=$this ->lang ->line('issue_qty')?></th>
+                      <th><?=$this ->lang ->line('pending_qty')?></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -119,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		                 </tr>
 	                <?php $i++;} ?>
 							<tr>
-								<td colspan="3" style="text-align: right;"><b>Total</b></td>
+								<td colspan="3" style="text-align: right;"><b><?=$this ->lang ->line('total')?></b></td>
 					             <td> <?= $current['0']['total_req_qty']?></td>
 
 					             <td> <?= $current['0']['total_issue_qty']?></td>

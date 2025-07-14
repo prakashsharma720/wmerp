@@ -36,11 +36,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="form-group">
 					        	<div class="row col-md-12">
 					        		<div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> Name *</label>
+						            	<label class="control-label"> <?=$this ->lang->line('name')?> *</label>
 						                <input type="text"  placeholder="Enter workers name" name="name" class="form-control" value="<?= $name?>"  autofocus>
 						            </div>
 					        		<div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> Code *</label>
+						            	<label class="control-label"><?=$this ->lang->line('code')?> *</label>
 						                <input type="text"  name="wc_code" class="form-control" value="<?= $worker_code ?>"  autofocus required>
 						                <!-- <input type="hidden" name="worker_code" value="<?php echo $wc_code;?>"> -->
 						            </div>
@@ -56,13 +56,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="form-group"> 
 						        <div class="row col-md-12">
 					        		<div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> Mobile No </label>
+						            	<label class="control-label"><?=$this ->lang->line('mobile_no')?> </label>
 						               	<input type="text" placeholder="Enter mobile" name="mobile_no" class="form-control mobile" minlenght="10" maxlength="10" 
 			                			oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   value="<?= $mobile_no?>" autofocus>
 						            </div>
 						            
 						            <div class="col-md-4 col-sm-4 ">
-						            	<label  class="control-label"> Department</label>
+						            	<label  class="control-label"><?=$this ->lang->line('department')?></label>
 						               <?php  
 						            		echo form_dropdown('department_id', $departments,$department_id,'','required="required"')
 						            	?>
@@ -82,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        						}
 			        						?>
 						        	<div class="col-md-4 col-sm-4 ">
-						        		<label class="control-label"> Gender </label>
+						        		<label class="control-label"> <?=$this ->lang->line('gender')?> </label>
 						        			<div class="form-check">
 							               		<input class="form-check-input" type="radio" name="gender" value="Male" <?php echo $male; ?>> Male</input>
 							               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -99,16 +99,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                			 value="<?= $pan_no?>" autofocus>
 						            </div> -->
 						            <div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> Aadhaar No </label>
+						            	<label class="control-label"> <?=$this ->lang->line('aadhar_no')?> </label>
 						               	<input type="text" placeholder="Enter Aadhaar No" name="aadhaar_no" class="form-control aadhaar_no" minlenght="12" maxlength="12" 
 			                			oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   value="<?= $aadhaar_no?>" autofocus>
 						            </div>
 						        	<div class="col-md-4 col-sm-4">
-						            	<label class="control-label"> Date of Birth</label>
+						            	<label class="control-label"> <?=$this ->lang->line('date_of_birth')?></label>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="dob" class="form-control date-picker" value="<?php if($dob) { echo date('d-m-Y',strtotime($dob)); } ?>" placeholder="dd-mm-yyyy" autofocus>
 			            			</div>
 			            			<div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> Upload Photo </label>
+						            	<label class="control-label"><?=$this ->lang->line('upload_photo')?> </label>
 						                <input type="file"  name="photo" class="form-control upload"  autofocus>
 						               
 						            </div>
@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    						}
 				        				?>
 							         <div class="col-md-4 col-sm-4 ">
-				        				<label class="control-label"> Medical Test </label>
+				        				<label class="control-label"><?=$this ->lang->line('medical_test')?> </label>
 						        			<div class="form-check">
 							               		<input class="form-check-input medical_status" type="radio" name="medical_status" value="Yes" checked="checked" <?php echo $new; ?> /> Yes
 							               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -137,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				            				</div>
 			            				</div>
 			            				<div class="col-md-8 col-sm-8 report_div">
-							            	<label class="control-label"> Report Number </label>
+							            	<label class="control-label"><?=$this ->lang->line('report_no')?></label>
 							                <input type="text" id="firstName" placeholder="Enter Report Number" name="report_no" class="form-control report_no" value="<?php echo $report_no; ?>" autofocus autocomplete="off"  required="required"  >
 							            </div>
 							        </div>
@@ -147,11 +147,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="form-group"> 
 						        <div class="row col-md-12">
 					        		<div class="col-md-8 col-sm-8 ">
-						            	<label class="control-label"> Address </label>
+						            	<label class="control-label"><?=$this ->lang->line('address')?> </label>
 						        		<textarea class="form-control address" rows="3" placeholder="Enter Address" name="address" value="<?= $address ?>" ><?= $address ?></textarea>
 						            </div>
 						             <div class="col-md-4">
-						            	<label class="control-label" style="visibility: hidden;"> Photo View </label>
+						            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('photo_view')?></label>
 						            	<div>
 						            	  <?php if(!empty($photo)) { ?>
 						                	<img id="blah" src="<?php echo base_url().'/uploads/'.$photo; ?>" alt="your image"   width="100px" height="100px" />
@@ -169,10 +169,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						        <div class="row col-md-12">
 									<?php if(!empty($id)) { ?>
 						        		<div class="col-md-6 col-sm-6 ">
-							            	<label class="control-label">Status</label>
+							            	<label class="control-label"><?=$this ->lang->line('status')?></label>
 							               <select class="form-control" name="flag">
-							               		<option value="0"> Active</option>
-							               		<option value="1"> De-active</option>
+							               		<option value="0"> <?=$this ->lang->line('active')?></option>
+							               		<option value="1"> <?=$this ->lang->line('de_active')?></option>
 							               </select>
 							            </div>
 							        <?php } ?>
@@ -180,8 +180,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('save')?></button>
 					            </div>
 					        </div>
 					        </form>

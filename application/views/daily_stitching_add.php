@@ -25,15 +25,15 @@ foreach ($packing_sizes as $key => $value) {
 				 <input type="hidden" name="dsr_code" value="<?= $dsr_code ?>">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date <span class="required">*</span></label>
+			            	<label class="control-label"> <?= $this->lang->line('date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			           
 			           <div class="col-md-6 col-sm-6 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"> <?= $this->lang->line('department') ?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?= $this->lang->line('select_department') ?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -46,12 +46,12 @@ foreach ($packing_sizes as $key => $value) {
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 			             <div class="col-md-2 col-sm-12">
-				            <label  class="control-label"> Total Workers</label>
+				            <label  class="control-label"> <?= $this->lang->line('total_workers') ?></label>
 				    		<input type="text" class="form-control total_workers" name="total_workers" value="1" readonly="readonly">
 			    		</div>
 		        	</div>
@@ -89,12 +89,12 @@ foreach ($packing_sizes as $key => $value) {
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 			        					<th >#</th>
-			        					<th > Worker Name </th>
-			        					<th > Grade Name </th>
-										<th > No Of Bags </th> 
-										<th > Rate Per Bag</th>
-										<th > Total Amount</th>
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th > <?= $this->lang->line('worker_name') ?> </th>
+			        					<th > <?= $this->lang->line('grade_name') ?> </th>
+										<th ><?= $this->lang->line('no_of_bags') ?> </th> 
+										<th > <?= $this->lang->line('rate_per_bag') ?></th>
+										<th > <?= $this->lang->line('total_amount') ?></th>
+			        					<th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -103,15 +103,15 @@ foreach ($packing_sizes as $key => $value) {
 			        			
 			        			 <tfoot>
 			        				<tr>
-			        					<td colspan="3" style="text-align: right;"><b> Total </b></td>
+			        					<td colspan="3" style="text-align: right;"><b> <?= $this->lang->line('total') ?> </b></td>
 			        					<td>
-			        						<input type="text"  placeholder="Total Bags" name="total_bags" class="form-control total_bags"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" maxlength="4" readonly autofocus >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_bags') ?>" name="total_bags" class="form-control total_bags"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" maxlength="4" readonly autofocus >
 			        					</td>
 			        					<td>
-			        						<input type="text"  placeholder="Total Rate" name="total_rate" class="form-control total_rate"  readonly  >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_rate') ?>" name="total_rate" class="form-control total_rate"  readonly  >
 			        					</td>
 			        					<td >
-			        						<input type="text"  placeholder=" Total Amount" name="total_amount" class="form-control total_amount"  readonly >
+			        						<input type="text"  placeholder=" <?= $this->lang->line('total_amount') ?>" name="total_amount" class="form-control total_amount"  readonly >
 			        					</td>
 			        				</tr>
 			        			</tfoot> 
@@ -122,8 +122,8 @@ foreach ($packing_sizes as $key => $value) {
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"><?= $this->lang->line('grade') ?></label>
+			                <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->
@@ -137,7 +137,7 @@ foreach ($packing_sizes as $key => $value) {
 			<td >1</td>
 			<td>
 				<select name="worker_id[]" class="form-control  worders" style="width:250px;" required>
-					<option value=""> Select Worker</option>
+					<option value=""> <?= $this->lang->line('select_worker') ?></option>
 		            <?php if ($workers): ?> 
 		                <?php foreach ($workers as $value) : ?>
 		                <?php 
@@ -166,30 +166,30 @@ foreach ($packing_sizes as $key => $value) {
 		           	<?php endif; ?>
 		            <?php endforeach; ?>
 		            <?php else: ?>
-		                <option value="0">No result</option>
+		                <option value="0"><?= $this->lang->line('no_result') ?></option>
 		            <?php endif; ?>
 		        </select>
 			</td>
 			<td> 
 			<select name="finish_good_id[]" class="form-control items" style="width:250px;" required>
-				<option value=""> Select Grade</option>
+				<option value=""> <?= $this->lang->line('select_grade') ?></option>
 	            <?php if ($items): ?> 
 	                <?php foreach ($items as $value) : ?>
 	                        <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].')' ?></option>
 	                <?php endforeach; ?>
 	            <?php else: ?>
-	                <option value="0">No result</option>
+	                <option value="0"><?= $this->lang->line('no_result') ?></option>
 	            <?php endif; ?>
 	        </select>
    			</td>
    			<td>
-				<input type="text"  placeholder="No of Bag" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
+				<input type="text"  placeholder="<?= $this->lang->line('no_of_bag') ?>" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
 			</td>
    			<td>
-				<input type="text"  placeholder="Enter Rate" name="rate[]" class="form-control rate"  value="0.15" autofocus style="width:100px;" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" readonly required>
+				<input type="text"  placeholder="<?= $this->lang->line('enter_rate') ?>" name="rate[]" class="form-control rate"  value="0.15" autofocus style="width:100px;" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" readonly required>
 			</td>
    			<td>
-				<input type="text"  placeholder="Total" name="total[]" class="form-control total"  autofocus style="width: 150px;" readonly required>
+				<input type="text"  placeholder="<?= $this->lang->line('total') ?>" name="total[]" class="form-control total"  autofocus style="width: 150px;" readonly required>
 			</td>
 			
 			<td>

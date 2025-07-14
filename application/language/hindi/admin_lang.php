@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $lang['dashboard'] = 'डैशबोर्ड';
 $lang['elevate'] = 'स्मार्ट समाधानों के साथ अपने व्यवसाय को ऊँचाई दें।';
@@ -3155,12 +3155,38 @@ $lang['view_list'] = 'सूची देखें';
 $lang['invoices'] = 'चालान';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
+$lang['name_of_employee'] = 'कर्मचारी का नाम';
+$lang['select_employee'] = 'कर्मचारी चुनें';
+
+$lang['name_of_department'] = 'विभाग का नाम';
+$lang['select_department'] = 'विभाग चुनें';
+
+$lang['requisition_status'] = 'अनुरोध की स्थिति';
+
+$lang['no_result'] = 'कोई परिणाम नहीं';
 
 // Stock Registers
 $lang['stock_registers'] = 'स्टॉक रजिस्टर';
 $lang['material_wise'] = 'सामग्री अनुसार';
 $lang['minimum_inventory_level'] = 'न्यूनतम भंडारण स्तर';
 $lang['current_stock'] = 'वर्तमान स्टॉक';
+$lang['minimum_inventory_qty'] = 'न्यूनतम भंडारण मात्रा';
+$lang['enter_minimum_inventory_qty'] = 'न्यूनतम भंडारण मात्रा दर्ज करें';
+$lang['no_tds_declaration_hi'] = 'कोई टीडीएस घोषणा नहीं';
+$lang['unregistered_dealer_hi'] = 'गैर-पंजीकृत डीलर/व्यक्ति';
+$lang['service_for_state'] = 'राज्य के लिए सेवा';
+$lang['date_of_next_evaluation'] = 'अगली मूल्यांकन तिथि';
+$lang['filter_by_supplier'] = 'आपूर्तिकर्ता द्वारा छाँटें';
+$lang['filter_by_department'] = 'विभाग द्वारा छाँटें';
+$lang['po_status'] = 'PO स्थिति';
+$lang['select_type'] = 'प्रकार चुनें';
+$lang['from_date'] = 'प्रारंभ तिथि';
+$lang['upto_date'] = 'समाप्ति तिथि';
+$lang['search'] = 'खोजें';
+$lang['reset'] = 'रीसेट';
+$lang['export'] = 'निर्यात करें';
+$lang['confirm_delete'] = 'क्या आप वाकई इस मेनू को हटाना चाहते हैं';
+
 
 // FG Stock (Finished Goods)
 $lang['fg_stock'] = 'एफजी स्टॉक';
@@ -3326,4 +3352,3 @@ $lang['customize_theme'] = 'थीम अनुकूलित करें';
 $lang['primary_theme_color'] = 'प्राथमिक थीम रंग';
 $lang['navbar_color'] = 'नेवबार रंग';
 $lang['secondary_theme_color'] = 'द्वितीयक थीम रंग';
-

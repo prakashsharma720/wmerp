@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i>  <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>3
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i>  <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -40,13 +40,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> DTR No </th>
-              <th style="white-space: nowrap;"> Date Of Work </th>
-              <th style="white-space: nowrap;"> Department </th>
-              <th style="white-space: nowrap;"> Mill No </th>
-              <th style="white-space: nowrap;"> Total Bags </th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th > <?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('dtr_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_work') ?> </th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('department') ?> </th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('mill_no') ?> </th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('total_bags') ?></th>
+              <th style="white-space: nowrap;width: 20%;">  <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>
@@ -104,19 +104,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <legend><?= $po_detail['mineral_name'].' ('. $po_detail['grade_name'].')' ;?> </legend>
                                     <div class="row">
                                       <div class="col-md-4">
-                                        <label class="control-label"> Lot No  : </label>
+                                        <label class="control-label">  <?= $this->lang->line('lot_no') ?>  : </label>
                                         <span > <?= $po_detail['lot_no'] ;?></span>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> Batch No   : </label>
+                                        <label class="control-label">  <?= $this->lang->line('batch_no') ?>  : </label>
                                         <span > <?= $po_detail['batch_no'] ;?> </span>
                                       </div> 
                                       <div class="col-md-4">
-                                        <label class="control-label"> No Of Bags : </label>
+                                        <label class="control-label">  <?= $this->lang->line('no_of_bags') ?> : </label>
                                         <span > <?= $po_detail['no_of_bags'] ;?> </span>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> Bag Weight : </label>
+                                        <label class="control-label">  <?= $this->lang->line('bag_weight') ?> : </label>
                                         <span > <?= $po_detail['bag_weight'] ;?> </span>
                                       </div>
                                       <div class="col-md-4">
@@ -154,21 +154,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <br>
                            <div class="row col-md-12" >
                               <div class="col-md-4">
-                                <label class="control-label">  Total Grades: </label>
+                                <label class="control-label">   <?= $this->lang->line('total_grades') ?>: </label>
                                 <span > <?php echo $total_grades?></span>
                               </div>
                               <div class="col-md-4">
-                                <label class="control-label"> Total Bags : </label>
+                                <label class="control-label">  <?= $this->lang->line('total_bags') ?> : </label>
                                 <span > <?php echo $obj['no_of_bags_total']; ?></span>
                               </div> 
                                <div class="col-md-12">
-                                <label class="control-label"> Remarks : </label>
+                                <label class="control-label">  <?= $this->lang->line('remarks') ?> : </label>
                                 <span > <?php echo $obj['remarks']?></span>
                               </div>      
                             </div>
 
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('close') ?></button>
                           </div>
                         </div>
                       </div>
@@ -180,7 +180,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"> <?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -188,8 +188,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p>Are you sure, you want to delete This DTR  <b> (<?php echo $inv_number1 ?>) </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit">  <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">  <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

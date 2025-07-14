@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -47,11 +47,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tr>
               <th><input type="checkbox" id="master"></th>
               <th >Sr.No.</th>
-              <th> PO No </th>
-              <th style="white-space: nowrap;"> Supplier Name </th>
-              <th style="white-space: nowrap;"> Date </th>
-              <th style="white-space: nowrap;">Total Amount (&#8377;)</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th> <?=$this ->lang ->line('po_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('supplier_name')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('date')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('total_amount')?> (&#8377;)</th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header" style="background-color:#dc7629;color: azure;">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal" style="color: azure;">&times;</button>
                            
                           </div>
@@ -111,7 +111,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="hidden" name="rejected_date" value="<?= date('Y-m-d') ?>">
                             <div class="form-group">
                                 <div class="row col-md-12">
-                                  <label  class="control-label"> Reject Reason</label>
+                                  <label  class="control-label"> <?=$this ->lang ->line('reject_reason')?></label>
                                 <textarea class="form-control Comment" rows="2" placeholder="Enter Reason here" name="rejected_reason" required="required"></textarea>
                               </div>
                             </div>
@@ -133,7 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header" style="background-color: #168c56;color: azure;">
-                             <h4 class="modal-title" >Confirm Header </h4>
+                             <h4 class="modal-title" ><?=$this ->lang ->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal" style="color: azure;">&times;</button>
                           </div>
                           <div class="modal-body">
@@ -143,14 +143,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="hidden" name="approved_date" value="<?= date('Y-m-d') ?>">
                             <div class="form-group">
                                 <div class="row col-md-12">
-                                  <label  class="control-label"> Comment </label>
-                                <textarea class="form-control Comment" rows="2" placeholder="Enter Comment here" name="approve_comment"></textarea>
+                                  <label  class="control-label"> <?=$this ->lang ->line('comment')?> </label>
+                                <textarea class="form-control Comment" rows="2" placeholder="<?=$this ->lang ->line('enter_comment_here')?>" name="approve_comment"></textarea>
                               </div>
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-success modal_approve_button" style="background-color: #168c56;">Submit</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success modal_approve_button" style="background-color: #168c56;"><?=$this ->lang ->line('submit')?></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang ->line('close')?></button>
                           </div>
                         </div>
                         </form>

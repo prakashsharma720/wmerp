@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -49,13 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> Gride Number </th>
-              <th> Supplier Name </th>
-              <th style="white-space: nowrap;"> Raw Material </th>
-              <th style="white-space: nowrap;">Grade</th>
-              <th style="white-space: nowrap;"> RM Code</th>
-              <th style="white-space: nowrap;width: 20%;"> Action</th>
+              <th ><?=$this ->lang ->line('dsr_no')?></th>
+              <th> <?=$this ->lang ->line('grid_no')?> </th>
+              <th><?=$this ->lang ->line('supplier_name')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('raw_material')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('grade')?></th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('rm_code')?></th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action')?></th>
             </tr>
           </thead>
           <tbody>
@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -88,8 +88,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p>Are you sure, you want to delete this Grid Number <b><?php echo $obj['grid_number'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang ->line('yes')?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?=$this ->lang ->line('no')?> </button>
                           </div>
                         </div>
                         </form>

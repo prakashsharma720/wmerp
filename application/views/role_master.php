@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -52,17 +52,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Status</label>
+					            	<label class="control-label"><?= $this->lang->line('status') ?></label>
 					               <select class="form-control" name="flag">
-					               		<option value="0"> Active</option>
-					               		<option value="1"> De-active</option>
+					               		<option value="0"> <?= $this->lang->line('active') ?></option>
+					               		<option value="1"> <?= $this->lang->line('de_active') ?></option>
 					               </select>
 					            </div>
 				        	</div>
 							<?php } ?>
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
+					            	<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
 					            	<button type="submit"  class="btn btn-primary btn-block" ><?= $this->lang->line('submit') ?></button>
 					            </div>
 					        </div>
@@ -98,15 +98,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<!-- Modal content-->
 								<div class="modal-content">
 									<div class="modal-header">
-									<h4 class="modal-title">Confirm Header </h4>
+									<h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
 									<button type="button" class="close" data-dismiss="modal">&times;</button>                        
 									</div>
 									<div class="modal-body">
 									<p>Are you sure, you want to delete <b><?php echo $role['role'];?> </b>Role ? </p>
 									</div>
 									<div class="modal-footer">
-									<button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-									<button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+									<button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+									<button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
 									</div>
 								</div>
 								</form>

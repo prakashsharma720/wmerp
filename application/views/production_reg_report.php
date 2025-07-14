@@ -7,7 +7,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -16,7 +16,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -34,7 +34,7 @@ $data=explode('?', $current_page);
                 foreach ($conditions as $key => $value) { ?>
                 <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
               <?php } }?>
-               <button type="submit" class="btn btn-info"> Export </button>
+               <button type="submit" class="btn btn-info"> <?=$this ->lang ->line('export')?> </button>
              </form>
              
       </div>
@@ -44,9 +44,9 @@ $data=explode('?', $current_page);
       <form method="get" id="filterForm">
           <div class="row">
             <div class="col-md-4 col-sm-4">
-                 <label  class="control-label"> Mill Wise Search </label>
+                 <label  class="control-label"> <?=$this ->lang ->line('mill_wise_search')?> </label>
                 <select name="mill_no" class="form-control" >
-                  <option value=""> Select Mill</option>
+                  <option value=""> <?=$this ->lang ->line('select_mill')?></option>
                     <?php
                      if ($equipments): ?> 
                       <?php 
@@ -59,38 +59,38 @@ $data=explode('?', $current_page);
                               <?php endif;   ?>
                         <?php   endforeach;  ?>
                     <?php else: ?>
-                        <option value="0">No result</option>
+                        <option value="0"><?=$this ->lang ->line('no_result')?></option>
                     <?php endif; ?>
                 </select>
               </div>
                <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"> <?=$this ->lang ->line('from_date')?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?=$this ->lang ->line('upto_date')?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
 
              <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Filter By Finish Good </label>
+                <label  class="control-label"><?=$this ->lang ->line('filter_by_finish_good')?> </label>
                <select name="finish_good_id" class="form-control products" style="width:350px;" >
-                  <option value=""> Select Item</option>
+                  <option value=""> <?=$this ->lang ->line('select_item')?></option>
                       <?php if ($items): ?> 
                           <?php foreach ($items as $value) : ?>
                                  <!--  <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].','.$value['packing_type'].','.$value['hsn_code'].')' ?></option> -->
                                   <option value="<?= $value['id'] ?>"><?= $value['grade_name'].' ('.$value['fg_code'].')' ?></option>
                           <?php endforeach; ?>
                       <?php else: ?>
-                          <option value="0">No result</option>
+                          <option value="0"><?=$this ->lang ->line('no_result')?></option>
                   <?php endif; ?>
             </select>
               </div> 
               <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Submit Data </label><br>
+                   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('submit_data')?></label><br>
                   <input type="submit" class="btn btn-primary" value="Search" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?></a>
               </div>
               <!-- <div class="col-md-4 col-sm-4 ">
                 <label  class="control-label">Filter By Month </label>
@@ -106,17 +106,17 @@ $data=explode('?', $current_page);
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> PR No </th>
-              <th style="white-space: nowrap;"> Date Of Production </th>
-              <th style="white-space: nowrap;"> Mill No </th>
-              <th style="white-space: nowrap;"> Total Production (MT) </th>
-              <th style="white-space: nowrap;"> Total MenPower </th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('pr_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('date_of_production')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('mill_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('total_production')?> (MT) </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('total_men_power')?> </th>
              
               <!--  <th style="white-space: nowrap;"> LOT No </th>
               <th style="white-space: nowrap;"> Batch No </th>
               <th style="white-space: nowrap;"> No of Bags</th> -->
-              <th style="white-space: nowrap;"> Production By </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('production_by')?> </th>
               <!-- <th style="white-space: nowrap;width: 20%;"> Action Button</th> -->
             </tr>
           </thead>
@@ -153,11 +153,11 @@ $data=explode('?', $current_page);
               </tr>
               <tr>
                  <th></th>
-                  <th style="white-space: nowrap;"> Grade Name </th>
-                  <th style="white-space: nowrap;"> No Of Bags</th>
-                  <th style="white-space: nowrap;"> Packing Size</th>
-                  <th style="white-space: nowrap;"> Prodution (MT)</th>
-                  <th colspan="2" style="white-space: nowrap;"> KWH Consumed </th>
+                  <th style="white-space: nowrap;"> <?=$this ->lang ->line('grade_name')?></th>
+                  <th style="white-space: nowrap;"> <?=$this ->lang ->line('no_of_bags')?></th>
+                  <th style="white-space: nowrap;"> <?=$this ->lang ->line('packing_size')?></th>
+                  <th style="white-space: nowrap;"> <?=$this ->lang ->line('production')?> (MT)</th>
+                  <th colspan="2" style="white-space: nowrap;"> <?=$this ->lang ->line('kwh_consumed')?>d </th>
                 </tr>
               </tr>
                <?php

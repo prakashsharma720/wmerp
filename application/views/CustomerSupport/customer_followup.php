@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php if($this->session->flashdata('success')): ?>
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
+    <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
     <?php echo $this->session->flashdata('success'); ?>
 </div>
 <?php endif; ?>
@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php if($this->session->flashdata('failed')): ?>
 <div class="alert alert-error alert-dismissible ">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
+    <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
     <?php echo $this->session->flashdata('failed'); ?>
 </div>
 <?php endif; ?>
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="card card-primary card-outline">
         <div class="card-header">
             <div class="pull-right">
-                <span> Ticket ID :</span><span class="card-title"> <b> <?= $ticket ?> </b></span>
+                <span> <?= $this->lang->line('ticket_id') ?> :</span><span class="card-title"> <b> <?= $ticket ?> </b></span>
 
             </div>
         </div> <!-- /.card-header -->
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group">
                             <div class="row col-md-12 ">
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label class="control-label"> Add Reply <span class="required">*</span></label>
+                                    <label class="control-label"><?= $this->lang->line('add_reply') ?> <span class="required">*</span></label>
                                     <textarea class="form-control answer" rows="5" placeholder="Write Your Reply"
                                         name="note" autofocus required></textarea>
                                 </div>
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group">
                             <div class="row col-md-12">
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label class="control-label"> Attachement</label>
+                                    <label class="control-label"> <?= $this->lang->line('attachment') ?></label>
                                     <input type="file" name="attachment" class="form-control upload">
                                 </div>
                                 <div class="col-md-12 col-sm-12 ">
@@ -91,7 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="row col-md-12">
                             <div class="col-md-12 col-sm-12 ">
-                                <button type="submit" class="btn btn-primary btn-block"> Submit Your Answer</button>
+                                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit_answer') ?></button>
                             </div>
                         </div>
 
@@ -102,11 +102,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th style="width: 2%;"> Sr.No. </th>
-                                    <th style="width: 48%;"> Follow Up </th>
-                                    <th style="width: 10%;"> Document </th>
-                                    <th style="width: 40%;"> Date </th>
-                                    <th> Action </th>
+                                     <th style="width: 2%;"> <?= $this->lang->line('sr_no') ?> </th>
+                                    <th style="width: 48%;"> <?= $this->lang->line('follow_up') ?> </th>
+                                    <th style="width: 10%;"> <?= $this->lang->line('document') ?> </th>
+                                    <th style="width: 40%;"> <?= $this->lang->line('date') ?> </th>
+                                    <th> <?= $this->lang->line('action') ?> </th>
                                 </tr>
                             </thead>
                             <tbody> <?php $i=1;foreach($followups as $followup) { ?>
@@ -139,18 +139,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <input type="hidden" name="customer_id" value="<?= $id?>">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Confirm Header </h4>
+                                                        <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                                                         <button type="button" class="close"
                                                             data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>Are you sure, you want to delete this Follow Up ? </p>
+                                                        <p><?= $this->lang->line('delete_confirmation') ?> </p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                        <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
                                                         </button>
                                                         <button type="button" class="btn btn-danger"
-                                                            data-dismiss="modal"> No </button>
+                                                            data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                                                     </div>
                                                 </div>
                                             </form>
