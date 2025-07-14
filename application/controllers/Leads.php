@@ -91,7 +91,7 @@ Class Leads extends MY_Controller {
 		$data['categories'] = $this->Leads_model->getLeadsCategories();
 		// print_r($data['auth_id']);exit;
 
-		$this->template->load('template','leads/leads_view',$data);
+		$this->template->load('layout/template','Lead Module/Lead Generation/index',$data);
 	}
 
 	public function reports() 
