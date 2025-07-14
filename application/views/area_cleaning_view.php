@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -48,11 +48,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
              <!--  <th><input type="checkbox" id="master"></th> -->
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Date Of Cleaning</th>
-              <th style="white-space: nowrap;"> ACR Number </th>
-              <th style="white-space: nowrap;"> Reported By </th>
-              <th style="white-space: nowrap;"> Action Button </th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_cleaning') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('acr_number') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('reported_by') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?> </th>
             </tr>
           </thead>
           <tbody>
