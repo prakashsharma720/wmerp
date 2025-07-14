@@ -32,14 +32,14 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?>
+            <span class="card-title"><?= $this->lang->line('customer_data') ?> 
             </span>
 
 
             <div class="pull-right">
                 <a class="btn btn-xs btn-primary "
                     href="<?php echo base_url(); ?>index.php/CustomerSupport_controller/add">
-                    <i class="fa fa-plus"></i> Create</a>
+                    <i class="fa fa-plus"></i> <?= $this->lang->line('create') ?></a>
             </div>
         </div>
 
@@ -54,16 +54,16 @@ $data=explode('?', $current_page);
                     <tr>
                         <th><input type="checkbox" id="master"></th>
 
-                        <th> Sr.No.</th>
-                        <th> Date</th>
-                        <th> Complaint Category</th>
-                        <th>Order Id</th>
-                        <th>Ticket</th>
-                        <th>Customer name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Status</th>
-                        <th> Action</th>
+                        <th> <?= $this->lang->line('sr_no') ?>.</th>
+                        <th> <?= $this->lang->line('date') ?></th>
+                        <th> <?= $this->lang->line('complaint_category') ?></th>
+                        <th><?= $this->lang->line('order_id') ?></th>
+                        <th><?= $this->lang->line('ticket') ?></th>
+                        <th> <?= $this->lang->line('customer_name') ?></th>
+                        <th><?= $this->lang->line('email') ?></th>
+                        <th><?= $this->lang->line('phone') ?></th>
+                        <th><?= $this->lang->line('status') ?></th>
+                        <th> <?= $this->lang->line('action') ?></th>
                     </tr>
                 </thead>
                 <tbody> <?php 

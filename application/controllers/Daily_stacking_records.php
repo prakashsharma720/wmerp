@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Daily_stacking_records extends CI_Controller {
+Class Daily_stacking_records extends MY_Controller {
 
 public function __construct(){
 

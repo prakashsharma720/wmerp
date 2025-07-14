@@ -669,7 +669,13 @@ public function EmailVerify() {
 			redirect('User_authentication/sendMail','refresh');
 		}
     }
+
+	public function newTemplateTest(){
+		$this->template->load('layout/template', 'super_dashboard');
+	}
 }
+
+
 
 
 ?>

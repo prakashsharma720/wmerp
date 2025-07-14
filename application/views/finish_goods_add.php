@@ -16,18 +16,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/add_new_fg">
 				    			<div class="row col-md-12">
 					         	  	<div class="col-md-6">
-						            	<label class="control-label"> Finish Good Code</label>
+
+						            	<label class="control-label"> <?= $this->lang->line('finish_good_code') ?></label>
 						                <input type="text"  name="finishgood_code" class="form-control" value="<?= $finish_good_code?>"  autofocus readonly="readonly">
 						                <input type="hidden" name="fg_code" value="<?php echo $fg_code;?>">
 						        	</div>
 									 <div class="col-md-6">
-						            	<label class="control-label"> Grade Name</label>
-						                <input type="text"  placeholder="Enter grade name" name="grade_name" class="form-control" value="" required autofocus>
+
+						            	<label class="control-label"> <?= $this->lang->line('grade_name') ?></label>
+						                <input type="text"  placeholder="<?= $this->lang->line('enter_grade_name') ?>" name="grade_name" class="form-control" value="" required autofocus>
+						          
 						        </div>
 						       	</div>
 					        <div class="row col-md-12">
 					        	 <div class="col-md-6">
-						            	<label class="control-label"> Mineral Name</label>
+						            	<label class="control-label"> <?= $this->lang->line('mineral_name') ?></label>
 									<select name="mineral_name" class="form-control select2 mineral_name" >
 										<option value="0"> Select Mineral</option>
 										<?php
@@ -47,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					            </select>
 								</div>
 						        <div class="col-md-6 hsn_code">
-									<label class="control-label">HSN CODE</label>
+									<label class="control-label"><?= $this->lang->line('hsn_code') ?></label>
 									<input type="text"  placeholder="" name="hsn_code" class="form-control clear_hsn" value="" autocomplete="off" autofocus readonly="readonly" >
 								</div>
 						        
@@ -55,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <span class="help-block"></span>
 					        <div class="row col-md-12">
 						         <div class="col-md-6">
-						            	<label class="control-label"> Packing </label>
+						            	<label class="control-label"><?= $this->lang->line('packing') ?> </label>
 						            	<select name="packing_size" class="form-control" required="required">
 							                <?php
 							                 if ($packing_sizes): ?> 
@@ -75,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                
 						        </div>
 						         <div class="col-md-6">
-						            	<label class="control-label"> Packing Type </label>
+						            	<label class="control-label"><?= $this->lang->line('packing_type') ?> </label>
 						            	<select class="form-control" name="packing_type"  required="required">
 							                <?php
 							                 if ($packing_types): ?> 
