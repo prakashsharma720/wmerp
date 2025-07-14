@@ -88,8 +88,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_size')?>" name="bag_size" class="form-control" value="<?= $bag_size?>" required autofocus>
 					            </div>
 							<div class="row col-md-12">
-					            	<label class="control-label"> Minimum Inventory Quantity</label>
-								<input type="text"  placeholder="Enter Minimum Inventory Quantity" name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
+					            	  <label class="control-label"> <?=$this ->lang ->line('minimum_inventory_qty')?></label>
+								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimum_inventory_qty')?>" class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
 
 					            </div>
 					            <div class="row col-md-12">

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"><?=$this ->lang->line('service_name')?></label>
-					                <input type="text"  placeholder="Enter service name" name="category_name" class="form-control" value="<?= $category_name?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_service_name') ?>" name="category_name" class="form-control" value="<?= $category_name?>" required autofocus>
 					            </div>
 					        </div>
 					        <span class="help-block"></span>

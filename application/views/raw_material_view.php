@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Raw_material/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				        	New Material Code :  <label class="control-label"> <?= $rm_code_view ?></label>
+				        	<?= $this->lang->line('new_material_code') ?> :  <label class="control-label"> <?= $rm_code_view ?></label>
 						<div class="row col-md-12">
 			          		<label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?> <span class="required">*</span></label>
 							<select name="supplier_id" class="form-control select2 suppliers" required="required">
@@ -128,8 +128,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						            </select>
 						     </div>
 							 <div class="row col-md-12">
-					            <label class="control-label"> <?=$this ->lang ->line('minimun_inventory_qty')?></label>
-								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimal_inventory_qty')?>" name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" autofocus>
+					            <label class="control-label"><?=$this ->lang ->line('minimum_inventory_qty')?> </label>
+								<input type="text"  placeholder="<?= $this->lang->line('enter_minimum_inventory_qty') ?>"name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" autofocus>
 					        </div>
 					        <?php if(!empty($id)) { ?>
 					        	

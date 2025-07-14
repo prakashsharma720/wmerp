@@ -169,11 +169,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        	    <div class="col-md-4 col-sm-4">
-			            	<b> PAN </b> <span>(Parmanent Account No.) </span>
+			            	<b> <?=$this ->lang ->line('pan')?> </b> <span> </span>
 			                <input type="text" id="lastName" placeholder="Ex. ABCEDE2548K" name="pan_no" class="form-control pan_no" value="" autofocus autocomplete="off"  maxlength="10" minlength="10" >
 			            </div>
 			            <div class="col-md-4 col-sm-4">
-			            	<b> TAN </b> <span>(Tax Deduction Account No.) </span>
+			            	<b> <?=$this ->lang ->line('tan')?> </b> <span> </span>
 			                <input type="text" id="firstName" placeholder="Ex. ABCD12345A" name="tds" class="form-control tan_number" value="" autofocus autocomplete="off"   maxlength="10" minlength="10"  >
 			            </div>
 			            	<div class="col-md-4 col-sm-4 ">
@@ -250,7 +250,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		 <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"><?=$this ->lang ->line('account_no')?></label>
+			            	<label class="control-label"><?=$this ->lang ->line('account_number')?></label>
 			                <input type="text" id="firstName" placeholder="<?=$this ->lang ->line('enter_account_number')?>" name="account_no" class="form-control" value="" autofocus autocomplete="off">
 			            </div>
 		        		<div class="col-md-4 col-sm-4 date_of_approval_div">

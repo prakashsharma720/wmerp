@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                        <?php 
 						                        if ($value['id'] == $categories_id): ?>
 						                        	<input type="hidden" name="categories_id" value="<?= $value['id'] ?>" >
-						                        <label class="control-label"> <?= $value['category_name'] ?> Name</label>
+						                        <label class="control-label"> <?= $value['category_name'] ?><?=$this ->lang ->line('name')?> </label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>
@@ -60,8 +60,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					            </div>
 						   	
 						    	<div class="row col-md-12">
-					            	<label class="control-label"> Minimum Inventory Quantity</label>
-									<input type="text"  placeholder="Enter Minimum Inventory Qty" name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
+									<label class="control-label"> <?=$this ->lang ->line('minimum_inventory_qty')?></label>
+								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimum_inventory_qty')?>"
+					            	 class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
 
 					            </div>
 

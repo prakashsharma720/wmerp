@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        	<div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
 					            	<label class="control-label"><?=$this ->lang->line('grid_name')?></label>
-					                <input type="text"  placeholder="Enter grid name" name="grid_name" class="form-control" value="<?= $grid_name?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_grid_name') ?>" name="grid_name" class="form-control" value="<?= $grid_name?>" required autofocus>
 					            </div>
 					        </div>
 					        <span class="help-block"></span>

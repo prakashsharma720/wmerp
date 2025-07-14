@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        	<div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
 					            	<label class="control-label"><?=$this ->lang->line('unit_name')?></label>
-					                <input type="text"  placeholder="Enter unit name" name="unit_name" class="form-control" value="<?= $unit_name?>" required autofocus>
+					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_unit_name')?>" name="unit_name" class="form-control" value="<?= $unit_name?>" required autofocus>
 					            </div>
 					        </div>
 					        <span class="help-block"></span>

@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">
 						<div class="row col-md-12">
 							<div class="col-md-8 col-sm-8 ">
-								<label class="control-label"> Category</label>
+								<label class="control-label"> <?=$this ->lang ->line('category')?></label>
 								<select name="categories_id" class="form-control select2 " >
 										<?php
 					                 if ($categories): ?> 
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        	<div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
 					            	<label class="control-label"><?=$this ->lang->line('grade_name')?></label>
-					                <input type="text"  placeholder="Enter grade name" name="grade" class="form-control" value="<?= $grade?>" required autofocus>
+					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_grade_name')?>" name="grade" class="form-control" value="<?= $grade?>" required autofocus>
 					            </div>
 					        </div>
 							

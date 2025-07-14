@@ -175,11 +175,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			<div class="form-check">
 				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Yes" checked> <?=$this ->lang->line('yes')?></input>
 				               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Un-registered Dealer"  > Un-registered Dealer/Person </input>
+				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Un-registered Dealer"  > <?= $this->lang->line('unregistered_dealer') ?> </input>
 		            		</div>
 		            	</div>
 						<div class="col-md-4 col-sm-4 ">
-				        		<label class="control-label"> No TDS Declaration</label>
+				        		<label class="control-label"> <?= $this->lang->line('no_tds_declaration') ?></label>
 				        			<div class="form-check">
 					               		<input class="form-check-input supplier_type" type="radio" name="tds_declaration" value="Available"  > <?=$this ->lang->line('available')?></input>
 					               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -192,7 +192,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		         <div class="form-group">
 		        	<div class="row col-md-12">
 		        	    <div class="col-md-4 col-sm-4">
-			            	<b> PAN </b> <span>(Parmanent Account No.) </span>
+			            	<b><?=$this ->lang ->line('pan')?>  </b> <span></span>
 			                <input type="text" id="lastName" placeholder="Ex. ABCEDE2548K" name="pan_no" class="form-control pan_no" value="" autofocus autocomplete="off"  maxlength="10" minlength="10" >
 			            </div>
 		        		<div class="col-md-4 col-sm-4 ">
@@ -200,7 +200,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            	<input type="text"  placeholder="<?=$this ->lang ->line('enter_id')?>" name="gst_no" class="form-control " value=""autofocus autocomplete="off"    required="required">
 						</div>
 			            <div class="col-md-4 col-sm-4">
-			            	<b> TAN </b> <span>(Tax Deduction Account No.) </span>
+			            	<b> <?=$this ->lang ->line('tan')?> </b> <span></span>
 			                <input type="text" id="firstName" placeholder="Ex. ABCD12345A" name="tds" class="form-control tan_number" value="" autofocus autocomplete="off"   maxlength="10" minlength="10"  >
 			            </div>
 		        	</div>
@@ -280,7 +280,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_approval" class="form-control date-picker" value="<?php echo date('d-m-Y') ?>" placeholder="dd-mm-yyyy"  autofocus>	
 			            </div>
 			            <div class="col-md-4 col-sm-4 date_of_evalution">
-			            	<label  class="control-label"> date of next evalution</label>
+			            	<label class="control-label"><?= $this->lang->line('date_of_next_evaluation') ?></label>
+
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_evalution" 
 							class="form-control date-picker" value="<?php echo date('d-m-Y',strtotime('+1 year')); ?>" 
 							placeholder="dd-mm-yyyy" required autofocus>

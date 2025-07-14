@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<div class="row col-md-12">
 							<div class="col-md-8 col-sm-8 ">
 								<label class="control-label"> <?=$this ->lang->line('mineral_name')?></label>
-						<input type="text" placeholder="Enter Mineral name" name="mineral_name" class="form-control" value="<?= $mineral_name?>" required autofocus>
+						<input type="text" placeholder="<?=$this ->lang ->line('enter_mineral_name')?>" name="mineral_name" class="form-control" value="<?= $mineral_name?>" required autofocus>
 
 								</div>
 					        </div>
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        	<div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
 					            	<label class="control-label"><?=$this ->lang->line('hsn_code')?></label>
-					                <input type="text"  placeholder="Enter HSN Code" name="hsn_code" class="form-control" value="<?= $hsn_code?>" required autofocus>
+					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_hsn_code')?>" name="hsn_code" class="form-control" value="<?= $hsn_code?>" required autofocus>
 					            </div>
 					        </div>
 							

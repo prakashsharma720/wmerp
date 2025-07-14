@@ -85,8 +85,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 							</div>-->
 							<div class="row col-md-12">
-					            	<label class="control-label"> minimum inventory quantity</label>
-								<input type="text"  placeholder="Enter Minimum Inventory Quantity" name="minimum_inventory_qty" 
+
+							  <label class="control-label"> <?=$this ->lang ->line('minimum_inventory_qty')?></label>
+								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimum_inventory_qty')?>" 
+					            	
 								class="form-control" value="<?= $minimum_inventory_qty?>"  autofocus>
 					         </div>
 					          <div class="row col-md-12">

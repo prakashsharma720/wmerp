@@ -339,6 +339,22 @@ $lang['action'] = 'Действие';
 $lang['showing_entries'] = 'Показване на записи от 1 до 10 от общо 29';
 $lang['previous'] = 'Предишна';
 $lang['next'] = 'Следваща';
+$lang['minimum_inventory_qty'] = 'Минимално количество в склада';
+$lang['enter_minimum_inventory_qty'] = 'Въведете минималното количество в склада';
+$lang['opening_stock_qty'] = 'Начално количество наличност';
+$lang['no_tds_declaration_bg'] = 'Без TDS декларация';
+$lang['unregistered_dealer_bg'] = 'Нерегистриран търговец/лице';
+$lang['service_for_state'] = 'Услуга за държавата';
+$lang['date_of_next_evaluation'] = 'Дата на следващата оценка';
+$lang['filter_by_supplier'] = 'Филтрирай по доставчик';
+$lang['filter_by_department'] = 'Филтрирай по отдел';
+$lang['po_status'] = 'Статус на поръчка';
+$lang['select_type'] = 'Изберете тип';
+$lang['from_date'] = 'От дата';
+$lang['upto_date'] = 'До дата';
+$lang['search'] = 'Търси';
+$lang['reset'] = 'Нулирай';
+$lang['export'] = 'Експортиране';
 
 // Sample 
 // $lang['acetic_acid'] = 'Оцетна киселина';

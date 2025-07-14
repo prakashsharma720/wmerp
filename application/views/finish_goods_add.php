@@ -24,14 +24,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									 <div class="col-md-6">
 						            	<!-- <label class="control-label"> Grade Name</label> -->
 						            	<label class="control-label"> <?= $this->lang->line('grade_name') ?></label>
-						                <input type="text"  placeholder="Enter grade name" name="grade_name" class="form-control" value="" required autofocus>
+						                <input type="text"  placeholder="<?= $this->lang->line('enter_grade_name') ?>" name="grade_name" class="form-control" value="" required autofocus>
 						        </div>
 						       	</div>
 					        <div class="row col-md-12">
 					        	 <div class="col-md-6">
 						            	<label class="control-label"> <?= $this->lang->line('mineral_name') ?></label>
 									<select name="mineral_name" class="form-control select2 mineral_name" >
-										<option value="0"> Select Mineral</option>
+										<option value="0"> <?= $this->lang->line('select_mineral') ?></option>
 										<?php
 					                 if ($HSNs): ?> 
 					                  <?php 
@@ -44,13 +44,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 								</div>
 						        <div class="col-md-6 hsn_code">
 									<label class="control-label"><?= $this->lang->line('hsn_code') ?></label>
-									<input type="text"  placeholder="" name="hsn_code" class="form-control clear_hsn" value="" autocomplete="off" autofocus readonly="readonly" >
+									<input type="text"  placeholder="<?= $this->lang->line('enter_hsn_code') ?>" name="hsn_code" class="form-control clear_hsn" value="" autocomplete="off" autofocus readonly="readonly" >
 								</div>
 						        
 						     </div>
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								                        <?php endif;   ?>
 							                    <?php   endforeach;  ?>
 							                <?php else: ?>
-							                    <option value="0">No result</option>
+							                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 							                <?php endif; ?>
 					            		</select>
 						                
@@ -91,7 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								                        <?php endif;   ?>
 							                    <?php   endforeach;  ?>
 							                <?php else: ?>
-							                    <option value="0">No result</option>
+							                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 							                <?php endif; ?>
 					            		</select>
 						        </div>
@@ -100,8 +100,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <span class="help-block"></span>
 				        	<br>
 				           <div class="row col-md-12">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 					            </div>
 				        </div>
 			        </form>
