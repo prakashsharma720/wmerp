@@ -76,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 					<div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> <?=$this ->lang ->line('reg_date')?></label>
+			            	<label  class="control-label"> <?=$this ->lang ->line('registration_date')?></label>
 			            	  <input type="text" data-date-formate="dd-mm-yyyy" name="reg_date" class="form-control date-picker" value="<?php echo date('d-m-Y'); ?>" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
 
 			            </div>

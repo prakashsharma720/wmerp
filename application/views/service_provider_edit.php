@@ -114,17 +114,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                <?php endif; ?>
 					            </select>
 								
-								<input type="text" id="firstName" placeholder="Enter contact person" name="contact_person" class="form-control" value="<?php echo $current[0]->contact_person; ?>" autofocus>
+								<input type="text" id="firstName" placeholder="<?= $this->lang->line('enter_contact_person') ?>" name="contact_person" class="form-control" value="<?php echo $current[0]->contact_person; ?>" autofocus>
 								</div>
 							</div>
 						</div>
 		        		<div class="col-md-4 col-sm-4">
 			            	<label  class="control-label"> <?= $this->lang->line('email') ?></label>
-			                <input type="email" id="lastName" placeholder="Enter email" name="email" class="form-control" value="<?php echo $current[0]->email; ?>" autofocus>
+			                <input type="email" id="lastName" placeholder="<?= $this->lang->line('enter_email') ?>" name="email" class="form-control" value="<?php echo $current[0]->email; ?>" autofocus>
 			            </div>
 		        		<div class="col-md-4 col-sm-4">
 			            	<label class="control-label"> <?= $this->lang->line('mobile') ?></label>
-			                <input type="text" id="firstName" placeholder="Enter mobile" name="mobile_no" class="form-control" value="<?php echo $current[0]->mobile_no; ?>" autofocus>
+			                <input type="text" id="firstName" placeholder="<?= $this->lang->line('enter_mobile') ?>" name="mobile_no" class="form-control" value="<?php echo $current[0]->mobile_no; ?>" autofocus>
 			            </div>
 						</div>
 		        </div>
@@ -138,14 +138,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			            </div>
 			             <div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> State</label>
+			            	<label  class="control-label"><?= $this->lang->line('state') ?></label>
 			            	<?php  
 			            		echo form_dropdown('state_id', $states,$current[0]->state_id)
 			            	?>
 
 			            </div>
 			             <div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> City</label>
+			            	<label  class="control-label"> <?= $this->lang->line('city') ?></label>
 			            	<?php  
 			            		echo form_dropdown('city_id', $cities,$current[0]->city_id)
 			            	?>
@@ -157,8 +157,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		         <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			        		<label class="control-label">Service Provider Address</label>
-			        		<textarea type="text" placeholder="Enter address" name="address" class="form-control" rows="3" value="<?php echo $current[0]->ifsc_code; ?>" autofocus style="resize: none;"><?php echo $current[0]->address; ?></textarea>
+			        		<label class="control-label"><?= $this->lang->line('service_provider_address') ?></label>
+			        		<textarea type="text" placeholder="<?= $this->lang->line('enter_address') ?>" name="address" class="form-control" rows="3" value="<?php echo $current[0]->ifsc_code; ?>" autofocus style="resize: none;"><?php echo $current[0]->address; ?></textarea>
 		        		</div>
 		        		 <?php 
 	    						$new='';
@@ -173,7 +173,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    						}
 	        				?>
 			               <div class="col-md-4 col-sm-4 ">
-			        		<label class="control-label"> GST Registration Status </label>
+			        		<label class="control-label"> <?= $this->lang->line('gst_registration_status') ?> </label>
 			        			<div class="form-check">
 				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Yes" <?= $new ?> > Yes</input>
 				               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -181,16 +181,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            		</div>
 		            	</div>
 						<div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> Website</label>
-			                <input type="text" id="lastName" placeholder="Enter website" name="website" class="form-control" value="<?php echo $current[0]->website; ?>" autofocus>
+			            	<label  class="control-label"> <?= $this->lang->line('website') ?></label>
+			                <input type="text" id="lastName" placeholder="<?= $this->lang->line('enter_website') ?>" name="website" class="form-control" value="<?php echo $current[0]->website; ?>" autofocus>
 			            </div>
 		        	</div>
 		        </div>
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 						<div class="col-md-4 col-sm-4">
-			            	<b> PAN </b> <span>(Parmanent Account No.) </span>
-			                <input type="text" id="lastName" placeholder="Enter PAN" name="pan_no" class="form-control pan_no" value="<?php echo $current[0]->pan_no; ?>" autofocus   autocomplete="off" maxlength="10" minlength="10" >
+			            	<b> PAN </b> <span>(<?= $this->lang->line('permanent_account_number') ?>.) </span>
+			                <input type="text" id="lastName" placeholder="<?= $this->lang->line('enter_pan') ?>" name="pan_no" class="form-control pan_no" value="<?php echo $current[0]->pan_no; ?>" autofocus   autocomplete="off" maxlength="10" minlength="10" >
 			            </div>
 		        		<div class="col-md-4 col-sm-4 gst_div">
 			            	<b>GSTIN</b><span>( Ex. : 08ABCDE1234K1AZ)</span>
@@ -205,7 +205,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Bank Name</label>
+			            	<label class="control-label"> <?= $this->lang->line('bank_name') ?></label>
 							<?php
 							$bank_nm =array('No' => 'Select Option',
 							'Allahabad Bank' => 'Allahabad Bank',      
@@ -257,11 +257,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                <!--<input type="text" placeholder="Enter bank name" name="bank_name" class="form-control" value="<?php echo $current[0]->bank_name; ?>" autofocus>-->
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Branch Name</label>
+			            	<label  class="control-label"> <?= $this->lang->line('branch_name') ?></label>
 			                <input type="text"  placeholder="Enter branch name" name="branch_name" class="form-control" value="<?php echo $current[0]->branch_name; ?>" autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> IFSC Code</label>
+			            	<label class="control-label"> <?= $this->lang->line('ifsc_code') ?></label>
 			                <input type="text" id="firstName" placeholder="Enter IFSC Code" name="ifsc_code" class="form-control" value="<?php echo $current[0]->ifsc_code; ?>" autofocus>
 			            </div>
 		        	</div>
@@ -269,21 +269,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		 <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Account Number</label>
+			            	<label class="control-label"> <?= $this->lang->line('account_number') ?></label>
 			                <input type="text" id="firstName" placeholder="Enter account number" name="account_no" class="form-control" value="<?php echo $current[0]->account_no; ?>" autofocus>
 			            </div>
 		        		<div class="col-md-4 col-sm-4 date_of_approval_div">
-			            	<label class="control-label"> Date of Approval</label>
+			            	<label class="control-label"> <?= $this->lang->line('date_of_approval') ?></label>
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_approval" class="form-control date-picker date_of_approval" value="<?php echo date('d-m-Y',strtotime($current[0]->date_of_approval)); ?>" placeholder="dd-mm-yyyy" autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4 date_of_evalution_div">
-			            	<label  class="control-label"> Date of Next Evalution</label>
+			            	<label  class="control-label"> <?= $this->lang->line('date_of_next_evalution') ?></label>
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_evalution" class="form-control date-picker date_of_evalution" value="<?php echo date('d-m-Y',strtotime($current[0]->date_of_evalution)); ?>" placeholder="dd-mm-yyyy" autofocus>
 			            </div>
 		        	</div>
 		        </div>
 		       
-		        <button type="submit" class="btn btn-primary btn-block"> Save</button>
+		        <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('save') ?></button>
 		    </form> <!-- /form -->
 		</div>
 	</div>

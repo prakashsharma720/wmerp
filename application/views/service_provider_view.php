@@ -110,7 +110,7 @@ $data=explode('?', $current_page);
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th ><?=$this ->lang ->line('ar_no')?>.</th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
               <th> <?=$this ->lang ->line('category_of_approval')?> </th>
               <th> <?=$this ->lang ->line('name')?> </th>
               <th> <?=$this ->lang ->line('category')?> </th>
