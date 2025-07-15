@@ -2945,6 +2945,7 @@ $lang['status'] = 'Статус';
 $lang['assign_to'] = 'Възложено на';
 $lang['assign_by'] = 'Възложено от';
 $lang['action'] = 'Действие';
+$lang['create'] = 'Създай';
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Списък на присъствията';

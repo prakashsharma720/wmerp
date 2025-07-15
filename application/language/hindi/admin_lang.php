@@ -2996,6 +2996,8 @@ $lang['status'] = 'स्थिति';
 $lang['assign_to'] = 'सौंपा गया';
 $lang['assign_by'] = 'सौंपने वाला';
 $lang['action'] = 'क्रिया';
+$lang['create'] = 'बनाएं';
+
 
 
 // payroll module attendance list

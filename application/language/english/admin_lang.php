@@ -3001,6 +3001,8 @@ $lang['status'] = 'Status';
 $lang['assign_to'] = 'Assigned To';
 $lang['assign_by'] = 'Assigned By';
 $lang['action'] = 'Action';
+$lang['create'] = 'Create';
+
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Attendance List';

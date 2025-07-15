@@ -20,32 +20,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="row ">
 								<!--Project name-->	
 								<div class="col-md-4 col-sm-4">
-						            	<label class="control-label"> Project</label><span class="required">*</span>
+						            	<label class="control-label"> <?= $this->lang->line('project') ?></label><span class="required">*</span>
 										<?php  
 						               		echo form_dropdown('project_id', $project_id,'required="required"') 
 						               ?>
 						        </div>
 								<!--Project -title-->	
 								 <div class="col-md-4">
-						            	<label class="control-label"> Task Ttile</label><span class="required">*</span>
-						                <input type="text"  placeholder="Enter Task Title" name="task_title" class="form-control" value="" required >
+						            	<label class="control-label"> <?= $this->lang->line('task_title') ?></label><span class="required">*</span>
+						                <input type="text"  placeholder="<?= $this->lang->line('task_title') ?>" name="task_title" class="form-control" value="" required >
 						        </div>
 								
 								<!--start date-->	
 									<div class="col-md-4">
-						            	<label class="control-label">Start Date </label> <span class="required">*</span>
+						            	<label class="control-label"><?= $this->lang->line('start_date') ?> </label> <span class="required">*</span>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"
-										 class="form-control date-picker"  placeholder="dd-mm-yyyy"  required>
+										 class="form-control date-picker"  placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
-						            	<label class="control-label">End Date </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="dd-mm-yyyy"  required>
+						            	<label class="control-label"><?= $this->lang->line('end_date') ?> </label> <span class="required">*</span>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 
 					        	<!--Prioroty-->	
 								<div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> priority <span class="required">*</span></label>
+						            	<label class="control-label"> <?= $this->lang->line('priority') ?> <span class="required">*</span></label>
 								</br>
 						               <select class="form-control " name="priority" required="required" tabindex="-1" aria-hidden="true">
 							<option value="" selected="selected">Select priority...</option>
@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						        <!--Status-->
 								<div class="col-md-4 col-sm-4">
-						<label class="control-label"> Status </label>
+						<label class="control-label"> <?= $this->lang->line('status') ?></label>
 						</br>
 						<select name="task_status" class="form-control " tabindex="-1" aria-hidden="true">
 							<option value="">Status</option>
@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 							<!--assign to-->	
 							<div class="col-md-4 col-sm-4" >
-						            	<label class="control-label"> Assign To</label><span class="required">*</span>
+						            	<label class="control-label"> <?= $this->lang->line('assign_to') ?></label><span class="required">*</span>
 										<?php  
 						               		if($designation_id=='4') {
 												echo form_dropdown('assignto', $assignto, $Assign_to,'required="required"'); 
@@ -93,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								
 								<div class="row col-md-12">
 					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Create</button>
+					            	<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('create') ?></button>
 					            </div>
 								 	
 						    
