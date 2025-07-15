@@ -443,7 +443,7 @@ table {
                         <?php  $i++;} }else{ ?>
                         <tr>
                             <td colspan="100">
-                                <h5 style="text-align: center;"> No Leads Found</h5>
+                                <h5 style="text-align: center;"> <?= $this->lang->line('no_leads_found') ?> </h5>
                             </td>
                         </tr>
                         <?php  }?>

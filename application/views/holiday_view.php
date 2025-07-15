@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"><?= $this->lang->line('title_name') ?></label>
-					                <input type="text"  placeholder="Enter Title Name " name="title" class="form-control" value="<?= $title?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_title_name') ?>" name="title" class="form-control" value="<?= $title?>" required autofocus>
 					            </div>
 					            <?php 
 					             if(!empty($date))

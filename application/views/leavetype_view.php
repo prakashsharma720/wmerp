@@ -44,11 +44,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"> <?= $this->lang->line('leave_type') ?></label>
-					                <input type="text"  placeholder="Enter Leave Type " name="leave_type" class="form-control" value="<?= $leave_type ?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_leave_type') ?> " name="leave_type" class="form-control" value="<?= $leave_type ?>" required autofocus>
 					            </div>
 								<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"> <?= $this->lang->line('leave_balance') ?></label>
-					                <input type="text"  placeholder="Enter Leave Balance " name="leave_balance" class="form-control" value="<?= $leave_balance ?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_leave_balance') ?>" name="leave_balance" class="form-control" value="<?= $leave_balance ?>" required autofocus>
 					            </div>
 					            <?php 
 					             if(!empty($date))

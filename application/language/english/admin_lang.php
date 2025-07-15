@@ -3005,6 +3005,7 @@ $lang['other_cuts'] = 'Other Deductions';
 $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Total Salary';
 $lang['action'] = 'Action';
+$lang['calculate']='calculate';
 
 // workers add
 $lang['add_new_worker'] = 'Add New Worker';

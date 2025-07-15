@@ -71,6 +71,29 @@ $lang['choose_file'] = 'Изберете файл';
 $lang['no_file_chosen'] = 'Не е избран файл';
 $lang['your_image'] = 'Вашето изображение';
 
+$lang['account_holder_name'] = 'Име на титуляр на сметката';
+$lang['bank_name'] = 'Име на банката';
+$lang['account_number'] = 'Номер на сметката';
+$lang['ifsc_code'] = 'IFSC код';
+$lang['branch_name'] = 'Име на клона';
+$lang['account_type'] = 'Тип на сметката';
+$lang['upi_id'] = 'UPI идентификатор';
+
+
+$lang['basic_salary'] = 'Основна заплата';
+$lang['hra'] = 'HRA (надбавка за жилище)';
+$lang['conveyance_allowance'] = 'Транспортна надбавка';
+$lang['medical_allowance'] = 'Медицинска надбавка';
+$lang['other_allowance'] = 'Други надбавки';
+$lang['total_net_salary'] = 'Обща нетна заплата';
+
+$lang['emergency_mobile_no'] = 'Аварийен мобилен номер';
+$lang['emergency_name'] = 'Име за спешен контакт';
+$lang['uan_no'] = 'UAN номер';
+$lang['pf_no'] = 'PF номер';
+$lang['esi_no'] = 'ESI номер';
+
+
 // change password click
 $lang['change_password'] = 'Смяна на парола';
 $lang['select_employee'] = 'Изберете служител';
@@ -2929,6 +2952,8 @@ $lang['other_cuts'] = 'Други удръжки';
 $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Обща заплата';
 $lang['action'] = 'Действие';
+$lang['calculate'] = 'Изчисли';
+
 
 // workers add
 $lang['add_new_worker'] = 'Добавяне на нов работник';
