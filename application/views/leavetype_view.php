@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Status</label>
+					            	<label class="control-label"> <?= $this->lang->line('status') ?> </label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"> Active</option>
 					               		<option value="1"> De-active</option>
