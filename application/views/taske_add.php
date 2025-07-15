@@ -20,38 +20,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="row ">
 								<!--Project name-->	
 								<div class="col-md-4 col-sm-4">
-						            	<label class="control-label"> Project</label><span class="required">*</span>
+						            	<label class="control-label"><?=$this ->lang->line('project')?></label><span class="required">*</span>
 										<?php  
 						               		echo form_dropdown('project_id', $project_id,'required="required"') 
 						               ?>
 						        </div>
 								<!--Project -title-->	
 								 <div class="col-md-4">
-						            	<label class="control-label"> Task Ttile</label><span class="required">*</span>
+						            	<label class="control-label"><?=$this ->lang->line('task_title')?></label><span class="required">*</span>
 						                <input type="text"  placeholder="Enter Task Title" name="task_title" class="form-control" value="" required >
 						        </div>
 								
 								<!--start date-->	
 									<div class="col-md-4">
-						            	<label class="control-label">Start Date </label> <span class="required">*</span>
+						            	<label class="control-label"><?=$this ->lang->line('start_date')?> </label> <span class="required">*</span>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"
 										 class="form-control date-picker"  placeholder="dd-mm-yyyy"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
-						            	<label class="control-label">End Date </label> <span class="required">*</span>
+						            	<label class="control-label"><?=$this ->lang->line('end_date')?></label> <span class="required">*</span>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="dd-mm-yyyy"  required>
 			            			</div>
 
 					        	<!--Prioroty-->	
 								<div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> priority <span class="required">*</span></label>
+						            	<label class="control-label"><?=$this ->lang->line('priority')?> <span class="required">*</span></label>
 								</br>
 						               <select class="form-control " name="priority" required="required" tabindex="-1" aria-hidden="true">
-							<option value="" selected="selected">Select priority...</option>
-							<option value="hard">Hard</option>
-							<option value="medium">Medium</option>
-							<option value="easy">Easy</option>
+							<option value="" selected="selected"><?=$this ->lang->line('select_priority')?></option>
+							<option value="hard"><?=$this ->lang->line('hard')?></option>
+							<option value="medium"><?=$this ->lang->line('medium')?></option>
+							<option value="easy"><?=$this ->lang->line('easy')?></option>
 							</select>
  
 						            </div>
@@ -60,22 +60,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						        <!--Status-->
 								<div class="col-md-4 col-sm-4">
-						<label class="control-label"> Status </label>
+						<label class="control-label"> <?=$this ->lang->line('status')?> </label>
 						</br>
 						<select name="task_status" class="form-control " tabindex="-1" aria-hidden="true">
-							<option value="">Status</option>
+							<option value=""><?=$this ->lang->line('status')?></option>
 							
-							<option value="In Process"> In Process</option>
-							<option value="In Process">On Hold</option>
+							<option value="In Process"> <?=$this ->lang->line('in_process')?></option>
+							<option value="In Process"><?=$this ->lang->line('on_hold')?></option>
 							
-							<option value="Completed"> Completed</option>
+							<option value="Completed"> <?=$this ->lang->line('completed')?></option>
 							
 						</select>
 						 		</div>
 			
 							<!--assign to-->	
 							<div class="col-md-4 col-sm-4" >
-						            	<label class="control-label"> Assign To</label><span class="required">*</span>
+						            	<label class="control-label"> <?=$this ->lang->line('assign_to')?></label><span class="required">*</span>
 										<?php  
 						               		if($designation_id=='4') {
 												echo form_dropdown('assignto', $assignto, $Assign_to,'required="required"'); 
@@ -92,8 +92,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										
 								
 								<div class="row col-md-12">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Create</button>
+					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('create')?></button>
 					            </div>
 								 	
 						    

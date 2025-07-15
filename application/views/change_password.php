@@ -318,7 +318,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <!-- /.login-logo -->
       <div class="mb-12 heading">
               <span>OTP</span>
-              <span style="color:#8cd2a1"> Change Password</span></div>
+              <span style="color:#8cd2a1"><?=$this ->lang->line('change_password')?></span></div>
             </br>
                <?php echo validation_errors();?>
 
@@ -348,7 +348,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div> -->
             <!-- /.col -->
             <div class="col-12">
-                <button class="btn" type="submit">Submit</button>
+                <button class="btn" type="<?=$this ->lang->line('submit')?>">Submit</button>
             </div>
             <!-- /.col -->
           </div>
@@ -376,7 +376,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="toast-content">
             <i class="fas fa-solid fa-check check" id="toastIcon"></i>
             <div class="message">
-                <span class="text text-1" id="toastTitle">Success</span>
+                <span class="text text-1" id="toastTitle"><?=$this ->lang->line('success')?></span>
                 <span class="text text-2" id="toastMessage">Your action was successful</span>
             </div>
         </div>

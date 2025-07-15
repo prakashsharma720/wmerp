@@ -29,16 +29,16 @@
      <?php if (!empty($suppliers_data)): ?>
      <div class="row col-md-12">
          <div class="col-md-3 col-sm-3">
-             <label class="control-label"> Supplier Type</label>
+             <label class="control-label"><?=$this ->lang ->line('supplier_type')?></label>
              <input type="text" class="form-control" value="<?= $suppliers_data['supplier_type']?>" readonly="readonly">
          </div>
          <div class="col-md-4 col-sm-4">
-             <label class="control-label"> Contact Person</label>
+             <label class="control-label"> <?=$this ->lang ->line('contact_person')?></label>
              <input type="text" class="form-control" value="<?= $suppliers_data['contact_person']?>"
                  readonly="readonly">
          </div>
          <div class="col-md-5 col-sm-5">
-             <label class="control-label"> Address </label>
+             <label class="control-label"> <?=$this ->lang ->line('address')?> </label>
              <textarea class="form-control" readonly="readonly"> <?= $suppliers_data['address']?></textarea>
          </div>
 
@@ -48,17 +48,17 @@
      <?php if (!empty($service_providers_data)): ?>
      <div class="row col-md-12">
          <div class="col-md-3 col-sm-3">
-             <label class="control-label"> Service Provider Type</label>
+             <label class="control-label"> <?=$this ->lang ->line('service_provider_type')?></label>
              <input type="text" class="form-control" value="<?= $service_providers_data['service_provider_type']?>"
                  readonly="readonly">
          </div>
          <div class="col-md-4 col-sm-4">
-             <label class="control-label"> Contact Person</label>
+             <label class="control-label"> <?=$this ->lang ->line('contact_person')?></label>
              <input type="text" class="form-control" value="<?= $service_providers_data['contact_person']?>"
                  readonly="readonly">
          </div>
          <div class="col-md-5 col-sm-5">
-             <label class="control-label"> Address </label>
+             <label class="control-label"> <?=$this ->lang ->line('address')?> </label>
              <textarea class="form-control" readonly="readonly"> <?= $service_providers_data['address']?></textarea>
          </div>
 
@@ -68,17 +68,17 @@
      <?php if (!empty($transporters_data)): ?>
      <div class="row col-md-12">
          <div class="col-md-3 col-sm-3">
-             <label class="control-label"> Transporter Type</label>
+             <label class="control-label"><?=$this ->lang ->line('transporter_type')?></label>
              <input type="text" class="form-control" value="<?= $transporters_data['transporter_type']?>"
                  readonly="readonly">
          </div>
          <div class="col-md-4 col-sm-4">
-             <label class="control-label"> Contact Person</label>
+             <label class="control-label"> <?=$this ->lang ->line('contact_person')?></label>
              <input type="text" class="form-control" value="<?= $transporters_data['contact_person']?>"
                  readonly="readonly">
          </div>
          <div class="col-md-5 col-sm-5">
-             <label class="control-label"> Address </label>
+             <label class="control-label"> <?=$this ->lang ->line('address')?></label>
              <textarea class="form-control" readonly="readonly"> <?= $transporters_data['address']?></textarea>
          </div>
 

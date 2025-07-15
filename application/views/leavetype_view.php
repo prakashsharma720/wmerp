@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $page_title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('leave_master') ?></h3>
         <div class="pull-right ">
 			
 
@@ -43,11 +43,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">			        		  	
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Leave Type</label>
+					            	<label class="control-label"> <?= $this->lang->line('leave_type') ?></label>
 					                <input type="text"  placeholder="Enter Leave Type " name="leave_type" class="form-control" value="<?= $leave_type ?>" required autofocus>
 					            </div>
 								<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Leave Balance</label>
+					            	<label class="control-label"> <?= $this->lang->line('leave_balance') ?></label>
 					                <input type="text"  placeholder="Enter Leave Balance " name="leave_balance" class="form-control" value="<?= $leave_balance ?>" required autofocus>
 					            </div>
 					            <?php 
@@ -78,8 +78,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <?php } ?>
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit"  class="btn btn-primary btn-block" >Save</button>
+					            	<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+					            	<button type="submit"  class="btn btn-primary btn-block" > <?= $this->lang->line('submit') ?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -88,14 +88,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<?php }?>
 				 <!-- /form -->
 				<div class="col-md-6">
-					<h5>Leave List</h5>
+					<h5> <?= $this->lang->line('leave_list') ?></h5>
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th style="width: 90%;"> Leave Type</th>
-								<th > Leave Balance</th>
-                                <th> Action</th>
+								<th> <?= $this->lang->line('sr_no') ?></th>
+								<th style="width: 90%;"> <?= $this->lang->line('leave_type') ?></th>
+								<th >  <?= $this->lang->line('leave_balance') ?></th>
+                                <th>  <?= $this->lang->line('action') ?></th>
 								
 								
 							</tr>

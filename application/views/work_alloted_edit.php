@@ -37,9 +37,9 @@ foreach ($packing_sizes as $key => $value) {
 			            	<input type="hidden" name="pr_number" value="<?= $pr_number ?>">
 			            </div> -->
 			          <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Work Area</label>
+			            	<label  class="control-label"><?=$this ->lang->line('work_area')?></label>
 				            	<select name="mill_no" class="form-control" required="required">
-									<option value=""> Select Mill</option>
+									<option value=""> <?=$this ->lang->line('select_mill')?></option>
 					                <?php
 					                 if ($equipments): ?> 
 					                  <?php 
@@ -52,12 +52,12 @@ foreach ($packing_sizes as $key => $value) {
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_results')?></option>
 					                <?php endif; ?>
 				            </select>
 			            </div>
 			            <div class="col-md-4 col-sm-4">
-				            <label  class="control-label"> Total Workers</label>
+				            <label  class="control-label"><?=$this ->lang->line('total_workers')?></label>
 				    		<input type="text" class="form-control total_workers" name="total_workers" value="<?= $total_workers ?>" readonly="readonly">
 			    		</div>
 		        	</div>
@@ -96,10 +96,10 @@ foreach ($packing_sizes as $key => $value) {
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 			        					<th >S.No.</th>
-			        					<th style="white-space: nowrap;"> Worker Name</th>
-			        					<th style="white-space: nowrap;"> Work Alloted</th>
-										<th style="white-space: nowrap;"> Attendance (In Hours)</th> 
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang->line('worker_name')?></th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang->line('work_alloted')?></th>
+										<th style="white-space: nowrap;"> <?=$this ->lang->line('attendance')?> (In Hours)</th> 
+			        					<th style="white-space: nowrap;"><?=$this ->lang->line('action_button')?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -112,7 +112,7 @@ foreach ($packing_sizes as $key => $value) {
 										<td ><?= $i ?></td>
 										<td> 
 										<select name="worker_id[]" class="form-control products" style="width:350px;" required>
-											<option value=""> Select Worker</option>
+											<option value=""> <?=$this ->lang->line('select_worker')?></option>
 								            <?php if ($workers): ?> 
 								                <?php foreach ($workers as $value) : ?>
 								                <?php 
@@ -141,7 +141,7 @@ foreach ($packing_sizes as $key => $value) {
 								           	<?php endif; ?>
 								            <?php endforeach; ?>
 								            <?php else: ?>
-								                <option value="0">No result</option>
+								                <option value="0"><?=$this ->lang->line('no_result')?></option>
 								            <?php endif; ?>
 								        </select>
 							   			</td>
@@ -166,8 +166,8 @@ foreach ($packing_sizes as $key => $value) {
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('submit')?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->
@@ -181,7 +181,7 @@ foreach ($packing_sizes as $key => $value) {
 			<td >1</td>
 			<td> 
 			<select name="worker_id[]" class="form-control products" style="width:350px;" required>
-				<option value=""> Select Worker</option>
+				<option value=""> <?=$this ->lang->line('select_worker')?></option>
 	            <?php if ($workers): ?> 
 	                <?php foreach ($workers as $value) : ?>
 	                <?php 
@@ -204,7 +204,7 @@ foreach ($packing_sizes as $key => $value) {
 	            	<?= $value['name'].' ('.$worker_id_code.')' ?></option>
 	            <?php endforeach; ?>
 	            <?php else: ?>
-	                <option value="0">No result</option>
+	                <option value="0"><?=$this ->lang->line('no_result')?></option>
 	            <?php endif; ?>
 	        </select>
    			</td>

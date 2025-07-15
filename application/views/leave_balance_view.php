@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $page_title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('leave_balance_list') ?></h3>
         <div class="pull-right ">
 			    <!-- <span class="error_mesg"><?php echo $this->session->flashdata('failed'); ?></span> -->
 			</div>
@@ -31,10 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<table  class="table table-bordered table-striped">
 										<thead>
 											<tr>
-												<th> Sr.No. </th>
-												<th> Employee </th>
-												<th> Leave Taken / Alloted</th>
-				                <th> Religious Leave (2 Per Year) </th>
+												<th> <?= $this->lang->line('sr_no') ?></th>
+												<th> <?= $this->lang->line('employee') ?> </th>
+												<th> <?= $this->lang->line('leave_taken_alloted') ?></th>
+				                <th><?= $this->lang->line('religious_leave') ?> </th>
 											</tr>
 										</thead>
 										<tbody>

@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?>
+            <span class="card-title"><?= $this->lang->line('employees_list') ?>
             </span>
             <div class="button-group float-right d-flex">
 
@@ -56,20 +56,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Sr.No.</th>
-                            <th> Name </th>
+                            <th><?= $this->lang->line('sr_no') ?></th>
+                            <th> <?= $this->lang->line('name') ?> </th>
 
-                            <th style="white-space: nowrap;"> Email </th>
-                            <th style="white-space: nowrap;"> Role</th>
-                            <th style="white-space: nowrap;">Mobile</th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('email') ?> </th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('role') ?></th>
+                            <th style="white-space: nowrap;"><?= $this->lang->line('mobile_no') ?></th>
 
-                            <th style="white-space: nowrap;"> Department</th>
-                            <th style="white-space: nowrap;"> Designation</th>
-                            <th style="white-space: nowrap;"> Date of joining</th>
-                            <th style="white-space: nowrap;"> Authority person </th>
-                            <th style="white-space: nowrap;"> Date of birth </th>
-                            <th style="white-space: nowrap;"> Photo</th>
-                            <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('designation') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_joining') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('select_authority_person') ?> </th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_birth') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('photo') ?></th>
+                            <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action') ?></th>
                         </tr>
                     </thead>
                     <tbody>
