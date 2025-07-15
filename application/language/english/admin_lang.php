@@ -319,6 +319,9 @@ $lang['total_kwh'] = 'Total KWH Consumed';
 $lang['finish_good_details'] = 'Finish Good Details'; // English
 $lang['action'] = 'Action';
 $lang['edit'] = 'Edit';
+$lang['plant_and_machinery_master'] = 'Plant and Machinery Master';
+$lang['service_code'] = 'Service Code';
+
 $lang['delete'] = 'Delete';
 $lang['maintenance_start'] = 'Maintenance Start Date & Time';
 $lang['maintenance_stop'] = 'Maintenance Stop Date & Time';

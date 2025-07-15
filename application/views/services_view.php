@@ -20,7 +20,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+		<h3 class="card-title"><?= $this->lang->line('services_master'); ?></h3>
+
+        <!-- <h3 class="card-title"><?= $title ?></h3> -->
         <div class="pull-right ">
 		
 		</div>
@@ -36,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Services/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				        		Service Code :  <label class="control-label"> <?= $service_code_view ?></label>
+				        		<?= $this->lang->line('service_code'); ?> :  <label class="control-label"> <?= $service_code_view ?></label>
 				        	<div class="row col-md-12">
 					                <?php
 					                 if ($categories): ?> 
@@ -47,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        	<input type="hidden" name="categories_id" value="<?= $value['id'] ?>" >
 
 						                        	<input type="hidden" name="code" value="<?= $service_code_view ?>" >
-						                        <label class="control-label"> <?= $value['category_name'] ?> <?=$this ->lang->line('name')?></label>
+						                        <label class="control-label"> <?=$this ->lang ->line('services')?> <?=$this ->lang->line('name')?></label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>

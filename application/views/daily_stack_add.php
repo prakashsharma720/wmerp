@@ -200,7 +200,7 @@ foreach ($packing_sizes as $key => $value) {
    			
 										<td>
 											<select name="bag_weight_stack_down[]" class="form-control bag_weight_stack_down"  style="width: 200px;">
-												<option value=""><?=$this ->lang ->line('select_bag_weight')?></option>
+												<option value="><?=$this ->lang ->line('select_bag_weight')?>"</option>
 												<?php if($packing_sizes):
 														foreach($packing_sizes as $k=>$v):
 												?>

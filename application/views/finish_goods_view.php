@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -23,19 +23,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
       <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+     <span class="card-title"><?= $this->lang->line('finish_goods_list'); ?></span>
+
       </span>
        <div class="pull-right">
       
          <a class="btn btn-xs btn-primary " href="<?php echo base_url(); ?>index.php/Finish_goods/add">
-          <i class="fa fa-plus"> Add New FG</i></a>
+          <i class="fa fa-plus"><?= $this->lang->line('add_new_fg') ?> </i></a>
       </div>
     </div> <!-- /.card-body -->
     <div class="card-body">
@@ -83,16 +84,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?>r </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete  <b><?php echo $obj['grade_name'];?> </b>? </p>
+                            <p><?= $this->lang->line('confirm_delete') ?>  <b><?php echo $obj['grade_name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

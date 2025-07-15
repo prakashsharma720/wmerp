@@ -3308,6 +3308,8 @@ $lang['blower_hrz'] = 'Вентилатор Hz';
 $lang['blower_amp'] = 'Вентилатор AMP';
 $lang['screw_rpw'] = 'Винт RPW';
 $lang['air_washer_rpm'] = 'Въздушна шайба RPM';
+$lang['plant_and_machinery_master'] = 'Мастър на заводи и машини';
+$lang['service_code'] = 'Код на услугата';
 
 
 // Payroll Module

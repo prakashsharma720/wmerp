@@ -20,7 +20,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="container-fluid">
 	<div class="card card-primary card-outline">
 		<div class="card-header">
-			<h3 class="card-title"><?= $title ?></h3>
+			<h3><?= $this->lang->line('packing_material_master'); ?></h3>
+
+			<!-- <h3 class="card-title"><?= $title ?></h3> -->
 			<div class="pull-right ">
 
 			</div>
@@ -63,7 +65,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											if ($value['id'] == $categories_id): ?>
 												<input type="hidden" name="categories_id" value="<?= $value['id'] ?>">
 												<input type="hidden" name="code" value="<?= $pm_code_view ?>">
-												<label class="control-label"> <?= $value['category_name'] ?> <?= $this->lang->line('name') ?></label>
+												<label class="control-label"> <?= $this->lang->line('packing_material'); ?> <?= $this->lang->line('name') ?></label>
 
 											<?php endif;   ?>
 										<?php endforeach;  ?>

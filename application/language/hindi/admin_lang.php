@@ -3356,6 +3356,8 @@ $lang['blower_hrz'] = 'ब्लोअर हर्ट्ज़';
 $lang['blower_amp'] = 'ब्लोअर एएमपी';
 $lang['screw_rpw'] = 'स्क्रू आरपीडब्ल्यू';
 $lang['air_washer_rpm'] = 'एयर वॉशर आरपीएम';
+$lang['plant_and_machinery_master'] = 'प्लांट और मशीनरी मास्टर';
+$lang['service_code'] = 'सेवा कोड';
 
 $lang['payroll_module'] = 'वेतन मॉड्यूल';
 $lang['attendance_list'] = 'हाजिरी सूची';
