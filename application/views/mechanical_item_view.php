@@ -20,7 +20,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('mechanical_items_master'); ?>
+</h3>
         <div class="pull-right ">
 		
 		</div>
@@ -36,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Mechanical_items/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				        	  Item Code :  <label class="control-label"> <?= $mi_code_view ?></label>
+				        <?=$this ->lang ->line('item_code')?>	   :  <label class="control-label"> <?= $mi_code_view ?></label>
 				       <input type="hidden" name="code" value="<?= $mi_code_view ?>" > 
 				        	<div class="row col-md-12">
 					                <?php

@@ -20,7 +20,7 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <label class="card-title"><?php  echo $title; ?></label>
+      <label class="card-title"><?=$this ->lang ->line('suppliers_report')?></label>
        <div class="pull-right error_msg">
         <form method="post" action="<?php echo base_url(); ?>index.php/Suppliers/createXLS">
 

@@ -115,11 +115,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-5">Item Name</div>
+                                <div class="col-md-5"><?=$this ->lang ->line('item_name')?></div>
                                 <!-- <div class="col-md-2">Grade </div> -->
-                                <div class="col-md-2">Qty </div>
-                                <div class="col-md-2">Price (&#8377;)</div>
-                                <div class="col-md-2">Amount (&#8377;)</div>
+                                <div class="col-md-2"><?=$this ->lang ->line('qty')?> </div>
+                                <div class="col-md-2"><?=$this ->lang ->line('price')?> (&#8377;)</div>
+                                <div class="col-md-2"><?=$this ->lang ->line('amount')?> (&#8377;)</div>
                               </div>
 
                                     <?php

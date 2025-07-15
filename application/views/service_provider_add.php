@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"> <?= $title ?></h3>
+        <h3 class="card-title"> <?=$this ->lang->line('add_new_service_provider')?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 
@@ -176,15 +176,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		      <div class="form-group">
 		        	<div class="row col-md-12">
 		        	    <div class="col-md-4 col-sm-4">
-			            	<b> <?=$this ->lang ->line('pan')?></b> <span>(<?=$this ->lang ->line('permanent_account_no')?>.) </span>
+			            	<b> <?=$this ->lang ->line('pan')?></b> <span><?=$this ->lang ->line('permanent_account_no')?> </span>
 			                <input type="text" id="lastName" placeholder="Ex. ABCEDE2548K" name="pan_no" class="form-control pan_no" value="" autofocus autocomplete="off"  maxlength="10" minlength="10" >
 			            </div>
 		        		<div class="col-md-4 col-sm-4 gst_div">
-							<b>GSTIN</b><span>( Ex. : 08ABCDE1234K1AZ)</span>
+							<b><?=$this ->lang->line('gst_in')?></b><span>( Ex. : 08ABCDE1234K1AZ)</span>
 			            	<input type="text"  placeholder="Ex. 08ABCDE12341AZ" name="gst_no" class="form-control gstnumber" value=""autofocus autocomplete="off"   maxlength="15" minlength="15"  >
 						</div>
 			            <div class="col-md-4 col-sm-4">
-			            	<b> TAN </b> <span>(Tax Deduction Account No.) </span>
+			            	<b><?=$this ->lang->line('tan')?></b> <span></span>
 			                <input type="text" id="firstName" placeholder="Ex. ABCD12345A" name="tds" class="form-control tan_number" value="" autofocus autocomplete="off"   maxlength="10" minlength="10"  >
 			            </div>
 		        	</div>
@@ -264,7 +264,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_approval" class="form-control date-picker date_of_approval" value="<?php echo date('d-m-Y'); ?>" placeholder="dd-mm-yyyy" autofocus required>
 			            </div>
 			            <div class="col-md-4 col-sm-4 date_of_evalution_div">
-			            	<label  class="control-label"> Date of Next Evalution</label>
+			            	<label  class="control-label"> <?=$this ->lang->line('date_of_next_evaluation')?></label>
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_evalution" 
 							class="form-control date-picker date_of_evalution" value="<?php echo date('d-m-Y',strtotime('+1 year')); ?> " 
 							placeholder="dd-mm-yyyy" autofocus>

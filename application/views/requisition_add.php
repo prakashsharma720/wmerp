@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?=$this ->lang ->line('create_requisition_slip')?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 
@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            </div>
 			             <div class="col-md-4 col-sm-4 ">
 			            	<label  class="control-label"> <?=$this ->lang ->line('requistion_no')?> <span class="required">*</span></label>
-			            	<input type="text"  placeholder=" <?=$this ->lang ->line('requistion_no')?>" name="" class="form-control" value="<?= $requisition_code ?>" autocomplete="off" autofocus  readonly="readonly">
+			            	<input type="text"  placeholder=" <?=$this ->lang ->line('enter_requistion_no')?>" name="" class="form-control" value="<?= $requisition_code ?>" autocomplete="off" autofocus  readonly="readonly">
 			            	<input type="hidden" name="requisition_slip_no" value="<?= $rs_code ?>">
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 			        <div class="row col-md-12">
 			        	<div class="col-md-3 col-sm-3 ">
-					        <label  class="control-label"> <?=$this ->lang ->line('requistion_for')?> : </label>
+					        <label  class="control-label"> <?=$this ->lang ->line('requisition_for')?> : </label>
 					    </div>
 				        <div class="col-md-9 col-sm-9 ">
 				        	<select name="rs_for" class="form-control select2 rs_for" required="required">
@@ -137,11 +137,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        <div class="row col-md-12">
 			        	<div class="col-md-6 col-sm-6 ">
 								<label  class="control-label"> <?=$this ->lang ->line('lot_no')?>. <span class="required">*</span></label>
-								<input type="text" placeholder="Enter Lot no " name="lot_no" class="form-control lot_no" required="required" value="" autofocus>
+								<input type="text" placeholder="<?=$this ->lang ->line('enter_lot_no')?>" name="lot_no" class="form-control lot_no" required="required" value="" autofocus>
 							</div>
 							<div class="col-md-6 col-sm-6 ">
 								<label  class="control-label"> <?=$this ->lang ->line('batch_no')?> <span class="required">*</span></label>
-								<input type="text" placeholder="Enter batch no " name="batch_no" class="form-control batch_no" required="required" value="" autofocus>
+								<input type="text" placeholder="<?=$this ->lang ->line('enter_batch_no')?> " name="batch_no" class="form-control batch_no" required="required" value="" autofocus>
 							</div>
 			        </div>
 			        <div class="row col-md-12 raw_mesg">

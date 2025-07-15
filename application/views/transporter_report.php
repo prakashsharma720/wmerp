@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <label class="card-title"><?php  echo $title; ?></label>
+      <label class="card-title"><?=$this ->lang ->line('transporters_report')?></label>
        <div class="pull-right error_msg">
         <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Transporters/createXLS"><?= $this->lang->line('export') ?></a>  
       </div>

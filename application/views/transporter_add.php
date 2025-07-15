@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"> <?= $title ?></h3>
+        <h3 class="card-title"> <?= $this->lang->line('add_new_transporter'); ?></h3>
        <div class="pull-right error_msg">
 			<?php //echo validation_errors();?>
 
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        			<div class="form-check">
 					               		<input class="form-check-input transporter_type" type="radio" name="transporter_type" value="New"  > <?=$this ->lang ->line('new')?></input>
 					               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					               		<input class="form-check-input transporter_type" type="radio" name="transporter_type" value="<?=$this ->lang ->line('existing')?>"  checked>Existing</input>
+					               		<input class="form-check-input transporter_type" type="radio" name="transporter_type" value="<?=$this ->lang ->line('existing')?>"  checked><?= $this->lang->line('existing'); ?></input>
 			            		</div>
 			            	</div>
 							 <div class="col-md-4 col-sm-4 category_of_approval">
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
-			                <input type="text" id="firstName" placeholder="Enter contact person" name="contact_person" class="form-control" value=""  autofocus>
+			                <input type="text" id="firstName" placeholder="<?= $this->lang->line('enter_contact_person'); ?>" name="contact_person" class="form-control" value=""  autofocus>
 			                
 							 </div>
 				            </div>
@@ -145,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        	<div class="row col-md-12">
 		        		
 			             <div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> service for the state</label>
+			            	<label  class="control-label"> <?= $this->lang->line('service_for_the_state'); ?></label>
 			            	<?php  
 							   // $old_values=explode(',', $current[0]->states);
 			            		//echo form_multiselect('states[]', $states,$current[0]->state)

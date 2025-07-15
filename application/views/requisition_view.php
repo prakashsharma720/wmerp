@@ -64,7 +64,7 @@ function PopUp(){
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('requisition_slip_list')?>
       </span>
        <div class="button-group float-right">
 
@@ -82,15 +82,15 @@ function PopUp(){
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Requisition No </th>
-              <th style="white-space: nowrap;"> Requisition Date </th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_date')?> </th>
              <!--  <th style="white-space: nowrap;">Total Quantity </th> -->
-              <th style="white-space: nowrap;">Request By </th>
-              <th style="white-space: nowrap;"> Status </th>
-              <th style="white-space: nowrap;"> Action Date </th>
-              <th style="white-space: nowrap;"> Action By <span style="color: white;">Name</span></th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('request_by')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('status')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_date')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_by')?><span style="color: white;"><?=$this ->lang ->line('name')?></span></th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -159,7 +159,7 @@ function PopUp(){
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"> Requisition Slip (<?php echo $inv_number1 ?>) Details </h4>
+                             <h4 class="modal-title"> <?=$this ->lang ->line('requisition_slip')?> (<?php echo $inv_number1 ?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -171,9 +171,9 @@ function PopUp(){
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-5">Item Name </div>
-                                <div class="col-md-2">Qty </div>
-                                <div class="col-md-4">Description </div>
+                                <div class="col-md-5"><?=$this ->lang ->line('item_name')?> </div>
+                                <div class="col-md-2"><?=$this ->lang ->line('qty')?> </div>
+                                <div class="col-md-4"><?=$this ->lang ->line('description')?> </div>
                               </div>
 
                                     <?php
@@ -194,7 +194,7 @@ function PopUp(){
 
                              <div class="row col-md-12" >
                               <div class="col-md-12">
-                                <label class="control-label"> Requisition slip for :  </label>
+                                <label class="control-label"> <?=$this ->lang ->line('requisition_slip_for')?> :  </label>
                                   <span > 
                                       <?php 
                                           echo $obj['rs_for']; 
@@ -205,32 +205,32 @@ function PopUp(){
                            <?php if(($obj['rs_for']=='Raw Material') || ($obj['rs_for']=='Packing Material')) {  ?>
                                  <div class="row col-md-12" >
                                   <div class="col-md-6">
-                                    <label class="control-label"> Mineral Name: </label>
+                                    <label class="control-label"> <?=$this ->lang ->line('mineral_name')?>: </label>
                                     <span > <?php echo $obj['mineral_name']?></span>
                                   </div>
                                   <div class="col-md-6">
-                                    <label class="control-label"> Grade Name: </label>
+                                    <label class="control-label"> <?=$this ->lang ->line('grade_name')?>: </label>
                                     <span > <?php echo $obj['grade_name'] ?></span>
                                   </div>
                                 </div>
                                 <div class="row col-md-12" >
                                   <div class="col-md-6">
-                                    <label class="control-label"> Lot No : </label>
+                                    <label class="control-label"> <?=$this ->lang ->line('lot_no')?> : </label>
                                     <span > <?php echo $obj['lot_no']?></span>
                                   </div>
                                   <div class="col-md-6">
-                                    <label class="control-label"> Batch No: </label>
+                                    <label class="control-label"> <?=$this ->lang ->line('batch_no')?>: </label>
                                     <span > <?php echo $obj['batch_no'] ?></span>
                                   </div>
                                 </div>
                            <?php } else{ ?>
                                  <div class="row col-md-12" >
                                   <div class="col-md-6">
-                                    <label class="control-label"> Equipment Name : </label>
+                                    <label class="control-label"><?=$this ->lang ->line('equipment_name')?> : </label>
                                     <span > <?php echo $obj['equipment_name']?></span>
                                   </div>
                                   <div class="col-md-6">
-                                    <label class="control-label"> Purpose: </label>
+                                    <label class="control-label"> <?=$this ->lang ->line('purpose')?>: </label>
                                     <span > <?php echo $obj['purpose'] ?></span>
                                   </div>
                                 </div>
@@ -239,7 +239,7 @@ function PopUp(){
                            
                             <div class="row col-md-12" >
                               <div class="col-md-12">
-                                <label class="control-label"> Comment : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('comment')?> : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['comment']; 
@@ -264,7 +264,7 @@ function PopUp(){
                             </div> -->
 
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang ->line('close')?></button>
                           </div>
                         </div>
                         </form>
@@ -278,16 +278,16 @@ function PopUp(){
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete Requisition Slip <b><?php echo $obj['requisition_slip_no'];?> </b>? </p>
+                            <p><?=$this ->lang ->line('confirm_delete')?> <?=$this ->lang ->line('requisition_slip')?> <b><?php echo $obj['requisition_slip_no'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang ->line('yes')?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?=$this ->lang ->line('no')?> </button>
                           </div>
                         </div>
                         </form>

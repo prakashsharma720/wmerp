@@ -3358,6 +3358,22 @@ $lang['screw_rpw'] = 'स्क्रू आरपीडब्ल्यू';
 $lang['air_washer_rpm'] = 'एयर वॉशर आरपीएम';
 $lang['plant_and_machinery_master'] = 'प्लांट और मशीनरी मास्टर';
 $lang['service_code'] = 'सेवा कोड';
+$lang['building_material'] = 'निर्माण सामग्री';
+$lang['mechanical_items_master'] = 'यांत्रिक वस्तुएं मास्टर';
+$lang['new_item_code'] = 'नया आइटम कोड';
+$lang['general_plant_equipments_chemicals'] = 'सामान्य प्लांट उपकरण और रसायन';
+$lang['protective_equipments_master'] = 'संरक्षण उपकरण मास्टर';
+$lang['protective_equipments'] = 'संरक्षण उपकरण';
+$lang['unregistered_dealer'] = 'अपंजीकृत डीलर/व्यक्ति';
+$lang['gst_in'] = 'जीएसटी इन';
+$lang['requisition_slip_report'] = 'रसीद पर्ची रिपोर्ट';
+$lang['pending_requisition_slips_for_issue'] = 'जारी करने के लिए लंबित मांग पर्चियाँ';
+$lang['service_for_the_state'] = 'राज्य के लिए सेवा';
+$lang['add_new_service_provider'] = 'नया सेवा प्रदाता जोड़ें';
+$lang['un_registered_dealer_person'] = 'अपंजीकृत डीलर व्यक्ति';
+$lang['requistion_no'] = 'मांग संख्या';
+$lang['enter_requistion_no'] = 'मांग संख्या दर्ज करें';
+
 
 $lang['payroll_module'] = 'वेतन मॉड्यूल';
 $lang['attendance_list'] = 'हाजिरी सूची';

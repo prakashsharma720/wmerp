@@ -3310,6 +3310,21 @@ $lang['screw_rpw'] = 'Винт RPW';
 $lang['air_washer_rpm'] = 'Въздушна шайба RPM';
 $lang['plant_and_machinery_master'] = 'Мастър на заводи и машини';
 $lang['service_code'] = 'Код на услугата';
+$lang['building_material'] = 'Строителен материал';
+$lang['mechanical_items_master'] = 'Машинни артикули – Мастър';
+$lang['new_item_code'] = 'Нов код на артикул';
+$lang['general_plant_equipments_chemicals'] = 'Общи съоръжения и химикали за завода';
+$lang['protective_equipments_master'] = 'Мастер на защитно оборудване';
+$lang['protective_equipments'] = 'Защитно оборудване';
+$lang['unregistered_dealer'] = 'Нерегистриран търговец/лице';
+$lang['gst_in'] = 'ДДС номер';
+$lang['requisition_slip_report'] = 'Доклад за разписка за искане';
+$lang['pending_requisition_slips_for_issue'] = 'Изчакващи разписки за издаване';
+$lang['service_for_the_state'] = 'Услуга за държавата';
+$lang['add_new_service_provider'] = 'Добавете нов доставчик на услуги';
+$lang['un_registered_dealer_person'] = 'Нерегистрирано лице търговец';
+$lang['requistion_no'] = 'Заявка №';
+$lang['enter_requistion_no'] = 'Въведете номер на заявката';
 
 
 // Payroll Module

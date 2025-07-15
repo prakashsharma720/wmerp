@@ -31,7 +31,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?></span>
+      <span class="card-title"><?=$this ->lang ->line('service_provider_list')?></span>
        <div class="pull-right error_msg">
           <a href="<?php echo base_url(); ?>index.php/Service_providers/add" class="btn btn-success" data-toggle="tooltip" title="New service_provider"><i class="fa fa-plus"></i></a>
 

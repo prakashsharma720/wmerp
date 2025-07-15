@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                <div class="col-sm-4 invoice-col">
                 <!--<h6 style="padding-top: 20px;"> STANDARD OPERATING PROCEDURE </h6>-->
-                <h4 style="padding-top: 20px;"> PURCHASE ORDER</h4>
+                <h4 style="padding-top: 20px;"><?=$this ->lang ->line('purchase_order')?></h4>
                 </div>
                 <div class="col-sm-4 invoice-col">
                 <strong><u>Company Details:</u></strong><br>
@@ -112,10 +112,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          </tr>
                   		  <tr>
                          
-            						  <th> S.No.</th>
-            						  <th colspan="2"><label> Material Description </label></th>
+            						  <th> <?=$this ->lang ->line('sr_no')?>.</th>
+            						  <th colspan="2"><label> <?=$this ->lang ->line('material_description')?> </label></th>
                           <!--<th>Requisition Quantity</th>-->
-            						  <th><label> Quantity</label></th>
+            						  <th><label> <?=$this ->lang ->line('quantity')?></label></th>
               						<th>Item Price</th>
               						<th>Total Amount</th>
 						            </tr>
@@ -137,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                    </tr>
 	                <?php $i++;} ?>
 							<tr>
-			        		<td colspan="3" style="text-align: right;"><b>Total</b></td>
+			        		<td colspan="3" style="text-align: right;"><b><?=$this ->lang ->line('total')?></b></td>
 					             <td> <?= $current['0']['total_qty']?></td>
 								  
 								   <td> <?= $current['0']['total_amount']?> &#8377;</td>

@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?></span>
+      <span class="card-title"><?=$this ->lang ->line('rm_code_list')?></span>
         <div class="button-group float-right">
 
          <a href="<?php echo base_url(); ?>index.php/Rm_code/add" class="btn btn-success" data-toggle="tooltip" title="New RM Code"><i class="fa fa-plus"></i></a>
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tr>
               <th><input type="checkbox" id="master"></th>
               <th ><?=$this ->lang ->line('dsr_no')?></th>
-              <th> <?=$this ->lang ->line('grid_no')?> </th>
+              <th> <?=$this ->lang ->line('grid_number')?> </th>
               <th><?=$this ->lang ->line('supplier_name')?> </th>
               <th style="white-space: nowrap;"> <?=$this ->lang ->line('raw_material')?> </th>
               <th style="white-space: nowrap;"><?=$this ->lang ->line('grade')?></th>

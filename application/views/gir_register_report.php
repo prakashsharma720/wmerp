@@ -17,7 +17,7 @@ $data=explode('?', $current_page);
     <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> !</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -26,17 +26,17 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('gir_register_report')?>
       </span>
         <div class="pull-right error_msg">
-        <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Gir_registers/createXLS">Export</a>  
+        <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Gir_registers/createXLS"><?=$this ->lang ->line('export')?></a>  
       </div>
     </div> <!-- /.card-body -->
     <div class="card-body">
@@ -64,7 +64,7 @@ $data=explode('?', $current_page);
             </div>
       
             <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"><?=$this ->lang->line('name_of_suppliers')?> <span class="required">*</span></label>
+                <label  class="control-label"><?=$this ->lang->line('name_of_supplier')?> <span class="required">*</span></label>
                 <select name="supplier_id" class="form-control select2 suppliers" >
                     <option value="0"><?=$this ->lang->line('select_supplier')?></option>
                     <?php
@@ -110,12 +110,12 @@ $data=explode('?', $current_page);
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> <?=$this ->lang->line('upto_datet')?></label>
+                    <label  class="control-label"> <?=$this ->lang->line('upto_date')?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
                  <div class="col-md-4 col-sm-4 ">
                    <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('grade')?></label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo $data[0]?>" class="btn btn-danger" ><?=$this ->lang->line('reset')?></a>
               </div>

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -13,14 +13,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?=$this ->lang ->line('general_plant_chemical_master')?></h3>
         <div class="pull-right ">
 		
 		</div>
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				    			<?php } ?>
 				        <div class="form-group">
 
-				        	 New Item Code :  <label class="control-label"> <?= $bm_code_view ?></label>
+				        	 <?= $this->lang->line('new_item_code'); ?>:  <label class="control-label"> <?= $bm_code_view ?></label>
 				       <input type="hidden" name="code" value="<?= $bm_code_view ?>" > 
 				        	<div class="row col-md-12">
 					                <?php
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                        <?php 
 						                        if ($value['id'] == $categories_id): ?>
 						                        	<input type="hidden" name="categories_id" value="<?= $value['id'] ?>" >
-						                        <label class="control-label"> <?= $value['category_name'] ?> <?=$this ->lang ->line('name')?></label>
+						                        <label class="control-label"> <?= $this->lang->line('general_plant_equipments_chemicals'); ?> <?=$this ->lang ->line('name')?></label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>

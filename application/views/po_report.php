@@ -25,7 +25,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('purchase_orders_report')?>
       </span>
        <div class="pull-right error_msg">
         <form method="post" action="<?php echo base_url(); ?>index.php/Purchase_order/createXLS">

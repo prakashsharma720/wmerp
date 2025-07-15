@@ -24,7 +24,7 @@ $data=explode('?', $current_page);
   <div class="card card-primary card-outline">
     <div class="card-header">
 
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('invoice_slip_report')?>
       </span>
        <div class="button-group float-right">
          <form method="post" action="<?php echo base_url(); ?>index.php/Invoice/createXLS">
@@ -55,7 +55,7 @@ $data=explode('?', $current_page);
                   
                  <div class="col-md-4 col-sm-4 ">
                    <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
               </div>

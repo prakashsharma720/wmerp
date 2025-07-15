@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('protective_equipments_master'); ?></h3>
         <div class="pull-right ">
 		
 		</div>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                        <?php 
 						                        if ($value['id'] == $categories_id): ?>
 						                        	<input type="hidden" name="categories_id" value="<?= $value['id'] ?>" >
-						                        <label class="control-label"> <?= $value['category_name'] ?><?=$this ->lang ->line('name')?> </label>
+						                        <label class="control-label"> <?= $this->lang->line('protective_equipments'); ?><?=$this ->lang ->line('name')?> </label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>

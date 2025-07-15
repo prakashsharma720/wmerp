@@ -15,14 +15,14 @@ $base_url=  base_url();
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('current_stock_report')?>
       </span>
       <div class="pull-right error_msg">
         	<form method="post" action="<?php echo base_url(); ?>index.php/Stock_registers/createXLS">
@@ -47,7 +47,7 @@ $base_url=  base_url();
                 </div>
                  <div class="col-md-4 col-sm-4 ">
                    <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger" ><?= $this->lang->line('reset') ?></a>
               </div>
@@ -62,9 +62,9 @@ $base_url=  base_url();
               <th ><?= $this->lang->line('sr_no') ?>.</th>
               <th style="white-space: nowrap;">  <?= $this->lang->line('material_description') ?> </th>
                <th style="white-space: nowrap;"> <?= $this->lang->line('date') ?></th>
-              <th style="white-space: nowrap;">  <?= $this->lang->line('total_in_qty') ?> (Unit)</th>
-              <th style="white-space: nowrap;">  <?= $this->lang->line('total_out_qty') ?> (Unit)</th>
-              <th style="white-space: nowrap;"> <?= $this->lang->line('available_qty') ?> (Unit)</th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('total_in_qty') ?> </th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('total_out_qty') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('available_qty') ?> </th>
             </tr>
           </thead>
           <tbody>
