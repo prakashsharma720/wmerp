@@ -189,7 +189,8 @@ public function admin_dashboard() {
 	// echo"<pre>";print_r($data['target']);exit;
 	
 	// $this->template->load('template', 'super_dashboard',$data);
-	  $this->load->view('layouts/darulux/master', $data);
+	//   $this->load->view('layouts/darulux', $data);
+		$this->template->load('layout/template', 'super_dashboard', $data);
 //$this->load->view('dashboard',$data);
 }
 
