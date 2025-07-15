@@ -30,7 +30,14 @@ $lang['search'] = 'Search';
 $lang['reset'] = 'Reset';
 $lang['export'] = 'Export';
 $lang['confirm_delete'] = 'Are you sure, you want to delete menu';
+$lang['id'] = 'ID';
+$lang['enter_id'] = 'Enter ID';
 
+$lang['model'] = 'Model';
+$lang['enter_model'] = 'Enter Model';
+
+$lang['type'] = 'Type';
+$lang['enter_type'] = 'Enter Type';
 
 $lang['opening_stock_qty'] = 'Opening Stock Quantity';
 $lang['name_of_employee'] = 'Name of Employee';
@@ -296,6 +303,18 @@ $lang['role_team_leader'] = 'Team Leader';
 $lang['action'] = 'Action';
 $lang['edit'] = 'Edit';
 $lang['delete'] = 'Delete';
+$lang['maintenance_start'] = 'Maintenance Start Date & Time';
+$lang['maintenance_stop'] = 'Maintenance Stop Date & Time';
+$lang['machine_down_time'] = 'Machine Down Time (Hrs.)';
+$lang['total_time'] = 'Total Time';
+$lang['type_of_maintenance'] = 'Type of Maintenance';
+$lang['maintenance'] = 'Maintenance';
+$lang['details_of_maintenance'] = 'Details of Maintenance';
+$lang['parts_replaced'] = 'Parts Replaced';
+$lang['enter_parts_replaced'] = 'Enter parts replaced';
+$lang['machine_start_datetime'] = 'Machine Start Date & Start Time';
+$lang['machine_stop_datetime'] = 'Machine Stop Date & Stop Time';
+
 
 // SCM module masters master categories
 $lang['scm_module'] = 'SCM Module';

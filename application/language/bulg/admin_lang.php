@@ -3272,11 +3272,31 @@ $lang['leave_approval'] = 'Одобрение на отпуск';
 $lang['daily_tasks'] = 'Ежедневни задачи';
 $lang['projects'] = 'Проекти';
 $lang['tasks'] = 'Задачи';
+$lang['maintenance_start'] = 'Начална дата и час на поддръжка';
+$lang['maintenance_stop'] = 'Крайна дата и час на поддръжка';
+$lang['machine_down_time'] = 'Време на престой на машината (часове)';
+$lang['total_time'] = 'Общо време';
+$lang['type_of_maintenance'] = 'Тип поддръжка';
+$lang['maintenance'] = 'Поддръжка';
+$lang['details_of_maintenance'] = 'Детайли за поддръжката';
+$lang['parts_replaced'] = 'Заменени части';
+$lang['enter_parts_replaced'] = 'Въведете заменени части';
+$lang['machine_start_datetime'] = 'Начална дата и час на машината';
+$lang['machine_stop_datetime'] = 'Крайна дата и час на машината';
+
 
 // Payroll Module
 $lang['payroll_module'] = 'Модул за заплати';
 $lang['attendance_list'] = 'Списък с присъствия';
 $lang['payroll_calculation'] = 'Изчисляване на заплати';
+$lang['id'] = 'Идентификационен номер';
+$lang['enter_id'] = 'Въведете ID';
+
+$lang['model'] = 'Модел';
+$lang['enter_model'] = 'Въведете модел';
+
+$lang['type'] = 'Тип';
+$lang['enter_type'] = 'Въведете тип';
 
 // Workers & Customer Support
 $lang['workers'] = 'Работници';

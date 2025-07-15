@@ -3330,16 +3330,35 @@ $lang['leave_approval'] = 'अवकाश अनुमोदन';
 $lang['daily_tasks'] = 'दैनिक कार्य';
 $lang['projects'] = 'परियोजनाएं';
 $lang['tasks'] = 'कार्य';
+$lang['machine_start_datetime'] = 'मशीन प्रारंभ तिथि और समय';
+$lang['machine_stop_datetime'] = 'मशीन बंद तिथि और समय';
 
 $lang['payroll_module'] = 'वेतन मॉड्यूल';
 $lang['attendance_list'] = 'हाजिरी सूची';
 $lang['payroll_calculation'] = 'वेतन गणना';
+$lang['maintenance_start'] = 'रखरखाव प्रारंभ तिथि और समय';
+$lang['maintenance_stop'] = 'रखरखाव समाप्ति तिथि और समय';
+$lang['machine_down_time'] = 'मशीन डाउन टाइम (घंटों में)';
+$lang['total_time'] = 'कुल समय';
+$lang['type_of_maintenance'] = 'रखरखाव का प्रकार';
+$lang['maintenance'] = 'रखरखाव';
+$lang['details_of_maintenance'] = 'रखरखाव का विवरण';
+$lang['parts_replaced'] = 'बदले गए पुर्जे';
+$lang['enter_parts_replaced'] = 'बदले गए पुर्जे दर्ज करें';
 
 $lang['workers'] = 'कर्मचारी';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
 $lang['customer_support'] = 'ग्राहक सहायता';
 $lang['view_list'] = 'सूची देखें';
+$lang['id'] = 'पहचान संख्या';
+$lang['enter_id'] = 'पहचान संख्या दर्ज करें';
+
+$lang['model'] = 'मॉडल';
+$lang['enter_model'] = 'मॉडल दर्ज करें';
+
+$lang['type'] = 'प्रकार';
+$lang['enter_type'] = 'प्रकार दर्ज करें';
 
 
 // -----------------complete ------------------------------
