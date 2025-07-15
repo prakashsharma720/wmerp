@@ -299,7 +299,24 @@ $lang['role_hr_executive'] = 'HR Executive';
 $lang['role_hr_marketing'] = 'HR Marketing';
 $lang['role_super_admin'] = 'Super Admin';
 $lang['role_team_leader'] = 'Team Leader';
-
+$lang['bag_weight'] = 'Bag Weight';
+$lang['tailing_qty_in_mt'] = 'Tailing in MT';
+$lang['total_tailing_for_lot'] = 'Total for Lot';
+$lang['used_qty'] = 'Used Quantity';
+$lang['mill_rpm'] = 'Mill (RPM)';
+$lang['mill_amp'] = 'Mill (AMP)';
+$lang['blower_hz'] = 'Blower (Hz)';
+$lang['blower_amp'] = 'Blower (AMP)';
+$lang['screw_rpm'] = 'Screw (RPM)';
+$lang['air_washer_rpm'] = 'Air Washer (RPM)';
+$lang['mc_start_time'] = 'M/C Start Time';
+$lang['mc_stop_time'] = 'M/C Stop Time';
+$lang['total_bags'] = 'Total Bags';
+$lang['total_propduction'] = 'Total Production (MT)';
+$lang['total_opening'] = 'Total Opening';
+$lang['total_closing'] = 'Total Closing';
+$lang['total_kwh'] = 'Total KWH Consumed';
+$lang['finish_good_details'] = 'Finish Good Details'; // English
 $lang['action'] = 'Action';
 $lang['edit'] = 'Edit';
 $lang['delete'] = 'Delete';
@@ -314,6 +331,13 @@ $lang['parts_replaced'] = 'Parts Replaced';
 $lang['enter_parts_replaced'] = 'Enter parts replaced';
 $lang['machine_start_datetime'] = 'Machine Start Date & Start Time';
 $lang['machine_stop_datetime'] = 'Machine Stop Date & Stop Time';
+$lang['tailing_percent'] = 'Tailing %';
+$lang['mill_rpm'] = 'Mill RPM';
+$lang['mill_amp'] = 'Mill AMP';
+$lang['blower_hrz'] = 'Blower HRZ';
+$lang['blower_amp'] = 'Blower AMP';
+$lang['screw_rpw'] = 'Screw RPW';
+$lang['air_washer_rpm'] = 'Air Washer RPM';
 
 
 // SCM module masters master categories

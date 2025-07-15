@@ -3267,6 +3267,9 @@ $lang['leave_applications'] = 'Заявки за отпуск';
 $lang['leave_types'] = 'Видове отпуск';
 $lang['leave_allotment'] = 'Разпределение на отпуск';
 $lang['leave_approval'] = 'Одобрение на отпуск';
+$lang['bag_weight'] = 'Тегло на чувала';
+$lang['tailing_qty_in_mt'] = 'Остатъци в метрични тонове';
+$lang['total_tailing_for_lot'] = 'Общо за партидата';
 
 // Daily Tasks, Projects, Tasks
 $lang['daily_tasks'] = 'Ежедневни задачи';
@@ -3283,6 +3286,28 @@ $lang['parts_replaced'] = 'Заменени части';
 $lang['enter_parts_replaced'] = 'Въведете заменени части';
 $lang['machine_start_datetime'] = 'Начална дата и час на машината';
 $lang['machine_stop_datetime'] = 'Крайна дата и час на машината';
+$lang['used_qty'] = 'Използвано количество';
+$lang['mill_rpm'] = 'Мелница (RPM)';
+$lang['mill_amp'] = 'Мелница (AMP)';
+$lang['blower_hz'] = 'Вентилатор (Hz)';
+$lang['blower_amp'] = 'Вентилатор (AMP)';
+$lang['screw_rpm'] = 'Винт (RPM)';
+$lang['air_washer_rpm'] = 'Въздушна пералня (RPM)';
+$lang['mc_start_time'] = 'Начален час на машината';
+$lang['mc_stop_time'] = 'Краен час на машината';
+$lang['total_bags'] = 'Общо чанти';
+$lang['total_propduction'] = 'Общо производство (MT)';
+$lang['total_opening'] = 'Общо отваряне';
+$lang['total_closing'] = 'Общо затваряне';
+$lang['total_kwh'] = 'Общо KWH консумация';
+$lang['finish_good_details'] = 'Детайли за готова продукция'; // Bulgarian
+$lang['tailing_percent'] = 'Опашки %';
+$lang['mill_rpm'] = 'Мелница RPM';
+$lang['mill_amp'] = 'Мелница AMP';
+$lang['blower_hrz'] = 'Вентилатор Hz';
+$lang['blower_amp'] = 'Вентилатор AMP';
+$lang['screw_rpw'] = 'Винт RPW';
+$lang['air_washer_rpm'] = 'Въздушна шайба RPM';
 
 
 // Payroll Module

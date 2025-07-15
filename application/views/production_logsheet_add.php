@@ -1,166 +1,167 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 //print_r($packing_sizes);
 ?>
-<!-- <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>plugins/timepicker/bootstrap-timepicker.min.css">
-<script src="<?php echo base_url()."assets/"; ?>plugins/timepicker/bootstrap-timepicker.min.js"></script> -->
+<!-- <link rel="stylesheet" href="<?php echo base_url() . "assets/"; ?>plugins/timepicker/bootstrap-timepicker.min.css">
+<script src="<?php echo base_url() . "assets/"; ?>plugins/timepicker/bootstrap-timepicker.min.js"></script> -->
 
 <style type="text/css">
-	th,td{
+	th,
+	td {
 		padding: 10px;
-		white-space:nowrap;
+		white-space: nowrap;
 		text-transform: uppercase;
 	}
 </style>
 
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
-        <div class="pull-right error_msg">
-			
-		</div>
+<div class="container-fluid">
+	<div class="card card-primary card-outline">
+		<div class="card-header">
+			<h3 class="card-title"><?= $title ?></h3>
+			<div class="pull-right error_msg">
 
-      </div> <!-- /.card-body -->
-      <div class="card-body">
-			<form class="form-horizontal" role="form" method="post" 
-			action="<?php echo base_url(); ?>index.php/Production_logsheets/add_new_record">
-		        	<div class="row col-md-12">
-		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> <?= $this->lang->line('date_of_production') ?> <span class="required">*</span></label>
-			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
-			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
-			            </div>
-			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> <?= $this->lang->line('pl_number') ?> <span class="required">*</span></label>
-			            	
-			            	<input type="text" class="form-control" value="<?= $pl_number_view ?>" autocomplete="off" autofocus readonly >
-			            	<input type="hidden" name="pl_number" value="<?= $pl_number ?>">
-			            </div>
-			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> <?= $this->lang->line('department') ?></label>
-				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> <?= $this->lang->line('select_department') ?></option>
-					                <?php
-					                 if ($departments): ?> 
-					                  <?php 
-					                    foreach ($departments as $value) : ?>
-					                        <?php 
-												if ($value['id'] == $department_id): ?>
-						                            <option value="<?= $value['id'] ?>" selected><?= $value['department_name'].' ('.$value['department_code'].')' ?></option>
-						                        <?php else: ?>
-						                            <option value="<?= $value['id'] ?>"><?= $value['department_name'].' ('.$value['department_code'].')' ?></option>
-						                        <?php endif;   ?>
-					                    <?php   endforeach;  ?>
-					                <?php else: ?>
-					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
-					                <?php endif; ?>
-					            </select>
-			            </div>
-		        	</div>
-			        <div class="row col-md-12 ">
-		            	<div class="col-md-6 col-sm-6">
-		            		 <label  class="control-label"> <?= $this->lang->line('mill_no') ?> <span class="required">*</span></label>
-		            		<select name="mill_no" class="form-control" required="required">
-								<option value=""> <?= $this->lang->line('select_mill_no') ?></option>
-				                <?php
-				                 if ($equipments): ?> 
-				                  <?php 
-				                    foreach ($equipments as $value) : ?>
-				                        <?php 
-											if ($value == $mill_no): ?>
-					                            <option value="<?= $value ?>" selected><?= $value ?></option>
-					                        <?php else: ?>
-					                            <option value="<?= $value ?>"><?= $value ?></option>
-					                        <?php endif;   ?>
-				                    <?php   endforeach;  ?>
-				                <?php else: ?>
-				                    <option value="0"><?= $this->lang->line('no_result') ?></option>
-				                <?php endif; ?>
-				            </select>
-		            	</div>
-		            	<div class="col-md-6 col-sm-6">
-				            <label  class="control-label"> <?= $this->lang->line('remarks') ?></label>
-				    		<textarea class="form-control " rows="2" placeholder="<?= $this->lang->line('enter_remarks_here') ?>" name="remarks" ></textarea>
-			    		</div>
-			        </div>
-					<br>
+			</div>
+
+		</div> <!-- /.card-body -->
+		<div class="card-body">
+			<form class="form-horizontal" role="form" method="post"
+				action="<?php echo base_url(); ?>index.php/Production_logsheets/add_new_record">
+				<div class="row col-md-12">
+					<div class="col-md-4 col-sm-4 ">
+						<label class="control-label"> <?= $this->lang->line('date_of_production') ?> <span class="required">*</span></label>
+						<input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"
+							value="<?php echo date('d-m-Y'); ?>" autofocus required>
+					</div>
+					<div class="col-md-4 col-sm-4 ">
+						<label class="control-label"> <?= $this->lang->line('pl_number') ?> <span class="required">*</span></label>
+
+						<input type="text" class="form-control" value="<?= $pl_number_view ?>" autocomplete="off" autofocus readonly>
+						<input type="hidden" name="pl_number" value="<?= $pl_number ?>">
+					</div>
+					<div class="col-md-4 col-sm-4 ">
+						<label class="control-label"> <?= $this->lang->line('department') ?></label>
+						<select name="department_id" class="form-control select2 ">
+							<option value=""> <?= $this->lang->line('select_department') ?></option>
+							<?php
+							if ($departments): ?>
+								<?php
+								foreach ($departments as $value) : ?>
+									<?php
+									if ($value['id'] == $department_id): ?>
+										<option value="<?= $value['id'] ?>" selected><?= $value['department_name'] . ' (' . $value['department_code'] . ')' ?></option>
+									<?php else: ?>
+										<option value="<?= $value['id'] ?>"><?= $value['department_name'] . ' (' . $value['department_code'] . ')' ?></option>
+									<?php endif;   ?>
+								<?php endforeach;  ?>
+							<?php else: ?>
+								<option value="0"><?= $this->lang->line('no_result') ?></option>
+							<?php endif; ?>
+						</select>
+					</div>
+				</div>
+				<div class="row col-md-12 ">
+					<div class="col-md-6 col-sm-6">
+						<label class="control-label"> <?= $this->lang->line('mill_no') ?> <span class="required">*</span></label>
+						<select name="mill_no" class="form-control" required="required">
+							<option value=""> <?= $this->lang->line('select_mill_no') ?></option>
+							<?php
+							if ($equipments): ?>
+								<?php
+								foreach ($equipments as $value) : ?>
+									<?php
+									if ($value == $mill_no): ?>
+										<option value="<?= $value ?>" selected><?= $value ?></option>
+									<?php else: ?>
+										<option value="<?= $value ?>"><?= $value ?></option>
+									<?php endif;   ?>
+								<?php endforeach;  ?>
+							<?php else: ?>
+								<option value="0"><?= $this->lang->line('no_result') ?></option>
+							<?php endif; ?>
+						</select>
+					</div>
+					<div class="col-md-6 col-sm-6">
+						<label class="control-label"> <?= $this->lang->line('remarks') ?></label>
+						<textarea class="form-control " rows="2" placeholder="<?= $this->lang->line('enter_remarks_here') ?>" name="remarks"></textarea>
+					</div>
+				</div>
+				<br>
 				<div class="form-group">
-		        	<div class="row col-md-12">
-		        		<div class="table-responsive">
-			        		<table id="maintable">
-			        			<thead style="background-color: #ca6b24;">
-			        				<tr>
-			        					<th >#</th>
-			        					<th > M/C Star Time </th>
-										<th > M/C Stop Time </th>
-										<th > <?= $this->lang->line('total_time') ?> (Hrs) </th>
-										<th > <?= $this->lang->line('down_time') ?> (Hrs)</th>
-										<th > <?= $this->lang->line('down_reason') ?> </th>
-										<th > <?= $this->lang->line('actual_time') ?> (Hrs)</th>
-			        					<th > <?= $this->lang->line('finish_good') ?> </th>
-			        					<th > <?= $this->lang->line('lot_no') ?>.</th>
-			        					<th > <?= $this->lang->line('batch_no') ?>.</th>
-										<th > <?= $this->lang->line('packing_size') ?></th> 
-										<th > <?= $this->lang->line('no_of_bags') ?></th> 
-										<th > <?= $this->lang->line('production_in_mt') ?></th>
-										<th > <?= $this->lang->line('kwh_opening') ?> </th>
-										<th > <?= $this->lang->line('kwh_closing') ?> </th>
-										<th > <?= $this->lang->line('kwh_consumed') ?> </th>
-										<th > <?= $this->lang->line('unit_per_mt') ?> </th>
-										<th > <?= $this->lang->line('per_hour_production') ?> </th>
-										<th > <?= $this->lang->line('tailing_qty') ?> (Kg) </th>
-										<th > <?= $this->lang->line('tailing_per') ?> </th>
-										<th > Mill (RPM) </th>
-										<th > Mill (AMP) </th>
-										<th > BLOWER (Hz) </th>
-										<th > BLOWER (AMP) </th>
-										<th > SCREW (RPM) </th>
-										<th > AIR WASHER (RPM) </th>
-			        					<th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?></th>
-			        				</tr>
-			        			</thead>
-			        			<tbody id="mainbody">
-			        			
-			        			</tbody>
-			        			
-			        			<tfoot>
-			        				<tr>
-			        					<td colspan="3" style="text-align: right;"><b> <?= $this->lang->line('total') ?> </b></td>
-			        					
-			        					<td colspan="">
-			        						<input type="text"  placeholder="HH.MM" name="total_machine_total_time" class="form-control total_machine_total_time"  value="" required >
-			        					</td>
-			        					<td colspan="2">
-			        						<input type="text" placeholder="HH.MM" name="total_machine_down_time" class="form-control total_machine_down_time"  value=""  required>
-			        					</td>
-			        					<td >
-			        						<input type="text"  placeholder="HH.MM" name="total_actual_time" class="form-control total_actual_time "  value="" required >
-			        					</td>
-			        					<td colspan="4" >
-			        						<input type="text"  placeholder="Finish Good Details"  class="form-control"readonly >
-			        					</td>
-			        					<td >
-			        						<input type="text"  placeholder="<?= $this->lang->line('total_bags') ?>" name="total_bags" class="form-control total_bags"  value="" readonly >
-			        					</td>
-			        					<td colspan="">
-			        						<input type="text"  placeholder="<?= $this->lang->line('total_propduction') ?>" name="total_production_in_mt" class="form-control total_production_in_mt"  value="" readonly >
-			        					</td>
-			        					<td colspan="">
-			        						<input type="text"  placeholder="<?= $this->lang->line('total_opening') ?>" name="total_opening" class="form-control total_opening"  value="" readonly >
-			        					</td>
-			        					<td colspan="">
-			        						<input type="text"  placeholder="<?= $this->lang->line('total_closing') ?>" name="total_closing" class="form-control total_closing"  value="" readonly >
-			        					</td>
-			        					<td >
-			        						<input type="text"  placeholder="<?= $this->lang->line('total_kwh') ?>" name="total_kwh_consumed" class="form-control total_kwh"  value="" readonly >
-			        					</td>
-			        					
-			        					<!-- <td colspan="">
+					<div class="row col-md-12">
+						<div class="table-responsive">
+							<table id="maintable">
+								<thead style="background-color: #ca6b24;">
+									<tr>
+										<th>#</th>
+										<th><?= $this->lang->line('mc_start_time'); ?></th>
+										<th><?= $this->lang->line('mc_stop_time'); ?></th>
+										<th> <?= $this->lang->line('total_time') ?> (Hrs) </th>
+										<th> <?= $this->lang->line('down_time') ?> (Hrs)</th>
+										<th> <?= $this->lang->line('down_reason') ?> </th>
+										<th> <?= $this->lang->line('actual_time') ?> (Hrs)</th>
+										<th> <?= $this->lang->line('finish_good') ?> </th>
+										<th> <?= $this->lang->line('lot_no') ?>.</th>
+										<th> <?= $this->lang->line('batch_no') ?>.</th>
+										<th> <?= $this->lang->line('packing_size') ?></th>
+										<th> <?= $this->lang->line('no_of_bags') ?></th>
+										<th> <?= $this->lang->line('production_in_mt') ?></th>
+										<th> <?= $this->lang->line('kwh_opening') ?> </th>
+										<th> <?= $this->lang->line('kwh_closing') ?> </th>
+										<th> <?= $this->lang->line('kwh_consumed') ?> </th>
+										<th> <?= $this->lang->line('unit_per_mt') ?> </th>
+										<th> <?= $this->lang->line('per_hour_production') ?> </th>
+										<th> <?= $this->lang->line('tailing_qty') ?> (Kg) </th>
+										<th> <?= $this->lang->line('tailing_per') ?> </th>
+										<th><?= $this->lang->line('mill_rpm'); ?></th>
+										<th><?= $this->lang->line('mill_amp'); ?></th>
+										<th><?= $this->lang->line('blower_hz'); ?></th>
+										<th><?= $this->lang->line('blower_amp'); ?></th>
+										<th><?= $this->lang->line('screw_rpm'); ?></th>
+										<th><?= $this->lang->line('air_washer_rpm'); ?></th>
+										<th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?></th>
+									</tr>
+								</thead>
+								<tbody id="mainbody">
+
+								</tbody>
+
+								<tfoot>
+									<tr>
+										<td colspan="3" style="text-align: right;"><b> <?= $this->lang->line('total') ?> </b></td>
+
+										<td colspan="">
+											<input type="text" placeholder="HH.MM" name="total_machine_total_time" class="form-control total_machine_total_time" value="" required>
+										</td>
+										<td colspan="2">
+											<input type="text" placeholder="HH.MM" name="total_machine_down_time" class="form-control total_machine_down_time" value="" required>
+										</td>
+										<td>
+											<input type="text" placeholder="HH.MM" name="total_actual_time" class="form-control total_actual_time " value="" required>
+										</td>
+										<td colspan="4">
+											<input type="text" placeholder="<?= $this->lang->line('finish_good_details') ?>" class="form-control" readonly>
+										</td>
+										<td>
+											<input type="text" placeholder="<?= $this->lang->line('total_bags') ?>" name="total_bags" class="form-control total_bags" value="" readonly>
+										</td>
+										<td colspan="">
+											<input type="text" placeholder="<?= $this->lang->line('total_propduction') ?>" name="total_production_in_mt" class="form-control total_production_in_mt" value="" readonly>
+										</td>
+										<td colspan="">
+											<input type="text" placeholder="<?= $this->lang->line('total_opening') ?>" name="total_opening" class="form-control total_opening" value="" readonly>
+										</td>
+										<td colspan="">
+											<input type="text" placeholder="<?= $this->lang->line('total_closing') ?>" name="total_closing" class="form-control total_closing" value="" readonly>
+										</td>
+										<td>
+											<input type="text" placeholder="<?= $this->lang->line('total_kwh') ?>" name="total_kwh_consumed" class="form-control total_kwh" value="" readonly>
+										</td>
+
+										<!-- <td colspan="">
 			        						<input type="text"  placeholder="Total" name="total1" class="form-control "  value="" readonly >
 			        					</td> -->
-			        				<!-- 	<td colspan="">
+										<!-- 	<td colspan="">
 			        						<input type="text"  placeholder="Total Tailing" name="total_tailing" class="form-control total_tailing"  value="" readonly >
 			        					</td>
 			        					<td colspan="">
@@ -184,19 +185,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        					<td colspan="">
 			        						<input type="text"  placeholder="Total Air(RPM)" name="total_air_rpm" class="form-control total_air_rpm"  value="" readonly >
 			        					</td> -->
-			        				</tr>
-			        			</tfoot>
-			        		</table>
-			            </div>
-		        	</div>
-		        </div>
-		        	<div class="row col-md-12">
-			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
-			                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
-		        		</div>
-		        	</div>
-		    </form> <!-- /form -->
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="row col-md-12">
+					<div class="col-md-12 col-sm-12 ">
+						<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
+						<button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
+					</div>
+				</div>
+			</form> <!-- /form -->
 		</div>
 	</div>
 </div>
@@ -204,152 +205,152 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <table id="sample_table1" style="display: none;">
 	<tbody>
 		<tr class="main_tr1">
-			<td >1</td>
-			<td>
-			 	<div class="input-group">
-                  <div class="input-group-append">
-                  	<input type="date" class="form-control date1" name="date1[]"  value="" />
-                    <span class="input-group-text">
-                    	<!-- <input type="time" class="time1" data-theme="a" data-clear-btn="true" name="time1[]"  value=""> -->
-                    	<select name="hrs1[]" class="form-control" style="width:80px;">
-                    	<?php foreach ($hours as $value) : ?>
-	                        <option value="<?= $value ?>"><?= $value ?></option>
-	                	<?php endforeach; ?>
-                    	</select>
-                    	&nbsp;
-                    	<select name="min1[]" class="form-control" style="width:80px;">
-                    	<?php foreach ($minutes as $value) : ?>
-	                        <option value="<?= $value ?>"><?= $value ?></option>
-	                	<?php endforeach; ?>
-                    	</select>
-                    	
-                    </span>
-                  </div>
-               	</div> 
-			</td>
-	
+			<td>1</td>
 			<td>
 				<div class="input-group">
-                  <div class="input-group-append">
-                  	<input type="date" class="form-control date2" name="date2[]"  value="" />
-                    <span class="input-group-text">
-                    	<!-- <input type="time" class="time2" data-theme="a" data-clear-btn="true" name="time2[]"  value=""> -->
-                    	<select name="hrs2[]" class="form-control" style="width:80px;">
-                    	<?php foreach ($hours as $value) : ?>
-	                        <option value="<?= $value ?>"><?= $value ?></option>
-	                	<?php endforeach; ?>
-                    	</select>&nbsp;
-                    	<select name="min2[]" class="form-control" style="width:80px;">
-                    	<?php foreach ($minutes as $value) : ?>
-	                        <option value="<?= $value ?>"><?= $value ?></option>
-	                	<?php endforeach; ?>
-                    	</select>
-                    </span>
-                  </div>
-               	</div> 
+					<div class="input-group-append">
+						<input type="date" class="form-control date1" name="date1[]" value="" />
+						<span class="input-group-text">
+							<!-- <input type="time" class="time1" data-theme="a" data-clear-btn="true" name="time1[]"  value=""> -->
+							<select name="hrs1[]" class="form-control" style="width:80px;">
+								<?php foreach ($hours as $value) : ?>
+									<option value="<?= $value ?>"><?= $value ?></option>
+								<?php endforeach; ?>
+							</select>
+							&nbsp;
+							<select name="min1[]" class="form-control" style="width:80px;">
+								<?php foreach ($minutes as $value) : ?>
+									<option value="<?= $value ?>"><?= $value ?></option>
+								<?php endforeach; ?>
+							</select>
+
+						</span>
+					</div>
+				</div>
+			</td>
+
+			<td>
+				<div class="input-group">
+					<div class="input-group-append">
+						<input type="date" class="form-control date2" name="date2[]" value="" />
+						<span class="input-group-text">
+							<!-- <input type="time" class="time2" data-theme="a" data-clear-btn="true" name="time2[]"  value=""> -->
+							<select name="hrs2[]" class="form-control" style="width:80px;">
+								<?php foreach ($hours as $value) : ?>
+									<option value="<?= $value ?>"><?= $value ?></option>
+								<?php endforeach; ?>
+							</select>&nbsp;
+							<select name="min2[]" class="form-control" style="width:80px;">
+								<?php foreach ($minutes as $value) : ?>
+									<option value="<?= $value ?>"><?= $value ?></option>
+								<?php endforeach; ?>
+							</select>
+						</span>
+					</div>
+				</div>
 			</td>
 			<td>
 				<!-- <div  id="diff"> </div> -->
-				 <input type="text"  placeholder="HH.MM" name="machine_total_time[]" class="form-control machine_total_time"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="HH.MM" name="machine_total_time[]" class="form-control machine_total_time" autofocus style="width:150px;">
 			</td>
 			<td>
 				<!-- <div  id="diff"> </div> -->
-				 <input type="text"  placeholder="HH.MM" name="machine_down_time[]" class="form-control machine_down_time"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="HH.MM" name="machine_down_time[]" class="form-control machine_down_time" autofocus style="width:150px;">
 			</td>
 			<td>
 				<textarea class="form-control " rows="2" placeholder="Enter down reason" name="down_reason[]" style="width:150px;"></textarea>
 			</td>
 			<td>
-				 <input type="text" placeholder="HH.MM" name="machine_actual_time[]" class="form-control machine_actual_time"  autofocus style="width:120px;"  >
-			</td>
-			<td> 
-			<select name="finish_good_id[]" class="form-control products" style="width:250px;" required>
-				<option value=""> Select Item</option>
-	            <?php if ($items): ?> 
-	                <?php foreach ($items as $value) : ?>
-	                       <!--  <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].','.$value['packing_type'].','.$value['hsn_code'].')' ?></option> -->
-	                        <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].')' ?></option>
-	                <?php endforeach; ?>
-	            <?php else: ?>
-	                <option value="0"><?= $this->lang->line('no_result') ?></option>
-	            <?php endif; ?>
-	        </select>
-				
-   			</td>
-   			<td>
-				<input type="text"  placeholder="<?= $this->lang->line('enter_lot_no') ?>" name="lot_no[]" class="form-control"  style="width: 150px;" autofocus  >
-			</td>
-   			<td>
-				<input type="text"  placeholder="<?= $this->lang->line('enter_batch_no') ?>" name="batch_no[]" class="form-control"  autofocus style="width: 150px;" >
+				<input type="text" placeholder="HH.MM" name="machine_actual_time[]" class="form-control machine_actual_time" autofocus style="width:120px;">
 			</td>
 			<td>
-				<select name="packing_size[]" class="form-control packing_size" required="required"  style="width:100px;" >
-	                <?php
-	                 if ($packing_sizes): ?> 
-	                  <?php 
-	                    foreach ($packing_sizes as $key => $value) : ?>
-	                        <?php 
+				<select name="finish_good_id[]" class="form-control products" style="width:250px;" required>
+					<option value=""> <?= $this->lang->line('select_item') ?></option>
+					<?php if ($items): ?>
+						<?php foreach ($items as $value) : ?>
+							<!--  <option value="<?= $value['id'] ?>"><?= $value['mineral_name'] . ' (' . $value['grade_name'] . ',' . $value['packing_type'] . ',' . $value['hsn_code'] . ')' ?></option> -->
+							<option value="<?= $value['id'] ?>"><?= $value['mineral_name'] . ' (' . $value['grade_name'] . ')' ?></option>
+						<?php endforeach; ?>
+					<?php else: ?>
+						<option value="0"><?= $this->lang->line('no_result') ?></option>
+					<?php endif; ?>
+				</select>
 
-								if ($value == $packing_size): ?>
-		                            <option value="<?= $key?>" selected><?= $value ?></option>
-		                        <?php else: ?>
-		                            <option value="<?= $key ?>"><?= $value ?></option>
-		                        <?php endif;   ?>
-	                    <?php   endforeach;  ?>
-	                <?php else: ?>
-	                    <option value="0"><?= $this->lang->line('no_result') ?></option>
-	                <?php endif; ?>
-        		</select>
-			</td> 
-			<td>
-				<input type="text"  placeholder="<?= $this->lang->line('no_of_bags') ?>" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
-			</td>
-			
-			<td>
-				<input type="text"  placeholder="<?= $this->lang->line('production_in_mt') ?>" name="production_in_mt[]" class="form-control production_in_mt"  autofocus  style="width:150px;" readonly >
-			</td>
-			<td >
-				<input type="text"  placeholder="<?= $this->lang->line('kwh_opening') ?>" name="kwh_opening[]" class="form-control kwh_opening"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
-			</td>
-			<td >
-				<input type="text"  placeholder="<?= $this->lang->line('kwh_closing') ?>" name="kwh_closing[]" class="form-control kwh_closing"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 			</td>
 			<td>
-				<input type="text"  placeholder="<?= $this->lang->line('total_kwh') ?>" name="kwh_consumed[]" class="form-control kwh_consumed"  autofocus style="width:150px;" readonly >
+				<input type="text" placeholder="<?= $this->lang->line('enter_lot_no') ?>" name="lot_no[]" class="form-control" style="width: 150px;" autofocus>
 			</td>
 			<td>
-				<input type="text"  placeholder="Unit/MT" name="unit_per_mt[]" class="form-control unit_per_mt"  autofocus style="width:150px;" readonly >
-			</td>
-			
-			<td>
-				<input type="text"  placeholder="Production / Hr" name="per_hour_production[]" class="form-control per_hour_production"  autofocus style="width:150px;" readonly >
+				<input type="text" placeholder="<?= $this->lang->line('enter_batch_no') ?>" name="batch_no[]" class="form-control" autofocus style="width: 150px;">
 			</td>
 			<td>
-				<input type="text"  placeholder="<?= $this->lang->line('tailing_qty') ?>" name="tailing_qty[]" class="form-control tailing_qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+				<select name="packing_size[]" class="form-control packing_size" required="required" style="width:100px;">
+					<?php
+					if ($packing_sizes): ?>
+						<?php
+						foreach ($packing_sizes as $key => $value) : ?>
+							<?php
+
+							if ($value == $packing_size): ?>
+								<option value="<?= $key ?>" selected><?= $value ?></option>
+							<?php else: ?>
+								<option value="<?= $key ?>"><?= $value ?></option>
+							<?php endif;   ?>
+						<?php endforeach;  ?>
+					<?php else: ?>
+						<option value="0"><?= $this->lang->line('no_result') ?></option>
+					<?php endif; ?>
+				</select>
 			</td>
 			<td>
-				<input type="text"  placeholder="Tailing %" name="tailing_per[]" class="form-control tailing_per"  autofocus readonly="readonly" >
+				<input type="text" placeholder="<?= $this->lang->line('no_of_bags') ?>" name="no_of_bags[]" class="form-control no_of_bags" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;">
+			</td>
+
+			<td>
+				<input type="text" placeholder="<?= $this->lang->line('production_in_mt') ?>" name="production_in_mt[]" class="form-control production_in_mt" autofocus style="width:150px;" readonly>
 			</td>
 			<td>
-				<input type="text"  placeholder="Mill RPM" name="mill_rpm[]" class="form-control mill_rpm"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="<?= $this->lang->line('kwh_opening') ?>" name="kwh_opening[]" class="form-control kwh_opening" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;">
 			</td>
 			<td>
-				<input type="text"  placeholder="Mill AMP" name="mill_amp[]" class="form-control mill_amp"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="<?= $this->lang->line('kwh_closing') ?>" name="kwh_closing[]" class="form-control kwh_closing" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;">
 			</td>
 			<td>
-				<input type="text"  placeholder="Blower HRZ" name="blower_in_hrz[]" class="form-control blower_in_hrz"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="<?= $this->lang->line('total_kwh') ?>" name="kwh_consumed[]" class="form-control kwh_consumed" autofocus style="width:150px;" readonly>
 			</td>
 			<td>
-				<input type="text"  placeholder="Blower AMP" name="blower_amp[]" class="form-control blower_amp"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="Unit/MT" name="unit_per_mt[]" class="form-control unit_per_mt" autofocus style="width:150px;" readonly>
+			</td>
+
+			<td>
+				<input type="text" placeholder="Production / Hr" name="per_hour_production[]" class="form-control per_hour_production" autofocus style="width:150px;" readonly>
 			</td>
 			<td>
-				<input type="text"  placeholder="Screw RPW" name="screw_rpw[]" class="form-control screw_rpw"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="<?= $this->lang->line('tailing_qty') ?>" name="tailing_qty[]" class="form-control tailing_qty" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;">
 			</td>
 			<td>
-				<input type="text"  placeholder="Air Washer RPM" name="air_washer_rpm[]" class="form-control air_washer_rpm"  autofocus style="width:150px;"  >
+				<input type="text" placeholder="Tailing %" name="tailing_per[]" class="form-control tailing_per" autofocus readonly="readonly">
 			</td>
 			<td>
-				<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+				<input type="text" placeholder="<?= $this->lang->line('mill_rpm') ?>" name="mill_rpm[]" class="form-control mill_rpm" autofocus style="width:150px;">
+			</td>
+			<td>
+				<input type="text" placeholder="<?= $this->lang->line('mill_amp') ?>" name="mill_amp[]" class="form-control mill_amp" autofocus style="width:150px;">
+			</td>
+			<td>
+				<input type="text" placeholder="<?= $this->lang->line('blower_hrz') ?>" name="blower_in_hrz[]" class="form-control blower_in_hrz" autofocus style="width:150px;">
+			</td>
+			<td>
+				<input type="text" placeholder="<?= $this->lang->line('blower_amp') ?>" name="blower_amp[]" class="form-control blower_amp" autofocus style="width:150px;">
+			</td>
+			<td>
+				<input type="text" placeholder="<?= $this->lang->line('screw_rpw') ?>" name="screw_rpw[]" class="form-control screw_rpw" autofocus style="width:150px;">
+			</td>
+			<td>
+				<input type="text" placeholder="<?= $this->lang->line('air_washer_rpm') ?>" name="air_washer_rpm[]" class="form-control air_washer_rpm" autofocus style="width:150px;">
+			</td>
+			<td>
+				<button type="button" class="btn btn-xs btn-primary addrow" href="#" role='button'><i class="fa fa-plus"></i></button>
 				<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
 			</td>
 		</tr>
@@ -357,309 +358,319 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </table>
 
 
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
 
 <script type="text/javascript">
 	function append(dl, dtTxt, ddTxt) {
-  var dt = document.createElement("dt");
-  var dd = document.createElement("dd");
-  dt.textContent = dtTxt;
-  dd.textContent = ddTxt;
-  dl.appendChild(dt);
-  dl.appendChild(dd);
-}
-/*document.querySelectorAll('input[type=number]')
-  .forEach(e => e.oninput = () => {
-    // Always 2 digits
-    if (e.value.length >= 2) e.value = e.value.slice(0, 2);
-    // 0 on the left (doesn't work on FF)
-    if (e.value.length === 1) e.value = '0' + e.value;
-    // Avoiding letters on FF
-    if (!e.value) e.value = '00';
-  });
-*/
+		var dt = document.createElement("dt");
+		var dd = document.createElement("dd");
+		dt.textContent = dtTxt;
+		dd.textContent = ddTxt;
+		dl.appendChild(dt);
+		dl.appendChild(dd);
+	}
+	/*document.querySelectorAll('input[type=number]')
+	  .forEach(e => e.oninput = () => {
+	    // Always 2 digits
+	    if (e.value.length >= 2) e.value = e.value.slice(0, 2);
+	    // 0 on the left (doesn't work on FF)
+	    if (e.value.length === 1) e.value = '0' + e.value;
+	    // Avoiding letters on FF
+	    if (!e.value) e.value = '00';
+	  });
+	*/
 
 
 
-$(document).ready(function() {
+	$(document).ready(function() {
 
-  var today = new Date();
-  $('.date1').val(today.getFullYear() + "-" + ('0' + (today.getMonth() + 1)).slice(-2) + "-" + ('0' + (today.getDate())).slice(-2));
-  $('.date2').val($('.date1').val());
-  $('.time1').val('08:00');
-  $('.time2').val('08:00');
+		var today = new Date();
+		$('.date1').val(today.getFullYear() + "-" + ('0' + (today.getMonth() + 1)).slice(-2) + "-" + ('0' + (today.getDate())).slice(-2));
+		$('.date2').val($('.date1').val());
+		$('.time1').val('08:00');
+		$('.time2').val('08:00');
 
-});
-
+	});
 </script>
 
 
 <script type="text/javascript">
-	$( document ).ready(function() {
+	$(document).ready(function() {
 
 		add_row();
-		$('body').on('click','.addrow',function(){
-		
-			var table=$(this).closest('table');
-			add_row();
-			 rename_rows();
-			 calculate_total(table);
-	    });
-		
+		$('body').on('click', '.addrow', function() {
 
-		function add_row(){ 
-			var tr1=$("#sample_table1 tbody tr").clone();
+			var table = $(this).closest('table');
+			add_row();
+			rename_rows();
+			calculate_total(table);
+		});
+
+
+		function add_row() {
+			var tr1 = $("#sample_table1 tbody tr").clone();
 			$("#maintable tbody#mainbody").append(tr1);
 		}
-		$('body').on('click','.deleterow',function(){
-			
-		var table=$(this).closest('table');
-		var rowCount = $("#maintable tbody tr.main_tr1").length;
-		if (rowCount>1){
-			if (confirm("Are you sure to remove row ?") == true) {
-				$(this).closest("tr").remove();
-				rename_rows();
-				calculate_total(table);
-			} 
-		}
-		}); 
+		$('body').on('click', '.deleterow', function() {
 
-		function rename_rows(){
-		var i=0;
-		$("#maintable tbody tr.main_tr1").each(function(){ 
-			$(this).find("td:nth-child(1)").html(++i);
-			//$(this).find("td:nth-child(2) select.products").select2();
-			//$(this).find("td:nth-child(4) select.units").select2();
+			var table = $(this).closest('table');
+			var rowCount = $("#maintable tbody tr.main_tr1").length;
+			if (rowCount > 1) {
+				if (confirm("Are you sure to remove row ?") == true) {
+					$(this).closest("tr").remove();
+					rename_rows();
+					calculate_total(table);
+				}
+			}
+		});
+
+		function rename_rows() {
+			var i = 0;
+			$("#maintable tbody tr.main_tr1").each(function() {
+				$(this).find("td:nth-child(1)").html(++i);
+				//$(this).find("td:nth-child(2) select.products").select2();
+				//$(this).find("td:nth-child(4) select.units").select2();
+
+			});
+		}
+		$(document).on('keyup', '.no_of_bags,.production_in_mt,.tailing_qty,.mill_rpm,.mill_amp,.blower_in_hrz,.blower_amp,.screw_rpw,.air_washer_rpm', function() {
+			var table = $(this).closest('table');
+			calculate_total(table);
 
 		});
-	}
-		$(document).on('keyup','.no_of_bags,.production_in_mt,.tailing_qty,.mill_rpm,.mill_amp,.blower_in_hrz,.blower_amp,.screw_rpw,.air_washer_rpm',function(){
-			var table=$(this).closest('table');
+		$(document).on('change', '.packing_size', function() {
+			var table = $(this).closest('table');
 			calculate_total(table);
 
-	    });
-		$(document).on('change','.packing_size',function(){
-			var table=$(this).closest('table');
+		});
+
+
+		$(document).on('blur', '.kwh_opening,.kwh_closing', function() {
+			var table = $(this).closest('table');
 			calculate_total(table);
 
-	    });
-		
-
-	    $(document).on('blur','.kwh_opening,.kwh_closing',function(){
-			var table=$(this).closest('table');
-			calculate_total(table);
-
-	    });
+		});
 
 
-		function calculate_total(table)
-		{
-			var packing_size=0;
-			var tailing_qty=0;
-			var no_of_bags=0;
-			var total_bags=0;
-			var production_in_mt=0;
-			var per_hr_production=0;
-			var kwh_opening=0;
-			var kwh_closing=0;
-			var kwh_consumed=0;
-			var unit_per_mt=0;
-			var total_production_in_mt=0;
-			var grand_actual_total_time=0;
-			var grand_total_hrs=0;
-			var grand_total_mins=0;
-			var grand_total_down_hrs=0;
-			var grand_total_down_mins=0;
-			
+		function calculate_total(table) {
+			var packing_size = 0;
+			var tailing_qty = 0;
+			var no_of_bags = 0;
+			var total_bags = 0;
+			var production_in_mt = 0;
+			var per_hr_production = 0;
+			var kwh_opening = 0;
+			var kwh_closing = 0;
+			var kwh_consumed = 0;
+			var unit_per_mt = 0;
+			var total_production_in_mt = 0;
+			var grand_actual_total_time = 0;
+			var grand_total_hrs = 0;
+			var grand_total_mins = 0;
+			var grand_total_down_hrs = 0;
+			var grand_total_down_mins = 0;
+
 			//var total_machine_time=0;
-			var actual_total_mins=0;
-			var total_opening=0;
-			var total_closing=0;
-			var total_kwh=0;
-			var total_kwh=0;
-			var total_tailing=0;
-			var total_rpm=0;
-			var total_mill_amp=0;
-			var total_hrz=0;
-			var total_blower_amp=0;
-			var total_screw=0;
-			var total_air_rpm=0;
-			var machine_total_time=0;
-			var machine_down_time=0;
-			var total_machine_total_time=0;
-			var total_machine_down_time=0;
-			var machine_actual_time=0;
+			var actual_total_mins = 0;
+			var total_opening = 0;
+			var total_closing = 0;
+			var total_kwh = 0;
+			var total_kwh = 0;
+			var total_tailing = 0;
+			var total_rpm = 0;
+			var total_mill_amp = 0;
+			var total_hrz = 0;
+			var total_blower_amp = 0;
+			var total_screw = 0;
+			var total_air_rpm = 0;
+			var machine_total_time = 0;
+			var machine_down_time = 0;
+			var total_machine_total_time = 0;
+			var total_machine_down_time = 0;
+			var machine_actual_time = 0;
 
-			table.find("tbody tr.main_tr1").each(function()
-			{
+			table.find("tbody tr.main_tr1").each(function() {
 				//var qty,rate,total=0;
-					/*var packing_size = parseFloat($(this).find("td:nth-child(5) select.packing_size").val());*/
-				 machine_total_time=parseFloat($(this).find("td:nth-child(4) input.machine_total_time").val());
-				 machine_down_time=parseFloat($(this).find("td:nth-child(5) input.machine_down_time").val());
+				/*var packing_size = parseFloat($(this).find("td:nth-child(5) select.packing_size").val());*/
+				machine_total_time = parseFloat($(this).find("td:nth-child(4) input.machine_total_time").val());
+				machine_down_time = parseFloat($(this).find("td:nth-child(5) input.machine_down_time").val());
 				packing_size = $(this).find('td:nth-child(11) select.packing_size option:selected').val();
-				no_of_bags=parseFloat($(this).find("td:nth-child(12) input.no_of_bags").val());
-				kwh_opening=parseFloat($(this).find("td:nth-child(14) input.kwh_opening").val());
-				kwh_closing=parseFloat($(this).find("td:nth-child(15) input.kwh_closing").val());
-				tailing_qty=parseFloat($(this).find("td:nth-child(19) input.tailing_qty").val())/1000;
-				var mill_rpm=parseFloat($(this).find("td:nth-child(21) input.mill_rpm").val());
-				var mill_amp=parseFloat($(this).find("td:nth-child(22) input.mill_amp").val());
-				var blower_in_hrz=parseFloat($(this).find("td:nth-child(23) input.blower_in_hrz").val());
-				var blower_amp=parseFloat($(this).find("td:nth-child(24) input.blower_amp").val());
-				var screw_rpw=parseFloat($(this).find("td:nth-child(25) input.screw_rpw").val());
-				var air_washer_rpm=parseFloat($(this).find("td:nth-child(26) input.air_washer_rpm").val());
-				if(isNaN(mill_rpm)){mill_rpm =0;}
-				if(isNaN(grand_actual_total_time)){grand_actual_total_time =0.00;}
-				if(isNaN(mill_amp)){mill_amp =0;}
-				if(isNaN(blower_in_hrz)){blower_in_hrz =0;}
-				if(isNaN(blower_amp)){blower_amp =0;}
-				if(isNaN(screw_rpw)){screw_rpw =0;}
-				if(isNaN(air_washer_rpm)){air_washer_rpm =0;}
-				if(isNaN(tailing_qty)){tailing_qty =0;}
-				if(isNaN(per_hr_production)){per_hr_production =0;}
-				
-				
-				machine_actual_time=$(this).find("td:nth-child(7) input.machine_actual_time").val();
+				no_of_bags = parseFloat($(this).find("td:nth-child(12) input.no_of_bags").val());
+				kwh_opening = parseFloat($(this).find("td:nth-child(14) input.kwh_opening").val());
+				kwh_closing = parseFloat($(this).find("td:nth-child(15) input.kwh_closing").val());
+				tailing_qty = parseFloat($(this).find("td:nth-child(19) input.tailing_qty").val()) / 1000;
+				var mill_rpm = parseFloat($(this).find("td:nth-child(21) input.mill_rpm").val());
+				var mill_amp = parseFloat($(this).find("td:nth-child(22) input.mill_amp").val());
+				var blower_in_hrz = parseFloat($(this).find("td:nth-child(23) input.blower_in_hrz").val());
+				var blower_amp = parseFloat($(this).find("td:nth-child(24) input.blower_amp").val());
+				var screw_rpw = parseFloat($(this).find("td:nth-child(25) input.screw_rpw").val());
+				var air_washer_rpm = parseFloat($(this).find("td:nth-child(26) input.air_washer_rpm").val());
+				if (isNaN(mill_rpm)) {
+					mill_rpm = 0;
+				}
+				if (isNaN(grand_actual_total_time)) {
+					grand_actual_total_time = 0.00;
+				}
+				if (isNaN(mill_amp)) {
+					mill_amp = 0;
+				}
+				if (isNaN(blower_in_hrz)) {
+					blower_in_hrz = 0;
+				}
+				if (isNaN(blower_amp)) {
+					blower_amp = 0;
+				}
+				if (isNaN(screw_rpw)) {
+					screw_rpw = 0;
+				}
+				if (isNaN(air_washer_rpm)) {
+					air_washer_rpm = 0;
+				}
+				if (isNaN(tailing_qty)) {
+					tailing_qty = 0;
+				}
+				if (isNaN(per_hr_production)) {
+					per_hr_production = 0;
+				}
 
-				if(isNaN(packing_size))
-				{
-					packing_size =0;
+
+				machine_actual_time = $(this).find("td:nth-child(7) input.machine_actual_time").val();
+
+				if (isNaN(packing_size)) {
+					packing_size = 0;
 				}
-				if(isNaN(no_of_bags))
-				{
-					no_of_bags =0;
+				if (isNaN(no_of_bags)) {
+					no_of_bags = 0;
 				}
-				if(isNaN(production_in_mt))
-				{
-					production_in_mt =0;
+				if (isNaN(production_in_mt)) {
+					production_in_mt = 0;
 				}
-				if(isNaN(kwh_consumed))
-				{
-					kwh_consumed =0;
+				if (isNaN(kwh_consumed)) {
+					kwh_consumed = 0;
 				}
-				if(isNaN(unit_per_mt))
-				{
-					unit_per_mt =0;
+				if (isNaN(unit_per_mt)) {
+					unit_per_mt = 0;
 				}
-				if(isNaN(kwh_opening))
-				{
-					kwh_opening =0;
+				if (isNaN(kwh_opening)) {
+					kwh_opening = 0;
 				}
-				if(isNaN(kwh_closing))
-				{
-					kwh_closing =0;
+				if (isNaN(kwh_closing)) {
+					kwh_closing = 0;
 				}
-				if(isNaN(machine_total_time)){machine_total_time =0;}
-				if(isNaN(machine_down_time)){machine_down_time =0;}
+				if (isNaN(machine_total_time)) {
+					machine_total_time = 0;
+				}
+				if (isNaN(machine_down_time)) {
+					machine_down_time = 0;
+				}
 				//if(isNaN(grand_total_mins)){grand_total_mins =0;}
 
 				//total_machine_total_time=total_machine_total_time+machine_total_time;
 				// var machine_total_time_str=(machine_total_time.toFixed(2)).toString();
 				// var machine_total_time_data = machine_total_time_str.split(".");
 				// var total_hrs = machine_total_time_data[0];
-			 //    var total_mins = machine_total_time_data[1];
-			 //    grand_total_hrs=grand_total_hrs+parseInt(total_hrs);
-			 //    grand_total_mins=grand_total_mins+parseInt(total_mins);
-			 //    if(grand_total_mins > 59){
-			 //    	var psd1 = grand_total_hrs+1;
-			 //    	var asd1 = grand_total_mins-60;
-			 //    	if(asd1 < 10){
-			 //    		asd1='0'.asd1;
-			 //    	}
-			 //    	total_machine_total_time=parseInt(psd1)+'.'+parseInt(asd1);
-			 //    }
-			 //    else{
-			 //    	if(grand_total_mins < 10){
-			 //    		grand_total_mins='0'.grand_total_mins;
-			 //    	}
-			 //    	/*if(grand_total_mins == 0){
-			 //    		grand_total_mins=0;
-			 //    	}*/
-			 //    	total_machine_total_time=parseInt(grand_total_hrs)+'.'+parseInt(grand_total_mins);
-			 //    }
+				//    var total_mins = machine_total_time_data[1];
+				//    grand_total_hrs=grand_total_hrs+parseInt(total_hrs);
+				//    grand_total_mins=grand_total_mins+parseInt(total_mins);
+				//    if(grand_total_mins > 59){
+				//    	var psd1 = grand_total_hrs+1;
+				//    	var asd1 = grand_total_mins-60;
+				//    	if(asd1 < 10){
+				//    		asd1='0'.asd1;
+				//    	}
+				//    	total_machine_total_time=parseInt(psd1)+'.'+parseInt(asd1);
+				//    }
+				//    else{
+				//    	if(grand_total_mins < 10){
+				//    		grand_total_mins='0'.grand_total_mins;
+				//    	}
+				//    	/*if(grand_total_mins == 0){
+				//    		grand_total_mins=0;
+				//    	}*/
+				//    	total_machine_total_time=parseInt(grand_total_hrs)+'.'+parseInt(grand_total_mins);
+				//    }
 
 				// var machine_down_time_str=(machine_down_time.toFixed(2)).toString();
 				// var machine_down_time_data = machine_down_time_str.split(".");
 				// var down_hrs = machine_down_time_data[0];
-			 //    var down_mins = machine_down_time_data[1];
-			 //    grand_total_down_hrs=grand_total_down_hrs+parseInt(down_hrs);
-			 //    grand_total_down_mins=grand_total_down_mins+parseInt(down_mins);
-			 //    //alert(grand_total_mins);
+				//    var down_mins = machine_down_time_data[1];
+				//    grand_total_down_hrs=grand_total_down_hrs+parseInt(down_hrs);
+				//    grand_total_down_mins=grand_total_down_mins+parseInt(down_mins);
+				//    //alert(grand_total_mins);
 				// if(grand_total_down_mins > 59){
-			 //    	var psd = grand_total_down_hrs+1;
-			 //    	var asd = grand_total_down_mins-60;
-			 //    	if(asd < 10){
-			 //    		asd='0'.asd;
-			 //    	}
-			 //    	total_machine_down_time=parseInt(psd)+'.'+parseInt(asd);
-			 //    }
-			 //    else{
+				//    	var psd = grand_total_down_hrs+1;
+				//    	var asd = grand_total_down_mins-60;
+				//    	if(asd < 10){
+				//    		asd='0'.asd;
+				//    	}
+				//    	total_machine_down_time=parseInt(psd)+'.'+parseInt(asd);
+				//    }
+				//    else{
 
-			 //    	if(grand_total_down_mins < 10){
-			 //    		grand_total_down_mins='0'.grand_total_down_mins;
-			 //    	}
-			 //    	// if(grand_total_down_mins == 0){
-			 //    	// 	grand_total_down_mins=0;
-			 //    	// }
+				//    	if(grand_total_down_mins < 10){
+				//    		grand_total_down_mins='0'.grand_total_down_mins;
+				//    	}
+				//    	// if(grand_total_down_mins == 0){
+				//    	// 	grand_total_down_mins=0;
+				//    	// }
 
-			 //    	total_machine_down_time=parseInt(grand_total_down_hrs)+'.'+parseInt(grand_total_down_mins);
-			 //    }
-				
+				//    	total_machine_down_time=parseInt(grand_total_down_hrs)+'.'+parseInt(grand_total_down_mins);
+				//    }
+
 				//console.log(machine_down_time_str);
 
-				
-				
+
+
 				//alert(JSON.stringify(machine_down_time_data));
 
-			 
-			   
-			  
+
+
+
 
 				//total_machine_down_time=parseInt(grand_total_hrs)+'.'+parseInt(grand_total_mins);
 				//alert(total_machine_down_time);
 
 
 
-				total_bags=total_bags+no_of_bags;
-				production_in_mt=packing_size*no_of_bags/1000;
-				per_hr_production=parseInt(no_of_bags)/parseFloat(machine_actual_time);
-				var tailing_per=parseFloat(tailing_qty)/parseFloat(production_in_mt)*100;
-				total_opening=total_opening+kwh_opening;
-				total_closing=total_closing+kwh_closing;
-				total_tailing=total_tailing+tailing_qty*1000;
-				total_rpm=total_rpm+mill_rpm;
-				total_mill_amp=total_mill_amp+mill_amp;
-				total_hrz=total_hrz+blower_in_hrz;
-				total_blower_amp=total_blower_amp+blower_amp;
-				total_screw=total_screw+screw_rpw;
-				total_air_rpm=total_air_rpm+air_washer_rpm;
+				total_bags = total_bags + no_of_bags;
+				production_in_mt = packing_size * no_of_bags / 1000;
+				per_hr_production = parseInt(no_of_bags) / parseFloat(machine_actual_time);
+				var tailing_per = parseFloat(tailing_qty) / parseFloat(production_in_mt) * 100;
+				total_opening = total_opening + kwh_opening;
+				total_closing = total_closing + kwh_closing;
+				total_tailing = total_tailing + tailing_qty * 1000;
+				total_rpm = total_rpm + mill_rpm;
+				total_mill_amp = total_mill_amp + mill_amp;
+				total_hrz = total_hrz + blower_in_hrz;
+				total_blower_amp = total_blower_amp + blower_amp;
+				total_screw = total_screw + screw_rpw;
+				total_air_rpm = total_air_rpm + air_washer_rpm;
 
-				total_production_in_mt=total_production_in_mt+production_in_mt;
+				total_production_in_mt = total_production_in_mt + production_in_mt;
 				$(this).find("td:nth-child(13) input.production_in_mt").val(production_in_mt.toFixed(2));
 				$(this).find("td:nth-child(18) input.per_hour_production").val(per_hr_production.toFixed(2));
 				$(this).find("td:nth-child(20) input.tailing_per").val(tailing_per.toFixed(2));
 
-				production_in_mt=parseFloat($(this).find("td:nth-child(13) input.production_in_mt").val());
+				production_in_mt = parseFloat($(this).find("td:nth-child(13) input.production_in_mt").val());
 
-				if((kwh_closing!='') && (kwh_opening!='')){
-					
-					if(kwh_closing>=kwh_opening){
-						kwh_consumed=kwh_closing-kwh_opening;
-					}
-					else
-					{
+				if ((kwh_closing != '') && (kwh_opening != '')) {
+
+					if (kwh_closing >= kwh_opening) {
+						kwh_consumed = kwh_closing - kwh_opening;
+					} else {
 						alert('You can not enter KWH Closing Value less than KWH Opening');
 						$(this).find("td:nth-child(15) input.kwh_closing").val('');
 					}
-					unit_per_mt=kwh_consumed/production_in_mt;
+					unit_per_mt = kwh_consumed / production_in_mt;
 					$(this).find("td:nth-child(16) input.kwh_consumed").val(kwh_consumed.toFixed(2));
 					$(this).find("td:nth-child(17) input.unit_per_mt").val(unit_per_mt.toFixed(2));
-					
+
 				}
-				total_kwh=total_kwh+kwh_consumed;
+				total_kwh = total_kwh + kwh_consumed;
 			});
 			//$('.total_time').val(grand_total_time.toFixed(2));
 			//alert(total_qty);
-			
+
 			// table.find("tfoot tr input.total_machine_total_time").val(total_machine_total_time);
 			// table.find("tfoot tr input.total_machine_down_time").val(total_machine_down_time);
 			table.find("tfoot tr input.total_bags").val(total_bags);
@@ -680,6 +691,6 @@ $(document).ready(function() {
 
 
 		}
-		
+
 	});
 </script>
