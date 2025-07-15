@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
           <?php } }?>
-           <button type="submit" class="btn btn-info"> Export </button>
+           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
          </form>
         <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
       </div>
@@ -54,18 +54,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                <option value="<?= $value['id'] ?>"><?= $value['area_name'] ?></option>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result') ?></option>
                         <?php endif; ?>
                 </select>
               </div>
                
              
              <div class="col-md-4 col-sm-3">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"><?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-3">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> </label><?= $this->lang->line('upto_date') ?>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
               </div>
@@ -73,10 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <div class="col-md-6 col-sm-6 ">
                    </div>
                    <div class="col-sm-4 col-sm-4   ">
-                      <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
+                      <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
                       <input type="submit" class="btn btn-primary" value="Search" /> 
                       <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                      <a href="<?php echo base_url(); ?>index.php/Area_cleaning_records/report" class="btn btn-danger" > Reset</a>
+                      <a href="<?php echo base_url(); ?>index.php/Area_cleaning_records/report" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
                   </div>
                 </div>
             
@@ -87,10 +87,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <tr>
              <!--  <th><input type="checkbox" id="master"></th> -->
               <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Date Of Cleaning</th>
-              <th style="white-space: nowrap;"> ACR Number </th>
-              <th style="white-space: nowrap;"> Reported By </th>
-              <th style="white-space: nowrap;"> Action Button </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_cleaning') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('acr_number') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('reported_by') ?> </th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('action_button') ?> </th>
             </tr>
           </thead>
           <tbody>
@@ -157,7 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"> Area Cleaning Record (<?php echo $obj['voucher_code'] ?>) Details </h4>
+                             <h4 class="modal-title"> <?= $this->lang->line('area_cleaning_record') ?> (<?php echo $obj['voucher_code'] ?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -169,10 +169,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-3">Area Name </div>
-                                <div class="col-md-2">Work Status </div>
-                                <div class="col-md-3">Completed By </div>
-                                <div class="col-md-3">Remarks</div>
+                                <div class="col-md-3"><?= $this->lang->line('area_name') ?></div>
+                                <div class="col-md-2"><?= $this->lang->line('work_status') ?> </div>
+                                <div class="col-md-3"><?= $this->lang->line('completed_by') ?> </div>
+                                <div class="col-md-3"><?= $this->lang->line('remarks') ?></div>
                               </div>
 
                                     <?php
@@ -217,7 +217,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <?php $j++; }  ?>
                               </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                           </div>
                         </div>
                       </div>
@@ -229,7 +229,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -237,8 +237,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p>Are you sure, you want to delete this Record ? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

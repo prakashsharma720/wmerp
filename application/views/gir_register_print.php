@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="card card-primary card-outline">
        <div class="card-header no-print">
           <div class="pull-right no-print">
-              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> Print</button>
+              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i><?= $this->lang->line('print') ?></button>
           </div>
       </div> <!-- /.card-body -->
       <div class="card-body">
@@ -19,10 +19,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <img src="<?= base_url()?>/uploads/logo.png" height="120" width="300"/>
                 </div>
                <div class="col-sm-4 invoice-col">
-                <h3 style="padding-top: 20px;"> Choudhary & Company </h3>
+                <h3 style="padding-top: 20px;"> <?= $this->lang->line('company_name') ?> </h3>
                 </div>
                 <div class="col-sm-4 invoice-col">
-                <strong><u>Company Details:</u></strong><br>
+                <strong><u><?= $this->lang->line('company_details') ?>:</u></strong><br>
                   <b>GSTIN : </b>08AABFC2155P1ZA<br>
                   <b>PAN : </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <table class="table">
                         <tbody>
                            <tr>
-                            <th colspan="6"> <h4 style="text-align: center">General GIR Register : </h4></th>
+                            <th colspan="6"> <h4 style="text-align: center"><?= $this->lang->line('general_gir_register') ?> : </h4></th>
                           </tr>
                             
 							<tr>
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<?php if($current['0']['categories_id']=='1'){?>
                             <th colspan="1"> Gir Register Category : </th>
                             <td colspan="1"> <?= $current['0']['category']?> </td>
-                             <th colspan="1"> Supplier Name : </th>
+                             <th colspan="1"> <?= $this->lang->line('supplier_name') ?>: </th>
                             <td colspan="2"> <?= $current['0']['supplier']?> </td>
 							<th>GIR Number</th>
 						   <td><?= $current['0']['gir_no']?></td>
@@ -104,7 +104,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							
 						  <tr>
 						  <th> S.No.</th>
-						<th colspan=""><label> Product Name</label><br></th>
+						<th colspan=""><label> <th><?= $this->lang->line('product_name') ?> : </th>
+                  <td> <?= $current['0']['category']?> </td>
+                  <th><?= $this->lang->line('supplier_name') ?> : </th>
+                  <td colspan="2"> <?= $current['0']['supplier']?> </td>
+                  <td></td></label><br></th>
 						<th>Quantity</th>
 						<th><label>Unit</label><br></th>
 						<th><label>Description</label><br></th></tr>

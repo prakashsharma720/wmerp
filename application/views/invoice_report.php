@@ -7,7 +7,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -16,7 +16,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -34,7 +34,7 @@ $data=explode('?', $current_page);
             foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
           <?php } }?>
-           <button type="submit" class="btn btn-info"> Export </button>
+           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
          </form>
         
       </div>
@@ -43,21 +43,21 @@ $data=explode('?', $current_page);
 	  <form method="get" id="filterForm">
           <div class="row">
              <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?= $this->lang->line('upto_date') ?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
               </div>
             <div class="row">
                   
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
+                   <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
                   <input type="submit" class="btn btn-primary" value="Search" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
               </div>
 			</div>
             
@@ -68,11 +68,11 @@ $data=explode('?', $current_page);
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Invoice No </th>
-              <th style="white-space: nowrap;"> Invoice Date </th>
-              <th style="white-space: nowrap;"> Vendor Code</th>
-              <th style="white-space: nowrap;"> Grand Total</th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('invoice_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('invoice_date') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('vendor_code') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('grand_total') ?>l</th>
             </tr>
           </thead>
           <tbody>

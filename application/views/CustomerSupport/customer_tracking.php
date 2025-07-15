@@ -82,7 +82,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php if($this->session->flashdata('success')): ?>
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
+    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?>!</h5>
     <?php echo $this->session->flashdata('success'); ?>
 </div>
 <?php endif; ?>
@@ -98,7 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span> Ticket ID :</span><span class="card-title"> <b> <?= $customer_data['ticket'] ?> </b></span>
+            <span> <?= $this->lang->line('ticket_id') ?> :</span><span class="card-title"> <b> <?= $customer_data['ticket'] ?> </b></span>
             <div class="pull-right">
 
             </div>
@@ -116,7 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <?= $customer_data['created_at'] ?>
                             </span>
 
-                            <h3 class="timeline-header"><span>Ticket Raised by <span
+                            <h3 class="timeline-header"><span><?= $this->lang->line('ticket_raised_by') ?><span
                                         style="color:red;"><?= $customer_data['c_name'] ?></span></span></h3>
 
                             <div class="timeline-body ">
@@ -263,12 +263,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                                                 <label for="attachmentInput" title="Attach file">  <i class="fa fa-paperclip" aria-hidden="true"
-                                                    style="font-size:24px !important"></i> Add Attachment</label>
+                                                    style="font-size:24px !important"></i> <?= $this->lang->line('add_attachment') ?></label>
                                                 <input type="file" class="form-control" name="attachment"
                                                     id="attachmentInput">
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit') ?></button>
                                         </div>
                                     </div>
                                     <!-- <div class="col-md-4">

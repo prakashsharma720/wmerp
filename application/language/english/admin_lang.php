@@ -14,6 +14,35 @@ $lang['login'] = 'Login';
 $lang['remember_me'] = 'Remember me';
 $lang['loginwithfacebook'] = 'Login with Facebook';
 $lang['loginwithgmail'] = 'Login with Gmail';
+$lang['minimum_inventory_qty'] = 'Minimum Inventory Quantity';
+$lang['enter_minimum_inventory_qty'] = 'Enter Minimum Inventory Quantity';
+$lang['no_tds_declaration'] = 'No TDS Declaration';
+$lang['unregistered_dealer'] = 'Un-registered Dealer/Person';
+$lang['service_for_state'] = 'Service for the State';
+$lang['date_of_next_evaluation'] = 'Date of Next Evaluation';
+$lang['filter_by_supplier'] = 'Filter By Supplier';
+$lang['filter_by_department'] = 'Filter By Department';
+$lang['po_status'] = 'PO Status';
+$lang['select_type'] = 'Select Type';
+$lang['from_date'] = 'From Date';
+$lang['upto_date'] = 'Upto Date';
+$lang['search'] = 'Search';
+$lang['reset'] = 'Reset';
+$lang['export'] = 'Export';
+$lang['confirm_delete'] = 'Are you sure, you want to delete menu';
+
+
+$lang['opening_stock_qty'] = 'Opening Stock Quantity';
+$lang['name_of_employee'] = 'Name of Employee';
+$lang['select_employee'] = 'Select Employee';
+
+$lang['name_of_department'] = 'Name of Department';
+$lang['select_department'] = 'Select Department';
+
+$lang['requisition_status'] = 'Requisition Status';
+
+$lang['no_result'] = 'No result';
+
 
 // https://wmerp.yashdreamsoft.com/index.php/Employees/edit/4
 

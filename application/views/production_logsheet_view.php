@@ -40,18 +40,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> PL No </th>
-              <th style="white-space: nowrap;"> Date Of Production </th>
-              <th style="white-space: nowrap;"> Mill No </th>
-              <th style="white-space: nowrap;"> Total Production (MT) </th>
-              <th style="white-space: nowrap;">Total KWH </th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('pl_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_production') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('mill_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('total_production') ?> (MT) </th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('total_kwh') ?> </th>
               <!-- <th style="white-space: nowrap;"> Grade Name </th>
               <th style="white-space: nowrap;"> LOT No </th>
               <th style="white-space: nowrap;"> Batch No </th>
               <th style="white-space: nowrap;"> No of Bags</th> -->
-              <th style="white-space: nowrap;"> Production By </th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('production_by') ?> </th>
+              <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>
@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td ><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
                 <td><?php echo $obj['mill_no']; ?></td>
                 <td><?php echo $obj['total_production']; ?></td>
-                <td><?php echo $obj['total_kwh_consumed']; ?> Units</td>
+                <td><?php echo $obj['total_kwh_consumed']; ?> <?= $this->lang->line('units') ?></td>
                 <td><?php echo $obj['employee']; ?></td>               
                 <td >
                    <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>" title="View Details" ><i style="color:#fff;"class="fa fa-eye"></i></a>

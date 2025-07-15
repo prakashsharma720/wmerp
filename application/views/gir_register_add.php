@@ -16,20 +16,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> GIR No <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('gir_no') ?> <span class="required">*</span></label>
 			            	
 			             <input type="text"  name="g_no" class="form-control" value="<?= $gir_no?>"  autofocus readonly="readonly">
 		                 <input type="hidden" name="gir_no" value="<?php echo $g_no;?>">
 		             	</div>
 
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Invoice No./Challan No <span class="required">*</span></label>
-			            	<input type="text"  placeholder=" Enter TP No. /Challan No" name="challan_no" class="form-control" value="" required autofocus>
+			            	<label  class="control-label"><?= $this->lang->line('invoice_no') ?> <span class="required">*</span></label>
+			            	<input type="text"  placeholder=" <?= $this->lang->line('enter_tp_no') ?> /Challan No" name="challan_no" class="form-control" value="" required autofocus>
 			            </div>
 
 		        	</div>
@@ -51,18 +51,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					            </select>
 			            </div> -->
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> PO Number <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('po_number') ?> <span class="required">*</span></label>
 			            	<input type="text"  value="<?= $po_code_view?>" name="po_numbersss" class="form-control"  autofocus  required="required" readonly >
 			            	<input type="hidden" name="po_id" value="<?= $id ?>">
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">PO Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('po_date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="po_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php if($po_date) { echo date('d-m-Y',strtotime($po_date)); } ?>" autofocus required readonly >
 			            </div>
 
 			          <div class="col-md-4 col-sm-4 ">
-			          <label  class="control-label">Name of Supplier <span class="required">*</span></label>
+			          <label  class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
 							<select name="supplier_id" class="form-control select2 suppliers" required="required" >
 						        <?php
 						         if ($suppliers): ?> 
@@ -76,7 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                    <?php endif;   ?>
 						            <?php   endforeach;  ?>
 						        <?php else: ?>
-						            <option value="0">No result</option>
+						            <option value="0"><?= $this->lang->line('no_result') ?></option>
 						        <?php endif; ?>
 						    </select>
 			            	
@@ -90,8 +90,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        		<table class="table table-bordered " id="maintable" style="width: 100% !important;">
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
-			        					<th style="width: 5%;">  Sr.No.</th>
-			        					<th style="width: 30%;white-space: nowrap;"> Material Description</th>
+			        					<th style="width: 5%;">  <?= $this->lang->line('sr_no') ?>.</th>
+			        					<th style="width: 30%;white-space: nowrap;"> <?= $this->lang->line('material_description') ?></th>
 			        					<th style="width: 15%;white-space: nowrap;"> Ordered In PO</th>
 			        					<th style="width: 15%;white-space: nowrap;"> Received QTY</th>
 			        					<th style="width: 15%;white-space: nowrap;"> Pending QTY</th>

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -58,40 +58,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        						}
 		        						?>
 						        		<div class="col-md-12 col-sm-12 ">
-						        		<label class="control-label">  Criteria Type </label>
+						        		<label class="control-label">  <?=$this ->lang->line('criteria_type')?> </label>
 						        			<div class="form-check">
-							               		<input class="form-check-input" type="radio" name="ec_type" value="Supplier" <?php echo $supplier; ?>> Supplier</input>
+							               		<input class="form-check-input" type="radio" name="ec_type" value="Supplier" <?php echo $supplier; ?>> <?=$this ->lang->line('supplier')?></input>
 							               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-							               		<input class="form-check-input" type="radio" name="ec_type" value="Service Provider" <?php echo $service_provider; ?> > Service Provider</input>
+							               		<input class="form-check-input" type="radio" name="ec_type" value="Service Provider" <?php echo $service_provider; ?> > <?=$this ->lang->line('service_provider')?></input>
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-							               		<input class="form-check-input" type="radio" name="ec_type" value="Transporter" <?php echo $transporter; ?> > Transporter</input>
+							               		<input class="form-check-input" type="radio" name="ec_type" value="Transporter" <?php echo $transporter; ?> > <?=$this ->lang->line('transporter')?></input>
 						            		</div>
 						            	</div>
 						            </div>
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label"> Criteria Name</label>
-					                <input type="textarea" size="30"  placeholder="Enter criteria name" name="ec_name" class="form-control" value="<?= $ec_name?>" required autofocus>
+					            	<label class="control-label"> <?=$this ->lang->line('criteria_name')?></label>
+					                <input type="textarea" size="30"  placeholder="<?=$this ->lang->line('enter_criteria_name')?>" name="ec_name" class="form-control" value="<?= $ec_name?>" required autofocus>
 					            </div>
 					        </div>
 					        <span class="help-block"></span>
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Status</label>
+					            	<label class="control-label"><?=$this ->lang->line('status')?></label>
 					               <select class="form-control" name="flag">
-					               		<option value="0"> Active</option>
-					               		<option value="1"> De-active</option>
+					               		<option value="0"> <?=$this ->lang->line('active')?></option>
+					               		<option value="1"><?=$this ->lang->line('de_active')?></option>
 					               </select>
 					            </div>
 				        	</div>
 				        <?php } ?>
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12	 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('save')?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -103,10 +103,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th>Criteria</th>
-								<th>Criteria Type</th>
-								<th> Action</th>
+								<th> <?=$this ->lang->line('sr_no')?>.</th>
+								<th><?=$this ->lang->line('criteria')?></th>
+								<th><?=$this ->lang->line('criteria_type')?></th>
+								<th> <?=$this ->lang->line('action')?></th>
 							</tr>
 						</thead>
 						<tbody>

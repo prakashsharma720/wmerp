@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="card-header">
       <label class="card-title"><?php  echo $title; ?></label>
        <div class="pull-right error_msg">
-        <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Transporters/createXLS">Export</a>  
+        <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Transporters/createXLS"><?= $this->lang->line('export') ?></a>  
       </div>
     </div> <!-- /.card-body -->
     <div class="card-body">
@@ -24,13 +24,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <table  class="table table-bordered table-striped" >
           <thead>
             <tr >
-              <th> Name </th>
-              <th> Code </th>
-              <th style="white-space: nowrap;"> Contact Person </th>
-              <th> Email</th>
-              <th> Mobile No</th>
-              <th> website</th>
-              <th style="white-space: nowrap;"> Approval Category</th>
+              <th><?=$this ->lang->line('name')?> </th>
+              <th> <?=$this ->lang->line('code')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('contact_person')?></th>
+              <th><?=$this ->lang->line('email')?></th>
+              <th><?=$this ->lang->line('mobile_no')?></th>
+              <th><?=$this ->lang->line('website')?></th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('approval_category')?></th>
               <!-- <th style="white-space: nowrap;">Bank Name</th>
               <th> Account No</th>
               <th  style="white-space: nowrap;"> Service State</th>

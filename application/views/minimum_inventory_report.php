@@ -20,13 +20,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Material Category  </th>
-              <th style="white-space: nowrap;"> Material Description </th>
-              <th style="white-space: nowrap;"> Minimum Qty </th>
+              <th ><?=$this ->lang ->line('sr_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('material_category')?>   </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('material_description')?>  </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('minimum_qty')?>  </th>
              <!--  <th style="white-space: nowrap;">Total Quantity </th> -->
-              <th style="white-space: nowrap;">  Available Qty  </th>
-              <th style="white-space: nowrap;"> Status </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('available_qty')?>  </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('status')?>  </th>
             </tr>
           </thead>
           <tbody>

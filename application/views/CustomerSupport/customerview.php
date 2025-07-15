@@ -16,7 +16,7 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('success')): ?>
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
     <?php echo $this->session->flashdata('success'); ?>
 </div>
 <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -25,7 +25,7 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('failed')): ?>
 <div class="alert alert-error alert-dismissible ">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
     <?php echo $this->session->flashdata('failed'); ?>
 </div>
 <?php endif; ?>
@@ -53,13 +53,12 @@ $data=explode('?', $current_page);
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="master"></th>
-
-                        <th> <?= $this->lang->line('sr_no') ?>.</th>
-                        <th> <?= $this->lang->line('date') ?></th>
+                        <th> <?= $this->lang->line('sr_no') ?></th>
+                        <th><?= $this->lang->line('date') ?></th>
                         <th> <?= $this->lang->line('complaint_category') ?></th>
                         <th><?= $this->lang->line('order_id') ?></th>
                         <th><?= $this->lang->line('ticket') ?></th>
-                        <th> <?= $this->lang->line('customer_name') ?></th>
+                        <th><?= $this->lang->line('customer_name') ?></th>
                         <th><?= $this->lang->line('email') ?></th>
                         <th><?= $this->lang->line('phone') ?></th>
                         <th><?= $this->lang->line('status') ?></th>
@@ -125,7 +124,7 @@ $data=explode('?', $current_page);
 
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title"> Change Status </h4>
+                                                <h4 class="modal-title"><?= $this->lang->line('change_status') ?> </h4>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
                                             </div>
@@ -134,19 +133,19 @@ $data=explode('?', $current_page);
 
 
                                                   <select name="status" class="form-control">
-                                                        <option value="">Select Status</option>
-                                                        <option value="Open" <?= ($obj['status'] == 'Open') ? 'selected' : '' ?>>Open</option>
-                                                        <option value="InProcess" <?= ($obj['status'] == 'InProcess') ? 'selected' : '' ?>>InProcess</option>
-                                                        <option value="Closed" <?= ($obj['status'] == 'Closed') ? 'selected' : '' ?>>Closed</option>
-                                                        <option value="Resolved" <?= ($obj['status'] == 'Resolved') ? 'selected' : '' ?>>Resolved</option>
+                                                        <option value=""><?=$this ->lang ->line('select_status')?></option>
+                                                        <option value="Open" <?= ($obj['status'] == 'Open') ? 'selected' : '' ?>><?=$this ->lang ->line('open')?></option>
+                                                        <option value="InProcess" <?= ($obj['status'] == 'InProcess') ? 'selected' : '' ?>><?=$this ->lang ->line('inprocess')?></option>
+                                                        <option value="Closed" <?= ($obj['status'] == 'Closed') ? 'selected' : '' ?>><?=$this ->lang ->line('closed')?></option>
+                                                        <option value="Resolved" <?= ($obj['status'] == 'Resolved') ? 'selected' : '' ?>><?=$this ->lang ->line('resolved')?></option>
                                                     </select>
 
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary"> Submit </button>
+                                                <button type="submit" class="btn btn-primary"> <?= $this->lang->line('submit') ?> </button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    Cancel </button>
+                                                    <?=$this ->lang ->line('cancel')?> </button>
                                             </div>
                                         </div>
                                     </form>
