@@ -71,6 +71,29 @@ $lang['choose_file'] = 'Изберете файл';
 $lang['no_file_chosen'] = 'Не е избран файл';
 $lang['your_image'] = 'Вашето изображение';
 
+$lang['account_holder_name'] = 'Име на титуляр на сметката';
+$lang['bank_name'] = 'Име на банката';
+$lang['account_number'] = 'Номер на сметката';
+$lang['ifsc_code'] = 'IFSC код';
+$lang['branch_name'] = 'Име на клона';
+$lang['account_type'] = 'Тип на сметката';
+$lang['upi_id'] = 'UPI идентификатор';
+
+
+$lang['basic_salary'] = 'Основна заплата';
+$lang['hra'] = 'HRA (надбавка за жилище)';
+$lang['conveyance_allowance'] = 'Транспортна надбавка';
+$lang['medical_allowance'] = 'Медицинска надбавка';
+$lang['other_allowance'] = 'Други надбавки';
+$lang['total_net_salary'] = 'Обща нетна заплата';
+
+$lang['emergency_mobile_no'] = 'Аварийен мобилен номер';
+$lang['emergency_name'] = 'Име за спешен контакт';
+$lang['uan_no'] = 'UAN номер';
+$lang['pf_no'] = 'PF номер';
+$lang['esi_no'] = 'ESI номер';
+
+
 // change password click
 $lang['change_password'] = 'Смяна на парола';
 $lang['select_employee'] = 'Изберете служител';
@@ -2802,6 +2825,11 @@ $lang['show'] = 'Показване';
 $lang['entries'] = 'Записи';
 $lang['search'] = 'Търсене';
 
+$lang['leave_action_page'] = 'Страница за действия с отпуски';
+$lang['leave_status_info'] = 'Статус на отпуск (Предприемете действие по отпуска)';
+$lang['leave_application'] = 'Заявление за отпуск';
+
+
 $lang['sr_no'] = 'Сериен №';
 $lang['title'] = 'Заглавие';
 $lang['action'] = 'Действие';
@@ -2879,6 +2907,21 @@ $lang['action'] = 'Действие';
 
 $lang['export'] = 'Експортиране';
 $lang['apply_for_leave'] = 'Кандидатствай за отпуск';
+$lang['todays_date'] = 'Днешна дата';
+$lang['leave_reason'] = 'Причина за отпуск';
+$lang['leave_type'] = 'Тип отпуск';
+$lang['leave_category'] = 'Категория отпуск';
+$lang['from_date'] = 'От дата';
+$lang['upto_date'] = 'До дата';
+$lang['total_days'] = 'Общ брой дни';
+$lang['message'] = 'Съобщение';
+$lang['enter'] = 'Въведете';
+$lang['full'] = 'Пълен';
+$lang['half'] = 'Половин';
+$lang['gatepass'] = 'Пропуск';
+$lang['enter_reason'] = 'Въведете причина';
+$lang['apply'] = 'Кандидатствай';
+
 
 // daily tasks project
 $lang['daily_task_master'] = 'Дневни задачи - основни данни';
@@ -2928,6 +2971,7 @@ $lang['status'] = 'Статус';
 $lang['assign_to'] = 'Възложено на';
 $lang['assign_by'] = 'Възложено от';
 $lang['action'] = 'Действие';
+$lang['create'] = 'Създай';
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Списък на присъствията';
@@ -2955,6 +2999,8 @@ $lang['other_cuts'] = 'Други удръжки';
 $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Обща заплата';
 $lang['action'] = 'Действие';
+$lang['calculate'] = 'Изчисли';
+
 
 // workers add
 $lang['add_new_worker'] = 'Добавяне на нов работник';

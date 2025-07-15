@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"><?= $this->lang->line('title_name') ?></label>
-					                <input type="text"  placeholder="Enter Title Name " name="title" class="form-control" value="<?= $title?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_title_name') ?>" name="title" class="form-control" value="<?= $title?>" required autofocus>
 					            </div>
 					            <?php 
 					             if(!empty($date))
@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Status</label>
+					            	<label class="control-label"> <?= $this->lang->line('status') ?> </label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"> Active</option>
 					               		<option value="1"> De-active</option>

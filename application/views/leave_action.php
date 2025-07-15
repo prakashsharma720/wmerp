@@ -5,9 +5,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title pull-left"><?= $page_title ?></h3>
+        <h3 class="card-title pull-left"> <?= $this->lang->line('leave_action_page') ?></h3>
         <div class="pull-right ">
-        	<label> Leave Application : </label>
+        	<label>  <?= $this->lang->line('leave_application') ?> </label>
 			<b style="color:#37b5fe;"> </b>
 		</div>
 	      </div> <!-- /.card-body -->
@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													?>
 											<div class="row col-md-12">
 													<div class="col-md-12 col-sm-12 ">
-														<label class="control-label">Leave Status</label><span> (Take any action on lead)</span>
+														<label class="control-label"> <?= $this->lang->line('leave_status_info') ?></label>
 													<select class="form-control" name="leave_status">
 															<option value="Pending" <?= $pending ?>> Pending </option>
 															<option value="Approved" <?= $approved ?>> Approved </option>
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <span class="help-block"></span>
 				           <div class="row col-md-12">
 					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 					            </div>
 				        </div>
 			        </form>

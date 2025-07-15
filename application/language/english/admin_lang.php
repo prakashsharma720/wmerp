@@ -2890,6 +2890,11 @@ $lang['show'] = 'Show';
 $lang['entries'] = 'Entries';
 $lang['search'] = 'Search';
 
+$lang['leave_action_page'] = 'Leave Action Page';
+$lang['leave_status_info'] = 'Leave Status (Take any action on leave)';
+$lang['leave_application'] = 'Leave Application';
+
+
 $lang['sr_no'] = 'Sr. No.';
 $lang['title'] = 'Title';
 $lang['action'] = 'Action';
@@ -2964,6 +2969,21 @@ $lang['action'] = 'Action';
 
 $lang['export'] = 'Export';
 $lang['apply_for_leave'] = 'Apply for Leave';
+$lang['todays_date'] = "Today's Date";
+$lang['leave_reason'] = "Leave Reason";
+$lang['leave_type'] = "Leave Type";
+$lang['leave_category'] = "Leave Category";
+$lang['from_date'] = "From Date";
+$lang['upto_date'] = "Upto Date";
+$lang['total_days'] = "Total Days";
+$lang['message'] = "Message";
+$lang['enter'] = "Enter";
+$lang['full'] = "Full";
+$lang['half'] = "Half";
+$lang['gatepass'] = "Gatepass";
+$lang['enter_reason'] = "Enter Reason";
+$lang['apply'] = 'Apply';
+
 // daily tasks project
 $lang['daily_task_master'] = 'Daily Task Master';
 $lang['project_name'] = 'Project Name';
@@ -3010,6 +3030,8 @@ $lang['status'] = 'Status';
 $lang['assign_to'] = 'Assigned To';
 $lang['assign_by'] = 'Assigned By';
 $lang['action'] = 'Action';
+$lang['create'] = 'Create';
+
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Attendance List';
@@ -3034,6 +3056,7 @@ $lang['other_cuts'] = 'Other Deductions';
 $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Total Salary';
 $lang['action'] = 'Action';
+$lang['calculate']='calculate';
 
 // workers add
 $lang['add_new_worker'] = 'Add New Worker';

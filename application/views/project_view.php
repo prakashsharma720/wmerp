@@ -41,17 +41,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						      <div class="row col-md-18">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"> <?= $this->lang->line('project_name') ?></label>
-					                <input type="text"  placeholder="Enter project Name " name="project_name" class="form-control" value="<?= $project_name?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_project_name') ?> " name="project_name" class="form-control" value="<?= $project_name?>" required autofocus>
 					            </div>
 					           <!--start date-->	
 									<div class="col-md-12 col-sm-12">
 						            	<label class="control-label"> <?= $this->lang->line('start_date') ?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date" class="form-control date-picker" value="<?php echo $start_date;?>" placeholder="dd-mm-yyyy"  required>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date" class="form-control date-picker" value="<?php echo $start_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-12 col-sm-12">
 						            	<label class="control-label"> <?= $this->lang->line('end_date') ?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" value="<?php echo $end_date;?>" placeholder="dd-mm-yyyy"  required>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" value="<?php echo $end_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 									<!-- status -->
 									 <!--Status-->
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									
 										  <label class="control-label">  <?= $this->lang->line('status') ?></label>
 										 <select class="form-control" name="project_status">
-										 <option value="" >Select status </option>
+										 <option value="" ><?= $this->lang->line('select_status') ?></option>
 												 <option <?php if($project_status) { if($project_status=="In Process") { echo "selected"; } } ?> value="In Process" > In Process </option>
 												 <option  <?php if($project_status) { if($project_status=="On Hold") { echo "selected"; } }  ?> value="On Hold" > On Hold </option>
 												 <option  <?php if($project_status) { if($project_status=="Completd") { echo "selected"; } } ?> value="Completd" > Completd</option>
@@ -84,12 +84,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<!-- Work description -->
 									<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label">  <?= $this->lang->line('work_description') ?> <span class="required"> *</span></label>
-					               <textarea class="form-control message" rows="3" placeholder="Enter Message" name="description" value="<?php echo $description;?>"><?php echo $description;?></textarea>
+					               <textarea class="form-control message" rows="3" placeholder="<?= $this->lang->line('enter_message') ?>" name="description" value="<?php echo $description;?>"><?php echo $description;?></textarea>
 					            </div>
 								<!-- Technology -->
 								<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"> <?= $this->lang->line('technology_name') ?></label>
-					                <input type="text"  placeholder="Enter Technology Name " name="technology" class="form-control"  value="<?php echo $technology;?>">
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_technology_name') ?>" name="technology" class="form-control"  value="<?php echo $technology;?>">
 					            </div>	
 							
 					        </div>

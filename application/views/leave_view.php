@@ -62,7 +62,7 @@ $data=explode('?', $current_page);
                     <div class="col-md-4 col-sm-4 ">
                         <label class="control-label"> <?= $this->lang->line('search_by_category') ?></label>
                         <select name="category_name" class="form-control select2 suppliers">
-                            <option value=""> Select Category </option>
+                            <option value=""> <?= $this->lang->line('select_category') ?> </option>
                             <option
                                 <?php if(!empty($filtered_value["category_name"])) { if($filtered_value['category_name']=='half') {echo "selected"; } } ?>
                                 value="half"> Half </option>
@@ -76,9 +76,9 @@ $data=explode('?', $current_page);
                     </div>
 
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label"><?= $this->lang->line('search') ?> </label>
+                        <label class="control-label"> <?= $this->lang->line('search_by_status') ?> </label>
                         <select name="leave_status" class="form-control select2">
-                            <option value="">Select Status</option>
+                            <option value=""><?= $this->lang->line('select_status') ?></option>
                             <option
                                 <?php if(!empty($filtered_value["leave_status"])) { if($filtered_value['leave_status']=='Pending') {echo "selected"; } } ?>
                                 value="Pending"> Pending </option>
@@ -94,14 +94,14 @@ $data=explode('?', $current_page);
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date"
                             class="form-control date-picker"
                             value="<?php if(!empty($filtered_value['from_date'])) { echo date('d-m-Y',strtotime($filtered_value['from_date'])); } ?>"
-                            placeholder="dd-mm-yyyy" autocomplete="off" autocomplete="off">
+                            placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off" autocomplete="off">
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <label class="control-label">  <?= $this->lang->line('upto_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date"
                             class="form-control date-picker"
                             value="<?php if(!empty($filtered_value['upto_date'])) { echo date('d-m-Y',strtotime($filtered_value['upto_date'])); } ?>"
-                            placeholder="dd-mm-yyyy" autocomplete="off" autocomplete="off">
+                            placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off" autocomplete="off">
                     </div>
 
                     <div class="col-md-1 col-sm-1 ">
@@ -227,7 +227,7 @@ $data=explode('?', $current_page);
                         <?php  $i++;} }else{ ?>
                         <tr>
                             <td colspan="100">
-                                <h5 style="text-align: center;"> No Leads Found</h5>
+                                <h5 style="text-align: center;"><?= $this->lang->line('no_leads_found') ?></h5>
                             </td>
                         </tr>
                         <?php  }?>

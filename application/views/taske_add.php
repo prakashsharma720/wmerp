@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									<div class="col-md-4">
 						            	<label class="control-label"><?=$this ->lang->line('start_date')?> </label> <span class="required">*</span>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"
-										 class="form-control date-picker"  placeholder="dd-mm-yyyy"  required>
+										 class="form-control date-picker"  placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
