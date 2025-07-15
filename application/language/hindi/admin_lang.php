@@ -30,11 +30,11 @@ $lang['sign_out'] = 'साइन आउट करें';
 // my account click
 
 //  Header Section
-$lang['total_assign'] = 'कुल असाइनमेंट: 0';
-$lang['followups'] = 'फॉलोअप्स: 0';
-$lang['pending'] = 'लंबित कार्य: 0';
-$lang['approve'] = 'स्वीकृत: 0';
-$lang['rejected'] = 'अस्वीकृत: 0';
+$lang['total_assign'] = 'कुल असाइनमेंट';
+$lang['followups'] = 'फॉलोअप्स';
+$lang['pending'] = 'लंबित कार्य';
+$lang['approve'] = 'स्वीकृत';
+$lang['rejected'] = 'अस्वीकृत';
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'कर्मचारी संपादित करें';
