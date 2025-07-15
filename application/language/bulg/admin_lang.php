@@ -2799,6 +2799,11 @@ $lang['show'] = 'Показване';
 $lang['entries'] = 'Записи';
 $lang['search'] = 'Търсене';
 
+$lang['leave_action_page'] = 'Страница за действия с отпуски';
+$lang['leave_status_info'] = 'Статус на отпуск (Предприемете действие по отпуска)';
+$lang['leave_application'] = 'Заявление за отпуск';
+
+
 $lang['sr_no'] = 'Сериен №';
 $lang['title'] = 'Заглавие';
 $lang['action'] = 'Действие';
@@ -2876,6 +2881,21 @@ $lang['action'] = 'Действие';
 
 $lang['export'] = 'Експортиране';
 $lang['apply_for_leave'] = 'Кандидатствай за отпуск';
+$lang['todays_date'] = 'Днешна дата';
+$lang['leave_reason'] = 'Причина за отпуск';
+$lang['leave_type'] = 'Тип отпуск';
+$lang['leave_category'] = 'Категория отпуск';
+$lang['from_date'] = 'От дата';
+$lang['upto_date'] = 'До дата';
+$lang['total_days'] = 'Общ брой дни';
+$lang['message'] = 'Съобщение';
+$lang['enter'] = 'Въведете';
+$lang['full'] = 'Пълен';
+$lang['half'] = 'Половин';
+$lang['gatepass'] = 'Пропуск';
+$lang['enter_reason'] = 'Въведете причина';
+$lang['apply'] = 'Кандидатствай';
+
 
 // daily tasks project
 $lang['daily_task_master'] = 'Дневни задачи - основни данни';

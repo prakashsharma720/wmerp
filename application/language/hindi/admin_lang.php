@@ -2933,6 +2933,20 @@ $lang['action'] = 'क्रिया';
 
 $lang['export'] = 'निर्यात करें';
 $lang['apply_for_leave'] = 'अवकाश हेतु आवेदन करें';
+$lang['todays_date'] = 'आज की तारीख';
+$lang['leave_reason'] = 'अवकाश का कारण';
+$lang['leave_type'] = 'अवकाश का प्रकार';
+$lang['leave_category'] = 'अवकाश श्रेणी';
+$lang['from_date'] = 'प्रारंभ तिथि';
+$lang['upto_date'] = 'अंतिम तिथि';
+$lang['total_days'] = 'कुल दिन';
+$lang['message'] = 'संदेश';
+$lang['enter'] = 'प्रवेश करें';
+$lang['full'] = 'पूर्ण';
+$lang['half'] = 'आधा';
+$lang['gatepass'] = 'गेट पास';
+$lang['enter_reason'] = 'कारण दर्ज करें';
+$lang['apply'] = 'आवेदन करें';
 
 
 // daily tasks project
@@ -3326,6 +3340,11 @@ $lang['leave_applications'] = 'अवकाश आवेदन';
 $lang['leave_types'] = 'अवकाश प्रकार';
 $lang['leave_allotment'] = 'अवकाश आवंटन';
 $lang['leave_approval'] = 'अवकाश अनुमोदन';
+
+$lang['leave_action_page'] = 'अवकाश क्रिया पृष्ठ';
+$lang['leave_status_info'] = 'अवकाश की स्थिति (अवकाश पर कोई भी कार्रवाई करें)';
+$lang['leave_application'] = 'अवकाश आवेदन';
+
 
 $lang['daily_tasks'] = 'दैनिक कार्य';
 $lang['projects'] = 'परियोजनाएं';
