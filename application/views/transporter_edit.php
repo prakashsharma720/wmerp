@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		         <div class="form-group">
 		        	<div class="row col-md-12">
 		        			<div class="col-md-4 col-sm-4">
-		        			<label class="control-label">Transporter Name</label>
+		        			<label class="control-label"><?=$this ->lang->line('transporter_name')?></label>
 				                  <input type="text" id="firstName" placeholder="Enter name" name="transporter_name" class="form-control" value="<?php echo $current[0]->transporter_name; ?>"  required autofocus autocomplete="off" autocomplete="off">
 			            </div>
 								<?php 
@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	        			?>
 							<div class="col-md-4 col-sm-4 ">
-				        		<label class="control-label"> Transporter Type </label>
+				        		<label class="control-label"><?=$this ->lang->line('transporter_type')?> </label>
 				        			<div class="form-check">
 					               		<input class="form-check-input transporter_type" type="radio" name="transporter_type" value="New" <?php echo $new; ?> > New</input>
 					               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            		</div>
 			            	</div>
 							 <div class="col-md-4 col-sm-4 category_of_approval">
-			            	<label  class="control-label"> Category of Approval</label>
+			            	<label  class="control-label"> <?=$this ->lang->line('category_of_approval')?></label>
 			            	<?php  $categories = array(
 				                  'A' => 'A',
 				                  'B' => 'B',
@@ -61,14 +61,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 					   <div class="col-md-4 col-sm-4">
-			            	<label  class="control-label">Transporter Code</label>
+			            	<label  class="control-label"><?=$this ->lang->line('transporter_code')?></label>
 			              <input type="text" name="tp_code" class="form-control" value="<?= $vendor_code?>"  autofocus readonly="readonly">
 						                <input type="hidden" name="vendor_code" value="<?php echo $tp_code;?>">
 										
 
 			            </div>
 			           	<div class="col-md-4 col-sm-4">
-			            	<label class="control-label"> Contact Person</label>
+			            	<label class="control-label"></label><?=$this ->lang->line('contact_person')?>
 							<div class="input-group input-group-lg">
 				                  <div class="input-group-prepend">
 				                  <select name="prefix" >
@@ -84,7 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 			                <input type="text" id="firstName" placeholder="Enter contact person" name="contact_person" class="form-control" value="<?php echo $current[0]->contact_person; ?>"  autofocus>
@@ -93,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					   </div>
 		        
 		        		<div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> Email</label>
+			            	<label  class="control-label"><?=$this ->lang->line('email')?></label>
 			                <input type="email" id="lastName" placeholder="Enter email" name="email" class="form-control" value="<?php echo $current[0]->email; ?>"  autofocus>
 			            </div>
 			            
@@ -122,7 +122,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					            </select>
 			            </div> -->
 						<div class="col-md-4 col-sm-4">
-			            	<label class="control-label"> Mobile</label>
+			            	<label class="control-label"> <?=$this ->lang->line('mobile_no')?></label>
 			                <input type="text" id="firstName" placeholder="Enter mobile" name="mobile_no" class="form-control mobile" value="<?php echo $current[0]->mobile_no; ?>"
 			                maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
 			                			  autofocus  value="<?php echo $current[0]->mobile_no; ?>">
@@ -131,7 +131,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						    </span>
 			            </div>
 						 <div class="col-md-4 col-sm-4">
-			            	<label class="control-label"> Alternate Contact No.</label>
+			            	<label class="control-label"> <?=$this ->lang->line('alternate_contact_no')?>.</label>
 			                <input type="text" id="firstName" placeholder="Enter Alternate Contact" name="alternate_no" class="form-control mobile" value="<?php echo $current[0]->alternate_no; ?>"
 			                maxlength="10" minlength="10" autofocus>
 			                <span class="required">
@@ -139,7 +139,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						    </span>
 			            </div>
 			            <div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> Website</label>
+			            	<label  class="control-label"><?=$this ->lang->line('website')?></label>
 			                <input type="text" id="lastName" placeholder="Enter website" name="website" class="form-control" value="<?php echo $current[0]->website; ?>"  autofocus>
 			            </div>
 			             
@@ -158,7 +158,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			            </div>
 		        		<div class="col-md-8 col-sm-8 ">
-			        		<label class="control-label"> Address</label>
+			        		<label class="control-label"> <?=$this ->lang->line('address')?></label>
 			        		<textarea type="text" placeholder="Enter address" name="address" class="form-control" rows="3" value="<?php echo $current[0]->ifsc_code; ?>" required autofocus style="resize: none;"><?php echo $current[0]->address; ?></textarea>
 		        		</div>
 		        	</div>
@@ -166,7 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="form-group">
 		        	<div class="row col-md-12">
 						<div class="col-md-4 col-sm-4">
-			            	<label  class="control-label"> Registration Date</label>
+			            	<label  class="control-label"><?=$this ->lang->line('reg_date')?></label>
 			            	 <input type="text" data-date-formate="dd-mm-yyyy" name="reg_date" class="form-control date-picker" value="<?php echo date('d-m-Y',strtotime($current[0]->reg_date)); ?>" placeholder="dd-mm-yyyy" autofocus  required autocomplete="off">
 			            </div>
 			            <?php 
@@ -231,7 +231,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Bank Name</label>
+			            	<label class="control-label"> <?=$this ->lang->line('bank_nm')?></label>
 							<?php
 							$bank_nm =array('No' => 'Select Option',
 							'Allahabad Bank' => 'Allahabad Bank',      
@@ -283,11 +283,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                <!-- <input type="text" placeholder="Enter bank name" name="bank_name" class="form-control" value="<?php echo $current[0]->bank_name; ?>" required autofocus>-->
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Branch Name</label>
+			            	<label  class="control-label"> <?=$this ->lang->line('branch_name')?></label>
 			                <input type="text"  placeholder="Enter branch name" name="branch_name" class="form-control" value="<?php echo $current[0]->branch_name; ?>"  autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> IFSC Code</label>
+			            	<label class="control-label"> <?=$this ->lang->line('ifsc_code')?></label>
 			                <input type="text" id="firstName" placeholder="Enter IFSC Code" name="ifsc_code" class="form-control" value="<?php echo $current[0]->ifsc_code; ?>"  autofocus>
 			            </div>
 		        	</div>
@@ -295,22 +295,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		         <div class="form-group">
 		        	<div class="row col-md-12">
 		        		 <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Account Number</label>
+			            	<label class="control-label"> <?=$this ->lang->line('account_no')?>r</label>
 			                <input type="text" id="firstName" placeholder="Enter account number" name="account_no" class="form-control" value="<?php echo $current[0]->account_no; ?>" autofocus   autocomplete="off">
 			            </div>
 		        		<div class="col-md-4 col-sm-4 date_of_approval_div">
-			            	<label class="control-label"> Date of Approval</label>
+			            	<label class="control-label"><?=$this ->lang->line('date_of_approval')?></label>
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_approval" class="form-control date-picker date_of_approval" value="<?php echo date('d-m-Y'); ?>" placeholder="dd-mm-yyyy" autofocus >
 			            </div>
 			            <div class="col-md-4 col-sm-4 date_of_evalution_div">
-			            	<label  class="control-label"> Date of Next Evalution</label>
+			            	<label  class="control-label"> <?=$this ->lang->line('date_of_next_evalution')?></label>
 			                <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_evalution" class="form-control date-picker date_of_evalution" value="<?php echo date('d-m-Y'); ?> " placeholder="dd-mm-yyyy" autofocus>
 			            </div>
 		        	</div>
 		        </div>
 		         
 		        
-		        <button type="submit" class="btn btn-primary btn-block"> Save</button>
+		        <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang->line('save')?></button>
 		    </form> <!-- /form -->
 		</div>
 	</div>

@@ -389,7 +389,7 @@ for (i = 0; i < coll.length; i++) {
                                                         <h5 class="info-box-number"><?php echo $isduplicateleads  ?>
                                                         </h5>
                                                         <!-- <h5 class="info-box-number"> <?php echo $duplicatelead  ?></h5> -->
-                                                        <span class="info-box-text"> Duplicate</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('duplicate') ?></span>
                                                     </div>
                                                     <div style="margin-left:10px;">
                                                          <?php
@@ -403,12 +403,12 @@ for (i = 0; i < coll.length; i++) {
                                                     
                                                       <?php }?>
                                                       <h5 class="info-box-number"><?php echo $todayshotlead?></h5>
-                                                        <span class="info-box-text">  Target Short</span> 
+                                                        <span class="info-box-text"> <?= $this->lang->line('target_short') ?></span> 
                                                     </div>
                                                     <div style="margin-left:10px; margin-bottom:-20px;">
                                                         <h5 class="info-box-number"><?php echo $todayleads  ?></h5>
                                                         <!-- <h5 class="info-box-number"> <?php echo $duplicatelead  ?></h5> -->
-                                                        <span class="info-box-text"> Total</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('total') ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -425,12 +425,12 @@ for (i = 0; i < coll.length; i++) {
                                                         <h5 class="info-box-number">
                                                             <?php echo  $yesterdayactual= $yesterdayLeads - $yesterdayduplicateLeads  ?>
                                                         </h5>
-                                                        <span class="info-box-text">Actual &nbsp;&nbsp;</span>
+                                                        <span class="info-box-text"><?= $this->lang->line('actual') ?> &nbsp;&nbsp;</span>
                                                     </div>
                                                     <div style="margin-left:10px;">
                                                         <h5 class="info-box-number">
                                                             <?php echo $yesterdayduplicateLeads  ?></h5>
-                                                        <span class="info-box-text"> Duplicate</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('duplicate') ?></span>
                                                     </div>
                                                     <div style="margin-left:10px;">
                                                         <?php 
@@ -443,11 +443,11 @@ for (i = 0; i < coll.length; i++) {
                                                         </h5>
                                                         <?php }?>
                                                         <h5 class="info-box-number"><?php echo $yshortleads?></h5>
-                                                        <span class="info-box-text"> Target Short</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('target_short') ?></span>
                                                     </div>
                                                     <div style="margin-left:10px; margin-bottom:-20px;">
                                                         <h5 class="info-box-number"><?php echo $yesterdayLeads  ?></h5>
-                                                        <span class="info-box-text"> Total</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('total') ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -458,7 +458,7 @@ for (i = 0; i < coll.length; i++) {
 
                                             <div class="description-block">
                                                 <center class="leadcurrent"> <label>
-                                                        Month</label>&nbsp;<label>(<?php echo $thismonthleads  ?>)</label>
+                                                        <?= $this->lang->line('month') ?></label>&nbsp;<label>(<?php echo $thismonthleads  ?>)</label>
                                                 </center>
                                                 <div style="margin-top: 7px;">
                                                     <div class="border-right" style=" margin-left: 10px;">
@@ -470,7 +470,7 @@ for (i = 0; i < coll.length; i++) {
                                                     <div style="margin-left:10px;">
                                                         <h5 class="info-box-number"><?php echo $thismonthduplicate  ?>
                                                         </h5>
-                                                        <span class="info-box-text"> Duplicate</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('duplicate') ?></span>
                                                     </div>
                                                     <div style="margin-left:10px;">
                                                         <?php 
@@ -484,11 +484,11 @@ for (i = 0; i < coll.length; i++) {
 
                                                         <?php }?>
                                                         <h5 class="info-box-number"><?php echo $msortlead  ?></h5>
-                                                        <span class="info-box-text"> Target Short</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('target_short') ?></span>
                                                     </div>
                                                     <div style="margin-left:10px;">
                                                         <h5 class="info-box-number"><?php echo $thismonthleads  ?></h5>
-                                                        <span class="info-box-text"> Total</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('total') ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -802,7 +802,7 @@ for (i = 0; i < coll.length; i++) {
                                                     <div class="border-right" style=" margin-left: 10px;">
                                                         <h5 class="info-box-number">
                                                             <?php echo $thismonthNoActionMarketingLeads  ?></h5>
-                                                        <span class="info-box-text">No Action &nbsp;&nbsp;</span>
+                                                        <span class="info-box-text"><?= $this->lang->line('no_action') ?> &nbsp;&nbsp;</span>
                                                     </div>
                                                     <div style="margin-left:10px;">
                                                         <h5 class="info-box-number">
@@ -816,13 +816,13 @@ for (i = 0; i < coll.length; i++) {
                                                     <div style="margin-left:10px;">
                                                         <h5 class="info-box-number">
                                                             <?php echo $thismonthinDeclinedMarketingLeads  ?></h5>
-                                                        <span class="info-box-text">Declined</span>
+                                                        <span class="info-box-text"><?= $this->lang->line('declined') ?></span>
                                                     </div>
                                                     <div style="margin-left:10px; margin-top:20px;">
                                                         <h5 class="info-box-number">
                                                             <?php echo $thismonthConvertedMarketingLeads  ?></h5>
 
-                                                        <span class="info-box-text"> Converted</span>
+                                                        <span class="info-box-text"> <?= $this->lang->line('converted') ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -860,13 +860,13 @@ for (i = 0; i < coll.length; i++) {
                                     <tr style="text-align:center;">
 
 
-                                        <th> Sr.No.</th>
-                                        <th> Lead id</th>
-                                        <th> Title</th>
-                                        <th> Schedule TIme</th>
-                                        <th> Status</th>
+                                        <th> <?= $this->lang->line('sr_no') ?>.</th>
+                                        <th> <?= $this->lang->line('lead_id') ?></th>
+                                        <th> <?= $this->lang->line('title') ?></th>
+                                        <th> <?= $this->lang->line('schedule_time') ?></th>
+                                        <th> <?= $this->lang->line('status') ?></th>
 
-                                        <th> Action</th>
+                                        <th> <?= $this->lang->line('action') ?></th>
 
 
                                     </tr>
@@ -938,7 +938,7 @@ for (i = 0; i < coll.length; i++) {
 
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title"> Edit Reminder </h4>
+                                                                <h4 class="modal-title"> <?= $this->lang->line('edit_remainder') ?> </h4>
                                                                 <button type="button" class="close"
                                                                     data-dismiss="modal">&times;</button>
                                                             </div>
@@ -946,7 +946,7 @@ for (i = 0; i < coll.length; i++) {
 
 
                                                                 <div class="col-md-6">
-                                                                    <label class="control-label">Select Date </label>
+                                                                    <label class="control-label"><?= $this->lang->line('select_date') ?> </label>
                                                                     <span class="required">*</span>
 
                                                                     <input type="date" class="form-control reminder"
@@ -955,7 +955,7 @@ for (i = 0; i < coll.length; i++) {
                                                                         required="required">
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <label class="control-label"> Time</label><span
+                                                                    <label class="control-label"> <?= $this->lang->line('time') ?></label><span
                                                                         class="required">*</span>
 
                                                                     <input type="time" id="reminder_time"
@@ -967,10 +967,10 @@ for (i = 0; i < coll.length; i++) {
 
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="submit" class="btn btn-success"> Snooze
+                                                                <button type="submit" class="btn btn-success"> <?= $this->lang->line('snooze') ?>
                                                                 </button>
                                                                 <button type="button" class="btn btn-danger"
-                                                                    data-dismiss="modal"> Cancel </button>
+                                                                    data-dismiss="modal"> <?= $this->lang->line('cancel') ?> </button>
                                                             </div>
                                                         </div>
 

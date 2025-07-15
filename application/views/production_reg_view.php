@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -40,18 +40,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> PR No </th>
-              <th style="white-space: nowrap;"> Date Of Production </th>
-              <th style="white-space: nowrap;"> Mill No </th>
-              <th style="white-space: nowrap;"> Total Production (MT) </th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('pr_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('date_of_production')?></th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('mill_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('total_production')?> (MT) </th>
              <!--  <th style="white-space: nowrap;">Total Quantity </th> -->
               <!-- <th style="white-space: nowrap;"> Grade Name </th>
               <th style="white-space: nowrap;"> LOT No </th>
               <th style="white-space: nowrap;"> Batch No </th>
               <th style="white-space: nowrap;"> No of Bags</th> -->
-              <th style="white-space: nowrap;"> Production By </th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('production_by')?> </th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -105,9 +105,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-5"> Grade Name </div>
-                                <div class="col-md-2"> No Of Bags</div>
-                                <div class="col-md-2"> Packing Size </div>
+                                <div class="col-md-5"> <?=$this ->lang ->line('grade_name')?> </div>
+                                <div class="col-md-2"> <?=$this ->lang ->line('no_of_bags')?></div>
+                                <div class="col-md-2"> <?=$this ->lang ->line('packing_size')?> </div>
                                 <div class="col-md-2" style="white-space: nowrap;"> Production In MT</div>
                               </div>
 
@@ -130,13 +130,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                            <div class="row col-md-12" >
                               <div class="col-md-12">
-                                <label class="control-label"> Total Qty : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('total_qty')?> : </label>
                                 <span > <?php echo $obj['total_production_in_mt']?></span>
                               </div>
                             </div>
                             <div class="row col-md-12" >
                               <div class="col-md-12">
-                                <label class="control-label"> Remarks : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('remarks')?> : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['remarks']; 
@@ -157,7 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>

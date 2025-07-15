@@ -31,9 +31,9 @@ foreach ($packing_sizes as $key => $value) {
 			                 value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } ?>" autofocus required >
 			            </div>
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"><?=$this ->lang->line('department')?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""><?=$this ->lang->line('select_department')?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -46,29 +46,29 @@ foreach ($packing_sizes as $key => $value) {
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 			            <div class="col-md-4 col-sm-4">
-				            <label  class="control-label"> Total Waste Materials</label>
+				            <label  class="control-label"><?=$this ->lang->line('total_waste_materials')?></label>
 				    		<input type="text" class="form-control total_workers" name="total_waste_materials" value="<?= $total_waste_materials?>" readonly="readonly">
 			    		</div>
 		        	</div>
 					<br>
 				<div class="form-group">
 		        	<div class="row col-md-12">
-		        		<h5>Waste Material Detail</h5>
+		        		<h5><?=$this ->lang->line('waste_materials_detail')?></h5>
 		        		<div class="table-responsive">
 			        		<table id="maintable">
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 			        					<th >S.No.</th>
-			        					<th style="white-space: nowrap;"> Material Description</th>
-			        					<th style="white-space: nowrap;"> Party Name</th> 
-			        					<th style="white-space: nowrap;"> Quantity</th>
-			        					<th style="white-space: nowrap;"> Unit</th>
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang->line('material_description')?></th>
+			        					<th style="white-space: nowrap;"><?=$this ->lang->line('party_name')?></th> 
+			        					<th style="white-space: nowrap;"><?=$this ->lang->line('quantity')?></th>
+			        					<th style="white-space: nowrap;"><?=$this ->lang->line('unit')?></th>
+			        					<th style="white-space: nowrap;"><?=$this ->lang->line('action_button')?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -97,7 +97,7 @@ foreach ($packing_sizes as $key => $value) {
                            			</td>
                            			<td> 
                         				<select name="service_provider_id[]" class="form-control suppliers" style="width:320px;" required>
-                        					<option value=""> Select Service Provider</option>
+                        					<option value=""> <?=$this ->lang->line('select_service_provider')?></option>
 
                         			             <?php
                         		                 if ($suppliers): ?> 
@@ -111,7 +111,7 @@ foreach ($packing_sizes as $key => $value) {
                         
                         		                    <?php   endforeach;  ?>
                         		                <?php else: ?>
-                        		                    <option value="">No result</option>
+                        		                    <option value=""><?=$this ->lang->line('no_result')?></option>
                         		                <?php endif; ?>
                         		                
                         	        		</select>
@@ -123,7 +123,7 @@ foreach ($packing_sizes as $key => $value) {
                         			</td>
                         			<td>
                         			    <select name="unit[]" class="form-control " required="required" style="width:150px;">
-                        	        		 <option value="">Select</option>
+                        	        		 <option value=""><?=$this ->lang->line('select')?></option>
                         		                <?php
                         		                 if ($units): ?> 
                         		                  <?php 
@@ -136,7 +136,7 @@ foreach ($packing_sizes as $key => $value) {
                         
                         		                    <?php   endforeach;  ?>
                         		                <?php else: ?>
-                        		                    <option value="">No result</option>
+                        		                    <option value=""><?=$this ->lang->line('no_result')?></option>
                         		                <?php endif; ?>
                         		            </select>
                         			</td>
@@ -163,8 +163,8 @@ foreach ($packing_sizes as $key => $value) {
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('submit')?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->
@@ -193,14 +193,14 @@ foreach ($packing_sizes as $key => $value) {
    			</td>
    			<td> 
 				<select name="service_provider_id[]" class="form-control suppliers" style="width:320px;" required>
-					<option value=""> Select Service Provider</option>
+					<option value=""><?=$this ->lang->line('select_service_provider')?></option>
 		            <?php if ($suppliers): ?> 
 		                <?php foreach ($suppliers as $value) : ?>
 		            	<option value="<?= $value['id'] ?>"> 
 		            	<?= $value['service_provider_name'] ?></option>
 			            <?php endforeach; ?>
 			            <?php else: ?>
-			                <option value="0">No result</option>
+			                <option value="0"><?=$this ->lang->line('no_result')?></option>
 			            <?php endif; ?>
 	        		</select>
    			</td>
@@ -222,7 +222,7 @@ foreach ($packing_sizes as $key => $value) {
 
 		                    <?php   endforeach;  ?>
 		                <?php else: ?>
-		                    <option value="">No result</option>
+		                    <option value=""><?=$this ->lang->line('no_result')?></option>
 		                <?php endif; ?>
 		            </select>
 			</td>

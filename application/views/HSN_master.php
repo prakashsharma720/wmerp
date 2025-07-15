@@ -38,34 +38,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">
 						<div class="row col-md-12">
 							<div class="col-md-8 col-sm-8 ">
-								<label class="control-label"> Mineral Name</label>
-						<input type="text" placeholder="Enter Mineral name" name="mineral_name" class="form-control" value="<?= $mineral_name?>" required autofocus>
+								<label class="control-label"> <?=$this ->lang->line('mineral_name')?></label>
+						<input type="text" placeholder="<?=$this ->lang ->line('enter_mineral_name')?>" name="mineral_name" class="form-control" value="<?= $mineral_name?>" required autofocus>
 
 								</div>
 					        </div>
 					        <span class="help-block"></span>
 				        	<div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
-					            	<label class="control-label">HSN Code</label>
-					                <input type="text"  placeholder="Enter HSN Code" name="hsn_code" class="form-control" value="<?= $hsn_code?>" required autofocus>
+					            	<label class="control-label"><?=$this ->lang->line('hsn_code')?></label>
+					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_hsn_code')?>" name="hsn_code" class="form-control" value="<?= $hsn_code?>" required autofocus>
 					            </div>
 					        </div>
 							
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12">
 				        		<div class="col-md-8 col-sm-8 ">
-					            	<label class="control-label">Status</label>
+					            	<label class="control-label"><?=$this ->lang->line('status')?></label>
 					               <select class="form-control" name="flag">
-					               		<option value="0"> Active</option>
-					               		<option value="1"> De-active</option>
+					               		<option value="0"> <?=$this ->lang->line('active')?></option>
+					               		<option value="1"><?=$this ->lang->line('de_active')?></option>
 					               </select>
 					            </div>
 				        	</div>
 				        <?php } ?>
 				           <div class="row col-md-12">
 					            <div class="col-md-8 col-sm-8 ">
-					            	<label class="control-label" style="visibility: hidden;">Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('save')?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -78,10 +78,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th> Mineral Name</th>
-								<th>HSN Code</th>
-								<th> Action</th>
+								<th> <?=$this ->lang->line('sr_no')?>.</th>
+								<th><?=$this ->lang->line('mineral_name')?></th>
+								<th><?=$this ->lang->line('hsn_code')?></th>
+								<th><?=$this ->lang->line('action')?></th>
 							</tr>
 						</thead>
 						<tbody>

@@ -47,35 +47,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                        <?php 
 						                        if ($value['id'] == $categories_id): ?>
 						                        	<input type="hidden" name="categories_id" value="<?= $value['id'] ?>" >
-						                        <label class="control-label"> <?= $value['category_name'] ?> Name</label>
+						                        <label class="control-label"> <?= $value['category_name'] ?> <?=$this ->lang ->line('name')?></label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					            </div>
 					        <div class="row col-md-12">
 					            	<!-- <label class="control-label"> Name</label>  -->
-					                <input type="text"  placeholder="Enter  name" name="name" class="form-control" value="<?= $name?>" required autofocus>
+					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_name')?>" name="name" class="form-control" value="<?= $name?>" required autofocus>
 					            </div>
 					 
 							<div class="row col-md-12">
-					            <label class="control-label"> Company Name</label>
-								<input type="text"  placeholder="Enter Company Name" name="company_name" 
+					            <label class="control-label"> <?=$this ->lang ->line('company_name')?></label>
+								<input type="text"  placeholder="<?=$this ->lang ->line('enter_company_name')?>" name="company_name" 
 								class="form-control" value="<?= $company_name?>"  autofocus>
 
 					        </div> 
 							<div class="row col-md-12">
-					            <label class="control-label"> Minimum Inventory Quantity</label>
-								<input type="text"  placeholder="Enter Minimum Inventory Qty" name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
+								  <label class="control-label"> <?=$this ->lang ->line('minimum_inventory_qty')?></label>
+								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimum_inventory_qty')?>" 
+
+								name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
 
 					        </div> 
 							
 					         <div class="row col-md-12">
-					        	<label class="control-label"> Select Unit</label>
+					        	<label class="control-label"> <?=$this ->lang ->line('select_unit')?></label>
 						         <select name="unit_name" class="form-control select2" required="required">
-					        		 <option value="">Select</option>
+					        		 <option value=""><?=$this ->lang ->line('select')?></option>
 						                <?php
 						                 if ($units): ?> 
 						                  <?php 
@@ -88,15 +90,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							                             <?php endif;   ?>
 						                    <?php   endforeach;  ?>
 						                <?php else: ?>
-						                    <option value="">No result</option>
+						                    <option value=""><?=$this ->lang ->line('no_result')?></option>
 						                <?php endif; ?>
 						            </select>
 						     </div>
 						     
 
 					            <div class="row col-md-12">
-					            	<label class="control-label"> Description</label>
-					                <textarea type="text"  placeholder="Enter description" name="description" 
+					            	<label class="control-label"> <?=$this ->lang ->line('description')?></label>
+					                <textarea type="text"  placeholder="<?=$this ->lang ->line('enter_description')?>" name="description" 
 									class="form-control" value="<?= $description?>"  autofocus><?= $description ?></textarea>
 					            </div>
 					        <?php if(!empty($id)) { ?>

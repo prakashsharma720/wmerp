@@ -188,7 +188,9 @@ public function admin_dashboard() {
  
 	// echo"<pre>";print_r($data['target']);exit;
 	
-$this->template->load('template', 'super_dashboard',$data);
+	// $this->template->load('template', 'super_dashboard',$data);
+	//   $this->load->view('layouts/darulux', $data);
+		$this->template->load('layout/template', 'super_dashboard', $data);
 //$this->load->view('dashboard',$data);
 }
 
@@ -556,10 +558,272 @@ public function EmailVerify() {
 		
 	}
 	public function MyPasswordChangeView() {
+		$data = array();
+		$this->load->model('employee');
+		$loginId=$this->session->userdata['logged_in']['id'];
+		$result = $this->employee->getById($loginId);
+		// echo "<pre>"; print_r($result); exit;
+
+		if (isset($result['id']) && $result['id']) :
+			$data['id'] = $result['id'];
+		else:
+			$data['id'] = '';
+		endif;
+		if (isset($result['designation']) && $result['designation']) :
+			$data['designation'] = $result['designation'];
+		else:
+			$data['designation'] = '';
+		endif;
+
+		if (isset($result['name']) && $result['name']) :
+			$data['name'] = $result['name'];
+		else:
+			$data['name'] = '';
+		endif;	
+		if (isset($result['blood_group']) && $result['blood_group']) :
+			$data['blood_group'] = $result['blood_group'];
+		else:
+			$data['blood_group'] = '';
+		endif;
+
+		if (isset($result['employee_code']) && $result['employee_code']) :
+			$data['emp_code'] = $result['employee_code'];
+			$voucher_no= $data['emp_code'];
+			if($voucher_no<10){
+			$employee_id_code='EC000'.$voucher_no;
+			}
+			else if(($voucher_no>=10) && ($voucher_no<=99)){
+				$employee_id_code='EC00'.$voucher_no;
+			}
+			else if(($voucher_no>=100) && ($voucher_no<=999)){
+				$employee_id_code='EC0'.$voucher_no;
+			}
+			else{
+				$employee_id_code='EC'.$voucher_no;
+			}
+			//print_r($employee_id_code);exit;
+			$data['employee_code']=$employee_id_code;
+			else:
+			$data['employee_code'] = '';
+		endif;
+
+		if (isset($result['email']) && $result['email']) :
+			$data['email'] = $result['email'];
+			else:
+			$data['email'] = '';
+		endif;
+		if (isset($result['salary']) && $result['salary']) :
+			$data['salary'] = $result['salary'];
+		else:
+			$data['salary'] = '';
+		endif;
+
+		if (isset($result['account_holder_name']) && $result['account_holder_name']) :
+			$data['account_holder_name'] = $result['account_holder_name'];
+		else:
+			$data['account_holder_name'] = '';
+		endif;
+
+		if (isset($result['bank_name']) && $result['bank_name']) :
+			$data['bank_name'] = $result['bank_name'];
+		else:
+			$data['bank_name'] = '';
+		endif;
+
+		if (isset($result['account_number']) && $result['account_number']) :
+			$data['account_number'] = $result['account_number'];
+		else:
+			$data['account_number'] = '';
+		endif;
+
+		if (isset($result['ifsc_code']) && $result['ifsc_code']) :
+			$data['ifsc_code'] = $result['ifsc_code'];
+		else:
+			$data['ifsc_code'] = '';
+		endif;
+
+		if (isset($result['branch_name']) && $result['branch_name']) :
+			$data['branch_name'] = $result['branch_name'];
+		else:
+			$data['branch_name'] = '';
+		endif;
+
+		if (isset($result['account_type']) && $result['account_type']) :
+			$data['account_type'] = $result['account_type'];
+		else:
+			$data['account_type'] = '';
+		endif;
+
+		if (isset($result['upi_id']) && $result['upi_id']) :
+			$data['upi_id'] = $result['upi_id'];
+		else:
+			$data['upi_id'] = '';
+		endif;
+
+		if (isset($result['hra']) && $result['hra']) :
+			$data['hra'] = $result['hra'];
+		else:
+			$data['hra'] = '';
+		endif;
+
+		if (isset($result['c_allowance']) && $result['c_allowance']) :
+			$data['c_allowance'] = $result['c_allowance'];
+		else:
+			$data['c_allowance'] = '';
+		endif;
+		
+		if (isset($result['m_allowance']) && $result['m_allowance']) :
+			$data['m_allowance'] = $result['m_allowance'];
+		else:
+			$data['m_allowance'] = '';
+		endif;
+
+		if (isset($result['o_allowance']) && $result['o_allowance']) :
+			$data['o_allowance'] = $result['o_allowance'];
+		else:
+			$data['o_allowance'] = '';
+		endif;
+
+		if (isset($result['uan']) && $result['uan']) :
+			$data['uan'] = $result['uan'];
+		else:
+			$data['uan'] = '';
+		endif;
+
+		if (isset($result['pf']) && $result['pf']) :
+			$data['pf'] = $result['pf'];
+		else:
+			$data['pf'] = '';
+		endif;
+
+		if (isset($result['esi']) && $result['esi']) :
+			$data['esi'] = $result['esi'];
+		else:
+			$data['esi'] = '';
+		endif;
+
+
+		if (isset($result['mobile_no']) && $result['mobile_no']) :
+			$data['mobile_no'] = $result['mobile_no'];
+		else:
+		$data['mobile_no'] = '';
+		endif;
+			if (isset($result['emobile_no']) && $result['emobile_no']) :
+			$data['emobile_no'] = $result['emobile_no'];
+		else:
+		$data['emobile_no'] = '';
+		endif;
+		if (isset($result['ename']) && $result['ename']) :
+			$data['ename'] = $result['ename'];
+		else:
+		$data['ename'] = '';
+		endif;
+
+		
+
+		if (isset($result['username']) && $result['username']) :
+			$data['username'] = $result['username'];
+		else:
+			$data['username'] = '';
+		endif;
+
+	
+
+		if (isset($result['role_id']) && $result['role_id']) :
+			$data['role_id'] = $result['role_id'];
+		else:
+			$data['role_id'] = '';
+		endif;
+
+		if (isset($result['department_id']) && $result['department_id']) :
+			$data['department_id'] = $result['department_id'];
+		else:
+			$data['department_id'] = '';
+		endif; 
+		if (isset($result['designation_id']) && $result['designation_id']) :
+			$data['designation_id'] = $result['designation_id'];
+		else:
+			$data['designation_id'] = '';
+		endif; 
+		if (isset($result['target']) && $result['target']) :
+			$data['target'] = $result['target'];
+		else:
+			$data['target'] = '';
+		endif; 
+		if (isset($result['date_of_joining']) && $result['date_of_joining']) :
+
+			$data['date_of_joining'] = date('d-m-Y',strtotime($result['date_of_joining']));
+		else:
+			$data['date_of_joining'] = '';
+		endif; 
+
+		if (isset($result['author_id']) && $result['author_id']) :
+			$data['author_id'] = $result['author_id'];
+		else:
+			$data['author_id'] = '';
+		endif;
+		if (isset($result['total_net_salary']) && $result['total_net_salary']) :
+			$data['total_net_salary'] = $result['total_net_salary'];
+		else:
+			$data['total_net_salary'] = '';
+		endif;
+		
+		
+		
+		
+		if (isset($result['employee_code']) && $result['employee_code']) :
+			$data['employee_code'] = $result['employee_code'];
+		else:
+			$data['employee_code'] = '';
+		endif;
+
+		if (isset($result['pan_no']) && $result['pan_no']) :
+			$data['pan_no'] = $result['pan_no'];
+		else:
+			$data['pan_no'] = '';
+		endif; 
+		if (isset($result['aadhaar_no']) && $result['aadhaar_no']) :
+			$data['aadhaar_no'] = $result['aadhaar_no'];
+		else:
+			$data['aadhaar_no'] = '';
+		endif; 
+		if (isset($result['gender']) && $result['gender']) :
+			$data['gender'] = $result['gender'];
+		else:
+			$data['gender'] = '';
+		endif; 
+		if (isset($result['address']) && $result['address']) :
+			$data['address'] = $result['address'];
+		else:
+			$data['address'] = '';
+		endif;
+		
+		if (isset($result['dob']) && $result['dob']) :
+			$data['dob'] =date('d-m-Y',strtotime($result['dob']));
+		else:
+			$data['dob'] = '';
+		endif;
+
+		if (isset($result['photo']) && $result['photo']) :
+			$data['photo'] = $result['photo'];
+		else:
+			$data['photo'] = '';
+		endif; 
+		
+		if (isset($result['id']) && $result['id']) :
+			$data['title'] = 'Edit Employee';
+		else:
+			$data['title'] = 'Add New Employee';
+			endif;	
+		//$data['employees'] = $this->employee->employeesList();
+		$data['roles'] = $this->employee->getRoles();
+		$data['departments'] = $this->employee->getDepartments();
+		$data['designations'] = $this->employee->getDesignation();
+		$data['employees'] = $this->employee->getEmployees();
 		$data['title'] = ' Change Password';
 		$data['designation_id']=$this->session->userdata['logged_in']['designation_id'];
 		$data['employees'] = $this->login_database->getEmployees();
-		$this->template->load('template', 'mypasswordchange',$data);	
+		$this->template->load('layout/template', 'new-password',$data);	
 	}
 
 
@@ -568,11 +832,12 @@ public function EmailVerify() {
 		$password=md5($this->input->post('password'));
 		$cpassword=md5($this->input->post('confirm_password'));
 		
-		/*print_r($password);echo"<br>";
-		print_r($cpassword);*/
+		// print_r($password);
+		// echo"<br>";
+		// print_r($cpassword);
 		//exit;
 		
-		  $login_id=$this->session->userdata['logged_in']['id'];
+		$login_id=$this->session->userdata['logged_in']['id'];
 		if($password==$cpassword){
 			$data = array('password' => $password);
 			if(!empty($this->input->post('emp_id'))){
@@ -587,7 +852,7 @@ public function EmailVerify() {
 			//print_r($result);exit;
 			if($result==true){
 				$this->session->set_flashdata('success', 'Password Changed Succesfully');
-				redirect('User_authentication/admin_dashboard','refresh');
+				redirect('User_authentication/MyPasswordChangeView','refresh');
 				
 			}
 
@@ -596,6 +861,9 @@ public function EmailVerify() {
 				redirect('User_authentication/MyPasswordChangeView','refresh');
 
 			}	
+		}else{
+				$this->session->set_flashdata('failed', 'Password and Confirm Password are different.');
+				redirect('User_authentication/MyPasswordChangeView','refresh');
 		}
 		
 	}
@@ -669,7 +937,14 @@ public function EmailVerify() {
 			redirect('User_authentication/sendMail','refresh');
 		}
     }
+
+	public function newTemplateTest(){
+		$data['getAll'] = $this->login_database->getAll();
+		$this->template->load('layout/template', 'super_dashboard',$data);
+	}
 }
+
+
 
 
 ?>

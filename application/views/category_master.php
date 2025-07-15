@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -40,42 +40,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">			        		  	
 						      <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Services Name</label>
-					                <input type="text"  placeholder="Enter service name" name="category_name" class="form-control" value="<?= $category_name?>" required autofocus>
+					            	<label class="control-label"><?=$this ->lang->line('service_name')?></label>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_service_name') ?>" name="category_name" class="form-control" value="<?= $category_name?>" required autofocus>
 					            </div>
 					        </div>
 					        <span class="help-block"></span>
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Status</label>
+					            	<label class="control-label"><?=$this ->lang->line('status')?></label>
 					               <select class="form-control" name="flag">
-					               		<option value="0"> Active</option>
-					               		<option value="1"> De-active</option>
+					               		<option value="0"><?=$this ->lang->line('active')?></option>
+					               		<option value="1"><?=$this ->lang->line('de_active')?></option>
 					               </select>
 					            </div>
 				        	</div>
 							<?php } ?>
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit"  class="btn btn-primary btn-block" >Save</button>
+					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit"  class="btn btn-primary btn-block" ><?=$this ->lang->line('save')?></button>
 					            </div>
 					        </div>
 				        </div>
 				        </form>
-					</div>
 				
 				 <!-- /form -->
 				<div class="col-md-6">
-					<h5> Services List</h5>
+					<h5><?=$this ->lang->line('services_list')?></h5>
 					<table id="example" class="table table-bordered table-striped" style="width:100%;">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th style="width: 90%;"> Services</th>
+								<th> <?=$this ->lang->line('sr_no')?>.</th>
+								<th style="width: 90%;"><?=$this ->lang->line('services')?></th>
 								
-								<th> Action</th>
+								<th> <?=$this ->lang->line('action')?></th>
 								
 							</tr>
 						</thead>

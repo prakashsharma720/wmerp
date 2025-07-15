@@ -65,6 +65,7 @@ $photo = $userData['photo'];
     width: 40px;
 }
 </style>
+
 <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
