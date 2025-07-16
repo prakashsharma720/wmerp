@@ -3034,6 +3034,20 @@ $lang['assign_to'] = 'Assigned To';
 $lang['assign_by'] = 'Assigned By';
 $lang['action'] = 'Action';
 $lang['create'] = 'Create';
+$lang['update_task'] = 'Update Task';
+$lang['task_history_description'] = 'Task History Description';
+
+$lang['reference'] = 'Reference';
+$lang['reference_name'] = 'Reference Name';
+$lang['write_your_reply'] = 'Write Your Reply';
+$lang['time_taken'] = 'Time Taken (In Hours)';
+$lang['how_much_time_take'] = 'How Much Time Take';
+$lang['submit_your_answer'] = 'Submit Your Answer';
+$lang['follow_up'] = 'Follow Up';
+$lang['document'] = 'Document';
+$lang['followup_time'] = 'Followup Time';
+$lang['delete_task_history_confirm'] = 'Are you sure, you want to delete this task history?';
+$lang['confirm_header'] = 'Confirm';
 
 
 // payroll module attendance list
@@ -3060,6 +3074,18 @@ $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Total Salary';
 $lang['action'] = 'Action';
 $lang['calculate']='calculate';
+
+$lang['add_attendance'] = 'Add Attendance';
+$lang['attendance_date'] = 'Attendance Date';
+$lang['employee'] = 'Employee';
+$lang['check_in'] = 'Check In';
+$lang['check_out'] = 'Check Out';
+$lang['close'] = 'Close';
+$lang['attendance_details_for'] = 'Attendance Details for';
+$lang['update_attendance'] = 'Update Attendance';
+$lang['edit_attendance'] = 'Edit Attendance';
+
+
 
 // workers add
 $lang['add_new_worker'] = 'Add New Worker';

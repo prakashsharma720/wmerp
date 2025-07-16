@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<!--Project -title-->	
 								 <div class="col-md-4">
 						            	<label class="control-label"><?=$this ->lang->line('task_title')?></label><span class="required">*</span>
-						                <input type="text"  placeholder="Enter Task Title" name="task_title" class="form-control" value="" required >
+						                <input type="text"  placeholder="<?=$this ->lang->line('task_title')?>" name="task_title" class="form-control" value="" required >
 						        </div>
 								
 								<!--start date-->	
@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
 						            	<label class="control-label"><?=$this ->lang->line('end_date')?></label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="dd-mm-yyyy"  required>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 
 					        	<!--Prioroty-->	
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						            	<label class="control-label"><?=$this ->lang->line('priority')?> <span class="required">*</span></label>
 								</br>
 						               <select class="form-control " name="priority" required="required" tabindex="-1" aria-hidden="true">
-							<option value="" selected="selected"><?=$this ->lang->line('select_priority')?></option>
+							<option value="" selected="selected"><?=$this ->lang->line('priority')?></option>
 							<option value="hard"><?=$this ->lang->line('hard')?></option>
 							<option value="medium"><?=$this ->lang->line('medium')?></option>
 							<option value="easy"><?=$this ->lang->line('easy')?></option>

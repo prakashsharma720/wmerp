@@ -3002,7 +3002,20 @@ $lang['assign_to'] = 'सौंपा गया';
 $lang['assign_by'] = 'सौंपने वाला';
 $lang['action'] = 'क्रिया';
 $lang['create'] = 'बनाएं';
+$lang['update_task'] = 'कार्य अपडेट करें';
+$lang['task_history_description'] = 'कार्य इतिहास विवरण';
 
+$lang['reference'] = 'संदर्भ';
+$lang['reference_name'] = 'संदर्भ नाम';
+$lang['write_your_reply'] = 'अपना उत्तर लिखें';
+$lang['time_taken'] = 'लगा समय (घंटों में)';
+$lang['how_much_time_take'] = 'कितना समय लगा';
+$lang['submit_your_answer'] = 'अपना उत्तर सबमिट करें';
+$lang['follow_up'] = 'अनुवर्ती';
+$lang['document'] = 'दस्तावेज़';
+$lang['followup_time'] = 'अनुवर्ती समय';
+$lang['delete_task_history_confirm'] = 'क्या आप वाकई इस कार्य इतिहास को हटाना चाहते हैं?';
+$lang['confirm_header'] = 'पुष्टि करें';
 
 
 // payroll module attendance list
@@ -3030,6 +3043,17 @@ $lang['ecs'] = 'ईसीएस';
 $lang['total_salary'] = 'कुल वेतन';
 $lang['action'] = 'क्रिया';
 $lang['calculate'] = 'गणना करें';
+
+$lang['add_attendance'] = 'उपस्थिति जोड़ें';
+$lang['attendance_date'] = 'उपस्थिति तिथि';
+$lang['employee'] = 'कर्मचारी';
+$lang['check_in'] = 'चेक इन';
+$lang['check_out'] = 'चेक आउट';
+$lang['close'] = 'बंद करें';
+$lang['attendance_details_for'] = 'के लिए उपस्थिति विवरण';
+$lang['update_attendance'] = 'उपस्थिति अपडेट करें';
+$lang['edit_attendance'] = 'उपस्थिति संपादित करें';
+
 
 
 // workers add

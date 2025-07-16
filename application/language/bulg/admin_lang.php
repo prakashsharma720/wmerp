@@ -2977,6 +2977,21 @@ $lang['assign_to'] = 'Възложено на';
 $lang['assign_by'] = 'Възложено от';
 $lang['action'] = 'Действие';
 $lang['create'] = 'Създай';
+$lang['update_task'] = 'Актуализиране на задачата';
+$lang['task_history_description'] = 'Описание на историята на задачата';
+
+$lang['reference'] = 'Референция';
+$lang['reference_name'] = 'Име на референцията';
+$lang['write_your_reply'] = 'Напишете своя отговор';
+$lang['time_taken'] = 'Време за изпълнение (в часове)';
+$lang['how_much_time_take'] = 'Колко време отне';
+$lang['submit_your_answer'] = 'Изпратете своя отговор';
+$lang['follow_up'] = 'Последващи действия';
+$lang['document'] = 'Документ';
+$lang['followup_time'] = 'Време за последващи действия';
+$lang['delete_task_history_confirm'] = 'Сигурни ли сте, че искате да изтриете тази история на задачата?';
+$lang['confirm_header'] = 'Потвърждение';
+
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Списък на присъствията';
@@ -3005,6 +3020,17 @@ $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Обща заплата';
 $lang['action'] = 'Действие';
 $lang['calculate'] = 'Изчисли';
+
+$lang['add_attendance'] = 'Добави присъствие';
+$lang['attendance_date'] = 'Дата на присъствие';
+$lang['employee'] = 'Служител';
+$lang['check_in'] = 'Час на влизане';
+$lang['check_out'] = 'Час на излизане';
+$lang['close'] = 'Затвори';
+$lang['attendance_details_for'] = 'Подробности за присъствието на';
+$lang['update_attendance'] = 'Актуализиране на присъствието';
+$lang['edit_attendance'] = 'Редактиране на присъствието';
+
 
 
 // workers add

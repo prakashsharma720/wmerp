@@ -10,7 +10,7 @@
       	<div class="card-header">
         	<h3 class="card-title pull-left"><?= $this->lang->line('apply_for_leave') ?></h3>
 			<div class="pull-right">
-				<label> Leave Application : </label><b style="color:#37b5fe;"> <?= $lead_code?></b>
+				<label> <?= $this->lang->line('leave_application') ?> : </label><b style="color:#37b5fe;"> <?= $lead_code?></b>
 			</div>
 		</div>
 		<!-- / card-header -->
