@@ -1612,6 +1612,8 @@ $lang['enter_payment_terms'] = 'भुगतान की शर्तें द
 $lang['payment_terms'] = 'भुगतान की शर्तें';
 $lang['address_2'] = 'पता 2';
 $lang['name_of_supplier'] = 'आपूर्तिकर्ता का नाम';
+$lang['active'] = 'सक्रिय';
+$lang['de_active'] = 'निष्क्रिय';
 
 $lang['item_name'] = 'वस्तु का नाम';
 $lang['month_of_production'] = 'उत्पादन माह';

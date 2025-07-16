@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				 <!-- /form -->
 				<div class="col-md-6">
 				  <div class="table-responsive">
-					<h5> Grid List</h5>
+					<h5><?=$this ->lang->line('grid_list')?> </h5>
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
