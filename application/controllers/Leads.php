@@ -578,7 +578,7 @@ Class Leads extends MY_Controller {
 	            $data['lead_status'] = '';
 	        endif;
 			// echo"<pre>";print_r($result);exit;
-	        $this->template->load('template','leads/lead_update',$data);
+	        $this->template->load('layout/template','Lead Module/Lead Generation/lead-create-edit',$data);
 
 		} else {
 			$data['page_title'] = ' Create New Lead';
@@ -614,7 +614,7 @@ Class Leads extends MY_Controller {
 
 		    $data['lead_code']=$rs_id_code;
 
-		    $this->template->load('template','leads/lead_create',$data);
+		    $this->template->load('layout/template','Lead Module/Lead Generation/lead-create-edit',$data);
 		}
 	}
 	
@@ -892,7 +892,7 @@ Class Leads extends MY_Controller {
 			$data['employees'] = $this->Leads_model->getEmployeeDropdown();
 			$data['categories'] = $this->Leads_model->getLeadsCategories();
 			//  echo "<pre>";print_r($data['leads']);exit;
-			$this->template->load('template','AssignLeadview',$data);
+			$this->template->load('layout/template','Lead Module/Lead Generation/assignLead',$data);
 		}
 		// public function reminder($id){
 		// 	$data['login_id']=$this->session->userdata['logged_in']['id'];
