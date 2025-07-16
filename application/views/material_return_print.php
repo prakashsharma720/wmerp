@@ -7,9 +7,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
        <div class="card-header no-print">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?= $this->lang->line('material_return_record_profile') ?></h3>
           <div class="pull-right no-print" style="margin-top:-40px !important;">
-              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> Print</button>
+              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> <?= $this->lang->line('print') ?></button>
           </div>
       </div> <!-- /.card-body -->
       <div class="card-body">
@@ -20,14 +20,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <img src="<?= base_url()?>/uploads/logo.png" height="120" width="300"/>
                 </div>
                <div class="col-sm-4 invoice-col">
-                <h3 style="padding-top: 20px;"> Choudhary & Company </h3>
+                <h3 style="padding-top: 20px;">  <?= $this->lang->line('company_name') ?>  </h3>
                 </div>
                 <div class="col-sm-4 invoice-col">
-                <strong><u>Company Details:</u></strong><br>
-                  <b>GSTIN : </b>08AABFC2155P1ZA<br>
-                  <b>PAN : </b> AABFC2155P<br>
+                <strong><u><?= $this->lang->line('company_details') ?>:</u></strong><br>
+                  <b><?= $this->lang->line('gst_in') ?>: </b>08AABFC2155P1ZA<br>
+                  <b><?= $this->lang->line('pan') ?>: </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
-                  <b> Address : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
+                  <b><?= $this->lang->line('address') ?> : </b> <?= $this->lang->line('company_address') ?>
                 </div>
               </div>
               <br>
@@ -37,42 +37,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <table class="table">
                         <tbody>
                            <tr>
-                              <th colspan="6"> <h4 style="text-align: center"> Material Return Register</h4></th>
+                              <th colspan="6"> <h4 style="text-align: center"><?= $this->lang->line('material_return_register') ?></h4></th>
                           </tr>
                             
 							<tr>
-                  <th colspan="1"> Gir Register Category : </th>
+                  <th colspan="1"> <?= $this->lang->line('gir_register_category') ?> : </th>
                   <td colspan="1"> <?= $current['0']['category']?> </td>
-                   <th colspan="1"> Supplier Name : </th>
+                   <th colspan="1"> <?= $this->lang->line('supplier_name') ?> : </th>
                   <td colspan="2"> <?= $current['0']['supplier']?> </td>
   							   <td colspan=""></td>
               </tr>
             <tr>
-						    <th>Register Number</th>
+						    <th><?= $this->lang->line('register_number') ?></th>
 						   <td><?= $current['0']['voucher_code']?></td>
-                            <th>Date </th>
+                            <th><?= $this->lang->line('date') ?> </th>
                             <td> <?= $current['0']['transaction_date']?> </td>
-							 <th>Gate Pass Number </th>
+							 <th><?= $this->lang->line('gate_pass_number') ?> </th>
 							  <td> <?= $current['0']['gate_pass_no']?> </td>
             </tr>
 						<tr>
-                            <th colspan="1"> Gir Register Category : </th>
+                            <th colspan="1"> <?= $this->lang->line('gir_register_category') ?> : </th>
                             <td colspan="1"> <?= $current['0']['category']?> </td>
-                             <th colspan="1"> Supplier Name : </th>
+                             <th colspan="1"> <?= $this->lang->line('supplier_name') ?> : </th>
                             <td colspan="2"> <?= $current['0']['supplier']?> </td>
 						
             </tr>
               <tr>
-                 <th>Tentative Return Date </th>
+                 <th><?= $this->lang->line('tentative_return_date') ?> </th>
                   <td> <?= $current['0']['return_date']?> </td>
 							</tr>
 						   
 						  <tr>
-						  <th> S.No.</th>
-						<th colspan=""><label> Product Name</label><br></th>
+						  <th> <?= $this->lang->line('sr_no') ?>.</th>
+						<th colspan=""><label> <?= $this->lang->line('product_name') ?></label><br></th>
 						<th>Quantity</th>
-						<th><label>Unit</label><br></th>
-						<th><label>Description</label><br></th></tr>
+						<th><label><?= $this->lang->line('unit') ?></label><br></th>
+						<th><label><?= $this->lang->line('description') ?></label>
+            
+            <br></th></tr>
                   <?php $i=1;foreach($current['0']['gir_details'] as $gir_details) { ?>
 	                    <tr>
 						
@@ -96,7 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					
 					
 							<tr>
-			        			<td colspan="2" style="text-align: right;"><b>Total</b></td>
+			        			<td colspan="2" style="text-align: right;"><b><?= $this->lang->line('total') ?></b></td>
 							
 							                 <td> <?= $current['0']['total_qty']?></td>
 							</tr>
@@ -105,16 +107,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				       
                  <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
-                  <b> Declaration : </b> We declare that this copy shows the actual information of this supplier and that all particulars are true and correct to the best of our knowledge.
+                  <b> <?= $this->lang->line('declaration') ?> : </b> <?= $this->lang->line('declaration_text') ?>
                 </div>
                <div class="col-sm-4 invoice-col">
                <!--  <h3 style="padding-top: 20px;"> Choudhary & Company </h3> -->
                 </div>
                 <div class="col-sm-4 invoice-col">
-                <strong><u>For Choudhary & Company :</u></strong>
+                <strong><u><?= $this->lang->line('for') ?>  <?= $this->lang->line('company_name') ?>  :</u></strong>
                 <br></br><br></br>
 
-                   <b>( Authorised Signatory)</b>
+                   <b>( <?= $this->lang->line('authorised_signatory') ?>)</b>
                 </div>
               </div>
                 <!-- /.col -->

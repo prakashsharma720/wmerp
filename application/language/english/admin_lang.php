@@ -3488,11 +3488,44 @@ $lang['issue_to'] = "Issue To";
 $lang['enter_comment_here'] = "Enter comment here";
 $lang['requisition_slip'] = "Requisition Slip";
 $lang['delete_transporter_confirm'] = "Are you sure, you want to delete transporter?";
+$lang['material_return_register'] = "Material Return Register";
+$lang['details'] = "Details";
+$lang['item_name'] = "Item Name";
+$lang['out_qty'] = "Out Qty";
+$lang['description'] = "Description";
+$lang['gir_register'] = "GIR Register";
+
 
 // Issue Slips
 $lang['issue_slips'] = 'Issue Slips';
 $lang['add'] = 'Add';
 $lang['view_list'] = 'View List';
+$lang['material_return_record_profile'] = "Material Return Record Profile";
+$lang['company_details'] = "Company Details";
+$lang['address'] = "Address";
+$lang['material_return_register'] = "Material Return Register";
+$lang['gir_register_category'] = "Gir Register Category";
+$lang['supplier_name'] = "Supplier Name";
+$lang['register_number'] = "Register Number";
+$lang['date'] = "Date";
+$lang['gate_pass_number'] = "Gate Pass Number";
+$lang['tentative_return_date'] = "Tentative Return Date";
+$lang['s_no'] = "S.No.";
+$lang['product_name'] = "Product Name";
+$lang['quantity'] = "Quantity";
+$lang['unit'] = "Unit";
+$lang['description'] = "Description";
+$lang['total'] = "Total";
+$lang['declaration'] = "Declaration";
+$lang['declaration_text'] = "We declare that this copy shows the actual information of this supplier and that all particulars are true and correct to the best of our knowledge.";
+$lang['for'] = "For";
+$lang['authorised_signatory'] = "Authorised Signatory";
+$lang['all_rights_reserved'] = "All rights reserved.";
+$lang['print'] = 'Print';
+$lang['company_name'] = 'Choudhary & Company';
+$lang['address'] = 'Address';
+$lang['company_address'] = 'B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.';
+$lang['edit_requisition_slip'] = 'Edit Requisition Slip';
 
 // Transporter
 $lang['transporter'] = 'Transporter';

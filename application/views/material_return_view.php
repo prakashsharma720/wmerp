@@ -178,7 +178,7 @@ $data=explode('?', $current_page);
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Material Return Register (<?php echo $gir_id_code?>) Details </h4>
+                             <h4 class="modal-title"> <?= $this->lang->line('material_return_register') ?> (<?php echo $gir_id_code?>)<?= $this->lang->line('details') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -190,9 +190,9 @@ $data=explode('?', $current_page);
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-3">Item Name</div>
-                                <div class="col-md-3">Out Qty </div>
-                                <div class="col-md-5">Description </div>
+                               <div class="col-md-3"><?= $this->lang->line('item_name') ?></div>
+        <div class="col-md-3"><?= $this->lang->line('out_qty') ?></div>
+        <div class="col-md-5"><?= $this->lang->line('description') ?></div>
                               </div>
 
                                     <?php
