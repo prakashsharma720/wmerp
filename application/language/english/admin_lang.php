@@ -47,6 +47,7 @@ $lang['no_result'] = 'No result';
 // https://wmerp.yashdreamsoft.com/index.php/Employees/edit/4
 
 $lang['edit_employee'] = 'Edit Employee';
+$lang['employee_detail'] = 'Employee_Detail';
 $lang['personal_details'] = 'Personal Details';
 $lang['bank_details'] = 'Bank Details';
 $lang['salary_details'] = 'Salary Details';
@@ -67,6 +68,8 @@ $lang['daily_target'] = 'Daily Target';
 $lang['address'] = 'Address';
 $lang['upload_photo'] = 'Upload Photo';
 $lang['update'] = 'Update';
+$lang['update'] = 'Update';
+
 
 $lang['account_holder_name'] = 'Account Holder Name';
 $lang['bank_name'] = 'Bank Name';

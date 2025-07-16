@@ -46,6 +46,7 @@ $lang['location'] = 'Местоположение';
 $lang['emergency_no'] = 'Спешен номер';
 
 // Tabs
+$lang['employee_detail'] = 'Данни за служителя';
 $lang['personal_details'] = 'Лични данни';
 $lang['bank_details'] = 'Банкови данни';
 $lang['salary_details'] = 'Данни за заплата';
@@ -78,6 +79,8 @@ $lang['ifsc_code'] = 'IFSC код';
 $lang['branch_name'] = 'Име на клона';
 $lang['account_type'] = 'Тип на сметката';
 $lang['upi_id'] = 'UPI идентификатор';
+$lang['update'] = 'Актуализирай';
+
 
 
 $lang['basic_salary'] = 'Основна заплата';
@@ -2089,6 +2092,8 @@ $lang['enter_kwh_opening'] = 'Въведете начални KWH';
 $lang['enter_kwh_closing'] = 'Въведете крайни KWH';
 $lang['enter_tailing_qty'] = 'Въведете количество остатък';
 $lang['enter_tailing_per'] = 'Въведете процент остатък';
+$lang['enter_zero_if_not_applicable'] = 'Въведете 0, ако не е приложимо';
+
 
 // Totals
 $lang['total'] = 'Общо';
