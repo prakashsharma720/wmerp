@@ -179,7 +179,7 @@ $data=explode('?', $current_page);
               <!-- <th style="white-space: nowrap;">  Reference </th> -->
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('date')?>  </th>
               <th style="white-space: nowrap;"> <?=$this ->lang ->line('material_description')?>  </th>
-              <th style="white-space: nowrap;">  <?=$this ->lang ->line('issur_gir_no')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('issue_gir_no')?>  </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('qty')?>  </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('status')?>   </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('employee')?>   </th>

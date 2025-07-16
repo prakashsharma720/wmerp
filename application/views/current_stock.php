@@ -33,7 +33,7 @@ $base_url=  base_url();
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th >Sr.No.</th>
+              <th ><?=$this ->lang ->line('sr_no')?> .</th>
               <th style="white-space: nowrap;"> <?=$this ->lang ->line('material_description')?> </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_in_qty')?>  </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_out_qty')?>  </th>

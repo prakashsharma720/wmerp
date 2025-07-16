@@ -1611,6 +1611,7 @@ $lang['buyer_item_code'] = 'खरीदार आइटम कोड';
 $lang['enter_payment_terms'] = 'भुगतान की शर्तें दर्ज करें';
 $lang['payment_terms'] = 'भुगतान की शर्तें';
 $lang['address_2'] = 'पता 2';
+$lang['name_of_supplier'] = 'आपूर्तिकर्ता का नाम';
 
 $lang['item_name'] = 'वस्तु का नाम';
 $lang['month_of_production'] = 'उत्पादन माह';

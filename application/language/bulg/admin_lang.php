@@ -3338,6 +3338,7 @@ $lang['enter_destination_here'] = 'Въведете дестинация';
 $lang['is_shipping_address_different'] = 'Различен ли е адресът за доставка от адреса за фактуриране?';
 $lang['shipping_details'] = 'Детайли за доставка';
 $lang['address_2'] = 'Адрес 2';
+$lang['name_of_supplier'] = 'Име на доставчика';
 
 $lang['requisition_slip_report'] = 'Доклад за разписка за искане';
 $lang['pending_requisition_slips_for_issue'] = 'Изчакващи разписки за издаване';

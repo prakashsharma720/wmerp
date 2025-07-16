@@ -76,7 +76,7 @@ $data=explode('?', $current_page);
                 </select>
             </div>
             <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Status <span class="required">*</span></label>
+                <label  class="control-label"><?=$this ->lang ->line('status')?>  <span class="required">*</span></label>
                 <select name="status" class="form-control select2 ">
                   <option value=""><?=$this ->lang ->line('select_status')?> </option>
                           <?php

@@ -63,7 +63,7 @@ $data=explode('?', $current_page);
             </div>
 			
             <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"><?=$this ->lang ->line('name_of_suppiler')?>  <span class="required">*</span></label>
+                <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?>  <span class="required">*</span></label>
                 <select name="supplier_id" class="form-control select2 suppliers" >
                     <option value="0"> <?=$this ->lang ->line('select_supplier')?> </option>
                     <?php

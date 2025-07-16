@@ -1796,6 +1796,7 @@ $lang['buyer_item_code'] = 'Buyer Item Code';
 $lang['destination'] = 'Destination';
 $lang['shipping_address_diff'] = 'Is shipping address different from billing address?';
 $lang['address_2'] = 'Address 2';
+$lang['name_of_supplier'] = 'Name of Supplier';
 
 // customer viewlist
 $lang['customers_list'] = 'Customers List';
