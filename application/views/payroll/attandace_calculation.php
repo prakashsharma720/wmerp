@@ -161,7 +161,7 @@ table {
                                                 <h4 class="modal-title">Pay Slip For <?= $obj['month_name']?>
                                                     <?= $obj['year']?></h4>
                                                 <button type="button" class="btn btn-primary float-right"
-                                                    onclick="downloadPayslip('payslip_<?= $obj['id'] ?>')">Download</button>
+                                                    onclick="downloadPayslip('payslip_<?= $obj['id'] ?>')"> <?= $this->lang->line('download') ?></button>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
 
@@ -398,10 +398,10 @@ table {
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
                                                 </button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    No
+                                                    <?= $this->lang->line('no') ?>
                                                 </button>
                                             </div>
                                         </div>
@@ -416,22 +416,22 @@ table {
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Confirm Header </h4>
+                                                <h4 class="modal-title"> <?= $this->lang->line('confirm_header') ?> </h4>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
 
                                             </div>
                                             <div class="modal-body">
-                                                <p>Are you sure, you want to delete Salary Record of
+                                                <p> <?= $this->lang->line('delete_salary_record_confirm') ?>
                                                     <b><?php echo $obj['emp_name'];?> </b>?
                                                 </p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                <button type="submit" class="btn btn-primary delete_submit">  <?= $this->lang->line('yes') ?>
                                                 </button>
 
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    Cancel
+                                                     <?= $this->lang->line('cancel') ?>
                                                 </button>
                                             </div>
                                         </div>

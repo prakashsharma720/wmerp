@@ -3030,6 +3030,9 @@ $lang['close'] = 'Затвори';
 $lang['attendance_details_for'] = 'Подробности за присъствието на';
 $lang['update_attendance'] = 'Актуализиране на присъствието';
 $lang['edit_attendance'] = 'Редактиране на присъствието';
+$lang['delete_salary_record_confirm'] = 'Сигурни ли сте, че искате да изтриете фиш за заплата на?';
+$lang['cancel'] = 'Отказ';
+$lang['download'] = 'Изтегли';
 
 
 
@@ -3066,6 +3069,7 @@ $lang['enter_report_number'] = 'Въведете номер на доклад';
 
 $lang['address'] = 'Адрес';
 $lang['enter_address'] = 'Въведете адрес';
+$lang['delete_worker_confirm'] = 'Сигурни ли сте, че искате да изтриете работник?';
 
 // workers view list
 $lang['workers_list'] = 'Списък на работниците';

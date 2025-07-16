@@ -3084,6 +3084,9 @@ $lang['close'] = 'Close';
 $lang['attendance_details_for'] = 'Attendance Details for';
 $lang['update_attendance'] = 'Update Attendance';
 $lang['edit_attendance'] = 'Edit Attendance';
+$lang['delete_salary_record_confirm'] = 'Are you sure, you want to delete Salary Record of ?';
+$lang['cancel'] = 'Cancel';
+$lang['download'] = 'Download';
 
 
 
@@ -3113,6 +3116,8 @@ $lang['report_number'] = 'Report Number';
 $lang['enter_report_number'] = 'Enter Report Number';
 $lang['address'] = 'Address';
 $lang['enter_address'] = 'Enter Address';
+$lang['delete_worker_confirm'] = 'Are you sure, you want to delete worker?';
+
 
 //workers view list
 $lang['workers_list'] = 'Workers List';

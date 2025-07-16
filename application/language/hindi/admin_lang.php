@@ -3053,6 +3053,9 @@ $lang['close'] = 'बंद करें';
 $lang['attendance_details_for'] = 'के लिए उपस्थिति विवरण';
 $lang['update_attendance'] = 'उपस्थिति अपडेट करें';
 $lang['edit_attendance'] = 'उपस्थिति संपादित करें';
+$lang['delete_salary_record_confirm'] = 'क्या आप वाकई  वेतन रिकॉर्ड हटाना चाहते हैं?';
+$lang['cancel'] = 'रद्द करें';
+$lang['download'] = 'डाउनलोड करें';
 
 
 
@@ -3082,6 +3085,7 @@ $lang['report_number'] = 'रिपोर्ट संख्या';
 $lang['enter_report_number'] = 'रिपोर्ट संख्या दर्ज करें';
 $lang['address'] = 'पता';
 $lang['enter_address'] = 'पता दर्ज करें';
+$lang['delete_worker_confirm'] = 'क्या आप वाकई कार्यकर्ता को हटाना चाहते हैं?';
 
 // workers view list
 $lang['workers_list'] = 'कर्मचारियों की सूची';
