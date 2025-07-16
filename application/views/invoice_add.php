@@ -15,7 +15,7 @@ td {
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title"><?= $title?></h3>
+            <h3 class="card-title"><?=$this ->lang ->line('create_invoice')?></h3>
             <div class="pull-right error_msg">
                 <?=$this ->lang ->line('previous_invoice_no')?> : <b> <?= $last_invoice_no ?></b>
             </div>
@@ -38,7 +38,7 @@ td {
                                 value="<?php echo date('d-m-Y'); ?>" autofocus required>
                         </div>
                         <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> <?=$this ->lang ->line('invoice_number')?>  <span class="required">*</span></label>
+                            <label class="control-label"> <?=$this ->lang ->line('invoice_no')?>  <span class="required">*</span></label>
                             <input type="text" placeholder=" <?=$this ->lang ->line('enter_invoice_no')?> " name="invoice_no"
                                 class="form-control invoice_no" value="" autocomplete="off" autofocus>
                             <!-- <input type="hidden" name="invoice_code" value="<?= $invoice_code ?>"> -->
@@ -105,8 +105,8 @@ td {
                                             <th> <?=$this ->lang ->line('tax')?> %</th>
 
 
-                                            <th><?=$this ->lang ->line('tax_amount')?></th>
-                                            <th style="width: 20%;white-space:nowrap;"> Texable Value</th>
+                                            <th><?=$this ->lang ->line('tax_amount')?><?=$this ->lang ->line('taxable_value')?></th>
+                                            <th style="width: 20%;white-space:nowrap;"> </th>
 
                                             <th> <?=$this ->lang ->line('total')?></th>
                                             <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_button')?></th>
@@ -120,11 +120,11 @@ td {
                                             <td colspan="9" style="text-align:right;"><b><?=$this ->lang ->line('transportation')?></b>
                                                 <input type="hidden" placeholder="" value="996781" name="hsncode"
                                                     class="form-control hsncode" readonly="readonly">
-                                                <input type="hidden" placeholder="Total quantity" name="total_quantity"
+                                                <input type="hidden" placeholder="<?=$this ->lang ->line('total_quantity')?>" name="total_quantity"
                                                     class="form-control total_quantity" readonly>
-                                                <input type="hidden" placeholder="total_bags" name="total_bags"
+                                                <input type="hidden" placeholder="<?=$this ->lang ->line('total_bags')?>" name="total_bags"
                                                     class="form-control total_bags" readonly>
-                                                <input type="hidden" placeholder="Total quantity" name="total_quantity"
+                                                <input type="hidden" placeholder="<?=$this ->lang ->line('total_quantity')?>" name="total_quantity"
                                                     class="form-control total_quantity" readonly>
                                                 <input class="freight_status" type="radio" name="frieght_status"
                                                     value="To Pay" checked> <?=$this ->lang ->line('to_pay')?>
@@ -132,7 +132,7 @@ td {
                                                     value="Paid"> <?=$this ->lang ->line('paid')?>
                                             </td>
                                             <td class="freight_details hide">
-                                                <input type="text" placeholder="Enter Delivered Rs" name="delivr_rate"
+                                                <input type="text" placeholder="<?=$this ->lang ->line('enter_delivered_rs')?>" name="delivr_rate"
                                                     class="form-control delivr_rate">
                                             </td>
                                             <td class="freight_details hide">
@@ -146,18 +146,18 @@ td {
                                                 </select>
                                             </td>
                                             <td class="freight_details hide">
-                                                <input type="text" value="" placeholder="Total Delivery %"
+                                                <input type="text" value="" placeholder="<?=$this ->lang ->line('total_delivery')?> %"
                                                     name="total_delivr_tax_per"
                                                     class="form-control total_delivr_tax_per" readonly>
                                             </td>
                                             <td class="freight_details hide">
-                                                <input type="text" value="" placeholder=" Deliver Amount"
+                                                <input type="text" value="" placeholder=" <?=$this ->lang ->line('deliver_amount')?>"
                                                     name="total_deliver_amt" class="form-control total_deliver_amt"
                                                     readonly>
                                             </td>
 
                                             <td class="freight_details hide">
-                                                <input type="text" value="" placeholder="Taxable Value"
+                                                <input type="text" value="" placeholder="<?=$this ->lang ->line('taxable_value')?>"
                                                     name="total_taxable_value" class="form-control total_taxable_value"
                                                     readonly>
                                             </td>
@@ -211,13 +211,13 @@ td {
                         </div>
                
                         <div class="col-md-4 col-sm-4 transporter_div">
-                            <label class="control-label"> <?=$this ->lang ->line('transport_id')?> </label><span> (Put "NA" if not available)</span>
+                            <label class="control-label"> <?=$this ->lang ->line('transport_id')?> </label><span> </span>
                             <input type="text" placeholder=" <?=$this ->lang ->line('enter_transporter_id')?>" name="transport_id"
                                 class="form-control clear_transID" value="" />
                         </div>
                         <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> TransDocNo. / GR No.</label>
-                            <input type="text" placeholder=" Enter GR No." name="gr_no" class="form-control" value="" />
+                            <label class="control-label"> <?=$this ->lang ->line('transdoc_no')?> <?=$this ->lang ->line('gr_no')?></label>
+                            <input type="text" placeholder="  <?=$this ->lang ->line('enter_gr_no')?>" name="gr_no" class="form-control" value="" />
                         </div>
 
 
@@ -229,22 +229,22 @@ td {
                     </div>
                     <div class="row col-md-12">
                         <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> TP Number </label>
-                            <input type="text" placeholder=" Enter TP number" name="tp_no" class="form-control"
+                            <label class="control-label"> <?=$this ->lang ->line('tp_no')?> </label>
+                            <input type="text" placeholder="<?=$this ->lang ->line('enter_tp_no')?>" name="tp_no" class="form-control"
                                 value="" />
                         </div>
                         <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> Truck Number<span class="required">*</span></label>
-                            <input type="text" placeholder=" Enter Truck Number" name="truck_no" class="form-control"
+                            <label class="control-label"> <?=$this ->lang ->line('truck_no')?><span class="required">*</span></label>
+                            <input type="text" placeholder=" <?=$this ->lang ->line('enter_truck_no')?>" name="truck_no" class="form-control"
                                 required="required" value="" />
                         </div>
 
                          <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label required"> e-way Bill Needed</label>
+                            <label class="control-label required"> <?=$this ->lang ->line('e_way_bill_needed')?></label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="ewaybillstatus" value="Yes" checked>
-                                Yes</input>&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;
-                                <input class="form-check-input" type="radio" name="ewaybillstatus" value="No" >No</input>
+                                <?=$this ->lang ->line('yes')?></input>&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;
+                                <input class="form-check-input" type="radio" name="ewaybillstatus" value="No" ><?=$this ->lang ->line('no')?></input>
                             </div>
                         </div>
                         
@@ -300,11 +300,11 @@ td {
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend> Laboratory Test Details </legend>
+                    <legend> <?=$this ->lang ->line('laboratory_test_details')?> </legend>
                     <div class="row col-md-12">
                         <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> Latoratory Test Report No</label>
-                            <input type="text" placeholder=" Enter Test Report number" name="test_report_no"
+                            <label class="control-label"> <?=$this ->lang ->line('laboratory_test_report_no')?></label>
+                            <input type="text" placeholder=" <?=$this ->lang ->line('enter_test_report_no')?>" name="test_report_no"
                                 class="form-control" value="" />
                         </div>
                         <div class="col-md-4 col-sm-4 ">
@@ -328,7 +328,7 @@ td {
                 <div class="row col-md-12">
                     <div class="col-md-12 col-sm-12 ">
                         <label class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?></label>
-                        <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang ->line('submit')?></button>
+                        <button type="<?=$this ->lang ->line('submit')?>" class="btn btn-primary btn-block"> <?=$this ->lang ->line('submit')?></button>
                     </div>
                 </div>
             </form> <!-- /form -->
@@ -342,7 +342,7 @@ td {
             <td>1</td>
             <td>
                 <select name="finish_good_id[]" class="form-control products select2" style="width:350px;" required>
-                    <option value=""> Select Item</option>
+                    <option value=""><?=$this ->lang ->line('select_item')?> </option>
                     <?php if ($items): ?>
                     <?php foreach ($items as $value) : ?>
                     <!-- <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].','.$value['packing_type'].','.$value['hsn_code'].')' ?></option> -->
@@ -351,21 +351,21 @@ td {
                     </option>
                     <?php endforeach; ?>
                     <?php else: ?>
-                    <option value="0" stock="0">No result</option>
+                    <option value="0" stock="0"><?=$this ->lang ->line('no_result')?></option>
                     <?php endif; ?>
                 </select>
 
             </td>
             <td>
-                <input type="text" placeholder="Enter Month" name="production_month[]" value="" class="form-control"
+                <input type="text" placeholder="<?=$this ->lang ->line('enter_month')?>" name="production_month[]" value="" class="form-control"
                     autofocus>
             </td>
             <td>
-                <input type="text" placeholder="Enter Lot No" name="lot_no[]" class="form-control" style="width: 150px;"
+                <input type="text" placeholder="<?=$this ->lang ->line('enter_lot_no')?>" name="lot_no[]" class="form-control" style="width: 150px;"
                     autofocus>
             </td>
             <td>
-                <input type="text" placeholder="Enter Batch No" name="batch_no[]" class="form-control" autofocus
+                <input type="text" placeholder="<?=$this ->lang ->line('enter_batch_no')?>" name="batch_no[]" class="form-control" autofocus
                     style="width: 150px;">
             </td>
             <td>
@@ -385,31 +385,31 @@ td {
                     <?php endif;   ?>
                     <?php   endforeach;  ?>
                     <?php else: ?>
-                    <option value="0">No result</option>
+                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
                     <?php endif; ?>
                 </select>
             </td>
             <td>
-                <input type="text" placeholder="No of Bags" name="no_of_bags[]" class="form-control no_of_bags"
+                <input type="text" placeholder="<?=$this ->lang ->line('no_of_bags')?>" name="no_of_bags[]" class="form-control no_of_bags"
                     autofocus
                     oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
                     style="width:150px;" required="required">
             </td>
             <td>
-                <input type="text" placeholder="Enter Qty" name="qty[]" class="form-control qty" autofocus
+                <input type="text" placeholder="<?=$this ->lang ->line('enter_qty')?>" name="qty[]" class="form-control qty" autofocus
                     oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
                     style="width:150px;" readonly>
             </td>
             <td>
-                <input type="text" placeholder="Enter Rate" name="rate[]" class="form-control rate" autofocus
+                <input type="text" placeholder="<?=$this ->lang ->line('enter_rate')?>" name="rate[]" class="form-control rate" autofocus
                     oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
                     style="width:150px;">
             </td>
             <td>
                 <select class="form-control" name="tax_type[]" style="width:150px;" required>
-                    <option value="">Select Type</option>
-                    <option value="Other">Other</option>
-                    <option value="IGST">IGST</option>
+                    <option value=""><?=$this ->lang ->line('select_type')?></option>
+                    <option value="Other"><?=$this ->lang ->line('other')?></option>
+                    <option value="IGST"><?=$this ->lang ->line('igst')?></option>
 
                 </select>
             </td>
@@ -436,15 +436,15 @@ td {
 
 
             <td>
-                <input type="text" placeholder="Tax Amount" name="tax_amount[]" class="form-control tax_amount"
+                <input type="text" placeholder="<?=$this ->lang ->line('tax_amount')?>" name="tax_amount[]" class="form-control tax_amount"
                     autofocus style="width:150px;" readonly="readonly">
             </td>
             <td>
-                <input type="text" placeholder="Rate" name="taxable_amount[]" class="form-control rate_after_tax"
+                <input type="text" placeholder="<?=$this ->lang ->line('rate')?>" name="taxable_amount[]" class="form-control rate_after_tax"
                     required='required' readonly="readonly">
             </td>
             <td>
-                <input type="text" placeholder="Total Amount" name="amount[]" class="form-control total_amount"
+                <input type="text" placeholder="<?=$this ->lang ->line('total_amount')?>" name="amount[]" class="form-control total_amount"
                     autofocus style="width:150px;" readonly>
             </td>
             <td>
@@ -456,15 +456,15 @@ td {
         </tr>
     <tfoot>
         <tr>
-            <td colspan="6" style="text-align: right;"><b>Total</b></td>
+            <td colspan="6" style="text-align: right;"><b><?=$this ->lang ->line('total')?></b></td>
             <td colspan="">
-                <input type="text" placeholder="Total " name="total_tax" class="form-control total_qty" readonly>
+                <input type="text" placeholder="<?=$this ->lang ->line('total')?> " name="total_tax" class="form-control total_qty" readonly>
             </td>
             <td style="text-align: right;">
-                <input type="text" placeholder="Total Rate" name="total_rate" class="form-control total_rate" readonly>
+                <input type="text" placeholder="<?=$this ->lang ->line('total_rate')?>" name="total_rate" class="form-control total_rate" readonly>
             </td>
             <td style="text-align: right;">
-                <input type="text" placeholder="Total Amount" name="total_amount_footer"
+                <input type="text" placeholder="<?=$this ->lang ->line('total_amount')?>" name="total_amount_footer"
                     class="form-control total_amount_footer" readonly>
             </td>
         </tr>

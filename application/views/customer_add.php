@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title"> <?= $title ?></h3>
+            <h3 class="card-title"> <?= $this->lang->line('add_new_customer'); ?></h3>
             <div class="pull-right error_msg">
                 <?php echo validation_errors();?>
 
@@ -151,8 +151,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <span style="color:red;font-size:13px"> (Please Put Second part of address only , Maximum Length 80 Characters.)</span>
                             </div> -->
                             <div class="col-md-4 col-sm-4">
-                                <label class="control-label">billing address 1</label>
-                                <textarea type="text" placeholder="Enter Billing address" name="shipping_address"
+                                <label class="control-label"><?=$this ->lang ->line('billing_address_1')?></label>
+                                <textarea type="text" placeholder="<?=$this ->lang ->line('enter_billing_address')?>" name="shipping_address"
                                     class="form-control" rows="2" required autofocus autocomplete="off"
                                     style="resize: none;" oninput="checkMaxLength(this, 'billingAddressError1')"></textarea>
                                 <span id="billingAddressError1" style="color:red;font-size:13px"></span>
@@ -160,8 +160,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
                             <div class="col-md-4 col-sm-4">
-                                <label class="control-label">billing address 2</label>
-                                <textarea type="text" placeholder="Enter Billing address" name="billing_address"
+                                <label class="control-label"><?=$this ->lang ->line('billing_address_2')?></label>
+                                <textarea type="text" placeholder="<?=$this ->lang ->line('enter_billing_address')?>" name="billing_address"
                                     class="form-control" rows="2" required autofocus autocomplete="off"
                                     style="resize: none;" oninput="checkMaxLength(this, 'billingAddressError2')"></textarea>
                                 <span id="billingAddressError2" style="color:red;font-size:13px"></span>
@@ -170,7 +170,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="col-md-4 col-sm-4 ">
                                 <label class="control-label"> <?=$this ->lang ->line('pincode')?></label>
 
-                                <input type="text" id="bpin" placeholder="Pincode" name="bpin" class="form-control "
+                                <input type="text" id="bpin" placeholder="<?=$this ->lang ->line('pincode')?>" name="bpin" class="form-control "
                                     value="" autofocus autocomplete="off">
 
                             </div>
@@ -188,16 +188,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         value="Yes" checked> Yes</input>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <input class="form-check-input gst_status" type="radio" name="gst_status"
-                                        value="Un-registered Dealer"> Un-registered Dealer/Person </input>
+                                        value="Un-registered Dealer"> <?=$this ->lang ->line('unregistered_dealer')?> </input>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 gst_div">
-                                <b>GSTIN/URP</b><span>( Ex. : 08ABCDE1234K1AZ)</span>
+                                <b><?=$this ->lang ->line('gstin_urp')?> </b><span>( Ex. : 08ABCDE1234K1AZ)</span>
                                 <input type="text" placeholder="Ex. 08ABCDE12341AZ" name="gst_no"
                                     class="form-control " value="" autofocus autocomplete="off" >
                             </div>
                               <div class="col-md-4 col-sm-4">
-                                <b> PAN </b> <span>(Parmanent Account No.) </span>
+                                <b> <?=$this ->lang ->line('pan')?> </b> <span> </span>
                                 <input type="text" id="lastName" placeholder="Ex. ABCEDE2548K" name="pan_no"
                                     class="form-control pan_no" value="" autofocus autocomplete="off" maxlength="10"
                                     minlength="10" style="text-transform: uppercase;">
@@ -210,18 +210,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row col-md-12">
                             <div class="col-md-4 col-sm-4">
                                 <b> <?=$this ->lang ->line('payment_terms')?> </b>
-                                <input type="text" id="firstName" placeholder="Enter Payment Terms" name="payment_terms"
+                                <input type="text" id="firstName" placeholder="<?=$this ->lang ->line('enter_payment_terms')?>" name="payment_terms"
                                     class="form-control" value="" autofocus autocomplete="off">
                             </div>
                             <div class="col-md-4 col-sm-4 ">
                                 <label class="control-label"><?=$this ->lang ->line('buyer_item_code')?> </label>
-                                <textarea type="text" placeholder="Enter Buyer Item Code " name="buyer_item_code"
+                                <textarea type="text" placeholder="<?=$this ->lang ->line('enter_buyer_item_code')?>"  name="buyer_item_code"
                                     class="form-control" rows="3" value="" autofocus autocomplete="off"
                                     style="resize: none;"></textarea>
                             </div>
                             <div class="col-md-4 col-sm-4 ">
-                                <label class="control-label"> <?=$this ->lang ->line('destination')?> (Loc) </label>
-                                <textarea type="text" placeholder="Enter Destination" name="destination"
+                                <label class="control-label"> <?=$this ->lang ->line('destination')?> "<?=$this ->lang ->line('loc')?>"  </label>
+                                <textarea type="text" placeholder="<?=$this ->lang ->line('enter_destination_here')?>"  name="destination"
                                     class="form-control" rows="3" value="" autofocus autocomplete="off"
                                     style="resize: none;"></textarea>
                             </div>
@@ -232,27 +232,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </fieldset>
                         </br>
                     <div class="col-md-6 col-sm-6 ">
-                    <b>Is Shipping Address Different From Billing Address?</b>
+                    <b><?=$this ->lang ->line('is_shipping_address_different')?> </b>
                     <div class="form-check">
                         <input class="form-check-input isshipping" type="radio" name="isshipping" value="Yes">
-                        Yes</input>
+                        "<?=$this ->lang ->line('yes')?>" </input>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input class="form-check-input gst_status isshipping" type="radio" name="isshipping" value="No"
-                            checked> No </input>
+                            checked> "<?=$this ->lang ->line('no')?>"  </input>
                     </div>
                 </div>
                 <hr>
                     <fieldset class="shipping_details" style="display:none">
-                        <legend> Shipping Details </legend>
+                        <legend>  </legend>
                         <div class="row col-md-12">
                             <div class="col-md-4 col-sm-4 ">
-                                <label class="control-label"> GST Registration Status </label>
+                                <label class="control-label"> <?=$this ->lang ->line('gst_registration_status')?> </label>
                                 <div class="form-check">
                                     <input class="form-check-input gst_status" type="radio" name="shipping_gst_status"
                                         value="Yes" checked> Yes</input>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <input class="form-check-input gst_status" type="radio" name="shipping_gst_status"
-                                        value="Un-registered Dealer"> Un-registered Dealer/Person </input>
+                                        value="Un-registered Dealer"> <?=$this ->lang ->line('unregistered_dealer')?> </input>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 shipgst_div">
@@ -276,22 +276,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 ">
-                                <label class="control-label"> Address 2 </label>
+                                <label class="control-label"> <?=$this ->lang ->line('address2')?> </label>
                                 <div class="form-check">
-                                    <textarea type="text" placeholder="Enter Address 2" name="saddress2"
+                                    <textarea type="text" placeholder="<?=$this ->lang ->line('enter_address2')?>" name="saddress2"
                                         class="form-control" value="" autofocus></textarea>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 ">
                                 <label class="control-label"> <?=$this ->lang ->line('loc')?> </label>
                                 <div class="form-check">
-                                    <input type="text" placeholder="Enter Location" name="loc" class="form-control"
+                                    <input type="text" placeholder="<?=$this ->lang ->line('enter_location')?>" name="loc" class="form-control"
                                         value="" autofocus>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4 ">
                                 <label class="control-label"> <?=$this ->lang ->line('pin_code')?></label>
-                                <input type="text" id="bpin" placeholder="Enter Pin Code" name="ship_pincode"
+                                <input type="text" id="bpin" placeholder="<?=$this ->lang ->line('pincode')?>" name="ship_pincode"
                                     class="form-control " value="" autofocus autocomplete="off">
                             </div>
                             <div class="col-md-4 col-sm-4 ">

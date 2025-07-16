@@ -22,7 +22,7 @@ $base_url=  base_url();
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('stock_available')?>
       </span>
        <div class="button-group float-right">
         

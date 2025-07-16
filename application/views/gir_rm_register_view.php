@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?= $this->lang->line('rm_inward_challan_list') ?>
       </span>
        <div class="button-group float-right">
 
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">GIR Register (<?php echo $obj['gir_no']?>) Details </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('gir_register') ?> (<?php echo $obj['gir_no']?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -151,7 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete GIR <b><?php echo $obj['gir_no'];?> </b>? </p>
+                            <p><?= $this->lang->line('confirm_delete') ?> <?= $this->lang->line('gir') ?> <b><?php echo $obj['gir_no'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
                             <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>

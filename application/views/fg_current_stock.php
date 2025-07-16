@@ -22,7 +22,7 @@ $base_url=  base_url();
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('fg_stock_report')?>
       </span>
        <div class="button-group float-right">
         
@@ -35,9 +35,9 @@ $base_url=  base_url();
             <tr>
               <th ><?=$this ->lang ->line('sr_no')?> .</th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('finish_good')?>  </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('total_in_qty')?>  (Unit)</th>
-              <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_out_qty')?>  (Unit)</th>
-              <th style="white-space: nowrap;">  <?=$this ->lang ->line('available_qty')?>  (Unit)</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('total_in_qty')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_out_qty')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('available_qty')?>  </th>
             </tr>
           </thead>
           <tbody>

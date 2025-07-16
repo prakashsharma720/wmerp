@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php echo $title; ?>
+      <span class="card-title"><?= $this->lang->line('pending_requisition_slips_for_action') ?>
       </span>
       <div class="button-group float-right">
 
@@ -123,7 +123,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <!-- Modal content-->
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title"> Requisition Slip (<?php echo $inv_number1 ?>) Details </h4>
+                        <h4 class="modal-title"> <?= $this->lang->line('requisition_slips'); ?> (<?php echo $inv_number1 ?>) Details </h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                       </div>
@@ -238,14 +238,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                         </div>
                         <div class="modal-body">
-                          <p> Are you sure, you want to <b style="color:#dc7629;">Reject</b> Requisition Slip <b><?php echo $inv_number1; ?> </b>? </p>
+                          <p> Are you sure, you want to <b style="color:#dc7629;"><?= $this->lang->line('reject'); ?></b> <?= $this->lang->line('requisition_slips'); ?> <b><?php echo $inv_number1; ?> </b>? </p>
                           <input type="hidden" name="requisition_id" value="<?php echo $obj['id']; ?>">
                           <input type="hidden" name="status" value="Rejected">
                           <input type="hidden" name="rejected_date" value="<?= date('Y-m-d') ?>">
                           <div class="form-group">
                             <div class="row col-md-12">
                               <label class="control-label"> <?= $this->lang->line('reject_reason'); ?> </label>
-                              <textarea class="form-control Comment" rows="2" placeholder="Enter Reason here" name="rejected_reason" required="required"></textarea>
+                              <textarea class="form-control Comment" rows="2" placeholder="<?= $this->lang->line('enter_reason_here'); ?>" name="rejected_reason" required="required"></textarea>
                             </div>
                           </div>
                         </div>
@@ -270,7 +270,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                           <button type="button" class="close" data-dismiss="modal" style="color: azure;">&times;</button>
                         </div>
                         <div class="modal-body">
-                          <p>Are you sure, you want to <b style="color:#168c56;">Approve</b> Requisition Slip <b><?php echo $inv_number1; ?> </b>? </p>
+                          <p>Are you sure, you want to <b style="color:#168c56;">Approve</b> <?= $this->lang->line('requisition_slip'); ?> <b><?php echo $inv_number1; ?> </b>? </p>
                           <input type="hidden" name="requisition_id" value="<?php echo $obj['id']; ?>">
                           <input type="hidden" name="status" value="Approved">
                           <input type="hidden" name="approved_date" value="<?= date('Y-m-d') ?>">

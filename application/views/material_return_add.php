@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?=$this ->lang ->line('material_out_return_register')?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 		
@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
 			            	<label  class="control-label"><?=$this ->lang ->line('gate_pass_no')?>  <span class="required">*</span></label>
-			            	<input type="text"  placeholder=" Enter Gate Pass No" name="gate_pass_no" class="form-control" value=""  required="required">
+			            	<input type="text"  placeholder=" <?=$this ->lang ->line('enter_gate_pass_no')?>" name="gate_pass_no" class="form-control" value=""  required="required">
 			            </div>
 		        	</div>
 		        	<div class="row ">
@@ -124,13 +124,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									        </select>
 										</td>
 							   			<td >
-											<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
+											<input type="text"  placeholder="<?=$this ->lang ->line('enter_qty')?>" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
 
 												<input type="hidden" name="status[]" value="Out">
 										</td>
 										
 										<td>
-											<textarea name="description[]" class="form-control description" type="textarea" placeholder="Enter description"></textarea>
+											<textarea name="description[]" class="form-control description" type="textarea" placeholder=" <?=$this ->lang ->line('enter_description')?>"></textarea>
 										</td>
 										
 										<td style="width:13%">

@@ -7,7 +7,7 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('success')): ?>
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
+    <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
     <?php echo $this->session->flashdata('success'); ?>
 </div>
 <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -16,7 +16,7 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('failed')): ?>
 <div class="alert alert-error alert-dismissible ">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
+    <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
     <?php echo $this->session->flashdata('failed'); ?>
 </div>
 <?php endif; ?>
@@ -24,7 +24,7 @@ $data=explode('?', $current_page);
     <div class="card card-primary card-outline">
         <div class="card-header">
 
-            <span class="card-title"><?php  echo $title; ?>
+            <span class="card-title"><?=$this ->lang ->line('invoice_list')?>
             </span>
             <div class="button-group float-right">
 
@@ -50,25 +50,25 @@ $data=explode('?', $current_page);
             <form method="post" action="<?php echo base_url(); ?>index.php/Invoice/importdata"
                 enctype="multipart/form-data">
                 <input type="file" name="userfile" />
-                <input type="submit" name="submit" class="btn btn-warning" value="import File" />
+                <input type="submit" name="submit" class="btn btn-warning" value="<?=$this ->lang ->line('import_file')?>" />
             </form>
 			<hr>
 			<br>
 			 <form method="get" id="filterForm">
 				  <div class="row">
 					 <div class="col-md-4 col-sm-4">
-							  <label  class="control-label"> From Date</label>
+							  <label  class="control-label"> <?=$this ->lang ->line('from_date')?></label>
 								<input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="<?php echo $conditions['from_date']?>" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
 						  </div>
 						  <div class="col-md-4 col-sm-4">
-							<label  class="control-label"> Upto Date</label>
+							<label  class="control-label"> <?=$this ->lang ->line('upto_date')?></label>
 							  <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="<?php echo $conditions['upto_date']?>" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
 						</div>
 						 <div class="col-md-4 col-sm-4 ">
-						   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-						  <input type="submit" class="btn btn-primary" value="Search" /> 
+						   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?></label><br>
+						  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
 						  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-						  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+						  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?></a>
 					  </div>
 					</div>
 				</form>
@@ -79,14 +79,14 @@ $data=explode('?', $current_page);
                     <thead>
                         <tr>
                             <th><input type="checkbox" id="master"></th>
-                            <th>Sr.No.</th>
-                            <th style="white-space: nowrap;"> Invoice No </th>
-                            <th style="white-space: nowrap;"> Invoice Date </th>
-                            <th style="white-space: nowrap;"> Vendor Code</th>
-                            <th style="white-space: nowrap;"> Grand Total</th>
-                            <th style="white-space: nowrap;"> E-Invoice Status</th>
+                            <th><?=$this ->lang ->line('sr_no')?>.</th>
+                            <th style="white-space: nowrap;"> <?=$this ->lang ->line('invoice_no')?> </th>
+                            <th style="white-space: nowrap;"> <?=$this ->lang ->line('invoice_date')?> </th>
+                            <th style="white-space: nowrap;"> <?=$this ->lang ->line('vendor_code')?></th>
+                            <th style="white-space: nowrap;"> <?=$this ->lang ->line('grand_total')?></th>
+                            <th style="white-space: nowrap;"> <?=$this ->lang ->line('e_invoice_status')?></th>
 
-                            <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+                            <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?></th>
                         </tr>
                     </thead>
                     <tbody>
