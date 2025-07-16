@@ -99,8 +99,8 @@
              value="<?= $customers_data['buyer_item_code']?>"><?= $customers_data['buyer_item_code']?></textarea>
      </div>
      <div class="col-md-4 col-sm-4 destination">
-         <label class="control-label"> Destination</label>
-         <textarea class="form-control destination1" rows="2" placeholder="Enter destination here" name="destination"
+         <label class="control-label"> <?=$this ->lang->line('destination')?></label>
+         <textarea class="form-control destination1" rows="2" placeholder="<?=$this ->lang->line('enter_deatination_here')?>" name="destination"
              value="<?= $customers_data['destination']?>"><?= $customers_data['destination']?></textarea>
      </div>
 
@@ -111,7 +111,7 @@
          <legend> Shipping Details </legend>
          <div class="row col-md-12 shipping_div">
              <div class="col-md-4 col-sm-4 shipping_gst_status">
-                 <label class="control-label"> GST Registration Status </label>
+                 <label class="control-label"> <?=$this ->lang->line('gst_registration_status')?> </label>
                  <div class="form-check">
                      <input class="form-check-input gst_status" type="radio" name="shipping_gst_status" value="Yes"
                          <?= $customers_data['shipping_gst_status'] == 'Yes' ? 'checked' : '' ?> readonly>
@@ -120,19 +120,19 @@
                      <input class="form-check-input gst_status" type="radio" name="shipping_gst_status"
                          value="Un-registered Dealer"
                          <?= $customers_data['shipping_gst_status'] == 'Un-registered Dealer' ? 'checked' : '' ?> readonly>
-                     Un-registered Dealer/Person </input>
+                    <?=$this ->lang->line('unregistered_dealer')?> </input>
                  </div>
              </div>
              <div class="col-md-4 col-sm-4 shipping_gst_no">
-                 <b>GSTIN</b><span>( Ex. : 08ABCDE1234K1AZ)</span>
+                 <b><?=$this ->lang->line('gst_in')?></b><span>( Ex. : 08ABCDE1234K1AZ)</span>
                  <input type="text" placeholder="Ex. 08ABCDE12341AZ" name="shipping_gst_no"
                      class="form-control shipping_gst_no" value="<?= $customers_data['shipping_gst_no']?>"
                      autocomplete="off" maxlength="15" minlength="15">
              </div>
              <div class="col-md-4 col-sm-4 shipping_legal_name ">
-                 <label class="control-label"> Legal Name </label>
+                 <label class="control-label"> <?=$this ->lang->line('legal_name')?> </label>
                  <div class="form-check">
-                     <input type="text" placeholder="Enter Lgal Name" name="shipping_legal_name"
+                     <input type="text" placeholder="<?=$this ->lang->line('enter_legal_name')?>" name="shipping_legal_name"
                          class="form-control shipping_legal_name" value="<?= $customers_data['shipping_legal_name']?>"
                          autofocus>
                  </div>

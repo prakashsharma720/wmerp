@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?=$this ->lang->line('update_finish_good')?></h3>
         <div class="pull-right ">
 			<?php echo validation_errors();?>
 			
@@ -19,19 +19,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							
 				  			<div class="row col-md-12">
 					         	  	<div class="col-md-6">
-						            	<label class="control-label"> Finish Good Code</label>
+						            	<label class="control-label"> <?=$this ->lang->line('finish_good_code')?></label>
 						                <input type="text"  name="finishgood_code" class="form-control" value="<?= $finish_good_code?>"  autofocus readonly="readonly">
 						                <input type="hidden" name="fg_code" value="<?php echo $fg_code;?>">
 						        	</div>
 									<div class="col-md-6">
-						            	<label class="control-label"> Grade Name</label>
-						                <input type="text"  placeholder="Enter grade name" name="grade_name" class="form-control" value="<?= $grade_name ?>" required autofocus>
+						            	<label class="control-label"> <?=$this ->lang->line('grade_name')?></label>
+						                <input type="text"  placeholder="<?=$this ->lang->line('enter_grade_name')?>" name="grade_name" class="form-control" value="<?= $grade_name ?>" required autofocus>
 						        </div>
 						        
 						       	</div>
 					        <div class="row col-md-12">
 					        	 <div class="col-md-6">
-						            	<label class="control-label"> Mineral Name</label>
+						            	<label class="control-label"> <?=$this ->lang->line('mineral_name')?></label>
 									<select name="mineral_name" class="form-control select2 mineral_name" >
 										<?php
 					                 if ($HSNs): ?> 
@@ -45,12 +45,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 								</div>
 						        <div class="col-md-6 hsn_code">
-									<label class="control-label">HSN CODE</label>
+									<label class="control-label"><?=$this ->lang->line('hsn_code')?></label>
 									<input type="text"  placeholder="" name="hsn_code" class="form-control clear_hsn" value="<?= $hsn_code ?>" autocomplete="off" autofocus readonly="readonly" >
 								</div>
 						        
@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <span class="help-block"></span>
 					        <div class="row col-md-12">
 						         <div class="col-md-6">
-						            	<label class="control-label"> Packing </label>
+						            	<label class="control-label"> <?=$this ->lang->line('packing')?> </label>
 						            	<select name="packing_size" class="form-control" required="required">
 							                <?php
 							                 if ($packing_sizes): ?> 
@@ -72,13 +72,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								                        <?php endif;   ?>
 							                    <?php   endforeach;  ?>
 							                <?php else: ?>
-							                    <option value="0">No result</option>
+							                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 							                <?php endif; ?>
 					            		</select>
 						                
 						        </div>
 						         <div class="col-md-6">
-						            	<label class="control-label"> Packing Type </label>
+						            	<label class="control-label"> <?=$this ->lang->line('packing_type')?></label>
 						            	<select class="form-control" name="packing_type"  required="required">
 							                <?php
 							                 if ($packing_types): ?> 
@@ -92,20 +92,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								                        <?php endif;   ?>
 							                    <?php   endforeach;  ?>
 							                <?php else: ?>
-							                    <option value="0">No result</option>
+							                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 							                <?php endif; ?>
 					            		</select>
 						        </div>
 						        <div class="col-md-6">
-					            	<label class="control-label"> Opening Stock Qty (In MT)</label>
+					            	<label class="control-label"> <?=$this ->lang->line('opening_stock_qty_mt')?> </label>
 					                <input type="text"  name="finishgood_code" class="form-control" value="<?= $finish_good_code?>"  autofocus readonly="readonly">
 					                <input type="hidden" name="fg_code" value="<?php echo $fg_code;?>">
 						        	</div>
 					        </div>
 				        	<br>
 				           <div class="row col-md-12">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('save')?></button>
 					            </div>
 				        </div>
 			        </form>

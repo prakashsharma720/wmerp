@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?= $this->lang->line('create_purchase_order'); ?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 
@@ -32,35 +32,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('date'); ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } ?>" autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Name of Supplier <span class="required">*</span></label>
+			            	<label  class="control-label"><?= $this->lang->line('name_of_supplier'); ?> <span class="required">*</span></label>
 			            	 <?php  
 			            		echo form_dropdown('supplier_id', $suppliers,$supplier_id)
 			            	?>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> PO Number <span class="required">*</span></label>
-			            	<input type="text"  placeholder=" Enter PO No" name="po_number" class="form-control"  autofocus  value="<?= $po_number?>" required="required">
+			            	<label  class="control-label"> <?= $this->lang->line('po_number'); ?> <span class="required">*</span></label>
+			            	<input type="text"  placeholder="<?= $this->lang->line('enter_po_number'); ?>" name="po_number" class="form-control"  autofocus  value="<?= $po_number?>" required="required">
 			            </div>
 		        	</div>
 		        </div>
 		         <div class="form-group">
 		        	<div class="row col-md-12">
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Quatation No </label>
-			            	<input type="text"  placeholder=" Enter Quatation No" name="quotation_no" class="form-control" value="<?= $quotation_no?>" autofocus >
+			            	<label  class="control-label"><?= $this->lang->line('quotation_no'); ?> </label>
+			            	<input type="text"  placeholder=" <?= $this->lang->line('enter_quotation_no'); ?>" name="quotation_no" class="form-control" value="<?= $quotation_no?>" autofocus >
 			            </div>
 			             <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Quotation Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('quotation_date'); ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="quotation_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($quotation_date)); } ?>" autofocus>
 			            </div> 
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Comment</label>
-			            	<textarea type="text"  placeholder=" Enter comment" name="comment" class="form-control"  value="<?= $comment?>" autofocus  style="resize: none"><?= $comment ?></textarea>
+			            	<label  class="control-label"><?= $this->lang->line('comment'); ?> </label>
+			            	<textarea type="text"  placeholder=" <?= $this->lang->line('enter_comment'); ?>" name="comment" class="form-control"  value="<?= $comment?>" autofocus  style="resize: none"><?= $comment ?></textarea>
 			            	
 			            </div>
 
@@ -72,14 +72,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        		<table class="table table-bordered " id="maintable" style="width: 100% !important;">
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
-			        					<th style="width:%;">  Sr.No.</th>
-			        					<th style="width:15%;white-space: nowrap;"> Material Description</th>
-			        					<th style="width:10%;white-space: nowrap;"> Requisition Qty</th>
-			        					<th style="width:10%;white-space: nowrap;"> Order Qty</th>
-			        					<th style="width:10%;white-space: nowrap;"> Pending Qty</th>
-			        					<th style="width:17%;white-space: nowrap;"> Item Rate</th>
-			        					<th style="width:28%;"> Total Amount</th>
-			        					<th style="width:10%;"> Action</th>
+			        					<th style="width:%;">  <?= $this->lang->line('sr_no'); ?>.</th>
+			        					<th style="width:15%;white-space: nowrap;"> <?= $this->lang->line('material_description'); ?></th>
+			        					<th style="width:10%;white-space: nowrap;"><?= $this->lang->line('requisition_qty'); ?></th>
+			        					<th style="width:10%;white-space: nowrap;"> <?= $this->lang->line('order_qty'); ?></th>
+			        					<th style="width:10%;white-space: nowrap;"> <?= $this->lang->line('pending_qty'); ?></th>
+			        					<th style="width:17%;white-space: nowrap;"> <?= $this->lang->line('item_rate'); ?></th>
+			        					<th style="width:28%;"> <?= $this->lang->line('total_amount'); ?></th>
+			        					<th style="width:10%;"><?= $this->lang->line('action'); ?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -105,29 +105,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										                        <?php endif; ?>
 										                    <?php endforeach; ?>
 										                <?php else: ?>
-										                    <option value="0">No result</option>
+										                    <option value="0"><?= $this->lang->line('no_result'); ?></option>
 										                <?php endif; ?>
 										            </select>
 									   			</td>
 									   			<td style="width:15%">
 													<div class="input-group ">
 				                  						<div class="input-group-prepend">
-															<input type="text"  placeholder="Qty" name="req_qty[]" class="form-control req_qty"  value="" autofocus required readonly > &nbsp;
+															<input type="text"  placeholder="<?= $this->lang->line('qty'); ?>" name="req_qty[]" class="form-control req_qty"  value="" autofocus required readonly > &nbsp;
 															<span ></span>
 														</div>
 													</div>
 												</td>
 												<td style="width:15%">
-													<input type="text"  placeholder="Enter Qty" name="ordered_qty[]" class="form-control qty"  value="<?php echo $po_detail['quantity']; ?>" autofocus required>
+													<input type="text"  placeholder="<?= $this->lang->line('enter_qty'); ?>" name="ordered_qty[]" class="form-control qty"  value="<?php echo $po_detail['quantity']; ?>" autofocus required>
 												</td>
 												<td style="width:15%">
-													<input type="text"  placeholder="Pending" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
+													<input type="text"  placeholder="<?= $this->lang->line('pending'); ?>" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
 												</td>
 												<td style="width:15%">
-													<input type="text"  placeholder="Enter rate" name="rate[]" class="form-control rate" value="<?php echo $po_detail['rate'] ?>" autofocus required>
+													<input type="text"  placeholder="<?= $this->lang->line('enter_rate'); ?>" name="rate[]" class="form-control rate" value="<?php echo $po_detail['rate'] ?>" autofocus required>
 												</td>
 												<td style="width:15%">
-													<input type="text"  placeholder=" total amount" name="total[]" class="form-control total" value="<?php echo $po_detail['amount']; ?>"  readonly  required>
+													<input type="text"  placeholder=" <?= $this->lang->line('total_amount'); ?>" name="total[]" class="form-control total" value="<?php echo $po_detail['amount']; ?>"  readonly  required>
 												</td>
 												<td style="width:15%">
 													<!-- <button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button>  -->
@@ -145,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										                            <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
 										                    <?php endforeach; ?>
 										                <?php else: ?>
-										                    <option value="0">No result</option>
+										                    <option value="0"><?= $this->lang->line('no_result'); ?></option>
 										                <?php endif; ?>
 										            </select>
 
@@ -155,22 +155,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													<td style="width:15%">
 													<div class="input-group ">
 				                  						<div class="input-group-prepend">
-															<input type="text"  placeholder="Qty" name="req_qty[]" class="form-control req_qty"  value="" autofocus required readonly > &nbsp;
+															<input type="text"  placeholder="<?= $this->lang->line('qty'); ?>" name="req_qty[]" class="form-control req_qty"  value="" autofocus required readonly > &nbsp;
 															<span ></span>
 														</div>
 													</div>
 												</td>
 													<td style="width:15%">
-														<input type="text"  placeholder="Enter Qty" name="ordered_qty[]" class="form-control qty"  autofocus required>
+														<input type="text"  placeholder="<?= $this->lang->line('enter_qty'); ?>" name="ordered_qty[]" class="form-control qty"  autofocus required>
 													</td>
 													<td style="width:15%">
-														<input type="text"  placeholder="Pending" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
+														<input type="text"  placeholder="<?= $this->lang->line('pending'); ?>" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
 													</td>
 													<td style="width:15%">
-														<input type="text"  placeholder="Enter rate" name="rate[]" class="form-control rate"  autofocus required>
+														<input type="text"  placeholder="<?= $this->lang->line('enter_rate'); ?>" name="rate[]" class="form-control rate"  autofocus required>
 													</td>
 													<td style="width:15%">
-														<input type="text"  placeholder=" total amount" name="total[]" class="form-control total"  readonly  required>
+														<input type="text"  placeholder=" <?= $this->lang->line('total_amount'); ?>" name="total[]" class="form-control total"  readonly  required>
 													</td>
 													<td style="width:15%">
 														<!-- <button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button>  -->
@@ -181,19 +181,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        					</tbody>
 			        				<tfoot>
 			        				<tr>
-			        					<td colspan="3" style="text-align: right;"><b>Total</b></td>
+			        					<td colspan="3" style="text-align: right;"><b><?= $this->lang->line('total'); ?></b></td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total Qty" name="total_qty" class="form-control total_qty"  value="<?= $total_qty?>" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_qty'); ?>" name="total_qty" class="form-control total_qty"  value="<?= $total_qty?>" readonly >
 			        					</td>
 			        					<td>
-			        						<input type="text"  placeholder="Total Rate" name="total_rate" class="form-control total_rate" value="<?= $total_rate_edit ?>"  readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_rate'); ?>" name="total_rate" class="form-control total_rate" value="<?= $total_rate_edit ?>"  readonly >
 			        					</td>
 			        					<td colspan="3">
-			        						<input type="text"  placeholder="Total Amount" name="total_amount" class="form-control total_amount" value="<?= $total_amount?>" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_amount'); ?>" name="total_amount" class="form-control total_amount" value="<?= $total_amount?>" readonly >
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="3" style="text-align: right;"><b> Discount</b></td>
+			        					<td colspan="3" style="text-align: right;"><b> <?= $this->lang->line('discount'); ?></b></td>
 			        					<td colspan="">
 			        						<?php 
 			        						$rs_checked='';
@@ -214,29 +214,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							                <input class="discount_type" type="radio" name="discount_type" value="2" <?php echo $per_checked; ?> > Percentage</input>
 			        					</td>
 			        					<td>
-			        						<input type="text"  placeholder=" Enter Value" name="discount" class="form-control discount_value"  value="<?= $discount?>"  required autofocus  >
+			        						<input type="text"  placeholder=" <?= $this->lang->line('enter_value'); ?>" name="discount" class="form-control discount_value"  value="<?= $discount?>"  required autofocus  >
 			        						<input type="hidden" value="<?= $discount_amount?>"  name="discount_amount" class="discount_amount">
 			        					</td>
 			        					<td colspan="2">
-			        						<input type="text"  placeholder="Amount after discount" name="amount_after_discount" value="<?= $total_amount?>"  class="form-control amount_after_discount"  readonly  >
+			        						<input type="text"  placeholder="<?= $this->lang->line('amount_after_discount'); ?>" name="amount_after_discount" value="<?= $total_amount?>"  class="form-control amount_after_discount"  readonly  >
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="3" style="text-align: right;"><b> GST</b></td>
+			        					<td colspan="3" style="text-align: right;"><b> <?= $this->lang->line('gst'); ?></b></td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder=" Enter Tax %" name="tax_per" class="form-control tax_per" value="<?= $gst_per?>"  autofocus  >
+			        						<input type="text"  placeholder=" <?= $this->lang->line('enter_tax'); ?> %" name="tax_per" class="form-control tax_per" value="<?= $gst_per?>"  autofocus  >
 			        					</td>
 			        					<td>
-			        						<input type="text"  placeholder=" Enter Tax " name="gst_amount" class="form-control gst_amount" value="<?= $gst_amount?>"  readonly  >
+			        						<input type="text"  placeholder=" <?= $this->lang->line('enter_tax'); ?> " name="gst_amount" class="form-control gst_amount" value="<?= $gst_amount?>"  readonly  >
 			        					</td>
 			        					<td colspan="3">
-			        						<input type="text"  placeholder=" Amount included Tax" name="grand_total" class="form-control grand_total" value="<?= $grand_total?>"   readonly  >
+			        						<input type="text"  placeholder=" <?= $this->lang->line('amount_included_tax'); ?>" name="grand_total" class="form-control grand_total" value="<?= $grand_total?>"   readonly  >
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="3" style="text-align: right;"><b> Grand Total</b></td>
+			        					<td colspan="3" style="text-align: right;"><b> <?= $this->lang->line('grand_total'); ?></b></td>
 			        					<td colspan="5">
-			        						<input type="text"  placeholder=" Grand Total" name="final_total_amount" class="form-control final_total_amount"  autofocus readonly value="<?= $grand_total?>">
+			        						<input type="text"  placeholder=" <?= $this->lang->line('grand_total'); ?>" name="final_total_amount" class="form-control final_total_amount"  autofocus readonly value="<?= $grand_total?>">
 			        					</td>
 			        				</tr>
 
@@ -248,19 +248,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-6 col-sm-6 ">
-			            	<label class="control-label"> Vendor Reference</label>
-			                <input type="text"  placeholder=" Enter Reference " name="reference_by" class="form-control"  value="<?= $reference_by ?>" autofocus >
+			            	<label class="control-label"> <?= $this->lang->line('vendor_reference'); ?></label>
+			                <input type="text"  placeholder=" <?= $this->lang->line('enter_reference'); ?>" name="reference_by" class="form-control"  value="<?= $reference_by ?>" autofocus >
 			            </div>
 			            <div class="col-md-6 col-sm-6 ">
-			            	<label  class="control-label">Delivery Period</label>
-			            	 <input type="text"  placeholder=" Enter Delivery Schedule" name="delivery_period" class="form-control"  value="<?= $delivery_period ?>" autofocus  >
+			            	<label  class="control-label"><?= $this->lang->line('delivery_period'); ?></label>
+			            	 <input type="text"  placeholder=" <?= $this->lang->line('enter_delivery_schedule'); ?>" name="delivery_period" class="form-control"  value="<?= $delivery_period ?>" autofocus  >
 			            </div>
 			            <div class="col-md-6 col-sm-6 ">
-			            	<label  class="control-label"> Payment Terms</label>
+			            	<label  class="control-label"> <?= $this->lang->line('payment_terms'); ?></label>
 			            	<input type="text"  placeholder=" Ex. Cash,Cheque" name="payment_term" class="form-control"   value="<?= $payment_term ?>"  autofocus  >
 			            </div>
 			            <div class="col-md-6 col-sm-6 ">
-			            	<label  class="control-label"> Freight Status</label>
+			            	<label  class="control-label"> <?= $this->lang->line('freight_status'); ?></label>
 			            	<div>
 			            	<?php 
         						$paid='';
@@ -284,8 +284,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade'); ?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit'); ?></button>
 		        		</div>
 		        	</div>
 		        </div>
@@ -316,16 +316,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    			</td>
 			
 			<td style="width:15%">
-				<input type="text"  placeholder="Enter Qty" name="ordered_qty[]" class="form-control qty"  autofocus required>
+				<input type="text"  placeholder="<?= $this->lang->line('enter_qty'); ?>" name="ordered_qty[]" class="form-control qty"  autofocus required>
 			</td>
 			<td style="width:15%">
-				<input type="text"  placeholder="Pending" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
+				<input type="text"  placeholder="<?= $this->lang->line('pending'); ?>" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
 			</td>
 			<td style="width:15%">
-				<input type="text"  placeholder="Enter rate" name="rate[]" class="form-control rate"  autofocus required>
+				<input type="text"  placeholder="<?= $this->lang->line('enter_rate'); ?>" name="rate[]" class="form-control rate"  autofocus required>
 			</td>
 			<td style="width:15%">
-				<input type="text"  placeholder=" total amount" name="total[]" class="form-control total"  readonly  required>
+				<input type="text"  placeholder=" <?= $this->lang->line('total_amount'); ?>" name="total[]" class="form-control total"  readonly  required>
 			</td>
 			<td style="width:15%">
 				<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 

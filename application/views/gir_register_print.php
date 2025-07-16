@@ -23,10 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-sm-4 invoice-col">
                 <strong><u><?= $this->lang->line('company_details') ?>:</u></strong><br>
-                  <b>GSTIN : </b>08AABFC2155P1ZA<br>
-                  <b>PAN : </b> AABFC2155P<br>
+                  <b> <?= $this->lang->line('gst_in') ?>: </b>08AABFC2155P1ZA<br>
+                  <b><?= $this->lang->line('pan') ?> : </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
-                  <b> Address : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
+                  <b> <?= $this->lang->line('address') ?> : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
                 </div>
               </div>
               <br>
@@ -41,52 +41,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             
 							<tr>
 						<?php if($current['0']['categories_id']!='1'){?>
-                            <th colspan="1"> Gir Register Category : </th>
+                            <th colspan="1"> <?= $this->lang->line('gir_register_category') ?>: </th>
                             <td colspan="1"> <?= $current['0']['category']?> </td>
                              <th colspan="1"> Supplier Name : </th>
                             <td colspan="2"> <?= $current['0']['supplier']?> </td>
 							<td colspan=""></td>
                           </tr>
                        	  <tr>
-						    <th>GIR Number</th>
+						    <th><?= $this->lang->line('gir_no') ?></th>
 						   <td><?= $current['0']['gir_no']?></td>
-                            <th>Date </th>
+                            <th><?= $this->lang->line('date') ?> </th>
                             <td> <?= $current['0']['transaction_date']?> </td>
-							 <th>Challan Number </th>
+							 <th><?= $this->lang->line('challan_no') ?> </th>
 							  <td> <?= $current['0']['challan_no']?> </td>
 
 						<?php } ?>
                           </tr>
 						<tr>
 						<?php if($current['0']['categories_id']=='1'){?>
-                            <th colspan="1"> Gir Register Category : </th>
+                            <th colspan="1"> <?= $this->lang->line('gir_register_category') ?> : </th>
                             <td colspan="1"> <?= $current['0']['category']?> </td>
                              <th colspan="1"> <?= $this->lang->line('supplier_name') ?>: </th>
                             <td colspan="2"> <?= $current['0']['supplier']?> </td>
-							<th>GIR Number</th>
+							<th><?= $this->lang->line('gir_no') ?></th>
 						   <td><?= $current['0']['gir_no']?></td>
                           </tr>
                        	  <tr>
-                            <th>Date </th>
+                        <th><?= $this->lang->line('date') ?></th>
                             <td> <?= $current['0']['transaction_date']?> </td>
-							<th>Challan Number </th>
+							 <th><?= $this->lang->line('challan_no') ?></th>
 							  <td> <?= $current['0']['challan_no']?> </td>
-							 <th>Weight Slip Number </th>
+							  <th><?= $this->lang->line('weight_slip_no') ?></th>
                             <td><?= $current['0']['weight_slip_no']?></td>
 							</tr>
 							<tr>
-							<th>Actual Weight </th>
+							<th><?= $this->lang->line('actual_weight') ?></th>
                             <td> <?= $current['0']['actual_weight']?> </td>
-							<th>Documented Weight</th>
+						 <th><?= $this->lang->line('documented_weight') ?></th>
 							  <td> <?= $current['0']['doc_weight']?> </td>
-							 <th>Weight</th>
+						 <th><?= $this->lang->line('weight') ?></th>
                             <td><?= $current['0']['weight']?></td>
 							</tr>
 							 <tr>
-                            <th>Truck Number</th>
+                             <th><?= $this->lang->line('truck_number') ?></th>
                            <td> <?= $current['0']['truck_no']?> </td>
-							
-							 <th>Payment </th>
+						  <th><?= $this->lang->line('payment') ?></th>
                             <td><?= $current['0']['payment']?></td>
 							<th></th>
 							<td></td>
@@ -103,7 +102,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</tr>
 							
 						  <tr>
-						  <th> S.No.</th>
+						  <th> <?= $this->lang->line('sr_no') ?>.</th>
 						<th colspan=""><label> <th><?= $this->lang->line('product_name') ?> : </th>
                   <td> <?= $current['0']['category']?> </td>
                   <th><?= $this->lang->line('supplier_name') ?> : </th>

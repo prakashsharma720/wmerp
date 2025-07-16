@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        </div>
 				           <div class="row col-md-12">
 				        		
-					            	<label class="control-label"><?=$this ->lang ->line('status')?>s</label>
+					            	<label class="control-label"><?=$this ->lang ->line('status')?></label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"> <?=$this ->lang ->line('active')?></option>
 					               		<option value="1"> <?=$this ->lang ->line('de_active')?></option>
@@ -117,7 +117,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				 <!-- /form -->
 				<div class="col-md-8">
-					<h5> <?=$this ->lang ->line('potective_equipments_list')?>t</h5>
+					<h5> <?=$this->lang->line('protective_equipments_list')?></h5>
+
 					<div class="table-responsive">
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>

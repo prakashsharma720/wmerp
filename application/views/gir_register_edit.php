@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?= $this->lang->line('edit_gir_register'); ?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 		
@@ -151,7 +151,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														</select>
 												</td>
 												<td>
-													<textarea name="description[]" class="form-control description" type="textarea" placeholder="Enter description"  value="<?php echo $gir_detail['description']; ?>"><?php echo $gir_detail['description']; ?></textarea>
+													<textarea name="description[]" class="form-control description" type="textarea" placeholder="<?= $this->lang->line('enter_description') ?>"  value="<?php echo $gir_detail['description']; ?>"><?php echo $gir_detail['description']; ?></textarea>
 												</td>
 												<td style="width:13%">
 													<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
@@ -182,14 +182,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            	<input type="text"  placeholder=" Enter Invoice/Challan No" name="challan_no" class="form-control"  autofocus  value="<?= $challan_no?>" required="required">
 			            </div>  -->
 			            <div class="col-md-6 col-sm-6 ">
-			            	<label  class="control-label"> Material Received Through <span class="required">*</span></label>
+			            	<label  class="control-label"> <?=$this ->lang->line('material_received_throught')?> <span class="required">*</span></label>
 			            	
-			            	<input type="text" placeholder=" Enter Source" name="material_received_from" class="form-control" style="height:100%;padding-top: 0px;" value="<?= $material_received_from?>" />
+			            	<input type="text" placeholder=" <?=$this ->lang->line('enter_source')?>" name="material_received_from" class="form-control" style="height:100%;padding-top: 0px;" value="<?= $material_received_from?>" />
 			            	<!-- <input type="text"  placeholder=" Enter source here" name="material_received_from" class="form-control"  autofocus  value="<?= $material_received_from?>" required="required"> -->
 			            </div>
 			            <div class="col-md-6 col-sm-6 ">
-			            	<label  class="control-label"> Comment</label>
-			            	<input type="text" placeholder=" Enter comment" name="comments" class="form-control" style="height:100%;padding-top: 0px;" value="<?= $comments?>" />
+			            	<label  class="control-label"> <?=$this ->lang->line('comment')?></label>
+			            	<input type="text" placeholder=" <?=$this ->lang->line('enter_comment')?>" name="comments" class="form-control" style="height:100%;padding-top: 0px;" value="<?= $comments?>" />
 			            </div>
 
 		        	</div>
@@ -197,8 +197,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"><?=$this ->lang->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang->line('submit')?></button>
 		        		</div>
 		        	</div>
 		        </div>
@@ -215,23 +215,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<td >1</td>
 			<td> 
 			<select name="products[]" class="form-control drop" required>
-				<option value=""> Select Item</option>
+				<option value=""> <?=$this ->lang->line('select_item')?></option>
                 <?php if ($items): ?> 
                     <?php foreach ($items as $value) : ?>
                             <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <option value="0">No result</option>
+                    <option value="0"><?=$this ->lang->line('no_result')?></option>
                 <?php endif; ?>
             </select>
 				
    			</td>
    			<td >
-				<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
+				<input type="text"  placeholder="<?=$this ->lang->line('enter_qty')?>" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
 			</td>
 			<td>
         	 <select name="unit_id[]" class="form-control  units" required="required">
-        		 <option value="">Select Unit</option>
+        		 <option value=""><?=$this ->lang->line('select_unit')?></option>
 	                <?php
 	                 if ($units): ?> 
 	                  <?php 
@@ -240,12 +240,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		                            <option value="<?= $value['id'] ?>"><?= $value['unit_name'] ?></option>
 	                    <?php   endforeach;  ?>
 	                <?php else: ?>
-	                    <option value="">No result</option>
+	                    <option value=""><?=$this ->lang->line('no_result')?></option>
 	                <?php endif; ?>
 	            </select>
 			</td>
 			<td>
-				<textarea name="description[]" class="form-control description" type="textarea" placeholder="Enter description"></textarea>
+				<textarea name="description[]" class="form-control description" type="textarea" placeholder="<?=$this ->lang->line('enter_description')?>"></textarea>
 			</td>
 			
 			<td style="width:13%">

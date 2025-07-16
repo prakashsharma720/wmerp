@@ -285,7 +285,7 @@ $data=explode('?', $current_page);
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete transporter <b><?php echo $obj['transporter_name'];?> </b>? </p>
+                            <p> <?=$this ->lang->line('delete_transporter_confirm')?><b><?php echo $obj['transporter_name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
                             <button type="submit" class="btn btn-primary delete_submit"><?=$this ->lang->line('yes')?> </button>
