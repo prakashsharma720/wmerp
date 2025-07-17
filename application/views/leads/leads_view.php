@@ -411,6 +411,7 @@ $data = explode('?', $current_page);
 																	} else if ($obj['lead_status'] == 'Rejected') {
 																		$btn_class = 'btn-rejected';
 																	}
+																	
 																	?>
 																	<button class="btn btn-sm <?php echo $btn_class; ?>"
 																		style="pointer-events: none;">

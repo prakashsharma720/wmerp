@@ -6,7 +6,8 @@
                 <td>
                     <div class="item-checkbox ms-1">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input checkbox" id="checkBox_<?= $i ?>">
+                            <input type="checkbox" class="custom-control-input checkbox sub_chk" name="sub_chk[]"
+                                id="checkBox_<?= $i ?>" value="<?= $obj['id'] ?>">
                             <label class="custom-control-label" for="checkBox_<?= $i ?>"></label>
                         </div>
                     </div>
@@ -61,16 +62,20 @@
                 </td>
                 <td>
                     <div class="hstack gap-2 justify-content-end">
-                        <a href="<?php echo base_url(); ?>index.php/Leads/add/<?php echo $obj['id']; ?>" class="avatar-text avatar-md">
+                        <a href="<?php echo base_url(); ?>index.php/Leads/add/<?php echo $obj['id']; ?>"
+                            class="avatar-text avatar-md">
                             <i class="feather feather-edit-3 "></i>
                         </a>
-                        <a href="proposal-view.html" class="avatar-text avatar-md">
+                        <a href="proposal-view.html" class="avatar-text avatar-md" data-bs-toggle="offcanvas"
+                            data-bs-target="#proposalSent<?php echo $obj['id']; ?>">
                             <i class="feather feather-eye"></i>
                         </a>
+                    <?php $this->load->view('Lead Module/Lead Generation/component/view-model', ['obj' => $obj]); ?>
                     </div>
                 </td>
             </tr>
-    <?php $i++;
+            <?php $i++;
+            
         }
     } else { ?>
         <tr>
