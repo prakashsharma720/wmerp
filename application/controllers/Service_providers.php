@@ -135,7 +135,7 @@ public function add($id = NULL) {
 		$data['service_providers'] = $this->service_provider_model->service_provider_list();
 		}
 		//echo var_dump($data['students']);
-		$this->template->load('template','service_provider_report',$data);
+		$this->template->load('layout/template','service_provider_report',$data);
 	}
 	function createXLS() {
   	  	

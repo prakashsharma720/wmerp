@@ -168,7 +168,7 @@ $this->load->model('categories_model');
 			
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
-			$this->template->load('template','raw_material_view',$data);
+			$this->template->load('layout/template','raw_material_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');
@@ -181,7 +181,7 @@ $this->load->model('categories_model');
 		$data['rawmaterials']=$this->categories_model->rawmaterialsList('1');
 		
 		//echo var_dump($data['students']);
-		$this->template->load('template','raw_material_report',$data);
+		$this->template->load('layout/template','raw_material_report',$data);
 	}
 	public function minimum_inventory_levels() 
 	{
@@ -191,7 +191,7 @@ $this->load->model('categories_model');
 			
 		//echo var_dump($data['students']);
 		//print_r($data['minimum_levels']);exit;
-		$this->template->load('template','minimum_inventory_report',$data);
+		$this->template->load('layout/template','minimum_inventory_report',$data);
 	}
 	public function add_newPM() {
 		

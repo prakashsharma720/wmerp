@@ -971,7 +971,7 @@ public function raw_add($id=NULL) {
            //$data['gir_data']=$this->gir_register_model->getListGeneral();
             $data['categories']=$this->gir_register_model->getCategories();
 		
-		$this->template->load('template','gir_register_report',$data);
+		$this->template->load('layout/template','gir_register_report',$data);
 	}
  
 

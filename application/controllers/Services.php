@@ -105,7 +105,7 @@ $this->load->model('categories_model');
 			$data['categories'] = $this->categories_model->getMasterCategories();
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
-			$this->template->load('template','services_view',$data);
+			$this->template->load('layout/template','services_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

@@ -34,7 +34,7 @@ $this->load->model('grid_model');
 
 // Show login page
 public function add() {
-  $this->template->load('template','supplier_add');
+  $this->template->load('layout/template','supplier_add');
   //$this->load->view('footer');
   }
 
@@ -69,7 +69,7 @@ public function add() {
       $data['grids'] = $this->grid_model->gridList();
       //echo var_dump($data['students']);
       //print_r($data['grid_name']);exit;
-      $this->template->load('template','grid_master',$data);
+      $this->template->load('layout/template','grid_master',$data);
   }
   public function add_new_grid() {
     

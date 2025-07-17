@@ -40,7 +40,7 @@ $this->load->model('finish_goods_model');
 		//$data['categories'] = $this->finish_goods_model->getCategories();
 		//echo var_dump($data['students']);
 		//print_r($data['items']);exit;
-		$this->template->load('template','finish_goods_view',$data);
+		$this->template->load('layout/template','finish_goods_view',$data);
 	}
 
 	public function add() 
@@ -70,7 +70,7 @@ $this->load->model('finish_goods_model');
 			$data['packing_sizes']= array('25Kg' => '25Kg','50Kg'=>'50Kg','NA'=>'NA');
 			//echo var_dump($data['students']);
 			//print_r($data['mineral_name']);exit;
-			$this->template->load('template','finish_goods_add',$data);
+			$this->template->load('layout/template','finish_goods_add',$data);
 	}
 	
 	public function edit($id = NULL) 
@@ -138,7 +138,7 @@ $this->load->model('finish_goods_model');
 		$data['packing_types']= array('Liner' => 'Liner','Non-liner'=>'Non-liner');
 		$data['packing_sizes']= array('25Kg' => '25Kg','50Kg'=>'50Kg','NA'=>'NA');
 	
-		$this->template->load('template','finish_goods_edit',$data);
+		$this->template->load('layout/template','finish_goods_edit',$data);
 	}
 	public function add_new_fg() {
 		

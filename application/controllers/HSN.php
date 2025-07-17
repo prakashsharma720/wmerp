@@ -34,7 +34,7 @@ $this->load->model('HSN_model');
 
 // Show login page
 public function add() {
-  $this->template->load('template','supplier_add');
+  $this->template->load('layout/template','supplier_add');
   //$this->load->view('footer');
   }
 
@@ -74,7 +74,7 @@ public function add() {
 	  //$data['categories'] = $this->HSN_model->getCategories();
       //echo var_dump($data['students']);
       //print_r($data['grid_name']);exit;
-      $this->template->load('template','HSN_master',$data);
+      $this->template->load('layout/template','HSN_master',$data);
   }
   public function add_new_HSN() {
     

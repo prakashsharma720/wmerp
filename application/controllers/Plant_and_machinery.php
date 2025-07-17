@@ -159,7 +159,7 @@ $this->load->model('categories_model');
 			$data['units'] = $this->categories_model->getUnits();
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
-			$this->template->load('template','plant_and_machinery_view',$data);
+			$this->template->load('layout/template','plant_and_machinery_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');
