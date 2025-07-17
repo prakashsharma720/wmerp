@@ -2685,8 +2685,10 @@ $lang['booking_status'] = 'Статус на резервация';
 $lang['action'] = 'Действие';
 $lang['status'] = 'Статус';
 $lang['view'] = 'Преглед';
+
 // erp master   employee review
 // Employee Review
+
 $lang['employee_review'] = 'Оценка на служителя';
 
 $lang['leave_allotment_month'] = 'Месец на отпуск';
@@ -2698,6 +2700,10 @@ $lang['criteria_name'] = 'Име на критерий';
 $lang['criteria_point'] = 'Точки за критерий';
 $lang['self_review'] = 'Самооценка';
 $lang['author_review'] = 'Оценка от ръководител';
+$lang['employee_id'] = 'Идентификационен номер на служителя';
+$lang['review_details'] = 'Детайли за прегледа';
+
+
 
 // notification master
 // Notifications
@@ -2723,6 +2729,9 @@ $lang['message_text'] = 'Съобщение';
 $lang['department_name'] = 'Отдел';
 $lang['date_time'] = 'Дата и час';
 $lang['action'] = 'Действие';
+$lang['read_recipients_report'] = 'Доклад за прочели получатели';
+$lang['user'] = 'Потребител';
+$lang['time'] = 'Време';
 
 
 // remainder master
@@ -2738,6 +2747,9 @@ $lang['reminder_date'] = 'Дата на напомняне';
 $lang['reminder_time'] = 'Час на напомняне';
 $lang['status'] = 'Статус';
 $lang['action'] = 'Действие';
+$lang['edit_reminder'] = 'Редактирай напомняне';
+$lang['snooze'] = 'Отложи';
+$lang['select_date'] = 'Изберете дата';
 
 // mo events
 // Office Events

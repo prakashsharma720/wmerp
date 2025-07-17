@@ -2762,6 +2762,9 @@ $lang['criteria_name'] = 'Criteria Name';
 $lang['criteria_point'] = 'Criteria Points';
 $lang['self_review'] = 'Self Review';
 $lang['author_review'] = 'Authorized Review';
+$lang['employee_id'] = 'Employee ID';
+$lang['review_details'] = 'Review Details';
+
 
 // notification master
 // Notifications - English Translations
@@ -2787,6 +2790,10 @@ $lang['message_text'] = 'Message';
 $lang['department_name'] = 'Department';
 $lang['date_time'] = 'Date & Time';
 $lang['action'] = 'Action';
+$lang['read_recipients_report'] = 'Read Recipients Report';
+$lang['user'] = 'User';
+$lang['time'] = 'Time';
+
 
 // remainder master
 // All Reminders - English Translations
@@ -2801,6 +2808,11 @@ $lang['reminder_date'] = 'Reminder Date';
 $lang['reminder_time'] = 'Reminder Time';
 $lang['status'] = 'Status';
 $lang['action'] = 'Action';
+$lang['edit_reminder'] = 'Edit Reminder';
+$lang['snooze'] = 'Snooze';
+$lang['select_date'] = 'Select Date';
+
+
 
 // mo events
 // Office Events - English Translations

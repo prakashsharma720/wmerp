@@ -2725,6 +2725,8 @@ $lang['criteria_name'] = 'मापदंड नाम';
 $lang['criteria_point'] = 'मापदंड अंक';
 $lang['self_review'] = 'स्व-मूल्यांकन';
 $lang['author_review'] = 'प्राधिकृत मूल्यांकन';
+$lang['employee_id'] = 'कर्मचारी आईडी';
+$lang['review_details'] = 'समीक्षा विवरण';
 
 // notification master
 // Notifications - Hindi Translations
@@ -2750,6 +2752,10 @@ $lang['message_text'] = 'संदेश';
 $lang['department_name'] = 'विभाग';
 $lang['date_time'] = 'दिनांक और समय';
 $lang['action'] = 'क्रिया';
+$lang['read_recipients_report'] = 'पढ़ने वाले प्राप्तकर्ताओं की रिपोर्ट';
+$lang['user'] = 'उपयोगकर्ता';
+$lang['time'] = 'समय';
+
 
 // remainder master
 // All Reminders - Hindi Translations
@@ -2764,6 +2770,9 @@ $lang['reminder_date'] = 'अनुस्मारक तिथि';
 $lang['reminder_time'] = 'अनुस्मारक समय';
 $lang['status'] = 'स्थिति';
 $lang['action'] = 'क्रिया';
+$lang['edit_reminder'] = 'अनुस्मारक संपादित करें';
+$lang['snooze'] = 'स्नूज़ करें';
+$lang['select_date'] = 'तारीख़ चुनें';
 
 // mo events
 // Office Events - Hindi Translations
