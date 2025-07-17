@@ -239,7 +239,7 @@ public function edit($id=NULL) {
 			$data['employees'] = $this->po_model->getEmployees();
 			$data['departments'] = $this->po_model->getDepartments();
 			$data['req_status']= array('All'=>'All','Pending' => 'Pending','Approved'=>'Approved','Rejected'=>'Rejected');
-			//echo var_dump($data['students']);
+			//echo vaappr_dump($data['students']);
 			$this->template->load('template','po_report',$data);
 		}
 

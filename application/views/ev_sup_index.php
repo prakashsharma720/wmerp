@@ -32,7 +32,7 @@ $data=explode('?', $current_page);
       <?php endif; ?><div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang->line('supplier_evaluation_results')?>
       </span>
        <div class="button-group float-right">
         
@@ -110,7 +110,7 @@ $data=explode('?', $current_page);
                 </div>
                  <div class="col-md-4 col-sm-4 ">
                    <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo $data[0]?>" class="btn btn-danger" ><?= $this->lang->line('reset') ?></a>
               </div>
@@ -123,7 +123,7 @@ $data=explode('?', $current_page);
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
+              <th ><?=$this ->lang->line('sr_no')?>.</th>
               <th style="white-space: nowrap;"> <?= $this->lang->line('name') ?> </th>
               <th style="white-space: nowrap;"> <?= $this->lang->line('category') ?> </th>
               <!-- <th style="white-space: nowrap;"> Marks Obtained </th>

@@ -31,7 +31,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?></span>
+      <span class="card-title"><?=$this ->lang ->line('service_provider_list')?></span>
        <div class="pull-right error_msg">
           <a href="<?php echo base_url(); ?>index.php/Service_providers/add" class="btn btn-success" data-toggle="tooltip" title="New service_provider"><i class="fa fa-plus"></i></a>
 
@@ -282,7 +282,7 @@ $data=explode('?', $current_page);
                           </div>      -->
                         </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close'); ?></button>
                           </div>
                         </div>
                       </div>
@@ -298,7 +298,7 @@ $data=explode('?', $current_page);
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete service_provider <b><?php echo $obj['service_provider_name'];?> </b>? </p>
+                            <p> <?=$this ->lang ->line('delete_service_provider_confirm')?><b><?php echo $obj['service_provider_name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
                             <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang ->line('yes')?> </button>

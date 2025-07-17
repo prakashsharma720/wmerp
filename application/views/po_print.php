@@ -22,14 +22,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                <div class="col-sm-4 invoice-col">
                 <!--<h6 style="padding-top: 20px;"> STANDARD OPERATING PROCEDURE </h6>-->
-                <h4 style="padding-top: 20px;"> PURCHASE ORDER</h4>
+                <h4 style="padding-top: 20px;"> <?= $this->lang->line('purchase_order'); ?></h4>
                 </div>
                 <div class="col-sm-4 invoice-col">
-                <strong><u>Company Details:</u></strong><br>
-                  <b>GSTIN : </b>08AABFC2155P1ZA<br>
-                  <b>PAN : </b> AABFC2155P<br>
+                <strong><u><?= $this->lang->line('company_details'); ?>:</u></strong><br>
+                  <b><?= $this->lang->line('gstin'); ?> : </b>08AABFC2155P1ZA<br>
+                  <b><?= $this->lang->line('pan'); ?> : </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
-                  <b> Address : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
+                  <b><?= $this->lang->line('address'); ?> : </b> <?= $this->lang->line('company_address'); ?>
                 </div>
               </div>
               <br>
@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <tr>
                             <th rowspan="3" > To:  </th>
                             <td rowspan="3" colspan="2"> <?= $current['0']['supplier']?>,<br> <?= $current['0']['address']?> </td>
-                            <th colspan="2"> PO Number : </th>
+                            <th colspan="2"><?= $this->lang->line('po_number'); ?> : </th>
                             <td colspan="2"> 
                                   <?php 
                                   $inv_number=$current['0']['po_number'];
@@ -64,11 +64,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </td>
 						              </tr>
                        	  <tr>
-                            <th colspan="2">Dated :  </th>
+                            <th colspan="2"><?= $this->lang->line('dated'); ?> :  </th>
                             <td> <?= $current['0']['transaction_date']?> </td>
               						</tr>
                            <tr>
-                             <th colspan="2">Vendor Code : </th>
+                             <th colspan="2"><?= $this->lang->line('vendor_code'); ?> : </th>
                             <td> 
                                 <?php 
                                     $inv_number=$current['0']['vendor_code'];
@@ -89,34 +89,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            </td>
                           </tr>
                           <tr>
-                            <th> Contact Person : </th>
+                            <th> <?= $this->lang->line('contact_person'); ?> : </th>
                             <td colspan="6"> <?= $current['0']['prefix'].' '.$current['0']['c_person']?>  </td>
                           </tr>
                            <tr>
-                            <th> Contact No : </th>
+                            <th> <?= $this->lang->line('contact_no'); ?> : </th>
                             <td colspan="6"> <?= $current['0']['mobile_no']?> </td>
                           </tr>
                           <tr>
-                            <th> Email Id : </th>
+                            <th> <?= $this->lang->line('email_id'); ?>: </th>
                             <td colspan="6"> <?= $current['0']['email']?> </td>
                           </tr>
                            <tr>
-                            <th> Reference: </th>
+                            <th> <?= $this->lang->line('reference'); ?>: </th>
                             <td colspan="6"> <?= $current['0']['reference_by']?> </td>
                           </tr>
                            <tr>
                            <td colspan="6">
-                             Please supply following items as per our Telecom/ Previous Supply/ Your Ref. At the earliest:
+                             <?= $this->lang->line('please_supply'); ?>
                            </td>
                          </tr>
                   		  <tr>
                          
-            						  <th> S.No.</th>
-            						  <th colspan="2"><label> Material Description </label></th>
+            						  <th> <?= $this->lang->line('s_no'); ?>.</th>
+            						  <th colspan="2"><label> <?= $this->lang->line('material_description'); ?> </label></th>
                           <!--<th>Requisition Quantity</th>-->
-            						  <th><label> Quantity</label></th>
-              						<th>Item Price</th>
-              						<th>Total Amount</th>
+            						  <th><label> <?= $this->lang->line('quantity'); ?></label></th>
+              						<th>I<?= $this->lang->line('item_price'); ?></th>
+              						<th><?= $this->lang->line('total_amount'); ?></th>
 						            </tr>
                   <?php $i=1;foreach($current['0']['po_details'] as $po_details) { ?>
 	                    <tr>
@@ -136,13 +136,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                    </tr>
 	                <?php $i++;} ?>
 							<tr>
-			        		<td colspan="3" style="text-align: right;"><b>Total</b></td>
+			        		<td colspan="3" style="text-align: right;"><b><?= $this->lang->line('total'); ?></b></td>
 					             <td> <?= $current['0']['total_qty']?></td>
 								  
 								   <td> <?= $current['0']['total_amount']?> &#8377;</td>
 							</tr>
             <tr>
-                <td colspan="3" style="text-align: right;"><b> Less Discount</b></td>
+                <td colspan="3" style="text-align: right;"><b> <?= $this->lang->line('less_discount'); ?></b></td>
                    <?php if($current['0']['discount_amount']!='0.00'){ ?>
                       <td>-</td>
                       <td>-</td>
@@ -154,46 +154,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  <?php } ?>
               </tr>
 					         <tr>
-			        			<td colspan="3" style="text-align: right;"><b>GST</b></td>
+			        			<td colspan="3" style="text-align: right;"><b><?= $this->lang->line('gst'); ?></b></td>
 					             <td> <?= $current['0']['gst_per']?> % </td>
 								  <td> <?= $current['0']['gst_amount']?> &#8377;</td>
 								   <td> <?= $current['0']['grand_total']?> &#8377;</td>
 							</tr>
 							  <tr>
-              <th> Amount In Words</th>
+              <th> <?= $this->lang->line('amount_in_words'); ?></th>
               <td colspan="3"> <?php echo $amount_in_words; ?></td>
-              <th>Grand Total</th>
+              <th><?= $this->lang->line('grand_total'); ?></th>
               <td> <?= round($current['0']['grand_total'])?> &#8377;</td>
               </tr>
 			        		</tbody>
 							</table>
                <div class="row invoice-info">
                 <div class="col-sm-12 invoice-col">
-                  <b> Terms and Conditions : </b>
+                  <b> <?= $this->lang->line('terms'); ?> : </b>
                    <ul>
-                     <li> Payment Terms</li>
-                     <li> Delivery Schedule</li>
-                     <li> Billing Should be raised in the name of M/S CHOUDHARY & COMPANY.</li>
-                     <li> Please Indicate PO Number on the Challan & Invoice.</li>
+                     <li> <?= $this->lang->line('pan'); ?><?= $this->lang->line('term_payment'); ?></li>
+                     <li> <?= $this->lang->line('term_delivery'); ?></li>
+                     <li> <?= $this->lang->line('term_billling'); ?>.</li>
+                     <li> <?= $this->lang->line('term_po_note'); ?>.</li>
                    </ul>
                 </div>
                 <div class="col-sm-4 invoice-col">
-                  <b> Prepared By :</b>
+                  <b> <?= $this->lang->line('prepared_by'); ?> :</b>
                   <br></br>
                   <br></br>
-                  <b> Purchase Dept.</b>
+                  <b> <?= $this->lang->line('purchase_dept'); ?>.</b>
                 </div>
                 <div class="col-sm-4 invoice-col">
-                  <b> Checked By :</b>
+                  <b> <?= $this->lang->line('checked_by'); ?> :</b>
                   <br></br>
                   <br></br>
-                  <b> Accounts Dept.</b>
+                  <b> <?= $this->lang->line('accounts_dept'); ?>.</b>
                 </div>
                 <div class="col-sm-4 invoice-col">
-                  <b> Approved By :</b>
+                  <b> <?= $this->lang->line('approved_by'); ?> :</b>
                   <br></br>
                   <br></br>
-                  <b>  Director </b>
+                  <b>  <?= $this->lang->line('director'); ?> </b>
                 </div>
               </div>
                 <!-- /.col -->

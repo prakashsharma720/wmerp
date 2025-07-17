@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?= $this->lang->line('pending_requisition_slips_for_issue')?>
       </span>
        <div class="button-group float-right">
          <a href="<?php echo base_url(); ?>index.php/Requisition_slips/add" class="btn btn-success" data-toggle="tooltip" title="New Requisition"><i class="fa fa-plus"></i></a>
@@ -114,7 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"> Requisition Slip (<?php echo $inv_number1 ?>) Details </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('requisition_slip_details')?>  (<?php echo $inv_number1 ?>) </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>

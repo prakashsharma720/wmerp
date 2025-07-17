@@ -162,13 +162,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input type="text"  placeholder=" <?= $this->lang->line('no_of_bags') ?>" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 			</td>
 			<td>
-				<input type="text"  placeholder=" bag weight" name="bag_weight[]" class="form-control bag_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+				<input type="text"  placeholder=" <?= $this->lang->line('bag_weight'); ?>" name="bag_weight[]" class="form-control bag_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 			</td>
 			<td>
-				<input type="text"  placeholder=" tailing in mt" name="tailing_qty_in_mt[]" class="form-control tailing_qty_in_mt"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" readonly="readonly">
+				<input type="text"  placeholder=" <?= $this->lang->line('tailing_qty_in_mt'); ?>"" name="tailing_qty_in_mt[]" class="form-control tailing_qty_in_mt"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" readonly="readonly">
 			</td>
 			<td>
-				<input type="text"  placeholder="total for lot" name="total_tailing_for_lot[]" class="form-control total_tailing_for_lot"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:210px;" >
+				<input type="text"  placeholder="<?= $this->lang->line('total_tailing_for_lot'); ?>" name="total_tailing_for_lot[]" class="form-control total_tailing_for_lot"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:210px;" >
 			</td>
 			<td>
 				<input type="text"  placeholder=" <?= $this->lang->line('gride_name') ?>" name="location_of_storage[]" class="form-control location_of_storage"  autofocus style="width:150px;" >
@@ -187,7 +187,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        </select>
 			</td>
 			<td>
-				<input type="text"  placeholder="used_qty" name="used_qty[]" class="form-control used_qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+				<input type="text"  placeholder="<?= $this->lang->line('used_qty'); ?>" name="used_qty[]" class="form-control used_qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 			</td>+
 			<td>
 				<input type="text"  placeholder=" <?= $this->lang->line('balance_qty') ?>" name="balance_qty[]" class="form-control balance_qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" readonly="readonly">

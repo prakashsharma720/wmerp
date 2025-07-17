@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('grades_master'); ?></h3>
         <div class="pull-right ">
 			<?php echo validation_errors();?>
 		</div>
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				 <!-- /form -->
 				<div class="col-md-6">
 				  <div class="table-responsive">
-					<h5> Grades List</h5>
+					<h5> <?=$this ->lang->line('grades_list')?></h5>
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>

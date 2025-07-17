@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?> !</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?> !</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('purchase_order_list')?> 
       </span>
       <div class="button-group float-right">
          <a href="<?php echo base_url(); ?>index.php/Purchase_order/add" class="btn btn-success" data-toggle="tooltip" title="New PO"><i class="fa fa-plus"></i></a>
@@ -46,13 +46,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Order Type </th>
+              <th ><?=$this ->lang ->line('sr_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('order_type')?>  </th>
               <th> PO No </th>
-              <th style="white-space: nowrap;"> Supplier Name </th>
-              <th style="white-space: nowrap;"> Date </th>
-              <th style="white-space: nowrap;">Total Amount (&#8377;)</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('supplier_name')?>  </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('date')?>  </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('total_amount')?>  (&#8377;)</th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?> </th>
             </tr>
           </thead>
           <tbody>
@@ -103,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Purchase Order (<?php echo $obj['po_number']?>) Details </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('purchase_order')?>  (<?php echo $obj['po_number']?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -115,11 +115,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-5">Item Name</div>
+                                <div class="col-md-5"><?=$this ->lang ->line('item_name')?></div>
                                 <!-- <div class="col-md-2">Grade </div> -->
-                                <div class="col-md-2">Qty </div>
-                                <div class="col-md-2">Price (&#8377;)</div>
-                                <div class="col-md-2">Amount (&#8377;)</div>
+                                <div class="col-md-2"><?=$this ->lang ->line('qty')?> </div>
+                                <div class="col-md-2"><?=$this ->lang ->line('price')?> (&#8377;)</div>
+                                <div class="col-md-2"><?=$this ->lang ->line('amount')?> (&#8377;)</div>
                               </div>
 
                                     <?php
@@ -143,15 +143,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin: 0px;
                                   margin-bottom: 6px;" >
                               <div class="col-md-4">
-                                <label class="control-label"> Quatation No : </label>
+                                <label class="control-label"><?=$this ->lang ->line('quatation_no')?>  : </label>
                                 <span > <?php echo $obj['quotation_no']?></span>
                               </div>
                                <div class="col-md-4">
-                                <label class="control-label"> Total Qty : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('total_qty')?>  : </label>
                                 <span > <?php echo $obj['total_qty']?></span>
                               </div>
                               <div class="col-md-4">
-                                <label class="control-label"> Total Amount: </label>
+                                <label class="control-label"> <?=$this ->lang ->line('total_amount')?> : </label>
                                 <span > <?php echo round($obj['total_amount']).' &#8377;' ?></span>
                               </div>
 
@@ -160,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin: 0px;
                                   margin-bottom: 6px;" >
                               <div class="col-md-4">
-                                <label class="control-label"> Discount : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('discount')?>  : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['discount_amount'].' &#8377; '; 
@@ -168,11 +168,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   </span>
                               </div>
                                <div class="col-md-4">
-                                <label class="control-label"> GST : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('gst')?>  : </label>
                                 <span > <?php echo round($obj['gst_amount']).' &#8377;'?></span>
                               </div>
                               <div class="col-md-4">
-                                <label class="control-label"> Grand Total: </label>
+                                <label class="control-label"> <?=$this ->lang ->line('grand_total')?> : </label>
                                 <span > <?php echo round($obj['grand_total']).' &#8377;' ?></span>
                               </div>
                             </div>
@@ -180,7 +180,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin: 0px;
                                   margin-bottom: 6px;" >
                               <div class="col-md-4">
-                                <label class="control-label"> Delivery Period : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('delivery_period')?>  : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['delivery_period']; 
@@ -188,11 +188,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   </span>
                               </div>
                                <div class="col-md-4">
-                                <label class="control-label"> Payment Mode : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('payment_mode')?>  : </label>
                                 <span > <?php echo $obj['payment_term']?></span>
                               </div>
                               <div class="col-md-4">
-                                <label class="control-label"> Reference By: </label>
+                                <label class="control-label"> <?=$this ->lang ->line('reference_by')?> : </label>
                                 <span > <?php echo $obj['reference_by'] ?></span>
                               </div>
                             </div>
@@ -200,7 +200,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin: 0px;
                                   margin-bottom: 6px;" >
                               <div class="col-md-12">
-                                <label class="control-label"> Comment : </label>
+                                <label class="control-label"> <?=$this ->lang ->line('comment')?>  : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['comment']; 
@@ -210,7 +210,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang ->line('close')?> </button>
                           </div>
                         </div>
                         </form>
@@ -224,16 +224,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('confirm_header')?>  </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete PO Number <b><?php echo $obj['po_number'];?> </b>? </p>
+                            <p><?=$this ->lang ->line('confirm_delete')?>  <?=$this ->lang ->line('po_no')?>  <b><?php echo $obj['po_number'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang ->line('yes')?>  </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?=$this ->lang ->line('no')?>  </button>
                           </div>
                         </div>
                         </form>

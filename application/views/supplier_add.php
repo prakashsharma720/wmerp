@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"> <?= $title ?></h3>
+        <h3 class="card-title"> <?= $this->lang->line('add_new_supplier'); ?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 
@@ -156,11 +156,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			<div class="form-check">
 				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Yes" checked> <?=$this ->lang ->line('yes')?></input>
 				               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Un-registered Dealer"  > Un-registered Dealer/Person </input>
+				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Un-registered Dealer"  > <?= $this->lang->line('unregistered_dealer'); ?> </input>
 		            		</div>
 		            	</div>
 		            	<div class="col-md-4 col-sm-4 gst_div">
-							<b>GSTIN</b><span>( Ex. : 08ABCDE1234K1AZ)</span>
+							<b><?=$this ->lang ->line('gstin')?></b><span>( Ex. : 08ABCDE1234K1AZ)</span>
 			            	<input type="text"  placeholder="Ex. 08ABCDE12341AZ" name="gst_no" class="form-control gstnumber" value=""autofocus autocomplete="off"   maxlength="15" minlength="15"  >
 						</div>
 		        		

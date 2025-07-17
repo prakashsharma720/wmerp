@@ -34,11 +34,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Date <span class="required">*</span></label>
+			            	<label class="control-label"><?=$this ->lang ->line('date')?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?= date('d-m-Y')?>" autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Name of Supplier <span class="required">*</span></label>
+			            	<label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?> <span class="required">*</span></label>
 			            	 <?php  
 			            		echo form_dropdown('supplier_id', $suppliers,' ','required="required"')
 			            	?>

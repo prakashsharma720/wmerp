@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?= $this->lang->line('pending_purchase_order_for_approval') ?>
       </span>
       <div class="button-group float-right">
          <a href="<?php echo base_url(); ?>index.php/Purchase_order/add" class="btn btn-success" data-toggle="tooltip" title="New PO"><i class="fa fa-plus"></i></a>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
+              <th ><?= $this->lang->line('sr_no'); ?>.</th>
               <th> <?=$this ->lang ->line('po_no')?> </th>
               <th style="white-space: nowrap;"> <?=$this ->lang ->line('supplier_name')?> </th>
               <th style="white-space: nowrap;"><?=$this ->lang ->line('date')?> </th>

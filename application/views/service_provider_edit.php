@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            </div>
 						<div class="col-md-4 col-sm-4">
 			            	<label class="control-label"><?= $this->lang->line('service_provider_name') ?></label>
-							<input type="text" id="firstName" placeholder="Enter name" name="service_provider_name" class="form-control" value="<?php echo $current[0]->service_provider_name; ?>" autofocus>
+							<input type="text" id="firstName" placeholder="<?= $this->lang->line('enter_name'); ?>" name="service_provider_name" class="form-control" value="<?php echo $current[0]->service_provider_name; ?>" autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4">
 			            	<label  class="control-label"><?= $this->lang->line('service_provider_code') ?></label>
@@ -189,15 +189,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 						<div class="col-md-4 col-sm-4">
-			            	<b> PAN </b> <span>(<?= $this->lang->line('permanent_account_number') ?>.) </span>
+			            	<b> <?= $this->lang->line('pan'); ?> </b> <span>(<?= $this->lang->line('permanent_account_number') ?>.) </span>
 			                <input type="text" id="lastName" placeholder="<?= $this->lang->line('enter_pan') ?>" name="pan_no" class="form-control pan_no" value="<?php echo $current[0]->pan_no; ?>" autofocus   autocomplete="off" maxlength="10" minlength="10" >
 			            </div>
 		        		<div class="col-md-4 col-sm-4 gst_div">
-			            	<b>GSTIN</b><span>( Ex. : 08ABCDE1234K1AZ)</span>
+			            	<b><?= $this->lang->line('gstin'); ?></b><span>( Ex. : 08ABCDE1234K1AZ)</span>
 			            		  <input type="text"  placeholder="Ex. 08ABCDE12341AZ" name="gst_no" class="form-control gstnumber" value="<?php echo $current[0]->gst_no; ?>" autofocus autocomplete="off"   maxlength="15" minlength="15" >
 						</div>
 			            <div class="col-md-4 col-sm-4">
-			            	<b> TAN </b> <span>(Tax Deduction Account No.) </span>
+			            	<b> <?= $this->lang->line('tan'); ?></b> <span>(Tax Deduction Account No.) </span>
 			                <input type="text" id="firstName" placeholder="Enter TIN No." name="tds" class="form-control tan_number" value="<?php echo $current[0]->tds; ?>" autofocus   autocomplete="off"   maxlength="10" minlength="10">
 			            </div>
 		        	</div>
@@ -258,11 +258,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
 			            	<label  class="control-label"> <?= $this->lang->line('branch_name') ?></label>
-			                <input type="text"  placeholder="Enter branch name" name="branch_name" class="form-control" value="<?php echo $current[0]->branch_name; ?>" autofocus>
+			                <input type="text"  placeholder="<?= $this->lang->line('enter_branch_name'); ?>" name="branch_name" class="form-control" value="<?php echo $current[0]->branch_name; ?>" autofocus>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
 			            	<label class="control-label"> <?= $this->lang->line('ifsc_code') ?></label>
-			                <input type="text" id="firstName" placeholder="Enter IFSC Code" name="ifsc_code" class="form-control" value="<?php echo $current[0]->ifsc_code; ?>" autofocus>
+			                <input type="text" id="firstName" placeholder="<?= $this->lang->line('enter_ifsc_code'); ?>" name="ifsc_code" class="form-control" value="<?php echo $current[0]->ifsc_code; ?>" autofocus>
 			            </div>
 		        	</div>
 		        </div>
@@ -270,7 +270,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        	<div class="row col-md-12">
 		        		 <div class="col-md-4 col-sm-4 ">
 			            	<label class="control-label"> <?= $this->lang->line('account_number') ?></label>
-			                <input type="text" id="firstName" placeholder="Enter account number" name="account_no" class="form-control" value="<?php echo $current[0]->account_no; ?>" autofocus>
+			                <input type="text" id="firstName" placeholder="enter_account_number" name="account_no" class="form-control" value="<?php echo $current[0]->account_no; ?>" autofocus>
 			            </div>
 		        		<div class="col-md-4 col-sm-4 date_of_approval_div">
 			            	<label class="control-label"> <?= $this->lang->line('date_of_approval') ?></label>

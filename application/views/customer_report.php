@@ -20,7 +20,7 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <label class="card-title"><?php  echo $title; ?></label>
+      <label class="card-title"><?=$this ->lang ->line('customers_report')?></label>
        <div class="pull-right error_msg">
         <form method="post" action="<?php echo base_url(); ?>index.php/Customers/createXLS">
 
@@ -72,7 +72,7 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
                   
                  <div class="col-md-4 col-sm-4 ">
                    <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
               </div>

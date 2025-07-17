@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?=$this ->lang->line('edit_requisition_slip')?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 
@@ -21,18 +21,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Date <span class="required">*</span></label>
+			            	<label class="control-label"><?=$this ->lang->line('date')?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } ?>" autofocus required >
 			            </div>
 			               <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Requisition No <span class="required">*</span></label>
-			            	<input type="text"  placeholder=" Requisition Number" name="" class="form-control" value="<?= $requisition_code ?>" autocomplete="off" autofocus  readonly="readonly">
+			            	<label  class="control-label"> <?=$this ->lang->line('requisition_no')?> <span class="required">*</span></label>
+			            	<input type="text"  placeholder=" <?=$this ->lang->line('requisition_no')?>" name="" class="form-control" value="<?= $requisition_code ?>" autocomplete="off" autofocus  readonly="readonly">
 			            	<input type="hidden" name="requisition_slip_no" value="<?= $requisition_slip_no ?>">
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"> <?=$this ->lang->line('department')?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?=$this ->lang->line('select_department')?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
@@ -54,11 +54,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		                <div class="form-group">
 			        <div class="row col-md-12">
 			        	<div class="col-md-3 col-sm-3 ">
-					        <label  class="control-label"> Requisition For : </label>
+					        <label  class="control-label"> <?=$this ->lang->line('requisition_for')?> : </label>
 					    </div>
 				        <div class="col-md-9 col-sm-9 ">
 				        	<select name="rs_for" class="form-control select2 rs_for" required="required">
-								<option value=""> Select Option</option>
+								<option value=""> <?=$this ->lang->line('select_option')?></option>
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif; ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 
@@ -91,9 +91,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="form-group for_raw_materials ">
 			        <div class="row col-md-12">
 			        	<div class="col-md-6 col-sm-6 ">
-								<label  class="control-label"> Product <span class="required">*</span></label>
+								<label  class="control-label"> <?=$this ->lang->line('product')?> <span class="required">*</span></label>
 								<select name="finish_good_id" class="form-control select2 product_name" required="required">
-									<option value=""> Select Mineral Name</option>
+									<option value=""> <?=$this ->lang->line('select_mineral_name')?></option>
 					                <?php
 					                 if ($fg_minerals): ?> 
 					                  <?php 
@@ -112,14 +112,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 							</div>
 							<div class="col-md-6 col-sm-6 ">
-								<label  class="control-label"> Grade <span class="required">*</span></label>
+								<label  class="control-label"> <?=$this ->lang->line('grade')?> <span class="required">*</span></label>
 								<select name="finish_grade" class="form-control select2 grade_name" required="required">
-									<option value=""> Select Finish Grade</option>
+									<option value=""> <?=$this ->lang->line('select_finish_grade')?></option>
 					                <?php
 					                 if ($fg_grades): ?> 
 					                  <?php 
@@ -132,19 +132,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 							</div>
 			        </div>
 			        <div class="row col-md-12">
 			        	<div class="col-md-6 col-sm-6 ">
-								<label  class="control-label"> Lot No. <span class="required">*</span></label>
-								<input type="text" placeholder="Enter Lot no " name="lot_no" class="form-control lot_no" required="required" value="<?= $lot_no?>" autofocus>
+								<label  class="control-label"> <?=$this ->lang->line('lot_no')?>. <span class="required">*</span></label>
+								<input type="text" placeholder="<?=$this ->lang->line('enter_lot_no')?> " name="lot_no" class="form-control lot_no" required="required" value="<?= $lot_no?>" autofocus>
 							</div>
 							<div class="col-md-6 col-sm-6 ">
-								<label  class="control-label"> Batch No <span class="required">*</span></label>
-								<input type="text" placeholder="Enter batch no " name="batch_no" class="form-control batch_no" required="required" value="<?= $batch_no?>" autofocus>
+								<label  class="control-label"> <?=$this ->lang->line('batch_no')?> <span class="required">*</span></label>
+								<input type="text" placeholder="<?=$this ->lang->line('enter_batch_no')?> " name="batch_no" class="form-control batch_no" required="required" value="<?= $batch_no?>" autofocus>
 							</div>
 			        </div>
 			    </div>
@@ -153,9 +153,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        <div class="row col-md-12">
 
 							<div class="col-md-6 col-sm-6">
-								<label  class="control-label"> Equipment Name <span class="required">*</span></label>
+								<label  class="control-label"> <?=$this ->lang->line('equipment_name')?> <span class="required">*</span></label>
 								<select name="equipment_name" class="form-control select2 equipment_name">
-									<option value=""> Select Equipment</option>
+									<option value=""> <?=$this ->lang->line('select_equipment')?></option>
 					                <?php
 					                 if ($equipments): ?> 
 					                  <?php 
@@ -168,13 +168,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 							</div>
 							<div class="col-md-6 col-sm-6">
-			        	 		<label  class="control-label"> Purpose <span class="required">*</span></label>
-				            	<textarea class="form-control purpose" rows="2" placeholder="Enter purpose here" name="purpose" value="<?= $purpose ?>" > <?= $purpose ?></textarea>
+			        	 		<label  class="control-label"> <?=$this ->lang->line('purpose')?> <span class="required">*</span></label>
+				            	<textarea class="form-control purpose" rows="2" placeholder="<?=$this ->lang->line('enter_purpose_here')?>" name="purpose" value="<?= $purpose ?>" > <?= $purpose ?></textarea>
 				            </div>
 			        </div>
 			    </div>
@@ -185,12 +185,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        		<table class="table table-bordered " id="maintable" >
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
-			        					<th style="width: 5%;">  Sr.No.</th>
-			        					<th style="width: 30%;"> Product Name</th>
-			        					<th style="width: 15%;"> QTY</th>
-										<th style="width: 15%;"> Unit</th>
-			        					<th style="width: 20%;"> Description</th>
-			        					<th style="width: 15%;"> Action</th>
+			        					<th style="width: 5%;">  <?=$this ->lang->line('sr_no')?></th>
+			        					<th style="width: 30%;"> <?=$this ->lang->line('product_name')?></th>
+			        					<th style="width: 15%;"> <?=$this ->lang->line('qty')?></th>
+										<th style="width: 15%;"><?=$this ->lang->line('unit')?></th>
+			        					<th style="width: 20%;"> <?=$this ->lang->line('description')?></th>
+			        					<th style="width: 15%;"> <?=$this ->lang->line('action')?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -212,12 +212,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										                        <?php endif; ?>
 										                    <?php endforeach; ?>
 										                <?php else: ?>
-										                    <option value="0">No result</option>
+										                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 										                <?php endif; ?>
 										            </select>
 									   			</td>
 												<td>
-													<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty"  value="<?php echo $gir_detail['quantity']; ?>"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" autofocus >
+													<input type="text"  placeholder="<?=$this ->lang->line('enter_qty')?>" name="qty[]" class="form-control qty"  value="<?php echo $gir_detail['quantity']; ?>"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" autofocus >
 												</td>
 												<td>
 										        	<select name="unit_id[]" class="form-control  units" required="required">
@@ -231,13 +231,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										                        <?php endif; ?>
 										                    <?php endforeach; ?>
 										                <?php else: ?>
-										                    <option value="0">No result</option>
+										                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 										                <?php endif; ?>
 											            </select>
 													</td>	
 												<td>
 													<div class="form-group">
-									                <textarea class="form-control description" rows="3" placeholder="Enter description" name="description[]" value="<?php echo $gir_detail['description']; ?>"><?php echo $gir_detail['description']; ?></textarea>
+									                <textarea class="form-control description" rows="3" placeholder="<?=$this ->lang->line('enter_description')?>" name="description[]" value="<?php echo $gir_detail['description']; ?>"><?php echo $gir_detail['description']; ?></textarea>
 									                 </div>
 												</td>
 												<td>
@@ -250,9 +250,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			</tbody>
 			        			<tfoot>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b>Total</b></td>
+			        					<td colspan="2" style="text-align: right;"><b><?=$this ->lang->line('total')?></b></td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total Qty" name="total_qty" class="form-control total_qty"  value="<?= $total_qty ?>" readonly >
+			        						<input type="text"  placeholder="<?=$this ->lang->line('total_qty')?>" name="total_qty" class="form-control total_qty"  value="<?= $total_qty ?>" readonly >
 			        					</td>
 			        					<td colspan="3" style="text-align: right;"></td>
 			        				</tr>
@@ -264,16 +264,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		         <div class="form-group">
 			        <div class="row col-md-12">
-		        		<label  class="control-label"> Comment</label>
-			    		<textarea class="form-control Comment" rows="2" placeholder="Enter comment here" name="comment" value="<?= $comment ?>"> <?= $comment ?></textarea>
+		        		<label  class="control-label"> <?=$this ->lang->line('comment')?></label>
+			    		<textarea class="form-control Comment" rows="2" placeholder="<?=$this ->lang->line('enter_comment_here')?>" name="comment" value="<?= $comment ?>"> <?= $comment ?></textarea>
 			    	</div>
 			    </div>
 		        
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang->line('submit')?></button>
 		        		</div>
 		        	</div>
 		        </div>
@@ -290,24 +290,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<td>1</td>
 			<td> 
 			<select name="products[]" class="form-control drop" required>
-				<option value=""> Select Item</option>
+				<option value=""> <?=$this ->lang->line('select_item')?></option>
 	            <?php if ($items): ?> 
 	                <?php foreach ($items as $value) : ?>
 	                        <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
 	                <?php endforeach; ?>
 	            <?php else: ?>
-	                <option value="0">No result</option>
+	                <option value="0"><?=$this ->lang->line('no_result')?></option>
 	            <?php endif; ?>
 	        </select>
 
 				</td>
 			
 			<td>
-				<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   required='required'>
+				<input type="text"  placeholder="<?=$this ->lang->line('enter_qty')?>" name="qty[]" class="form-control qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   required='required'>
 			</td>
 			<td>
         	 <select name="unit_id[]" class="form-control  units" required="required">
-        		 <option value="">Select</option>
+        		 <option value=""><?=$this ->lang->line('select')?></option>
 	                <?php
 	                 if ($units): ?> 
 	                  <?php 
@@ -316,7 +316,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		                            <option value="<?= $value['id'] ?>"><?= $value['unit_name'] ?></option>
 	                    <?php   endforeach;  ?>
 	                <?php else: ?>
-	                    <option value="">No result</option>
+	                    <option value=""><?=$this ->lang->line('no_result')?></option>
 	                <?php endif; ?>
 	            </select>
 			</td>
@@ -333,9 +333,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</tbody>
 	<tfoot>
 	<tr>
-		<td colspan="2" style="text-align: right;"><b>Total</b></td>
+		<td colspan="2" style="text-align: right;"><b><?=$this ->lang->line('total')?></b></td>
 		<td colspan="2">
-			<input type="text"  placeholder="Total Qty" name="total_qty" class="form-control total_qty"  readonly >
+			<input type="text"  placeholder="<?=$this ->lang->line('total_qty')?>" name="total_qty" class="form-control total_qty"  readonly >
 		</td>
 	</tr>
 

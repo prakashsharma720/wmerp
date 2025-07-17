@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
           <?php } }?>
-           <button type="submit" class="btn btn-info"> Export </button>
+           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
          </form>
         <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
       </div>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="col-md-4 col-sm-3 ">
                 <label  class="control-label">Filter By Department <span class="required">*</span></label>
                 <select name="area" class="form-control select2 employees" >
-                   <option value="0">Please Select Department</option>
+                   <option value="0"><?= $this->lang->line('please_select_department') ?></option>
                     <?php
                          if ($areas): ?> 
                           <?php 
@@ -54,18 +54,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                <option value="<?= $value['id'] ?>"><?= $value['department_name'] ?></option>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result') ?></option>
                         <?php endif; ?>
                 </select>
               </div>
                
              
              <div class="col-md-4 col-sm-3">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-3">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?= $this->lang->line('upto_date') ?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
               </div>
@@ -73,10 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <div class="col-md-6 col-sm-6 ">
                    </div>
                    <div class="col-sm-4 col-sm-4   ">
-                      <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
+                      <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
                       <input type="submit" class="btn btn-primary" value="Search" /> 
                       <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                      <a href="<?php echo base_url(); ?>index.php/Machinary_equipments/report" class="btn btn-danger" > Reset</a>
+                      <a href="<?php echo base_url(); ?>index.php/Machinary_equipments/report" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
                   </div>
                 </div>
             
@@ -87,18 +87,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> PME No </th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('pme_no') ?> </th>
               <!-- <th style="white-space: nowrap;"> Date </th> -->
-              <th style="white-space: nowrap;"> Department </th>
-              <th style="white-space: nowrap;"> Created By </th>
-              <th style="white-space: nowrap;"> Equipment Name </th>
-              <th style="white-space: nowrap;"> Equipment ID </th>
-              <th style="white-space: nowrap;"> Model / Type </th>
-              <th style="white-space: nowrap;"> Sr No </th>
-              <th style="white-space: nowrap;"> Make </th>
-              <th style="white-space: nowrap;"> Year of Installation </th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('created_by') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('equipment_name') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('equipment_id') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('model_type') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('sr_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('make') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('year_of_installation') ?> </th>
+              <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>

@@ -39,7 +39,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?></span>
+            <span class="card-title"><?=$this ->lang ->line('customers_list')?></span>
             <div class="pull-right error_msg">
                 <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-success" data-toggle="tooltip"
                     title="New customer"><i class="fa fa-plus"></i></a>
@@ -119,7 +119,7 @@ $data=explode('?', $current_page);
                     </div>
                     <div class="col-md-3 col-sm-3 ">
                         <label class="control-label" style="visibility: hidden;"><?= $this->lang->line('grade') ?></label><br>
-                        <input type="submit" class="btn btn-primary" value="Search" />
+                        <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" />
                         <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                         <a href="<?php echo $data[0]?>" class="btn btn-danger"> <?= $this->lang->line('reset') ?></a>
                     </div>

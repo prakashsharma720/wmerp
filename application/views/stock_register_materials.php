@@ -25,7 +25,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('material_stock_register')?>
       </span>
        <div class="button-group float-right">
         
@@ -161,7 +161,7 @@ $data=explode('?', $current_page);
                  <div class="col-md-4 col-sm-4 "></div>
                  <div class="col-md-4 col-sm-4 d-flex">
                    <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?> </label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?> </a>
               </div>
@@ -179,7 +179,7 @@ $data=explode('?', $current_page);
               <!-- <th style="white-space: nowrap;">  Reference </th> -->
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('date')?>  </th>
               <th style="white-space: nowrap;"> <?=$this ->lang ->line('material_description')?>  </th>
-              <th style="white-space: nowrap;">  <?=$this ->lang ->line('issur_gir_no')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('issue_gir_no')?>  </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('qty')?>  </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('status')?>   </th>
               <th style="white-space: nowrap;">  <?=$this ->lang ->line('employee')?>   </th>

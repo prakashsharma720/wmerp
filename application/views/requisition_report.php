@@ -25,7 +25,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('requisition_slip_report')?>
       </span>
        <div class="pull-right error_msg">
         <form method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/createXLS">
@@ -102,7 +102,7 @@ $data=explode('?', $current_page);
                   
                  <div class="col-md-4 col-sm-4 ">
                    <label  class="control-label" style="visibility: hidden;">   <?= $this->lang->line('grade'); ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo $data[0]?>" class="btn btn-danger" >   <?= $this->lang->line('reset'); ?></a>
               </div>
@@ -134,13 +134,13 @@ $data=explode('?', $current_page);
            <?php
           $i=1;foreach($requisition_data as $obj){ ?>
             <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Requisition No </th>
-              <th style="white-space: nowrap;"> Requisition Date </th>
-              <th style="white-space: nowrap;">Request By </th>
-              <th style="white-space: nowrap;"> Status </th>
-              <th style="white-space: nowrap;"> Action Date </th>
-              <th style="white-space: nowrap;"> Action By </th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_date')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('request_by')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('status')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_date')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_by')?> </th>
               </tr>
               <tr >
                   <td rowspan="2"><?php echo $i;?></td>
@@ -190,7 +190,7 @@ $data=explode('?', $current_page);
                 
                  <tr>
                   <th style="white-space: nowrap;">   <?= $this->lang->line('material_name'); ?> </th>
-                  <th colspan="5" style="white-space: nowrap;"> Required Qty (Unit)</th>
+                  <th colspan="5" style="white-space: nowrap;"> <?=$this ->lang ->line('required_qty')?> (Unit)</th>
                   <!-- <th style="white-space: nowrap;"> Issue Qty (Unit)</th>
                   <th style="white-space: nowrap;"> Pending Qty (Unit)</th> -->
                 </tr>

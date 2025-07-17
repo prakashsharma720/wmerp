@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?=$this ->lang->line('transporter_evaluation_panel')?></h3>
         <div class="pull-right error_msg">
 			<?php echo validation_errors();?>
 			

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i><?=$this ->lang->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -13,14 +13,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?= $this->lang->line('hsn_master'); ?></h3>
         <div class="pull-right ">
 			<?php echo validation_errors();?>
 		</div>
@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				 <!-- /form -->
 				<div class="col-md-6">
 				  <div class="table-responsive">
-					<h5> HSN List</h5>
+					<h5> <?= $this->lang->line('hsn_list'); ?></h5>
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<?php $i=1;foreach($HSNs as $HSN) { ?>
 							<tr>
 								<td><?= $i ?></td>
-								<td><?= $HSN['mineral_name']?></td>
+								<td><?=$this ->lang->line('mineral_name')?></td>
 								<td><?= $HSN['hsn_code']?></td>
 								<td> <a class="btn btn-xs btn-info btnEdit" href="<?php echo base_url(); ?>index.php/HSN/index/<?php echo $HSN['id'];?>"><i class="fa fa-edit"></i></a></td>
 							</tr>

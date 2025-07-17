@@ -33,7 +33,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('gir_register_list')?>
       </span>
        <div class="button-group float-right">
       </div>
@@ -63,7 +63,7 @@ $data=explode('?', $current_page);
             </div>
 			
             <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"><?=$this ->lang ->line('name_of_suppiler')?>  <span class="required">*</span></label>
+                <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?>  <span class="required">*</span></label>
                 <select name="supplier_id" class="form-control select2 suppliers" >
                     <option value="0"> <?=$this ->lang ->line('select_supplier')?> </option>
                     <?php
@@ -114,7 +114,7 @@ $data=explode('?', $current_page);
                 </div>
                  <div class="col-md-4 col-sm-4 ">
                    <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?> </label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
                   <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?> </a>
               </div>
@@ -178,7 +178,7 @@ $data=explode('?', $current_page);
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Material Return Register (<?php echo $gir_id_code?>) Details </h4>
+                             <h4 class="modal-title"> <?= $this->lang->line('material_return_register') ?> (<?php echo $gir_id_code?>)<?= $this->lang->line('details') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -190,9 +190,9 @@ $data=explode('?', $current_page);
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-3">Item Name</div>
-                                <div class="col-md-3">Out Qty </div>
-                                <div class="col-md-5">Description </div>
+                               <div class="col-md-3"><?= $this->lang->line('item_name') ?></div>
+        <div class="col-md-3"><?= $this->lang->line('out_qty') ?></div>
+        <div class="col-md-5"><?= $this->lang->line('description') ?></div>
                               </div>
 
                                     <?php

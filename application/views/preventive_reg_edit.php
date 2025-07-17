@@ -37,33 +37,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="form-group">
                     <div class="row ">
                        <div class="col-md-4 col-sm-4 ">
-                          <label  class="control-label"> Plant Name <span class="required">*</span></label>
+                          <label  class="control-label"> <?= $this->lang->line('plant_name') ?> <span class="required">*</span></label>
                            <?php  echo form_dropdown('plant_id', $areas,$plant_id, '', 'required="required"')
                           ?>
                         </div>
                         <div class="col-md-4 col-sm-4 ">
-                          <label class="control-label"> Frequency <span class="required">*</span></label>
-                            <input type="text"  placeholder="Enter Frequency" name="frequency" class="form-control " value="<?= $frequency ?>"  required autofocus>
+                          <label class="control-label"> <?= $this->lang->line('frequency') ?> <span class="required">*</span></label>
+                            <input type="text"  placeholder="<?= $this->lang->line('enter_frequency') ?>" name="frequency" class="form-control " value="<?= $frequency ?>"  required autofocus>
                         </div>
                        <div class="col-md-4 col-sm-4">
-                          <label class="control-label"> Date Of Maintenance</label>
+                          <label class="control-label"> <?= $this->lang->line('date_of_maintenance') ?></label>
                             <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_maintenance" class="form-control date-picker" value="<?php echo date('d-m-Y',strtotime($date_of_maintenance)); ?>" placeholder="dd-mm-yyyy" required autofocus>
                         </div>
                        
                         
                        <div class="col-md-4 col-sm-4">
-                          <label class="control-label"> Date Of Next Maintenance</label>
+                          <label class="control-label"> <?= $this->lang->line('date_of_next_maintenance') ?></label>
                             <input type="text" data-date-formate="dd-mm-yyyy" name="next_maintenance_date" class="form-control date-picker" value="<?php echo date('d-m-Y',strtotime($next_maintenance_date)); ?>" placeholder="dd-mm-yyyy" required autofocus>
                         </div>
                         <div class="col-md-4 col-sm-4 ">
-                          <label class="control-label">Status</label>
+                          <label class="control-label"><?= $this->lang->line('status') ?></label>
                             <select class="form-control" name="status_of_work" >
                                         <?php if ($status_of_work == 'Pending'){ ?>
-                                              <option value="Pending" selected> Pending</option>
-                                              <option value="Completed" > Completed </option>
+                                              <option value="Pending" selected> <?= $this->lang->line('pending') ?></option>
+                                              <option value="Completed" > <?= $this->lang->line('completed') ?> </option>
                                         <?php } else{  ?>
-                                               <option value="Completed" selected> Completed </option>
-                                               <option value="Pending" > Pending</option>
+                                               <option value="Completed" selected> <?= $this->lang->line('completed') ?></option>
+                                               <option value="Pending" > <?= $this->lang->line('pending') ?></option>
                                         <?php } ?>
                                     </select>
                           </div>
@@ -78,15 +78,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="hidden" name="voucher_code" value="<?php echo $joborder_code;?>" required>
                         </div> -->
                         <div class="col-md-4 col-sm-4 ">
-                          <label class="control-label"> Remark </label>
-                            <textarea class="form-control remark" rows="3" placeholder="Enter Remark" name="remark" value="<?= $remark ?>" ><?= $remark ?></textarea>
+                          <label class="control-label"> <?= $this->lang->line('remark') ?> </label>
+                            <textarea class="form-control remark" rows="3" placeholder="<?= $this->lang->line('enter_remark') ?>" name="remark" value="<?= $remark ?>" ><?= $remark ?></textarea>
                         </div>
                     </div>
                  </div>
                    <div class="row col-md-12">
                       <div class="col-md-12 col-sm-12 ">
-                        <label class="control-label" style="visibility: hidden;"> Name</label><br>
-                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                        <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                        <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
                       </div>
                   </div>
               

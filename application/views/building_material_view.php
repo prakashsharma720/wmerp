@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title ?></h3>
+        <h3 class="card-title"><?=$this ->lang ->line('building_material_master')?></h3>
         <div class="pull-right ">
 		
 		</div>
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Building_materials/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				       New Material Code :  <label class="control-label"> <?= $bm_code_view ?></label>
+				       <?=$this ->lang ->line('new_material_code')?> :  <label class="control-label"> <?= $bm_code_view ?></label>
 				       <input type="hidden" name="code" value="<?= $bm_code_view ?>" > 
 				        	<div class="row col-md-12">
 					                <?php
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        if ($value['id'] == $categories_id): ?>
 						                        	<input type="hidden" name="categories_id" value="<?= $value['id'] ?>" >
 
-						                        <label class="control-label"> <?= $value['category_name'] ?> <?=$this ->lang ->line('name')?></label>
+						                        <label class="control-label"> <?=$this ->lang ->line('building_material')?> <?=$this ->lang ->line('name')?></label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>
