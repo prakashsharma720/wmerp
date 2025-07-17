@@ -2758,6 +2758,17 @@ $lang['select_period'] = 'Select Period';
 $lang['first_half'] = 'First Half';
 $lang['second_half'] = 'Second Half'; // Optional, if used
 
+$lang['attendance'] = 'Attendance';
+$lang['behaviour'] = 'Behaviour';
+$lang['results'] = 'Results';
+$lang['extra_efforts'] = 'Extra Efforts';
+$lang['honesty'] = 'Honesty';
+$lang['punctuality'] = 'Punctuality';
+$lang['reporting'] = 'Reporting';
+$lang['customer_relationship'] = 'Customer Relationship';
+$lang['total'] = 'Total';
+
+
 $lang['criteria_name'] = 'Criteria Name';
 $lang['criteria_point'] = 'Criteria Points';
 $lang['self_review'] = 'Self Review';
@@ -3158,6 +3169,9 @@ $lang['customer_name'] = 'Customer Name';
 $lang['email'] = 'Email';
 $lang['phone'] = 'Phone';
 $lang['action'] = 'Action';
+$lang['complaint_category'] = 'Complaint Category';
+$lang['add_reply'] = 'Add Reply';
+
 
 // finish             ---------------------------------------------------------------------
 

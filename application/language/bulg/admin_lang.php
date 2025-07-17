@@ -2696,6 +2696,17 @@ $lang['select_period'] = 'Изберете период';
 $lang['first_half'] = 'Първа половина';
 $lang['second_half'] = 'Втора половина';
 
+$lang['attendance'] = 'Присъствие';
+$lang['behaviour'] = 'Поведение';
+$lang['results'] = 'Резултати';
+$lang['extra_efforts'] = 'Допълнителни усилия';
+$lang['honesty'] = 'Честност';
+$lang['punctuality'] = 'Точност';
+$lang['reporting'] = 'Докладване';
+$lang['customer_relationship'] = 'Връзки с клиенти';
+$lang['total'] = 'Общо';
+
+
 $lang['criteria_name'] = 'Име на критерий';
 $lang['criteria_point'] = 'Точки за критерий';
 $lang['self_review'] = 'Самооценка';
@@ -3110,7 +3121,9 @@ $lang['customer_name'] = 'Име на клиента';
 $lang['email'] = 'Имейл';
 $lang['phone'] = 'Телефон';
 $lang['action'] = 'Действие';
-
+$lang['complaint_category'] = 'Категория на оплакване';
+$lang['add_reply'] = 'Добави отговор';
+ 
 // finish             ---------------------------------------------------------------------
 // all side bar  list name ---------------------------------------------------------------------------------
 $lang['master dashboard'] = 'Основно табло';

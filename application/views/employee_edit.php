@@ -131,7 +131,7 @@ img.profile-user-img.img-fluid.img-circle {
                         <ul class="list-group list-group-unbordered mb-3">
                         <div class="top-progress-bar">
                             <div class="top-progress-fill">
-                                <span class="progress-text"><?= $this->lang->line('profile_complete') ?> : 50%</span>
+                                <span class="progress-text"><?= $this->lang->line('profile_complete') ?></span>
                             </div>
                         </div>
                             <li class="list-group-item">

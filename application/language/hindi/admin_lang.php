@@ -38,7 +38,7 @@ $lang['rejected'] = 'अस्वीकृत';
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'कर्मचारी संपादित करें';
-$lang['profile_complete'] = 'प्रोफ़ाइल पूर्णता: 93%';
+$lang['profile_complete'] = 'प्रोफ़ाइल पूर्णता: 62%';
 $lang['email'] = 'ईमेल';
 $lang['mobile_no'] = 'मोबाइल नंबर';
 $lang['date_of_birth'] = 'जन्म तिथि';
@@ -2721,6 +2721,17 @@ $lang['select_period'] = 'अवधि चुनें';
 $lang['first_half'] = 'पहला भाग';
 $lang['second_half'] = 'दूसरा भाग'; // वैकल्पिक, यदि इस्तेमाल हो रहा हो
 
+$lang['attendance'] = 'उपस्थिति';
+$lang['behaviour'] = 'व्यवहार';
+$lang['results'] = 'परिणाम';
+$lang['extra_efforts'] = 'अतिरिक्त प्रयास';
+$lang['honesty'] = 'ईमानदारी';
+$lang['punctuality'] = 'समय पालन';
+$lang['reporting'] = 'रिपोर्टिंग';
+$lang['customer_relationship'] = 'ग्राहक संबंध';
+$lang['total'] = 'कुल';
+
+
 $lang['criteria_name'] = 'मापदंड नाम';
 $lang['criteria_point'] = 'मापदंड अंक';
 $lang['self_review'] = 'स्व-मूल्यांकन';
@@ -3084,7 +3095,7 @@ $lang['female'] = 'महिला';
 $lang['aadhaar_no'] = 'आधार नंबर';
 $lang['enter_aadhaar_no'] = 'आधार नंबर दर्ज करें';
 $lang['dob'] = 'जन्म तिथि';
-$lang['dd_mm_yyyy'] = 'दि-महीना-वर्ष';
+$lang['dd_mm_yyyy'] = 'दिन-महीना-वर्ष';
 $lang['upload_photo'] = 'फोटो अपलोड करें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल नहीं चुनी गई';
 $lang['medical_test'] = 'चिकित्सा परीक्षण';
@@ -3124,6 +3135,8 @@ $lang['customer_name'] = 'ग्राहक का नाम';
 $lang['email'] = 'ईमेल';
 $lang['phone'] = 'फोन';
 $lang['action'] = 'क्रिया';
+$lang['complaint_category'] = 'शिकायत श्रेणी';
+$lang['add_reply'] = 'उत्तर जोड़ें';
 
 
 // finish             ---------------------------------------------------------------------

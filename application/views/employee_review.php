@@ -65,7 +65,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value="Attendance" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value="<?= $this->lang->line('attendance') ?>" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="5" class="form-control" readonly>
@@ -94,7 +94,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value="Behaviour" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value="<?= $this->lang->line('behaviour') ?>" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="7.5" class="form-control" readonly>
@@ -122,7 +122,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value="Results" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value="<?= $this->lang->line('results') ?>" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="12.5" class="form-control" readonly>
@@ -150,7 +150,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value="Extra Efforts" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value="<?= $this->lang->line('extra_efforts') ?>" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="5" class="form-control" readonly>
@@ -178,7 +178,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value="Honesty" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value="Hon<?= $this->lang->line('honesty') ?>esty" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="5" class="form-control" readonly>
@@ -206,7 +206,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value="Punctuality" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value="<?= $this->lang->line('punctuality') ?>" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="5" class="form-control" readonly>
@@ -234,7 +234,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value="Reporting" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value="<?= $this->lang->line('reporting') ?>" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="7.5" class="form-control" readonly>
@@ -262,7 +262,7 @@
                                     <tr class="main_tr1">
                                         <td>
                                           
-                                            <input type="text" name="criteria[]" value=" Customer Relationship" class="form-control" readonly>
+                                            <input type="text" name="criteria[]" value=" <?= $this->lang->line('customer_relationship') ?>" class="form-control" readonly>
                                         </td>
                                         <td>
                                             <input type="text" name="criteria_point[]" value="2.5" class="form-control" readonly>
@@ -292,7 +292,7 @@
                                     <tr>
                                         <td>
                                           
-                                           <label for="total">Total</label>
+                                           <label for="total"><?= $this->lang->line('total') ?></label>
                                         </td>
                                         <td>
                                             <input type="text" name="total_marks" value="50" class="form-control" readonly>

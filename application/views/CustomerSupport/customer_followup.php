@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="row col-md-12 ">
                                 <div class="col-md-12 col-sm-12 ">
                                     <label class="control-label"><?= $this->lang->line('add_reply') ?> <span class="required">*</span></label>
-                                    <textarea class="form-control answer" rows="5" placeholder="Write Your Reply"
+                                    <textarea class="form-control answer" rows="5" placeholder="<?= $this->lang->line('write_your_reply') ?>"
                                         name="note" autofocus required></textarea>
                                 </div>
                             </div>

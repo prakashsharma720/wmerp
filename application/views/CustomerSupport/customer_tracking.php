@@ -239,7 +239,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <br>
                 <?php if($customer_data['status']!=='Closed' && $customer_data['status']!=='Resolved') {?>
                 <div class="card-footer">
-                  Add Reply
+                  <?= $this->lang->line('write_your_reply') ?>
                     <form class="form-horizontal" role="form" method="post"
                         action="<?php echo base_url(); ?>index.php/CustomerSupport_controller/add_followup"
                         enctype="multipart/form-data">
@@ -256,7 +256,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                     <div class="note-box">
                                         <textarea class="note-textarea form-control" name="note"
-                                            placeholder="Add Reply..."></textarea>
+                                            placeholder="<?= $this->lang->line('add_reply') ?>"></textarea>
 
                                         <div class="note-actions">
                                             <div class="note-icons">

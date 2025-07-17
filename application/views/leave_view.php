@@ -106,7 +106,7 @@ $data=explode('?', $current_page);
 
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;">Grade</label>
-                        <input type="submit" class="btn btn-xs btn-primary" value="Search" />
+                        <input type="submit" class="btn btn-xs btn-primary" value=" <?= $this->lang->line('search') ?>" />
                     </div>
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;"> Grade</label>
