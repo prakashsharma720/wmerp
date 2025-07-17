@@ -86,7 +86,7 @@ $this->load->model('notifications_model');
 		$data['employees'] = $this->Leave_model->getEmployeeDropdown();
 		// $this->Leave_model->sendMail('42') ;
 		//echo "<pre>"; print_r($data); exit;
-		$this->template->load('template','leave_view',$data);
+		$this->template->load('layout/template','leave_view',$data);
 	}
 
 	
@@ -783,7 +783,7 @@ $this->load->model('notifications_model');
 		// get holidays
     	$data['holidays'] = $this->Leave_model->get_all_holiday_dates();
 
-	    $this->template->load('template','leave_add',$data);
+	    $this->template->load('layout/template','leave_add',$data);
 	}
 			
 	
@@ -828,7 +828,7 @@ $this->load->model('notifications_model');
 			// $data['categories'] = $this->Leave_model->getCategories();
 		 
 		
-			$this->template->load('template','leave_action',$data);
+			$this->template->load('layout/template','leave_action',$data);
 	}
 	
 	public function add_new_item() {

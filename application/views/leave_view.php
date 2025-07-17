@@ -9,6 +9,9 @@ $data=explode('?', $current_page);
 .col-md-6 {
     float: left;
 }
+#toggleFilter {
+    margin-right: 10px;
+}
 </style>
 
 
@@ -34,7 +37,11 @@ $data=explode('?', $current_page);
             <span class="card-title">
                 <?php  echo $title; ?>
             </span>
-            <div class="pull-right d-flex">
+           <div class="pull-right d-flex align-items-center">
+    <button type="button" class="btn btn-secondary mr-2" id="toggleFilter">
+        <i class="fa fa-filter"></i>
+    </button>
+
                 <div>
                     <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
                         <?php if(!empty($filtered_value)){ foreach ($filtered_value as $key => $value) { ?>
@@ -48,13 +55,14 @@ $data=explode('?', $current_page);
                         <i class="fa fa-plus"></i> Apply For Leave
                     </a>
                 </div>
+                
             </div>
         </div> <!-- /.card-body -->
         <div class="card-body">
 
             
 
-            <form method="get" id="filterForm">
+<form method="get" id="filterForm" style="display:none;">
                 <div class="row">
                    
 
@@ -187,13 +195,13 @@ $data=explode('?', $current_page);
                                 <?php
               if( $obj['employee_id']!==$login_id)
               { ?>
-                                <a class="btn btn-xs btn-primary btnEdit"
+                                <a class="btn btn-xs btn-primary btnEdit"  style="display:inline-block;"
                                     href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id'];?>"><i
-                                        class="fa fa-edit"></i></a>
+                                        class="fa fa-edit fa-sm"></i></a>
                                 <?php }?>
-                                <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal"
+                                <a class="btn btn-xs btn-danger btnEdit"  style="display:inline-block;" data-toggle="modal"
                                     data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"
-                                        class="fa fa-trash"></i> </a>
+                                        class="fa fa-trash fa-sm"></i> </a>
 
                             </td>
 
@@ -245,5 +253,29 @@ $(document).ready(function() {
         $(".show_hide").text(txt);
         $(this).next('.content').slideToggle(200);
     });
+});
+
+</script>
+<!-- Make sure jQuery is loaded before this -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('#toggleFilter').click(function() {
+        $('#filterForm').slideToggle(200);
+    });
+
+    <?php if (!empty($filtered_value)) { ?>
+        $('#filterForm').show();
+    <?php } ?>
+
+    $(".content").hide();
+    $(".show_hide").on("click", function() {
+        var txt = $(this).next('.content').is(':visible') ? 'Read More' : 'Read Less';
+        $(this).text(txt);
+        $(this).next('.content').slideToggle(200);
+    });
+
 });
 </script>
