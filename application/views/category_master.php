@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        </div>
 				        </div>
 				        </form>
-				
+					</div>
 				 <!-- /form -->
 				<div class="col-md-6">
 					<h5><?=$this ->lang->line('services_list')?></h5>

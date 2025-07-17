@@ -73,7 +73,7 @@ public function add() {
       $data['categories'] = $this->master_model->categoriesList();
       //echo var_dump($data['students']);
       //print_r($data['category_name']);exit;
-      $this->template->load('template','category_master',$data);
+      $this->template->load('layout/template','category_master',$data);
   }
   public function add_new_category() {
     
