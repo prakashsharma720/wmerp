@@ -18,6 +18,8 @@ $lang['minimum_inventory_qty'] = 'Minimum Inventory Quantity';
 $lang['enter_minimum_inventory_qty'] = 'Enter Minimum Inventory Quantity';
 $lang['no_tds_declaration'] = 'No TDS Declaration';
 $lang['unregistered_dealer'] = 'Un-registered Dealer/Person';
+$lang['edit_supplier'] = 'Edit Supplier';
+$lang['vendor_service_tax_number'] = 'Vendor Service Tax Number';
 $lang['service_for_state'] = 'Service for the State';
 $lang['date_of_next_evaluation'] = 'Date of Next Evaluation';
 $lang['filter_by_supplier'] = 'Filter By Supplier';
@@ -1119,6 +1121,7 @@ $lang['account_number'] = 'Account Number';
 $lang['enter_account_number'] = 'Enter Account Number';
 $lang['date_of_approval'] = 'Date of Approval';
 $lang['next_evaluation_date'] = 'Next Evaluation Date';
+$lang['delete_service_provider_confirm'] = 'Are you sure you want to delete the service provider?';
 
 // suppliers - View List
 $lang['suppliers_list'] = 'Suppliers List';
@@ -1319,9 +1322,82 @@ $lang['enter_destination_here'] = 'Enter Destination Here';
 
 $lang['buyer_item_code'] = 'Buyer Item Code';
 $lang['enter_buyer_item_code'] = 'Enter Buyer Item Code';
+$lang['transporter_regi'] = 'Transporter Registration';
+$lang['transporter_type'] = 'Transporter Type';
+$lang['vendor'] = 'Vendor';
+$lang['gst_no'] = 'GST Number';
+$lang['pan_no'] = 'PAN Number';
+$lang['vehicle_owner_name'] = 'Vehicle Owner Name';
+$lang['owner_mobile_no'] = 'Owner Mobile Number';
+$lang['driver_name'] = 'Driver Name';
+$lang['driver_mobile_no'] = 'Driver Mobile Number';
+$lang['license_no'] = 'License Number';
+$lang['aadhar_card_no'] = 'Aadhaar Card Number';
+$lang['vehicle_no'] = 'Vehicle Number';
+$lang['state'] = 'State';
+$lang['city'] = 'City';
+$lang['pin_code'] = 'PIN Code';
+$lang['shipping_address'] = 'Shipping Address';
+$lang['status'] = 'Status';
+$lang['remarks'] = 'Remarks';
+$lang['submit'] = 'Submit';
+$lang['reset'] = 'Reset';
+$lang['cancel'] = 'Cancel';
+$lang['transporter_type_placeholder'] = 'Please select transporter type';
+$lang['vendor_placeholder'] = 'Please select vendor';
+$lang['vehicle_no_placeholder'] = 'Please enter vehicle number';
+$lang['owner_name_placeholder'] = 'Please enter vehicle owner name';
+$lang['owner_mobile_placeholder'] = 'Please enter owner mobile number';
+$lang['driver_name_placeholder'] = 'Please enter driver name';
+$lang['driver_mobile_placeholder'] = 'Please enter driver mobile number';
+$lang['license_no_placeholder'] = 'Please enter license number';
+$lang['aadhar_no_placeholder'] = 'Please enter Aadhaar number';
+$lang['state_placeholder'] = 'Please select state';
+$lang['city_placeholder'] = 'Please enter city';
+$lang['pincode_placeholder'] = 'Please enter PIN code';
+$lang['shipping_address_placeholder'] = 'Please enter shipping address';
+
+$lang['purchase_order'] = 'PURCHASE ORDER';
+$lang['company_details'] = 'Company Details';
+$lang['gstin'] = 'GSTIN';
+$lang['pan'] = 'PAN';
+$lang['address'] = 'Address';
+$lang['to'] = 'To';
+$lang['po_number'] = 'PO Number';
+$lang['dated'] = 'Dated';
+$lang['vendor_code'] = 'Vendor Code';
+$lang['contact_person'] = 'Contact Person';
+$lang['contact_no'] = 'Contact No';
+$lang['email_id'] = 'Email Id';
+$lang['reference'] = 'Reference';
+$lang['please_supply'] = 'Please supply following items as per our Telecom/ Previous Supply/ Your Ref. At the earliest:';
+
+$lang['material_description'] = 'Material Description';
+$lang['quantity'] = 'Quantity';
+$lang['item_price'] = 'Item Price';
+$lang['total_amount'] = 'Total Amount';
+$lang['total'] = 'Total';
+$lang['less_discount'] = 'Less Discount';
+$lang['gst'] = 'GST';
+$lang['grand_total'] = 'Grand Total';
+$lang['amount_in_words'] = 'Amount In Words';
+$lang['terms'] = 'Terms and Conditions';
+$lang['term_payment'] = 'Payment Terms';
+$lang['term_delivery'] = 'Delivery Schedule';
+$lang['term_billing'] = 'Billing Should be raised in the name of M/S CHOUDHARY & COMPANY.';
+$lang['term_po_note'] = 'Please Indicate PO Number on the Challan & Invoice.';
+$lang['prepared_by'] = 'Prepared By';
+$lang['checked_by'] = 'Checked By';
+$lang['approved_by'] = 'Approved By';
+$lang['purchase_dept'] = 'Purchase Dept.';
+$lang['accounts_dept'] = 'Accounts Dept.';
+$lang['director'] = 'Director';
 
 $lang['vender_service_tax_no'] = 'Vendor Service Tax No';
-
+$lang['edit_invoice'] = 'Edit Invoice';
+$lang['vendor'] = 'Vendor';
+$lang['vehicle_no'] = 'Vehicle Number';
+$lang['driver_name'] = 'Driver Name';
 $lang['from_date'] = 'From Date';
 $lang['upto_date'] = 'Upto Date';
 $lang['name'] = 'Name';
@@ -1330,8 +1406,24 @@ $lang['contact_person'] = 'Contact Person';
 $lang['email'] = 'Email';
 $lang['mobile_no'] = 'Mobile Number';
 $lang['website'] = 'Website';
-$lang['shipping_address'] = 'Shipping Address';
+$lang['shipping_address1'] = 'Shipping Address 1';
+$lang['enter_shipping_address1'] = 'Enter Shipping Address 1';
 
+$lang['shipping_address2'] = 'Shipping Address 2';
+$lang['enter_shipping_address2'] = 'Enter Shipping Address 2';
+
+$lang['loc'] = 'Location';
+$lang['enter_location'] = 'Enter Location';
+
+$lang['enter_state_code'] = 'Enter State Code';
+$lang['enter_distance'] = 'Enter Distance';
+
+$lang['enter_transporter_id'] = 'Enter Transporter ID';
+
+$lang['shipping_address'] = 'Shipping Address';
+$lang['shipping_details'] = 'Shipping Details';
+$lang['shipping_address1'] = 'Shipping Address 1';
+$lang['shipping_address2'] = 'Shipping Address 2';
 // requisition
 $lang['requisition_report'] = 'Requisition Report';
 $lang['employee_name'] = 'Employee Name';

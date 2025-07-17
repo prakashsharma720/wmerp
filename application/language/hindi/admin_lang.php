@@ -3648,11 +3648,102 @@ $lang['enter_model'] = 'मॉडल दर्ज करें';
 
 $lang['type'] = 'प्रकार';
 $lang['enter_type'] = 'प्रकार दर्ज करें';
-
-
+$lang['edit_supplier'] = 'आपूर्तिकर्ता संपादित करें';
+$lang['vendor_service_tax_number'] = 'विक्रेता सेवा कर संख्या';
+$lang['shipping_details'] = 'शिपिंग विवरण';
+$lang['shipping_address1'] = 'शिपिंग पता 1';
+$lang['shipping_address2'] = 'शिपिंग पता 2';
 // -----------------complete ------------------------------
+$lang['edit_invoice'] = 'चालान संपादित करें';
+$lang['vendor'] = 'विक्रेता';
+$lang['vehicle_no'] = 'वाहन संख्या';
+$lang['driver_name'] = 'ड्राइवर का नाम';
+$lang['shipping_address1'] = 'शिपिंग पता 1';
+$lang['enter_shipping_address1'] = 'शिपिंग पता 1 दर्ज करें';
 
+$lang['shipping_address2'] = 'शिपिंग पता 2';
+$lang['enter_shipping_address2'] = 'शिपिंग पता 2 दर्ज करें';
 
+$lang['loc'] = 'स्थान';
+$lang['enter_location'] = 'स्थान दर्ज करें';
+
+$lang['enter_state_code'] = 'राज्य कोड दर्ज करें';
+$lang['enter_distance'] = 'दूरी दर्ज करें';
+
+$lang['enter_transporter_id'] = 'परिवहन आईडी दर्ज करें';
+
+$lang['delete_service_provider_confirm'] = 'क्या आप वाकई सेवा प्रदाता को हटाना चाहते हैं?';
+
+$lang['purchase_order'] = 'क्रय आदेश';
+$lang['company_details'] = 'कंपनी विवरण';
+$lang['gstin'] = 'जीएसटी नंबर';
+$lang['pan'] = 'पैन';
+$lang['address'] = 'पता';
+$lang['to'] = 'प्रति';
+$lang['po_number'] = 'पीओ नंबर';
+$lang['dated'] = 'दिनांक';
+$lang['vendor_code'] = 'विक्रेता कोड';
+$lang['contact_person'] = 'संपर्क व्यक्ति';
+$lang['contact_no'] = 'संपर्क नंबर';
+$lang['email_id'] = 'ईमेल आईडी';
+$lang['reference'] = 'संदर्भ';
+$lang['please_supply'] = 'कृपया निम्न वस्तुएं जल्द से जल्द हमारी टेलीकॉम/पूर्व आपूर्ति/आपके संदर्भानुसार भेजें:';
+$lang['sno'] = 'क्रमांक';
+$lang['material_description'] = 'सामग्री विवरण';
+$lang['quantity'] = 'मात्रा';
+$lang['item_price'] = 'आइटम मूल्य';
+$lang['total_amount'] = 'कुल राशि';
+$lang['total'] = 'कुल';
+$lang['less_discount'] = 'छूट';
+$lang['gst'] = 'जीएसटी';
+$lang['grand_total'] = 'कुल योग';
+$lang['amount_in_words'] = 'शब्दों में राशि';
+$lang['terms'] = 'नियम और शर्तें';
+$lang['term_payment'] = 'भुगतान की शर्तें';
+$lang['term_delivery'] = 'डिलीवरी समय';
+$lang['term_billing'] = 'बिलिंग एम/एस चौधरी एंड कंपनी के नाम पर होनी चाहिए।';
+$lang['term_po_note'] = 'कृपया चालान और बिल पर पीओ नंबर अंकित करें।';
+$lang['prepared_by'] = 'तैयार किया';
+$lang['checked_by'] = 'जांच की';
+$lang['approved_by'] = 'अनुमोदित';
+$lang['purchase_dept'] = 'खरीद विभाग';
+$lang['accounts_dept'] = 'लेखा विभाग';
+$lang['director'] = 'निदेशक';
+
+$lang['transporter_regi'] = 'ट्रांसपोर्टर पंजीकरण';
+$lang['transporter_type'] = 'ट्रांसपोर्टर प्रकार';
+$lang['vendor'] = 'विक्रेता';
+$lang['gst_no'] = 'जीएसटी नंबर';
+$lang['pan_no'] = 'पैन नंबर';
+$lang['vehicle_owner_name'] = 'वाहन मालिक का नाम';
+$lang['owner_mobile_no'] = 'वाहन मालिक का मोबाइल नंबर';
+$lang['driver_name'] = 'ड्राइवर का नाम';
+$lang['driver_mobile_no'] = 'ड्राइवर का मोबाइल नंबर';
+$lang['license_no'] = 'लाइसेंस नंबर';
+$lang['aadhar_card_no'] = 'आधार कार्ड नंबर';
+$lang['vehicle_no'] = 'वाहन नंबर';
+$lang['state'] = 'राज्य';
+$lang['city'] = 'शहर';
+$lang['pin_code'] = 'पिन कोड';
+$lang['shipping_address'] = 'शिपिंग पता';
+$lang['status'] = 'स्थिति';
+$lang['remarks'] = 'टिप्पणी';
+$lang['submit'] = 'सबमिट करें';
+$lang['reset'] = 'रीसेट करें';
+$lang['cancel'] = 'रद्द करें';
+$lang['transporter_type_placeholder'] = 'कृपया ट्रांसपोर्टर प्रकार चुनें';
+$lang['vendor_placeholder'] = 'कृपया विक्रेता चुनें';
+$lang['vehicle_no_placeholder'] = 'कृपया वाहन नंबर दर्ज करें';
+$lang['owner_name_placeholder'] = 'कृपया वाहन मालिक का नाम दर्ज करें';
+$lang['owner_mobile_placeholder'] = 'कृपया मालिक का मोबाइल नंबर दर्ज करें';
+$lang['driver_name_placeholder'] = 'कृपया ड्राइवर का नाम दर्ज करें';
+$lang['driver_mobile_placeholder'] = 'कृपया ड्राइवर का मोबाइल नंबर दर्ज करें';
+$lang['license_no_placeholder'] = 'कृपया लाइसेंस नंबर दर्ज करें';
+$lang['aadhar_no_placeholder'] = 'कृपया आधार नंबर दर्ज करें';
+$lang['state_placeholder'] = 'कृपया राज्य चुनें';
+$lang['city_placeholder'] = 'कृपया शहर दर्ज करें';
+$lang['pincode_placeholder'] = 'कृपया पिन कोड दर्ज करें';
+$lang['shipping_address_placeholder'] = 'कृपया शिपिंग पता दर्ज करें';
 
 // click on setting 
 //  Theme Customization - Hindi Translations

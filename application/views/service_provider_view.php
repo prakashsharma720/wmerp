@@ -282,7 +282,7 @@ $data=explode('?', $current_page);
                           </div>      -->
                         </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close'); ?></button>
                           </div>
                         </div>
                       </div>
@@ -298,7 +298,7 @@ $data=explode('?', $current_page);
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete service_provider <b><?php echo $obj['service_provider_name'];?> </b>? </p>
+                            <p> <?=$this ->lang ->line('delete_service_provider_confirm')?><b><?php echo $obj['service_provider_name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
                             <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang ->line('yes')?> </button>

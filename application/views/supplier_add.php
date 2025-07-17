@@ -160,7 +160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		            		</div>
 		            	</div>
 		            	<div class="col-md-4 col-sm-4 gst_div">
-							<b><?=$this ->lang ->line('gst_in')?></b><span>( Ex. : 08ABCDE1234K1AZ)</span>
+							<b><?=$this ->lang ->line('gstin')?></b><span>( Ex. : 08ABCDE1234K1AZ)</span>
 			            	<input type="text"  placeholder="Ex. 08ABCDE12341AZ" name="gst_no" class="form-control gstnumber" value=""autofocus autocomplete="off"   maxlength="15" minlength="15"  >
 						</div>
 		        		
