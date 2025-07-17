@@ -112,7 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <?php if(!empty($id)) { ?>
 					        <div class="row col-md-12">
 					            <label class="control-label"> <?=$this ->lang ->line('opening_stock_qty')?></label>
-								<input type="text"  placeholder="Enter Opening Stock Qty" name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty?>"  autofocus>
+								<input type="text"  placeholder="<?=$this ->lang ->line('enter_opening_stock_qty')?>" name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty?>"  autofocus>
 					        </div>
 
 				           <div class="row col-md-12">
@@ -132,7 +132,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				 <!-- /form -->
 				<div class="col-md-8">
-					<h5> Stationery</h5>
+					<h5> <?=$this ->lang ->line('stationery')?></h5>
 					<div class="table-responsive">
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>

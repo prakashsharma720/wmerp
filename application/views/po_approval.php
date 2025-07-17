@@ -105,20 +105,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                            
                           </div>
                           <div class="modal-body">
-                            <p> Are you sure, you want to <b style="color:#dc7629;">Reject</b>  Purchase Order <b><?php echo $inv_number1 ;?> </b>? </p>
+                            <p> <?= sprintf($this->lang->line('reject_purchase_order_confirm'), $inv_number1); ?> </p>
                             <input type="hidden" name="po_id" value="<?php echo $obj['id'];?>">
                             <input type="hidden" name="status" value="Rejected">
                             <input type="hidden" name="rejected_date" value="<?= date('Y-m-d') ?>">
                             <div class="form-group">
                                 <div class="row col-md-12">
                                   <label  class="control-label"> <?=$this ->lang ->line('reject_reason')?></label>
-                                <textarea class="form-control Comment" rows="2" placeholder="Enter Reason here" name="rejected_reason" required="required"></textarea>
+                                <textarea class="form-control Comment" rows="2" placeholder="<?=$this ->lang ->line('enter_reason_here')?>" name="rejected_reason" required="required"></textarea>
                               </div>
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-danger modal_reject_button" style="background-color: #dc7629;">Submit</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-danger modal_reject_button" style="background-color: #dc7629;"><?=$this ->lang ->line('submit')?></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang ->line('close')?></button>
                           </div>
                         </div>
                         </form>

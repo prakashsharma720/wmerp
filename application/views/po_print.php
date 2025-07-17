@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <span class="card-title"><?php  echo $title; ?>
         </span>
           <div class="pull-right no-print">
-              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> Print</button>
+              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> <?= $this->lang->line('print'); ?></button>
           </div>
       </div> <!-- /.card-body -->
       <div class="card-body">
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <th colspan="6"> <h4 style="text-align: center">PURCHASE ORDER</h4></th>
                           </tr>-->
                           <tr>
-                            <th rowspan="3" > To:  </th>
+                            <th rowspan="3" > <?= $this->lang->line('to'); ?>:  </th>
                             <td rowspan="3" colspan="2"> <?= $current['0']['supplier']?>,<br> <?= $current['0']['address']?> </td>
                             <th colspan="2"><?= $this->lang->line('po_number'); ?> : </th>
                             <td colspan="2"> 

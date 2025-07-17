@@ -23,10 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-sm-4 invoice-col">
                 <strong><u><?= $this->lang->line('company_details') ?>:</u></strong><br>
-                  <b> <?= $this->lang->line('gst_in') ?>: </b>08AABFC2155P1ZA<br>
+                  <b> <?= $this->lang->line('gstin') ?>: </b>08AABFC2155P1ZA<br>
                   <b><?= $this->lang->line('pan') ?> : </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
-                  <b> <?= $this->lang->line('address') ?> : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
+                  <b> <?= $this->lang->line('address') ?> : </b><?= $this->lang->line('company_address') ?>
                 </div>
               </div>
               <br>
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<?php if($current['0']['categories_id']!='1'){?>
                             <th colspan="1"> <?= $this->lang->line('gir_register_category') ?>: </th>
                             <td colspan="1"> <?= $current['0']['category']?> </td>
-                             <th colspan="1"> Supplier Name : </th>
+                             <th colspan="1"> <?= $this->lang->line('supplier_name') ?> : </th>
                             <td colspan="2"> <?= $current['0']['supplier']?> </td>
 							<td colspan=""></td>
                           </tr>
@@ -93,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<?php } ?>
                           </tr>
 						   <tr>
-                      <th>Material Received From</th>
+                      <th><?= $this->lang->line('material_received_from') ?></th>
                       <td> <?= $current['0']['material_received_from']?> </td>
         							<th></th>
         							<td></td>
@@ -108,9 +108,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <th><?= $this->lang->line('supplier_name') ?> : </th>
                   <td colspan="2"> <?= $current['0']['supplier']?> </td>
                   <td></td></label><br></th>
-						<th>Quantity</th>
-						<th><label>Unit</label><br></th>
-						<th><label>Description</label><br></th></tr>
+						<th><?= $this->lang->line('quantity') ?></th>
+						<th><label><?= $this->lang->line('unit') ?></label><br></th>
+						<th><label><?= $this->lang->line('description') ?></label><br></th></tr>
                   <?php $i=1;foreach($current['0']['gir_details'] as $gir_details) { ?>
 	                    <tr>
 						
@@ -134,7 +134,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					
 					
 							<tr>
-			        			<td colspan="2" style="text-align: right;"><b>Total</b></td>
+			        			<td colspan="2" style="text-align: right;"><b><?= $this->lang->line('total') ?></b></td>
 							
 							                 <td> <?= $current['0']['total_qty']?></td>
 							</tr>
@@ -143,16 +143,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				       
                  <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
-                  <b> Declaration : </b> We declare that this copy shows the actual information of this supplier and that all particulars are true and correct to the best of our knowledge.
+                  <b> <?= $this->lang->line('declaration') ?> : </b> <?= $this->lang->line('declaration_text') ?>
                 </div>
                <div class="col-sm-4 invoice-col">
                <!--  <h3 style="padding-top: 20px;"> Choudhary & Company </h3> -->
                 </div>
                 <div class="col-sm-4 invoice-col">
-                <strong><u>For Choudhary & Company :</u></strong>
+                <strong><u><?= $this->lang->line('for') ?><?= $this->lang->line('company_name') ?> :</u></strong>
                 <br></br><br></br>
 
-                   <b>( Authorised Signatory)</b>
+                   <b>( <?= $this->lang->line('authorised_signatory') ?>)</b>
                 </div>
               </div>
                 <!-- /.col -->

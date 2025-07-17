@@ -108,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"> <?= $this->lang->line('requisition_slip') ?> (<?php echo $inv_number1 ?>) Details </h4>
+                             <h4 class="modal-title"> <?= $this->lang->line('requisition_slip') ?> (<?php echo $inv_number1 ?>)  <?= $this->lang->line('details') ?></h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>

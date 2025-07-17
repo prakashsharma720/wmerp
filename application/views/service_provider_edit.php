@@ -175,9 +175,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			               <div class="col-md-4 col-sm-4 ">
 			        		<label class="control-label"> <?= $this->lang->line('gst_registration_status') ?> </label>
 			        			<div class="form-check">
-				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Yes" <?= $new ?> > Yes</input>
+				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Yes" <?= $new ?> >  <?= $this->lang->line('yes') ?> </input>
 				               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Un-registered Dealer" <?= $existing ?> > Un-registered Dealer/Person </input>
+				               		<input class="form-check-input gst_status" type="radio" name="gst_status" value="Un-registered Dealer" <?= $existing ?> >  <?= $this->lang->line('unregistered_dealer') ?> </input>
 		            		</div>
 		            	</div>
 						<div class="col-md-4 col-sm-4">
