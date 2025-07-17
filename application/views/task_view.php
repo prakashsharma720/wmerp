@@ -180,19 +180,19 @@ $data=explode('?', $current_page);
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Confirm Header </h4>
+                                                <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
 
                                             </div>
                                             <div class="modal-body">
-                                                <p>Are you sure, you want to delete tasks
+                                                <p><?= $this->lang->line('confirm_delete') ?>
                                                     <b><?php echo $obj['task_name'];?> </b>? </p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
                                                 </button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal"> No
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?>
                                                 </button>
                                             </div>
                                         </div>

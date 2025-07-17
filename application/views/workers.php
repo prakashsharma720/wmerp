@@ -38,13 +38,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="row col-md-12">
 								<div class="col-md-4 col-sm-4 ">
 									<label class="control-label"> <?= $this->lang->line('worker_name') ?> *</label>
-									<input type="text" placeholder="Enter Workers Name" name="name" class="form-control"
+									<input type="text" placeholder=" <?= $this->lang->line('worker_name') ?>" name="name" class="form-control"
 										required autofocus>
 								</div>
 								<div class="col-md-4 col-sm-4 ">
 									<label class="control-label"> <?= $this->lang->line('code') ?> *</label>
 									<input type="text" name="wc_code" class="form-control" value=""
-										placeholder="Enter Worker Code" autofocus required="required">
+										placeholder="<?= $this->lang->line('code') ?> " autofocus required="required">
 									<!-- <input type="hidden" name="worker_code" value="<?php //echo $wc_code; ?>"> -->
 								</div>
 								<!-- <div class="col-md-4 col-sm-4 ">
@@ -60,7 +60,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="row col-md-12">
 								<div class="col-md-4 col-sm-4 ">
 									<label class="control-label"> <?= $this->lang->line('mobile_no') ?> </label>
-									<input type="text" placeholder="Enter mobile" name="mobile_no"
+									<input type="text" placeholder="<?= $this->lang->line('enter_mobile_no') ?>" name="mobile_no"
 										class="form-control mobile" minlenght="10" maxlength="10"
 										oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
 										value="" autofocus>
@@ -76,10 +76,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<label class="control-label"><?= $this->lang->line('gender') ?> </label>
 									<div class="form-check">
 										<input class="form-check-input" type="radio" name="gender" value="Male" checked>
-										Male</input>
+										<?= $this->lang->line('male') ?></input>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<input class="form-check-input" type="radio" name="gender" value="Female">
-										Female</input>
+										<?= $this->lang->line('female') ?></input>
 									</div>
 								</div>
 							</div>
@@ -93,7 +93,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									</div> -->
 								<div class="col-md-4 col-sm-4 ">
 									<label class="control-label"><?= $this->lang->line('aadhaar_no') ?></label>
-									<input type="text" placeholder="Enter Aadhaar No" name="aadhaar_no"
+									<input type="text" placeholder="<?= $this->lang->line('enter_aadhaar_no') ?>" name="aadhaar_no"
 										class="form-control aadhaar_no" minlenght="12" maxlength="12"
 										oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
 										value="" autofocus required="required">
@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 								<div class="col-md-4 col-sm-4">
 									<label class="control-label"><?= $this->lang->line('dob') ?></label>
 									<input type="text" data-date-formate="dd-mm-yyyy" name="dob"
-										class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus>
+										class="form-control date-picker" value="" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autofocus>
 								</div>
 								<div class="col-md-4 col-sm-4 ">
 									<label class="control-label"><?= $this->lang->line('upload_photo') ?></label>
@@ -115,15 +115,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 									<label class="control-label"> <?= $this->lang->line('medical_test') ?> </label>
 									<div class="form-check">
 										<input class="form-check-input medical_status" type="radio"
-											name="medical_status" value="Yes" checked="checked" /> Yes
+											name="medical_status" value="Yes" checked="checked" /> <?= $this->lang->line('yes') ?>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<input class="form-check-input medical_status" type="radio"
-											name="medical_status" value="No" /> No
+											name="medical_status" value="No" /> <?= $this->lang->line('no') ?>
 									</div>
 								</div>
 								<div class="col-md-8 col-sm-8 report_div">
 									<label class="control-label"><?= $this->lang->line('report_number') ?></label>
-									<input type="text" id="firstName" placeholder="Enter Report Number" name="report_no"
+									<input type="text" id="firstName" placeholder="<?= $this->lang->line('enter_report_number') ?>" name="report_no"
 										class="form-control report_no" value="" autofocus autocomplete="off"
 										required="required">
 								</div>
@@ -133,7 +133,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<div class="row col-md-12">
 								<div class="col-md-8 col-sm-8 ">
 									<label class="control-label"><?= $this->lang->line('address') ?> </label>
-									<textarea class="form-control address" rows="3" placeholder="Enter Address"
+									<textarea class="form-control address" rows="3" placeholder="<?= $this->lang->line('enter_address') ?> "
 										name="address" value=""></textarea>
 								</div>
 								<div class="col-md-4">

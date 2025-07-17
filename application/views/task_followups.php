@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-      		<span> Task History Description:</span>
+      		<span> <?= $this->lang->line('task_history_description') ?>:</span>
         	<h3 class="card-title"> <b> <?= @$followups['0']['title'] ?> </b></h3>
         	<div class="pull-right">
 				
@@ -59,16 +59,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="form-group">
 						<div class="row col-md-12 ">
 							<div class="col-md-12 col-sm-12 ">
-								<label class="control-label">Work Description <span class="required">*</span></label>
-									<textarea class="form-control answer" rows="5" placeholder="Write Your Reply" name="answer" required></textarea>
+								<label class="control-label"><?= $this->lang->line('work_description') ?> <span class="required">*</span></label>
+									<textarea class="form-control answer" rows="5" placeholder="<?= $this->lang->line('write_your_reply') ?> " name="answer" required></textarea>
 							</div>
 							<div class="col-md-12 col-sm-12">
-							<label class="control-label">Reference</label>
-					                <input type="text"  placeholder="Reference Name " name="reference" class="form-control" required autofocus>
+							<label class="control-label"><?= $this->lang->line('reference') ?> </label>
+					                <input type="text"  placeholder="<?= $this->lang->line('reference_name') ?> " name="reference" class="form-control" required autofocus>
 							</div>	
 							<div class="col-md-12 col-sm-12">
-								<label for="time-taken">Time Taken(In Hours)</label>
-								 <input type="text"  placeholder="How Much time take " name="time_taken" class="form-control" required >
+								<label for="time-taken"><?= $this->lang->line('time_taken') ?> </label>
+								 <input type="text"  placeholder="<?= $this->lang->line('how_much_time_take') ?> " name="time_taken" class="form-control" required >
 								 
 							</div>						
 						</div>
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="form-group"> 	
 						<div class="row col-md-12">				        		
 								<div class="col-md-12 col-sm-12 ">
-								<label class="control-label"> Upload Photo </label>
+								<label class="control-label"> <?= $this->lang->line('upload_photo') ?>  </label>
 								<input type="file" name="photo" class="form-control upload" autofocus>
 							</div>
 							<div class="col-md-12 col-sm-12 ">
@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<div class="row col-md-12">
 						<div class="col-md-12 col-sm-12 ">
-							<button type="submit"  class="btn btn-primary btn-block"> Submit Your Answer</button>
+							<button type="submit"  class="btn btn-primary btn-block"> <?= $this->lang->line('submit_your_answer') ?> </button>
 						</div>
 					</div>
 
@@ -108,17 +108,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<table id="example1" class="table table-bordered table-striped">
 							<thead>
 								<tr>
-									<th style="width: 2%;"> Sr.No.    </th>
-									<th style="width: 48%;"> Follow Up </th>
-									<th style="width: 30%;"> Reference </th>
-									<th style="width: 10%;"> Time Taken </th>
+									<th style="width: 2%;"> <?= $this->lang->line('sr_no') ?>     </th>
+									<th style="width: 48%;"> <?= $this->lang->line('work_description') ?></th>
+									<th style="width: 30%;"> <?= $this->lang->line('reference') ?>  </th>
+									<th style="width: 10%;"> <?= $this->lang->line('time_taken') ?>  </th>
 
 
-									<th style="width: 10%;"> Document  </th>
-									<th style="width: 10%;"> Followup_time  </th>
+									<th style="width: 10%;"> <?= $this->lang->line('document') ?>   </th>
+									<th style="width: 10%;"> <?= $this->lang->line('followup_time') ?>   </th>
 
 									
-									<th> Action                        </th>
+									<th>   <?= $this->lang->line('action') ?>                      </th>
 								</tr>
 							</thead>
 							<tbody> <?php $i=1;foreach($followups as $followup) { ?>
@@ -151,15 +151,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<input type="hidden" name="task_id" value="<?php echo $followup['task_id'];?>">
 												<div class="modal-content">
 													<div class="modal-header">
-														<h4 class="modal-title">Confirm Header </h4>
+														<h4 class="modal-title"><?= $this->lang->line('confirm_header') ?></h4>
 														<button type="button" class="close" data-dismiss="modal">&times;</button>
 													</div>
 													<div class="modal-body">
-														<p>Are you sure, you want to delete this task history ? </p>
+														<p>  <?= $this->lang->line('delete_task_history_confirm') ?>   </p>
 													</div>
 													<div class="modal-footer">
-														<button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-														<button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+														<button type="submit" class="btn btn-primary delete_submit">  <?= $this->lang->line('yes') ?></button>
+														<button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
 													</div>
 												</div>
 											</form>

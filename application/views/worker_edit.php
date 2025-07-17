@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        	<div class="row col-md-12">
 					        		<div class="col-md-4 col-sm-4 ">
 						            	<label class="control-label"> <?=$this ->lang->line('name')?> *</label>
-						                <input type="text"  placeholder="Enter workers name" name="name" class="form-control" value="<?= $name?>"  autofocus>
+						                <input type="text"  placeholder=" <?=$this ->lang->line('name')?>" name="name" class="form-control" value="<?= $name?>"  autofocus>
 						            </div>
 					        		<div class="col-md-4 col-sm-4 ">
 						            	<label class="control-label"><?=$this ->lang->line('code')?> *</label>
@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						        <div class="row col-md-12">
 					        		<div class="col-md-4 col-sm-4 ">
 						            	<label class="control-label"><?=$this ->lang->line('mobile_no')?> </label>
-						               	<input type="text" placeholder="Enter mobile" name="mobile_no" class="form-control mobile" minlenght="10" maxlength="10" 
+						               	<input type="text" placeholder="<?=$this ->lang->line('enter_mobile_no')?>" name="mobile_no" class="form-control mobile" minlenght="10" maxlength="10" 
 			                			oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   value="<?= $mobile_no?>" autofocus>
 						            </div>
 						            
@@ -84,9 +84,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						        	<div class="col-md-4 col-sm-4 ">
 						        		<label class="control-label"> <?=$this ->lang->line('gender')?> </label>
 						        			<div class="form-check">
-							               		<input class="form-check-input" type="radio" name="gender" value="Male" <?php echo $male; ?>> Male</input>
+							               		<input class="form-check-input" type="radio" name="gender" value="Male" <?php echo $male; ?>>  <?=$this ->lang->line('male')?> </input>
 							               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							               		<input class="form-check-input" type="radio" name="gender" value="Female" <?php echo $female; ?> > Female</input>
+							               		<input class="form-check-input" type="radio" name="gender" value="Female" <?php echo $female; ?> >  <?=$this ->lang->line('female')?> </input>
 						            		</div>
 						            	</div>
 						        </div>
@@ -99,13 +99,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			                			 value="<?= $pan_no?>" autofocus>
 						            </div> -->
 						            <div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> <?=$this ->lang->line('aadhar_no')?> </label>
-						               	<input type="text" placeholder="Enter Aadhaar No" name="aadhaar_no" class="form-control aadhaar_no" minlenght="12" maxlength="12" 
+						            	<label class="control-label"> <?=$this ->lang->line('aadhaar_no')?> </label>
+						               	<input type="text" placeholder="<?=$this ->lang->line('enter_aadhaar_no')?>" name="aadhaar_no" class="form-control aadhaar_no" minlenght="12" maxlength="12" 
 			                			oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   value="<?= $aadhaar_no?>" autofocus>
 						            </div>
 						        	<div class="col-md-4 col-sm-4">
 						            	<label class="control-label"> <?=$this ->lang->line('date_of_birth')?></label>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="dob" class="form-control date-picker" value="<?php if($dob) { echo date('d-m-Y',strtotime($dob)); } ?>" placeholder="dd-mm-yyyy" autofocus>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="dob" class="form-control date-picker" value="<?php if($dob) { echo date('d-m-Y',strtotime($dob)); } ?>" placeholder="<?=$this ->lang->line('dd_mm_yyyy')?>" autofocus>
 			            			</div>
 			            			<div class="col-md-4 col-sm-4 ">
 						            	<label class="control-label"><?=$this ->lang->line('upload_photo')?> </label>
@@ -131,14 +131,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							         <div class="col-md-4 col-sm-4 ">
 				        				<label class="control-label"><?=$this ->lang->line('medical_test')?> </label>
 						        			<div class="form-check">
-							               		<input class="form-check-input medical_status" type="radio" name="medical_status" value="Yes" checked="checked" <?php echo $new; ?> /> Yes
+							               		<input class="form-check-input medical_status" type="radio" name="medical_status" value="Yes" checked="checked" <?php echo $new; ?> /> <?=$this ->lang->line('yes')?>
 							               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							               		<input class="form-check-input medical_status" type="radio" name="medical_status" value="No"  <?php echo $existing; ?> /> No
+							               		<input class="form-check-input medical_status" type="radio" name="medical_status" value="No"  <?php echo $existing; ?> /> <?=$this ->lang->line('no')?>
 				            				</div>
 			            				</div>
 			            				<div class="col-md-8 col-sm-8 report_div">
 							            	<label class="control-label"><?=$this ->lang->line('report_no')?></label>
-							                <input type="text" id="firstName" placeholder="Enter Report Number" name="report_no" class="form-control report_no" value="<?php echo $report_no; ?>" autofocus autocomplete="off"  required="required"  >
+							                <input type="text" id="firstName" placeholder="<?=$this ->lang->line('enter_report_no')?>" name="report_no" class="form-control report_no" value="<?php echo $report_no; ?>" autofocus autocomplete="off"  required="required"  >
 							            </div>
 							        </div>
 							    </div>
@@ -148,7 +148,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						        <div class="row col-md-12">
 					        		<div class="col-md-8 col-sm-8 ">
 						            	<label class="control-label"><?=$this ->lang->line('address')?> </label>
-						        		<textarea class="form-control address" rows="3" placeholder="Enter Address" name="address" value="<?= $address ?>" ><?= $address ?></textarea>
+						        		<textarea class="form-control address" rows="3" placeholder="<?=$this ->lang->line('enter_address')?>" name="address" value="<?= $address ?>" ><?= $address ?></textarea>
 						            </div>
 						             <div class="col-md-4">
 						            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('photo_view')?></label>

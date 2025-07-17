@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title pull-left"><?= $page_title ?></h3>
+        <h3 class="card-title pull-left"><?=$this ->lang->line('update_task')?></h3>
         
 	      </div> <!-- /.card-body -->
 	      	<div class="card-body">
@@ -28,19 +28,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<!--Project -title-->	
 								 <div class="col-md-4">
 						            	<label class="control-label"> <?=$this ->lang->line('task_title')?></label><span class="required">*</span>
-						                <input type="text"  placeholder="Enter Task Title" name="task_title" class="form-control" value="<?php echo $task_name?>" required >
+						                <input type="text"  placeholder="<?=$this ->lang->line('task_title')?>" name="task_title" class="form-control" value="<?php echo $task_name?>" required >
 						        </div>
 								
 								<!--start date-->	
 									<div class="col-md-4">
 						            	<label class="control-label"><?=$this ->lang->line('start_date')?> </label> <span class="required">*</span>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"
-										 class="form-control date-picker"  placeholder="dd-mm-yyyy"  value="<?php echo $start_date?>" required>
+										 class="form-control date-picker"  placeholder="<?=$this ->lang->line('start_date')?>"  value="<?php echo $start_date?>" required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
 						            	<label class="control-label"><?=$this ->lang->line('end_date')?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="dd-mm-yyyy" value="<?php echo $end_date?>" required>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?=$this ->lang->line('end_date')?> " value="<?php echo $end_date?>" required>
 			            			</div>
 
 					        	<!--Prioroty-->	
@@ -117,7 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<!--assign to-->	
 							
 							<div class="col-md-4 col-sm-4" >
-						            	<label class="control-label"> Assign To</label><span class="required">*</span>
+						            	<label class="control-label"> <?=$this ->lang->line('assign_to')?> </label><span class="required">*</span>
 										<?php 
 										if($designation_id=='4') {
 						               		echo form_dropdown('assignto', $assignto, $Assign_to,'required="required"'); 
