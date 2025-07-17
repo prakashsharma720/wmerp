@@ -30,11 +30,11 @@ $lang['sign_out'] = 'साइन आउट करें';
 // my account click
 
 //  Header Section
-$lang['total_assign'] = 'कुल असाइनमेंट: 0';
-$lang['followups'] = 'फॉलोअप्स: 0';
-$lang['pending'] = 'लंबित कार्य: 0';
-$lang['approve'] = 'स्वीकृत: 0';
-$lang['rejected'] = 'अस्वीकृत: 0';
+$lang['total_assign'] = 'कुल असाइनमेंट';
+$lang['followups'] = 'फॉलोअप्स';
+$lang['pending'] = 'लंबित कार्य';
+$lang['approve'] = 'स्वीकृत';
+$lang['rejected'] = 'अस्वीकृत';
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'कर्मचारी संपादित करें';
@@ -70,6 +70,29 @@ $lang['upload_photo'] = 'फ़ोटो अपलोड करें';
 $lang['choose_file'] = 'फ़ाइल चुनें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल नहीं चुनी गई';
 $lang['your_image'] = 'आपकी छवि';
+
+$lang['account_holder_name'] = 'खाता धारक का नाम';
+$lang['bank_name'] = 'बैंक का नाम';
+$lang['account_number'] = 'खाता संख्या';
+$lang['ifsc_code'] = 'आईएफएससी कोड';
+$lang['branch_name'] = 'शाखा का नाम';
+$lang['account_type'] = 'खाते का प्रकार';
+$lang['upi_id'] = 'यूपीआई आईडी';
+
+
+$lang['basic_salary'] = 'मूल वेतन';
+$lang['hra'] = 'एचआरए (मकान किराया भत्ता)';
+$lang['conveyance_allowance'] = 'यातायात भत्ता';
+$lang['medical_allowance'] = 'चिकित्सा भत्ता';
+$lang['other_allowance'] = 'अन्य भत्ता';
+$lang['total_net_salary'] = 'कुल शुद्ध वेतन';
+
+$lang['emergency_mobile_no'] = 'आपातकालीन मोबाइल नंबर';
+$lang['emergency_name'] = 'आपातकालीन संपर्क नाम';
+$lang['uan_no'] = 'यूएएन नंबर';
+$lang['pf_no'] = 'पीएफ नंबर';
+$lang['esi_no'] = 'ईएसआई नंबर';
+
 
 // change password click
 $lang['change_password'] = 'पासवर्ड बदलें';
@@ -3001,6 +3024,7 @@ $lang['dd_mm_yyyy'] = 'दिन-माह-वर्ष';
 
 $lang['username'] = 'उपयोगकर्ता नाम';
 $lang['password'] = 'पासवर्ड';
+$lang['enter_password'] ='पासवर्ड  दर्ज करें';
 
 $lang['select_authority_person'] = 'अधिकार प्राप्त व्यक्ति चुनें (केवल अवकाश अनुमोदन हेतु)';
 $lang['select_employees'] = 'कर्मचारी चुनें...';
@@ -3131,6 +3155,20 @@ $lang['action'] = 'क्रिया';
 
 $lang['export'] = 'निर्यात करें';
 $lang['apply_for_leave'] = 'अवकाश हेतु आवेदन करें';
+$lang['todays_date'] = 'आज की तारीख';
+$lang['leave_reason'] = 'अवकाश का कारण';
+$lang['leave_type'] = 'अवकाश का प्रकार';
+$lang['leave_category'] = 'अवकाश श्रेणी';
+$lang['from_date'] = 'प्रारंभ तिथि';
+$lang['upto_date'] = 'अंतिम तिथि';
+$lang['total_days'] = 'कुल दिन';
+$lang['message'] = 'संदेश';
+$lang['enter'] = 'प्रवेश करें';
+$lang['full'] = 'पूर्ण';
+$lang['half'] = 'आधा';
+$lang['gatepass'] = 'गेट पास';
+$lang['enter_reason'] = 'कारण दर्ज करें';
+$lang['apply'] = 'आवेदन करें';
 
 
 // daily tasks project
@@ -3180,6 +3218,8 @@ $lang['status'] = 'स्थिति';
 $lang['assign_to'] = 'सौंपा गया';
 $lang['assign_by'] = 'सौंपने वाला';
 $lang['action'] = 'क्रिया';
+$lang['create'] = 'बनाएं';
+
 
 
 // payroll module attendance list
@@ -3206,6 +3246,8 @@ $lang['other_cuts'] = 'अन्य कटौती';
 $lang['ecs'] = 'ईसीएस';
 $lang['total_salary'] = 'कुल वेतन';
 $lang['action'] = 'क्रिया';
+$lang['calculate'] = 'गणना करें';
+
 
 // workers add
 $lang['add_new_worker'] = 'नया कर्मचारी जोड़ें';
@@ -3554,6 +3596,12 @@ $lang['total_opening'] = 'कुल ओपनिंग';
 $lang['total_closing'] = 'कुल क्लोजिंग';
 $lang['total_kwh'] = 'कुल KWH खपत';
 $lang['finish_good_details'] = 'फिनिश गुड विवरण';      // Hindi
+
+$lang['leave_action_page'] = 'अवकाश क्रिया पृष्ठ';
+$lang['leave_status_info'] = 'अवकाश की स्थिति (अवकाश पर कोई भी कार्रवाई करें)';
+$lang['leave_application'] = 'अवकाश आवेदन';
+
+
 $lang['daily_tasks'] = 'दैनिक कार्य';
 $lang['projects'] = 'परियोजनाएं';
 $lang['tasks'] = 'कार्य';

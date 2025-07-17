@@ -55,7 +55,7 @@ $data=explode('?', $current_page);
                         
                         <label class="control-label"><?= $this->lang->line('search_by_employee_name') ?> </label>
                       <select name="employee_id" class="form-control select2">
-    <option value="">Select Employee Name</option>
+    <option value=""><?= $this->lang->line('search_by_employee_name') ?></option>
     <?php if ($name): ?>
         <?php foreach ($name as $value) : ?>
             <?php $selected = ($value['id'] == $selectedEmployeeId) ? 'selected' : ''; ?>
@@ -88,7 +88,7 @@ $data=explode('?', $current_page);
                     <div class="col-md-4 col-sm-4">
                         <label class="control-label"><?= $this->lang->line('search_by_status') ?> </label>
                         <select name="task_status" class="form-control select2">
-                            <option value="">Select Status</option>
+                            <option value=""><?= $this->lang->line('search_by_status') ?></option>
                             <option value="In Process"> In Process</option>
                             <option value="On Hold"> On Hold</option>
                             <option value="Completed"> Completed</option>
@@ -98,13 +98,13 @@ $data=explode('?', $current_page);
                     <div class="col-md-4 col-sm-4">
                         <label class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date"
-                            class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"
+                            class="form-control date-picker" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off"
                             autocomplete="off">
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <label class="control-label"> <?= $this->lang->line('upto_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date"
-                            class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autocomplete="off"
+                            class="form-control date-picker" value="" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off"
                             autocomplete="off">
                     </div>
                     <div class="col-md-1 col-sm-1 ">
@@ -113,7 +113,7 @@ $data=explode('?', $current_page);
                     </div>
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;"> Grade</label>
-                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> Reset</a>
+                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> <?= $this->lang->line('reset') ?></a>
                     </div>
                 </div>
             </form>
