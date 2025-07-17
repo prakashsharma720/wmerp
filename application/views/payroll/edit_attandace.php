@@ -10,17 +10,17 @@
     <div class="container-fluid">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title mb-0"><?= $title ?></h3>
+                <h3 class="card-title mb-0"><?= $this->lang->line('edit_attendance') ?></h3>
             </div>
 
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Employee Name</th>
-                            <th>Check-In</th>
-                            <th>Check-Out</th>
-                            <th>Status</th>
+                            <th><?= $this->lang->line('employee_name') ?></th>
+                            <th><?= $this->lang->line('check_in') ?></th>
+                            <th><?= $this->lang->line('check_out') ?></th>
+                            <th><?= $this->lang->line('status') ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Update Attendance</button>
+                <button type="submit" class="btn btn-primary"><?= $this->lang->line('update_attendance') ?></button>
             </div>
         </div>
     </div>

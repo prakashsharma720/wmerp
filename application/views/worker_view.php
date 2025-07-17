@@ -109,12 +109,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"><?=$this ->lang->line('conform_header')?> </h4>
+                             <h4 class="modal-title"><?=$this ->lang->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete worker <b><?php echo $obj['name'];?> </b>? </p>
+                            <p><?=$this ->lang->line('delete_worker_confirm')?>  <b><?php echo $obj['name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
                             <button type="submit" class="btn btn-primary delete_submit"> <?=$this ->lang->line('yes')?> </button>

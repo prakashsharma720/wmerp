@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                    <h3 class="card-title"> <?= $title ?></h3>
+                    <h3 class="card-title"> <?= $this->lang->line('employee_review') ?> </h3>
                     <div class="pull-right error_msg">
                         <!-- <?php echo validation_errors();?> -->
                         <?php if (isset($message_display)) {
@@ -35,14 +35,14 @@
             <div class="card-body">
                 <div class="row">
                 <div class="col-md-6">
-                            <label class="control-label">Leave Allotment Month</label>
+                            <label class="control-label"><?= $this->lang->line('leave_allotment_month') ?> </label>
                             <?php echo form_dropdown('month_name', $months,'','required="required"'); ?>
                         </div>
                         <div class="col-md-6 half_div">
-									<label class="control-label">Select Period</label>
+									<label class="control-label"><?= $this->lang->line('select_period') ?> </label>
 									<select class="form-control halfday" name="period_type">
-										<option value="1" > First Half </option>
-										<option value="2" > Second Half </option>
+										<option value="1" > <?= $this->lang->line('first_half') ?>  </option>
+										<option value="2" > <?= $this->lang->line('second_half') ?>  </option>
 									</select>
 								</div>
                                            
@@ -54,10 +54,10 @@
                                 <thead width="100%">
                                     <tr width="100%">
                                        
-                                        <th width="10%">criteria_name</th>
-                                        <th width="10%">criteria_point </th>
-                                        <th width="10%">self_review</th>
-                                        <th width="10%">Author_review</th>
+                                        <th width="10%"><?= $this->lang->line('criteria_name') ?>  </th>
+                                        <th width="10%"><?= $this->lang->line('criteria_point') ?> </th>
+                                        <th width="10%"><?= $this->lang->line('self_review') ?></th>
+                                        <th width="10%"><?= $this->lang->line('author_review') ?></th>
                                         
                                     </tr>
                                 </thead>
@@ -313,7 +313,7 @@
                            
                             <div  class="col-md-12" width="100%">
                                 <button type="submit" class="btn btn-primary btn-block">
-                                    <b>Save</b>
+                                    <b><?= $this->lang->line('save') ?></b>
                                 </button>
                             </div>
                         </div>
@@ -325,12 +325,12 @@
                             <table id="example1" class="table table-bordered table-striped"  width="100%">
                                 <thead>
                                     <tr>
-                                        <th>Sr no.</th>
-                                        <th>Month</th>
-                                        <th>Empployee_id</th>
-                                        <th>Self Review</th>
-                                        <th>Author Review</th>
-                                        <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+                                        <th><?= $this->lang->line('sr_no') ?></th>
+                                        <th><?= $this->lang->line('month') ?></th>
+                                        <th><?= $this->lang->line('employee_id') ?></th>
+                                        <th><?= $this->lang->line('self_review') ?></th>
+                                        <th><?= $this->lang->line('author_review') ?></th>
+                                        <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -357,7 +357,7 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Review Details</h4>
+                             <h4 class="modal-title"><?= $this->lang->line('review_details') ?></h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -367,10 +367,10 @@
                               <thead>
                                 <tr>
                                   <th>#</th>
-                                  <th>Criteria Name</th>
-                                  <th>Criteria Point</th>
-                                  <th>Self Review</th>
-                                  <th>Author Review</th>
+                                  <th><?= $this->lang->line('criteria_name') ?></th>
+                                  <th><?= $this->lang->line('criteria_point') ?></th>
+                                  <th><?= $this->lang->line('self_review') ?></th>
+                                  <th><?= $this->lang->line('author_review') ?></th>
                                 
                                 </tr>
                               </thead>
@@ -404,7 +404,7 @@
                             </table>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                           </div>
                             
                                     </td>

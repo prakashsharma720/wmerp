@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="card card-primary card-outline">
         <!-- card-header -->
         <div class="card-header">
-            <h3 class="card-title pull-left"><?= $title ?></h3>
+            <h3 class="card-title pull-left"> <?= $this->lang->line('office_events') ?></h3>
             <div class="pull-right">
                
             </div>
@@ -19,7 +19,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="card">
                   <div class="card-header">
 
-                    <h3 class="card-title">🎉 Upcoming Birthdays 🎂</h3>
+                    <h3 class="card-title">🎉  <?= $this->lang->line('upcoming_birthdays') ?>  🎂</h3>
 
                     <div class="card-tools">
                       <!-- <span class="badge badge-danger">8 New Members</span> -->
@@ -46,7 +46,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </li>
                             <?php } ?>
                         <?php } else { ?>
-                            <p>No upcoming birthdays 🎂</p>
+                            <p> <?= $this->lang->line('no_upcoming_birthdays') ?>  🎂</p>
                         <?php } ?>
                     </ul>
                     <!-- /.users-list -->
@@ -64,7 +64,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="card">
                   <div class="card-header">
 
-                    <h3 class="card-title">🎉 Upcoming Work Anniversary 🎂</h3>
+                    <h3 class="card-title">🎉  <?= $this->lang->line('upcoming_work_anniversary') ?>  🎂</h3>
 
                     <div class="card-tools">
                       <!-- <span class="badge badge-danger">8 New Members</span> -->
@@ -91,7 +91,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     </li>
                                 <?php } ?>
                             <?php } else { ?>
-                                <p>No upcoming birthdays 🎂</p>
+                                <p> <?= $this->lang->line('no_upcoming_anniversaries') ?>  🎂</p>
                             <?php } ?>
                         </ul>
                         <!-- /.users-list -->

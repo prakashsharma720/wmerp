@@ -56,6 +56,7 @@ $lang['no_result'] = 'No result';
 // https://wmerp.yashdreamsoft.com/index.php/Employees/edit/4
 
 $lang['edit_employee'] = 'Edit Employee';
+$lang['employee_detail'] = 'Employee_Detail';
 $lang['personal_details'] = 'Personal Details';
 $lang['bank_details'] = 'Bank Details';
 $lang['salary_details'] = 'Salary Details';
@@ -76,6 +77,8 @@ $lang['daily_target'] = 'Daily Target';
 $lang['address'] = 'Address';
 $lang['upload_photo'] = 'Upload Photo';
 $lang['update'] = 'Update';
+$lang['update'] = 'Update';
+
 
 $lang['account_holder_name'] = 'Account Holder Name';
 $lang['bank_name'] = 'Bank Name';
@@ -3213,6 +3216,9 @@ $lang['criteria_name'] = 'Criteria Name';
 $lang['criteria_point'] = 'Criteria Points';
 $lang['self_review'] = 'Self Review';
 $lang['author_review'] = 'Authorized Review';
+$lang['employee_id'] = 'Employee ID';
+$lang['review_details'] = 'Review Details';
+
 
 // notification master
 // Notifications - English Translations
@@ -3238,6 +3244,10 @@ $lang['message_text'] = 'Message';
 $lang['department_name'] = 'Department';
 $lang['date_time'] = 'Date & Time';
 $lang['action'] = 'Action';
+$lang['read_recipients_report'] = 'Read Recipients Report';
+$lang['user'] = 'User';
+$lang['time'] = 'Time';
+
 
 // remainder master
 // All Reminders - English Translations
@@ -3252,6 +3262,11 @@ $lang['reminder_date'] = 'Reminder Date';
 $lang['reminder_time'] = 'Reminder Time';
 $lang['status'] = 'Status';
 $lang['action'] = 'Action';
+$lang['edit_reminder'] = 'Edit Reminder';
+$lang['snooze'] = 'Snooze';
+$lang['select_date'] = 'Select Date';
+
+
 
 // mo events
 // Office Events - English Translations
@@ -3485,6 +3500,20 @@ $lang['assign_to'] = 'Assigned To';
 $lang['assign_by'] = 'Assigned By';
 $lang['action'] = 'Action';
 $lang['create'] = 'Create';
+$lang['update_task'] = 'Update Task';
+$lang['task_history_description'] = 'Task History Description';
+
+$lang['reference'] = 'Reference';
+$lang['reference_name'] = 'Reference Name';
+$lang['write_your_reply'] = 'Write Your Reply';
+$lang['time_taken'] = 'Time Taken (In Hours)';
+$lang['how_much_time_take'] = 'How Much Time Take';
+$lang['submit_your_answer'] = 'Submit Your Answer';
+$lang['follow_up'] = 'Follow Up';
+$lang['document'] = 'Document';
+$lang['followup_time'] = 'Followup Time';
+$lang['delete_task_history_confirm'] = 'Are you sure, you want to delete this task history?';
+$lang['confirm_header'] = 'Confirm';
 
 
 // payroll module attendance list
@@ -3512,6 +3541,21 @@ $lang['total_salary'] = 'Total Salary';
 $lang['action'] = 'Action';
 $lang['calculate']='calculate';
 
+$lang['add_attendance'] = 'Add Attendance';
+$lang['attendance_date'] = 'Attendance Date';
+$lang['employee'] = 'Employee';
+$lang['check_in'] = 'Check In';
+$lang['check_out'] = 'Check Out';
+$lang['close'] = 'Close';
+$lang['attendance_details_for'] = 'Attendance Details for';
+$lang['update_attendance'] = 'Update Attendance';
+$lang['edit_attendance'] = 'Edit Attendance';
+$lang['delete_salary_record_confirm'] = 'Are you sure, you want to delete Salary Record of ?';
+$lang['cancel'] = 'Cancel';
+$lang['download'] = 'Download';
+
+
+
 // workers add
 $lang['add_new_worker'] = 'Add New Worker';
 $lang['name'] = 'Name *';
@@ -3538,6 +3582,8 @@ $lang['report_number'] = 'Report Number';
 $lang['enter_report_number'] = 'Enter Report Number';
 $lang['address'] = 'Address';
 $lang['enter_address'] = 'Enter Address';
+$lang['delete_worker_confirm'] = 'Are you sure, you want to delete worker?';
+
 
 //workers view list
 $lang['workers_list'] = 'Workers List';

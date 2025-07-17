@@ -23,7 +23,7 @@
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title"> <?= $title ?></h3>
+            <h3 class="card-title"> <?= $this->lang->line('broadcast') ?> </h3>
             <div class="pull-right error_msg">
                 <!-- <?php echo validation_errors();?> -->
                 <?php if (isset($message_display)) {
@@ -57,28 +57,28 @@
 
                             <div class="row col-md-12">
                                 <div class="col-md-4 col-sm-6 ">
-                                    <label class="control-label"> Department <span class="required">*</span></label>
+                                    <label class="control-label"> <?= $this->lang->line('department') ?>  <span class="required">*</span></label>
                                     <?php  
 								            		echo form_dropdown('department_id', $departments,  $department_id,'','required="required"')
 								            	?>
                                 </div>
                                 <div class="col-md-8 col-sm-8 ">
-                                    <label class="control-label"> message <span class="required"> *</span></label>
-                                    <textarea class="form-control message" rows="3" placeholder="Enter Message"
+                                    <label class="control-label"> <?= $this->lang->line('message') ?> <span class="required"> *</span></label>
+                                    <textarea class="form-control message" rows="3" placeholder="<?= $this->lang->line('enter_message') ?> "
                                         name="message" value="<?= $message ?>"><?= $message ?></textarea>
                                 </div>
                             </div>
                             <div class="row col-md-12">
                                 <div class="col-md-12 col-sm-12 ">
                                     <label class="control-label" style="visibility: hidden;"> Name</label><br>
-                                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?> </button>
                                 </div>
                             </div>
                             <?php } ?>
                         </form>
                         </br>
                         <hr>
-                        <h5>Broadcast List</h5>
+                        <h5><?= $this->lang->line('broadcast_list') ?> </h5>
                         </br>
 
                         <div class="row col-md-12">
@@ -86,12 +86,12 @@
                                 <table id="example1" class="table table-bordered table-striped" style="width:100%;">
                                     <thead>
                                         <tr>
-                                            <th> Sr.No.</th>
-                                            <th> Message</th>
-                                            <th> Department</th>
-                                            <th>Date Time</th>
+                                            <th> <?= $this->lang->line('sr_no') ?> </th>
+                                            <th> <?= $this->lang->line('message') ?> </th>
+                                            <th> <?= $this->lang->line('department') ?> </th>
+                                            <th><?= $this->lang->line('date_time') ?> </th>
                                             <?php if($role_id !='5') { ?>
-                                            <th> Action</th>
+                                            <th> <?= $this->lang->line('action') ?> </th>
                                             <?php }?>
                                         </tr>
                                     </thead>
@@ -127,7 +127,7 @@
                                                     <!-- Modal content-->
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title"> Read Receiptants Report</h4>
+                                                            <h4 class="modal-title"><?= $this->lang->line('read_recipients_report') ?>  </h4>
                                                             <button type="button" class="close"
                                                                 data-dismiss="modal">&times;</button>
 
@@ -140,8 +140,8 @@
                                                                     margin: 0px;
                                                                     margin-bottom: 6px; font-weight: 500;background-color: #f3f3f3;">
                                                                 <div class="col-md-1">#</div>
-                                                                <div class="col-md-3">User </div>
-                                                                <div class="col-md-3">Time </div>
+                                                                <div class="col-md-3"><?= $this->lang->line('user') ?>  </div>
+                                                                <div class="col-md-3"><?= $this->lang->line('time') ?>  </div>
                                                             </div>
                                                                 <?php
                                                                     $j = 1;
@@ -164,7 +164,7 @@
                                                             <hr>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-danger"
-                                                                data-dismiss="modal">Close</button>
+                                                                data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                                                         </div>
                                                     </div>
                                                 </div>

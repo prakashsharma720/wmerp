@@ -77,8 +77,9 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content" style="width:600px;">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Attendance Details for
-                                                                <?= $obj['date'] ?><span id="modalDate"></span>
+                                                               <h4> <?= $obj['date'] ?><span id="modalDate"></span></h4>
+                                                                                                                            <h4 class="modal-title"><?= $this->lang->line('attendance_details_for') ?>
+
                                                             </h4>
                                                             <button type="button" class="close"
                                                                 data-dismiss="modal">&times;</button>
@@ -87,11 +88,11 @@
                                                             <table class="table table-bordered">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>S.No.</th>
-                                                                        <th>Employee Name</th>
-                                                                        <th>Check-In</th>
-                                                                        <th>Check-Out</th>
-                                                                        <th>Status</th>
+                                                                        <th><?= $this->lang->line('sr_no') ?></th>
+                                                                        <th><?= $this->lang->line('employee_name') ?></th>
+                                                                        <th><?= $this->lang->line('check_in') ?></th>
+                                                                        <th><?= $this->lang->line('check_out') ?></th>
+                                                                        <th><?= $this->lang->line('status') ?></th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -121,7 +122,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-danger"
-                                                                data-dismiss="modal">Close</button>
+                                                                data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                                                         </div>
                                                     </div>
                                                 </div>

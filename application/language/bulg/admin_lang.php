@@ -46,6 +46,7 @@ $lang['location'] = 'Местоположение';
 $lang['emergency_no'] = 'Спешен номер';
 
 // Tabs
+$lang['employee_detail'] = 'Данни за служителя';
 $lang['personal_details'] = 'Лични данни';
 $lang['bank_details'] = 'Банкови данни';
 $lang['salary_details'] = 'Данни за заплата';
@@ -78,6 +79,8 @@ $lang['ifsc_code'] = 'IFSC код';
 $lang['branch_name'] = 'Име на клона';
 $lang['account_type'] = 'Тип на сметката';
 $lang['upi_id'] = 'UPI идентификатор';
+$lang['update'] = 'Актуализирай';
+
 
 
 $lang['basic_salary'] = 'Основна заплата';
@@ -2411,6 +2414,8 @@ $lang['enter_kwh_opening'] = 'Въведете начални KWH';
 $lang['enter_kwh_closing'] = 'Въведете крайни KWH';
 $lang['enter_tailing_qty'] = 'Въведете количество остатък';
 $lang['enter_tailing_per'] = 'Въведете процент остатък';
+$lang['enter_zero_if_not_applicable'] = 'Въведете 0, ако не е приложимо';
+
 
 // Totals
 $lang['total'] = 'Общо';
@@ -3002,8 +3007,10 @@ $lang['booking_status'] = 'Статус на резервация';
 $lang['action'] = 'Действие';
 $lang['status'] = 'Статус';
 $lang['view'] = 'Преглед';
+
 // erp master   employee review
 // Employee Review
+
 $lang['employee_review'] = 'Оценка на служителя';
 
 $lang['leave_allotment_month'] = 'Месец на отпуск';
@@ -3015,6 +3022,10 @@ $lang['criteria_name'] = 'Име на критерий';
 $lang['criteria_point'] = 'Точки за критерий';
 $lang['self_review'] = 'Самооценка';
 $lang['author_review'] = 'Оценка от ръководител';
+$lang['employee_id'] = 'Идентификационен номер на служителя';
+$lang['review_details'] = 'Детайли за прегледа';
+
+
 
 // notification master
 // Notifications
@@ -3040,6 +3051,9 @@ $lang['message_text'] = 'Съобщение';
 $lang['department_name'] = 'Отдел';
 $lang['date_time'] = 'Дата и час';
 $lang['action'] = 'Действие';
+$lang['read_recipients_report'] = 'Доклад за прочели получатели';
+$lang['user'] = 'Потребител';
+$lang['time'] = 'Време';
 
 
 // remainder master
@@ -3055,6 +3069,9 @@ $lang['reminder_date'] = 'Дата на напомняне';
 $lang['reminder_time'] = 'Час на напомняне';
 $lang['status'] = 'Статус';
 $lang['action'] = 'Действие';
+$lang['edit_reminder'] = 'Редактирай напомняне';
+$lang['snooze'] = 'Отложи';
+$lang['select_date'] = 'Изберете дата';
 
 // mo events
 // Office Events
@@ -3294,6 +3311,21 @@ $lang['assign_to'] = 'Възложено на';
 $lang['assign_by'] = 'Възложено от';
 $lang['action'] = 'Действие';
 $lang['create'] = 'Създай';
+$lang['update_task'] = 'Актуализиране на задачата';
+$lang['task_history_description'] = 'Описание на историята на задачата';
+
+$lang['reference'] = 'Референция';
+$lang['reference_name'] = 'Име на референцията';
+$lang['write_your_reply'] = 'Напишете своя отговор';
+$lang['time_taken'] = 'Време за изпълнение (в часове)';
+$lang['how_much_time_take'] = 'Колко време отне';
+$lang['submit_your_answer'] = 'Изпратете своя отговор';
+$lang['follow_up'] = 'Последващи действия';
+$lang['document'] = 'Документ';
+$lang['followup_time'] = 'Време за последващи действия';
+$lang['delete_task_history_confirm'] = 'Сигурни ли сте, че искате да изтриете тази история на задачата?';
+$lang['confirm_header'] = 'Потвърждение';
+
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Списък на присъствията';
@@ -3322,6 +3354,20 @@ $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Обща заплата';
 $lang['action'] = 'Действие';
 $lang['calculate'] = 'Изчисли';
+
+$lang['add_attendance'] = 'Добави присъствие';
+$lang['attendance_date'] = 'Дата на присъствие';
+$lang['employee'] = 'Служител';
+$lang['check_in'] = 'Час на влизане';
+$lang['check_out'] = 'Час на излизане';
+$lang['close'] = 'Затвори';
+$lang['attendance_details_for'] = 'Подробности за присъствието на';
+$lang['update_attendance'] = 'Актуализиране на присъствието';
+$lang['edit_attendance'] = 'Редактиране на присъствието';
+$lang['delete_salary_record_confirm'] = 'Сигурни ли сте, че искате да изтриете фиш за заплата на?';
+$lang['cancel'] = 'Отказ';
+$lang['download'] = 'Изтегли';
+
 
 
 // workers add
@@ -3357,6 +3403,7 @@ $lang['enter_report_number'] = 'Въведете номер на доклад';
 
 $lang['address'] = 'Адрес';
 $lang['enter_address'] = 'Въведете адрес';
+$lang['delete_worker_confirm'] = 'Сигурни ли сте, че искате да изтриете работник?';
 
 // workers view list
 $lang['workers_list'] = 'Списък на работниците';
