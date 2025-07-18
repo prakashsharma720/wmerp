@@ -77,10 +77,9 @@
     <div class="main-content">
         <div class="row">
             <div class="col-lg-12">
-                <form method="get" action="<?php echo base_url(); ?>index.php/Leads/approveall">
-                    <div class="card stretch stretch-full">
-                        <div class="form-group m-2">
-                            <?php if ($role_id == '1' || $role_id == '2') { ?>
+                <div class="card stretch stretch-full">
+                    <div class="form-group m-2">
+                        <form method="get" action="<?php echo base_url(); ?>index.php/Leads/approveall">
                             <div class="row">
                                 <div class="col-4">
                                     <select id="selectestimateid" class="form-control" data-select2-selector="default" name="approveaction">
@@ -96,7 +95,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <?php } ?>
+                        </form>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">
@@ -129,7 +128,6 @@
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
         </div>
     </div>

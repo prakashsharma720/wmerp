@@ -66,11 +66,11 @@
                             class="avatar-text avatar-md">
                             <i class="feather feather-edit-3 "></i>
                         </a>
-                        <a href="proposal-view.html" class="avatar-text avatar-md" data-bs-toggle="offcanvas"
-                            data-bs-target="#proposalSent<?php echo $obj['id']; ?>">
+                        <a class="avatar-text avatar-md" data-bs-toggle="offcanvas"
+                            data-bs-target="#ViewLeave<?php echo $obj['id']; ?>">
                             <i class="feather feather-eye"></i>
                         </a>
-                    <?php $this->load->view('Lead Module/Lead Generation/component/view-model', ['obj' => $obj]); ?>
+                    <?php $this->load->view('Lead Module/Lead Generation/component/view-leave', ['obj' => $obj]); ?>
                     </div>
                 </td>
             </tr>
