@@ -51,23 +51,23 @@
     <!-- Load Filter -->
     <?php $this->load->view('leave-module/component/filter'); ?>
 
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>
-        <!</h5>
-        <?php echo $this->session->flashdata('success'); ?>
-    </div>
-<?php endif; ?>
+    <?php if($this->session->flashdata('success')): ?>
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>
+            <!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <?php endif; ?>
 
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible ">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>
-        <!</h5>
-        <?php echo $this->session->flashdata('failed'); ?>
-    </div>
-<?php endif; ?>
+    <?php if($this->session->flashdata('failed')): ?>
+        <div class="alert alert-error alert-dismissible ">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>
+            <!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+    <?php endif; ?>
 
 <div class="main-content">
     <div class="row">
@@ -104,6 +104,7 @@
                         </div>
                     </div> <!-- /.card-body -->
                     <div class="card-body">
+                        <div class="table-responsive">
                           <table class="table table-hover" id="proposalList">
                                 <thead>
                                     <tr>
@@ -179,46 +180,37 @@
                                             </a>
 
                                             <?php }?>
-                                            <!-- <a class="avatar-text avatar-md" data-bs-toggle="modal"
+                                            <a class="avatar-text avatar-md" data-bs-toggle="offcanvas"
                                             data-bs-target="#delete<?php echo $obj['id'];?>">
                                             <i class="feather feather-trash "></i>
-                                            </a> -->
-                                            <a href="javascript:void(0)" class="d-flex me-1" data-action-target="#mailDeleteMessage">
-                                                <div class="avatar-text avatar-md" data-bs-toggle="tooltip" data-bs-trigger="hover" title="" data-bs-original-title="Delete">
-                                                    <i class="feather-trash-2"></i>
-                                                </div>
                                             </a>
-
+                                           
                                             <a class="avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewLeave<?php echo $obj['id']; ?>">
                                             <i class="feather feather-eye"></i>
                                             </a>
                                             </div>
                                         </td>
-
-                                        <div class="modal fade" id="delete<?php echo $obj['id']; ?>" role="dialog">
-                                            <div class="modal-dialog">
-                                                <form class="form-horizontal" role="form" method="post"
+                                        <div class="offcanvas offcanvas-end" tabindex="-1" id="delete<?php echo $obj['id']; ?>">
+                                            <form class="form-horizontal" role="form" method="post"
                                                     action="<?php echo base_url(); ?>index.php/Leave/deleteItem/<?php echo $obj['id']; ?>">
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p><?= $this->lang->line('confirm_delete') ?>
-                                                                <b><?php echo $obj['leave_category']; ?> </b>?
-                                                            </p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
-                                                            </button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
+
+                                            <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
+                                                <h2 class="fs-16 fw-bold text-truncate-1-line">Confirm</h2>
+                                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             </div>
+                                            <div class="offcanvas-body">
+                                                <!-- Modal content-->
+                                                    <p><?= $this->lang->line('confirm_delete') ?>
+                                                        <b><?php echo $obj['leave_category']; ?> </b>?
+                                                    </p>
+                                            </div>
+                                            
+                                             <div class="px-4 gap-2 d-flex align-items-center ht-80 border border-end-0 border-gray-2">
+                                                  <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
+                                                </button>
+                                             <a href="javascript:void(0);" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">Cancel</a>
+                                            </div>
+                                             </form>
                                         </div>
                                        
                                         <?php $this->load->view('leave-module/component/view-leave', ['obj' => $obj]); ?>
@@ -233,6 +225,7 @@
                                     <?php  }?>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>
