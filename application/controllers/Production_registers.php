@@ -92,7 +92,7 @@ public function add() {
 	//$data['grades']=$this->production_register_model->getGrades();
 	//$data['states']=$this->production_register_model->getStates();
 	$data['title']='Create Production Register';
-	$this->template->load('template','production_reg_add',$data);	
+	$this->template->load('layout/template','production_reg_add',$data);	
 	//$this->load->view('footer');
 	
 	}
@@ -195,7 +195,7 @@ public function edit($id=NULL) {
 			$data['pr_data']=$this->production_register_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->production_register_model->getStates();
-			$this->template->load('template','production_reg_view',$data);
+			$this->template->load('layout/template','production_reg_view',$data);
 		}
 
 	

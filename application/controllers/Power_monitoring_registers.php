@@ -65,7 +65,7 @@ public function add() {
 	//$data['grades']=$this->power_monitoring_model->getGrades();
 	//$data['states']=$this->power_monitoring_model->getStates();
 	$data['title']='Create Power Monitoring Register';
-	$this->template->load('template','power_monitoring_add',$data);	
+	$this->template->load('layout/template','power_monitoring_add',$data);	
 	//$this->load->view('footer');	
 	}
 
@@ -182,7 +182,7 @@ public function edit($id=NULL) {
 			$data['pr_data']=$this->power_monitoring_model->getList();
 			//print_r($data['pr_data']);exit;
 			//$data['states']=$this->power_monitoring_model->getStates();
-			$this->template->load('template','power_monitoring_view',$data);
+			$this->template->load('layout/template','power_monitoring_view',$data);
 		}
 
 	

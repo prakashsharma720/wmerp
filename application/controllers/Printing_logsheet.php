@@ -66,7 +66,7 @@ public function add() {
 	//$data['grades']=$this->printing_logsheet_model->getGrades();
 	//$data['states']=$this->printing_logsheet_model->getStates();
 	$data['title']='Create Printing Machine Logsheet';
-	$this->template->load('template','printing_logsheet_add',$data);	
+	$this->template->load('layout/template','printing_logsheet_add',$data);	
 	//$this->load->view('footer');	
 	}
 
@@ -153,7 +153,7 @@ public function edit($id=NULL) {
 			$data['pr_data']=$this->printing_logsheet_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->printing_logsheet_model->getStates();
-			$this->template->load('template','printing_logsheet_view',$data);
+			$this->template->load('layout/template','printing_logsheet_view',$data);
 		}
 
 	

@@ -38,7 +38,7 @@ public function index($id = "") {
     $data['review'] 	= $this->Review_model->getAllotedReviewByEmployee($login_id);
   }
 //  echo "<pre>"; print_r(  $data['review'] );exit();
-  $this->template->load('template','employee_review',$data);
+  $this->template->load('layout/template','employee_review',$data);
 }
 
 public function add_review() {

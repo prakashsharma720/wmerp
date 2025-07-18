@@ -64,7 +64,7 @@ public function add() {
 	$data['suppliers'] = $this->waste_material_model->getservice_providers();
 	$data['units'] = $this->waste_material_model->getUnits();
 	$data['title']='Create Waste Material Record';
-	$this->template->load('template','waste_material_add',$data);	
+	$this->template->load('layout/template','waste_material_add',$data);	
 	//$this->load->view('footer');
 	}
 
@@ -158,7 +158,7 @@ public function edit($id=NULL) {
 			$data['pr_data']=$this->waste_material_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->waste_material_model->getStates();
-			$this->template->load('template','waste_material_view',$data);
+			$this->template->load('layout/template','waste_material_view',$data);
 		}
 
 	

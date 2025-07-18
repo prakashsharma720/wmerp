@@ -69,7 +69,7 @@ endif;
     // echo "<pre>";print_r($data['broadcast']);exit;
 
  
-  $this->template->load('template','broadcast',$data);
+  $this->template->load('layout/template','broadcast',$data);
 }
 
   public function mark_as_read()

@@ -736,7 +736,7 @@ public function raw_add($id=NULL) {
            //$data['gir_data']=$this->gir_register_model->getListGeneral();
 			$data['categories']=$this->gir_register_model->getCategories();
 			//$data['states']=$this->gir_register_model->getStates();
-			$this->template->load('template','gir_register_view',$data);
+			$this->template->load('layout/template','gir_register_view',$data);
 		}
 
 	public function rm_gir_index(){
@@ -748,7 +748,7 @@ public function raw_add($id=NULL) {
 			$data['gir_data']=$this->gir_register_model->getListRMgir();
 			
 			//$data['states']=$this->gir_register_model->getStates();
-			$this->template->load('template','gir_rm_register_view',$data);
+			$this->template->load('layout/template','gir_rm_register_view',$data);
 		}
 
 	

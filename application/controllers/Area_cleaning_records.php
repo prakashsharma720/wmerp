@@ -34,7 +34,7 @@ public function index() {
 			//$data['departments'] = $this->area_cleaning_record_model->getDepartments();	
 			//echo var_dump($data['students']);
 			//print_r($data['area_cleaning_records']);exit;
-			$this->template->load('template','area_cleaning_view',$data);
+			$this->template->load('layout/template','area_cleaning_view',$data);
 	}
 
 
@@ -189,7 +189,7 @@ public function index() {
             $data['areas'] = $this->area_cleaning_record_model->getAreas();
             $data['workers'] = $this->area_cleaning_record_model->getWorkers();
 			//print_r($data['departments']);exit;
-			$this->template->load('template','area_cleaning_add',$data);
+			$this->template->load('layout/template','area_cleaning_add',$data);
 	}
 	public function edit($id = NULL) 
 	{

@@ -35,14 +35,14 @@ public function index() {
 			$data['departments'] = $this->employee->getDepartments();	
 			//echo var_dump($data['students']);
 			// print_r($data['employees'] );exit;
-			$this->template->load('template','employee_view',$data);
+			$this->template->load('layout/template','employee_view',$data);
 	}
 	public function events()
 	{
 		$data['title'] = 'Office Events';
 		$data['birthdays'] = $this->employee->upcomingBirthdays(30);
 		$data['work_anniversary'] = $this->employee->upcomingWorkAnniversary(30);
-		$this->template->load('template', 'events_view', $data);
+		$this->template->load('layout/template', 'events_view', $data);
 	}
 
 	
@@ -74,7 +74,7 @@ public function index() {
 			$data['designations'] = $this->employee->getDesignation();
 			$data['employees'] = $this->employee->getEmployees();
 			//print_r($data['departments']);exit;
-			$this->template->load('template','employees',$data);
+			$this->template->load('layout/template','employees',$data);
 	}
 	public function edit($id = NULL) 
 	{

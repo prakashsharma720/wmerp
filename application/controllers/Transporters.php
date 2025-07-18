@@ -76,7 +76,7 @@ public function add() {
     $data['categories']=$this->transporter_model->getCategories();
     $data['states']=$this->transporter_model->getStates();
 
-	$this->template->load('template','transporter_add',$data);
+	$this->template->load('layout/template','transporter_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -113,7 +113,7 @@ public function add() {
 			//$data['states']=$this->transporter_model->getStates();
 			//print_r($data['transporters']);exit;
 		
-			$this->template->load('template','transporter_view',$data);
+			$this->template->load('layout/template','transporter_view',$data);
 		}
 
 	public function index() 
@@ -174,7 +174,7 @@ public function add() {
 			//echo "hy";exit;
 			if(isset($this->session->userdata['logged_in'])){
 			$data['categories']=$this->transporter_model->getCategories();
-			$this->template->load('template','transporter_add',$data);
+			$this->template->load('layout/template','transporter_add',$data);
 			//$this->load->view('admin_page');
 			}else{
 			$this->load->view('login_form');
@@ -254,7 +254,7 @@ public function add() {
        // $data['categories']=$this->transporter_model->getCategoriesEditPage();
 	    $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
         $data['states']=$this->transporter_model->getStates();
-        $this->template->load('template','transporter_edit',$data);
+        $this->template->load('layout/template','transporter_edit',$data);
 
 	}
 

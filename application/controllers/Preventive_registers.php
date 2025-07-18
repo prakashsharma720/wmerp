@@ -34,7 +34,7 @@ public function index() {
 			//$data['departments'] = $this->preventive_register_model->getDepartments();	
 			//echo var_dump($data['students']);
 			//print_r($data['job_orders']);exit;
-			$this->template->load('template','preventive_reg_view',$data);
+			$this->template->load('layout/template','preventive_reg_view',$data);
 	}
 
 		public function report() 
@@ -171,7 +171,7 @@ public function index() {
             $data['areas'] = $this->preventive_register_model->getAreas();
             $data['workers'] = $this->preventive_register_model->getWorkers();
 			//print_r($data['departments']);exit;
-			$this->template->load('template','preventive_reg_add',$data);
+			$this->template->load('layout/template','preventive_reg_add',$data);
 	}
 	public function edit($id = NULL) 
 	{

@@ -119,12 +119,12 @@ public function edit($id = NULL) {
 			// }
 			// $data['allnotifications']=$this->notifications_model->allnotification();
 			//$data['states']=$this->notifications_model->getStates();
-			$this->template->load('template','notification_master',$data);
+			$this->template->load('layout/template','notification_master',$data);
 		}
 
 		public function allreminder(){
 			$data['title']=' All Reminders';
-			$this->template->load('template','reminder_master',$data);
+			$this->template->load('layout/template','reminder_master',$data);
 		}
 	public function report() 
 	{

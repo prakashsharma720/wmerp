@@ -34,7 +34,7 @@ public function index() {
 			//$data['departments'] = $this->job_order_model->getDepartments();	
 			//echo var_dump($data['students']);
 			//print_r($data['job_orders']);exit;
-			$this->template->load('template','job_order_view',$data);
+			$this->template->load('layout/template','job_order_view',$data);
 	}
 
 	
@@ -65,7 +65,7 @@ public function index() {
             $data['plants'] = $this->job_order_model->getPlants();
             $data['workers'] = $this->job_order_model->getWorkers();
 			//print_r($data['departments']);exit;
-			$this->template->load('template','job_order_add',$data);
+			$this->template->load('layout/template','job_order_add',$data);
 	}
 	public function edit($id = NULL) 
 	{

@@ -62,7 +62,7 @@ public function add() {
 	$data['workers']=$this->daily_stitching_model->getWorkers();
 	$data['departments'] = $this->daily_stitching_model->getDepartments();
 	$data['title']='Create Daily Stitching Record';
-	$this->template->load('template','daily_stitching_add',$data);	
+	$this->template->load('layout/template','daily_stitching_add',$data);	
 	//$this->load->view('footer');	
 	}
 
@@ -161,7 +161,7 @@ public function edit($id=NULL) {
 			$data['pr_data']=$this->daily_stitching_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->daily_stitching_model->getStates();
-			$this->template->load('template','daily_stitching_view',$data);
+			$this->template->load('layout/template','daily_stitching_view',$data);
 		}
 
 	

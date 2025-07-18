@@ -84,7 +84,7 @@ public function materials() {
 	$data['employees'] = $this->stock_registers_model->getEmployees();
 	//$data['grades']=$this->stock_registers_model->getGrades();
 	//$data['states']=$this->stock_registers_model->getStates();
-	$this->template->load('template','stock_register_materials',$data);
+	$this->template->load('layout/template','stock_register_materials',$data);
 	
 	}
 
@@ -142,7 +142,7 @@ public function materials() {
 			$data['stocks']=$this->stock_registers_model->getCurrentStock();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->stock_registers_model->getStates();
-			$this->template->load('template','current_stock',$data);
+			$this->template->load('layout/template','current_stock',$data);
 		}
 	public function myStock(){
 			$data['title']=' Stock Available';
@@ -151,7 +151,7 @@ public function materials() {
 			$data['stocks']=$this->stock_registers_model->getMyStock();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->stock_registers_model->getStates();
-			$this->template->load('template','my_stock',$data);
+			$this->template->load('layout/template','my_stock',$data);
 		}
 
 		// public function report() 
@@ -184,7 +184,7 @@ public function materials() {
                 $data['stocks']=$this->stock_registers_model->getCurrentStock();
             }
 
-			$this->template->load('template','current_stock_report',$data);
+			$this->template->load('layout/template','current_stock_report',$data);
 		}
 
 		function createXLS() {
@@ -320,7 +320,7 @@ public function materials() {
 		//$this->load->model('gir_register_model');
 		$data['employees'] = $this->stock_registers_model->getEmployees();
 		//echo var_dump($data['students']);
-		$this->template->load('template','fg_stock_report',$data);
+		$this->template->load('layout/template','fg_stock_report',$data);
 	}
 	public function fg_current_stock() 
 	{
@@ -328,7 +328,7 @@ public function materials() {
 		$data['FGStockReport'] = $this->stock_registers_model->getFGCurrentStock();
 		
 		//echo var_dump($data['students']);
-		$this->template->load('template','fg_current_stock',$data);
+		$this->template->load('layout/template','fg_current_stock',$data);
 	}
 
 

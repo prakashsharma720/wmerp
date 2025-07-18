@@ -57,7 +57,7 @@ Class Maintenance_history_records extends MY_Controller {
 		$data['departments'] 			= $this->daily_stacking_model->getDepartments();
 		$data['plant_machinary_list'] 	= $this->categories_model->packingmaterialsList(6);
 		$data['title'] 					= 'Add New Maintenance History Record';
-		$this->template->load('template','maintenance_history_add',$data);
+		$this->template->load('layout/template','maintenance_history_add',$data);
 	}
 
 	public function edit($id=NULL)
@@ -123,7 +123,7 @@ Class Maintenance_history_records extends MY_Controller {
 		$department_id 		= $this->session->userdata['logged_in']['department_id'];
 		$data['pr_data'] 	= $this->maintenance_history_model->getList();
 
-		$this->template->load('template','maintenance_history_view',$data);
+		$this->template->load('layout/template','maintenance_history_view',$data);
 	}
 	
 	public function report() 

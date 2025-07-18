@@ -188,7 +188,7 @@ Class Leads extends MY_Controller {
 		//print_r($data['item_name']);exit;
 		
 		$data['categories'] = $this->Leads_model->getLeadsCategories();
-		$this->template->load('template','leads/mo_lead_view',$data);
+		$this->template->load('layout/template','leads/mo_lead_view',$data);
 	}
 	public function worshop_leads() 
 {
@@ -206,7 +206,7 @@ Class Leads extends MY_Controller {
     $data['leads'] = $this->MO_leads->MOWorkshopList($conditions);
     $data['workshopnames'] = $this->MO_leads->getWorkshop();
 
-    $this->template->load('template', 'leads/workshop_view', $data);
+    $this->template->load('layout/template', 'leads/workshop_view', $data);
 }
 
    public function mailtoAll($id=NULL)

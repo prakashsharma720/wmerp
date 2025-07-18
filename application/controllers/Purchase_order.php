@@ -587,7 +587,7 @@ public function edit($id=NULL) {
 			$data['title']=' Pending Purchase Order for Approval';
 			$data['po_data']=$this->po_model->getPOListforApproval();
 			//print_r($data['po_data']);exit;
-			$this->template->load('template','po_approval',$data);
+			$this->template->load('layout/template','po_approval',$data);
 			
 			//$data['states']=$this->requisition_slip_model->getStates();
 		}

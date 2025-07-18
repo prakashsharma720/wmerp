@@ -139,7 +139,7 @@ public function add() {
 	//$data['grades']=$this->production_logsheet_model->getGrades();
 	//$data['states']=$this->production_logsheet_model->getStates();
 	$data['title']='Create Production Logsheet';
-	$this->template->load('template','production_logsheet_add',$data);	
+	$this->template->load('layout/template','production_logsheet_add',$data);	
 	//$this->load->view('footer');	
 	}
 
@@ -363,7 +363,7 @@ if (isset($result[0]['total_production'])) :
 			$data['pr_data']=$this->production_logsheet_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->production_logsheet_model->getStates();
-			$this->template->load('template','production_logsheet_view',$data);
+			$this->template->load('layout/template','production_logsheet_view',$data);
 		}
 
 	

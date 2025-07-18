@@ -36,7 +36,7 @@ $this->load->model('Leave_model');
 
 // Show login page
 public function add() {
-  $this->template->load('template','supplier_add');
+  $this->template->load('layout/template','supplier_add');
   //$this->load->view('footer');
   }
 

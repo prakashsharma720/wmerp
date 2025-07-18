@@ -79,7 +79,7 @@ public function add() {
 		$this->template->load('template','requisition_add_store',$data);
 	}else{
 		$data['title']='Create Requisition Slip';
-		$this->template->load('template','requisition_add',$data);
+		$this->template->load('layout/template','requisition_add',$data);
 	}
 	
 
@@ -235,7 +235,7 @@ public function edit($id=NULL) {
 			$data['requisition_data']=$this->requisition_slip_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->requisition_slip_model->getStates();
-			$this->template->load('template','requisition_view',$data);
+			$this->template->load('layout/template','requisition_view',$data);
 		}
 
 	
@@ -418,7 +418,7 @@ public function edit($id=NULL) {
 			if($role_id=='4'){
 				$this->template->load('template','requisition_approval',$data);
 			}else{
-				$this->template->load('template','requisition_approval_admin',$data);
+				$this->template->load('layout/template','requisition_approval_admin',$data);
 			}
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->requisition_slip_model->getStates();

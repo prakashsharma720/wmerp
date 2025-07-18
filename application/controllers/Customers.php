@@ -48,7 +48,7 @@ public function add() {
     $data['states']=$this->customer_model->getStates();
     $data['cities']=$this->customer_model->getCities();
     $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-	$this->template->load('template','customer_add',$data);
+	$this->template->load('layout/template','customer_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -76,7 +76,7 @@ public function add() {
 		
 		}
 		// echo "<pre>";print_r($data['customers']);exit;
-		$this->template->load('template','customer_view',$data);
+		$this->template->load('layout/template','customer_view',$data);
 	}
 	public function report() 
 	{
