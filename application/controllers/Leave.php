@@ -67,26 +67,28 @@ $this->load->model('notifications_model');
 			}
 
 			$conditions['login_id'] = $login_id;
-			
-			$data['leaves']			= $this->Leave_model->LeaveListCSV($conditions);
-			
 			$data['filtered_value'] = $conditions;
+			
+			$data['leaves']= $this->Leave_model->LeaveListCSV($conditions);
 		}
 		else
 		{
-			$conditions['login_id'] 	= $login_id;
+			$conditions['login_id'] = $login_id;
+			$conditions['category_name']="";
 			$conditions['employee_id'] 	= "";
 			$conditions['leave_status'] = "";
 			$conditions['upto_date'] 	= "";
 			$conditions['from_date'] 	= "";
+			$data['filtered_value'] = $conditions; 
 			$data['leaves']			= $this->Leave_model->LeaveListCSV($conditions);
 			$data['filtered_value'] = "";
 		}
 	
 		$data['employees'] = $this->Leave_model->getEmployeeDropdown();
 		// $this->Leave_model->sendMail('42') ;
-		//echo "<pre>"; print_r($data); exit;
-		$this->template->load('template','leave_view',$data);
+		// echo "<pre>"; print_r($data['filtered_value']); exit;
+		$this->template->load('layout/template', 'leave-module/leave_view', $data);
+		// $this->template->load('template','leave_view',$data);
 	}
 
 	

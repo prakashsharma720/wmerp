@@ -153,9 +153,9 @@ $lang['sign_out'] = 'Sign Out';
 // Header Section
 $lang['total_assign'] = 'Total Assignments: 0';
 $lang['followups'] = 'Followups: 0';
-$lang['pending'] = 'Pending Tasks: 0';
-$lang['approve'] = 'Approved: 0';
-$lang['rejected'] = 'Rejected: 0';
+// $lang['pending'] = 'Pending Tasks: 0';
+// $lang['approve'] = 'Approved: 0';
+// $lang['rejected'] = 'Rejected: 0';
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'Edit Employee';
@@ -1245,9 +1245,9 @@ $lang['action_by_name'] = 'Approved By';
 $lang['action_button'] = 'Action Button';
 
 // Statuses
-// $lang['approved'] = 'Approved';
-// $lang['pending'] = 'Pending';
-// $lang['rejected'] = 'Rejected';
+$lang['approved'] = 'Approved';
+$lang['pending'] = 'Pending';
+$lang['rejected'] = 'Rejected';
 
 // purchase order list
 $lang['purchase_order_list'] = 'Purchase Order List';
@@ -3932,3 +3932,4 @@ $lang['customize_theme'] = 'Customize Theme';
 $lang['primary_theme_color'] = 'Primary Theme Color';
 $lang['navbar_color'] = 'Navbar Color';
 $lang['secondary_theme_color'] = 'Secondary Theme Color';
+$lang['home'] ='Home';
