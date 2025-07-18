@@ -523,6 +523,9 @@ $lang['action'] = 'Action';
 $lang['showing_entries'] = 'Showing 1 to 10 of 48 entries';
 $lang['previous'] = 'Previous';
 $lang['next'] = 'Next';
+$lang['quantity'] = 'Quantity';
+$lang['unit'] = 'Unit';
+$lang['description'] = 'Description';
 
 // packing material
 $lang['packing material'] = 'Packing Material';
@@ -1120,12 +1123,14 @@ $lang['branch_address'] = 'Branch Address';
 $lang['enter_branch_address'] = 'Enter Branch Address';
 $lang['ifsc'] = 'IFSC Code';
 $lang['enter_ifsc'] = 'Enter IFSC';
+$lang['edit_service_provider'] = 'Edit Service Provider';
 $lang['account_number'] = 'Account Number';
 $lang['enter_account_number'] = 'Enter Account Number';
 $lang['date_of_approval'] = 'Date of Approval';
 $lang['next_evaluation_date'] = 'Next Evaluation Date';
 $lang['delete_service_provider_confirm'] = 'Are you sure you want to delete the service provider?';
-
+$lang['service_provider_account_details'] = 'Service Provider Account Details';
+$lang['service_provider_personal_details'] = 'Service Provider Personal Details';
 // suppliers - View List
 $lang['suppliers_list'] = 'Suppliers List';
 $lang['supplier_category'] = 'Supplier Category';
@@ -1187,6 +1192,10 @@ $lang['raw_material'] = 'Raw Material';
 $lang['grade'] = 'Grade';
 $lang['rm_code'] = 'RM Code';
 $lang['action'] = 'Action';
+$lang['tan_no'] = 'TAN Number';
+$lang['suppliers_account_details'] = 'Supplier Account Details';
+$lang['branch'] = 'Branch';
+$lang['mobile_number'] = 'Mobile Number';
 
 $lang['previous'] = 'Previous';
 $lang['next'] = 'Next';
@@ -1205,8 +1214,27 @@ $lang['showing_entries'] = 'Showing 1 to 10 of 23 entries';
 // $lang['rm_kaloda_1st'] = 'Kaloda 1st (MMK1)';
 
 // purchase order add
+$lang['authorised_signatory'] = 'Authorised Signatory';
 $lang['pending_requisition_slips'] = 'Pending Requisition Slips for Purchase Order';
-
+$lang['mineral_name'] = 'Mineral Name';
+$lang['user_name_sign'] = 'User (Name & Sign)';
+$lang['store_incharge_sign'] = 'Store Incharge (Name & Sign)';
+$lang['request_to_indent'] = 'Request to Indent for Purchase';
+$lang['store_dept_sign_date'] = 'Store Dept. (Sign & Date)';
+$lang['purchase_dept_sign_date'] = 'Purchase Dept. (Sign & Date)';
+$lang['authorized_by_sign_date'] = 'Authorized By (Sign & Date)';
+$lang['grade_name'] = 'Grade Name';
+$lang['lot_no'] = 'Lot Number';
+$lang['batch_no'] = 'Batch Number';
+$lang['equipment_name'] = 'Equipment Name';
+$lang['purpose'] = 'Purpose';
+$lang['comment'] = 'Comment';
+$lang['requisition_no'] = 'Requisition No';
+$lang['requisition_date'] = 'Requisition Date';
+$lang['request_by'] = 'Requested By';
+$lang['status'] = 'Status';
+$lang['action_date'] = 'Action Date';
+$lang['action_by'] = 'Action By';
 $lang['sr_no'] = 'Sr. No';
 $lang['requisition_no'] = 'Requisition No';
 $lang['requisition_date'] = 'Requisition Date';
@@ -1367,14 +1395,22 @@ $lang['pan'] = 'PAN';
 $lang['address'] = 'Address';
 $lang['to'] = 'To';
 $lang['po_number'] = 'PO Number';
+$lang['approve'] = 'Approve';
+$lang['requisition_slip'] = 'Requisition Slip';
+$lang['comment'] = 'Comment';
+$lang['enter_reason_here'] = 'Enter reason here';
+$lang['submit'] = 'Submit';
 $lang['dated'] = 'Dated';
+$lang['are_you_sure_you_want_to'] = 'Are you sure you want to';
+$lang['approve'] = 'Approve';
 $lang['vendor_code'] = 'Vendor Code';
 $lang['contact_person'] = 'Contact Person';
 $lang['contact_no'] = 'Contact No';
 $lang['email_id'] = 'Email Id';
 $lang['reference'] = 'Reference';
 $lang['please_supply'] = 'Please supply following items as per our Telecom/ Previous Supply/ Your Ref. At the earliest:';
-
+$lang['material_requisition_slip'] = 'Material Requisition Slip';
+$lang['requisition_slip_print_view'] = 'Requisition Slip Print View';
 $lang['material_description'] = 'Material Description';
 $lang['quantity'] = 'Quantity';
 $lang['item_price'] = 'Item Price';
@@ -1455,6 +1491,7 @@ $lang['invoice_no'] = 'Invoice No';
 $lang['date'] = 'Date';
 $lang['total_qty'] = 'Total Quantity';
 $lang['action_button'] = 'Action Button';
+$lang['suppliers_personal_detail'] = 'Supplier Personal Details';
 
 // current stock report
 $lang['current_stock_report'] = 'Current Stock Report';
@@ -1587,6 +1624,16 @@ $lang['ifsc_code'] = 'IFSC Code';
 $lang['account_number'] = 'Account Number';
 $lang['date_of_approval'] = 'Date of Approval';
 $lang['date_of_next_evaluation'] = 'Date of Next Evaluation';
+$lang['reject_purchase_order_confirm'] = 'Are you sure, you want to <b style="color:#dc7629;">Reject</b> Purchase Order <b>%s</b>?';
+$lang['enter_reason_here'] = 'Enter Reason here';
+$lang['close'] = 'Close';
+$lang['equipment_name'] = 'Equipment Name';
+$lang['price'] = 'Price';
+$lang['amount'] = 'Amount';
+$lang['payment_mode'] = 'Payment Mode';
+$lang['reference_by'] = 'Reference By';
+$lang['quotation_no'] = 'Quotation No';
+$lang['to'] = 'To';
 
 // list
 $lang['transporters_list'] = 'Transporters List';
@@ -3687,6 +3734,13 @@ $lang['company_name'] = 'Choudhary & Company';
 $lang['address'] = 'Address';
 $lang['company_address'] = 'B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.';
 $lang['edit_requisition_slip'] = 'Edit Requisition Slip';
+$lang['weight_slip_no'] = 'Weight Slip No';
+$lang['actual_weight'] = 'Actual Weight';
+$lang['documented_weight'] = 'Documented Weight';
+$lang['weight'] = 'Weight';
+$lang['truck_number'] = 'Truck Number';
+$lang['payment'] = 'Payment';
+$lang['material_received_from'] = 'Material Received From';
 
 // Transporter
 $lang['transporter'] = 'Transporter';

@@ -69,7 +69,7 @@ public function add() {
       $data['units'] = $this->unit_model->unitList();
       //echo var_dump($data['students']);
       //print_r($data['unit_name']);exit;
-      $this->template->load('template','unit_master',$data);
+      $this->template->load('layout/template','unit_master',$data);
   }
   public function add_new_unit() {
     

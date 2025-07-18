@@ -44,7 +44,7 @@ public function add($id = NULL) {
 	$data['raw_materials']=$this->rm_model->getCategories();
 	$data['categories']=$this->rm_model->getSupplierCategories();
 	//$data['states']=$this->rm_model->getStates();
-	$this->template->load('template','rm_code_add',$data);
+	$this->template->load('layout/template','rm_code_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -110,7 +110,7 @@ public function edit($id = NULL) {
 			//$data['categories']=$this->rm_model->getCategories();
 			$data['rmcodes']=$this->rm_model->getList();
 			//$data['states']=$this->rm_model->getStates();
-			$this->template->load('template','rm_code_view',$data);
+			$this->template->load('layout/template','rm_code_view',$data);
 		}
 
 	public function report() 

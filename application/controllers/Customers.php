@@ -98,7 +98,7 @@ public function add() {
 		$data['customers'] = $this->customer_model->customer_list();
 		}
 		//echo var_dump($data['students']);
-		$this->template->load('template','customer_report',$data);
+		$this->template->load('layout/template','customer_report',$data);
 	}
 
 	public function add_new_customer() {

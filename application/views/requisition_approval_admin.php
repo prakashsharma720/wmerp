@@ -270,7 +270,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                           <button type="button" class="close" data-dismiss="modal" style="color: azure;">&times;</button>
                         </div>
                         <div class="modal-body">
-                          <p>Are you sure, you want to <b style="color:#168c56;">Approve</b> <?= $this->lang->line('requisition_slip'); ?> <b><?php echo $inv_number1; ?> </b>? </p>
+                          <p>   <?= $this->lang->line('are_you_sure_you_want_to') ?>
+  <b style="color:#168c56;"><?= $this->lang->line('approve') ?></b>? <?= $this->lang->line('requisition_slip'); ?> <b><?php echo $inv_number1; ?> </b>? </p>
                           <input type="hidden" name="requisition_id" value="<?php echo $obj['id']; ?>">
                           <input type="hidden" name="status" value="Approved">
                           <input type="hidden" name="approved_date" value="<?= date('Y-m-d') ?>">

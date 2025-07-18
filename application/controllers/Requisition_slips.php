@@ -263,7 +263,7 @@ public function edit($id=NULL) {
 		$data['departments'] = $this->requisition_slip_model->getDepartments();
 		$data['req_status']= array('All'=>'All','Pending' => 'Pending','Approved'=>'Approved','Rejected'=>'Rejected');
 		//echo var_dump($data['students']);
-		$this->template->load('template','requisition_report',$data);
+		$this->template->load('layout/template','requisition_report',$data);
 	}
 
 	public function add_new_requisition() {

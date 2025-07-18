@@ -73,7 +73,7 @@ $this->load->model('department_model');
 			$data['departments'] = $this->department_model->departmentsList();
 			//echo var_dump($data['students']);
 			//print_r($data['department_name']);exit;
-			$this->template->load('template','department_master',$data);
+			$this->template->load('layout/template','department_master',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

@@ -110,7 +110,7 @@ $this->load->model('categories_model');
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
 			$data['units'] = $this->categories_model->getUnits();
-			$this->template->load('template','computer_peripherals_view',$data);
+			$this->template->load('layout/template','computer_peripherals_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

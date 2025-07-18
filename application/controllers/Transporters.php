@@ -125,7 +125,7 @@ public function add() {
 		$data['title'] = 'transporters Report';
 		$data['transporters'] = $this->transporter_model->transporter_list();
 		//echo var_dump($data['students']);
-		$this->template->load('template','transporter_report',$data);
+		$this->template->load('layout/template','transporter_report',$data);
 	}
 
 	public function add_new_transporter() {

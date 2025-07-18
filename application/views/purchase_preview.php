@@ -27,10 +27,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-sm-4 invoice-col">
                 <strong><u><?= $this->lang->line('company_details') ?>:</u></strong><br>
-                  <b><?= $this->lang->line('gst_in') ?> : </b>08AABFC2155P1ZA<br>
+                  <b><?= $this->lang->line('gstin') ?> : </b>08AABFC2155P1ZA<br>
                   <b><?= $this->lang->line('pan') ?> : </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
-                  <b> <?= $this->lang->line('address') ?> : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
+                  <b> <?= $this->lang->line('address') ?> : </b> <?= $this->lang->line('company_address') ?>
                 </div>
               </div>
               <br>

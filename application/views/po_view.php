@@ -103,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"><?=$this ->lang ->line('purchase_order')?>  (<?php echo $obj['po_number']?>) Details </h4>
+                             <h4 class="modal-title"><?=$this ->lang ->line('purchase_order')?>  (<?php echo $obj['po_number']?>) <?=$this ->lang ->line('details')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -143,7 +143,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin: 0px;
                                   margin-bottom: 6px;" >
                               <div class="col-md-4">
-                                <label class="control-label"><?=$this ->lang ->line('quatation_no')?>  : </label>
+                                <label class="control-label"><?=$this ->lang ->line('quotation_no')?>  : </label>
                                 <span > <?php echo $obj['quotation_no']?></span>
                               </div>
                                <div class="col-md-4">
