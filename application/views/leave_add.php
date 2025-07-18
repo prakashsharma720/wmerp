@@ -50,6 +50,7 @@
 									<?php echo form_dropdown('leave_type', $leave_types, '', 'required="required"'); ?>
 								</div>
 								
+<<<<<<< Updated upstream
 								<div class="col-md-4">
 									<label class="control-label"> Leave category </label>
 									<div class="form-check">
@@ -60,6 +61,22 @@
 										<input class="form-check-input" type="radio" name="leave_category" value="gatepass" /> Gatepass
 									</div>
 								</div>
+=======
+							<div class="form-group d-flex gap-4">
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="leave_category" id="leave_full" value="full" checked>
+			<label class="form-check-label" for="leave_full"><?= $this->lang->line('full') ?></label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="leave_category" id="leave_half" value="half">
+			<label class="form-check-label" for="leave_half"><?= $this->lang->line('half') ?></label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio" name="leave_category" id="leave_gatepass" value="gatepass">
+			<label class="form-check-label" for="leave_gatepass"><?= $this->lang->line('gatepass') ?></label>
+		</div>
+	</div>
+>>>>>>> Stashed changes
 
 								<!-- Full Day Divs -->
 								<div class="col-md-3 full_div">

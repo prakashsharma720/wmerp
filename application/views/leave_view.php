@@ -11,7 +11,16 @@ $data=explode('?', $current_page);
 }
 #toggleFilter {
     margin-right: 10px;
+<<<<<<< Updated upstream
 }
+=======
+    color:black;
+}
+.btn-light-border {
+    border: 1px solid lightgray;
+}
+
+>>>>>>> Stashed changes
 </style>
 
 
@@ -37,16 +46,27 @@ $data=explode('?', $current_page);
             <span class="card-title">
                 <?php  echo $title; ?>
             </span>
+<<<<<<< Updated upstream
            <div class="pull-right d-flex align-items-center">
     <button type="button" class="btn btn-secondary mr-2" id="toggleFilter">
         <i class="fa fa-filter"></i>
     </button>
+=======
+   <div class="pull-right d-flex align-items-center">
+ <button type="button" class="btn btn-none mr-2 btn-light-border" id="toggleFilter">
+    <i class="fa fa-filter"></i>
+</button>
+>>>>>>> Stashed changes
 
                 <div>
                     <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
                         <?php if(!empty($filtered_value)){ foreach ($filtered_value as $key => $value) { ?>
                         <input type="hidden" name="<?= $key ?>" value="<?=$value ?>"> <?php } }?>
+<<<<<<< Updated upstream
                         <button type="submit" class="btn btn-info"> Export </button>
+=======
+                        <button type="submit" class="btn btn-primary">  <?= $this->lang->line('export') ?> </button>
+>>>>>>> Stashed changes
                     </form>
                 </div>
                 &nbsp;
@@ -112,6 +132,7 @@ $data=explode('?', $current_page);
                             placeholder="dd-mm-yyyy" autocomplete="off" autocomplete="off">
                     </div>
 
+<<<<<<< Updated upstream
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;">Grade</label>
                         <input type="submit" class="btn btn-xs btn-primary" value="Search" />
@@ -120,6 +141,21 @@ $data=explode('?', $current_page);
                         <label class="control-label" style="visibility: hidden;"> Grade</label>
                         <a href="<?php echo $data[0]?>" class="btn btn-danger"> Reset</a>
                     </div>
+=======
+                   <div class="col-md-1 col-sm-1">
+    <label class="control-label" style="visibility: hidden;">Grade</label>
+    <button type="submit" class="btn btn-xs btn-primary">
+        <i class="fa fa-filter"></i> Search
+    </button>
+</div>
+<div class="col-md-1 col-sm-1">
+    <label class="control-label" style="visibility: hidden;">Grade</label>
+    <a href="<?php echo $data[0]?>" class="btn btn-xs btn-danger">
+        <i class="fa fa-times"></i> <?= $this->lang->line('reset') ?>
+    </a>
+</div>
+
+>>>>>>> Stashed changes
                 </div>
             </form>
             <hr>
@@ -195,6 +231,7 @@ $data=explode('?', $current_page);
                                 <?php
               if( $obj['employee_id']!==$login_id)
               { ?>
+<<<<<<< Updated upstream
                                 <a class="btn btn-xs btn-primary btnEdit"  style="display:inline-block;"
                                     href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id'];?>"><i
                                         class="fa fa-edit fa-sm"></i></a>
@@ -202,6 +239,20 @@ $data=explode('?', $current_page);
                                 <a class="btn btn-xs btn-danger btnEdit"  style="display:inline-block;" data-toggle="modal"
                                     data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"
                                         class="fa fa-trash fa-sm"></i> </a>
+=======
+                                <a class="btn btn-xs btn-primary btnEdit" style="display:inline-block;"
+
+                                    href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id'];?>"><i
+                                        class="fa fa-edit fa-sm" ></i></a>
+                                <?php }?>
+<a class="btn btn-xs btn-primary btnEdit" style="display:inline-block;" data-toggle="modal"
+    data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;" class="fa fa-trash fa-sm"></i></a>
+
+<a class="btn btn-xs btn-primary btnEdit" style="display:inline-block;" data-toggle="modal"
+    data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;" class="fa fa-eye fa-sm"></i></a>
+
+
+>>>>>>> Stashed changes
 
                             </td>
 
@@ -254,7 +305,10 @@ $(document).ready(function() {
         $(this).next('.content').slideToggle(200);
     });
 });
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 </script>
 <!-- Make sure jQuery is loaded before this -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
