@@ -56,28 +56,28 @@ $this->excel = new PHPExcel(); */
   public function index($id = NULL)
   {
     $data = array();
-    $data['designation_id'] = $this->session->userdata['logged_in']['designation_id'];
-    $data['role_id'] = $this->session->userdata['logged_in']['role_id'];
-    $login_id = $this->session->userdata['logged_in']['id'];
-    $result = $this->master_model->getById($id);
+    $data['designation_id']=$this->session->userdata['logged_in']['designation_id'];
+    $data['role_id']=$this->session->userdata['logged_in']['role_id'];
+		$login_id=$this->session->userdata['logged_in']['id'];
+      $result = $this->master_model->getById($id);
 
-    if (isset($result['id']) && $result['id']) :
-      $data['id'] = $result['id'];
-    else:
-      $data['id'] = '';
-    endif;
+      if (isset($result['id']) && $result['id']) :
+              $data['id'] = $result['id'];
+          else:
+              $data['id'] = '';
+          endif; 
 
-    if (isset($result['category_name']) && $result['category_name']) :
-      $data['category_name'] = $result['category_name'];
-    else:
-      $data['category_name'] = '';
-    endif;
+      if (isset($result['category_name']) && $result['category_name']) :
+              $data['category_name'] = $result['category_name'];
+         else:
+              $data['category_name'] = '';
+          endif;
 
-    $data['title'] = 'Lead Services Master';
-    $data['categories'] = $this->master_model->categoriesList();
-    //echo var_dump($data['students']);
-    //print_r($data['category_name']);exit;
-    $this->template->load('layout/template', 'category_master', $data);
+      $data['title'] = 'Lead Services Master';
+      $data['categories'] = $this->master_model->categoriesList();
+      //echo var_dump($data['students']);
+      //print_r($data['category_name']);exit;
+      $this->template->load('layout/template','category_master',$data);
   }
   public function add_new_category()
   {
