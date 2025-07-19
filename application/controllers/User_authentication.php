@@ -229,7 +229,7 @@ public function role_master($id = NULL){
       $data['title'] = 'Role Master';
       $data['roles'] = $this->master_model->rolelist();
 	//   print_r($data['roles']);exit;
-	$this->template->load('layout/template','role_master',$data);
+	$this->template->load('template','role_master',$data);
 }
 // Show registration page
 
