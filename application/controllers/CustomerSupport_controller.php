@@ -87,7 +87,7 @@ Class CustomerSupport_controller extends MY_Controller {
      
 		// print_r($data['auth_id']);exit;
 
-		$this->template->load('template','CustomerSupport/customerview',$data);
+		$this->template->load('layout/template','CustomerSupport/customerview',$data);
 	}
 
 

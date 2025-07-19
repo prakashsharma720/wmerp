@@ -105,7 +105,7 @@ public function add() {
         $data['departments'] = $this->task_model->getDepartments();
       $data['projects'] = $this->task_model->projectList();
       // echo "<pre>"; print_r($data); exit;
-      $this->template->load('template','project_view',$data);
+      $this->template->load('layout/template','project_view',$data);
     }
 
 
@@ -381,7 +381,7 @@ public function add() {
             // $data['employees'] = $this->task_model->getEmployeeDropdown();
            
 //   echo "<pre>";print_r($data['name']);exit;
-            $this->template->load('template','task_view',$data);
+            $this->template->load('layout/template','task_view',$data);
           }
       
     

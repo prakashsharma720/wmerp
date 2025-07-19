@@ -38,6 +38,39 @@
                         <li class="nxl-item"><a class="nxl-link" href="apps-calendar.html">Calendar</a></li>
                     </ul>
                 </li> -->
+<!-- Master Dashboard -->
+<li class="nxl-item">
+  <a class="nxl-link" href="<?= base_url('index.php/MasterDashboard_controller/index') ?>">
+    <i class="feather-activity"></i>
+    <span class="nxl-mtext"><?=$this ->lang ->line('master_dashboard')?></span>
+  </a>
+</li>
+
+<!-- Account Settings -->
+<li class="nxl-item nxl-hasmenu">
+  <a href="javascript:void(0);" class="nxl-link">
+    <i class="feather-settings"></i>
+    <span class="nxl-mtext"><?=$this ->lang ->line('account_settings')?></span>
+    <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+  </a>
+  <ul class="nxl-submenu">
+    <li class="nxl-item">
+      <a class="nxl-link" href=" <?= base_url('index.php/Meenus/index') ?>">
+        <i class="feather-menu"></i><?=$this ->lang ->line('menus')?>
+      </a>
+    </li>
+    <li class="nxl-item">
+      <a class="nxl-link" href="<?= base_url('index.php/Meenus/UserRights') ?>">
+        <i class="feather-key"></i> <?=$this ->lang ->line('user_rights')?>
+      </a>
+    </li>
+    <li class="nxl-item">
+      <a class="nxl-link active" href="<?= base_url('index.php/User_authentication/role_master') ?>">
+        <i class="feather-circle"></i> <?=$this ->lang ->line('role_master')?>
+      </a>
+    </li>
+  </ul>
+</li>
 
                 <!-- SCM Module Main Item -->
 <li class="nxl-item nxl-hasmenu">
@@ -693,7 +726,7 @@
     <li class="nxl-item nxl-hasmenu">
       <a href="javascript:void(0);" class="nxl-link">
         <i class="feather-file-text"></i>
-        <span class="nxl-mtext"><?= $this->lang->line('maintenance_history_records') ?></span>
+        <span class="nxl-mtext"><?= $this->lang->line('maintenance_history_record') ?></span>
         <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
       </a>
       <ul class="nxl-submenu">
@@ -838,7 +871,7 @@
 <li class="nxl-item nxl-hasmenu">
   <a href="javascript:void(0);" class="nxl-link">
     <i class="feather-radio"></i>
-    <span class="nxl-mtext">HR Module</span>
+    <span class="nxl-mtext"><?= $this->lang->line('hr_module') ?></span>
     <span class="nxl-arrow"><i class="feather-chevron-down"></i></span>
   </a>
   <ul class="nxl-submenu">
@@ -847,18 +880,18 @@
     <li class="nxl-item nxl-hasmenu">
       <a href="javascript:void(0);" class="nxl-link">
         <i class="feather-user"></i>
-        <span class="nxl-mtext">Employees</span>
+        <span class="nxl-mtext"><?= $this->lang->line('employees') ?></span>
         <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
       </a>
       <ul class="nxl-submenu">
         <li class="nxl-item">
           <a class="nxl-link" href="<?= base_url('index.php/Employees/add') ?>">
-            <i class="feather-plus-circle"></i> Add
+            <i class="feather-plus-circle"></i> <?= $this->lang->line('add') ?>
           </a>
         </li>
         <li class="nxl-item">
           <a class="nxl-link" href="<?= base_url('index.php/Employees/index') ?>">
-            <i class="feather-list"></i> View List
+            <i class="feather-list"></i> <?= $this->lang->line('view_list') ?>
           </a>
         </li>
       </ul>
@@ -868,38 +901,38 @@
     <li class="nxl-item nxl-hasmenu">
       <a href="javascript:void(0);" class="nxl-link">
         <i class="feather-diamond"></i>
-        <span class="nxl-mtext">Leave Module</span>
+        <span class="nxl-mtext"><?= $this->lang->line('leave_module') ?></span>
         <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
       </a>
       <ul class="nxl-submenu">
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Holidays') ?>">
-            <i class="feather-circle"></i> Holidays
+          <a class="nxl-link" href="<?= base_url('index.php/Leave/holidays') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('holidays') ?>
           </a>
         </li>
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Leave_balance') ?>">
-            <i class="feather-circle"></i> Leave Balance
+          <a class="nxl-link" href="<?= base_url('index.php/Leave/balance') ?>">
+            <i class="feather-circle"></i><?= $this->lang->line('leave_balance') ?>
           </a>
         </li>
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Leave_applications') ?>">
-            <i class="feather-circle"></i> Leave Applications
+          <a class="nxl-link" href="<?= base_url('index.php/Leave/index') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('leave_applications') ?>
           </a>
         </li>
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Leave_types') ?>">
-            <i class="feather-circle"></i> Leave Types
+          <a class="nxl-link" href="<?= base_url('index.php/Leave/types') ?>">
+            <i class="feather-circle"></i><?= $this->lang->line('leave_types') ?>
           </a>
         </li>
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Leave_allotment') ?>">
-            <i class="feather-circle"></i> Leave Allotment
+          <a class="nxl-link" href="<?= base_url('index.php/Leave/leave_allotment') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('leave_allotment') ?>
           </a>
         </li>
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Leave_approval') ?>">
-            <i class="feather-circle"></i> Leave Approval
+          <a class="nxl-link" href="<?= base_url('index.php/Leave/Approval') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('leave_approval') ?>
           </a>
         </li>
       </ul>
@@ -909,18 +942,18 @@
     <li class="nxl-item nxl-hasmenu">
       <a href="javascript:void(0);" class="nxl-link">
         <i class="feather-file-text"></i>
-        <span class="nxl-mtext">Daily Tasks</span>
+        <span class="nxl-mtext"><?= $this->lang->line('daily_tasks') ?></span>
         <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
       </a>
       <ul class="nxl-submenu">
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Projects') ?>">
-            <i class="feather-circle"></i> Projects
+          <a class="nxl-link" href="<?= base_url('index.php/Dailytasks/projects') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('projects') ?>
           </a>
         </li>
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Tasks') ?>">
-            <i class="feather-circle"></i> Tasks
+          <a class="nxl-link" href="<?= base_url('index.php/Dailytasks/tasks') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('tasks') ?>
           </a>
         </li>
       </ul>
@@ -930,22 +963,62 @@
     <li class="nxl-item nxl-hasmenu">
       <a href="javascript:void(0);" class="nxl-link">
         <i class="feather-file-text"></i>
-        <span class="nxl-mtext">Payroll Module</span>
+        <span class="nxl-mtext"><?= $this->lang->line('payroll_module') ?></span>
         <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
       </a>
       <ul class="nxl-submenu">
         <li class="nxl-item">
-          <a class="nxl-link" href="<?= base_url('index.php/Attendance') ?>">
-            <i class="feather-circle"></i> Attendance List
+          <a class="nxl-link" href="<?= base_url('index.php/PayrollController/index') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('attendance_list') ?>
           </a>
         </li>
         <!-- Add more payroll submenus as needed -->
+          <li class="nxl-item">
+          <a class="nxl-link" href="<?= base_url('index.php/PayrollController/show_calculation') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('payroll_calculation') ?>
+          </a>
+        </li>
       </ul>
     </li>
-
+<li class="nxl-item nxl-hasmenu">
+      <a href="javascript:void(0);" class="nxl-link">
+        <i class="feather-file-text"></i>
+        <span class="nxl-mtext"><?= $this->lang->line('workers') ?></span>
+        <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+      </a>
+      <ul class="nxl-submenu">
+        <li class="nxl-item">
+          <a class="nxl-link" href="<?= base_url('index.php/Workers/add') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('add') ?>
+          </a>
+        </li>
+        <!-- Add more payroll submenus as needed -->
+          <li class="nxl-item">
+          <a class="nxl-link" href="<?= base_url('index.php/Workers/index') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('view_list') ?>
+          </a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </li>
-
+ <!-- Payroll Module -->
+    <li class="nxl-item nxl-hasmenu">
+      <a href="javascript:void(0);" class="nxl-link">
+        <i class="feather-file-text"></i>
+        <span class="nxl-mtext"><?= $this->lang->line('customer_support') ?></span>
+        <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+      </a>
+      <ul class="nxl-submenu">
+        
+        <!-- Add more payroll submenus as needed -->
+          <li class="nxl-item">
+          <a class="nxl-link" href="<?= base_url('index.php/CustomerSupport_controller/index') ?>">
+            <i class="feather-circle"></i> <?= $this->lang->line('view_list') ?>
+          </a>
+        </li>
+      </ul>
+    </li>
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-at-sign"></i></span>

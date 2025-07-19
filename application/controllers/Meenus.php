@@ -100,7 +100,7 @@ $this->load->model('menus');
 			$data['parentMenus'] = $this->menus->getParents();
 			//echo var_dump($data['students']);
 			//print_r($data['menu_name']);exit;
-			$this->template->load('template','master_menu',$data);
+			$this->template->load('layout/template','master_menu',$data);
 	}
 	public function add_new_menu() {
 		
@@ -204,7 +204,7 @@ $this->load->model('menus');
 		$data['employees'] = $this->menus->getEmployees($data['auth_id']);
 		//echo var_dump($data['students']);
 		// print_r($data['roles']);exit;
-		$this->template->load('template','user_rights',$data);
+		$this->template->load('layout/template','user_rights',$data);
 
 
 	}

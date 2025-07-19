@@ -41,7 +41,7 @@ public function index() {
     $data['employees']  = $this->Leave_model->getEmployeesList();
     $data['totalemployees']  = $this->Payroll_model->getTotalEmployee();
     
-    $this->template->load('template', 'payroll/attendance', $data);
+    $this->template->load('layout/template', 'payroll/attendance', $data);
 }
 
 public function add() {
@@ -165,7 +165,7 @@ public function show_calculation(){
     $data['salaries']  = $this->Payroll_model->getSalaryList();
 // echo "<pre>";print_r($data['salaries']);exit;
     $data['title'] = "Attendance Calculation";
-    $this->template->load('template', 'payroll/attandace_calculation', $data);
+    $this->template->load('layout/template', 'payroll/attandace_calculation', $data);
 }
 
 public function calculate_salary()
