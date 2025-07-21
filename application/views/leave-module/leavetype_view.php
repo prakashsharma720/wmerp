@@ -106,8 +106,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<td><?= $i ?></td>
 								<td><?= $category['leave_type']?></td>
 								<td><?= $category['leave_balance']?></td>
-								<td> <a class="btn btn-xs btn-info btnEdit" href="<?php echo base_url(); ?>index.php/Leave/types/<?php echo $category['id'];?>"><i class="fa fa-edit"></i></a></td>
-							</tr>
+								<td> 
+ <a class="avtar-text avtar-md" href="<?php echo base_url(); ?>index.php/Leave/types/<?php echo $category['id'];?>">
+                                    <i class="fa fa-edit"></i>
+                                </a>							</tr>
 						<?php $i++;} ?>
 						</tbody>
 						

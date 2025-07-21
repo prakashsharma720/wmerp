@@ -363,7 +363,7 @@ $this->load->model('notifications_model');
 
   
 		$data['categories'] = $this->Leave_model->categoriesList();
-		$this->template->load('layout/template','holiday_view',$data);
+		$this->template->load('layout/template','leave-module/holiday_view',$data);
 	}
 	public function balance($id = NULL) 
 	{
@@ -448,7 +448,7 @@ $this->load->model('notifications_model');
 
   
 		$data['types'] = $this->Leave_model->typesList();
-		$this->template->load('layout/template','leavetype_view',$data);
+		$this->template->load('layout/template','leave-module/leavetype_view',$data);
 	}
 
 	public function add_new_leavetype() {
@@ -785,7 +785,7 @@ $this->load->model('notifications_model');
 		// get holidays
     	$data['holidays'] = $this->Leave_model->get_all_holiday_dates();
 
-	    $this->template->load('template','leave_add',$data);
+	    $this->template->load('layout/template','leave_add',$data);
 	}
 			
 	
@@ -830,7 +830,7 @@ $this->load->model('notifications_model');
 			// $data['categories'] = $this->Leave_model->getCategories();
 		 
 		
-			$this->template->load('template','leave_action',$data);
+			$this->template->load('layout/template','leave_action',$data);
 	}
 	
 	public function add_new_item() {
