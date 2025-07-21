@@ -37,7 +37,7 @@ margin: 0.7rem
                             <option
                                 <?php if(!empty($filtered_value["leave_status"])) { if($filtered_value['leave_status']=='Pending') {echo "selected"; } } ?>
                                 value="Pending"> <?= $this->lang->line('pending') ?> </option>
-                            <option value="Approved"> <?= $this->lang->line('approved') ?> </option>
+                            <option value="Approve"> <?= $this->lang->line('approve') ?> </option>
                             <option value="On Hold"> <?= $this->lang->line('hold') ?></option>
                             <option value="Rejected"> <?= $this->lang->line('rejected') ?></option>
                             <option value="Cancelled"> <?= $this->lang->line('cancel') ?></option>

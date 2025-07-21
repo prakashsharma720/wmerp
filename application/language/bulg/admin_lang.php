@@ -34,6 +34,8 @@ $lang['followups'] = 'Проследявания: 0';
 $lang['pending'] = 'Висящи задачи: 0';
 $lang['approve'] = 'Одобрени: 0';
 $lang['rejected'] = 'Отхвърлени: 0';
+$lang['hold'] = 'задържам';
+
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'Редактиране на служител';

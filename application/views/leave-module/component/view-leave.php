@@ -55,13 +55,7 @@
                     <?= $obj['upto_date'] ?? '-' ?></span>
                 </div>
             </div>
-             <div class="col-lg-6 mb-4">
-                <span class="fw-bold text-dark"><?= $this->lang->line('employee') ?>:</span>
-                <div>
-                    <span class="fs-12 fw-bold text-default">
-                    <?= $obj['employee'] ?? '-' ?></span>
-                </div>
-            </div>
+            
              <div class="col-lg-6 mb-4">
                 <span class="fw-bold text-dark"><?= $this->lang->line('leave_category') ?>:</span>
                 <div>
@@ -77,13 +71,7 @@
                 </div>
             </div>
           
-               <div class="col-lg-6 mb-4">
-                <span class="fw-bold text-dark"><?= $this->lang->line('leave_reason') ?>:</span>
-                <div>
-                    <span class="fs-12 fw-bold text-default">
-                    <?= $obj['leave_reason'] ?? '-' ?></span>
-                </div>
-            </div>
+              
              <div class="col-lg-6 mb-4">
                 <span class="fw-bold text-dark"><?= $this->lang->line('total_days') ?>:</span>
                 <div>
@@ -91,7 +79,21 @@
                     <?= $obj['total_days'] ?? '-' ?></span>
                 </div>
             </div>
-            <div class="col-lg-6 mb-4">
+             <div class="col-lg-6 mb-4">
+                <span class="fw-bold text-dark"><?= $this->lang->line('employee') ?>:</span>
+                <div>
+                    <span class="fs-12 fw-bold text-default">
+                    <?= $obj['employee'] ?? '-' ?></span>
+                </div>
+            </div>
+             <div class="col-lg-12 mb-4">
+                <span class="fw-bold text-dark"><?= $this->lang->line('leave_reason') ?>:</span>
+                <div>
+                    <span class="fs-12 fw-bold text-default">
+                    <?= $obj['leave_reason'] ?? '-' ?></span>
+                </div>
+            </div>
+            <div class="col-lg-12 mb-4">
                 <span class="fw-bold text-dark"><?= $this->lang->line('message') ?>:</span>
                 <div>
                     <span class="fs-12 fw-bold text-default">

@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      	<div class="card-body">
 		      	<div class="row col-md-12">
 								<div class="table-responsive">
-									<table  class="table table-bordered table-striped">
+                            <table class="table table-bordered table-striped table table-hover" id="proposalList">
 										<thead>
 											<tr>
 												<th> <?= $this->lang->line('sr_no') ?></th>

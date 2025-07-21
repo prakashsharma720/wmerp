@@ -79,7 +79,8 @@ margin: 0.7rem
                     </div>
                     <div class="col-md-8">
                         <div class="table-responsive">
-                            <table id="example1" class="table table-bordered table-striped"  width="100%">
+                            <table class="table table-bordered table-striped table table-hover" id="proposalList">
+
                                 <thead>
                                     <tr>
                                         <th> <?= $this->lang->line('employee') ?></th>
