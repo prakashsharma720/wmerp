@@ -1,7 +1,11 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
+<style>
+    .control-label {
+margin: 0.7rem
+}
+</style>
     <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -44,7 +48,7 @@
                                 <thead width="100%">
                                     <tr width="100%">
                                         <th width="80%">  <?= $this->lang->line('employee') ?> </th>
-                                        <th width="10%">  <?= $this->lang->line('leave_count') ?> </th>
+                                        <th width="20%">  <?= $this->lang->line('leave_count') ?> </th>
                                         <th width="10%">  <?= $this->lang->line('action') ?> </th>
                                     </tr>
                                 </thead>
@@ -59,7 +63,7 @@
                                             <input type="text" name="leave_count[]" value="2" class="form-control" readonly>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+                                            <button type="button" class="avatar-text avatar-md deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
                                         </td>
                                     </tr>
                                     <?php } ?>

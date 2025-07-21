@@ -1,7 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
+<style>
+    .control-label {
+margin: 0.7rem
+}
+</style>
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">

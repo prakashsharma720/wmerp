@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<style>
+    .control-label {
+margin: 0.7rem
+}
+</style>
 
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
@@ -49,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="form-group">                                
                               <div class="row col-md-12">
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label class="control-label"><?= $this->lang->line('title_name') ?></label>
+                                    <label class="control-label "><?= $this->lang->line('title_name') ?></label>
                                     <input type="text"  placeholder="<?= $this->lang->line('enter_title_name') ?>" name="title" class="form-control" value="<?= $title?>" required autofocus>
                                 </div>
                                 <?php 
@@ -118,12 +123,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <td><?= $category['date']?></td>
                                 <?php if(($role_id !='5') && ($role_id !='4')) { ?>
                                 <td>
-                                <div class="hstack gap-3 justify-content-end">
-    
-                                <a class="avtar-text avtar-md" href="<?php echo base_url(); ?>index.php/Leave/holidays/<?php echo $category['id'];?>">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                                <a class="avtar-text avtar-md" data-bs-toggle="offcanvas" data-bs-target="#deleteHoliday<?php echo $category['id']; ?>">
+                                <div class="hstack gap-2 justify-content-end">
+                                 <a href="<?php echo base_url(); ?>index.php/Leave/holidays/<?php echo $category['id']; ?>" 
+                                            class="avatar-text avatar-md" >
+                                            <i class="feather feather-edit-3 "></i>
+                                            </a>
+                                <a class="avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#deleteHoliday<?php echo $category['id']; ?>">
                                     <i class="feather feather-trash"></i>
                                 </a>
                             <?php }?>
@@ -140,15 +145,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="deleteHoliday<?php echo $category['id']; ?>">
     <form method="post" action="<?php echo base_url(); ?>index.php/Leave/deleteHoliday/<?php echo $category['id']; ?>">
         <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
-            <h2 class="fs-16 fw-bold">Confirm</h2>
+            <h2 class="fs-16 fw-bold"><?= $this->lang->line('confirm') ?></h2>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <p><?= $this->lang->line('confirm_delete') ?>: <b><?= $category['title'] ?></b>?</p>
         </div>
-        <div class="px-4 gap-2 d-flex align-items-center ht-80 border-top border-gray-2">
-            <button type="submit" class="btn btn-primary"> <?= $this->lang->line('yes') ?> </button>
-            <a href="javascript:void(0);" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">Cancel</a>
+        <div class="px-4 gap-2 d-flex align-items-center ht-80 border-top border-gray-2 ">
+            <button type="submit" class="btn btn-primary w-50 "> <?= $this->lang->line('yes') ?> </button>
+            <a href="javascript:void(0);" class="btn btn-danger w-50 " data-bs-dismiss="offcanvas"> <?= $this->lang->line('cancel') ?></a>
         </div>
         
     </form>

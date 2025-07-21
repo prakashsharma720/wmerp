@@ -103,6 +103,9 @@ $lang['select_employee'] = 'कर्मचारी चुनें';
 $lang['enter_new_password'] = 'नया पासवर्ड दर्ज करें';
 $lang['confirm_password'] = 'पासवर्ड की पुष्टि करें';
 $lang['submit'] = 'सबमिट करें';
+$lang['confirm'] = 'पुष्टि करें';
+
+
 
 // List for Sidebar  half hai niche puri hai
 $lang['master_dashboard'] = 'मास्टर डैशबोर्ड';
@@ -1081,6 +1084,8 @@ $lang['select_type'] = 'प्रकार चुनें';
 $lang['all'] = 'सभी';
 $lang['from_date'] = 'प्रारंभ दिनांक';
 $lang['upto_date'] = 'समाप्ति दिनांक';
+$lang['apply_date'] = 'आवेदन की तिथि';
+$lang['lead_details'] = 'लीड विवरण';
 
 // invoices report
 $lang['invoice_slip_report'] = 'चालान पर्ची रिपोर्ट';

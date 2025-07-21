@@ -103,6 +103,8 @@ $lang['select_employee'] = 'Изберете служител';
 $lang['enter_new_password'] = 'Въведете нова парола';
 $lang['confirm_password'] = 'Потвърдете паролата';
 $lang['submit'] = 'Изпрати';
+$lang['confirm'] = 'Потвърди';
+
 
 // List for Sidebar half hai niche pura hai
 $lang['master_dashboard'] = 'Основно табло';
@@ -2895,6 +2897,9 @@ $lang['search_by_employee'] = 'Търсене по служител';
 
 $lang['from_date'] = 'Начална дата';
 $lang['upto_date'] = 'Крайна дата';
+$lang['apply_date'] = 'Дата на кандидатстване';
+$lang['lead_details'] = 'Данни за клиента';
+
 
 $lang['lead_actions'] = 'Действия за лийдове';
 $lang['select_action'] = 'Изберете действие';
