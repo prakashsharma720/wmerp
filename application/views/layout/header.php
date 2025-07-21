@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
-$CI =& get_instance();
+$language = $this->session->userdata('site_language') ?? 'english';
+$language_label = ucfirst($language);
+$CI = &get_instance();
 $CI->load->model('Employee');
 $CI->load->helper('MY_array');
 
@@ -19,12 +20,18 @@ $photo = $userData['photo'] ?? 'default.jpg';
 
 $allnotifications = $CI->dynamic_menu->getNoti();
 $languages = [
-    ['code' => 'sa', 'name' => 'Arabic'], ['code' => 'bd', 'name' => 'Bengali'],
-    ['code' => 'ch', 'name' => 'Chinese'], ['code' => 'nl', 'name' => 'Dutch'],
-    ['code' => 'us', 'name' => 'English'], ['code' => 'fr', 'name' => 'French'],
-    ['code' => 'de', 'name' => 'German'], ['code' => 'in', 'name' => 'Hindi'],
-    ['code' => 'ru', 'name' => 'Russian'], ['code' => 'es', 'name' => 'Spanish'],
-    ['code' => 'tr', 'name' => 'Turkish'], ['code' => 'pk', 'name' => 'Urdu']
+    ['code' => 'sa', 'name' => 'Arabic'],
+    ['code' => 'bd', 'name' => 'Bengali'],
+    ['code' => 'ch', 'name' => 'Chinese'],
+    ['code' => 'nl', 'name' => 'Dutch'],
+    ['code' => 'us', 'name' => 'English'],
+    ['code' => 'fr', 'name' => 'French'],
+    ['code' => 'de', 'name' => 'German'],
+    ['code' => 'in', 'name' => 'Hindi'],
+    ['code' => 'ru', 'name' => 'Russian'],
+    ['code' => 'es', 'name' => 'Spanish'],
+    ['code' => 'tr', 'name' => 'Turkish'],
+    ['code' => 'pk', 'name' => 'Urdu']
 ];
 ?>
 
@@ -34,7 +41,11 @@ $languages = [
         <div class="header-left d-flex align-items-center gap-4">
             <!-- Mobile Menu -->
             <a href="javascript:void(0);" class="nxl-head-mobile-toggler" id="mobile-collapse">
-                <div class="hamburger hamburger--arrowturn"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div>
+                <div class="hamburger hamburger--arrowturn">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
             </a>
 
             <!-- Navigation Toggle -->
@@ -57,7 +68,7 @@ $languages = [
                     <div class="dropdown nxl-h-item nxl-lavel-menu">
                         <a href="javascript:void(0);" class="avatar-text avatar-md bg-primary text-white" data-bs-toggle="dropdown" data-bs-auto-close="outside">
                             <i class="feather-plus"></i>
-                        </a>                    
+                        </a>
                     </div>
                 </div>
             </div>
@@ -66,16 +77,24 @@ $languages = [
         <!-- Right Section -->
         <div class="header-right ms-auto">
             <div class="d-flex align-items-center">
-
+                <select class="form-control" onchange="location = this.value;" style="width: 100%;">
+                    <option value="<?= site_url('AdminController/change_language/english') ?>" <?= ($language_label == 'English') ? 'selected' : '' ?>>En</option>
+                    <option value="<?= site_url('AdminController/change_language/bulg') ?>" <?= ($language_label == 'Bulg') ? 'selected' : '' ?>>Bg</option>
+                    <option value="<?= site_url('AdminController/change_language/hindi') ?>" <?= ($language_label == 'Hindi') ? 'selected' : '' ?>>Hi</option>
+                </select>
                 <!-- Language Switcher -->
                 <div class="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
+
                     <a href="javascript:void(0);" class="nxl-head-link me-0" data-bs-toggle="dropdown">
                         <img src="<?= base_url("assets2/vendors/img/flags/4x3/us.svg") ?>" class="img-fluid wd-20" alt="Lang" />
                     </a>
                     <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-language-dropdown">
                         <div class="language-items-wrapper">
                             <div class="select-language px-4 py-2 hstack justify-content-between gap-4">
-                                <div><h6 class="mb-0">Select Language</h6><p class="fs-11 text-muted mb-0">12 languages available!</p></div>
+                                <div>
+                                    <h6 class="mb-0">Select Language</h6>
+                                    <p class="fs-11 text-muted mb-0">12 languages available!</p>
+                                </div>
                                 <a href="javascript:void(0);" class="avatar-text avatar-md" title="Add Language"><i class="feather-plus"></i></a>
                             </div>
                             <div class="dropdown-divider"></div>
@@ -126,8 +145,8 @@ $languages = [
                             <?php if ($allnotifications): ?>
                                 <?php foreach (array_slice($allnotifications, 0, 5) as $notification): ?>
                                     <?php
-                                        $isEmp = in_array($role_id, [4, 5]) && ($notification['employee_id'] == $user_id || $notification['created_by'] == $user_id);
-                                        $avatar = get_avatar_url($notification['creator_photo'] ?? '');
+                                    $isEmp = in_array($role_id, [4, 5]) && ($notification['employee_id'] == $user_id || $notification['created_by'] == $user_id);
+                                    $avatar = get_avatar_url($notification['creator_photo'] ?? '');
                                     ?>
                                     <div class="notifications-item">
                                         <img src="<?= $avatar ?>" class="rounded me-3 border" alt="" />
@@ -147,7 +166,9 @@ $languages = [
                                     </div>
                                 <?php endforeach; ?>
                             <?php else: ?>
-                                <div class="text-center text-muted p-3"><h6>No Notifications</h6></div>
+                                <div class="text-center text-muted p-3">
+                                    <h6>No Notifications</h6>
+                                </div>
                             <?php endif; ?>
                         </div>
                         <div class="text-center notifications-footer">
