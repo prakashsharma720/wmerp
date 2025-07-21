@@ -148,7 +148,7 @@ $this->load->model('notifications_model');
 
 		// $this->Leave_model->sendMail('42') ;
 		//echo "<pre>"; print_r($data); exit;
-		$this->template->load('layout/template','leave_approval',$data);
+		$this->template->load('layout/template','leave-module/leave_approval',$data);
 	}
 	
 
@@ -159,7 +159,7 @@ $this->load->model('notifications_model');
 		$data['leaves'] 	= $this->Leave_model->getAllotedLeaves();
 		$data['months'] 	= $this->Leave_model->getMonths();
 		$data['employees']  = $this->Leave_model->getEmployeesList();
-		$this->template->load('layout/template','leave_allotment',$data);
+		$this->template->load('layout/template','leave-module/leave_allotment',$data);
 	}
 
 	public function add_leave_allotment() {
@@ -785,7 +785,7 @@ $this->load->model('notifications_model');
 		// get holidays
     	$data['holidays'] = $this->Leave_model->get_all_holiday_dates();
 
-	    $this->template->load('layout/template','leave_add',$data);
+	    $this->template->load('layout/template','leave-module/leave_add',$data);
 	}
 			
 	
@@ -830,7 +830,7 @@ $this->load->model('notifications_model');
 			// $data['categories'] = $this->Leave_model->getCategories();
 		 
 		
-			$this->template->load('layout/template','leave_action',$data);
+			$this->template->load('layout/template','leave-module/leave_action',$data);
 	}
 	
 	public function add_new_item() {

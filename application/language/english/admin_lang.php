@@ -34,6 +34,10 @@ $lang['export'] = 'Export';
 $lang['confirm_delete'] = 'Are you sure, you want to delete menu';
 $lang['id'] = 'ID';
 $lang['enter_id'] = 'Enter ID';
+$lang['apply_date'] = 'Apply Date';
+$lang['lead_details'] = 'Lead Details';
+
+
 
 $lang['model'] = 'Model';
 $lang['enter_model'] = 'Enter Model';
@@ -135,6 +139,8 @@ $lang['select_employee'] = 'Select Employee';
 $lang['enter_new_password'] = 'Enter New Password';
 $lang['confirm_password'] = 'Confirm Password';
 $lang['submit'] = 'Submit';
+$lang['confirm'] = 'Confirm';
+
 
 $lang['dashboard'] = 'Dashboard';
 $lang['users'] = 'Users';

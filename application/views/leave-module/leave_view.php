@@ -175,7 +175,8 @@
                                             <?php
                                             if( $obj['employee_id']!==$login_id)
                                             { ?>
-                                            <a href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id']; ?>" class="avatar-text avatar-md" >
+                                            <a href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id']; ?>" 
+                                            class="avatar-text avatar-md" >
                                             <i class="feather feather-edit-3 "></i>
                                             </a>
 
@@ -195,7 +196,7 @@
                                                     action="<?php echo base_url(); ?>index.php/Leave/deleteItem/<?php echo $obj['id']; ?>">
 
                                             <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
-                                                <h2 class="fs-16 fw-bold text-truncate-1-line">Confirm</h2>
+                                                <h2 class="fs-16 fw-bold text-truncate-1-line"><?= $this->lang->line('confirm') ?></h2>
                                                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                             </div>
                                             <div class="offcanvas-body">
@@ -206,9 +207,9 @@
                                             </div>
                                             
                                              <div class="px-4 gap-2 d-flex align-items-center ht-80 border border-end-0 border-gray-2">
-                                                  <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
+                                                  <button type="submit" class="btn btn-primary delete_submit w-50"> <?= $this->lang->line('yes') ?>
                                                 </button>
-                                             <a href="javascript:void(0);" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">Cancel</a>
+                                             <a href="javascript:void(0);" class="btn btn-danger w-50" data-bs-dismiss="offcanvas"><?= $this->lang->line('cancel') ?></a>
                                             </div>
                                              </form>
                                         </div>

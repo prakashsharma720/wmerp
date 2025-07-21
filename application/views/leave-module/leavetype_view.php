@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<style>
+    .control-label {
+margin: 0.7rem
+}
+</style>
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -107,9 +112,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<td><?= $category['leave_type']?></td>
 								<td><?= $category['leave_balance']?></td>
 								<td> 
- <a class="avtar-text avtar-md" href="<?php echo base_url(); ?>index.php/Leave/types/<?php echo $category['id'];?>">
-                                    <i class="fa fa-edit"></i>
-                                </a>							</tr>
+ 										<a href="<?php echo base_url(); ?>index.php/Leave/types/<?php echo $category['id']; ?>" 
+                                            class="avatar-text avatar-md" >
+                                            <i class="feather feather-edit-3 "></i>
+                                        </a>								
+								</td>
+							</tr>
 						<?php $i++;} ?>
 						</tbody>
 						

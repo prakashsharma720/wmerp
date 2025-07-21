@@ -1,7 +1,11 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
+<style>
+    .control-label {
+margin: 0.7rem
+}
+</style>
 <div class="container-fluid">
 
     <div class="card card-primary card-outline">
@@ -51,15 +55,26 @@
 								</div>
 								
 								<div class="col-md-4">
-									<label class="control-label"> <?= $this->lang->line('leave_category') ?> </label>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="leave_category" value="full" checked="checked" /> <?= $this->lang->line('full') ?>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="leave_category" value="half" /> <?= $this->lang->line('half') ?>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="leave_category" value="gatepass" /> <?= $this->lang->line('gatepass') ?>
-									</div>
-								</div>
+    <label class="control-label"><?= $this->lang->line('leave_category') ?></label>
+    <div class="d-flex">
+		
+        <div class="form-check me-4">
+            <input class="form-check-input" type="radio" name="leave_category" id="leave_full" value="full" checked>
+            <label class="form-check-label" for="leave_full"><?= $this->lang->line('full') ?></label>
+        </div>
+
+        <div class="form-check me-4">
+            <input class="form-check-input" type="radio" name="leave_category" id="leave_half" value="half">
+            <label class="form-check-label" for="leave_half"><?= $this->lang->line('half') ?></label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="leave_category" id="leave_gatepass" value="gatepass">
+            <label class="form-check-label" for="leave_gatepass"><?= $this->lang->line('gatepass') ?></label>
+        </div>
+    </div>
+</div>
+
 
 								<!-- Full Day Divs -->
 								<div class="col-md-3 full_div">
@@ -74,7 +89,7 @@
 
 									<!-- <input type="date" class="form-control date2 fullday" id="date_picker_to" name="upto_date" data-date-formate="dd-mm-yyyy"> -->
 								</div>
-								<div class="col-md-2 full_div">	
+								<div class="col-md-2 full_div">	<br>
 									<label for=""><?= $this->lang->line('total_days') ?></label>
 									<br>
 									<input type="text" name="leave_count"  class="form-control days full_div" class="form-control fullday" style="visibility: visible;" readonly>

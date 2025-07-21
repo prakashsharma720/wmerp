@@ -4,6 +4,11 @@ $current_page = current_url();
 $data = explode('?', $current_page);
 
 ?>
+<style>
+    .control-label {
+margin: 0.7rem
+}
+</style>
 <div id="collapseOne" class="accordion-collapse collapse <?= $filtered_value ? 'show' : '' ?> page-header-collapse">
     <div class="accordion-body pb-2">
         <div class="card-body">
@@ -41,23 +46,23 @@ $data = explode('?', $current_page);
 
                   <!-- From Date -->
                     <div class="col-lg-4 mb-4">
-                        <label class="form-label">From Date</label>
+                        <label class="form-label"><?= $this->lang->line('from_date') ?></label>
                         <input type="text" id="issueDate" name="from_date" class="form-control date-picker"
-                            placeholder="From date..." data-date-format="dd-mm-yyyy" autocomplete="off"
+                            placeholder="<?= $this->lang->line('from_date') ?>" data-date-format="dd-mm-yyyy" autocomplete="off"
                             value="<?= isset($filtered_value['from_date']) && !empty($filtered_value['from_date']) ? date('d-m-Y', strtotime($filtered_value['from_date'])) : '' ?>">
                 </div>
                 
                 <!-- Upto Date -->
                 <div class="col-lg-4 mb-4">
-                    <label class="form-label">Upto Date</label>
-                    <input type="text" id="dueDate" name="upto_date" class="form-control date-picker" placeholder="Upto date..."
+                    <label class="form-label"><?= $this->lang->line('upto_date') ?></label>
+                    <input type="text" id="dueDate" name="upto_date" class="form-control date-picker" placeholder="<?= $this->lang->line('upto_date') ?>"
                         data-date-format="dd-mm-yyyy" autocomplete="off"
                         value="<?= isset($filtered_value['upto_date']) && !empty($filtered_value['upto_date']) ? date('d-m-Y', strtotime($filtered_value['upto_date'])) : '' ?>">
                 </div>
 
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;">Grade</label>
-                        <input type="submit" class="btn btn-xs btn-primary" value="Search" />
+                        <input type="submit" class="btn btn-xs btn-primary" value="<?= $this->lang->line('search') ?>" />
                     </div>
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;"> Grade</label>

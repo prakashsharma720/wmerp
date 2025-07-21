@@ -28,11 +28,19 @@ $data=explode('?', $current_page);
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
+      
       <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
       <span class="card-title">
 <?= $this->lang->line('leave_approval') ?>      </span>
+       <div class="d-flex align-items-center gap-1 page-header-right-items-wrapper">
+                    <!-- Collapse Filter -->
+                    <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne">
+                        <i class="feather-filter"></i>
+                    </a>
+                    
       <div class="pull-right d-flex">
         <div>          
           <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
@@ -41,6 +49,7 @@ $data=explode('?', $current_page);
             <button type="submit" class="btn btn-info">  <?= $this->lang->line('export') ?> </button>
           </form>
         </div>
+            </div>
         &nbsp;
         <div>          
           <a class="btn btn-xs btn-primary " href="<?php echo base_url(); ?>index.php/Leave/create">
@@ -49,6 +58,8 @@ $data=explode('?', $current_page);
         </div>
       </div>
     </div> <!-- /.card-body -->
+     <!-- Load Filter -->
+    <?php $this->load->view('leave-module/component/filter'); ?>
     <div class="card-body">
       
  <!--        <form action="<?php echo base_url(); ?>index.php/Leads/importdata" enctype="multipart/form-data" method="post" role="form">
@@ -68,7 +79,7 @@ $data=explode('?', $current_page);
 
       <hr> -->
 
-      <form method="get" id="filterForm">
+      <!-- <form method="get" id="filterForm">
           <div class="row">
           
                
@@ -112,7 +123,7 @@ $data=explode('?', $current_page);
                       <a href="<?php echo $data[0]?>" class="btn btn-danger" >  <?= $this->lang->line('reset') ?></a>
                   </div>
                 </div>
-        </form>
+        </form> -->
         <hr>
 
 
