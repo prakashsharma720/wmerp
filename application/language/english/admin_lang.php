@@ -82,6 +82,8 @@ $lang['address'] = 'Address';
 $lang['upload_photo'] = 'Upload Photo';
 $lang['update'] = 'Update';
 $lang['update'] = 'Update';
+$lang['hold'] = 'Hold';
+
 
 
 $lang['account_holder_name'] = 'Account Holder Name';

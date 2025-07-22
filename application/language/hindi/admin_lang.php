@@ -35,6 +35,8 @@ $lang['followups'] = 'फॉलोअप्स';
 $lang['pending'] = 'लंबित कार्य';
 $lang['approve'] = 'स्वीकृत';
 $lang['rejected'] = 'अस्वीकृत';
+$lang['hold'] = 'पकड़';
+
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'कर्मचारी संपादित करें';

@@ -69,7 +69,7 @@ margin: 0.7rem
 								 
                             <div class="col-md-12 col-sm-12">
                             <label  class="control-label"> <?= $this->lang->line('date') ?></label>
-                            <input type="text" value="<?= $holiday_date ?>" data-date-formate="dd-mm-yyyy" name="holiday_date" class="form-control date-picker" placeholder="dd-mm-yyyy"  autocomplete="off" autocomplete="off">
+<input type="date" class="form-control date2" id="holiday_date" name="holiday_date" value="<?= date('Y-m-d', strtotime($holiday_date)) ?>">
                     </div>
                             </div>
                             <span class="help-block"></span>
@@ -78,8 +78,8 @@ margin: 0.7rem
                                 <div class="col-md-12 col-sm-12 ">
                                     <label class="control-label"> <?= $this->lang->line('status') ?> </label>
                                    <select class="form-control" name="flag">
-                                        <option value="0"> Active</option>
-                                        <option value="1"> De-active</option>
+                                        <option value="0">  <?= $this->lang->line('active') ?></option>
+                                        <option value="1">  <?= $this->lang->line('de_active') ?></option>
                                    </select>
                                 </div>
                             </div>

@@ -412,7 +412,7 @@ $this->load->model('notifications_model');
 
 		
 		// echo "<pre>"; print_r($data);exit;
-		$this->template->load('layout/template','leave_balance_view',$data);
+		$this->template->load('layout/template','leave-module/leave_balance_view',$data);
 	}
 	public function types($id = NULL) 
 	{
