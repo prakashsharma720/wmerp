@@ -3900,3 +3900,5 @@ $lang['customize_theme'] = 'Персонализиране на тема';
 $lang['primary_theme_color'] = 'Основен цвят на темата';
 $lang['navbar_color'] = 'Цвят на навигационната лента';
 $lang['secondary_theme_color'] = 'Вторичен цвят на темата';
+$lang['home'] = 'Начало';
+
