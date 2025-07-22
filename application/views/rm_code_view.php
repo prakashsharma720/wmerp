@@ -32,15 +32,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?=$this ->lang ->line('rm_code_list')?></span>
+      <!-- <span class="card-title"><?=$this ->lang ->line('rm_code_list')?></span>
         <div class="button-group float-right">
 
          <a href="<?php echo base_url(); ?>index.php/Rm_code/add" class="btn btn-success" data-toggle="tooltip" title="New RM Code"><i class="fa fa-plus"></i></a>
 
          <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>
-        
+          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button> -->
+        <span class="card-title">Rm Code List         </span>
+            <div class="button-group float-right d-flex">
+
+                <a href="http://localhost/wmerp/index.php/Employees/add" class="btn btn-success" data-toggle="tooltip" title="New Employee"><i class="fa fa-plus"></i></a>
+                <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+
+                <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i class="fa fa-trash"></i></button>
       </div>
     </div> <!-- /.card-body -->
     <div class="card-body">
