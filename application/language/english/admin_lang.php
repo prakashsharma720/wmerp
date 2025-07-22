@@ -3199,6 +3199,7 @@ $lang['search'] = 'Search';
 
 $lang['sr_no'] = 'Sr. No.';
 $lang['ticket_no'] = 'Ticket Number';
+$lang['complaint_category'] = 'complaint category';
 $lang['name'] = 'Name';
 $lang['email'] = 'Email';
 $lang['phone_no'] = 'Phone Number';
@@ -3941,3 +3942,4 @@ $lang['primary_theme_color'] = 'Primary Theme Color';
 $lang['navbar_color'] = 'Navbar Color';
 $lang['secondary_theme_color'] = 'Secondary Theme Color';
 $lang['home'] ='Home';
+$lang['submit_answer'] ='Submit Answer';

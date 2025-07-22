@@ -799,6 +799,7 @@ $lang['showing_entries'] = 'Показване на 1 до 10 от 14 запис
 // $lang['grade_standard'] = 'Стандартен';
 
 // units
+$lang['home'] = 'дома';
 $lang['product_unit_master'] = 'Модул за единици на продуктите';
 $lang['unit_name'] = 'Име на единицата';
 $lang['enter_unit_name'] = 'Въведете име на единицата';
@@ -3007,6 +3008,7 @@ $lang['ticket_no'] = 'Номер на билет';
 $lang['name'] = 'Име';
 $lang['email'] = 'Имейл';
 $lang['phone_no'] = 'Телефонен номер';
+$lang['complaint_category'] = 'Категория на жалбата';
 $lang['category'] = 'Категория';
 $lang['order_id'] = 'Номер на поръчка';
 $lang['picture'] = 'Снимка';

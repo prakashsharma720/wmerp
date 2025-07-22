@@ -106,7 +106,7 @@ Class CustomerSupport_controller extends MY_Controller {
 		//$data['categories'] = $this->CustomerSupport_model->getCategories();
 		//echo var_dump($data['students']);
 		// echo "<pre>";print_r($data['customer_data']);exit;
-		$this->template->load('template','CustomerSupport/customer_followup',$data);
+		$this->template->load('layout/template','CustomerSupport/customer_followup',$data);
 	}
 
 
@@ -122,7 +122,7 @@ Class CustomerSupport_controller extends MY_Controller {
 		$data['lead_title'] = $data['customer_data']['order_id'];
 		//$data['categories'] = $this->CustomerSupport_model->getCategories();
 		//echo var_dump($data['students']);
-		$this->template->load('template','CustomerSupport/customer_tracking',$data);
+		$this->template->load('layout/template','CustomerSupport/customer_tracking',$data);
 	}
 
 	
