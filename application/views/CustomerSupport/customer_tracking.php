@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <style type="text/css">
 .select2 {
-    height: 45px !important;
+    height: 35px !important;
     width: 100% !important;
 }
 
@@ -268,9 +268,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     id="attachmentInput">
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit') ?></button>
+                                           
                                         </div>
+										 
                                     </div>
+									<div class="d-grid gap-2 col-3">
+										 <button type="submit" class="btn btn-outline-primary"><?= $this->lang->line('submit') ?></button>
+
+
+</div>
+									
                                     <!-- <div class="col-md-4">
                                           <label class="control-label"> Attachement</label>
                                           <input type="file" name="photo" class="form-control upload">

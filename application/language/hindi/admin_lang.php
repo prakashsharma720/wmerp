@@ -1,4 +1,5 @@
 <?php
+$lang['home'] ='मुख्य';
 
 $lang['dashboard'] = 'डैशबोर्ड';
 $lang['elevate'] = 'स्मार्ट समाधानों के साथ अपने व्यवसाय को ऊँचाई दें।';
@@ -2945,6 +2946,7 @@ $lang['ticket_no'] = 'टिकट संख्या';
 $lang['name'] = 'नाम';
 $lang['email'] = 'ईमेल';
 $lang['phone_no'] = 'फोन नंबर';
+$lang['complaint_category'] = 'शिकायत श्रेणी';
 $lang['category'] = 'श्रेणी';
 $lang['order_id'] = 'ऑर्डर आईडी';
 $lang['picture'] = 'चित्र';

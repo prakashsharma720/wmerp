@@ -8,12 +8,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     width: 100% !important;
 }
 
-.btnEdit {
+/* .btnEdit {
     width: 25%;
     border-radius: 5px;
     margin: 1px;
     padding: 1px;
-}
+} */
 </style>
 
 <?php if($this->session->flashdata('success')): ?>
@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="col-md-8">
                     <div class="table-responsiveness">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example1" class="table table-borderezd table-striped">
                             <thead>
                                 <tr>
                                      <th style="width: 2%;"> <?= $this->lang->line('sr_no') ?> </th>
@@ -127,15 +127,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <?= date('d-M-Y h:i:s a ',strtotime($followup['followup_time']))?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal"
-                                            data-target="#delete<?php echo $followup['id'];?>"><i style="color:#fff;"
-                                                class="fa fa-trash"></i> </a>
+                                        <a class="avatar-text btnEdit" data-toggle="modal"
+                                            data-target="#delete<?php echo $followup['id'];?>"><i style="black;"
+                                                class="feather feather-trash"></i> </a>
                                     </td>
                                     <!-- delete model -->
                                     <div class="modal fade" id="delete<?php echo $followup['id'];?>" role="dialog">
                                         <div class="modal-dialog">
                                             <form class="form-horizontal" role="form" method="post"
-                                                action="<?php echo base_url(); ?>index.php/CustomerSupport_controller/deletefollowup/<?php echo $followup['id'];?>">
+                                                action="<?php echo base_url(); ?>index.php/CustomerSupport_controller/deletefollowups/<?php echo $followup['id'];?>">
                                                 <input type="hidden" name="customer_id" value="<?= $id?>">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
