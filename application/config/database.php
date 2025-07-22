@@ -77,7 +77,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
   'dsn' => '',
-  'hostname' => 'localhost',
+  'hostname' => '127.0.0.1:3307',
   // 'username' => 'u651606885_root', 
   // 'password' => 'Musk_erp@2023',
   'username' => 'root',
