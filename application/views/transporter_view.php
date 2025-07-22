@@ -6,14 +6,8 @@ $data=explode('?', $current_page);
 //print_r($data[0]);exit;
 ?>
 
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
-</style>
 
-<?php if($this->session->flashdata('success')): ?>
+  <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                   <h5><i class="icon fa fa-check"></i><?=$this ->lang->line('success')?> !</h5>
@@ -29,6 +23,76 @@ $data=explode('?', $current_page);
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
+  <div class="nxl-content">
+      <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+                <h5 class="m-b-10"><?= $this->lang->line('transporters_list') ?></h5>
+            </div>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a
+                  href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+              </li>
+              <li class="breadcrumb-item"><?= $this->lang->line('transporters_list') ?>
+              </li>
+            </ul>
+          </div>
+           <div class="page-header-right ms-auto">
+              <div class="page-header-right-items">
+                  <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                      <!-- Collapse Filter -->
+                      <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne">
+                          <i class="feather-filter"></i>
+                      </a>
+                      <div class="pull-right d-flex">
+                          <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
+                              <?php if (!empty($filtered_value)) {
+                                  foreach ($filtered_value as $key => $value) { ?>
+                                      <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
+                              } ?>
+                              <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
+                          </form> &nbsp;
+                          <div>
+                            <a href="<?php echo base_url('index.php/Leave/create'); ?>" class="btn btn-primary">
+                                  <i class="feather-plus me-2"></i>
+                                  <span><?= $this->lang->line('transporter_add') ?> 
+                                  </span>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Mobile Toggle -->
+              <div class="d-md-none d-flex align-items-center">
+                  <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                      <i class="feather-align-right fs-20"></i>
+                  </a>
+              </div>
+            </div>
+      </div>
+        <?php $this->load->view('transporter/component/filter'); ?>
+        <?php if ($this->session->flashdata('success')): ?>
+          <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>
+              <!< /h5>
+                <?php echo $this->session->flashdata('success'); ?>
+          </div>
+        <?php endif; ?>
+
+        <?php if ($this->session->flashdata('failed')): ?>
+          <div class="alert alert-error alert-dismissible ">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>
+              <!< /h5>
+                <?php echo $this->session->flashdata('failed'); ?>
+          </div>
+        <?php endif; ?>
+        
+      </div>
+
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
@@ -43,58 +107,6 @@ $data=explode('?', $current_page);
       </div>
     </div> <!-- /.card-body -->
     <div class="card-body">
-      <form method="get" id="filterForm">
-      <div class="row">
-              <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"><?=$this ->lang->line('name_of_transporter')?><span class="required">*</span></label>
-                <select name="transporter_id" class="form-control select2 transporters" >
-                    <option value="0"> <?=$this ->lang->line('select_transporters')?></option>
-                    <?php
-                         if ($all_transporters): ?> 
-                          <?php 
-                            foreach ($all_transporters as $value) : ?>
-                              <?php 
-                                  if ($value['id'] == $transporter_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['transporter_name'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['transporter_name'] ?></option>
-                                  <?php endif;   ?>
-                                   <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?=$this ->lang->line('no_result')?></option>
-                        <?php endif; ?>
-                </select>
-              </div>
-               <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"><?=$this ->lang->line('category_of_approval')?></label>
-                    <?php  $app_cat = array(
-                       'No' => 'Select Option',
-                          'A' => 'A',
-                          'B' => 'B',
-                          'c' => 'C'
-                          );
-                      echo form_dropdown('category_of_approval', $app_cat)
-                    ?>
-                  </div>
-              </div>
-               <div class="row">
-                  <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"><?=$this ->lang->line('from_date')?></label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> <?=$this ->lang->line('upto_date')?></label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('grade')?></label><br>
-                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang->line('search')?>" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang->line('reset')?></a>
-              </div>
-          </div>
-        </form>
-            <hr>
       <div class="table-responsive">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
