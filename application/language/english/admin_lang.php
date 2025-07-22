@@ -60,7 +60,7 @@ $lang['no_result'] = 'No result';
 // https://wmerp.yashdreamsoft.com/index.php/Employees/edit/4
 
 $lang['edit_employee'] = 'Edit Employee';
-$lang['employee_detail'] = 'Employee_Detail';
+$lang['employee_detail'] = 'Employee Detail';
 $lang['personal_details'] = 'Personal Details';
 $lang['bank_details'] = 'Bank Details';
 $lang['salary_details'] = 'Salary Details';
