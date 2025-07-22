@@ -42,48 +42,36 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <form class="form-horizontal" role="form" method="post"
                 action="<?php echo base_url(); ?>index.php/Category/add_new_category">
               <?php } ?>
-            <div class="row col-md-12">
-                <div class="col-md-12 col-sm-12 ">
-                  <label class="control-label" style="visibility: hidden;"><?= $this->lang->line('name') ?></label><br>
-                  <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
+              <div class="form-group">
+                <div class="row col-md-12">
+                  <div class="col-md-12 col-sm-12 ">
+                      <label class="control-label"><?= $this->lang->line('service_name') ?></label>
+                        <input type="text" placeholder="<?= $this->lang->line('enter_service_name') ?>" name="category_name"
+                          class="form-control" value="<?= $category_name ?>" required autofocus>
+                        </div>
+                  </div>
+                  <span class="help-block"></span>
+                  <?php if (!empty($id)) { ?>
+                    <div class="row col-md-12">
+                      <div class="col-md-12 col-sm-12 ">
+                        <label class="control-label"><?= $this->lang->line('status') ?></label>
+                        <select class="form-control" name="flag">
+                          <option value="0"><?= $this->lang->line('active') ?></option>
+                          <option value="1"><?= $this->lang->line('de_active') ?></option>
+                        </select>
+                      </div>
+                    </div>
+                  <?php } ?>
+                  <div class="row col-md-12">
+                    <div class="col-md-12 col-sm-12 ">
+                      <label class="control-label" style="visibility: hidden;"><?= $this->lang->line('name') ?></label><br>
+                      <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
+                    </div>
+                  </div>
                 </div>
-        </div>
-      </div>
-      </form>
+          </form><!-- /form -->
     </div>
-    <!-- /form -->
-    =======
-    <div class="form-group">
-      <div class="row col-md-12">
-        <div class="col-md-12 col-sm-12 ">
-          <label class="control-label"><?= $this->lang->line('service_name') ?></label>
-          <input type="text" placeholder="<?= $this->lang->line('enter_service_name') ?>" name="category_name"
-            class="form-control" value="<?= $category_name ?>" required autofocus>
-        </div>
-      </div>
-      <span class="help-block"></span>
-      <?php if (!empty($id)) { ?>
-        <div class="row col-md-12">
-          <div class="col-md-12 col-sm-12 ">
-            <label class="control-label"><?= $this->lang->line('status') ?></label>
-            <select class="form-control" name="flag">
-              <option value="0"><?= $this->lang->line('active') ?></option>
-              <option value="1"><?= $this->lang->line('de_active') ?></option>
-            </select>
-          </div>
-        </div>
-      <?php } ?>
-      <div class="row col-md-12">
-        <div class="col-md-12 col-sm-12 ">
-          <label class="control-label" style="visibility: hidden;"><?= $this->lang->line('name') ?></label><br>
-          <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
-        </div>
-      </div>
-    </div>
-    </form>
-  </div>
   <!-- /form -->
-  >>>>>>> development-branch
   <div class="col-md-6">
     <h5><?= $this->lang->line('services_list') ?></h5>
     <table id="example" class="table table-bordered table-striped" style="width:100%;">
@@ -91,9 +79,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <tr>
           <th> <?= $this->lang->line('sr_no') ?>.</th>
           <th style="width: 90%;"><?= $this->lang->line('services') ?></th>
-
           <th> <?= $this->lang->line('action') ?></th>
-
         </tr>
       </thead>
       <tbody>
@@ -102,16 +88,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
           <tr>
             <td><?= $i ?></td>
             <td><?= $category['category_name'] ?></td>
-
-            <td> <a class="btn btn-xs btn-info btnEdit"
-                href="<?php echo base_url(); ?>index.php/Category/index/<?php echo $category['id']; ?>"><i
-                  class="fa fa-edit"></i></a></td>
-
+            <td> 
+              <a class="avatar-text avatar-md"
+                href="<?php echo base_url(); ?>index.php/Category/index/<?php echo $category['id']; ?>">
+                <i class="feather feather-edit-3"></i>
+                </a>
+            </td>
           </tr>
           <?php $i++;
         } ?>
       </tbody>
-
     </table>
   </div>
 </div>
