@@ -2932,6 +2932,7 @@ $lang['action'] = 'क्रिया';
 // customer complaints    
 // Complaints Data 
 $lang['complaints_data'] = 'शिकायत डेटा';
+$lang['home'] = 'मुख्य';
 
 $lang['search_by_status'] = 'स्थिति द्वारा खोजें';
 $lang['search_by_category'] = 'श्रेणी द्वारा खोजें';
