@@ -64,7 +64,7 @@ function PopUp(){
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?=$this ->lang ->line('requisition_slip_list')?>
+      <!-- <span class="card-title"><?=$this ->lang ->line('requisition_slip_list')?>
       </span>
        <div class="button-group float-right">
 
@@ -72,8 +72,14 @@ function PopUp(){
 
          <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>
-        
+          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button> -->
+        <span class="card-title">Requisition Slip List          </span>
+            <div class="button-group float-right d-flex">
+
+                <a href="http://localhost/wmerp/index.php/Employees/add" class="btn btn-success" data-toggle="tooltip" title="New Employee"><i class="fa fa-plus"></i></a>
+                <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+
+                <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i class="fa fa-trash"></i></button>
       </div>
     </div> <!-- /.card-body -->
     <div class="card-body">

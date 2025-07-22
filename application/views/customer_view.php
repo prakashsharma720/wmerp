@@ -39,7 +39,7 @@ $data=explode('?', $current_page);
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?=$this ->lang ->line('customers_list')?></span>
+            <!-- <span class="card-title"><?=$this ->lang ->line('customers_list')?></span>
             <div class="pull-right error_msg">
                 <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-success" data-toggle="tooltip"
                     title="New customer"><i class="fa fa-plus"></i></a>
@@ -48,7 +48,14 @@ $data=explode('?', $current_page);
                         class="fa fa-refresh"></i></button>
 
                 <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i
-                        class="fa fa-trash"></i></button>
+                        class="fa fa-trash"></i></button> -->
+                        <span class="card-title">Customers list           </span>
+            <div class="button-group float-right d-flex">
+
+                <a href="http://localhost/wmerp/index.php/Employees/add" class="btn btn-success" data-toggle="tooltip" title="New Employee"><i class="fa fa-plus"></i></a>
+                <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+
+                <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i class="fa fa-trash"></i></button>
             </div>
         </div> <!-- /.card-body -->
         <div class="card-body">

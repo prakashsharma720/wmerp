@@ -190,7 +190,7 @@ public function edit($id=NULL) {
 		$data['departments'] = $this->daily_stitching_model->getDepartments();
 		$data['req_status']= array('All'=>'All','Pending' => 'Pending','Approved'=>'Approved','Rejected'=>'Rejected');
 		//echo var_dump($data);
-		$this->template->load('template','daily_stitching_report',$data);
+		$this->template->load('layout/template','daily_stitching_report',$data);
 	}
 	
 
