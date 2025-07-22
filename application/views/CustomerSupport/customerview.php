@@ -155,9 +155,9 @@ $data = explode('?', $current_page);
 
 									<div class="d-flex gap-2">
 										<a class="  avatar-text btnEdit" data-toggle="modal" data-target="#view3" title=" view details"><i class="fa fa-check"></i></a>
-										<a class="avatar-text  btnEdit" href="http://localhost/wmerp/index.php/CustomerSupport_controller/followups/103088" title=" Lead Followup"><i class="fa fa-comment"></i></a>
+										<a class="avatar-text  btnEdit" href="<?php echo base_url(); ?>index.php/CustomerSupport_controller/followups/103088" title=" Lead Followup"><i class="fa fa-comment"></i></a>
 
-										<a class="avatar-text btnEdit" href="http://localhost/wmerp/index.php/CustomerSupport_controller/tracking/103088" title=" view details"><i class="fa fa-bullseye"></i></a>
+										<a class="avatar-text btnEdit" href="<?php echo base_url(); ?>index.php/CustomerSupport_controller/tracking/103088" title=" view details"><i class="fa fa-bullseye"></i></a>
 
 									</div>
 
