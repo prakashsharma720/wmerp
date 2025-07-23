@@ -130,7 +130,7 @@ margin: 0.7rem
 								<!-- / Gatepass Divs -->
 
 								<div class="col-md-12">
-									<label class="control-label"> <?= $this->lang->line('messgae') ?> <span class="required"> *</span></label>
+									<label class="control-label"> <?= $this->lang->line('messgae') ?> <span class="required"><?= $this->lang->line('message') ?>*</span></label>
 									<textarea class="form-control message" rows="3" placeholder="<?= $this->lang->line('enter_message') ?>" name="message" value="" requireds></textarea>
 								</div>
 

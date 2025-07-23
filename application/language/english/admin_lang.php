@@ -36,7 +36,7 @@ $lang['id'] = 'ID';
 $lang['enter_id'] = 'Enter ID';
 $lang['apply_date'] = 'Apply Date';
 $lang['lead_details'] = 'Lead Details';
-
+$lang['leave_details'] = 'Leave Details';    
 
 
 $lang['model'] = 'Model';
@@ -3358,7 +3358,11 @@ $lang['photos'] = 'Photo';
 $lang['action'] = 'Action';
 
 // leave module holidays
-
+$lang['approved'] = 'Approved';        // English
+$lang['pending'] = 'Pending';
+$lang['on_hold'] = 'On Hold';
+$lang['rejected'] = 'Rejected';
+$lang['cancel'] = 'Cancelled';
 $lang['holidays_master'] = 'Holidays Master';
 $lang['title_name'] = 'Title Name';
 $lang['enter_title_name'] = 'Enter Title Name';

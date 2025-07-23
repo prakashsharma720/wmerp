@@ -57,12 +57,12 @@ margin: 0.7rem
 													<div class="col-md-12 col-sm-12 ">
 														<label class="control-label"> <?= $this->lang->line('leave_status_info') ?></label>
 													<select class="form-control" name="leave_status">
-															<option value="Pending" <?= $pending ?>> Pending </option>
-															<option value="Approved" <?= $approved ?>> Approved </option>
-															<option value="On Hold" <?= $inprocess ?>> On Hold</option>
-															<option value="Rejected" <?= $rejected ?>> Rejected</option>
+															<option value="Pending" <?= $pending ?>> <?= $this->lang->line('pending') ?> </option>
+															<option value="Approved" <?= $approved ?>> <?= $this->lang->line('approved') ?> </option>
+															<option value="On Hold" <?= $inprocess ?>> <?= $this->lang->line('on_hold') ?></option>
+															<option value="Rejected" <?= $rejected ?>> <?= $this->lang->line('rejected') ?></option>
 															<?php if($leave_status =="Approved") { ?>
-															<option value="Cancelled" <?= $Cancelled ?>> Cancel</option>
+															<option value="Cancelled" <?= $Cancelled ?>> <?= $this->lang->line('cancel') ?></option>
 														<?php } ?>
 													</select>
 													</div>
