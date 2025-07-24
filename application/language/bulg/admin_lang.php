@@ -51,6 +51,8 @@ $lang['emergency_no'] = 'Спешен номер';
 $lang['employee_detail'] = 'Данни за служителя';
 $lang['personal_details'] = 'Лични данни';
 $lang['bank_details'] = 'Банкови данни';
+$lang['savings'] = 'Спестовна';
+$lang['current'] = 'Текуща';
 $lang['salary_details'] = 'Данни за заплата';
 $lang['other_details'] = 'Други данни';
 
@@ -3280,6 +3282,8 @@ $lang['apply'] = 'Кандидатствай';
 $lang['daily_task_master'] = 'Дневни задачи - основни данни';
 $lang['project_name'] = 'Име на проекта';
 $lang['enter_project_name'] = 'Въведете име на проекта';
+$lang['in_process'] = 'В процес';
+$lang['completed'] = 'Завършен';
 
 $lang['start_date'] = 'Начална дата';
 $lang['end_date'] = 'Крайна дата';
