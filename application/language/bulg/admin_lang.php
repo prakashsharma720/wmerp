@@ -3164,7 +3164,7 @@ $lang['aadhaar_no'] = 'Номер Aadhaar';
 $lang['enter_aadhaar_no'] = 'Въведете номер Aadhaar';
 
 $lang['pan'] = 'ПАН (Постоянен акаунт номер)';
-$lang['pan_placeholder'] = 'напр. ABCEDE2548K';
+$lang['pan_placeholder'] = 'напр. АВСЕДЕ2548К';
 
 $lang['copyright'] = 'Авторско право © 2025 Warrgyiz Morsch. Всички права запазени.';
 
