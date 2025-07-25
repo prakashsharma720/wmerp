@@ -20,11 +20,11 @@
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('employee') ?></h5>
+               <h5> <a href="<?php echo base_url('index.php/Employees/index'); ?>"><?= $this->lang->line('employee') ?></a></h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+                    <a href="<?php echo base_url('index.php/Employees/index'); ?>"><?= $this->lang->line('home') ?></a>
                 </li>
                 <li class="breadcrumb-item"><?= $this->lang->line('view_list') ?>
                 </li>
@@ -58,7 +58,10 @@
                 </a>
             </div>
         </div>
+        <!-- Load Filter -->
+    <?php $this->load->view('leave-module/component/employeefilter'); ?>
     </div>
+    
        <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
@@ -135,6 +138,18 @@
                                 <a class="avatar-text avatar-md"
                                     href="<?php echo base_url(); ?>index.php/Employees/edit/<?php echo $obj['id'];?>"><i
                                         class="feather feather-edit-3"></i></a>
+<<<<<<< Updated upstream
+=======
+
+                                        
+                                
+                                         <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteEmployees<?= $obj['id']; ?>" class="avatar-text avatar-md">
+    <i class="feather feather-trash"></i>
+</a>
+
+                                
+                                
+>>>>>>> Stashed changes
 
 
                                 <!--   <a href="<?php //echo base_url(); ?>index.php/welcome/deleteSupplier/<?php echo $obj['id'];?>"
@@ -378,7 +393,34 @@
         <?php $this->load->view('leave-module/component/view-employee', ['obj' => $obj]); ?>
 
         </tr>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="deleteEmployees<?= $obj['id']; ?>">
+    <form method="post" action="<?= base_url('index.php/Employees/deleteEmployee/' . $obj['id']); ?>">
         
+        <!-- Header with Cancel Button on Right -->
+        <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5 ">
+            <h2 class="fs-16 fw-bold mb-0"><?= $this->lang->line('confirm') ?></h2>
+            <button type="button" class="btn-close btn-close-gray ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="offcanvas-body">
+            <p class="fs-15">
+                <?= $this->lang->line('confirm_delete') ?>: <strong><?= $obj['name'] ?></strong>?
+            </p>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div class="px-4 gap-2 d-flex align-items-center justify-content-between ht-80 border-top border-gray-2">
+            <button type="submit" class="btn btn-primary w-50">
+                <?= $this->lang->line('yes') ?>
+            </button>
+            <button type="button" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">
+                <?= $this->lang->line('cancel') ?>
+            </button>
+        </div>
+    </form>
+</div>
+
         <?php  $i++;} ?>
         
         </tbody>

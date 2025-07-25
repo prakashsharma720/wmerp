@@ -105,7 +105,8 @@ img.profile-user-img.img-fluid.img-circle {
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('employee') ?></h5>
+               <h5> <a href="<?php echo base_url('index.php/Employees/index'); ?>"><?= $this->lang->line('employee') ?></a></h5>
+
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">

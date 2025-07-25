@@ -1,9 +1,22 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="ViewLeave<?= $obj['id']; ?>">
+<<<<<<< Updated upstream
     <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
         <h2 class="fs-16 fw-bold text-truncate-1-line"><?= $this->lang->line('employee_detail') ?></h2>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
+=======
+  <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5 d-flex justify-content-between align-items-center bg-secondary">
+    <h2 class="fs-16 fw-bold text-truncate-1-line mb-0 text-white">
+        <?= $this->lang->line('employee_detail') ?>
+    </h2> 
+    <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+
+
+
+    
+>>>>>>> Stashed changes
     <div class="offcanvas-body">
         <div class="row">
             <div class="col-lg-6 mb-4">
