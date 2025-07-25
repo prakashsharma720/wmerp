@@ -147,7 +147,7 @@ function time_Ago($time) {
     } 
 }
 function get_avatar_url($photoPath) {
-    $default = base_url('assets/images/default-avatar.png');
+    $default = base_url('uploads/user-default.jpg');
     if (!empty($photoPath) && file_exists(FCPATH . $photoPath)) {
         return base_url($photoPath);
     }

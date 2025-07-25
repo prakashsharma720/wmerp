@@ -87,20 +87,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="hstack justify-content-between mb-4">
-                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-map-pin"></i>Location</span>
-                                        <a href="javascript:void(0);" class="float-end"><?= $address ?></a>
-                                    </li>
-                                    <li class="hstack justify-content-between mb-4">
-                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-phone"></i>Phone</span>
-                                        <a href="javascript:void(0);" class="float-end">+<?= $mobile_no ?></a>
-                                    </li>
-                                    <li class="hstack justify-content-between mb-0">
-                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-mail"></i>Email</span>
-                                        <a href="javascript:void(0);" class="float-end"><?= $email ?></a>
-                                    </li>
-                                </ul>
+                              <ul class="list-unstyled mb-4">
+    <li class="d-flex justify-content-between align-items-start mb-4">
+        <span class="text-muted fw-medium d-flex gap-2 align-items-start">
+            <i class="feather-map-pin mt-1"></i>
+            Location
+        </span>
+        <a href="javascript:void(0);" class="text-end text-break ms-3 flex-shrink-1" style="max-width: 60%;">
+            <?= $address ?>
+        </a>
+    </li>
+    <li class="d-flex justify-content-between align-items-start mb-4">
+        <span class="text-muted fw-medium d-flex gap-2 align-items-start">
+            <i class="feather-phone mt-1"></i>
+            Phone
+        </span>
+        <a href="javascript:void(0);" class="text-end text-break ms-3 flex-shrink-1" style="max-width: 60%;">
+            +<?= $mobile_no ?>
+        </a>
+    </li>
+    <li class="d-flex justify-content-between align-items-start mb-0">
+        <span class="text-muted fw-medium d-flex gap-2 align-items-start">
+            <i class="feather-mail mt-1"></i>
+            Email
+        </span>
+        <a href="javascript:void(0);" class="text-end text-break ms-3 flex-shrink-1" style="max-width: 60%;">
+            <?= $email ?>
+        </a>
+    </li>
+</ul>
+
                                 <div class="d-flex gap-2 text-center pt-4">
                                     <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
                                         <i class="feather-trash-2 me-2"></i>

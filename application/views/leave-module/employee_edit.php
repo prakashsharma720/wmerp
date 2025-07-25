@@ -125,74 +125,7 @@ img.profile-user-img.img-fluid.img-circle {
     <br>
 
         <div class="row">
-            <div class="col-md-3">
-
-                <!-- Profile Image -->
-                <div class="card card-primary card-outline">
-                    <div class="card-body box-profile">
-                        <div class="text-center" style="margin-left: 53px;">
-                            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
-                                style="--value:100"></div>
-
-
-                            <img class="profile-user-img img-fluid img-circle" src="<?= get_avatar_url($photo) ?>"
-                                alt="User profile picture">
-
-                        </div>
-
-
-
-                        <h3 class="profile-username text-center"><?= $name?></h3>
-
-                        <p class="text-muted text-center"><?php echo $designation?></p>
-
-                        <ul class="list-group list-group-unbordered mb-3">
-                        <div class="top-progress-bar">
-                            <div class="top-progress-fill">
-                                <span class="progress-text"><?= $this->lang->line('profile_complete') ?> : 50%</span>
-                            </div>
-                        </div>
-                            <li class="list-group-item">
-                                <b><?= $this->lang->line('email') ?></b> <a class="float-right"><?= $email?></a>
-                            </li>
-                            <li class="list-group-item">
-                                <b><?= $this->lang->line('mobile_no') ?></b> <a class="float-right"><?= $mobile_no?></a>
-                            </li>
-                            <li class="list-group-item">
-                                <b><?= $this->lang->line('date_of_birth') ?></b> <a class="float-right"><?= $dob?></a>
-                            </li>
-                        </ul>
-
-                        <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-
-                <!-- About Me Box -->
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title"><?= $this->lang->line('about_me') ?></h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-
-
-                        <strong><i class="fa fa-map-marker mr-1"></i> <?= $this->lang->line('location') ?></strong>
-
-                        <p class="text-muted"><?= $address?></p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-file-text-o mr-1"></i><?= $this->lang->line('emergency_no') ?></strong>
-
-                        <p class="text-muted"><?= $emobile_no?> (<?= $ename?>)</p>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <form class="form-horizontal " role="form" method="post"
                     action="<?php echo base_url(); ?>index.php/Employees/editemployee/<?= $id ?>"
                     enctype="multipart/form-data">

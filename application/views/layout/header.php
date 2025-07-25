@@ -179,7 +179,9 @@ $languages = [
 
                 <!-- User Profile -->
                 <div class="dropdown nxl-h-item">
-                    <a href="javascript:void(0);" data-bs-toggle="dropdown"><img src="<?= get_avatar_url($photo) ?>" class="img-fluid user-avtar me-0" alt="user" /></a>
+                    <a href="javascript:void(0);" data-bs-toggle="dropdown"><img src="<?= get_avatar_url($photo) ?>" class="img-fluid wd-40 me-0" alt="user" />
+                    
+                </a>
                     <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown">
                         <div class="dropdown-header d-flex align-items-center">
                             <img src="<?= get_avatar_url($photo) ?>" class="img-fluid user-avtar" alt="user" />
