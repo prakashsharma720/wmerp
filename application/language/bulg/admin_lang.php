@@ -10,15 +10,37 @@ $lang['Create_an_Account'] = 'Създайте акаунт';
 $lang['Are you new?'] = 'Нов ли сте?';
 $lang['google_signin'] = 'Вход с Google';
 $lang['or'] = 'или';
+$lang['add_new_finished_good'] = 'Добавяне на нов готов продукт';
+
 $lang['login'] = 'Вход';
 $lang['remember_me'] = 'Запомни ме';
 $lang['loginwithfacebook'] = 'Вход с Facebook';
 $lang['loginwithgmail'] = 'Вход с Gmail';
+$lang['discount'] = 'Отстъпка';
+$lang['rupees'] = 'Рупии';
+$lang['percentage'] = 'Процент';
+$lang['create_new_material_code'] = 'Създаване на нов код за суровина';
+$lang['enter_discount'] = 'Въведете отстъпка';
+$lang['after_discount'] = 'След отстъпката';
+$lang['gst'] = 'ДДС';
+$lang['enter_tax_percent'] = 'Въведете ДДС %';
+$lang['enter_tax'] = 'Въведете данък';
+$lang['amount_with_tax'] = 'Сума с данък';
+$lang['grand_total'] = 'Обща сума';
+$lang['vendor_reference'] = 'Референция на доставчик';
+$lang['enter_reference'] = 'Въведете референция';
+$lang['delivery_period'] = 'Срок на доставка';
+$lang['enter_delivery_schedule'] = 'Въведете график за доставка';
+$lang['payment_terms'] = 'Условия за плащане';
+$lang['example_cash_cheque'] = 'Пример: В брой, Чек';
+$lang['freight_status'] = 'Статус на транспорта';
+$lang['paid'] = 'Платено';
+$lang['to_pay'] = 'За плащане';
 
 $lang['users'] = 'Потребители';
 $lang['logout'] = 'Изход';
 $lang['account'] = 'Акаунт';
-
+$lang['create_new_material_code'] = 'Създаване на нов код за материал';
 // account setting
 
 $lang['account_setting'] = 'Настройки на акаунта';

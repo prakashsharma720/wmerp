@@ -1,45 +1,49 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ($this->session->flashdata('success')): ?>
+	<div class="alert alert-success alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
+		<?php echo $this->session->flashdata('success'); ?>
+	</div>
+	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-//print_r($item_master);exit;
-?>
+<?php if ($this->session->flashdata('failed')): ?>
+	<div class="alert alert-error alert-dismissible ">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
+		<?php echo $this->session->flashdata('failed'); ?>
+	</div>
+<?php endif; ?>
 
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
-</style>
+<div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('finish_goods_list'); ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?> -->
+				</li>
+			</ul>
+		</div>
 
-  <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-      <div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-     <span class="card-title"><?= $this->lang->line('finish_goods_list'); ?></span>
+			</div>
 
-      </span>
-       <div class="pull-right">
-      
-         <a class="btn btn-xs btn-primary " href="<?php echo base_url(); ?>index.php/Finish_goods/add">
-          <i class="fa fa-plus"><?= $this->lang->line('add_new_fg') ?> </i></a>
-      </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-3">
       <div class="table-responsive">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
@@ -74,10 +78,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?= $obj['grade_name'].' ('.$fg_code.')'?></td>
                 <td><?= $obj['packing_type']?></td>
                 <td><?= $obj['packing_size']?></td>
-                <td >
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Finish_goods/edit/<?php echo $obj['id'];?>"><i class="fa fa-edit"></i></a>
-                  <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
-                </td>
+               <td>
+  <div class="d-flex gap-1">
+    <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Finish_goods/edit/<?php echo $obj['id']; ?>">
+      <i class="fa fa-edit"></i>
+    </a>
+    <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>">
+      <i class="fa fa-trash"></i>
+    </a>
+  </div>
+</td>
+
+
                     <div class="modal fade" id="delete<?php echo $obj['id'];?>" role="dialog">
                       <div class="modal-dialog">
                         <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/deleteFG/<?php echo $obj['id'];?>">
@@ -120,3 +132,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           return false;
         } 
 </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
