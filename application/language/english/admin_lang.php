@@ -1,4 +1,6 @@
 <?php
+$lang['ticket_id'] = 'ticket id ';
+$lang['add_reply'] = 'add reply';
 $lang['dashboard'] = 'Dashboard';
 $lang['elevate'] = 'Elevate Your Business with Smart Solutions.';
 $lang['sign_in_session'] = 'Sign In to Start Your Session';
