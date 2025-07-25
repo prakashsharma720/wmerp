@@ -232,7 +232,7 @@ public function add() {
 	    $data['states']=$this->login_database->getStates();
 	    $data['cities']=$this->login_database->getCities();
 	    $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-        $this->template->load('template','supplier_edit',$data);
+        $this->template->load('layout/template','supplier_edit',$data);
 	
 	}
 
@@ -468,7 +468,7 @@ public function add() {
 	            
 	        endif;
 	        $data['title']='Supplier Profile';
-        $this->template->load('template','printprofile',$data);
+        $this->template->load('layout/template','printprofile',$data);
     } 
 
 }

@@ -16,12 +16,32 @@ $lang['login'] = 'लॉगिन';
 $lang['remember_me'] = 'मुझे याद रखें';
 $lang['loginwithfacebook'] = 'Facebook के साथ लॉगिन करें';
 $lang['loginwithgmail'] = 'Gmail के साथ लॉगिन करें';
-
+$lang['discount'] = 'छूट';
+$lang['add_new_finished_good'] = 'नया तैयार माल जोड़ें';
+$lang['rupees'] = 'रुपये';
+$lang['percentage'] = 'प्रतिशत';
+$lang['enter_discount'] = 'छूट दर्ज करें';
+$lang['after_discount'] = 'छूट के बाद';
+$lang['gst'] = 'जीएसटी';
+$lang['enter_tax_percent'] = 'कर प्रतिशत दर्ज करें';
+$lang['enter_tax'] = 'कर दर्ज करें';
+$lang['amount_with_tax'] = 'कर सहित राशि';
+$lang['grand_total'] = 'कुल योग';
+$lang['vendor_reference'] = 'विक्रेता संदर्भ';
+$lang['enter_reference'] = 'संदर्भ दर्ज करें';
+$lang['delivery_period'] = 'डिलीवरी अवधि';
+$lang['enter_delivery_schedule'] = 'डिलीवरी शेड्यूल दर्ज करें';
+$lang['payment_terms'] = 'भुगतान की शर्तें';
+$lang['example_cash_cheque'] = 'उदाहरण: नकद, चेक';
+$lang['freight_status'] = 'माल ढुलाई की स्थिति';
+$lang['paid'] = 'चुकाया गया';
+$lang['to_pay'] = 'भुगतान शेष';
+$lang['create_new_material_code'] = 'नया कच्चा माल कोड बनाएं';
 $lang['users'] = 'उपयोगकर्ता';
 $lang['logout'] = 'लॉगआउट';
 $lang['account'] = 'खाता';
 // account setting
-
+$lang['create_new_material_code'] = 'नई मटेरियल कोड बनाएं'; 
 $lang['account_setting'] = 'खाता सेटिंग';
 $lang['my_account'] = 'मेरा खाता';
 $lang['change_password'] = 'पासवर्ड बदलें';

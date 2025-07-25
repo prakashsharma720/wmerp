@@ -1,31 +1,51 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i><?=$this ->lang->line('success')?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+<?php if ($this->session->flashdata('success')): ?>
+	<div class="alert alert-success alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
+		<?php echo $this->session->flashdata('success'); ?>
+	</div>
+	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang->line('alert')?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $this->lang->line('hsn_master'); ?></h3>
-        <div class="pull-right ">
-			<?php echo validation_errors();?>
+<?php if ($this->session->flashdata('failed')): ?>
+	<div class="alert alert-error alert-dismissible ">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
+		<?php echo $this->session->flashdata('failed'); ?>
+	</div>
+<?php endif; ?>
+
+<div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('hsn_master') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+				</li>
+			</ul>
 		</div>
-	      </div> <!-- /.card-body -->
-	      	<div class="card-body">
+
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+
+	      	<div class="card-body p-3">
 		      	<div class="row">
 		      		<div class="col-md-6">
 		      			<?php  //echo $title; exit; ?>
@@ -90,7 +110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<td><?= $i ?></td>
 								<td><?=$this ->lang->line('mineral_name')?></td>
 								<td><?= $HSN['hsn_code']?></td>
-								<td> <a class="btn btn-xs btn-info btnEdit" href="<?php echo base_url(); ?>index.php/HSN/index/<?php echo $HSN['id'];?>"><i class="fa fa-edit"></i></a></td>
+								<td> <a class="btn btn-sm border-0 shadow-none p-1 text-dark" href="<?php echo base_url(); ?>index.php/HSN/index/<?php echo $HSN['id'];?>"><i class="fa fa-edit"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>

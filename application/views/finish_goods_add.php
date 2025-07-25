@@ -1,36 +1,69 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+<?php if ($this->session->flashdata('success')): ?>
+	<div class="alert alert-success alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
+		<?php echo $this->session->flashdata('success'); ?>
+	</div>
+	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <!-- <h3 class="card-title"><?= $title ?></h3> -->
-		 <h3><?= $this->lang->line('add_new_finish_good'); ?></h3>
+<?php if ($this->session->flashdata('failed')): ?>
+	<div class="alert alert-error alert-dismissible ">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
+		<?php echo $this->session->flashdata('failed'); ?>
+	</div>
+<?php endif; ?>
 
-        <div class="pull-right ">
-			<?php echo validation_errors();?>			
+<div class="nxl-content">
+	<div class="page-header mt-3 mb-4 px-3">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('add_new_finished_good') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+				</li>
+			</ul>
 		</div>
-	      </div> <!-- /.card-body -->
-	      	<div class="card-body">
+
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	       <!-- /.card-body -->
+	      	<div class="card-body mt-3">
 		      	<div class="row">
-		      		<div class="col-md-12">
+		      		<div class="col-md-12 ">
 						<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/add_new_fg">
-				    			<div class="row col-md-12">
-					         	  	<div class="col-md-6">
+				    			<div class="row col-md-12 px-3"> <!-- Add horizontal padding -->
+    <div class="col-md-6 mb-3">
+        <label class="control-label"><?= $this->lang->line('finish_good_code') ?></label>
+        <input type="text" name="finishgood_code" class="form-control" value="<?= $finish_good_code ?>" autofocus readonly="readonly">
+        <input type="hidden" name="fg_code" value="<?php echo $fg_code; ?>">
+    </div>
 
-						            	<label class="control-label"> <?= $this->lang->line('finish_good_code') ?></label>
-						                <input type="text"  name="finishgood_code" class="form-control" value="<?= $finish_good_code?>"  autofocus readonly="readonly">
-						                <input type="hidden" name="fg_code" value="<?php echo $fg_code;?>">
-						        	</div>
-									 <div class="col-md-6">
+    <div class="col-md-6 mb-3">
+        <label class="control-label"><?= $this->lang->line('grade_name') ?></label>
+        <input type="text" placeholder="<?= $this->lang->line('enter_grade_name') ?>" name="grade_name" class="form-control" value="" required autofocus>
+    </div>
+</div>
 
-						            	<label class="control-label"> <?= $this->lang->line('grade_name') ?></label>
-						                <input type="text"  placeholder="<?= $this->lang->line('enter_grade_name') ?>" name="grade_name" class="form-control" value="" required autofocus>
-						        </div>
-						       	</div>
-					        <div class="row col-md-12">
-					        	 <div class="col-md-6">
+					        <div class="row col-md-12 px-3">
+					        	 <div class="col-md-6 mb-3">
 						            	<label class="control-label"> <?= $this->lang->line('mineral_name') ?></label>
 									<select name="mineral_name" class="form-control select2 mineral_name" >
 										<option value="0"> <?= $this->lang->line('select_mineral') ?></option>
@@ -57,8 +90,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						        
 						     </div>
 					        <span class="help-block"></span>
-					        <div class="row col-md-12">
-						         <div class="col-md-6">
+					        <div class="row col-md-12 px-3">
+						         <div class="col-md-6 mb-3">
 						            	<label class="control-label"><?= $this->lang->line('packing') ?> </label>
 						            	<select name="packing_size" class="form-control" required="required">
 							                <?php
@@ -159,3 +192,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}); 
 	});
 </script> 
+
+
+
+
+
+
+
+
+
+
+
+

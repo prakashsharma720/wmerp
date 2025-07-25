@@ -200,7 +200,7 @@ public function edit($id=NULL) {
 	//print_r($data['items']);exit;
 	$data['grades']=$this->po_model->getGrades();
 	//$data['states']=$this->po_model->getStates();
-	$this->template->load('template','po_edit',$data);
+	$this->template->load('layout/template','po_edit',$data);
 
 
 	//$this->load->view('footer');
@@ -434,7 +434,7 @@ public function edit($id=NULL) {
 	    	$this->template->load('template','po_print_indent',$data);
 		}else{
 			$data['title']='Purchase Order ';
-	    	$this->template->load('template','po_print',$data);
+	    	$this->template->load('layout/template','po_print',$data);
 		}
 
 
