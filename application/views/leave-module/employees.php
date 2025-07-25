@@ -73,7 +73,7 @@
                         <div class="d-flex d-md-none">
                         </div>
                         <ul class="nav nav-tabs nav-tabs-custom-style" id="myTab" role="tablist">
-                        <li class="nav-item"><a class="nav-link active show" href="#activityss" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a>
+                        <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a>
                         </li>
 
                            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><?= $this->lang->line('bank_details') ?></a>
@@ -156,7 +156,7 @@
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
                                         <label class="control-label"><?= $this->lang->line('select_authority_person') ?> <span
-                                                class="required">*</span></label>
+                                                class="required"></span></label>
                                         <?php  
 						            		echo form_dropdown('author_id', $employees, '', 'required="required"')
 						            	?>
@@ -222,6 +222,12 @@
                                             style="text-transform: uppercase;">
                                     </div>
                                 </div>
+                                 <div class="row col-md-12">
+                                <div class="col-md-12 col-sm-12 ">
+                                    <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
+                                </div>
+                            </div>
                             </div>
                             <div class="form-group">
                                 <div class="row col-md-12">
@@ -314,6 +320,12 @@
                                     </div>
 
                                 </div>
+                                 <div class="row col-md-12">
+                                <div class="col-md-12 col-sm-12 ">
+                                    <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
+                                </div>
+                            </div>
                             </div>
 
                         </div>
@@ -365,6 +377,12 @@
                                     </div>
                                   
                                 </div>
+                                 <div class="row col-md-12">
+                                <div class="col-md-12 col-sm-12 ">
+                                    <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
+                                </div>
+                            </div>
                             </div>
                            
                         </div>
