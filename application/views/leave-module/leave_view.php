@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item">
                     <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
                 </li>
-                <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+                <li class="breadcrumb-item"><?= $this->lang->line('leave_application') ?>
                 </li>
             </ul>
         </div>
@@ -69,7 +69,7 @@
         </div>
     <?php endif; ?>
 
-    <div class="main-content">
+  <div class="main-content">
     <div class="row">
         <div class="col-lg-12">
             <div class="card stretch stretch-full">

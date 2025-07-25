@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        		<div class="col-md-4 col-sm-4 ">
 			            	<label class="control-label"> <?= $this->lang->line('date') ?>  <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
+							 
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">

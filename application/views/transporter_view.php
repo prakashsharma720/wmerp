@@ -24,298 +24,139 @@ $data=explode('?', $current_page);
                </div>
       <?php endif; ?>
   <div class="nxl-content">
-      <div class="page-header">
-        <div class="page-header-left d-flex align-items-center">
-            <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('transporters_list') ?></h5>
-            </div>
-            <ul class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a
-                  href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
-              </li>
-              <li class="breadcrumb-item"><?= $this->lang->line('transporters_list') ?>
-              </li>
-            </ul>
-          </div>
-           <div class="page-header-right ms-auto">
-              <div class="page-header-right-items">
-                  <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                      <!-- Collapse Filter -->
-                      <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne">
-                          <i class="feather-filter"></i>
-                      </a>
-                      <div class="pull-right d-flex">
-                          <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
-                              <?php if (!empty($filtered_value)) {
-                                  foreach ($filtered_value as $key => $value) { ?>
-                                      <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
-                              } ?>
-                              <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
-                          </form> &nbsp;
-                          <div>
-                            <a href="<?php echo base_url('index.php/Leave/create'); ?>" class="btn btn-primary">
-                                  <i class="feather-plus me-2"></i>
-                                  <span><?= $this->lang->line('transporter_add') ?> 
-                                  </span>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- Mobile Toggle -->
-              <div class="d-md-none d-flex align-items-center">
-                  <a href="javascript:void(0)" class="page-header-right-open-toggle">
-                      <i class="feather-align-right fs-20"></i>
-                  </a>
-              </div>
-            </div>
+  <div class="page-header">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"><?= $this->lang->line('rm_code_list') ?></h5>
       </div>
-        <?php $this->load->view('transporter/component/filter'); ?>
-        <?php if ($this->session->flashdata('success')): ?>
-          <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>
-              <!< /h5>
-                <?php echo $this->session->flashdata('success'); ?>
-          </div>
-        <?php endif; ?>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"><?= $this->lang->line('rm_code_list') ?></li>
+      </ul>
+    </div>
 
-        <?php if ($this->session->flashdata('failed')): ?>
-          <div class="alert alert-error alert-dismissible ">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>
-              <!< /h5>
-                <?php echo $this->session->flashdata('failed'); ?>
+    <div class="page-header-right ms-auto">
+      <div class="page-header-right-items">
+        <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+          <!-- Collapse Filter -->
+          <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
+            data-bs-target="#collapseOne">
+            <i class="feather-filter"></i>
+          </a>
+
+          <!-- Export + Add New -->
+          <div class="d-flex gap-2">
+            <form method="post" action="<?= base_url('index.php/YourController/exportRmCode') ?>">
+              <!-- Yahan agar filter ka data bhejna ho toh hidden inputs laga lena -->
+              <button type="submit" class="btn btn-info">
+                <?= $this->lang->line('export') ?>
+              </button>
+            </form>
+
+            <a href="<?= base_url('index.php/YourController/addRmCode') ?>" class="btn btn-primary">
+              <i class="feather-plus me-2"></i>
+              <?= $this->lang->line('add_rm_code') ?>
+            </a>
           </div>
-        <?php endif; ?>
-        
+        </div>
       </div>
 
-<div class="container-fluid">
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filters Section -->
+  <div class="collapse mb-3" id="collapseOne">
+    <?php $this->load->view('rm_codes/component/filter'); ?>
+  </div>
+
+  <!-- Table -->
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?=$this ->lang->line('transporters_list')?></span>
-       <div class="pull-right error_msg">
+      <span class="card-title"><?= $this->lang->line('rm_code_list') ?></span>
+      <div class="pull-right">
+        <a href="<?= base_url('index.php/YourController/addRmCode') ?>" class="btn btn-success" data-toggle="tooltip" title="New RM Code">
+          <i class="fa fa-plus"></i>
+        </a>
 
-          <a href="<?php echo base_url(); ?>index.php/Transporters/add" class="btn btn-success" data-toggle="tooltip" title="New transporter"><i class="fa fa-plus"></i></a>
+        <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();">
+          <i class="fa fa-refresh"></i>
+        </button>
 
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>  
+        <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete">
+          <i class="fa fa-trash"></i>
+        </button>
       </div>
-    </div> <!-- /.card-body -->
+    </div>
+
     <div class="card-body">
       <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="rmCodeTable" class="table table-bordered table-striped">
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th ><?=$this ->lang->line('sr_no')?>.</th>
-              <th><?=$this ->lang->line('name')?></th>
-           
-              <th style="white-space: nowrap;"> <?=$this ->lang->line('contact_person')?> </th>
-              <th><?=$this ->lang->line('mobile_no')?></th>
-             <!--  <th style="white-space: nowrap;">Approval Date</th>
-              <th style="white-space: nowrap;"> Next Evalution</th> -->
-              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang->line('action_button')?></th>
+              <th><?= $this->lang->line('sr_no') ?></th>
+              <th><?= $this->lang->line('rm_code') ?></th>
+              <th><?= $this->lang->line('description') ?></th>
+              <th><?= $this->lang->line('status') ?></th>
+              <th><?= $this->lang->line('action') ?></th>
             </tr>
           </thead>
           <tbody>
-           <?php
-          $i=1;foreach($transporters as $obj){ ?>
+            <?php $i = 1; foreach ($rm_codes as $rm): ?>
               <tr>
-                <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
-                <td><?php echo $i;?></td>
-                <td><?php
-					$voucher_no= $obj['vendor_code']; 
-                    if($voucher_no<10){
-                    $transporter_id_code='TP000'.$voucher_no;
-                    }
-                    else if(($voucher_no>=10) && ($voucher_no<=99)){
-                      $transporter_id_code='TP00'.$voucher_no;
-                    }
-                    else if(($voucher_no>=100) && ($voucher_no<=999)){
-                      $transporter_id_code='TP0'.$voucher_no;
-                    }
-                    else{
-                      $transporter_id_code='TP'.$voucher_no;
-                    }
-                    
-				echo $obj['transporter_name'].' ('.$transporter_id_code.')'; ?></td>
-                <td><?php echo $obj['contact_person']; ?></td>
-                <td><?php echo $obj['mobile_no']; ?></td>
-             <!--    <td><?php echo date('d-M-Y',strtotime($obj['date_of_approval'])); ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['date_of_evalution'])); ?></td> -->
-                <td >
-                   <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-eye"></i></a>
-				 <!--  <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Transporters/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a> -->
-
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Transporters/edit_transporter_view/<?php echo $obj['id'];?>"><i class="fa fa-edit"></i></a>
-                  
-                  <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
-                <!--   <a href="<?php //echo base_url(); ?>index.php/welcome/deletetransporter/<?php echo $obj['id'];?>"
-                   onclick="return confirm(\'Confirm Deletion.\')">Delete</a> -->
+                <td><input type="checkbox" class="sub_chk" value="<?= $rm['id'] ?>"></td>
+                <td><?= $i++ ?></td>
+                <td><?= $rm['code'] ?></td>
+                <td><?= $rm['description'] ?></td>
+                <td><?= $rm['status'] == 1 ? 'Active' : 'Inactive' ?></td>
+                <td>
+                  <a class="btn btn-xs btn-primary" href="<?= base_url('index.php/YourController/editRmCode/' . $rm['id']) ?>">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a class="btn btn-xs btn-danger" data-toggle="modal" data-target="#delete<?= $rm['id'] ?>">
+                    <i class="fa fa-trash"></i>
+                  </a>
                 </td>
-                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
-                      <div class="modal-dialog modal-lg">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title"><?php echo $obj['transporter_name'];?><?=$this ->lang->line('details')?></h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
-                          </div>
-                          <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('vendor_code')?>:</label>
-                                    <span> <?php echo $obj['vendor_code'];?></span>
-                                  </div>
-                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('contact_person')?> :</label>
-                                      <span> <?php echo $obj['contact_person'];?></span>
-                                  </div>
-                                </div>
-                            </div>
-                             <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('email')?> :</label>
-                                    <span> <?php echo $obj['email'];?></span>
-                                  </div>
-                                  <div class="col-md-6 col-sm-6 ">
-                                      <label class="control-label"><?=$this ->lang->line('mobile_no')?> :</label>
-                                      <span> <?php echo $obj['mobile_no'];?></span>
-                                  </div>
-                                </div> 
-                            </div> 
-                             <div class="row">
-                                <div class="col-md-12">
-                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> <?=$this ->lang->line('website')?>:</label>
-                                    <span> <?php echo $obj['website'];?></span>
-                                  </div>
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> <?=$this ->lang->line('tds')?> :</label>
-                                    <span> <?php echo $obj['tds'];?></span>
-                                  </div>
-                              </div>  
-                            </div>  
-                            <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('gst_no')?> :</label>
-                                    <span> <?php echo $obj['gst_no'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> <?=$this ->lang->line('pan_no')?> :</label>
-                                    <span> <?php echo $obj['pan_no'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('approved_on')?>:</label>
-                                    <span><?php echo date('d-M-Y',strtotime($obj['date_of_approval'])); ?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('next_evalution_date')?>:</label>
-                                    <span> <?php echo date('d-M-Y',strtotime($obj['date_of_evalution'])); ?></span>
-                                    
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('banh_name')?>:</label>
-                                    <span> <?php echo $obj['bank_name'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('branch_name')?>:</label>
-                                    <span> <?php echo $obj['branch_name'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('ifsc_code')?>:</label>
-                                    <span> <?php echo $obj['ifsc_code'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('account_no')?>:</label>
-                                    <span> <?php echo $obj['account_no'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('service_state')?>:</label>
-                                    <span> <?php echo $obj['states'];?></span>
-                                  </div>
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"><?=$this ->lang->line('category_of_approval')?> :</label>
-                                    <span> <?php echo $obj['category_of_approval'];?></span>
-                                  </div>
-                              </div>    
-                              </div> 
-                              <div class="row">
-                                <div class="col-md-12 col-sm-12 ">
-                                   <div class="col-md-12 col-sm-12 ">
-                                        <label class="control-label"><?=$this ->lang->line('address')?> :</label>
-                                        <span> <?php echo $obj['address'];?></span>
-                                    </div>
-                              </div>                            
-                            </div>
-                           <!--  <div class="row col-md-12">
-                                <div class="col-md-12">
-                                  <label class="control-label">Address:</label>
-                                   <span> <?php echo $obj['address'];?></span>
-                             </div>                              
-                          </div>      -->
-                        </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang->line('close')?></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal fade" id="delete<?php echo $obj['id'];?>" role="dialog">
-                      <div class="modal-dialog">
-                        <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/transporters/deletetransporter/<?php echo $obj['id'];?>">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title"><?=$this ->lang->line('confirm_header')?> </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
-                          </div>
-                          <div class="modal-body">
-                            <p> <?=$this ->lang->line('delete_transporter_confirm')?><b><?php echo $obj['transporter_name'];?> </b>? </p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"><?=$this ->lang->line('yes')?> </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang->line('no')?> </button>
-                          </div>
-                        </div>
-                        </form>
-                      </div>
-                    </div>
-                    
               </tr>
-            <?php  $i++;} ?>
+
+              <!-- Delete Modal -->
+              <div class="modal fade" id="delete<?= $rm['id'] ?>" role="dialog">
+                <div class="modal-dialog">
+                  <form method="post" action="<?= base_url('index.php/YourController/deleteRmCode/' . $rm['id']) ?>">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <p><?= $this->lang->line('delete_rm_code_confirm') ?> <b><?= $rm['code'] ?></b>?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary"><?= $this->lang->line('yes') ?></button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('no') ?></button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
+
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">
   $( document ).ready(function() {

@@ -99,7 +99,7 @@ public function edit($id = NULL) {
 	$data['raw_materials']=$this->rm_model->getCategories();
 	$data['categories']=$this->rm_model->getSupplierCategories();
 	//$data['states']=$this->rm_model->getStates();
-	$this->template->load('template','rm_code_edit',$data);
+	$this->template->load('layout/template','rm_code_edit',$data);
 
 	//$this->load->view('footer');
 	

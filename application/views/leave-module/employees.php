@@ -1,31 +1,29 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-
-<style type="text/css">
-.select2 {
-    height: 45px !important;
-    width: 100% !important;
-}
-
-.btnEdit {
-    width: 25%;
-    border-radius: 5px;
-    margin: 1px;
-    padding: 1px;
-}
+<style>
 .control-label {
-    margin: 0.7rem;
+	margin: 0.7rem
 }
 </style>
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <div class="nxl-content">
-                <div class="page-header">
-            <div class="page-header-left d-flex align-items-center">
-                     <div class="page-header-title">
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
                 <h5 class="m-b-10"><?= $this->lang->line('employee') ?></h5>
             </div>
             <ul class="breadcrumb">
@@ -37,26 +35,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </ul>
         </div>
 
-            <!-- <h3 class="card-title"><?= $this->lang->line('add_new_employee') ?></h3> -->
-            <div class="pull-right error_msg">
-                <?php echo validation_errors();?>
-                <?php if (isset($message_display)) {
-                    echo $message_display;
-                } ?>
-                <?php if (isset($error)) {
-                    echo $error;
-                } ?>
-                <?php if (isset($success)) {
-                    echo $success;
-                } ?>
+        <div class="page-header-right ms-auto">
+            <div class="page-header-right-items">
             </div>
-        </div> <!-- /.card-body -->
 
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+        <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
 
         <div class="">
             <form class="form-horizontal" role="form" method="post"
                 action="<?php echo base_url(); ?>index.php/Employees/add_new_employee" enctype="multipart/form-data">
-                <div class="card-header p-2">
+                <!-- <div class="card-header p-2">
                     <ul class="nav nav-pills">
                         <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a></li>
                         <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><?= $this->lang->line('bank_details') ?></a>
@@ -67,7 +67,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                       
                     </ul>
-                </div><!-- /.card-header -->
+                </div> -->
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="nav-tabs-wrapper page-content-left-sidebar-wrapper">
+                        <div class="d-flex d-md-none">
+                        </div>
+                        <ul class="nav nav-tabs nav-tabs-custom-style" id="myTab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a>
+                        </li>
+
+                           <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><?= $this->lang->line('bank_details') ?></a>
+                        </li>
+                           <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab"><?= $this->lang->line('salary_details') ?></a>
+                        </li>
+                           <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $this->lang->line('other_details') ?></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.card-header -->
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane active show" id="activity">
@@ -138,7 +156,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
                                         <label class="control-label"><?= $this->lang->line('select_authority_person') ?> <span
-                                                class="required">*</span></label>
+                                                class="required"></span></label>
                                         <?php  
 						            		echo form_dropdown('author_id', $employees, '', 'required="required"')
 						            	?>
@@ -204,6 +222,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             style="text-transform: uppercase;">
                                     </div>
                                 </div>
+                                 <div class="row col-md-12">
+                                <div class="col-md-12 col-sm-12 ">
+                                    <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
+                                </div>
+                            </div>
                             </div>
                             <div class="form-group">
                                 <div class="row col-md-12">
@@ -279,8 +303,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <select name="account_type" class="form-control">
                                             <option value=""><?= $this->lang->line('select_type') ?></option>
 
-                                            <option value="savings">Savings</option>
-                                            <option value="current">Current</option>
+                                            <option value="savings"><?= $this->lang->line('savings') ?></option>
+                                            <option value="current"><?= $this->lang->line('current') ?></option>
                                         </select>
                                     </div>
                                 </div>
@@ -296,6 +320,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
 
                                 </div>
+                                 <div class="row col-md-12">
+                                <div class="col-md-12 col-sm-12 ">
+                                    <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
+                                </div>
+                            </div>
                             </div>
 
                         </div>
@@ -347,6 +377,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                   
                                 </div>
+                                 <div class="row col-md-12">
+                                <div class="col-md-12 col-sm-12 ">
+                                    <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                                    <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
+                                </div>
+                            </div>
                             </div>
                            
                         </div>
@@ -406,9 +442,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </div>
+</div>                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+</div>
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {

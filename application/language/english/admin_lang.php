@@ -1,4 +1,6 @@
 <?php
+$lang['ticket_id'] = 'ticket id ';
+$lang['add_reply'] = 'add reply';
 $lang['dashboard'] = 'Dashboard';
 $lang['elevate'] = 'Elevate Your Business with Smart Solutions.';
 $lang['sign_in_session'] = 'Sign In to Start Your Session';
@@ -36,7 +38,7 @@ $lang['id'] = 'ID';
 $lang['enter_id'] = 'Enter ID';
 $lang['apply_date'] = 'Apply Date';
 $lang['lead_details'] = 'Lead Details';
-
+$lang['leave_details'] = 'Leave Details';    
 
 
 $lang['model'] = 'Model';
@@ -63,6 +65,8 @@ $lang['edit_employee'] = 'Edit Employee';
 $lang['employee_detail'] = 'Employee Detail';
 $lang['personal_details'] = 'Personal Details';
 $lang['bank_details'] = 'Bank Details';
+$lang['savings'] = 'Savings';
+$lang['current'] = 'Current';
 $lang['salary_details'] = 'Salary Details';
 $lang['other_details'] = 'Other Details';
 $lang['name'] = 'Name';
@@ -351,7 +355,7 @@ $lang['requistion_no'] = 'Requisition No';
 $lang['enter_requistion_no'] = 'Enter Requisition No';
 $lang['enter_gate_pass_no'] = 'Enter Gate Pass No';
 $lang['minimum_inventory_levels_report'] = 'Minimum Inventory Levels Report';
-
+$lang['add_new_finished_good'] = 'Add New Finished Good';
 $lang['delete'] = 'Delete';
 $lang['transaction_category'] = 'Transaction Category';
 $lang['invoice_date'] = 'Invoice Date';
@@ -3358,7 +3362,11 @@ $lang['photos'] = 'Photo';
 $lang['action'] = 'Action';
 
 // leave module holidays
-
+$lang['approved'] = 'Approved';        // English
+$lang['pending'] = 'Pending';
+$lang['on_hold'] = 'On Hold';
+$lang['rejected'] = 'Rejected';
+$lang['cancel'] = 'Cancelled';
 $lang['holidays_master'] = 'Holidays Master';
 $lang['title_name'] = 'Title Name';
 $lang['enter_title_name'] = 'Enter Title Name';
@@ -3466,6 +3474,8 @@ $lang['apply'] = 'Apply';
 $lang['daily_task_master'] = 'Daily Task Master';
 $lang['project_name'] = 'Project Name';
 $lang['enter_project_name'] = 'Enter Project Name';
+$lang['in_process'] = 'In Process';
+$lang['completed'] = 'Completed';
 
 $lang['start_date'] = 'Start Date';
 $lang['end_date'] = 'End Date';
@@ -3844,12 +3854,32 @@ $lang['view_list'] = 'View List';
 $lang['daily_tailing_records'] = 'Daily Tailing Records';
 $lang['add'] = 'Add';
 $lang['view_list'] = 'View List';
-
+$lang['create_new_material_code'] = 'Create New Material Code';
+$lang['create_new_material_code'] = 'Create New Raw Material Code';
 // Production Reports
 $lang['production_reports'] = 'Production Reports';
 $lang['daily_stack_report'] = 'Daily Stack Report';
 $lang['production_register_report'] = 'Production Register Report';
 $lang['daily_stitching_report'] = 'Daily Stitching Report';
+$lang['discount'] = 'Discount';
+$lang['rupees'] = 'Rupees';
+$lang['percentage'] = 'Percentage';
+$lang['enter_discount'] = 'Enter Discount';
+$lang['after_discount'] = 'After Discount';
+$lang['gst'] = 'GST';
+$lang['enter_tax_percent'] = 'Enter Tax %';
+$lang['enter_tax'] = 'Enter Tax';
+$lang['amount_with_tax'] = 'Amount with Tax';
+$lang['grand_total'] = 'Grand Total';
+$lang['vendor_reference'] = 'Vendor Reference';
+$lang['enter_reference'] = 'Enter Reference';
+$lang['delivery_period'] = 'Delivery Period';
+$lang['enter_delivery_schedule'] = 'Enter Delivery Schedule';
+$lang['payment_terms'] = 'Payment Terms';
+$lang['example_cash_cheque'] = 'Ex. Cash, Cheque';
+$lang['freight_status'] = 'Freight Status';
+$lang['paid'] = 'Paid';
+$lang['to_pay'] = 'To Pay';
 
 // PEA Module
 $lang['pea_module'] = 'PEA Module';
