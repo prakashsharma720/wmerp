@@ -105,7 +105,7 @@ public function add() {
         $data['departments'] = $this->task_model->getDepartments();
       $data['projects'] = $this->task_model->projectList();
       // echo "<pre>"; print_r($data); exit;
-      $this->template->load('layout/template','project_view',$data);
+      $this->template->load('layout/template','leave-module/project_view',$data);
     }
 
 
@@ -381,7 +381,7 @@ public function add() {
             // $data['employees'] = $this->task_model->getEmployeeDropdown();
            
 //   echo "<pre>";print_r($data['name']);exit;
-            $this->template->load('layout/template','task_view',$data);
+            $this->template->load('layout/template','leave-module/task_view',$data);
           }
       
     
@@ -442,7 +442,7 @@ public function add() {
                 $data['assignto'] = $this->task_model->getemployeeList();
               }
               
-              $this->template->load('template','taske_add',$data);
+              $this->template->load('layout/template','leave-module/taske_add',$data);
           }
 
 
@@ -574,7 +574,7 @@ public function add() {
       }
 		 
 		
-			$this->template->load('template','taske_edit',$data);
+			$this->template->load('layout/template','leave-module/taske_edit',$data);
 	}
 
 
@@ -621,7 +621,7 @@ public function task_history($id = NULL)
 		//$data['categories'] = $this->Leads_model->getCategories();
 		//echo var_dump($data['students']);
 		//print_r($data['followups']);exit;
-		$this->template->load('template','task_followups',$data);
+		$this->template->load('layout/template','leave-module/task_followups',$data);
 	}
 
 

@@ -3036,6 +3036,8 @@ $lang['no_upcoming_anniversaries'] = 'कोई आने वाली कार
 $lang['add_new_employee'] = 'नया कर्मचारी जोड़ें';
 $lang['personal_details'] = 'व्यक्तिगत विवरण';
 $lang['bank_details'] = 'बैंक विवरण';
+$lang['savings'] = 'बचत';
+$lang['current'] = 'चालू';
 $lang['salary_details'] = 'वेतन विवरण';
 $lang['other_details'] = 'अन्य विवरण';
 
@@ -3219,6 +3221,8 @@ $lang['apply'] = 'आवेदन करें';
 $lang['daily_task_master'] = 'दैनिक कार्य मास्टर';
 $lang['project_name'] = 'प्रोजेक्ट का नाम';
 $lang['enter_project_name'] = 'प्रोजेक्ट का नाम दर्ज करें';
+$lang['in_process'] = 'प्रक्रिया में';
+$lang['completed'] = 'पूरा हुआ';
 
 $lang['start_date'] = 'प्रारंभ तिथि';
 $lang['end_date'] = 'अंतिम तिथि';

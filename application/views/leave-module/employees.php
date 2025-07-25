@@ -56,7 +56,7 @@
         <div class="">
             <form class="form-horizontal" role="form" method="post"
                 action="<?php echo base_url(); ?>index.php/Employees/add_new_employee" enctype="multipart/form-data">
-                <div class="card-header p-2">
+                <!-- <div class="card-header p-2">
                     <ul class="nav nav-pills">
                         <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a></li>
                         <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><?= $this->lang->line('bank_details') ?></a>
@@ -67,7 +67,25 @@
                         </li>
                       
                     </ul>
-                </div><!-- /.card-header -->
+                </div> -->
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="nav-tabs-wrapper page-content-left-sidebar-wrapper">
+                        <div class="d-flex d-md-none">
+                        </div>
+                        <ul class="nav nav-tabs nav-tabs-custom-style" id="myTab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active show" href="#activityss" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a>
+                        </li>
+
+                           <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><?= $this->lang->line('bank_details') ?></a>
+                        </li>
+                           <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab"><?= $this->lang->line('salary_details') ?></a>
+                        </li>
+                           <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $this->lang->line('other_details') ?></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.card-header -->
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane active show" id="activity">
@@ -279,8 +297,8 @@
                                         <select name="account_type" class="form-control">
                                             <option value=""><?= $this->lang->line('select_type') ?></option>
 
-                                            <option value="savings">Savings</option>
-                                            <option value="current">Current</option>
+                                            <option value="savings"><?= $this->lang->line('savings') ?></option>
+                                            <option value="current"><?= $this->lang->line('current') ?></option>
                                         </select>
                                     </div>
                                 </div>
@@ -414,6 +432,8 @@
 
 </div>
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {

@@ -134,7 +134,7 @@
 
                                 <a class="avatar-text avatar-md"
                                     href="<?php echo base_url(); ?>index.php/Employees/edit/<?php echo $obj['id'];?>"><i
-                                        class="feather feather-edit "></i></a>
+                                        class="feather feather-edit-3"></i></a>
 
 
                                 <!--   <a href="<?php //echo base_url(); ?>index.php/welcome/deleteSupplier/<?php echo $obj['id'];?>"

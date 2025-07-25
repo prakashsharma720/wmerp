@@ -63,6 +63,8 @@ $lang['edit_employee'] = 'Edit Employee';
 $lang['employee_detail'] = 'Employee Detail';
 $lang['personal_details'] = 'Personal Details';
 $lang['bank_details'] = 'Bank Details';
+$lang['savings'] = 'Savings';
+$lang['current'] = 'Current';
 $lang['salary_details'] = 'Salary Details';
 $lang['other_details'] = 'Other Details';
 $lang['name'] = 'Name';
@@ -3470,6 +3472,8 @@ $lang['apply'] = 'Apply';
 $lang['daily_task_master'] = 'Daily Task Master';
 $lang['project_name'] = 'Project Name';
 $lang['enter_project_name'] = 'Enter Project Name';
+$lang['in_process'] = 'In Process';
+$lang['completed'] = 'Completed';
 
 $lang['start_date'] = 'Start Date';
 $lang['end_date'] = 'End Date';
