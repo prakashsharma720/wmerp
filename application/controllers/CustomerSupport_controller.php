@@ -186,11 +186,11 @@ Class CustomerSupport_controller extends MY_Controller {
   	 	$result =$this->CustomerSupport_model->deletefollowup($id);
   	 	if ($result == TRUE) {
 			$this->session->set_flashdata('success', 'Follow Up deleted Successfully !');
-			redirect('CustomerSupport_controller/followups/'.$customer_id, 'refresh');
+			redirect('CustomerSupport_controller/followups/103088'.$customer_id, 'refresh');
 			//$this->fetchSuppliers();
 		} else {
 			$this->session->set_flashdata('failed', 'Operation Failed!');
-			redirect('CustomerSupport_controller/followups/'.$customer_id, 'refresh');
+			redirect('CustomerSupport_controller/followups/103088'.$customer_id, 'refresh');
 		}
   	}
 	public function add($id=NULL) 

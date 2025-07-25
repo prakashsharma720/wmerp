@@ -35,7 +35,7 @@ $config['base_url'] = $root;
 
 /*
 |--------------------------------------------------------------------------
-| Index File
+| Indream_erp_db_newex File
 |--------------------------------------------------------------------------
 |
 | Typically this will be your index.php file, unless you've renamed it to

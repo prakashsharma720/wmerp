@@ -1,5 +1,9 @@
 <?php
+
+$lang['ticket_id'] = 'टिकट आईडी ';
+$lang['add_reply'] = 'उत्तर जोड़ें';
 $lang['home'] ='मुख्य';
+$lang['submit_answer'] ='उत्तर प्रस्तुत करें';
 
 $lang['dashboard'] = 'डैशबोर्ड';
 $lang['elevate'] = 'स्मार्ट समाधानों के साथ अपने व्यवसाय को ऊँचाई दें।';
