@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i><?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        	<div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<!-- <span class="control-span">menu Name</span>  -->
-					                <input type="text"  placeholder="Enter menu name" name="menu_name" class="form-control" value="<?= $menu_name?>" required autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_menu_name') ?>" name="menu_name" class="form-control" value="<?= $menu_name?>" required autofocus>
 					            </div>
 					        </div>
 					        <div class="row col-md-12">
@@ -60,26 +60,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<!-- <span class="control-span"> Controller </span> -->
-					                <input type="text"  placeholder="Enter Controller name" name="controller" class="form-control" value="<?= $controller ?>"  autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_controller_name') ?>" name="controller" class="form-control" value="<?= $controller ?>"  autofocus>
 					            </div>
 					        </div>
 					        <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<!-- <span class="control-span"> Action </span> -->
-					                <input type="text"  placeholder="Enter Action name" name="action" class="form-control" value="<?= $action ?>"  autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_action_name') ?>" name="action" class="form-control" value="<?= $action ?>"  autofocus>
 					            </div>
 					        </div>
 					       
 					        <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					           <!--  <span > Icon Class Name </span> -->
-					                <input type="text"  placeholder="Enter Icon Class" name="icon_class" class="form-control" value="<?= $icon_class ?>"  autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_icon_class') ?>" name="icon_class" class="form-control" value="<?= $icon_class ?>"  autofocus>
 					            </div>
 					        </div>
 					       
 					        <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<span > Show Menu </span>
+					            	<span > <?= $this->lang->line('show_menu') ?> </span>
 					               <select class="form-control" name="show_menu">
 					               		<option value="Y" <?php if($show_menu=='Y') { echo 'selected' ; } ?>> Y</option>	
 					               		<option value="N" <?php if($show_menu=='N') { echo 'selected' ; } ?> > N</option>
@@ -102,14 +102,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="row col-md-12">
 				        		<div class="col-md-12 col-sm-12 ">
 					           <!--  <span > Icon Class Name </span> -->
-					                <input type="text"  placeholder="Enter Target" name="target" class="form-control" value="<?= $target ?>"  autofocus>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_target') ?>" name="target" class="form-control" value="<?= $target ?>"  autofocus>
 					            </div>
 					        </div>
 
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
-					            	<span class="control-span" style="visibility: hidden;"> Name</span><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<span class="control-span" style="visibility: hidden;"> <?= $this->lang->line('name') ?></span><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -117,16 +117,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div>
 				 <!-- /form -->
 				<div class="col-md-7">
-					<h5> Menu List</h5>
+					<h5> <?= $this->lang->line('menu_list') ?></h5>
 					<div class="table-responsive">
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th style="width: 5%;"> Sr.No.</th>
-								<th style="width: 10%;"> Parent</th>
-								<th style="width: 10%;"> Menu</th>
-								<th style="width: 10%;"> Action</th>
-								<th style="width: 10%;"> Button</th>
+								<th style="width: 5%;"> <?= $this->lang->line('sr_no') ?>.</th>
+								<th style="width: 10%;"> <?= $this->lang->line('parent') ?></th>
+								<th style="width: 10%;"> <?= $this->lang->line('menu') ?></th>
+								<th style="width: 10%;"> <?= $this->lang->line('action') ?></th>
+								<th style="width: 10%;"> <?= $this->lang->line('button') ?></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -149,16 +149,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				                        <!-- Modal content-->
 				                        <div class="modal-content">
 				                          <div class="modal-header">
-				                             <h4 class="modal-title">Confirm Header </h4>
+				                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
 				                            <button type="button" class="close" data-dismiss="modal">&times;</button>
 				                           
 				                          </div>
 				                          <div class="modal-body">
-				                            <p>Are you sure, you want to delete menu <b><?php echo $menu['menu_name'];?> </b>? </p>
+				                            <p><?= $this->lang->line('confirm_delete') ?> <b><?php echo $menu['menu_name'];?> </b>? </p>
 				                          </div>
 				                          <div class="modal-footer">
-				                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-				                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				                            <button type="submit" class="btn btn-primary delete_submit"><?= $this->lang->line('yes') ?>  </button>
+				                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
 				                          </div>
 				                        </div>
 				                        </form>

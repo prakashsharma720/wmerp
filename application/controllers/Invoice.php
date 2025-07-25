@@ -9,7 +9,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 // 
 // require_once APPPATH . "/third_party/PHPExcel.php";
 require_once APPPATH . 'third_party/phpqrcode/qrlib.php';
-Class Invoice extends CI_Controller {
+Class Invoice extends MY_Controller {
 
 public function __construct() {
     
@@ -59,7 +59,7 @@ public function add() {
     $data['packing_sizes']= array('25' => '25Kg','50'=>'50Kg');
     $data['tras_categories']= array(''=>'Select Option','B2B' => 'B2B','SEZWP'=>'SEZWP','SEZWOP'=>'SEZWOP','EXPWP' => 'EXPWP','EXPWOP' => 'EXPWOP','DEXP' => 'DEXP');
     
-    $this->template->load('template','invoice_add',$data);  
+    $this->template->load('layout/template','invoice_add',$data);  
     }
 
     public function print_invoice($id){
@@ -1322,7 +1322,7 @@ public function add() {
             //$data['suppliers']=$this->invoice_model->getSuppliers();
             //$data['invoice_data']=$this->Invoice_model->getInvoicesList();
             // echo "<pre>";print_r($data['invoice_data']);exit;
-            $this->template->load('template','invoice_view',$data);
+            $this->template->load('layout/template','invoice_view',$data);
         }
     public function rm_gir_index(){
             //$vv=$this->encrypt->encode('hy');
@@ -1770,7 +1770,7 @@ public function add() {
 		//$data['departments'] = $this->Invoice_model->getDepartments();
 		//$data['req_status']= array('All'=>'All','Pending' => 'Pending','Approved'=>'Approved','Rejected'=>'Rejected');
 		//echo var_dump($data['students']);
-		$this->template->load('template','invoice_report',$data);
+		$this->template->load('layout/template','invoice_report',$data);
 	}
 	 function createXLS() {
   	  	

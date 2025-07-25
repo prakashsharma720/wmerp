@@ -10,15 +10,37 @@ $lang['Create_an_Account'] = 'Създайте акаунт';
 $lang['Are you new?'] = 'Нов ли сте?';
 $lang['google_signin'] = 'Вход с Google';
 $lang['or'] = 'или';
+$lang['add_new_finished_good'] = 'Добавяне на нов готов продукт';
+
 $lang['login'] = 'Вход';
 $lang['remember_me'] = 'Запомни ме';
 $lang['loginwithfacebook'] = 'Вход с Facebook';
 $lang['loginwithgmail'] = 'Вход с Gmail';
+$lang['discount'] = 'Отстъпка';
+$lang['rupees'] = 'Рупии';
+$lang['percentage'] = 'Процент';
+$lang['create_new_material_code'] = 'Създаване на нов код за суровина';
+$lang['enter_discount'] = 'Въведете отстъпка';
+$lang['after_discount'] = 'След отстъпката';
+$lang['gst'] = 'ДДС';
+$lang['enter_tax_percent'] = 'Въведете ДДС %';
+$lang['enter_tax'] = 'Въведете данък';
+$lang['amount_with_tax'] = 'Сума с данък';
+$lang['grand_total'] = 'Обща сума';
+$lang['vendor_reference'] = 'Референция на доставчик';
+$lang['enter_reference'] = 'Въведете референция';
+$lang['delivery_period'] = 'Срок на доставка';
+$lang['enter_delivery_schedule'] = 'Въведете график за доставка';
+$lang['payment_terms'] = 'Условия за плащане';
+$lang['example_cash_cheque'] = 'Пример: В брой, Чек';
+$lang['freight_status'] = 'Статус на транспорта';
+$lang['paid'] = 'Платено';
+$lang['to_pay'] = 'За плащане';
 
 $lang['users'] = 'Потребители';
 $lang['logout'] = 'Изход';
 $lang['account'] = 'Акаунт';
-
+$lang['create_new_material_code'] = 'Създаване на нов код за материал';
 // account setting
 
 $lang['account_setting'] = 'Настройки на акаунта';
@@ -34,6 +56,8 @@ $lang['followups'] = 'Проследявания: 0';
 $lang['pending'] = 'Висящи задачи: 0';
 $lang['approve'] = 'Одобрени: 0';
 $lang['rejected'] = 'Отхвърлени: 0';
+$lang['hold'] = 'задържам';
+
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'Редактиране на служител';
@@ -46,6 +70,7 @@ $lang['location'] = 'Местоположение';
 $lang['emergency_no'] = 'Спешен номер';
 
 // Tabs
+$lang['employee_detail'] = 'Данни за служителя';
 $lang['personal_details'] = 'Лични данни';
 $lang['bank_details'] = 'Банкови данни';
 $lang['salary_details'] = 'Данни за заплата';
@@ -71,12 +96,39 @@ $lang['choose_file'] = 'Изберете файл';
 $lang['no_file_chosen'] = 'Не е избран файл';
 $lang['your_image'] = 'Вашето изображение';
 
+$lang['account_holder_name'] = 'Име на титуляр на сметката';
+$lang['bank_name'] = 'Име на банката';
+$lang['account_number'] = 'Номер на сметката';
+$lang['ifsc_code'] = 'IFSC код';
+$lang['branch_name'] = 'Име на клона';
+$lang['account_type'] = 'Тип на сметката';
+$lang['upi_id'] = 'UPI идентификатор';
+$lang['update'] = 'Актуализирай';
+
+
+
+$lang['basic_salary'] = 'Основна заплата';
+$lang['hra'] = 'HRA (надбавка за жилище)';
+$lang['conveyance_allowance'] = 'Транспортна надбавка';
+$lang['medical_allowance'] = 'Медицинска надбавка';
+$lang['other_allowance'] = 'Други надбавки';
+$lang['total_net_salary'] = 'Обща нетна заплата';
+
+$lang['emergency_mobile_no'] = 'Аварийен мобилен номер';
+$lang['emergency_name'] = 'Име за спешен контакт';
+$lang['uan_no'] = 'UAN номер';
+$lang['pf_no'] = 'PF номер';
+$lang['esi_no'] = 'ESI номер';
+
+
 // change password click
 $lang['change_password'] = 'Смяна на парола';
 $lang['select_employee'] = 'Изберете служител';
 $lang['enter_new_password'] = 'Въведете нова парола';
 $lang['confirm_password'] = 'Потвърдете паролата';
 $lang['submit'] = 'Изпрати';
+$lang['confirm'] = 'Потвърди';
+
 
 // List for Sidebar half hai niche pura hai
 $lang['master_dashboard'] = 'Основно табло';
@@ -335,10 +387,36 @@ $lang['manufactured_by'] = 'Произведено от';
 $lang['name'] = 'Име';
 $lang['size'] = 'Размер';
 $lang['action'] = 'Действие';
+$lang['name_of_employee'] = 'Име на служителя';
+$lang['select_employee'] = 'Изберете служител';
+
+$lang['name_of_department'] = 'Име на отдел';
+$lang['select_department'] = 'Изберете отдел';
+
+$lang['requisition_status'] = 'Статус на заявката';
+
+$lang['no_result'] = 'Няма резултати';
 
 $lang['showing_entries'] = 'Показване на записи от 1 до 10 от общо 29';
 $lang['previous'] = 'Предишна';
 $lang['next'] = 'Следваща';
+$lang['minimum_inventory_qty'] = 'Минимално количество в склада';
+$lang['enter_minimum_inventory_qty'] = 'Въведете минималното количество в склада';
+$lang['opening_stock_qty'] = 'Начално количество наличност';
+$lang['no_tds_declaration_bg'] = 'Без TDS декларация';
+$lang['unregistered_dealer_bg'] = 'Нерегистриран търговец/лице';
+$lang['service_for_state'] = 'Услуга за държавата';
+$lang['date_of_next_evaluation'] = 'Дата на следващата оценка';
+$lang['filter_by_supplier'] = 'Филтрирай по доставчик';
+$lang['filter_by_department'] = 'Филтрирай по отдел';
+$lang['po_status'] = 'Статус на поръчка';
+$lang['select_type'] = 'Изберете тип';
+$lang['from_date'] = 'От дата';
+$lang['upto_date'] = 'До дата';
+$lang['search'] = 'Търси';
+$lang['reset'] = 'Нулирай';
+$lang['export'] = 'Експортиране';
+$lang['confirm_delete'] = 'Сигурни ли сте, че искате да изтриете менюто';
 
 // Sample 
 // $lang['acetic_acid'] = 'Оцетна киселина';
@@ -1233,6 +1311,328 @@ $lang['search'] = 'Търсене';
 $lang['sr_no'] = 'Сер. №';
 $lang['criteria'] = 'Критерий';
 $lang['action'] = 'Действие';
+$lang['legal_name'] = "Правно име";
+$lang['enter_legal_name'] = "Въведете правното име";
+$lang['date_of_next_evaluation'] = "Дата на следващата оценка";
+$lang['account_number'] = "Номер на сметка";
+$lang['enter_account_no'] = "Въведете номер на сметка";
+$lang['enter_pan'] = "Въведете PAN номер";
+$lang['enter_tan'] = "Въведете TAN номер";
+$lang['po_number'] = "Номер на поръчката";
+$lang['dated'] = "Дата";
+$lang['vendor_code'] = "Код на доставчика";
+$lang['contact_person'] = "Лице за контакт";
+$lang['contact_no'] = "Телефонен номер";
+$lang['email_id'] = "Имейл адрес";
+$lang['reference'] = "Референция";
+$lang['edit_service_provider'] = 'Редактиране на доставчика на услуги';
+$lang['service_provider_personal_details'] = 'Лични данни на доставчика на услуги';
+$lang['please_supply_items_note'] = "Моля, доставете следните артикули според нашия телекомуникационен/предишен договор/вашата препратка възможно най-скоро:";
+$lang['are_you_sure_you_want_to'] = 'Сигурни ли сте, че искате да';
+$lang['approve'] = 'Одобрите';
+$lang['requisition_slip'] = 'Заявка';
+$lang['comment'] = 'Коментар';
+$lang['enter_reason_here'] = 'Въведете причина тук';
+$lang['submit'] = 'Изпрати';
+$lang['close'] = 'Затвори';
+$lang['authorised_signatory'] = 'Упълномощен подпис';
+$lang['mineral_name'] = 'Име на минерал';
+$lang['grade_name'] = 'Име на клас';
+$lang['lot_no'] = 'Номер на партида';
+$lang['batch_no'] = 'Сериен номер';
+$lang['equipment_name'] = 'Име на оборудване';
+$lang['purpose'] = 'Предназначение';
+$lang['comment'] = 'Коментар';
+$lang['requisition_no'] = 'Номер на заявка';
+$lang['requisition_date'] = 'Дата на заявка';
+$lang['request_by'] = 'Заявено от';
+$lang['status'] = 'Статус';
+$lang['action_date'] = 'Дата на действие';
+$lang['action_by'] = 'Извършено от';
+$lang['user_name_sign'] = 'Потребител (име и подпис)';
+$lang['store_incharge_sign'] = 'Отговорник на склада (име и подпис)';
+$lang['request_to_indent'] = 'Заявка за покупка';
+$lang['store_dept_sign_date'] = 'Складово отделение (подпис и дата)';
+$lang['purchase_dept_sign_date'] = 'Отдел "Покупки" (подпис и дата)';
+$lang['authorized_by_sign_date'] = 'Одобрено от (подпис и дата)';
+$lang['material_requisition_slip'] = 'Справка за заявка на материали';
+$lang['requisition_slip_print_view'] = 'Изглед за печат на заявка';
+$lang['are_you_sure_you_want_to'] = 'Сигурни ли сте, че искате да';
+$lang['approve'] = 'Одобрите';
+$lang['price'] = 'Цена';
+$lang['amount'] = 'Сума';
+$lang['payment_mode'] = 'Начин на плащане';
+$lang['reference_by'] = 'Препратено от';
+$lang['quotation_no'] = 'Оферта №';
+$lang['to'] = 'До';
+$lang['weight_slip_no'] = 'Тегловен фиш №';
+$lang['actual_weight'] = 'Действително тегло';
+$lang['documented_weight'] = 'Документирано тегло';
+$lang['weight'] = 'Тегло';
+$lang['truck_number'] = 'Номер на камион';
+$lang['payment'] = 'Плащане';
+$lang['material_received_from'] = 'Получен материал от';
+$lang['quantity'] = 'Количество';
+$lang['unit'] = 'Единица';
+$lang['description'] = 'Описание';
+$lang['service_provider_account_details'] = 'Данни за акаунта на доставчика на услуги';
+$lang['item_price'] = "Цена на артикула";
+$lang['total_amount'] = "Обща сума";
+$lang['less_discount'] = "Отстъпка";
+$lang['gst'] = "ДДС";
+$lang['grand_total'] = "Крайна сума";
+$lang['amount_in_words'] = "Сума с думи";
+$lang['terms_conditions'] = "Условия и правила";
+$lang['payment_terms'] = "Условия за плащане";
+$lang['delivery_schedule'] = "График за доставка";
+$lang['billing_note'] = "Фактурирането трябва да бъде на името на M/S CHOUDHARY & COMPANY.";
+$lang['po_on_invoice'] = "Моля, посочете номера на поръчката в товарителницата и фактурата.";
+$lang['prepared_by'] = "Изготвено от";
+$lang['checked_by'] = "Проверено от";
+$lang['approved_by'] = "Одобрено от";
+$lang['create_purchase_order'] = "Създаване на поръчка за покупка";
+$lang['supplier_name'] = "Име на доставчика";
+$lang['department'] = "Отдел";
+$lang['po_date'] = "Дата на поръчката";
+$lang['delivery_date'] = "Дата на доставка";
+$lang['item_details'] = "Детайли на артикула";
+$lang['submit'] = "Изпрати";
+$lang['quotation_no'] = "Номер на оферта";
+$lang['enter_quotation_no'] = "Въведете номер на оферта";
+$lang['quotation_date'] = "Дата на офертата";
+$lang['select_quotation_date'] = "Изберете дата на офертата";
+$lang['material_description'] = "Описание на материала";
+$lang['requisition_qty'] = "Заявено количество";
+$lang['order_qty'] = "Поръчано количество";
+$lang['pending_qty'] = "Оставащо количество";
+$lang['item_rate'] = "Единична цена";
+$lang['edit_gir_register'] = "Редактиране на GIR регистър";
+$lang['product_name'] = "Име на продукта";
+$lang['material_received_throught'] = "Материал получен чрез";
+$lang['enter_source'] = "Въведете източник";
+$lang['gir_register_category'] = "Категория GIR регистър";
+$lang['supplier_name'] = "Име на доставчик";
+$lang['gir_no'] = "Номер на GIR";
+$lang['date'] = "Дата";
+$lang['challan_no'] = "Номер на Чалан";
+$lang['weight_slip_no'] = "Номер на кантарна бележка";
+$lang['actual_weight'] = "Действително тегло";$lang['requisition_slip'] = "Заявка формуляр";
+
+$lang['documented_weight'] = "Документирано тегло";
+$lang['weight'] = "Тегло";
+$lang['truck_number'] = "Номер на камион";
+$lang['payment'] = "Плащане";
+$lang['material_received_throught'] = "Материал получен чрез";
+$lang['sr_no'] = "Сериен №";
+$lang['product_name'] = "Име на продукт";
+$lang['qty'] = "Количество";
+$lang['unit'] = "Единица";
+$lang['requisition_slip_details'] = "Requisition Slip Details";
+$lang['requisition_slip'] = "Заявка формуляр";
+$lang['delete_transporter_confirm'] = "Сигурни ли сте, че искате да изтриете транспортната фирма?";
+$lang['material_return_register'] = "Регистър за връщане на материали";
+$lang['details'] = "Подробности";
+$lang['item_name'] = "Име на артикула";
+$lang['out_qty'] = "Издад. количество";
+$lang['description'] = "Описание";
+$lang['gir_register'] = "Регистър GIR";
+$lang['material_return_record_profile'] = "Регистър за връщане на материали";
+$lang['company_details'] = "Данни за компанията";
+$lang['address'] = "Адрес";
+$lang['material_return_register'] = "Регистър за връщане на материали";
+$lang['gir_register_category'] = "Категория GIR регистър";
+$lang['supplier_name'] = "Име на доставчик";
+$lang['register_number'] = "Регистрационен номер";
+$lang['date'] = "Дата";
+$lang['gate_pass_number'] = "Номер на пропуск";
+$lang['tentative_return_date'] = "Очаквана дата на връщане";
+$lang['s_no'] = "№";
+$lang['product_name'] = "Име на продукт";
+$lang['quantity'] = "Количество";
+$lang['unit'] = "Единица";
+$lang['description'] = "Описание";
+$lang['total'] = "Общо";
+$lang['declaration'] = "Декларация";
+$lang['declaration_text'] = "Декларираме, че това копие показва действителната информация за този доставчик и всички данни са верни и точни според нашето най-добро знание.";
+$lang['for'] = "От името на";
+$lang['authorised_signatory'] = "Упълномощен подпис";
+$lang['all_rights_reserved'] = "Всички права запазени.";
+$lang['print'] = 'Печат';
+$lang['company_name'] = 'Чоудхари и Компания';
+$lang['address'] = 'Адрес';
+$lang['company_address'] = 'B-133, Промишлена зона Мевар (MIA), Мадри, Транспортен Нагар, Удайпур, Раджастан 313003.';
+$lang['edit_requisition_slip'] = 'Редактиране на заявка';
+$lang['edit_supplier'] = 'Редактиране на доставчик';
+$lang['shipping_address1'] = 'Адрес за доставка 1';
+$lang['enter_shipping_address1'] = 'Въведете адрес за доставка 1';
+
+$lang['shipping_address2'] = 'Адрес за доставка 2';
+$lang['enter_shipping_address2'] = 'Въведете адрес за доставка 2';
+
+$lang['loc'] = 'Местоположение';
+$lang['enter_location'] = 'Въведете местоположение';
+
+$lang['enter_state_code'] = 'Въведете код на щат';
+$lang['enter_distance'] = 'Въведете разстояние';
+
+$lang['enter_transporter_id'] = 'Въведете идентификатор на транспортьор';
+$lang['edit_invoice'] = 'Редактиране на фактура';
+$lang['vendor'] = 'Доставчик';
+$lang['vehicle_no'] = 'Регистрационен номер';
+$lang['driver_name'] = 'Име на шофьора';
+$lang['description'] = "Описание";
+$lang['create_issue_slip'] = "Създаване на разписка за издаване";
+$lang['requisition_date'] = "Дата на заявка";
+$lang['issue_date'] = "Дата на издаване";
+$lang['issue_slip_no'] = "Номер на разписка за издаване";
+$lang['issue_to_employee'] = "Издаване на (име на служител)";
+$lang['employee_department'] = "Отдел на служителя";
+$lang['requisition_slip_no'] = "Номер на заявка";
+$lang['material_description'] = "Описание на материала";
+$lang['stock_available'] = "Налично количество";
+$lang['required_qty'] = "Изисквано количество";
+$lang['issue_qty'] = "Издадено количество";
+$lang['pending_qty'] = "Оставащо количество";
+$lang['action'] = "Действие";
+$lang['total'] = "Общо";
+$lang['suppliers_account_details'] = 'Детайли за сметката на доставчика';
+$lang['branch'] = 'Клон';
+
+$lang['shipping_details'] = 'Данни за доставка';
+$lang['shipping_address1'] = 'Адрес за доставка 1';
+$lang['shipping_address2'] = 'Адрес за доставка 2';
+$lang['comment'] = "Коментар";
+$lang['submit'] = "Изпрати";
+$lang['stock_unavailable'] = "Наличното количество е изчерпано";
+$lang['issue_slip_no'] = "Номер на разписка за издаване";
+$lang['issue_to'] = "Издадено на (име на служител)";
+$lang['enter_comment_here'] = "Въведете коментар тук";
+$lang['vendor_service_tax_number'] = 'Данъчен номер на доставчика на услуги';
+$lang['create_purchase_order'] = "Създаване на поръчка за покупка";
+$lang['date'] = "Дата";
+$lang['delete_service_provider_confirm'] = 'Сигурни ли сте, че искате да изтриете доставчика на услуги?';
+$lang['suppliers_personal_detail'] = 'Лични данни на доставчика';
+$lang['tan_no'] = 'TAN номер';
+
+$lang['purchase_order'] = 'Поръчка за покупка';
+$lang['company_details'] = 'Данни за фирмата';
+$lang['gstin'] = 'ДДС номер';
+$lang['pan'] = 'ЕИК';
+$lang['address'] = 'Адрес';
+$lang['to'] = 'До';
+$lang['po_number'] = 'Номер на поръчка';
+$lang['dated'] = 'Дата';
+$lang['vendor_code'] = 'Код на доставчик';
+$lang['contact_person'] = 'Лице за контакт';
+$lang['contact_no'] = 'Телефон';
+$lang['email_id'] = 'Имейл';
+$lang['reference'] = 'Референция';
+$lang['please_supply'] = 'Моля, доставете следните артикули възможно най-скоро според нашата предишна поръчка / референция:';
+$lang['sno'] = '№';
+$lang['material_description'] = 'Описание на материала';
+$lang['quantity'] = 'Количество';
+$lang['item_price'] = 'Единична цена';
+$lang['total_amount'] = 'Обща сума';
+$lang['total'] = 'Общо';
+$lang['less_discount'] = 'Отстъпка';
+$lang['gst'] = 'ДДС';
+$lang['grand_total'] = 'Крайна сума';
+$lang['amount_in_words'] = 'Сума с думи';
+$lang['terms'] = 'Условия и правила';
+$lang['term_payment'] = 'Условия за плащане';
+$lang['term_delivery'] = 'График за доставка';
+$lang['term_billing'] = 'Фактурата трябва да бъде издадена на името на M/S CHOUDHARY & COMPANY.';
+$lang['term_po_note'] = 'Моля, посочете номер на поръчката в товарителницата и фактурата.';
+$lang['prepared_by'] = 'Изготвено от';
+$lang['checked_by'] = 'Проверено от';
+$lang['approved_by'] = 'Одобрено от';
+$lang['purchase_dept'] = 'Отдел покупки';
+$lang['accounts_dept'] = 'Счетоводен отдел';
+$lang['director'] = 'Директор';
+$lang['mobile_number'] = 'Мобилен номер';
+$lang['reject_purchase_order_confirm'] = 'Сигурни ли сте, че искате да <b style="color:#dc7629;">откажете</b> поръчка за покупка <b>%s</b>?';
+$lang['enter_reason_here'] = 'Въведете причината тук';
+$lang['close'] = 'Затвори';
+$lang['equipment_name'] = 'Име на оборудването';
+
+$lang['transporter_regi'] = 'Регистрация на превозвач';
+$lang['transporter_type'] = 'Тип на превозвач';
+$lang['vendor'] = 'Доставчик';
+$lang['gst_no'] = 'ДДС номер';
+$lang['pan_no'] = 'ИН по ЗДДФЛ (ПИН)';
+$lang['vehicle_owner_name'] = 'Име на собственика на превозното средство';
+$lang['owner_mobile_no'] = 'Телефон на собственика';
+$lang['driver_name'] = 'Име на шофьора';
+$lang['driver_mobile_no'] = 'Телефон на шофьора';
+$lang['license_no'] = 'Номер на шофьорска книжка';
+$lang['aadhar_card_no'] = 'Номер на Аадхар карта';
+$lang['vehicle_no'] = 'Регистрационен номер';
+$lang['state'] = 'Област / Щат';
+$lang['city'] = 'Град';
+$lang['pin_code'] = 'Пощенски код';
+$lang['shipping_address'] = 'Адрес за доставка';
+$lang['status'] = 'Статус';
+$lang['remarks'] = 'Бележки';
+$lang['submit'] = 'Изпрати';
+$lang['reset'] = 'Нулирай';
+$lang['cancel'] = 'Отказ';
+$lang['transporter_type_placeholder'] = 'Моля, изберете тип превозвач';
+$lang['vendor_placeholder'] = 'Моля, изберете доставчик';
+$lang['vehicle_no_placeholder'] = 'Моля, въведете регистрационен номер';
+$lang['owner_name_placeholder'] = 'Моля, въведете име на собственика';
+$lang['owner_mobile_placeholder'] = 'Моля, въведете телефон на собственика';
+$lang['driver_name_placeholder'] = 'Моля, въведете име на шофьора';
+$lang['driver_mobile_placeholder'] = 'Моля, въведете телефон на шофьора';
+$lang['license_no_placeholder'] = 'Моля, въведете номер на шофьорска книжка';
+$lang['aadhar_no_placeholder'] = 'Моля, въведете номер на Аадхар карта';
+$lang['state_placeholder'] = 'Моля, изберете област / щат';
+$lang['city_placeholder'] = 'Моля, въведете град';
+$lang['pincode_placeholder'] = 'Моля, въведете пощенски код';
+$lang['shipping_address_placeholder'] = 'Моля, въведете адрес за доставка';
+
+$lang['name_of_supplier'] = "Име на доставчика";
+$lang['po_number'] = "Номер на поръчка";
+$lang['enter_po_number'] = "Въведете номер на поръчка";
+$lang['quotation_no'] = "Номер на оферта";
+$lang['enter_quotation_no'] = "Въведете номер на оферта";
+$lang['quotation_date'] = "Дата на офертата";
+$lang['comment'] = "Коментар";
+$lang['enter_comment'] = "Въведете коментар";
+$lang['sr_no'] = "№";
+$lang['material_description'] = "Описание на материала";
+$lang['requisition_qty'] = "Заявено количество";
+$lang['order_qty'] = "Поръчано количество";
+$lang['pending_qty'] = "Оставащо количество";
+$lang['item_rate'] = "Цена на артикул";
+$lang['total_amount'] = "Обща сума";
+$lang['action'] = "Действие";
+$lang['qty'] = "Количество";
+$lang['enter_qty'] = "Въведете количество";
+$lang['pending'] = "Оставащо";
+$lang['enter_rate'] = "Въведете цена";
+$lang['total'] = "Общо";
+$lang['total_qty'] = "Общо количество";
+$lang['total_rate'] = "Обща цена";
+$lang['discount'] = "Отстъпка";
+$lang['rupees'] = "Сума";
+$lang['percentage'] = "Процент";
+$lang['amount_after_discount'] = "Сума след отстъпка";
+$lang['gst'] = "ДДС";
+$lang['enter_tax_percent'] = "Въведете % на данък";
+$lang['enter_tax_amount'] = "Въведете сума на данък";
+$lang['amount_included_tax'] = "Сума с включен данък";
+$lang['grand_total'] = "Крайна сума";
+$lang['vendor_reference'] = "Референция на доставчик";
+$lang['enter_reference'] = "Въведете референция";
+$lang['delivery_period'] = "Срок за доставка";
+$lang['enter_delivery_schedule'] = "Въведете график за доставка";
+$lang['payment_terms'] = "Условия за плащане";
+$lang['enter_payment_terms'] = "напр. в брой, чек";
+$lang['freight_status'] = "Статус на превоз";
+$lang['paid'] = "Платено";
+$lang['to_pay'] = "За плащане";
+$lang['submit'] = "Изпрати";
+$lang['no_result'] = "Няма резултат";
 
 // supplier evaluation add
 $lang['supplier_evaluation_panel'] = 'Панел за оценка на доставчици';
@@ -2040,6 +2440,8 @@ $lang['enter_kwh_opening'] = 'Въведете начални KWH';
 $lang['enter_kwh_closing'] = 'Въведете крайни KWH';
 $lang['enter_tailing_qty'] = 'Въведете количество остатък';
 $lang['enter_tailing_per'] = 'Въведете процент остатък';
+$lang['enter_zero_if_not_applicable'] = 'Въведете 0, ако не е приложимо';
+
 
 // Totals
 $lang['total'] = 'Общо';
@@ -2519,6 +2921,9 @@ $lang['search_by_employee'] = 'Търсене по служител';
 
 $lang['from_date'] = 'Начална дата';
 $lang['upto_date'] = 'Крайна дата';
+$lang['apply_date'] = 'Дата на кандидатстване';
+$lang['lead_details'] = 'Данни за клиента';
+
 
 $lang['lead_actions'] = 'Действия за лийдове';
 $lang['select_action'] = 'Изберете действие';
@@ -2631,8 +3036,10 @@ $lang['booking_status'] = 'Статус на резервация';
 $lang['action'] = 'Действие';
 $lang['status'] = 'Статус';
 $lang['view'] = 'Преглед';
+
 // erp master   employee review
 // Employee Review
+
 $lang['employee_review'] = 'Оценка на служителя';
 
 $lang['leave_allotment_month'] = 'Месец на отпуск';
@@ -2644,6 +3051,10 @@ $lang['criteria_name'] = 'Име на критерий';
 $lang['criteria_point'] = 'Точки за критерий';
 $lang['self_review'] = 'Самооценка';
 $lang['author_review'] = 'Оценка от ръководител';
+$lang['employee_id'] = 'Идентификационен номер на служителя';
+$lang['review_details'] = 'Детайли за прегледа';
+
+
 
 // notification master
 // Notifications
@@ -2669,6 +3080,9 @@ $lang['message_text'] = 'Съобщение';
 $lang['department_name'] = 'Отдел';
 $lang['date_time'] = 'Дата и час';
 $lang['action'] = 'Действие';
+$lang['read_recipients_report'] = 'Доклад за прочели получатели';
+$lang['user'] = 'Потребител';
+$lang['time'] = 'Време';
 
 
 // remainder master
@@ -2684,6 +3098,9 @@ $lang['reminder_date'] = 'Дата на напомняне';
 $lang['reminder_time'] = 'Час на напомняне';
 $lang['status'] = 'Статус';
 $lang['action'] = 'Действие';
+$lang['edit_reminder'] = 'Редактирай напомняне';
+$lang['snooze'] = 'Отложи';
+$lang['select_date'] = 'Изберете дата';
 
 // mo events
 // Office Events
@@ -2776,6 +3193,11 @@ $lang['show'] = 'Показване';
 $lang['entries'] = 'Записи';
 $lang['search'] = 'Търсене';
 
+$lang['leave_action_page'] = 'Страница за действия с отпуски';
+$lang['leave_status_info'] = 'Статус на отпуск (Предприемете действие по отпуска)';
+$lang['leave_application'] = 'Заявление за отпуск';
+
+
 $lang['sr_no'] = 'Сериен №';
 $lang['title'] = 'Заглавие';
 $lang['action'] = 'Действие';
@@ -2853,6 +3275,21 @@ $lang['action'] = 'Действие';
 
 $lang['export'] = 'Експортиране';
 $lang['apply_for_leave'] = 'Кандидатствай за отпуск';
+$lang['todays_date'] = 'Днешна дата';
+$lang['leave_reason'] = 'Причина за отпуск';
+$lang['leave_type'] = 'Тип отпуск';
+$lang['leave_category'] = 'Категория отпуск';
+$lang['from_date'] = 'От дата';
+$lang['upto_date'] = 'До дата';
+$lang['total_days'] = 'Общ брой дни';
+$lang['message'] = 'Съобщение';
+$lang['enter'] = 'Въведете';
+$lang['full'] = 'Пълен';
+$lang['half'] = 'Половин';
+$lang['gatepass'] = 'Пропуск';
+$lang['enter_reason'] = 'Въведете причина';
+$lang['apply'] = 'Кандидатствай';
+
 
 // daily tasks project
 $lang['daily_task_master'] = 'Дневни задачи - основни данни';
@@ -2902,6 +3339,22 @@ $lang['status'] = 'Статус';
 $lang['assign_to'] = 'Възложено на';
 $lang['assign_by'] = 'Възложено от';
 $lang['action'] = 'Действие';
+$lang['create'] = 'Създай';
+$lang['update_task'] = 'Актуализиране на задачата';
+$lang['task_history_description'] = 'Описание на историята на задачата';
+
+$lang['reference'] = 'Референция';
+$lang['reference_name'] = 'Име на референцията';
+$lang['write_your_reply'] = 'Напишете своя отговор';
+$lang['time_taken'] = 'Време за изпълнение (в часове)';
+$lang['how_much_time_take'] = 'Колко време отне';
+$lang['submit_your_answer'] = 'Изпратете своя отговор';
+$lang['follow_up'] = 'Последващи действия';
+$lang['document'] = 'Документ';
+$lang['followup_time'] = 'Време за последващи действия';
+$lang['delete_task_history_confirm'] = 'Сигурни ли сте, че искате да изтриете тази история на задачата?';
+$lang['confirm_header'] = 'Потвърждение';
+
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Списък на присъствията';
@@ -2929,6 +3382,22 @@ $lang['other_cuts'] = 'Други удръжки';
 $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Обща заплата';
 $lang['action'] = 'Действие';
+$lang['calculate'] = 'Изчисли';
+
+$lang['add_attendance'] = 'Добави присъствие';
+$lang['attendance_date'] = 'Дата на присъствие';
+$lang['employee'] = 'Служител';
+$lang['check_in'] = 'Час на влизане';
+$lang['check_out'] = 'Час на излизане';
+$lang['close'] = 'Затвори';
+$lang['attendance_details_for'] = 'Подробности за присъствието на';
+$lang['update_attendance'] = 'Актуализиране на присъствието';
+$lang['edit_attendance'] = 'Редактиране на присъствието';
+$lang['delete_salary_record_confirm'] = 'Сигурни ли сте, че искате да изтриете фиш за заплата на?';
+$lang['cancel'] = 'Отказ';
+$lang['download'] = 'Изтегли';
+
+
 
 // workers add
 $lang['add_new_worker'] = 'Добавяне на нов работник';
@@ -2963,6 +3432,7 @@ $lang['enter_report_number'] = 'Въведете номер на доклад';
 
 $lang['address'] = 'Адрес';
 $lang['enter_address'] = 'Въведете адрес';
+$lang['delete_worker_confirm'] = 'Сигурни ли сте, че искате да изтриете работник?';
 
 // workers view list
 $lang['workers_list'] = 'Списък на работниците';
@@ -3241,16 +3711,203 @@ $lang['leave_applications'] = 'Заявки за отпуск';
 $lang['leave_types'] = 'Видове отпуск';
 $lang['leave_allotment'] = 'Разпределение на отпуск';
 $lang['leave_approval'] = 'Одобрение на отпуск';
+$lang['bag_weight'] = 'Тегло на чувала';
+$lang['tailing_qty_in_mt'] = 'Остатъци в метрични тонове';
+$lang['total_tailing_for_lot'] = 'Общо за партидата';
 
 // Daily Tasks, Projects, Tasks
 $lang['daily_tasks'] = 'Ежедневни задачи';
 $lang['projects'] = 'Проекти';
 $lang['tasks'] = 'Задачи';
+$lang['maintenance_start'] = 'Начална дата и час на поддръжка';
+$lang['maintenance_stop'] = 'Крайна дата и час на поддръжка';
+$lang['machine_down_time'] = 'Време на престой на машината (часове)';
+$lang['total_time'] = 'Общо време';
+$lang['type_of_maintenance'] = 'Тип поддръжка';
+$lang['maintenance'] = 'Поддръжка';
+$lang['details_of_maintenance'] = 'Детайли за поддръжката';
+$lang['parts_replaced'] = 'Заменени части';
+$lang['enter_parts_replaced'] = 'Въведете заменени части';
+$lang['machine_start_datetime'] = 'Начална дата и час на машината';
+$lang['machine_stop_datetime'] = 'Крайна дата и час на машината';
+$lang['used_qty'] = 'Използвано количество';
+$lang['mill_rpm'] = 'Мелница (RPM)';
+$lang['mill_amp'] = 'Мелница (AMP)';
+$lang['blower_hz'] = 'Вентилатор (Hz)';
+$lang['blower_amp'] = 'Вентилатор (AMP)';
+$lang['screw_rpm'] = 'Винт (RPM)';
+$lang['air_washer_rpm'] = 'Въздушна пералня (RPM)';
+$lang['mc_start_time'] = 'Начален час на машината';
+$lang['mc_stop_time'] = 'Краен час на машината';
+$lang['total_bags'] = 'Общо чанти';
+$lang['total_propduction'] = 'Общо производство (MT)';
+$lang['total_opening'] = 'Общо отваряне';
+$lang['total_closing'] = 'Общо затваряне';
+$lang['total_kwh'] = 'Общо KWH консумация';
+$lang['finish_good_details'] = 'Детайли за готова продукция'; // Bulgarian
+$lang['tailing_percent'] = 'Опашки %';
+$lang['mill_rpm'] = 'Мелница RPM';
+$lang['mill_amp'] = 'Мелница AMP';
+$lang['blower_hrz'] = 'Вентилатор Hz';
+$lang['blower_amp'] = 'Вентилатор AMP';
+$lang['screw_rpw'] = 'Винт RPW';
+$lang['air_washer_rpm'] = 'Въздушна шайба RPM';
+$lang['plant_and_machinery_master'] = 'Мастър на заводи и машини';
+$lang['service_code'] = 'Код на услугата';
+$lang['building_material'] = 'Строителен материал';
+$lang['mechanical_items_master'] = 'Машинни артикули – Мастър';
+$lang['new_item_code'] = 'Нов код на артикул';
+$lang['general_plant_equipments_chemicals'] = 'Общи съоръжения и химикали за завода';
+$lang['protective_equipments_master'] = 'Мастер на защитно оборудване';
+$lang['protective_equipments'] = 'Защитно оборудване';
+$lang['unregistered_dealer'] = 'Нерегистриран търговец/лице';
+$lang['gst_in'] = 'ДДС номер';
+$lang['is_shipping_address_different'] = 'क्या शिपिंग पता बिलिंग पते से अलग है?';
+$lang['shipping_details'] = 'शिपिंग विवरण';
+$lang['billing_address_1'] = 'Адрес за фактуриране 1';
+$lang['billing_address_2'] = 'Адрес за фактуриране 2';
+$lang['enter_billing_address'] = 'Въведете адрес за фактуриране';
+$lang['pincode'] = 'Пощенски код';
+$lang['gst_registration_status'] = 'Състояние на ДДС регистрация';
+$lang['yes'] = 'Да';
+$lang['unregistered_dealer'] = 'Нерегистриран търговец/лице';
+$lang['gstin_urp'] = 'ДДС номер/УРП';
+$lang['pan'] = 'ПАН (данъчен номер)';
+$lang['enter_pan_number'] = 'Въведете ПАН номер';
+$lang['payment_terms'] = 'Условия на плащане';
+$lang['enter_payment_terms'] = 'Въведете условията за плащане';
+$lang['buyer_item_code'] = 'Код на артикул на купувача';
+$lang['destination'] = 'Дестинация';
+$lang['enter_destination_here'] = 'Въведете дестинация';
+$lang['is_shipping_address_different'] = 'Различен ли е адресът за доставка от адреса за фактуриране?';
+$lang['shipping_details'] = 'Детайли за доставка';
+$lang['address_2'] = 'Адрес 2';
+$lang['name_of_supplier'] = 'Име на доставчика';
+$lang['active'] = 'Активен';
+$lang['de_active'] = 'Неактивен';
+$lang['update_finish_good'] = "Актуализиране на готовия продукт";
+$lang['finish_good_code'] = "Код на готов продукт";
+$lang['grade_name'] = "Име на качество";
+$lang['mineral_name'] = "Име на минерал";
+$lang['hsn_code'] = "HSN код";
+$lang['packing'] = "Опаковка";
+$lang['packing_type'] = "Тип опаковка";
+$lang['opening_stock_qty_mt'] = "Начално количество на склад (в метрични тонове)";
+$lang['opening_stock_qty'] = "Начално количество на склад ";
+$lang['enter_opening_stock_qty'] = "Въведете начално количество на склад";
+$lang['green_plant_chemicals_list'] = "Списък с химикали на зеления завод";
+$lang['protective_equipments_list'] = "Списък със защитно оборудване";
+
+$lang['requisition_slip_report'] = 'Доклад за разписка за искане';
+$lang['pending_requisition_slips_for_issue'] = 'Изчакващи разписки за издаване';
+$lang['service_for_the_state'] = 'Услуга за държавата';
+$lang['add_new_service_provider'] = 'Добавете нов доставчик на услуги';
+$lang['un_registered_dealer_person'] = 'Нерегистрирано лице търговец';
+$lang['requistion_no'] = 'Заявка №';
+$lang['enter_requistion_no'] = 'Въведете номер на заявката';
+$lang['enter_gate_pass_no'] = 'Въведете номер на пропуск';
+$lang['minimum_inventory_levels_report'] = 'Доклад за минимални нива на склад';
+$lang['transaction_category'] = 'Категория на транзакцията';
+$lang['invoice_date'] = 'Дата на фактурата';
+$lang['invoice_number'] = 'Номер на фактура';
+$lang['enter_invoice_no'] = 'Въведете номер на фактура';
+$lang['po_no'] = 'Номер на поръчка';
+$lang['enter_po_no'] = 'Въведете номер на поръчка';
+$lang['po_date'] = 'Дата на поръчка';
+$lang['remarks'] = 'Забележки';
+$lang['enter_remarks_here'] = 'Въведете забележки тук';
+$lang['customer_code'] = 'Код на клиента';
+$lang['vender_service_tax_no'] = 'ДДС номер на доставчика';
+$lang['buyer_item_code'] = 'Код на артикул на купувача';
+$lang['enter_buyer_item_code'] = 'Въведете код на артикул на купувача';
+$lang['destination'] = 'Дестинация';
+$lang['enter_destination_here'] = 'Въведете дестинация';
+$lang['item_name'] = 'Име на артикул';
+$lang['month_of_production'] = 'Месец на производство';
+$lang['lot_no'] = 'Номер на партида';
+$lang['batch_no'] = 'Номер на серия';
+$lang['packing_size'] = 'Размер на опаковката';
+$lang['no_of_bags'] = 'Брой чували';
+$lang['quantity_in_mt'] = 'Количество в MT';
+$lang['rate_per_mt'] = 'Цена на MT';
+$lang['select_tax_type'] = 'Изберете тип данък';
+$lang['tax'] = 'Данък';
+$lang['tax_amount'] = 'Сума на данъка';
+$lang['total'] = 'Общо';
+$lang['action_button'] = 'Действие';
+$lang['transportation'] = 'Транспорт';
+$lang['to_pay'] = 'За плащане';
+$lang['paid'] = 'Платено';
+$lang['total_rate'] = 'Обща цена';
+$lang['total_amount'] = 'Обща сума';
+$lang['round_off'] = 'Округляване';
+$lang['grand_total'] = 'Обща стойност';
+$lang['transporter_details'] = 'Данни за превозвач';
+$lang['select_transporter_name'] = 'Изберете превозвач';
+$lang['transport_id'] = 'ID на превозвач';
+$lang['enter_transporter_id'] = 'Въведете ID на превозвач';
+$lang['transdoc_no'] = 'Транспортен документ №';
+$lang['gr_no'] = 'ГР №';
+$lang['tp_no'] = 'ТП №';
+$lang['enter_tp_no'] = 'Въведете ТП №';
+$lang['truck_no'] = 'Номер на камион';
+$lang['enter_truck_no'] = 'Въведете номер на камион';
+$lang['e_way_bill_needed'] = 'Нужна ли е електронна товарителница?';
+$lang['yes'] = 'Да';
+$lang['no'] = 'Не';
+$lang['driver_details'] = 'Данни за шофьора';
+$lang['driver_name'] = 'Име на шофьор';
+$lang['enter_driver_name'] = 'Въведете име на шофьор';
+$lang['mobile_no'] = 'Мобилен номер';
+$lang['enter_mobile_no'] = 'Въведете мобилен номер';
+$lang['owner_name'] = 'Име на собственик';
+$lang['enter_owner_name'] = 'Въведете име на собственик';
+$lang['owner_no'] = 'Мобилен на собственик';
+$lang['sending_status'] = 'Статус на изпращане';
+$lang['enclosed'] = 'Приложен';
+$lang['being_send_by_post'] = 'Изпраща се по пощата';
+$lang['testing_date'] = 'Дата на тестване';
+$lang['grade'] = 'Качество';
+$lang['submit'] = 'Изпрати';
+$lang['destination'] = 'Място на доставка';
+$lang['enter_destination_here'] = 'Въведете място на доставка';
+$lang['buyer_item_code'] = 'Код на артикул на купувача';
+$lang['enter_buyer_item_code'] = 'Въведете код на артикул на купувача';
+$lang['vender_service_tax_no'] = 'ДДС номер на доставчика';
+$lang['enter_invoice_no'] = 'Въведете номер на фактура';
+$lang['enter_po_no'] = 'Въведете номер на поръчка';
+$lang['enter_month'] = 'Въведете месец';
+$lang['enter_rate'] = 'Въведете цена';
+$lang['laboratory_test_report_no'] = 'Номер на лабораторен доклад';
+$lang['enter_test_report_no'] = 'Въведете номер на тестов доклад';
+$lang['laboratory_test_details'] = 'Детайли за лабораторния тест';
+$lang['transporter_details'] = 'Детайли за транспортна фирма';
+$lang['select_transporter_name'] = 'Изберете име на превозвач';
+$lang['transport_id'] = 'ID на превозвач';
+$lang['enter_transporter_id'] = 'Въведете ID на превозвач';
+$lang['transdoc_no'] = 'Транспортен документ №';
+$lang['gr_no'] = 'GR №';
+$lang['enter_gr_no'] = 'Въведете GR №';
+$lang['e_invoice_status'] = 'Статус на електронна фактура';
+$lang['pending_requisition_slips_for_purchase_order'] = 'Чакащи заявителни форми за поръчка за покупка';
+$lang['import_file'] = 'Импортиране на файл';
+$lang['service_provider_evaluation_results'] = 'Резултати от оценката на доставчика на услуги';
+$lang['pending_purchase_order_for_approval'] = 'Чакащи одобрение поръчки за покупка';
+$lang['pending_requisition_slips_for_action'] = 'Чакащи заявителни форми за действие';
+
 
 // Payroll Module
 $lang['payroll_module'] = 'Модул за заплати';
 $lang['attendance_list'] = 'Списък с присъствия';
 $lang['payroll_calculation'] = 'Изчисляване на заплати';
+$lang['id'] = 'Идентификационен номер';
+$lang['enter_id'] = 'Въведете ID';
+
+$lang['model'] = 'Модел';
+$lang['enter_model'] = 'Въведете модел';
+
+$lang['type'] = 'Тип';
+$lang['enter_type'] = 'Въведете тип';
 
 // Workers & Customer Support
 $lang['workers'] = 'Работници';
@@ -3267,3 +3924,5 @@ $lang['customize_theme'] = 'Персонализиране на тема';
 $lang['primary_theme_color'] = 'Основен цвят на темата';
 $lang['navbar_color'] = 'Цвят на навигационната лента';
 $lang['secondary_theme_color'] = 'Вторичен цвят на темата';
+$lang['home'] = 'Начало';
+

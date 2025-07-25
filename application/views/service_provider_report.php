@@ -20,7 +20,7 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <label class="card-title"><?php  echo $title; ?></label>
+      <label class="card-title"><?=$this ->lang ->line('service_provider_report')?></label>
        <div class="pull-right error_msg">
         <form method="post" action="<?php echo base_url(); ?>index.php/Service_providers/createXLS">
 
@@ -29,7 +29,7 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
             foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
           <?php } }?>
-           <button type="submit" class="btn btn-info"> Export </button>
+           <button type="submit" class="btn btn-info"> <?=$this ->lang->line('export')?> </button>
          </form>
         <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
       </div>
@@ -38,9 +38,9 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
         <form method="get" id="filterForm">
       <div class="row">
           <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label">Service Provider Category <span class="required">*</span></label>
+                  <label  class="control-label"><?=$this ->lang->line('service_provider_category')?> <span class="required">*</span></label>
                   <select name="categories_id" class="form-control select2 category" >
-                     <option value="0">Select Category</option>
+                     <option value="0"><?=$this ->lang->line('select_category')?></option>
                         <?php
                          if ($categories): ?> 
                           <?php 
@@ -53,14 +53,14 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
                                   <?php endif;   ?>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?=$this ->lang->line('no_result')?></option>
                         <?php endif; ?>
                     </select>
                 </div>
               <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Service Provider <span class="required">*</span></label>
+                <label  class="control-label"><?=$this ->lang->line('name_of_service_provider')?> <span class="required">*</span></label>
                 <select name="service_provider_id" class="form-control select2 suppliers" >
-                    <option value="0">Select Service Provider</option>
+                    <option value="0"><?=$this ->lang->line('select_service_provider')?></option>
                     <?php
                          if ($all_sps): ?> 
                           <?php 
@@ -73,12 +73,12 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
                                   <?php endif;   ?>
                                    <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?=$this ->lang->line('no_result')?></option>
                         <?php endif; ?>
                 </select>
               </div>
                <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Category of Approval</label>
+                    <label  class="control-label"> <?=$this ->lang->line('category_of_approval')?></label>
                     <?php  $app_cat = array(
                        'No' => 'Select Option',
                           'A' => 'A',
@@ -91,18 +91,18 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
               </div>
                 <div class="row">
                   <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"><?=$this ->lang->line('from_date')?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?=$this ->lang->line('upto_date')?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('grade')?></label><br>
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang->line('reset')?></a>
               </div>
           </div>
             
@@ -113,14 +113,14 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
         <table  class="table table-bordered table-striped" >
           <thead>
             <tr >
-              <th> Name </th>
-              <th style="white-space: nowrap;"> Registration Date </th>
-              <th style="white-space: nowrap;"> Contact Person </th>
-              <th> Email</th>
-              <th> Mobile No</th>
-              <th> website</th>
-              <th> Category</th>
-              <th style="white-space: nowrap;"> Approval Category</th>
+              <th> <?=$this ->lang->line('name')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('registration_date')?></th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('contact_person')?> </th>
+              <th> <?=$this ->lang->line('email')?></th>
+              <th> <?=$this ->lang->line('mobile_no')?></th>
+              <th> <?=$this ->lang->line('website')?></th>
+              <th> <?=$this ->lang->line('category')?></th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('approval_category')?></th>
               <!-- <th style="white-space: nowrap;">Bank Name</th>
               <th> Account No</th>
               <th  style="white-space: nowrap;"> Service State</th>

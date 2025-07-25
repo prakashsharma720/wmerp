@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Evaluation_criteria extends CI_Controller {
+Class Evaluation_criteria extends MY_Controller {
 
   public function __construct() {
   parent::__construct();
@@ -74,7 +74,7 @@ public function add() {
       $data['evaluation_criteria'] = $this->evaluation_criteria_model->ECList();
       //echo var_dump($data['students']);
       //print_r($data['category_name']);exit;
-      $this->template->load('template','evaluation_criteria_view',$data);
+      $this->template->load('layout/template','evaluation_criteria_view',$data);
   }
   public function add_new_EC() {
     

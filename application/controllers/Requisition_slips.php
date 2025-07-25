@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Requisition_slips extends CI_Controller {
+Class Requisition_slips extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -79,7 +79,7 @@ public function add() {
 		$this->template->load('template','requisition_add_store',$data);
 	}else{
 		$data['title']='Create Requisition Slip';
-		$this->template->load('template','requisition_add',$data);
+		$this->template->load('layout/template','requisition_add',$data);
 	}
 	
 
@@ -235,7 +235,7 @@ public function edit($id=NULL) {
 			$data['requisition_data']=$this->requisition_slip_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->requisition_slip_model->getStates();
-			$this->template->load('template','requisition_view',$data);
+			$this->template->load('layout/template','requisition_view',$data);
 		}
 
 	
@@ -263,7 +263,7 @@ public function edit($id=NULL) {
 		$data['departments'] = $this->requisition_slip_model->getDepartments();
 		$data['req_status']= array('All'=>'All','Pending' => 'Pending','Approved'=>'Approved','Rejected'=>'Rejected');
 		//echo var_dump($data['students']);
-		$this->template->load('template','requisition_report',$data);
+		$this->template->load('layout/template','requisition_report',$data);
 	}
 
 	public function add_new_requisition() {
@@ -418,7 +418,7 @@ public function edit($id=NULL) {
 			if($role_id=='4'){
 				$this->template->load('template','requisition_approval',$data);
 			}else{
-				$this->template->load('template','requisition_approval_admin',$data);
+				$this->template->load('layout/template','requisition_approval_admin',$data);
 			}
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->requisition_slip_model->getStates();

@@ -25,18 +25,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Date <span class="required">*</span></label>
+			            	<label class="control-label"><?=$this ->lang->line('date')?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Name of Supplier <span class="required">*</span></label>
+			            	<label  class="control-label"><?=$this ->lang->line('name_of_supplier')?> <span class="required">*</span></label>
 			            	 <?php  
 			            		echo form_dropdown('supplier_id', $suppliers,$supplier_id)
 			            	?>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Invoice/Challan No <span class="required">*</span></label>
+			            	<label  class="control-label"><?=$this ->lang->line('invoice_no')?> <span class="required">*</span></label>
 			            	
 			            	<input type="text"  placeholder=" Enter Invoice/Challan No" name="challan_no" class="form-control" value="<?= $challan_no?>" autofocus  >
 			            </div>
@@ -51,10 +51,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        		<table class="table table-bordered " id="maintable" >
 			        			<thead style="background-color: #b0acb7;">
 			        				<tr>
-			        					<th> Sr.No.</th>
-			        					<th> Product Name</th>
-			        					<th> QTY</th>
-			        					<th> Action</th>
+			        					<th> <?=$this ->lang->line('sr_no')?></th>
+			        					<th> <?=$this ->lang->line('product_name')?></th>
+			        					<th> <?=$this ->lang->line('qty')?></th>
+			        					<th> <?=$this ->lang->line('action')?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -76,14 +76,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										                        <?php endif; ?>
 										                    <?php endforeach; ?>
 										                <?php else: ?>
-										                    <option value="0">No result</option>
+										                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 										                <?php endif; ?>
 										            </select>
 
 									   			</td>
 												
 												<td style="width:20%">
-													<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty"  value="<?php echo $gir_detail['quantity']; ?>" autofocus >
+													<input type="text"  placeholder="<?=$this ->lang->line('enter_qty')?>" name="qty[]" class="form-control qty"  value="<?php echo $gir_detail['quantity']; ?>" autofocus >
 												</td>
 												<td style="width:10%">
 													<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
@@ -96,20 +96,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<td style="width:10%">1</td>
 											<td style="width:60%"> 
 											<select name="products[]" class="form-control select2 drop" required>
-												<option value=""> Select Item</option>
+												<option value=""> <?=$this ->lang->line('select_item')?></option>
 								                <?php if ($items): ?> 
 								                    <?php foreach ($items as $value) : ?>
 								                            <option value="<?= $value['id'] ?>"><?= $value['item_name'] ?></option>
 								                    <?php endforeach; ?>
 								                <?php else: ?>
-								                    <option value="0">No result</option>
+								                    <option value="0"><?=$this ->lang->line('no_result')?></option>
 								                <?php endif; ?>
 								            </select>
 						
 								   			</td>
 											
 											<td style="width:20%">
-												<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty"  autofocus required>
+												<input type="text"  placeholder="<?=$this ->lang->line('enter_qty')?>" name="qty[]" class="form-control qty"  autofocus required>
 											</td>
 											
 											<td style="width:10%">
@@ -121,9 +121,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			</tbody>
 			        			<tfoot>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b>Total</b></td>
+			        					<td colspan="2" style="text-align: right;"><b><?=$this ->lang->line('total')?></b></td>
 			        					<td colspan="2">
-			        						<input type="text"  placeholder="Total Qty" name="total_qty" class="form-control total_qty"  value="<?= $total_qty?>" readonly >
+			        						<input type="text"  placeholder="<?=$this ->lang->line('total_qty')?>" name="total_qty" class="form-control total_qty"  value="<?= $total_qty?>" readonly >
 			        					</td>
 			        				</tr>
 
@@ -146,8 +146,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            	<!-- <input type="text"  placeholder=" Enter source here" name="material_received_from" class="form-control"  autofocus  value="<?= $material_received_from?>" required="required"> -->
 			            </div>
 			            <div class="col-md-6 col-sm-6 ">
-			            	<label  class="control-label"> Comment</label>
-			            	<input type="text" placeholder=" Enter comment" name="comments" class="form-control" style="height:100%;padding-top: 0px;" value="<?= $comments?>" />
+			            	<label  class="control-label"> <?=$this ->lang->line('comment')?></label>
+			            	<input type="text" placeholder=" <?=$this ->lang->line('enter_comment')?>" name="comments" class="form-control" style="height:100%;padding-top: 0px;" value="<?= $comments?>" />
 			            </div>
 
 		        	</div>
@@ -155,8 +155,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submits</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang->line('submits')?></button>
 		        		</div>
 		        	</div>
 		        </div>
@@ -173,20 +173,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<td style="width:10%">1</td>
 			<td style="width:60%"> 
 			<select name="products[]" class="form-control drop" required>
-				<option value=""> Select Item</option>
+				<option value=""> <?=$this ->lang->line('select_item')?></option>
                 <?php if ($items): ?> 
                     <?php foreach ($items as $value) : ?>
                             <option value="<?= $value['id'] ?>"><?= $value['item_name'] ?></option>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <option value="0">No result</option>
+                    <option value="0"><?=$this ->lang->line('no_result')?></option>
                 <?php endif; ?>
             </select>
 				
    			</td>
 			
 			<td style="width:20%">
-				<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty"  autofocus required>
+				<input type="text"  placeholder="<?=$this ->lang->line('enter_qty')?>" name="qty[]" class="form-control qty"  autofocus required>
 			</td>
 			
 			<td style="width:10%">

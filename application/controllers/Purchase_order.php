@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Purchase_order extends CI_Controller {
+Class Purchase_order extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -46,7 +46,7 @@ public function ApprovedReqListForPO() {
 		//$data['departments'] = $this->issue_slip_model->getDepartments();
 		$this->load->model('gir_register_model');
 		$data['units'] = $this->gir_register_model->getUnits();*/
-		$this->template->load('template','req_list_for_po',$data);
+		$this->template->load('layout/template','req_list_for_po',$data);
 	}
 public function add($id=Null) {
 	$data = array();
@@ -75,7 +75,7 @@ public function add($id=Null) {
 	// echo "<pre>";print_r($data['requisitions']);exit;
 	$data['grades']=$this->po_model->getGrades();
 	//$data['states']=$this->po_model->getStates();
-	$this->template->load('template','po_add',$data);
+	$this->template->load('layout/template','po_add',$data);
 	//$this->load->view('footer');
 	
 	}
@@ -200,7 +200,7 @@ public function edit($id=NULL) {
 	//print_r($data['items']);exit;
 	$data['grades']=$this->po_model->getGrades();
 	//$data['states']=$this->po_model->getStates();
-	$this->template->load('template','po_edit',$data);
+	$this->template->load('layout/template','po_edit',$data);
 
 
 	//$this->load->view('footer');
@@ -213,7 +213,7 @@ public function edit($id=NULL) {
 			//$data['Items']=$this->po_model->getItems();
 			$data['po_data']=$this->po_model->getList();
 			//$data['states']=$this->po_model->getStates();
-			$this->template->load('template','po_view',$data);
+			$this->template->load('layout/template','po_view',$data);
 		}
 
 		public function report() 
@@ -239,8 +239,8 @@ public function edit($id=NULL) {
 			$data['employees'] = $this->po_model->getEmployees();
 			$data['departments'] = $this->po_model->getDepartments();
 			$data['req_status']= array('All'=>'All','Pending' => 'Pending','Approved'=>'Approved','Rejected'=>'Rejected');
-			//echo var_dump($data['students']);
-			$this->template->load('template','po_report',$data);
+			//echo vaappr_dump($data['students']);
+			$this->template->load('layout/template','po_report',$data);
 		}
 
 	public function add_new_po() {
@@ -434,7 +434,7 @@ public function edit($id=NULL) {
 	    	$this->template->load('template','po_print_indent',$data);
 		}else{
 			$data['title']='Purchase Order ';
-	    	$this->template->load('template','po_print',$data);
+	    	$this->template->load('layout/template','po_print',$data);
 		}
 
 
@@ -587,7 +587,7 @@ public function edit($id=NULL) {
 			$data['title']=' Pending Purchase Order for Approval';
 			$data['po_data']=$this->po_model->getPOListforApproval();
 			//print_r($data['po_data']);exit;
-			$this->template->load('template','po_approval',$data);
+			$this->template->load('layout/template','po_approval',$data);
 			
 			//$data['states']=$this->requisition_slip_model->getStates();
 		}

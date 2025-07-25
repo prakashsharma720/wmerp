@@ -25,7 +25,7 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
         <form method="post" action="<?php echo base_url(); ?>index.php/Raw_material/createXLS">
 			
 		<input type="hidden" value="1" name="categories_id">
-           <button type="submit" class="btn btn-info"> Export </button>
+           <button type="submit" class="btn btn-info"> <?=$this ->lang ->line('export')?></button>
          </form>
         <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
       </div>
@@ -39,11 +39,11 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
         <table  class="table table-bordered table-striped" >
           <thead>
             <tr >
-              <th> Supplier Name </th>
-			   <th> Name </th>
-              <th> Code </th>
-              <th> Classification </th>
-              <th> Grade</th>
+              <th> <?=$this ->lang ->line('supplier_name')?> </th>
+			   <th> <?=$this ->lang ->line('name')?> </th>
+              <th> <?=$this ->lang ->line('code')?> </th>
+              <th> <?=$this ->lang ->line('classification')?></th>
+              <th> <?=$this ->lang ->line('grade')?></th>
               
       
               <!-- <th style="white-space: nowrap;">Bank Name</th>

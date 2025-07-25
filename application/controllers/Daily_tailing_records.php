@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Daily_tailing_records extends CI_Controller {
+Class Daily_tailing_records extends MY_Controller {
 
 public function __construct(){
 
@@ -68,7 +68,7 @@ public function add() {
 	$data['stackingtype']	= array('up' => 'UP','down'=>'DOWN');
 	$data['title'] 			= 'Create Daily Tailing Record';
 
-	$this->template->load('template','daily_tailing_add',$data);	
+	$this->template->load('layout/template','daily_tailing_add',$data);	
 	//$this->load->view('footer');	
 	}
 	
@@ -176,7 +176,7 @@ public function edit($id=NULL) {
 			$data['pr_data']=$this->daily_tailing_model->getList();
 			//print_r($data['pr_data']);exit;
 			//$data['states']=$this->daily_tailing_model->getStates();
-			$this->template->load('template','daily_tailing_view',$data);
+			$this->template->load('layout/template','daily_tailing_view',$data);
 		}
 	
 		public function report() 

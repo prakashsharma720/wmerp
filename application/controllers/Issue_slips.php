@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Issue_slips extends CI_Controller {
+Class Issue_slips extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -46,7 +46,7 @@ public function add() {
 	//$data['departments'] = $this->issue_slip_model->getDepartments();
 	$this->load->model('gir_register_model');
 	$data['units'] = $this->gir_register_model->getUnits();*/
-	$this->template->load('template','issue_add',$data);
+	$this->template->load('layout/template','issue_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -245,7 +245,7 @@ public function edit($id=NULL) {
 			//$data['Items']=$this->issue_slip_model->getItems();
 			$data['issue_data']=$this->issue_slip_model->getList();
 			//$data['states']=$this->issue_slip_model->getStates();
-			$this->template->load('template','issue_view',$data);
+			$this->template->load('layout/template','issue_view',$data);
 		}
 
 	public function report() 

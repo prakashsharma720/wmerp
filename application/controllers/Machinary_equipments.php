@@ -1,5 +1,5 @@
 <?php
-Class Machinary_equipments extends CI_Controller {
+Class Machinary_equipments extends MY_Controller {
 
 	public function __construct(){
 
@@ -40,7 +40,7 @@ Class Machinary_equipments extends CI_Controller {
 		$data['departments'] 			= $this->daily_stacking_model->getDepartments();
 		$data['plant_machinary_list'] 	= $this->categories_model->packingmaterialsList(6);
 		$data['title'] 					= 'Plant Machinary & Equipment';
-		$this->template->load('template','machinary_equipments_add',$data);
+		$this->template->load('layout/template','machinary_equipments_add',$data);
 	}
 
 	public function edit($id=NULL)
@@ -106,7 +106,7 @@ Class Machinary_equipments extends CI_Controller {
 		$department_id 		= $this->session->userdata['logged_in']['department_id'];
 		$data['pr_data'] 	= $this->machinary_equipments_model->getList();
 
-		$this->template->load('template','machinary_equipments_view',$data);
+		$this->template->load('layout/template','machinary_equipments_view',$data);
 	}
 	
 	public function report() 

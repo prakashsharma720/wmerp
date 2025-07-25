@@ -29,7 +29,7 @@ $data=explode('?', $current_page);
       <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?>
+            <span class="card-title"> <?= $this->lang->line('task_history') ?>
             </span>
             <div class="pull-right d-flex" style="margin-left:5px;">
                 <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
@@ -47,15 +47,15 @@ $data=explode('?', $current_page);
                 <div class="row">
 
                     <div class="col-md-4 col-sm-4 ">
-                        <label class="control-label">Search By Project</label>
+                        <label class="control-label"><?= $this->lang->line('search_by_project') ?></label>
                         <?php  echo form_dropdown('project_id', $projects,'required="required"') ?>
                     </div>
                    
                     <div class="col-md-4 col-sm-4 ">
                         
-                        <label class="control-label">Search By Employee Name </label>
+                        <label class="control-label"><?= $this->lang->line('search_by_employee_name') ?> </label>
                       <select name="employee_id" class="form-control select2">
-    <option value="">Select Employee Name</option>
+    <option value=""><?= $this->lang->line('search_by_employee_name') ?></option>
     <?php if ($name): ?>
         <?php foreach ($name as $value) : ?>
             <?php $selected = ($value['id'] == $selectedEmployeeId) ? 'selected' : ''; ?>
@@ -86,9 +86,9 @@ $data=explode('?', $current_page);
                     </div>
                     
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label">Search By Status </label>
+                        <label class="control-label"><?= $this->lang->line('search_by_status') ?> </label>
                         <select name="task_status" class="form-control select2">
-                            <option value="">Select Status</option>
+                            <option value=""><?= $this->lang->line('search_by_status') ?></option>
                             <option value="In Process"> In Process</option>
                             <option value="On Hold"> On Hold</option>
                             <option value="Completed"> Completed</option>
@@ -96,15 +96,15 @@ $data=explode('?', $current_page);
                     </div>
 
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label"> From Date</label>
+                        <label class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date"
-                            class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"
+                            class="form-control date-picker" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off"
                             autocomplete="off">
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label"> Upto Date</label>
+                        <label class="control-label"> <?= $this->lang->line('upto_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date"
-                            class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autocomplete="off"
+                            class="form-control date-picker" value="" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off"
                             autocomplete="off">
                     </div>
                     <div class="col-md-1 col-sm-1 ">
@@ -113,7 +113,7 @@ $data=explode('?', $current_page);
                     </div>
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;"> Grade</label>
-                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> Reset</a>
+                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> <?= $this->lang->line('reset') ?></a>
                     </div>
                 </div>
             </form>
@@ -125,15 +125,15 @@ $data=explode('?', $current_page);
                     <thead>
                         <tr>
                             <th><input type="checkbox" id="master"></th>
-                            <th> Project.</th>
-                            <th> Task Title</th>
-                            <th> Start Date</th>
-                            <th> End Date</th>
-                            <th>Priority</th>
-                            <th> Status</th>
-                            <th> Assign To</th>
-                            <th> Assign By</th>
-                            <th> Action</th>
+                            <th> <?= $this->lang->line('project') ?></th>
+                            <th>  <?= $this->lang->line('task_title') ?></th>
+                            <th> <?= $this->lang->line('start_date') ?></th>
+                            <th> <?= $this->lang->line('end_date') ?></th>
+                            <th><?= $this->lang->line('priority') ?></th>
+                            <th> <?= $this->lang->line('status') ?></th>
+                            <th> <?= $this->lang->line('assign_to') ?></th>
+                            <th> <?= $this->lang->line('assign_by') ?> </th>
+                            <th> <?= $this->lang->line('action') ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -180,19 +180,19 @@ $data=explode('?', $current_page);
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Confirm Header </h4>
+                                                <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
 
                                             </div>
                                             <div class="modal-body">
-                                                <p>Are you sure, you want to delete tasks
+                                                <p><?= $this->lang->line('confirm_delete') ?>
                                                     <b><?php echo $obj['task_name'];?> </b>? </p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
                                                 </button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal"> No
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?>
                                                 </button>
                                             </div>
                                         </div>

@@ -20,21 +20,21 @@
 				 <input type="hidden" name="gsr_id_old" value="<?= $id ?>">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                  value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } ?>" autofocus required >
 			            </div>
 
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> PME Code <span class="required">*</span></label>
+			            	<label class="control-label"> <?= $this->lang->line('pme_code') ?> <span class="required">*</span></label>
 			                 <input type="text" class="form-control" name="pme_code1" value="<?= $pme_code ?>" readonly>
 			                 <input type="hidden" name="pme_code" value="<?= $pme_code ?>">
 			            </div>
 			           
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"> <?= $this->lang->line('department') ?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?= $this->lang->line('select_department') ?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -47,7 +47,7 @@
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
@@ -60,12 +60,12 @@
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 										<th>#</th>
-										<th> Equipment Name </th>
-										<th> Equipment ID </th>
-										<th> Model / Type </th>
-										<th> Sr. No.</th>
-										<th> Make </th>
-										<th> Year of Installation </th>
+										<th> <?= $this->lang->line('equipment_name') ?> </th>
+										<th> <?= $this->lang->line('equipment_id') ?> </th>
+										<th> <?= $this->lang->line('model_type') ?> </th>
+										<th> <?= $this->lang->line('sr_no') ?>.</th>
+										<th> <?= $this->lang->line('make') ?> </th>
+										<th> <?= $this->lang->line('year_of_installation') ?> </th>
 										<!-- <th style="white-space: nowrap;"> Action Button</th> -->
 									</tr>
 			        			</thead>
@@ -78,7 +78,7 @@
 											<td>1</td>
 											<td>
 												<select name="equipment_name" class="form-control equipment_name" style="width:200px;" required>
-													<option value=""> Select Name</option>
+													<option value=""> <?= $this->lang->line('select_name') ?></option>
 													<?php if ($plant_machinary_list) : ?>
 														<?php foreach ($plant_machinary_list as $k=>$value) : 
 																if($value['id'] == $pme_data['equipment_name'])
@@ -91,7 +91,7 @@
 																<option <?php echo $select;?> value="<?php echo $value['id']; ?>"><?php echo $value['name'];?></option>
 														<?php endforeach; ?>
 													<?php else : ?>
-														<option value="0">No result</option>
+														<option value="0"><?= $this->lang->line('no_result') ?></option>
 													<?php endif; ?>
 												</select>
 											</td>
@@ -126,7 +126,7 @@
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->
@@ -140,7 +140,7 @@
 			<td >1</td>
 			<td>
 				<select name="worker_id[]" class="form-control  workers" style="width:250px;" required>
-					<option value=""> Select Worker</option>
+					<option value=""> <?= $this->lang->line('select_worker') ?></option>
 		            <?php if ($workers): ?> 
 		                <?php foreach ($workers as $value) : ?>
 		                <?php 
@@ -169,30 +169,30 @@
 		           	<?php endif; ?>
 		            <?php endforeach; ?>
 		            <?php else: ?>
-		                <option value="0">No result</option>
+		                <option value="0"><?= $this->lang->line('no_result') ?></option>
 		            <?php endif; ?>
 		        </select>
 			</td>
 			<td> 
 			<select name="finish_good_id[]" class="form-control items" style="width:250px;" required>
-				<option value=""> Select Grade</option>
+				<option value=""> <?= $this->lang->line('select_grade') ?></option>
 	            <?php if ($items): ?> 
 	                <?php foreach ($items as $value) : ?>
 	                        <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].')' ?></option>
 	                <?php endforeach; ?>
 	            <?php else: ?>
-	                <option value="0">No result</option>
+	                <option value="0"><?= $this->lang->line('no_result') ?></option>
 	            <?php endif; ?>
 	        </select>
    			</td>
    			<td>
-				<input type="text"  placeholder="No of Bag" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
+				<input type="text"  placeholder="<?= $this->lang->line('no_of_bag') ?>" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
 			</td>
    			<td>
-				<input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="Enter Rate" name="rate[]" class="form-control rate"  autofocus style="width:100px;" required>
+				<input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  placeholder="<?= $this->lang->line('enter_rate') ?>" name="rate[]" class="form-control rate"  autofocus style="width:100px;" required>
 			</td>
    			<td>
-				<input type="text"  placeholder="Total" name="total[]" class="form-control total"  autofocus style="width: 150px;" required>
+				<input type="text"  placeholder="<?= $this->lang->line('total') ?>" name="total[]" class="form-control total"  autofocus style="width: 150px;" required>
 			</td>
 			
 			<td>

@@ -77,7 +77,7 @@ table {
         <div class="card-header">
             <div class="row">
                 <div class="col-md-4">
-                    <h3 class="card-title mb-0"> <?= $title ?></h3>
+                    <h3 class="card-title mb-0"> <?= $this->lang->line('attendance_calculation') ?></h3>
 
                 </div>
                 <div class="col-md-5"></div>
@@ -89,12 +89,12 @@ table {
 
 
                         <div class="col-md-3">
-                            <label class="control-label">Select Month</label>
+                            <label class="control-label"><?= $this->lang->line('select_month') ?></label>
                             <?php echo form_dropdown('month_id', $months, '', 'id="month_id" required="required" class="form-control"'); ?>
                         </div>
 
                         <div class="col-md-4">
-                            <label class="control-label">Select Employee</label>
+                            <label class="control-label"><?= $this->lang->line('select_employee') ?></label>
                             <?php echo form_dropdown('emp_id', $employees, '', 'id="emp_id" required="required" class="form-control"'); ?>
                         </div>
 
@@ -102,7 +102,7 @@ table {
                             <label class="control-label"> </label>
 
                             <button type="submit" class="btn btn-primary btn-block">
-                                <b>Calculate</b>
+                                <b><?= $this->lang->line('calculate') ?></b>
                             </button>
                         </div>
                     </div>
@@ -115,16 +115,16 @@ table {
                 <table id="example1" class="table table-bordered " style="width:100%">
                     <thead>
                         <tr>
-                            <th> Sr.No.</th>
-                            <th> Employee Name</th>
-                            <th> Month</th>
-                            <th> Payable Days</th>
-                            <th> TDS</th>
-                            <th> PF</th>
-                            <th> Other Cuts</th>
-                            <th> ECS</th>
-                            <th> Total Salary</th>
-                            <th>Action</th>
+                            <th> <?= $this->lang->line('sr_no') ?></th>
+                            <th> <?= $this->lang->line('employee_name') ?></th>
+                            <th> <?= $this->lang->line('month') ?></th>
+                            <th> <?= $this->lang->line('payable_days') ?></th>
+                            <th> <?= $this->lang->line('tds') ?></th>
+                            <th> <?= $this->lang->line('pf') ?></th>
+                            <th> <?= $this->lang->line('other_cuts') ?></th>
+                            <th> <?= $this->lang->line('ecs') ?></th>
+                            <th> <?= $this->lang->line('total_salary') ?></th>
+                            <th><?= $this->lang->line('action') ?></th>
 
                         </tr>
                     </thead>
@@ -161,7 +161,7 @@ table {
                                                 <h4 class="modal-title">Pay Slip For <?= $obj['month_name']?>
                                                     <?= $obj['year']?></h4>
                                                 <button type="button" class="btn btn-primary float-right"
-                                                    onclick="downloadPayslip('payslip_<?= $obj['id'] ?>')">Download</button>
+                                                    onclick="downloadPayslip('payslip_<?= $obj['id'] ?>')"> <?= $this->lang->line('download') ?></button>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
 
@@ -398,10 +398,10 @@ table {
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
                                                 </button>
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    No
+                                                    <?= $this->lang->line('no') ?>
                                                 </button>
                                             </div>
                                         </div>
@@ -416,22 +416,22 @@ table {
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Confirm Header </h4>
+                                                <h4 class="modal-title"> <?= $this->lang->line('confirm_header') ?> </h4>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
 
                                             </div>
                                             <div class="modal-body">
-                                                <p>Are you sure, you want to delete Salary Record of
+                                                <p> <?= $this->lang->line('delete_salary_record_confirm') ?>
                                                     <b><?php echo $obj['emp_name'];?> </b>?
                                                 </p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                <button type="submit" class="btn btn-primary delete_submit">  <?= $this->lang->line('yes') ?>
                                                 </button>
 
                                                 <button type="button" class="btn btn-danger" data-dismiss="modal">
-                                                    Cancel
+                                                     <?= $this->lang->line('cancel') ?>
                                                 </button>
                                             </div>
                                         </div>
@@ -443,7 +443,7 @@ table {
                         <?php  $i++;} }else{ ?>
                         <tr>
                             <td colspan="100">
-                                <h5 style="text-align: center;"> No Leads Found</h5>
+                                <h5 style="text-align: center;"> <?= $this->lang->line('no_leads_found') ?> </h5>
                             </td>
                         </tr>
                         <?php  }?>

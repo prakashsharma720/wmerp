@@ -3,7 +3,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Dailytasks extends CI_Controller {
+Class Dailytasks extends MY_Controller {
 
   public function __construct() {
   parent::__construct();
@@ -36,7 +36,7 @@ $this->load->model('Leave_model');
 
 // Show login page
 public function add() {
-  $this->template->load('template','supplier_add');
+  $this->template->load('layout/template','supplier_add');
   //$this->load->view('footer');
   }
 
@@ -105,7 +105,7 @@ public function add() {
         $data['departments'] = $this->task_model->getDepartments();
       $data['projects'] = $this->task_model->projectList();
       // echo "<pre>"; print_r($data); exit;
-      $this->template->load('template','project_view',$data);
+      $this->template->load('layout/template','project_view',$data);
     }
 
 
@@ -381,7 +381,7 @@ public function add() {
             // $data['employees'] = $this->task_model->getEmployeeDropdown();
            
 //   echo "<pre>";print_r($data['name']);exit;
-            $this->template->load('template','task_view',$data);
+            $this->template->load('layout/template','task_view',$data);
           }
       
     

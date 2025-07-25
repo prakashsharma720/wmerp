@@ -1,54 +1,59 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ($this->session->flashdata('success')): ?>
+	<div class="alert alert-success alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
+		<?php echo $this->session->flashdata('success'); ?>
+	</div>
+	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-//print_r($item_master);exit;
-?>
+<?php if ($this->session->flashdata('failed')): ?>
+	<div class="alert alert-error alert-dismissible ">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
+		<?php echo $this->session->flashdata('failed'); ?>
+	</div>
+<?php endif; ?>
 
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
-</style>
+<div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('finish_goods_list'); ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?> -->
+				</li>
+			</ul>
+		</div>
 
-  <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-      <div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
-      </span>
-       <div class="pull-right">
-      
-         <a class="btn btn-xs btn-primary " href="<?php echo base_url(); ?>index.php/Finish_goods/add">
-          <i class="fa fa-plus"> Add New FG</i></a>
-      </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-3">
       <div class="table-responsive">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
            <tr>
-                <th > Sr.No.</th>
-                <th> Mineral Name</th>
-                <th> Grade Name</th>
-                <th> Packing Type</th>
-                <th> Packing</th>
-                <th> Action</th>
+               <th><?= $this->lang->line('sr_no') ?></th>
+<th><?= $this->lang->line('mineral_name') ?></th>
+<th><?= $this->lang->line('grade_name') ?></th>
+<th><?= $this->lang->line('packing_type') ?></th>
+<th><?= $this->lang->line('packing') ?></th>
+<th><?= $this->lang->line('action') ?></th>
               </tr>
           </thead>
           <tbody>
@@ -73,26 +78,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?= $obj['grade_name'].' ('.$fg_code.')'?></td>
                 <td><?= $obj['packing_type']?></td>
                 <td><?= $obj['packing_size']?></td>
-                <td >
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Finish_goods/edit/<?php echo $obj['id'];?>"><i class="fa fa-edit"></i></a>
-                  <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
-                </td>
+               <td>
+  <div class="d-flex gap-1">
+    <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Finish_goods/edit/<?php echo $obj['id']; ?>">
+      <i class="fa fa-edit"></i>
+    </a>
+    <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>">
+      <i class="fa fa-trash"></i>
+    </a>
+  </div>
+</td>
+
+
                     <div class="modal fade" id="delete<?php echo $obj['id'];?>" role="dialog">
                       <div class="modal-dialog">
                         <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/deleteFG/<?php echo $obj['id'];?>">
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?>r </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete  <b><?php echo $obj['grade_name'];?> </b>? </p>
+                            <p><?= $this->lang->line('confirm_delete') ?>  <b><?php echo $obj['grade_name'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>
@@ -119,3 +132,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           return false;
         } 
 </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $page_title ?></h3>
+        <h3 class="card-title"> <?= $this->lang->line('daily_task_master') ?></h3>
         <div class="pull-right ">
 			
 
@@ -40,18 +40,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        <div class="form-group">			        		  	
 						      <div class="row col-md-18">
 				        		<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Project  Name</label>
-					                <input type="text"  placeholder="Enter project Name " name="project_name" class="form-control" value="<?= $project_name?>" required autofocus>
+					            	<label class="control-label"> <?= $this->lang->line('project_name') ?></label>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_project_name') ?> " name="project_name" class="form-control" value="<?= $project_name?>" required autofocus>
 					            </div>
 					           <!--start date-->	
 									<div class="col-md-12 col-sm-12">
-						            	<label class="control-label">Start Date </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date" class="form-control date-picker" value="<?php echo $start_date;?>" placeholder="dd-mm-yyyy"  required>
+						            	<label class="control-label"> <?= $this->lang->line('start_date') ?> </label> <span class="required">*</span>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date" class="form-control date-picker" value="<?php echo $start_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-12 col-sm-12">
-						            	<label class="control-label">End Date </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" value="<?php echo $end_date;?>" placeholder="dd-mm-yyyy"  required>
+						            	<label class="control-label"> <?= $this->lang->line('end_date') ?> </label> <span class="required">*</span>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" value="<?php echo $end_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 									<!-- status -->
 									 <!--Status-->
@@ -59,9 +59,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							
 
 									
-										  <label class="control-label"> Status</label>
+										  <label class="control-label">  <?= $this->lang->line('status') ?></label>
 										 <select class="form-control" name="project_status">
-										 <option value="" >Select status </option>
+										 <option value="" ><?= $this->lang->line('select_status') ?></option>
 												 <option <?php if($project_status) { if($project_status=="In Process") { echo "selected"; } } ?> value="In Process" > In Process </option>
 												 <option  <?php if($project_status) { if($project_status=="On Hold") { echo "selected"; } }  ?> value="On Hold" > On Hold </option>
 												 <option  <?php if($project_status) { if($project_status=="Completd") { echo "selected"; } } ?> value="Completd" > Completd</option>
@@ -76,20 +76,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							 
 						<!-- Department Dropdownmenu-->																					 
 							<div class="col-md-12 col-sm-4 ">
-						            	<label  class="control-label"> Department <span class="required">*</span></label>
+						            	<label  class="control-label">  <?= $this->lang->line('department') ?> <span class="required">*</span></label>
 						               <?php  
 						            		echo form_dropdown('department_id', $departments,$department_id, '', 'required="required"')
 						            	?>
 							</div>    
 									<!-- Work description -->
 									<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label"> Work Description <span class="required"> *</span></label>
-					               <textarea class="form-control message" rows="3" placeholder="Enter Message" name="description" value="<?php echo $description;?>"><?php echo $description;?></textarea>
+					            	<label class="control-label">  <?= $this->lang->line('work_description') ?> <span class="required"> *</span></label>
+					               <textarea class="form-control message" rows="3" placeholder="<?= $this->lang->line('enter_message') ?>" name="description" value="<?php echo $description;?>"><?php echo $description;?></textarea>
 					            </div>
 								<!-- Technology -->
 								<div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label">Technology  Name</label>
-					                <input type="text"  placeholder="Enter Technology Name " name="technology" class="form-control"  value="<?php echo $technology;?>">
+					            	<label class="control-label"> <?= $this->lang->line('technology_name') ?></label>
+					                <input type="text"  placeholder="<?= $this->lang->line('enter_technology_name') ?>" name="technology" class="form-control"  value="<?php echo $technology;?>">
 					            </div>	
 							
 					        </div>
@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				           <div class="row col-md-14">
 					            <div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit"  class="btn btn-primary btn-block" >Save</button>
+					            	<button type="submit"  class="btn btn-primary btn-block" ><?= $this->lang->line('submit') ?></button>
 					            </div>
 					        </div>
 				        </div>
@@ -106,20 +106,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				 <!-- /form -->
 			
 				<div class=" col-md-8 col-sm-8">
-					<h5>Project List</h5>
+					<h5><?= $this->lang->line('project_list') ?></h5>
 					<div class="table-responsive">
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th> Sr.No.</th>
-								<th style="width: 90%;">Project Name</th>
-								<th>Start Date</th>
-								<th>End Date</th>
-								<th>Status</th>
-								<th>Department</th>
-								<th>Description</th>
-								<th>Technology</th>
-								<th>Action</th>
+								<th><?= $this->lang->line('sr_no') ?></th>
+								<th style="width: 90%;"><?= $this->lang->line('project_name') ?></th>
+								<th><?= $this->lang->line('start_date') ?></th>
+								<th><?= $this->lang->line('end_date') ?></th>
+								<th><?= $this->lang->line('status') ?></th>
+								<th><?= $this->lang->line('department') ?></th>
+								<th><?= $this->lang->line('description') ?></th>
+								<th><?= $this->lang->line('technology_name') ?></th>
+								<th><?= $this->lang->line('action') ?></th>
 								
 								
 							</tr>

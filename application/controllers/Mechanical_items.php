@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Mechanical_items extends CI_Controller {
+Class Mechanical_items extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -143,7 +143,7 @@ $this->load->model('categories_model');
 			$this->load->model('grades_model');
 			$data['grades'] = $this->grades_model->getGradeByCategory($data['categories_id']);
 
-			$this->template->load('template','mechanical_item_view',$data);
+			$this->template->load('layout/template','mechanical_item_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

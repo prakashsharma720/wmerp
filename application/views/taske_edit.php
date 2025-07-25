@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title pull-left"><?= $page_title ?></h3>
+        <h3 class="card-title pull-left"><?=$this ->lang->line('update_task')?></h3>
         
 	      </div> <!-- /.card-body -->
 	      	<div class="card-body">
@@ -20,27 +20,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="row ">
 								<!--Project name-->	
 								<div class="col-md-4 col-sm-4">
-						            	<label class="control-label"> Project</label><span class="required">*</span>
+						            	<label class="control-label"></label><?=$this ->lang->line('project')?><span class="required">*</span>
 										<?php  
 						               		echo form_dropdown('project_id', $projects,$project_id,'required="required"') 
 						               ?>
 						        </div>
 								<!--Project -title-->	
 								 <div class="col-md-4">
-						            	<label class="control-label"> Task Ttile</label><span class="required">*</span>
-						                <input type="text"  placeholder="Enter Task Title" name="task_title" class="form-control" value="<?php echo $task_name?>" required >
+						            	<label class="control-label"> <?=$this ->lang->line('task_title')?></label><span class="required">*</span>
+						                <input type="text"  placeholder="<?=$this ->lang->line('task_title')?>" name="task_title" class="form-control" value="<?php echo $task_name?>" required >
 						        </div>
 								
 								<!--start date-->	
 									<div class="col-md-4">
-						            	<label class="control-label">Start Date </label> <span class="required">*</span>
+						            	<label class="control-label"><?=$this ->lang->line('start_date')?> </label> <span class="required">*</span>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"
-										 class="form-control date-picker"  placeholder="dd-mm-yyyy"  value="<?php echo $start_date?>" required>
+										 class="form-control date-picker"  placeholder="<?=$this ->lang->line('start_date')?>"  value="<?php echo $start_date?>" required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
-						            	<label class="control-label">End Date </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="dd-mm-yyyy" value="<?php echo $end_date?>" required>
+						            	<label class="control-label"><?=$this ->lang->line('end_date')?> </label> <span class="required">*</span>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?=$this ->lang->line('end_date')?> " value="<?php echo $end_date?>" required>
 			            			</div>
 
 					        	<!--Prioroty-->	
@@ -64,7 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						          	?> 
 									  <div class="col-md-4  ">
-										  <label class="control-label"> Priority</label>
+										  <label class="control-label"> <?=$this ->lang->line('priority')?></label>
 										 <select class="form-control" name="priority">
 												 <option value="Hard" <?= $hard ?>> Hard </option>
 												 <option value="Medium" <?= $medium ?>>Medium </option>
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						          	?> 
 									  <div class="col-md-4  ">
-										  <label class="control-label"> Status</label>
+										  <label class="control-label"> <?=$this ->lang->line('status')?></label>
 										 <select class="form-control" name="status">
 												 <option value="In Process" <?= $inprocess ?>> In Process </option>
 												 <option value="On Hold" <?= $onhold ?>> On Hold </option>
@@ -117,7 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<!--assign to-->	
 							
 							<div class="col-md-4 col-sm-4" >
-						            	<label class="control-label"> Assign To</label><span class="required">*</span>
+						            	<label class="control-label"> <?=$this ->lang->line('assign_to')?> </label><span class="required">*</span>
 										<?php 
 										if($designation_id=='4') {
 						               		echo form_dropdown('assignto', $assignto, $Assign_to,'required="required"'); 
@@ -134,8 +134,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										
 								
 								<div class="row col-md-12">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Update</button>
+					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('update')?></button>
 					            </div>
 								 	
 						    

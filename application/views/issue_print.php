@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <span class="card-title"><?php  echo $title; ?>
         </span>
           <div class="pull-right no-print">
-              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> Print</button>
+              <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> <?= $this->lang->line('print')?></button>
           </div>
       </div> <!-- /.card-body -->
       <div class="card-body">
@@ -20,14 +20,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <img src="<?= base_url()?>/uploads/logo.png" height="120" width="300"/>
                 </div>
                <div class="col-sm-4 ">
-                <h4 style="padding-top: 20px;"> Choudhary & Company </h4>
+                <h4 style="padding-top: 20px;"> <?= $this->lang->line('company_name')?> </h4>
                 </div>
                 <div class="col-sm-4 ">
-                <strong><u>Company Details:</u></strong><br>
-                  <b>GSTIN : </b>08AABFC2155P1ZA<br>
-                  <b>PAN : </b> AABFC2155P<br>
+                <strong><u><?= $this->lang->line('company_details')?>:</u></strong><br>
+                  <b><?= $this->lang->line('gstin')?> : </b>08AABFC2155P1ZA<br>
+                  <b><?= $this->lang->line('pan')?> : </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
-                  <b> Address : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
+                  <b> <?= $this->lang->line('address')?> : </b> <?= $this->lang->line('company_address')?>
                 </div>
               </div>
               <br>
@@ -37,17 +37,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <table class="table">
                         <tbody>
                            <tr>
-                            <th colspan="6"> <h4 style="text-align: center">Issue Slip </h4></th>
+                            <th colspan="6"> <h4 style="text-align: center"><?= $this->lang->line('issue_slip')?> </h4></th>
                           </tr>
                           <tr>
-            							<th colspan="1">Requisition Date :</th>
+            							<th colspan="1"><?=$this ->lang ->line('requisition_date')?> :</th>
                           <td colspan="2"> <?= $current['0']['date']?> </td>		
-            						  <th colspan="1">Issue Date :</th>
+            						  <th colspan="1"><?= $this->lang->line('issue_date')?>:</th>
                           <td colspan="2"> <?= $current['0']['transaction_date']?> </td>
 	       					<td colspan=""></td>
                           </tr>
                        	  <tr>
-							               <th colspan="1"> Issue Slip No : </th>
+							               <th colspan="1"> <?= $this->lang->line('issue_slip_no')?> : </th>
                             <td colspan="2">
                               <?php 
                                   $inv_number=$current['0']['issue_slip_no'];
@@ -65,13 +65,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   }
                                   echo $inv_number1; ?>     
                                 </td>
-                								<th colspan="1">Employee Name :</th>
+                								<th colspan="1"><?= $this->lang->line('employee_name')?> :</th>
                 							  <td colspan="2"> <?= $current['0']['ename']?> </td>
                 							</tr>
                 							<tr>
-                							 <th colspan="1">Department </th>
+                							 <th colspan="1"><?= $this->lang->line('department')?> </th>
                                 <td colspan="2"> <?= $current['0']['dept']?> </td>
-                						    <th colspan="1"> Requisition Number : </th>
+                						    <th colspan="1"> <?= $this->lang->line('requisition_no')?> : </th>
                                 <td colspan="2"> 
                                   <?php 
                                   $inv_number=$current['0']['requisition_no'];
@@ -98,12 +98,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <table class="table table-bordered " id="maintable" >
                     <thead style="background-color: #e8e8e8;">
                     <tr>
-                      <th> S.No.</th>
-                      <th> Material Description</th>
-                      <th>Unit</th>
-                      <th>Requisition Quantity</th>
-                      <th>Issue Quantity</th>
-                      <th>Pending Quantity</th>
+                      <th> <?=$this ->lang ->line('sr_no')?>.</th>
+                      <th> <?=$this ->lang ->line('material_description')?></th>
+                      <th><?=$this ->lang ->line('units')?></th>
+                      <th><?=$this ->lang ->line('requisition_qty')?></th>
+                      <th><?=$this ->lang ->line('issue_qty')?></th>
+                      <th><?=$this ->lang ->line('pending_qty')?></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -119,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		                 </tr>
 	                <?php $i++;} ?>
 							<tr>
-								<td colspan="3" style="text-align: right;"><b>Total</b></td>
+								<td colspan="3" style="text-align: right;"><b><?=$this ->lang ->line('total')?></b></td>
 					             <td> <?= $current['0']['total_req_qty']?></td>
 
 					             <td> <?= $current['0']['total_issue_qty']?></td>
@@ -132,16 +132,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				       
                  <div class="row ">
                 <div class="col-sm-4 ">
-                  <b> Declaration : </b> We declare that this copy shows the actual information of this supplier and that all particulars are true and correct to the best of our knowledge.
+                  <b> <?= $this->lang->line('declaration')?> : </b> <?= $this->lang->line('declaration_text')?>
                 </div>
                <div class="col-sm-4 ">
                <!--  <h3 style="padding-top: 20px;"> Choudhary & Company </h3> -->
                 </div>
                 <div class="col-sm-4 ">
-                <strong><u>For Choudhary & Company :</u></strong>
+                <strong><u><?= $this->lang->line('for')?> <?= $this->lang->line('company_name')?>:</u></strong>
                 <br></br><br></br>
 
-                   <b>( Authorised Signatory)</b>
+                   <b>(<?= $this->lang->line('authorised_signatory') ?>)</b>
                 </div>
               </div>
                 <!-- /.col -->

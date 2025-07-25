@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>plugins/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets2/"; ?>vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets2/"; ?>vendors/css/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets2/"; ?>vendors/css/jquery-jvectormap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets2/"; ?>vendors/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets2/"; ?>vendors/css/select2-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets2/"; ?>vendors/css/jquery.time-to.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."assets2/"; ?>css/theme.min.css">
+
   <!-- Ionicons -->
   <!--  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">  -->
   <!-- Theme style -->

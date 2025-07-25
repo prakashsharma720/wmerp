@@ -16,7 +16,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -25,13 +25,13 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?><div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang->line('transporter_evaluation_panel')?>
       </span>
        <div class="button-group float-right">
         
@@ -48,9 +48,9 @@ $data=explode('?', $current_page);
       <div class="row">
 
               <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Transporter <span class="required">*</span></label>
+                <label  class="control-label"><?= $this->lang->line('name_of_transporter') ?> <span class="required">*</span></label>
                 <select name="transporter_id" class="form-control select2 suppliers" >
-                    <option value="0"> Select Transporter</option>
+                    <option value="0"> <?= $this->lang->line('select_transporter') ?></option>
                     <?php
                          if ($all_transporters): ?> 
                           <?php 
@@ -63,12 +63,12 @@ $data=explode('?', $current_page);
                                   <?php endif;   ?>
                                    <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result') ?></option>
                         <?php endif; ?>
                 </select>
               </div>
                <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Grade</label>
+                    <label  class="control-label"> <?= $this->lang->line('grade') ?></label>
                     <?php  $app_cat = array(
                        'No' => 'Select Option',
                           'A' => 'A',
@@ -81,18 +81,18 @@ $data=explode('?', $current_page);
               </div>
               <div class="row">
                   <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?= $this->lang->line('upto_date') ?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                   <label  class="control-label" style="visibility: hidden;"><?= $this->lang->line('grade') ?></label><br>
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
               </div>
           </div>
         </form>
@@ -102,14 +102,14 @@ $data=explode('?', $current_page);
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> Transporter Name </th>
-              <th> Marks Obtained </th>
-              <th> Total Marks </th>
-              <th >Percentage</th>
-              <th> Grade </th>
-              <th> Date </th>
-              <th> Action Button</th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th> <?= $this->lang->line('transporter_name') ?> </th>
+              <th> <?= $this->lang->line('marks_obtained') ?> </th>
+              <th> <?= $this->lang->line('total_marks') ?> </th>
+              <th ><?= $this->lang->line('percentage') ?></th>
+              <th> <?= $this->lang->line('grade') ?> </th>
+              <th> <?= $this->lang->line('date') ?></th>
+              <th> <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>
@@ -139,7 +139,7 @@ $data=explode('?', $current_page);
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">(<?php echo $obj['transporter_name']?>) Evaluation  Details </h4>
+                             <h4 class="modal-title">(<?php echo $obj['transporter_name']?>) <?= $this->lang->line('evaluation_details') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -150,9 +150,9 @@ $data=explode('?', $current_page);
                                   margin: 0px;
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
-                                <div class="col-md-2">Sr. No.</div>
-                                <div class="col-md-5">Criteria Name</div>
-                                <div class="col-md-5">Marks </div>
+                                <div class="col-md-2"><?= $this->lang->line('sr_no') ?>.</div>
+                                <div class="col-md-5"><?= $this->lang->line('criteria_name') ?></div>
+                                <div class="col-md-5"><?= $this->lang->line('marks') ?> </div>
                               </div>
 
                                     <?php
@@ -181,7 +181,7 @@ $data=explode('?', $current_page);
                                   </span>
                               </div> -->
                               <div class="col-md-12">
-                                <label class="control-label"> Comment : </label>
+                                <label class="control-label"> <?= $this->lang->line('comment') ?> : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['comments']; 
@@ -191,7 +191,7 @@ $data=explode('?', $current_page);
                             </div> 
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                           </div>
                         </div>
                       </div>
@@ -203,16 +203,16 @@ $data=explode('?', $current_page);
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete <b><?php echo $obj['transporter'];?> </b> Evaluation ? </p>
+                            <p>Are you sure, you want to delete <b><?php echo $obj['transporter'];?> </b> <?= $this->lang->line('evaluation') ?> ? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

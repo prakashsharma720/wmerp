@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Work_allotments extends CI_Controller {
+Class Work_allotments extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -65,7 +65,7 @@ public function add() {
 	// print_r($data['equipments']);exit;
 
 	$data['title']='Create Work Allotment Register';
-	$this->template->load('template','work_alloted_add',$data);	
+	$this->template->load('layout/template','work_alloted_add',$data);	
 	//$this->load->view('footer');
 	}
 	
@@ -162,7 +162,7 @@ public function edit($id=NULL) {
 			$data['pr_data']=$this->work_allotment_model->getList();
 			//print_r($data['requisition_data']);exit;
 			//$data['states']=$this->work_allotment_model->getStates();
-			$this->template->load('template','work_alloted_view',$data);
+			$this->template->load('layout/template','work_alloted_view',$data);
 		}
 
 		public function report() 

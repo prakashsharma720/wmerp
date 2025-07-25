@@ -4,7 +4,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 //print_r(BASEPATH);exit;
-Class Suppliers extends CI_Controller {
+Class Suppliers extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -62,7 +62,7 @@ public function add() {
     $data['states']=$this->login_database->getStates();
     $data['cities']=$this->login_database->getCities();
     $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-	$this->template->load('template','supplier_add',$data);
+	$this->template->load('layout/template','supplier_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -88,7 +88,7 @@ public function add() {
 		$data['all_suppliers']=$this->login_database->getAllSuppliers();
 		$data['categories']=$this->login_database->getCategories();
 		$data['states']=$this->login_database->getStates();
-		$this->template->load('template','supplier_view',$data);
+		$this->template->load('layout/template','supplier_view',$data);
 	}
 	public function report() 
 	{
@@ -110,7 +110,7 @@ public function add() {
 		$data['suppliers'] = $this->login_database->supplier_list();
 		}
 		//echo var_dump($data['students']);
-		$this->template->load('template','supplier_report',$data);
+		$this->template->load('layout/template','supplier_report',$data);
 	}
 
 	public function add_new_supplier() {
@@ -232,7 +232,7 @@ public function add() {
 	    $data['states']=$this->login_database->getStates();
 	    $data['cities']=$this->login_database->getCities();
 	    $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-        $this->template->load('template','supplier_edit',$data);
+        $this->template->load('layout/template','supplier_edit',$data);
 	
 	}
 
@@ -468,7 +468,7 @@ public function add() {
 	            
 	        endif;
 	        $data['title']='Supplier Profile';
-        $this->template->load('template','printprofile',$data);
+        $this->template->load('layout/template','printprofile',$data);
     } 
 
 }

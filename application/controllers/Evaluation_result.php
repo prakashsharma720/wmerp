@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Evaluation_result extends CI_Controller {
+Class Evaluation_result extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -51,7 +51,7 @@ public function ev_supplier_add() {
   //print_r($data['criterias']);exit;
 
   //$data['states']=$this->evaluation_result_model->getStates();
-  $this->template->load('template','evaluation_result_sup_add',$data);
+  $this->template->load('layout/template','evaluation_result_sup_add',$data);
 
   //$this->load->view('footer');
   
@@ -72,7 +72,7 @@ public function ev_supplier_add() {
   //print_r($data['criterias']);exit;
 
   //$data['states']=$this->evaluation_result_model->getStates();
-  $this->template->load('template','evaluation_result_sprovider_add',$data);
+  $this->template->load('layout/template','evaluation_result_sprovider_add',$data);
 
   //$this->load->view('footer');
   
@@ -281,7 +281,7 @@ public function ev_supplier_add() {
       $data['all_suppliers']=$this->login_database->getAllSuppliers();
       $data['categories']=$this->login_database->getCategories();
       //$data['states']=$this->evaluation_result_model->getStates();
-      $this->template->load('template','ev_sup_index',$data);
+      $this->template->load('layout/template','ev_sup_index',$data);
     }
 
     public function ev_sprovider_index(){
@@ -306,7 +306,7 @@ public function ev_supplier_add() {
       //$data['Items']=$this->evaluation_result_model->getItems();
      
       //$data['states']=$this->evaluation_result_model->getStates();
-      $this->template->load('template','ev_sprovider_index',$data);
+      $this->template->load('layout/template','ev_sprovider_index',$data);
     }
 
   public function add_new_ER() {
@@ -481,7 +481,7 @@ public function ev_transporter_add() {
   //print_r($data['criterias']);exit;
 
   //$data['states']=$this->evaluation_result_model->getStates();
-  $this->template->load('template','evaluation_result_tp_add',$data);
+  $this->template->load('layout/template','evaluation_result_tp_add',$data);
 
   //$this->load->view('footer');
   
@@ -605,7 +605,7 @@ $data['transporters_data']=$this->transporter_model->getTransporterById($id);
       $data['all_transporters']=$this->transporter_model->getAlltransporters();
       //$data['categories']=$this->login_database->getCategories();
       //$data['states']=$this->evaluation_result_model->getStates();
-      $this->template->load('template','ev_tp_index',$data);
+      $this->template->load('layout/template','ev_tp_index',$data);
     }
 	
 	

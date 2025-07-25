@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>3
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -40,14 +40,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> DSR No </th>
-              <th style="white-space: nowrap;"> Date Of Work </th>
-              <th style="white-space: nowrap;"> Department </th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('dsr_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_work') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?> </th>
               <!--<th style="white-space: nowrap;"> Total Workers </th>-->
-              <th style="white-space: nowrap;"> Total Bags </th>
-              <th style="white-space: nowrap;"> Total Amount </th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('total_bags') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('total_amount') ?> </th>
+              <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>
@@ -91,7 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"> Daily Stacking Record (<?php echo $inv_number1 ?>) Details </h4>
+                             <h4 class="modal-title"> <?= $this->lang->line('daily_stacking_record') ?> (<?php echo $inv_number1 ?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -121,45 +121,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <legend> <?= $po_detail['worker_ids'] ?> </legend>
                                     <div class="row">
                                       <div class="col-md-12">
-                                        <label class="control-label"> Finish Good Name : </label>
+                                        <label class="control-label"> <?= $this->lang->line('finish_good_name') ?>: </label>
                                         <span > <?= $po_detail['mineral_name'].' ('. $po_detail['grade_name'].')' ;?></span>
                                       </div>
                                       <div class="col-md-12">
-                                        <h5> Stacking Up Details : </h5><br>
+                                        <h5> <?= $this->lang->line('stacking_up_details') ?> : </h5><br>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> Packing  : </label>
+                                        <label class="control-label"> <?= $this->lang->line('packing') ?>  : </label>
                                         <span > <?= $po_detail['bag_weight_stack_up'] ;?> Kg</span>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> No of Bags   : </label>
+                                        <label class="control-label"> <?= $this->lang->line('no_of_bags') ?>   : </label>
                                         <span > <?= $po_detail['no_of_bags_stack_up'] ;?> </span>
                                       </div> 
                                       <div class="col-md-4">
-                                        <label class="control-label"> Rate : </label>
+                                        <label class="control-label"> <?= $this->lang->line('rate') ?> : </label>
                                         <span > <?= $po_detail['stacking_up_rate'] ;?> </span>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> Total : </label>
+                                        <label class="control-label"> <?= $this->lang->line('total') ?> : </label>
                                         <span > <?= $po_detail['stack_up_total'] ;?> </span>
                                       </div>
                                        <div class="col-md-12">
-                                        <h5> Stacking Down Details : </h5><br>
+                                        <h5> <?= $this->lang->line('stacking_down_detalis') ?> : </h5><br>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> Packing  : </label>
+                                        <label class="control-label"> <?= $this->lang->line('packing') ?> : </label>
                                         <span > <?= $po_detail['bag_weight_stack_down'] ;?> Kg</span>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> No of Bags   : </label>
+                                        <label class="control-label"> <?= $this->lang->line('no_of_bags') ?>   : </label>
                                         <span > <?= $po_detail['no_of_bags_stack_down'] ;?> </span>
                                       </div> 
                                       <div class="col-md-4">
-                                        <label class="control-label"> Rate : </label>
+                                        <label class="control-label"> <?= $this->lang->line('rate') ?> : </label>
                                         <span > <?= $po_detail['stacking_down_rate'] ;?> </span>
                                       </div>
                                       <div class="col-md-4">
-                                        <label class="control-label"> Total : </label>
+                                        <label class="control-label"> <?= $this->lang->line('total') ?> : </label>
                                         <span > <?= $po_detail['stack_down_total'] ;?> </span>
                                       </div>
                                     </div>
@@ -172,16 +172,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span > <?php echo $obj['total_workers']?></span>
                               </div>-->
                               <div class="col-md-6">
-                                <label class="control-label"> Total Bags : </label>
+                                <label class="control-label"> <?= $this->lang->line('total_bags') ?> : </label>
                                 <span > <?php echo $obj['total_bags']?></span>
                               </div>    
                                <div class="col-md-6">
-                                <label class="control-label"> Total Amount : </label>
+                                <label class="control-label"> <?= $this->lang->line('total_amount') ?> : </label>
                                 <span > <?php echo $obj['grand_total']?></span>
                               </div>                            
                             </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                           </div>
                         </div>
                       </div>
@@ -192,7 +192,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -200,8 +200,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p>Are you sure, you want to delete This DSR  <b> (<?php echo $inv_number1 ?>) </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

@@ -65,6 +65,7 @@ $photo = $userData['photo'];
     width: 40px;
 }
 </style>
+
 <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -169,11 +170,14 @@ $photo = $userData['photo'];
         </li>
     </ul>
     <ul class="navbar-nav ml-auto d-flex align-items-center gap-3 pr-3">
-        <select class="form-control" onchange="location = this.value;" style="width: 50%;">
-            <option value="<?= site_url('AdminController/change_language/english') ?>" <?= ($language_label == 'English') ? 'selected' : '' ?>>English</option>
-            <option value="<?= site_url('AdminController/change_language/bulg') ?>" <?= ($language_label == 'Bulg') ? 'selected' : '' ?>>Bulgarian</option>
-            <option value="<?= site_url('AdminController/change_language/hindi') ?>" <?= ($language_label == 'Hindi') ? 'selected' : '' ?>>Hindi</option>
-        </select>
+        <li class="nav-item dropdown" style="width: 75px;">
+            <select class="form-control" onchange="location = this.value;" style="width: 100%;">
+                <option value="<?= site_url('AdminController/change_language/english') ?>" <?= ($language_label == 'English') ? 'selected' : '' ?>>En</option>
+                <option value="<?= site_url('AdminController/change_language/bulg') ?>" <?= ($language_label == 'Bulg') ? 'selected' : '' ?>>Bg</option>
+                <option value="<?= site_url('AdminController/change_language/hindi') ?>" <?= ($language_label == 'Hindi') ? 'selected' : '' ?>>Hi</option>
+            </select>
+        </li>
+
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
                 <i class="fa fa-cog" style="font-size: 30px;"></i>
@@ -310,7 +314,7 @@ $photo = $userData['photo'];
             <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#">
             <img src="<?= get_avatar_url($photo) ?>" class="img-circle mr-2" alt="User Image" style="width: 32px; height: 32px; object-fit: cover;" />
             <span class="text-dark font-weight-bold">
-                <?php echo strlen($name) > 8 ? substr($name, 0, 8).'' : $name; ?>
+                <?php echo strlen($name) > 8 ? substr($name, 0, 6).'' : $name; ?>
             </span>
             <i class="fa fa-angle-down ml-2 text-dark"></i>
             </a>

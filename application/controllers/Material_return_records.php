@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Material_return_records extends CI_Controller {
+Class Material_return_records extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -93,7 +93,7 @@ public function add() {
     $data['categories'] = $this->material_return_model->getCategories();
     //$data['states']=$this->material_return_model->getStates();
     //print_r($data['items']);exit;
-    $this->template->load('template','material_return_add',$data);
+    $this->template->load('layout/template','material_return_add',$data);
 }
 
 	public function edit($id=NULL) {
@@ -265,7 +265,7 @@ public function add() {
            //$data['gir_data']=$this->material_return_model->getListGeneral();
 			$data['categories']=$this->material_return_model->getCategories();
 			//$data['states']=$this->material_return_model->getStates();
-			$this->template->load('template','material_return_view',$data);
+			$this->template->load('layout/template','material_return_view',$data);
 		}
 
 

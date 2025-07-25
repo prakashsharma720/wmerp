@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Protective_equipments extends CI_Controller {
+Class Protective_equipments extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -139,7 +139,7 @@ $this->load->model('categories_model');
 			$data['units'] = $this->categories_model->getUnits();
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
-			$this->template->load('template','protective_equipment_view',$data);
+			$this->template->load('layout/template','protective_equipment_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

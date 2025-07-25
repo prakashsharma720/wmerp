@@ -23,7 +23,7 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('success')): ?>
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
     <?php echo $this->session->flashdata('success'); ?>
 </div>
 <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -32,14 +32,14 @@ $data=explode('?', $current_page);
 <?php if($this->session->flashdata('failed')): ?>
 <div class="alert alert-error alert-dismissible ">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
     <?php echo $this->session->flashdata('failed'); ?>
 </div>
 <?php endif; ?>
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?></span>
+            <span class="card-title"><?=$this ->lang ->line('customers_list')?></span>
             <div class="pull-right error_msg">
                 <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-success" data-toggle="tooltip"
                     title="New customer"><i class="fa fa-plus"></i></a>
@@ -75,9 +75,9 @@ $data=explode('?', $current_page);
                     </select>
                 </div>-->
                     <div class="col-md-3 col-sm-3 ">
-                        <label class="control-label">Name of Customer <span class="required">*</span></label>
+                        <label class="control-label"><?= $this->lang->line('name_of_customer') ?> <span class="required">*</span></label>
                         <select name="customer_id" class="form-control select2 customers">
-                            <option value="0"> Select customer</option>
+                            <option value="0"> <?= $this->lang->line('select_customer') ?></option>
                             <?php
                          if ($all_customers): ?>
                             <?php 
@@ -90,7 +90,7 @@ $data=explode('?', $current_page);
                             <?php endif;   ?>
                             <?php   endforeach;  ?>
                             <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result') ?></option>
                             <?php endif; ?>
                         </select>
                     </div>
@@ -106,22 +106,22 @@ $data=explode('?', $current_page);
                     ?>
                   </div>-->
                     <div class="col-md-3 col-sm-3">
-                        <label class="control-label"> From Date</label>
+                        <label class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date"
                             class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus
                             autocomplete="off" autocomplete="off">
                     </div>
                     <div class="col-md-3 col-sm-3">
-                        <label class="control-label"> Upto Date</label>
+                        <label class="control-label"><?= $this->lang->line('upto_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date"
                             class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus
                             autocomplete="off" autocomplete="off">
                     </div>
                     <div class="col-md-3 col-sm-3 ">
-                        <label class="control-label" style="visibility: hidden;"> Grade</label><br>
-                        <input type="submit" class="btn btn-primary" value="Search" />
+                        <label class="control-label" style="visibility: hidden;"><?= $this->lang->line('grade') ?></label><br>
+                        <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" />
                         <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> Reset</a>
+                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> <?= $this->lang->line('reset') ?></a>
                     </div>
                 </div>
                 <!-- <div class="row col-md-12">
@@ -136,12 +136,12 @@ $data=explode('?', $current_page);
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="master"></th>
-                        <th>Sr.No.</th>
-                        <th> Name </th>
-                        <th style="white-space: nowrap;"> Reg date </th>
-                        <th> Destination</th>
-                        <th> State</th>
-                        <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+                        <th><?= $this->lang->line('sr_no') ?>.</th>
+                        <th> <?= $this->lang->line('name') ?></th>
+                        <th style="white-space: nowrap;"> <?= $this->lang->line('reg_date') ?> </th>
+                        <th> <?= $this->lang->line('destination') ?></th>
+                        <th> <?= $this->lang->line('state') ?></th>
+                        <th style="white-space: nowrap;width: 20%;"><?= $this->lang->line('action_button') ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -175,25 +175,25 @@ $data=explode('?', $current_page);
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title"><?php echo $obj['customer_name'];?> Details </h4>
+                                        <h4 class="modal-title"><?php echo $obj['customer_name'];?> <?= $this->lang->line('details') ?> </h4>
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                                     </div>
                                     <div class="modal-body">
                                         <fieldset>
-                                            <legend>Billing Details</legend>
+                                            <legend><?= $this->lang->line('billing_details') ?></legend>
                                             <div class="row">
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label"> Customer Code :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('customer_code') ?> :</label>
                                                     <span> <?php echo $obj['customer_code'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label"> Contact Person :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('contact_person') ?> :</label>
                                                     <span> <?php echo $obj['contact_person'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">Email :</label>
+                                                    <label class="control-label"><?= $this->lang->line('email') ?> :</label>
                                                     <span> <?php echo $obj['email'];?></span>
                                                 </div>
 
@@ -202,15 +202,15 @@ $data=explode('?', $current_page);
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Mobile :</label>
+                                                    <label class="control-label"><?= $this->lang->line('mobile') ?>:</label>
                                                     <span> <?php echo $obj['mobile_no'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">Buyer Item Code :</label>
+                                                    <label class="control-label"><?= $this->lang->line('buyer_item_code') ?>:</label>
                                                     <span> <?php echo @$obj['buyer_item_code'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">Destination :</label>
+                                                    <label class="control-label"><?= $this->lang->line('destination') ?> :</label>
                                                     <span> <?php echo @$obj['destination'];?></span>
                                                 </div>
 
@@ -219,15 +219,15 @@ $data=explode('?', $current_page);
                                             <div class="row">
 
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label"> Website :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('website') ?> :</label>
                                                     <span> <?php echo $obj['website'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label"> Vendor Code :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('vendor_code') ?> :</label>
                                                     <span> <?php echo $obj['vendor_code'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">GST No :</label>
+                                                    <label class="control-label"><?= $this->lang->line('gst_no') ?> :</label>
                                                     <span> <?php echo $obj['gst_no'];?></span>
                                                 </div>
 
@@ -236,11 +236,11 @@ $data=explode('?', $current_page);
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label"> PAN No :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('pan_no') ?> :</label>
                                                     <span> <?php echo $obj['pan_no'];?></span>
                                                 </div>
                                                 <div class="col-md-8 col-sm-8 ">
-                                                    <label class="control-label">Address:</label>
+                                                    <label class="control-label"><?= $this->lang->line('address') ?>:</label>
                                                     <span>
                                                         <?php echo $obj['shipping_address'].', '.$obj['billing_address'].', '.$obj['city'].', '.$obj['state'];?></span>
                                                 </div>
@@ -251,20 +251,20 @@ $data=explode('?', $current_page);
 
                                         </fieldset>
                                         <fieldset>
-                                            <legend>Shipping Details</legend>
+                                            <legend><?= $this->lang->line('shipping_details') ?></legend>
                                             <div class="row">
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">GST No.:</label>
+                                                    <label class="control-label"><?= $this->lang->line('gst_no') ?>.:</label>
                                                     <span> <?php echo $obj['shipping_gst_no']?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Legal Name:</label>
+                                                    <label class="control-label"><?= $this->lang->line('legal_name') ?>:</label>
                                                     <span> <?php echo $obj['shipping_legal_name']?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Loc:</label>
+                                                    <label class="control-label"><?= $this->lang->line('loc') ?>:</label>
                                                     <span> <?php echo $obj['loc'];?></span>
                                                 </div>
 
@@ -272,16 +272,16 @@ $data=explode('?', $current_page);
                                             <div class="row">
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Address:</label>
+                                                    <label class="control-label"><?= $this->lang->line('address') ?>:</label>
                                                     <span>
                                                         <?php echo $obj['saddress1'].', '.$obj['saddress2'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Shipping Pincode:</label>
+                                                    <label class="control-label"><?= $this->lang->line('shipping_pincode') ?>:</label>
                                                     <span> <?php echo $obj['ship_pincode']?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Shipping State Code:</label>
+                                                    <label class="control-label"><?= $this->lang->line('shipping_state_code') ?>:</label>
                                                     <span> <?php echo $obj['ship_state_code']?></span>
                                                 </div>
 
@@ -290,7 +290,7 @@ $data=explode('?', $current_page);
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Shipping Distance:</label>
+                                                    <label class="control-label"><?= $this->lang->line('shipping_destination') ?>:</label>
                                                     <span> <?php echo $obj['ship_destination']?></span>
                                                 </div>
 

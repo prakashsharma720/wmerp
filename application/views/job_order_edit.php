@@ -37,16 +37,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="form-group">
 					        	<div class="row col-md-12">
 					        		 <div class="col-md-4 col-sm-4">
-						            	<label class="control-label"> Date </label>
+						            	<label class="control-label"> <?= $this->lang->line('date') ?> </label>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" value="<?php echo date('d-m-Y',strtotime($transaction_date)); ?>" placeholder="dd-mm-yyyy" autofocus>
 			            			</div>
 					        		<div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> Job Order No <span class="required">*</span></label>
+						            	<label class="control-label"> <?= $this->lang->line('job_order_no') ?> <span class="required">*</span></label>
 						                <input type="text"  name="job_order_no" class="form-control" value="<?= $job_order_code_view?>"  autofocus >
 						                <input type="hidden" name="voucher_code" value="<?php echo $joborder_code;?>" required>
 						            </div>
 						            <div class="col-md-4 col-sm-4 ">
-						            	<label class="control-label"> Plant/Location <span class="required">*</span></label>
+						            	<label class="control-label"> <?= $this->lang->line('plant_location') ?> <span class="required">*</span></label>
 						            	<?php  echo form_dropdown('location', $plants,$location);?>
 						                <!--<input type="text"  placeholder="Enter Plant/Location" name="location" class="form-control " value="<?php echo $location;?>"  required autofocus>-->
 						            </div>
@@ -55,33 +55,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <div class="form-group"> 
 						        <div class="row col-md-12">
 						        	<div class="col-md-12 col-sm-12 ">
-						            	<label class="control-label"> Work Description <span class="required"> *</span></label>
-						               <textarea class="form-control work_description" rows="3" placeholder="Enter Work Description" name="work_description" value="<?php echo $work_description;?>" requireds><?php echo $work_description;?></textarea>
+						            	<label class="control-label"> <?= $this->lang->line('work_description') ?> <span class="required"> *</span></label>
+						               <textarea class="form-control work_description" rows="3" placeholder="<?= $this->lang->line('enter_work+description') ?>" name="work_description" value="<?php echo $work_description;?>" requireds><?php echo $work_description;?></textarea>
 						            </div>
 						     	</div>
 						     </div>
 						       <div class="form-group"> 
 						        <div class="row col-md-12">
 						        	<div class="col-md-4 col-sm-4 ">
-						            	<label  class="control-label"> Job Order Assigned To <span class="required">*</span></label>
+						            	<label  class="control-label"> <?= $this->lang->line('job_order_assigned_to') ?> <span class="required">*</span></label>
 						               <?php  echo form_dropdown('assigned_to', $workers,$assigned_to, '', 'required="required"')
 						            	?>
 						            </div>
 					        		<div class="col-md-4 col-sm-4">
-						            	<label class="control-label"> Completion  Date </label>
+						            	<label class="control-label"> <?= $this->lang->line('completion_date') ?> </label>
 						                <input type="text" data-date-formate="dd-mm-yyyy" name="completion_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" required autofocus>
 			            			</div>
 					             	
 						        		 
                              		<div class="col-md-4 col-sm-4 ">
-							            <label class="control-label">Status</label>
+							            <label class="control-label"><?= $this->lang->line('status') ?></label>
 							            	<select class="form-control" name="job_order_status" >
 					                              <?php if ($job_order_status == 'Pending'){ ?>
-					                                    <option value="Pending" selected> Pending</option>
-					                                    <option value="Completed" > Completed </option>
+					                                    <option value="Pending" selected> <?= $this->lang->line('pending') ?></option>
+					                                    <option value="Completed" > <?= $this->lang->line('completed') ?> </option>
 					                              <?php } else{  ?>
-					                                     <option value="Completed" selected> Completed </option>
-					                                     <option value="Pending" > Pending</option>
+					                                     <option value="Completed" selected> <?= $this->lang->line('completed') ?> </option>
+					                                     <option value="Pending" > <?= $this->lang->line('pending') ?></option>
 					                              <?php } ?>
 					                          </select>
 							            </div>
@@ -91,8 +91,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						      
 				           <div class="row col-md-12">
 					            <div class="col-md-12 col-sm-12 ">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 					            </div>
 					        </div>
 					        </form>

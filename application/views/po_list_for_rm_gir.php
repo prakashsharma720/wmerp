@@ -52,9 +52,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> PO No </th>
-              <th> Supplier Name </th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th> <?=$this ->lang ->line('po_no')?> </th>
+              <th> <?=$this ->lang ->line('supplier_name')?> </th>
               <th style="white-space: nowrap;"> Date </th>
               <th style="white-space: nowrap;">Total Amount (&#8377;)</th>
               <th style="white-space: nowrap;width: 20%;"> Action Button</th>

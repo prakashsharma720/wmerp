@@ -4,7 +4,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 //print_r(BASEPATH);exit;
-Class Customers extends CI_Controller {
+Class Customers extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -48,7 +48,7 @@ public function add() {
     $data['states']=$this->customer_model->getStates();
     $data['cities']=$this->customer_model->getCities();
     $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-	$this->template->load('template','customer_add',$data);
+	$this->template->load('layout/template','customer_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -76,7 +76,7 @@ public function add() {
 		
 		}
 		// echo "<pre>";print_r($data['customers']);exit;
-		$this->template->load('template','customer_view',$data);
+		$this->template->load('layout/template','customer_view',$data);
 	}
 	public function report() 
 	{
@@ -98,7 +98,7 @@ public function add() {
 		$data['customers'] = $this->customer_model->customer_list();
 		}
 		//echo var_dump($data['students']);
-		$this->template->load('template','customer_report',$data);
+		$this->template->load('layout/template','customer_report',$data);
 	}
 
 	public function add_new_customer() {

@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Rm_code extends CI_Controller {
+Class Rm_code extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -44,7 +44,7 @@ public function add($id = NULL) {
 	$data['raw_materials']=$this->rm_model->getCategories();
 	$data['categories']=$this->rm_model->getSupplierCategories();
 	//$data['states']=$this->rm_model->getStates();
-	$this->template->load('template','rm_code_add',$data);
+	$this->template->load('layout/template','rm_code_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -99,7 +99,7 @@ public function edit($id = NULL) {
 	$data['raw_materials']=$this->rm_model->getCategories();
 	$data['categories']=$this->rm_model->getSupplierCategories();
 	//$data['states']=$this->rm_model->getStates();
-	$this->template->load('template','rm_code_edit',$data);
+	$this->template->load('layout/template','rm_code_edit',$data);
 
 	//$this->load->view('footer');
 	
@@ -110,7 +110,7 @@ public function edit($id = NULL) {
 			//$data['categories']=$this->rm_model->getCategories();
 			$data['rmcodes']=$this->rm_model->getList();
 			//$data['states']=$this->rm_model->getStates();
-			$this->template->load('template','rm_code_view',$data);
+			$this->template->load('layout/template','rm_code_view',$data);
 		}
 
 	public function report() 

@@ -33,11 +33,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <span class="help-block"></span>
 					        <div class="row col-md-12">
 					        	 <div class="col-md-6">
-						            	<label class="control-label"> Name</label>
-						                <input type="text"  placeholder="Enter Raw material name" name="rm_name" class="form-control" value="<?= $rm_name?>" required autofocus>
+						            	<label class="control-label"> <?= $this->lang->line('name') ?></label>
+						                <input type="text"  placeholder="<?= $this->lang->line('enter_raw_material_name') ?>" name="rm_name" class="form-control" value="<?= $rm_name?>" required autofocus>
 						        </div>
 						        <div class="col-md-6">
-						            <label class="control-label"> Grade</label>
+						            <label class="control-label"> <?= $this->lang->line('grade') ?></label>
 					                	<?php  $grades = array(
 					            		 'No' => 'Select Option',
 						                  'Food' => 'Food (F)',
@@ -51,19 +51,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					        <span class="help-block"></span>
 					         <div class="row col-md-12">
 					        	 <div class="col-md-6">
-						            	<label class="control-label"> Code</label>
-						                <input type="text"  placeholder="Enter Code" name="code" class="form-control" value="<?= $code?>" required autofocus>
+						            	<label class="control-label"> <?= $this->lang->line('code') ?></label>
+						                <input type="text"  placeholder="<?= $this->lang->line('enter_code') ?>" name="code" class="form-control" value="<?= $code?>" required autofocus>
 						        </div>
 						        <div class="col-md-6">
-						            	<label class="control-label"> Unit</label>
-						                <input type="text"  placeholder="Enter Unit" name="unit" class="form-control" value="<?= $unit?>" required autofocus>
+						            	<label class="control-label"> <?= $this->lang->line('unit') ?></label>
+						                <input type="text"  placeholder="<?= $this->lang->line('enter_unit') ?>" name="unit" class="form-control" value="<?= $unit?>" required autofocus>
 						        </div>
 						     </div>
 					       <span class="help-block"></span>
 				        	<br>
 				           <div class="row col-md-6">
-					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
-					            	<button type="submit" class="btn btn-primary btn-block">Save</button>
+					            	<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+					            	<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 					            </div>
 				        </div>
 			        </form>

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 //session_start(); //we need to start session in order to access it through CI
 
-Class CustomerSupport_controller extends CI_Controller {
+Class CustomerSupport_controller extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -87,7 +87,7 @@ Class CustomerSupport_controller extends CI_Controller {
      
 		// print_r($data['auth_id']);exit;
 
-		$this->template->load('template','CustomerSupport/customerview',$data);
+		$this->template->load('layout/template','CustomerSupport/customerview',$data);
 	}
 
 

@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?> </h3> 
+        <h3 class="card-title"><?= $this->lang->line('create_issue_slip') ?> </h3> 
         <div class="pull-right" style="margin-top: -30px;">
         	<span style="background-color: #d45c5c;margin-top: -20px;"> &nbsp;&nbsp;&nbsp;&nbsp;</span> Stock Un-Available
 		</div>
@@ -18,26 +18,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Requisition Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('requisition_date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="requisition_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?php if($requisition_date) { echo date('d-m-Y',strtotime($requisition_date)); } ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Issue Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('issue_date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?php echo date('d-m-Y');  ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Issue Slip No <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('issue_slip_no') ?> <span class="required">*</span></label>
 			            	<input type="text"  name="" class="form-control" value="<?= $issueslip_code ?>" autocomplete="off" autofocus  readonly="readonly">
 			            	<input type="hidden" name="issue_slip_no" value="<?= $issue_slip_no ?>">
 			            </div>
 			             <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Issue To (Employee Name) </label>
+			            	<label  class="control-label"> <?= $this->lang->line('issue_to') ?>  </label>
 				            	<?php echo form_dropdown('employee_id',$employees,$employee_id)?>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Employee Department</label>
+			            	<label  class="control-label"> <?= $this->lang->line('employee_department') ?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?= $this->lang->line('select_department') ?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -50,12 +50,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Requisition Slip No <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('requisition_slip_no') ?> <span class="required">*</span></label>
 			            	<input type="text"  name="" class="form-control" value="<?= $requisition_code ?>" autocomplete="off" autofocus  readonly="readonly">
 			            <input type="hidden" name="requisition_slip_no" value="<?= $requisition_slip_no ?>">
 				            </div>
@@ -67,14 +67,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        		<table class="table table-bordered " id="maintable" >
 			        			<thead style="background-color: #dc7629;">
 			        				<tr>
-			        					<th style="width: 5%;">  Sr.No.</th>
-			        					<th style="width: 30%;"> Material Description</th>
-			        					<th style="width: 15%;white-space: nowrap;">Stock Available</th>
-			        					<th style="width: 15%;white-space: nowrap;"> Required QTY</th>
-			        					<th style="width: 15%;"> Issue QTY</th>
-			        					<th style="width: 15%;"> Pending QTY</th>
+			        					<th style="width: 5%;">  <?= $this->lang->line('sr_no') ?>.</th>
+			        					<th style="width: 30%;"> <?= $this->lang->line('material_description') ?></th>
+			        					<th style="width: 15%;white-space: nowrap;"><?= $this->lang->line('stock_available') ?></th>
+			        					<th style="width: 15%;white-space: nowrap;"><?= $this->lang->line('required_qty') ?></th>
+			        					<th style="width: 15%;"> <?= $this->lang->line('issue_qty') ?></th>
+			        					<th style="width: 15%;"> <?= $this->lang->line('pending_qty') ?></th>
 			        					<!-- <th style="width: 20%;"> Description</th> -->
-			        					<th style="width: 15%;"> Action</th>
+			        					<th style="width: 15%;"> <?= $this->lang->line('action') ?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -116,10 +116,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													
 												</td>
 												<td>
-													<input type="text"  placeholder="Issue Qty" name="issue_qty[]" class="form-control qty"   oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" value="" required autofocus >
+													<input type="text"  placeholder="<?= $this->lang->line('issue_qty') ?>" name="issue_qty[]" class="form-control qty"   oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" value="" required autofocus >
 												</td>
 												<td >
-													<input type="text"  placeholder="Pending" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
+													<input type="text"  placeholder="<?= $this->lang->line('pending') ?>" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
 												</td>
 												<!-- <td>
 										        	<select name="unit_id[]" class="form-control  units" required="required">
@@ -152,15 +152,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			</tbody>
 			        			<tfoot>
 			        				<tr>
-			        					<td colspan="3" style="text-align: right;"><b>Total</b></td>
+			        					<td colspan="3" style="text-align: right;"><b><?= $this->lang->line('total') ?></b></td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total Qty" name="total_req_qty" class="form-control total_req_qty"  value="<?= $total_req_qty ?>" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_qty') ?>" name="total_req_qty" class="form-control total_req_qty"  value="<?= $total_req_qty ?>" readonly >
 			        					</td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total Qty" name="total_issue_qty" class="form-control total_issue_qty"  value="" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_qty') ?>" name="total_issue_qty" class="form-control total_issue_qty"  value="" readonly >
 			        					</td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total Qty" name="total_pending_qty" class="form-control total_pending_qty"  value="" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_qty') ?>" name="total_pending_qty" class="form-control total_pending_qty"  value="" readonly >
 			        					</td>
 			        					<td colspan="2" style="text-align: right;"></td>
 			        				</tr>
@@ -172,16 +172,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		         <div class="form-group">
 			        <div class="row col-md-12">
-		        		<label  class="control-label"> Comment</label>
-			    		<textarea class="form-control Comment" rows="2" placeholder="Enter comment here" name="comment" value=""></textarea>
+		        		<label  class="control-label"> <?= $this->lang->line('comment') ?></label>
+			    		<textarea class="form-control Comment" rows="2" placeholder="<?= $this->lang->line('enter_comment_here') ?>" name="comment" value=""></textarea>
 			    	</div>
 			    </div>
 		        
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
 		        		</div>
 		        	</div>
 		        </div>
@@ -198,13 +198,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<td>1</td>
 			<td> 
 				<select name="products[]" class="form-control drop" required>
-					<option value=""> Select Item</option>
+					<option value=""> <?= $this->lang->line('select_item') ?></option>
 		            <?php if ($items): ?> 
 		                <?php foreach ($items as $value) : ?>
 		                        <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
 		                <?php endforeach; ?>
 		            <?php else: ?>
-		                <option value="0">No result</option>
+		                <option value="0"><?= $this->lang->line('no_result') ?></option>
 		            <?php endif; ?>
 		        </select>
 			</td>
@@ -212,11 +212,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input type="text"  name="required_qty[]" class="form-control required_qty"  value="<?php echo $gir_detail['quantity']; ?>"  oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" autofocus >
 			</td>
 			<td>
-				<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   required='required'>
+				<input type="text"  placeholder="<?= $this->lang->line('enter_qty') ?>" name="qty[]" class="form-control qty"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"   required='required'>
 			</td>
 			<td>
         	 <select name="unit_id[]" class="form-control  units" required="required">
-        		 <option value="">Select</option>
+        		 <option value=""><?= $this->lang->line('select') ?></option>
 	                <?php
 	                 if ($units): ?> 
 	                  <?php 
@@ -225,7 +225,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		                            <option value="<?= $value['id'] ?>"><?= $value['unit_name'] ?></option>
 	                    <?php   endforeach;  ?>
 	                <?php else: ?>
-	                    <option value="">No result</option>
+	                    <option value=""><?= $this->lang->line('no_result') ?></option>
 	                <?php endif; ?>
 	            </select>
 			</td>
@@ -242,9 +242,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</tbody>
 	<tfoot>
 	<tr>
-		<td colspan="2" style="text-align: right;"><b>Total</b></td>
+		<td colspan="2" style="text-align: right;"><b><?= $this->lang->line('total') ?></b></td>
 		<td colspan="2">
-			<input type="text"  placeholder="Total Qty" name="total_qty" class="form-control total_qty"  readonly >
+			<input type="text"  placeholder="<?= $this->lang->line('total_qty') ?>" name="total_qty" class="form-control total_qty"  readonly >
 		</td>
 	</tr>
 

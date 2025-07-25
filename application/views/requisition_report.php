@@ -9,7 +9,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -18,14 +18,14 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?=$this ->lang ->line('requisition_slip_report')?>
       </span>
        <div class="pull-right error_msg">
         <form method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/createXLS">
@@ -35,7 +35,7 @@ $data=explode('?', $current_page);
             foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
           <?php } }?>
-           <button type="submit" class="btn btn-info"> Export </button>
+           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
          </form>
         <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
       </div>
@@ -45,9 +45,9 @@ $data=explode('?', $current_page);
           <div class="row">
 
               <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Employee <span class="required">*</span></label>
+                <label  class="control-label"> <?= $this->lang->line('name_of_employee'); ?> <span class="required">*</span></label>
                 <select name="employee_id" class="form-control select2 employees" >
-                    <option value="0">Select Employee</option>
+                    <option value="0"><?= $this->lang->line('select_employee'); ?></option>
                     <?php
                          if ($employees): ?> 
                           <?php 
@@ -55,14 +55,14 @@ $data=explode('?', $current_page);
                                     <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result'); ?></option>
                         <?php endif; ?>
                 </select>
               </div>
               <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Department <span class="required">*</span></label>
+                <label  class="control-label"> <?= $this->lang->line('name_of_department'); ?> <span class="required">*</span></label>
                 <select name="department_id" class="form-control select2 employees" >
-                    <option value="0">Select Department</option>
+                    <option value="0"><?= $this->lang->line('select_department'); ?></option>
                     <?php
                          if ($departments): ?> 
                           <?php 
@@ -70,12 +70,12 @@ $data=explode('?', $current_page);
                                <option value="<?= $value['id'] ?>"><?= $value['department_name'] ?></option>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result'); ?></option>
                         <?php endif; ?>
                 </select>
               </div>
                <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Requisition Status <span class="required">*</span></label>
+                <label  class="control-label"><?= $this->lang->line('requisition_status'); ?> <span class="required">*</span></label>
                 <select name="approved_status" class="form-control select2 " >
                     <?php
                          if ($req_status): ?> 
@@ -84,27 +84,27 @@ $data=explode('?', $current_page);
                                <option value="<?= $value ?>"><?= $value ?></option>
                             <?php   endforeach;  ?>
                         <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result'); ?></option>
                         <?php endif; ?>
                 </select>
               </div>
 
              <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label">   <?= $this->lang->line('from_date'); ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label">   <?= $this->lang->line('upto_date'); ?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
               </div>
                 <div class="row">
                   
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
+                   <label  class="control-label" style="visibility: hidden;">   <?= $this->lang->line('grade'); ?></label><br>
+                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" >   <?= $this->lang->line('reset'); ?></a>
               </div>
           </div>
             
@@ -134,13 +134,13 @@ $data=explode('?', $current_page);
            <?php
           $i=1;foreach($requisition_data as $obj){ ?>
             <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Requisition No </th>
-              <th style="white-space: nowrap;"> Requisition Date </th>
-              <th style="white-space: nowrap;">Request By </th>
-              <th style="white-space: nowrap;"> Status </th>
-              <th style="white-space: nowrap;"> Action Date </th>
-              <th style="white-space: nowrap;"> Action By </th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_no')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_date')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('request_by')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('status')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_date')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_by')?> </th>
               </tr>
               <tr >
                   <td rowspan="2"><?php echo $i;?></td>
@@ -189,8 +189,8 @@ $data=explode('?', $current_page);
                 </tr>
                 
                  <tr>
-                  <th style="white-space: nowrap;"> Material Name </th>
-                  <th colspan="5" style="white-space: nowrap;"> Required Qty (Unit)</th>
+                  <th style="white-space: nowrap;">   <?= $this->lang->line('material_name'); ?> </th>
+                  <th colspan="5" style="white-space: nowrap;"> <?=$this ->lang ->line('required_qty')?> (Unit)</th>
                   <!-- <th style="white-space: nowrap;"> Issue Qty (Unit)</th>
                   <th style="white-space: nowrap;"> Pending Qty (Unit)</th> -->
                 </tr>

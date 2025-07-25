@@ -14,10 +14,53 @@ $lang['login'] = 'Login';
 $lang['remember_me'] = 'Remember me';
 $lang['loginwithfacebook'] = 'Login with Facebook';
 $lang['loginwithgmail'] = 'Login with Gmail';
+$lang['minimum_inventory_qty'] = 'Minimum Inventory Quantity';
+$lang['enter_minimum_inventory_qty'] = 'Enter Minimum Inventory Quantity';
+$lang['no_tds_declaration'] = 'No TDS Declaration';
+$lang['unregistered_dealer'] = 'Un-registered Dealer/Person';
+$lang['edit_supplier'] = 'Edit Supplier';
+$lang['vendor_service_tax_number'] = 'Vendor Service Tax Number';
+$lang['service_for_state'] = 'Service for the State';
+$lang['date_of_next_evaluation'] = 'Date of Next Evaluation';
+$lang['filter_by_supplier'] = 'Filter By Supplier';
+$lang['filter_by_department'] = 'Filter By Department';
+$lang['po_status'] = 'PO Status';
+$lang['select_type'] = 'Select Type';
+$lang['from_date'] = 'From Date';
+$lang['upto_date'] = 'Upto Date';
+$lang['search'] = 'Search';
+$lang['reset'] = 'Reset';
+$lang['export'] = 'Export';
+$lang['confirm_delete'] = 'Are you sure, you want to delete menu';
+$lang['id'] = 'ID';
+$lang['enter_id'] = 'Enter ID';
+$lang['apply_date'] = 'Apply Date';
+$lang['lead_details'] = 'Lead Details';
+
+
+
+$lang['model'] = 'Model';
+$lang['enter_model'] = 'Enter Model';
+
+$lang['type'] = 'Type';
+$lang['enter_type'] = 'Enter Type';
+
+$lang['opening_stock_qty'] = 'Opening Stock Quantity';
+$lang['name_of_employee'] = 'Name of Employee';
+$lang['select_employee'] = 'Select Employee';
+
+$lang['name_of_department'] = 'Name of Department';
+$lang['select_department'] = 'Select Department';
+
+$lang['requisition_status'] = 'Requisition Status';
+
+$lang['no_result'] = 'No result';
+
 
 // https://wmerp.yashdreamsoft.com/index.php/Employees/edit/4
 
 $lang['edit_employee'] = 'Edit Employee';
+$lang['employee_detail'] = 'Employee Detail';
 $lang['personal_details'] = 'Personal Details';
 $lang['bank_details'] = 'Bank Details';
 $lang['salary_details'] = 'Salary Details';
@@ -38,6 +81,10 @@ $lang['daily_target'] = 'Daily Target';
 $lang['address'] = 'Address';
 $lang['upload_photo'] = 'Upload Photo';
 $lang['update'] = 'Update';
+$lang['update'] = 'Update';
+$lang['hold'] = 'Hold';
+
+
 
 $lang['account_holder_name'] = 'Account Holder Name';
 $lang['bank_name'] = 'Bank Name';
@@ -94,6 +141,8 @@ $lang['select_employee'] = 'Select Employee';
 $lang['enter_new_password'] = 'Enter New Password';
 $lang['confirm_password'] = 'Confirm Password';
 $lang['submit'] = 'Submit';
+$lang['confirm'] = 'Confirm';
+
 
 $lang['dashboard'] = 'Dashboard';
 $lang['users'] = 'Users';
@@ -112,9 +161,9 @@ $lang['sign_out'] = 'Sign Out';
 // Header Section
 $lang['total_assign'] = 'Total Assignments: 0';
 $lang['followups'] = 'Followups: 0';
-$lang['pending'] = 'Pending Tasks: 0';
-$lang['approve'] = 'Approved: 0';
-$lang['rejected'] = 'Rejected: 0';
+// $lang['pending'] = 'Pending Tasks: 0';
+// $lang['approve'] = 'Approved: 0';
+// $lang['rejected'] = 'Rejected: 0';
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'Edit Employee';
@@ -263,10 +312,130 @@ $lang['role_hr_executive'] = 'HR Executive';
 $lang['role_hr_marketing'] = 'HR Marketing';
 $lang['role_super_admin'] = 'Super Admin';
 $lang['role_team_leader'] = 'Team Leader';
-
+$lang['bag_weight'] = 'Bag Weight';
+$lang['tailing_qty_in_mt'] = 'Tailing in MT';
+$lang['total_tailing_for_lot'] = 'Total for Lot';
+$lang['used_qty'] = 'Used Quantity';
+$lang['mill_rpm'] = 'Mill (RPM)';
+$lang['mill_amp'] = 'Mill (AMP)';
+$lang['blower_hz'] = 'Blower (Hz)';
+$lang['blower_amp'] = 'Blower (AMP)';
+$lang['screw_rpm'] = 'Screw (RPM)';
+$lang['air_washer_rpm'] = 'Air Washer (RPM)';
+$lang['mc_start_time'] = 'M/C Start Time';
+$lang['mc_stop_time'] = 'M/C Stop Time';
+$lang['total_bags'] = 'Total Bags';
+$lang['total_propduction'] = 'Total Production (MT)';
+$lang['total_opening'] = 'Total Opening';
+$lang['total_closing'] = 'Total Closing';
+$lang['total_kwh'] = 'Total KWH Consumed';
+$lang['finish_good_details'] = 'Finish Good Details'; // English
 $lang['action'] = 'Action';
 $lang['edit'] = 'Edit';
+$lang['plant_and_machinery_master'] = 'Plant and Machinery Master';
+$lang['service_code'] = 'Service Code';
+$lang['building_material'] = 'Building Material';
+$lang['mechanical_items_master'] = 'Mechanical Items Master';
+$lang['new_item_code'] = 'New Item Code';
+$lang['general_plant_equipments_chemicals'] = 'General Plant Equipments & Chemicals';
+$lang['protective_equipments_master'] = 'Protective Equipments Master';
+$lang['protective_equipments'] = 'Protective Equipments';
+$lang['unregistered_dealer'] = 'Un-registered Dealer/Person';
+$lang['gst_in'] = 'GST IN';
+$lang['requisition_slip_report'] = 'Requisition Slip Report';
+$lang['pending_requisition_slips_for_issue'] = 'Pending Requisition Slips for Issue';
+$lang['service_for_the_state'] = 'Service for the State';
+$lang['add_new_service_provider'] = 'Add New Service Provider';
+$lang['un_registered_dealer_person'] = 'Unregistered Dealer Person';
+$lang['requistion_no'] = 'Requisition No';
+$lang['enter_requistion_no'] = 'Enter Requisition No';
+$lang['enter_gate_pass_no'] = 'Enter Gate Pass No';
+$lang['minimum_inventory_levels_report'] = 'Minimum Inventory Levels Report';
+$lang['add_new_finished_good'] = 'Add New Finished Good';
 $lang['delete'] = 'Delete';
+$lang['transaction_category'] = 'Transaction Category';
+$lang['invoice_date'] = 'Invoice Date';
+$lang['invoice_number'] = 'Invoice Number';
+$lang['enter_invoice_no'] = 'Enter Invoice Number';
+$lang['po_no'] = 'PO Number';
+$lang['enter_po_no'] = 'Enter PO Number';
+$lang['po_date'] = 'PO Date';
+$lang['remarks'] = 'Remarks';
+$lang['enter_remarks_here'] = 'Enter remarks here';
+$lang['customer_code'] = 'Customer Code';
+$lang['vender_service_tax_no'] = 'Vendor Service Tax No';
+$lang['buyer_item_code'] = 'Buyer Item Code';
+$lang['enter_buyer_item_code'] = 'Enter Buyer Item Code';
+$lang['destination'] = 'Destination';
+$lang['enter_destination_here'] = 'Enter Destination';
+$lang['item_name'] = 'Item Name';
+$lang['transdoc_no'] = 'TransDoc No.';
+$lang['gr_no'] = 'GR No.';
+$lang['tp_no'] = 'TP No.';
+$lang['enter_tp_no'] = 'Enter TP No.';
+$lang['truck_no'] = 'Truck Number';
+$lang['enter_truck_no'] = 'Enter Truck Number';
+$lang['e_way_bill_needed'] = 'Is E-Way Bill Needed?';
+$lang['yes'] = 'Yes';
+$lang['no'] = 'No';
+$lang['driver_details'] = 'Driver Details';
+$lang['driver_name'] = 'Driver Name';
+$lang['enter_driver_name'] = 'Enter Driver Name';
+$lang['mobile_no'] = 'Mobile Number';
+$lang['enter_mobile_no'] = 'Enter Mobile Number';
+$lang['owner_name'] = 'Owner Name';
+$lang['enter_owner_name'] = 'Enter Owner Name';
+$lang['owner_no'] = 'Owner Mobile No';
+$lang['sending_status'] = 'Sending Status';
+$lang['enclosed'] = 'Enclosed';
+$lang['being_send_by_post'] = 'Being Sent by Post';
+$lang['testing_date'] = 'Testing Date';
+$lang['grade'] = 'Grade';
+$lang['submit'] = 'Submit';
+
+$lang['month_of_production'] = 'Month of Production';
+$lang['lot_no'] = 'Lot No';
+$lang['batch_no'] = 'Batch No';
+$lang['packing_size'] = 'Packing Size';
+$lang['no_of_bags'] = 'No. of Bags';
+$lang['quantity_in_mt'] = 'Quantity in MT';
+$lang['rate_per_mt'] = 'Rate per MT';
+$lang['select_tax_type'] = 'Select Tax Type';
+$lang['tax'] = 'Tax';
+$lang['tax_amount'] = 'Tax Amount';
+$lang['total'] = 'Total';
+$lang['action_button'] = 'Action';
+$lang['transportation'] = 'Transportation';
+$lang['to_pay'] = 'To Pay';
+$lang['paid'] = 'Paid';
+$lang['total_rate'] = 'Total Rate';
+$lang['total_amount'] = 'Total Amount';
+$lang['round_off'] = 'Round Off';
+$lang['grand_total'] = 'Grand Total';
+$lang['transporter_details'] = 'Transporter Details';
+$lang['select_transporter_name'] = 'Select Transporter Name';
+$lang['transport_id'] = 'Transporter ID';
+$lang['enter_transporter_id'] = 'Enter Transporter ID';
+
+$lang['maintenance_start'] = 'Maintenance Start Date & Time';
+$lang['maintenance_stop'] = 'Maintenance Stop Date & Time';
+$lang['machine_down_time'] = 'Machine Down Time (Hrs.)';
+$lang['total_time'] = 'Total Time';
+$lang['type_of_maintenance'] = 'Type of Maintenance';
+$lang['maintenance'] = 'Maintenance';
+$lang['details_of_maintenance'] = 'Details of Maintenance';
+$lang['parts_replaced'] = 'Parts Replaced';
+$lang['enter_parts_replaced'] = 'Enter parts replaced';
+$lang['machine_start_datetime'] = 'Machine Start Date & Start Time';
+$lang['machine_stop_datetime'] = 'Machine Stop Date & Stop Time';
+$lang['tailing_percent'] = 'Tailing %';
+$lang['mill_rpm'] = 'Mill RPM';
+$lang['mill_amp'] = 'Mill AMP';
+$lang['blower_hrz'] = 'Blower HRZ';
+$lang['blower_amp'] = 'Blower AMP';
+$lang['screw_rpw'] = 'Screw RPW';
+$lang['air_washer_rpm'] = 'Air Washer RPM';
+
 
 // SCM module masters master categories
 $lang['scm_module'] = 'SCM Module';
@@ -362,6 +531,9 @@ $lang['action'] = 'Action';
 $lang['showing_entries'] = 'Showing 1 to 10 of 48 entries';
 $lang['previous'] = 'Previous';
 $lang['next'] = 'Next';
+$lang['quantity'] = 'Quantity';
+$lang['unit'] = 'Unit';
+$lang['description'] = 'Description';
 
 // packing material
 $lang['packing material'] = 'Packing Material';
@@ -959,11 +1131,14 @@ $lang['branch_address'] = 'Branch Address';
 $lang['enter_branch_address'] = 'Enter Branch Address';
 $lang['ifsc'] = 'IFSC Code';
 $lang['enter_ifsc'] = 'Enter IFSC';
+$lang['edit_service_provider'] = 'Edit Service Provider';
 $lang['account_number'] = 'Account Number';
 $lang['enter_account_number'] = 'Enter Account Number';
 $lang['date_of_approval'] = 'Date of Approval';
 $lang['next_evaluation_date'] = 'Next Evaluation Date';
-
+$lang['delete_service_provider_confirm'] = 'Are you sure you want to delete the service provider?';
+$lang['service_provider_account_details'] = 'Service Provider Account Details';
+$lang['service_provider_personal_details'] = 'Service Provider Personal Details';
 // suppliers - View List
 $lang['suppliers_list'] = 'Suppliers List';
 $lang['supplier_category'] = 'Supplier Category';
@@ -1025,6 +1200,10 @@ $lang['raw_material'] = 'Raw Material';
 $lang['grade'] = 'Grade';
 $lang['rm_code'] = 'RM Code';
 $lang['action'] = 'Action';
+$lang['tan_no'] = 'TAN Number';
+$lang['suppliers_account_details'] = 'Supplier Account Details';
+$lang['branch'] = 'Branch';
+$lang['mobile_number'] = 'Mobile Number';
 
 $lang['previous'] = 'Previous';
 $lang['next'] = 'Next';
@@ -1043,8 +1222,27 @@ $lang['showing_entries'] = 'Showing 1 to 10 of 23 entries';
 // $lang['rm_kaloda_1st'] = 'Kaloda 1st (MMK1)';
 
 // purchase order add
+$lang['authorised_signatory'] = 'Authorised Signatory';
 $lang['pending_requisition_slips'] = 'Pending Requisition Slips for Purchase Order';
-
+$lang['mineral_name'] = 'Mineral Name';
+$lang['user_name_sign'] = 'User (Name & Sign)';
+$lang['store_incharge_sign'] = 'Store Incharge (Name & Sign)';
+$lang['request_to_indent'] = 'Request to Indent for Purchase';
+$lang['store_dept_sign_date'] = 'Store Dept. (Sign & Date)';
+$lang['purchase_dept_sign_date'] = 'Purchase Dept. (Sign & Date)';
+$lang['authorized_by_sign_date'] = 'Authorized By (Sign & Date)';
+$lang['grade_name'] = 'Grade Name';
+$lang['lot_no'] = 'Lot Number';
+$lang['batch_no'] = 'Batch Number';
+$lang['equipment_name'] = 'Equipment Name';
+$lang['purpose'] = 'Purpose';
+$lang['comment'] = 'Comment';
+$lang['requisition_no'] = 'Requisition No';
+$lang['requisition_date'] = 'Requisition Date';
+$lang['request_by'] = 'Requested By';
+$lang['status'] = 'Status';
+$lang['action_date'] = 'Action Date';
+$lang['action_by'] = 'Action By';
 $lang['sr_no'] = 'Sr. No';
 $lang['requisition_no'] = 'Requisition No';
 $lang['requisition_date'] = 'Requisition Date';
@@ -1055,9 +1253,9 @@ $lang['action_by_name'] = 'Approved By';
 $lang['action_button'] = 'Action Button';
 
 // Statuses
-// $lang['approved'] = 'Approved';
-// $lang['pending'] = 'Pending';
-// $lang['rejected'] = 'Rejected';
+$lang['approved'] = 'Approved';
+$lang['pending'] = 'Pending';
+$lang['rejected'] = 'Rejected';
 
 // purchase order list
 $lang['purchase_order_list'] = 'Purchase Order List';
@@ -1133,7 +1331,9 @@ $lang['upto_date'] = 'Upto Date';
 $lang['show_entries'] = 'Show Entries';
 $lang['search'] = 'Search';
 $lang['sr_no'] = 'Sr. No';
-$lang['invoice_no'] = 'Invoice No';
+$lang['invoice_no'] = 'Invoice No';$lang['enter_invoice_no'] = 'Enter Invoice Number';
+$lang['enter_po_no'] = 'Enter PO Number';
+
 $lang['invoice_date'] = 'Invoice Date';
 $lang['vendor_code'] = 'Vendor Code';
 $lang['grand_total'] = 'Grand Total';
@@ -1156,6 +1356,95 @@ $lang['approval_category_label'] = 'Approval Category';
 // customer report
 $lang['customers_report'] = 'Customer Report';
 $lang['customer_name'] = 'Customer Name';
+$lang['destination'] = 'Destination';
+$lang['enter_destination_here'] = 'Enter Destination Here';
+
+$lang['buyer_item_code'] = 'Buyer Item Code';
+$lang['enter_buyer_item_code'] = 'Enter Buyer Item Code';
+$lang['transporter_regi'] = 'Transporter Registration';
+$lang['transporter_type'] = 'Transporter Type';
+$lang['vendor'] = 'Vendor';
+$lang['gst_no'] = 'GST Number';
+$lang['pan_no'] = 'PAN Number';
+$lang['vehicle_owner_name'] = 'Vehicle Owner Name';
+$lang['owner_mobile_no'] = 'Owner Mobile Number';
+$lang['driver_name'] = 'Driver Name';
+$lang['driver_mobile_no'] = 'Driver Mobile Number';
+$lang['license_no'] = 'License Number';
+$lang['aadhar_card_no'] = 'Aadhaar Card Number';
+$lang['vehicle_no'] = 'Vehicle Number';
+$lang['state'] = 'State';
+$lang['city'] = 'City';
+$lang['pin_code'] = 'PIN Code';
+$lang['shipping_address'] = 'Shipping Address';
+$lang['status'] = 'Status';
+$lang['remarks'] = 'Remarks';
+$lang['submit'] = 'Submit';
+$lang['reset'] = 'Reset';
+$lang['cancel'] = 'Cancel';
+$lang['transporter_type_placeholder'] = 'Please select transporter type';
+$lang['vendor_placeholder'] = 'Please select vendor';
+$lang['vehicle_no_placeholder'] = 'Please enter vehicle number';
+$lang['owner_name_placeholder'] = 'Please enter vehicle owner name';
+$lang['owner_mobile_placeholder'] = 'Please enter owner mobile number';
+$lang['driver_name_placeholder'] = 'Please enter driver name';
+$lang['driver_mobile_placeholder'] = 'Please enter driver mobile number';
+$lang['license_no_placeholder'] = 'Please enter license number';
+$lang['aadhar_no_placeholder'] = 'Please enter Aadhaar number';
+$lang['state_placeholder'] = 'Please select state';
+$lang['city_placeholder'] = 'Please enter city';
+$lang['pincode_placeholder'] = 'Please enter PIN code';
+$lang['shipping_address_placeholder'] = 'Please enter shipping address';
+
+$lang['purchase_order'] = 'PURCHASE ORDER';
+$lang['company_details'] = 'Company Details';
+$lang['gstin'] = 'GSTIN';
+$lang['pan'] = 'PAN';
+$lang['address'] = 'Address';
+$lang['to'] = 'To';
+$lang['po_number'] = 'PO Number';
+$lang['approve'] = 'Approve';
+$lang['requisition_slip'] = 'Requisition Slip';
+$lang['comment'] = 'Comment';
+$lang['enter_reason_here'] = 'Enter reason here';
+$lang['submit'] = 'Submit';
+$lang['dated'] = 'Dated';
+$lang['are_you_sure_you_want_to'] = 'Are you sure you want to';
+$lang['approve'] = 'Approve';
+$lang['vendor_code'] = 'Vendor Code';
+$lang['contact_person'] = 'Contact Person';
+$lang['contact_no'] = 'Contact No';
+$lang['email_id'] = 'Email Id';
+$lang['reference'] = 'Reference';
+$lang['please_supply'] = 'Please supply following items as per our Telecom/ Previous Supply/ Your Ref. At the earliest:';
+$lang['material_requisition_slip'] = 'Material Requisition Slip';
+$lang['requisition_slip_print_view'] = 'Requisition Slip Print View';
+$lang['material_description'] = 'Material Description';
+$lang['quantity'] = 'Quantity';
+$lang['item_price'] = 'Item Price';
+$lang['total_amount'] = 'Total Amount';
+$lang['total'] = 'Total';
+$lang['less_discount'] = 'Less Discount';
+$lang['gst'] = 'GST';
+$lang['grand_total'] = 'Grand Total';
+$lang['amount_in_words'] = 'Amount In Words';
+$lang['terms'] = 'Terms and Conditions';
+$lang['term_payment'] = 'Payment Terms';
+$lang['term_delivery'] = 'Delivery Schedule';
+$lang['term_billing'] = 'Billing Should be raised in the name of M/S CHOUDHARY & COMPANY.';
+$lang['term_po_note'] = 'Please Indicate PO Number on the Challan & Invoice.';
+$lang['prepared_by'] = 'Prepared By';
+$lang['checked_by'] = 'Checked By';
+$lang['approved_by'] = 'Approved By';
+$lang['purchase_dept'] = 'Purchase Dept.';
+$lang['accounts_dept'] = 'Accounts Dept.';
+$lang['director'] = 'Director';
+
+$lang['vender_service_tax_no'] = 'Vendor Service Tax No';
+$lang['edit_invoice'] = 'Edit Invoice';
+$lang['vendor'] = 'Vendor';
+$lang['vehicle_no'] = 'Vehicle Number';
+$lang['driver_name'] = 'Driver Name';
 $lang['from_date'] = 'From Date';
 $lang['upto_date'] = 'Upto Date';
 $lang['name'] = 'Name';
@@ -1164,8 +1453,24 @@ $lang['contact_person'] = 'Contact Person';
 $lang['email'] = 'Email';
 $lang['mobile_no'] = 'Mobile Number';
 $lang['website'] = 'Website';
-$lang['shipping_address'] = 'Shipping Address';
+$lang['shipping_address1'] = 'Shipping Address 1';
+$lang['enter_shipping_address1'] = 'Enter Shipping Address 1';
 
+$lang['shipping_address2'] = 'Shipping Address 2';
+$lang['enter_shipping_address2'] = 'Enter Shipping Address 2';
+
+$lang['loc'] = 'Location';
+$lang['enter_location'] = 'Enter Location';
+
+$lang['enter_state_code'] = 'Enter State Code';
+$lang['enter_distance'] = 'Enter Distance';
+
+$lang['enter_transporter_id'] = 'Enter Transporter ID';
+
+$lang['shipping_address'] = 'Shipping Address';
+$lang['shipping_details'] = 'Shipping Details';
+$lang['shipping_address1'] = 'Shipping Address 1';
+$lang['shipping_address2'] = 'Shipping Address 2';
 // requisition
 $lang['requisition_report'] = 'Requisition Report';
 $lang['employee_name'] = 'Employee Name';
@@ -1194,6 +1499,7 @@ $lang['invoice_no'] = 'Invoice No';
 $lang['date'] = 'Date';
 $lang['total_qty'] = 'Total Quantity';
 $lang['action_button'] = 'Action Button';
+$lang['suppliers_personal_detail'] = 'Supplier Personal Details';
 
 // current stock report
 $lang['current_stock_report'] = 'Current Stock Report';
@@ -1269,8 +1575,41 @@ $lang['enter_contact_person'] = 'Enter Contact Person';
 $lang['email'] = 'Email';
 $lang['enter_email'] = 'Enter Email';
 $lang['mobile'] = 'Mobile';
+$lang['enter_month'] = 'Enter Month';
+$lang['enter_rate'] = 'Enter Rate';
+$lang['laboratory_test_report_no'] = 'Laboratory Test Report No';
+$lang['enter_test_report_no'] = 'Enter Test Report Number';
+$lang['transporter_details'] = 'Transporter Details';
+$lang['select_transporter_name'] = 'Select Transporter Name';
+$lang['transport_id'] = 'Transporter ID';
+$lang['enter_transporter_id'] = 'Enter Transporter ID';
+$lang['transdoc_no'] = 'TransDoc No.';
+$lang['gr_no'] = 'GR No.';
+$lang['enter_gr_no'] = 'Enter GR No.';
+$lang['e_invoice_status'] = 'E-Invoice Status';
+$lang['pending_requisition_slips_for_purchase_order'] = 'Pending Requisition Slips for Purchase Order';
+$lang['import_file'] = 'Import File';
+$lang['service_provider_evaluation_results'] = 'Service Provider Evaluation Results';
+$lang['pending_purchase_order_for_approval'] = 'Pending Purchase Orders for Approval';
+$lang['pending_requisition_slips_for_action'] = 'Pending Requisition Slips for Action';
+$lang['billing_address_1'] = 'Billing Address 1';
+$lang['laboratory_test_details'] = 'Laboratory Test Details';
+$lang['billing_address_2'] = 'Billing Address 2';
+$lang['enter_billing_address'] = 'Enter Billing Address';
 $lang['enter_mobile'] = 'Enter Mobile Number';
+$lang['pincode'] = 'Pincode';
+$lang['gst_registration_status'] = 'GST Registration Status';
+$lang['unregistered_dealer'] = 'Un-registered Dealer/Person';
+$lang['gstin_urp'] = 'GSTIN/URP';
+$lang['enter_pan_number'] = 'Enter PAN Number';
 $lang['alternate_number'] = 'Alternate Number';
+$lang['payment_terms'] = 'Payment Terms';
+$lang['enter_payment_terms'] = 'Enter Payment Terms';
+$lang['buyer_item_code'] = 'Buyer Item Code';
+$lang['destination'] = 'Destination';
+$lang['enter_destination_here'] = 'Enter Destination';
+$lang['is_shipping_address_different'] = 'Is Shipping Address Different From Billing Address?';
+$lang['shipping_details'] = 'Shipping Details';
 $lang['enter_alternate_number'] = 'Enter Alternate Number';
 $lang['website'] = 'Website';
 $lang['enter_website'] = 'Enter Website';
@@ -1293,6 +1632,16 @@ $lang['ifsc_code'] = 'IFSC Code';
 $lang['account_number'] = 'Account Number';
 $lang['date_of_approval'] = 'Date of Approval';
 $lang['date_of_next_evaluation'] = 'Date of Next Evaluation';
+$lang['reject_purchase_order_confirm'] = 'Are you sure, you want to <b style="color:#dc7629;">Reject</b> Purchase Order <b>%s</b>?';
+$lang['enter_reason_here'] = 'Enter Reason here';
+$lang['close'] = 'Close';
+$lang['equipment_name'] = 'Equipment Name';
+$lang['price'] = 'Price';
+$lang['amount'] = 'Amount';
+$lang['payment_mode'] = 'Payment Mode';
+$lang['reference_by'] = 'Reference By';
+$lang['quotation_no'] = 'Quotation No';
+$lang['to'] = 'To';
 
 // list
 $lang['transporters_list'] = 'Transporters List';
@@ -1596,6 +1945,117 @@ $lang['payment_terms'] = 'Payment Terms';
 $lang['buyer_item_code'] = 'Buyer Item Code';
 $lang['destination'] = 'Destination';
 $lang['shipping_address_diff'] = 'Is shipping address different from billing address?';
+$lang['address_2'] = 'Address 2';
+$lang['name_of_supplier'] = 'Name of Supplier';
+$lang['active'] = 'Active';
+$lang['de_active'] = 'De-active';
+$lang['update_finish_good'] = "Update Finish Good";
+$lang['finish_good_code'] = "Finish Good Code";
+$lang['grade_name'] = "Grade Name";
+$lang['mineral_name'] = "Mineral Name";
+$lang['hsn_code'] = "HSN CODE";
+$lang['packing'] = "Packing";
+$lang['packing_type'] = "Packing Type";
+$lang['opening_stock_qty_mt'] = "Opening Stock Qty (In MT)";
+$lang['opening_stock_qty'] = "Opening Stock Qty ";
+$lang['enter_opening_stock_qty'] = "Enter Opening Stock Qty";
+$lang['green_plant_chemicals_list'] = "Green Plant Chemicals List";
+$lang['protective_equipments_list'] = "Protective Equipments List";
+$lang['legal_name'] = "Legal Name";
+$lang['enter_legal_name'] = "Enter Legal Name";
+$lang['date_of_next_evaluation'] = "Date of Next Evaluation";
+$lang['account_number'] = "Account Number";
+$lang['enter_account_no'] = "Enter Account No";
+$lang['enter_pan'] = "Enter PAN";
+$lang['enter_tan'] = "Enter TAN";
+$lang['po_number'] = "PO Number";
+$lang['dated'] = "Dated";
+$lang['vendor_code'] = "Vendor Code";
+$lang['contact_person'] = "Contact Person";
+$lang['contact_no'] = "Contact No";
+$lang['email_id'] = "Email ID";
+$lang['reference'] = "Reference";
+$lang['please_supply_items_note'] = "Please supply following items as per our Telecom/ Previous Supply/ Your Ref. At the earliest:";
+$lang['item_price'] = "Item Price";
+$lang['total_amount'] = "Total Amount";
+$lang['less_discount'] = "Less Discount";
+$lang['gst'] = "GST";
+$lang['grand_total'] = "Grand Total";
+$lang['amount_in_words'] = "Amount In Words";
+$lang['terms_conditions'] = "Terms and Conditions";
+$lang['payment_terms'] = "Payment Terms";
+$lang['delivery_schedule'] = "Delivery Schedule";
+$lang['billing_note'] = "Billing should be raised in the name of M/S CHOUDHARY & COMPANY.";
+$lang['po_on_invoice'] = "Please Indicate PO Number on the Challan & Invoice.";
+$lang['prepared_by'] = "Prepared By";
+$lang['checked_by'] = "Checked By";
+$lang['approved_by'] = "Approved By";
+$lang['create_purchase_order'] = "Create Purchase Order";
+$lang['supplier_name'] = "Supplier Name";
+$lang['department'] = "Department";
+$lang['po_date'] = "PO Date";
+$lang['delivery_date'] = "Delivery Date";
+$lang['item_details'] = "Item Details";
+$lang['submit'] = "Submit";
+$lang['quotation_no'] = "Quotation Number";
+$lang['enter_quotation_no'] = "Enter quotation number";
+$lang['quotation_date'] = "Quotation Date";
+$lang['select_quotation_date'] = "Select quotation date";
+$lang['material_description'] = "Material Description";
+$lang['requisition_qty'] = "Requisition Qty";
+$lang['order_qty'] = "Order Qty";
+$lang['pending_qty'] = "Pending Qty";
+$lang['item_rate'] = "Item Rate";
+$lang['edit_gir_register'] = "Edit GIR Register";
+$lang['product_name'] = "Product Name";
+$lang['material_received_throught'] = "Material Received Through";
+$lang['enter_source'] = "Enter Source";
+
+$lang['create_purchase_order'] = "Create Purchase Order";
+$lang['date'] = "Date";
+$lang['name_of_supplier'] = "Name of Supplier";
+$lang['po_number'] = "PO Number";
+$lang['enter_po_number'] = "Enter PO Number";
+$lang['quotation_no'] = "Quotation No.";
+$lang['enter_quotation_no'] = "Enter Quotation Number";
+$lang['quotation_date'] = "Quotation Date";
+$lang['comment'] = "Comment";
+$lang['enter_comment'] = "Enter Comment";
+$lang['sr_no'] = "Sr. No.";
+$lang['material_description'] = "Material Description";
+$lang['requisition_qty'] = "Requisition Qty";
+$lang['order_qty'] = "Order Qty";
+$lang['pending_qty'] = "Pending Qty";
+$lang['item_rate'] = "Item Rate";
+$lang['total_amount'] = "Total Amount";
+$lang['action'] = "Action";
+$lang['qty'] = "Qty";
+$lang['enter_qty'] = "Enter Qty";
+$lang['pending'] = "Pending";
+$lang['enter_rate'] = "Enter Rate";
+$lang['total'] = "Total";
+$lang['total_qty'] = "Total Qty";
+$lang['total_rate'] = "Total Rate";
+$lang['discount'] = "Discount";
+$lang['rupees'] = "Rupees";
+$lang['percentage'] = "Percentage";
+$lang['amount_after_discount'] = "Amount After Discount";
+$lang['gst'] = "GST";
+$lang['enter_tax_percent'] = "Enter Tax %";
+$lang['enter_tax_amount'] = "Enter Tax Amount";
+$lang['amount_included_tax'] = "Amount including Tax";
+$lang['grand_total'] = "Grand Total";
+$lang['vendor_reference'] = "Vendor Reference";
+$lang['enter_reference'] = "Enter Reference";
+$lang['delivery_period'] = "Delivery Period";
+$lang['enter_delivery_schedule'] = "Enter Delivery Schedule";
+$lang['payment_terms'] = "Payment Terms";
+$lang['enter_payment_terms'] = "Ex. Cash, Cheque";
+$lang['freight_status'] = "Freight Status";
+$lang['paid'] = "Paid";
+$lang['to_pay'] = "To Pay";
+$lang['submit'] = "Submit";
+$lang['no_result'] = "No Result Found";
 
 // customer viewlist
 $lang['customers_list'] = 'Customers List';
@@ -1805,6 +2265,23 @@ $lang['total_qty'] = 'Total Quantity';
 $lang['purpose'] = 'Purpose';
 $lang['enter_purpose'] = 'Enter Purpose';
 $lang['submit'] = 'Submit';
+$lang['create_issue_slip'] = "Create Issue Slip";
+$lang['requisition_date'] = "Requisition Date";
+$lang['issue_date'] = "Issue Date";
+$lang['issue_slip_no'] = "Issue Slip No";
+$lang['issue_to_employee'] = "Issue To (Employee Name)";
+$lang['employee_department'] = "Employee Department";
+$lang['requisition_slip_no'] = "Requisition Slip No";
+$lang['material_description'] = "Material Description";
+$lang['stock_available'] = "Stock Available";
+$lang['required_qty'] = "Required Quantity";
+$lang['issue_qty'] = "Issue Quantity";
+$lang['pending_qty'] = "Pending Quantity";
+$lang['action'] = "Action";
+$lang['total'] = "Total";
+$lang['comment'] = "Comment";
+$lang['submit'] = "Submit";
+$lang['stock_unavailable'] = "Stock Un-Available";
 
 // Material Return Record – View List
 $lang['gir_register_list'] = 'GIR Register List';
@@ -1814,6 +2291,23 @@ $lang['material_return_register_number'] = 'Material Return Register Number *';
 $lang['from_date'] = 'From Date';
 $lang['upto_date'] = 'Upto Date';
 $lang['enter_date'] = 'dd-mm-yyyy';
+$lang['gir_register_category'] = "GIR Register Category";
+$lang['supplier_name'] = "Supplier Name";
+$lang['gir_no'] = "GIR Number";
+$lang['date'] = "Date";
+$lang['challan_no'] = "Challan Number";
+$lang['weight_slip_no'] = "Weight Slip Number";
+$lang['actual_weight'] = "Actual Weight";
+$lang['documented_weight'] = "Documented Weight";
+$lang['weight'] = "Weight";
+$lang['truck_number'] = "Truck Number";
+$lang['payment'] = "Payment";
+$lang['material_received_throught'] = "Material Received Through";
+
+$lang['product_name'] = "Product Name";
+$lang['qty'] = "Quantity";
+$lang['unit'] = "Unit";
+$lang['description'] = "Description";
 
 $lang['show'] = 'Show';
 $lang['entries'] = 'Entries';
@@ -2730,6 +3224,9 @@ $lang['criteria_name'] = 'Criteria Name';
 $lang['criteria_point'] = 'Criteria Points';
 $lang['self_review'] = 'Self Review';
 $lang['author_review'] = 'Authorized Review';
+$lang['employee_id'] = 'Employee ID';
+$lang['review_details'] = 'Review Details';
+
 
 // notification master
 // Notifications - English Translations
@@ -2755,6 +3252,10 @@ $lang['message_text'] = 'Message';
 $lang['department_name'] = 'Department';
 $lang['date_time'] = 'Date & Time';
 $lang['action'] = 'Action';
+$lang['read_recipients_report'] = 'Read Recipients Report';
+$lang['user'] = 'User';
+$lang['time'] = 'Time';
+
 
 // remainder master
 // All Reminders - English Translations
@@ -2769,6 +3270,11 @@ $lang['reminder_date'] = 'Reminder Date';
 $lang['reminder_time'] = 'Reminder Time';
 $lang['status'] = 'Status';
 $lang['action'] = 'Action';
+$lang['edit_reminder'] = 'Edit Reminder';
+$lang['snooze'] = 'Snooze';
+$lang['select_date'] = 'Select Date';
+
+
 
 // mo events
 // Office Events - English Translations
@@ -2861,6 +3367,11 @@ $lang['show'] = 'Show';
 $lang['entries'] = 'Entries';
 $lang['search'] = 'Search';
 
+$lang['leave_action_page'] = 'Leave Action Page';
+$lang['leave_status_info'] = 'Leave Status (Take any action on leave)';
+$lang['leave_application'] = 'Leave Application';
+
+
 $lang['sr_no'] = 'Sr. No.';
 $lang['title'] = 'Title';
 $lang['action'] = 'Action';
@@ -2935,6 +3446,21 @@ $lang['action'] = 'Action';
 
 $lang['export'] = 'Export';
 $lang['apply_for_leave'] = 'Apply for Leave';
+$lang['todays_date'] = "Today's Date";
+$lang['leave_reason'] = "Leave Reason";
+$lang['leave_type'] = "Leave Type";
+$lang['leave_category'] = "Leave Category";
+$lang['from_date'] = "From Date";
+$lang['upto_date'] = "Upto Date";
+$lang['total_days'] = "Total Days";
+$lang['message'] = "Message";
+$lang['enter'] = "Enter";
+$lang['full'] = "Full";
+$lang['half'] = "Half";
+$lang['gatepass'] = "Gatepass";
+$lang['enter_reason'] = "Enter Reason";
+$lang['apply'] = 'Apply';
+
 // daily tasks project
 $lang['daily_task_master'] = 'Daily Task Master';
 $lang['project_name'] = 'Project Name';
@@ -2981,6 +3507,22 @@ $lang['status'] = 'Status';
 $lang['assign_to'] = 'Assigned To';
 $lang['assign_by'] = 'Assigned By';
 $lang['action'] = 'Action';
+$lang['create'] = 'Create';
+$lang['update_task'] = 'Update Task';
+$lang['task_history_description'] = 'Task History Description';
+
+$lang['reference'] = 'Reference';
+$lang['reference_name'] = 'Reference Name';
+$lang['write_your_reply'] = 'Write Your Reply';
+$lang['time_taken'] = 'Time Taken (In Hours)';
+$lang['how_much_time_take'] = 'How Much Time Take';
+$lang['submit_your_answer'] = 'Submit Your Answer';
+$lang['follow_up'] = 'Follow Up';
+$lang['document'] = 'Document';
+$lang['followup_time'] = 'Followup Time';
+$lang['delete_task_history_confirm'] = 'Are you sure, you want to delete this task history?';
+$lang['confirm_header'] = 'Confirm';
+
 
 // payroll module attendance list
 $lang['attendance_list'] = 'Attendance List';
@@ -3005,6 +3547,22 @@ $lang['other_cuts'] = 'Other Deductions';
 $lang['ecs'] = 'ECS';
 $lang['total_salary'] = 'Total Salary';
 $lang['action'] = 'Action';
+$lang['calculate']='calculate';
+
+$lang['add_attendance'] = 'Add Attendance';
+$lang['attendance_date'] = 'Attendance Date';
+$lang['employee'] = 'Employee';
+$lang['check_in'] = 'Check In';
+$lang['check_out'] = 'Check Out';
+$lang['close'] = 'Close';
+$lang['attendance_details_for'] = 'Attendance Details for';
+$lang['update_attendance'] = 'Update Attendance';
+$lang['edit_attendance'] = 'Edit Attendance';
+$lang['delete_salary_record_confirm'] = 'Are you sure, you want to delete Salary Record of ?';
+$lang['cancel'] = 'Cancel';
+$lang['download'] = 'Download';
+
+
 
 // workers add
 $lang['add_new_worker'] = 'Add New Worker';
@@ -3032,6 +3590,8 @@ $lang['report_number'] = 'Report Number';
 $lang['enter_report_number'] = 'Enter Report Number';
 $lang['address'] = 'Address';
 $lang['enter_address'] = 'Enter Address';
+$lang['delete_worker_confirm'] = 'Are you sure, you want to delete worker?';
+
 
 //workers view list
 $lang['workers_list'] = 'Workers List';
@@ -3139,11 +3699,56 @@ $lang['current_stock_report'] = 'Current Stock Report';
 $lang['gir_registers'] = 'GIR Registers';
 $lang['general_gir'] = 'General GIR';
 $lang['rm_challan_inward'] = 'RM Challan Inward';
+$lang['issue_slip_no'] = "Issue Slip No";
+$lang['issue_to'] = "Issue To";
+$lang['enter_comment_here'] = "Enter comment here";
+$lang['requisition_slip'] = "Requisition Slip";
+$lang['delete_transporter_confirm'] = "Are you sure, you want to delete transporter?";
+$lang['material_return_register'] = "Material Return Register";
+$lang['details'] = "Details";
+$lang['item_name'] = "Item Name";
+$lang['out_qty'] = "Out Qty";
+$lang['description'] = "Description";
+$lang['gir_register'] = "GIR Register";
+
 
 // Issue Slips
 $lang['issue_slips'] = 'Issue Slips';
 $lang['add'] = 'Add';
 $lang['view_list'] = 'View List';
+$lang['material_return_record_profile'] = "Material Return Record Profile";
+$lang['company_details'] = "Company Details";
+$lang['address'] = "Address";
+$lang['material_return_register'] = "Material Return Register";
+$lang['gir_register_category'] = "Gir Register Category";
+$lang['supplier_name'] = "Supplier Name";
+$lang['register_number'] = "Register Number";
+$lang['date'] = "Date";
+$lang['gate_pass_number'] = "Gate Pass Number";
+$lang['tentative_return_date'] = "Tentative Return Date";
+$lang['s_no'] = "S.No.";
+$lang['product_name'] = "Product Name";
+$lang['quantity'] = "Quantity";
+$lang['unit'] = "Unit";
+$lang['description'] = "Description";
+$lang['total'] = "Total";
+$lang['declaration'] = "Declaration";
+$lang['declaration_text'] = "We declare that this copy shows the actual information of this supplier and that all particulars are true and correct to the best of our knowledge.";
+$lang['for'] = "For";
+$lang['authorised_signatory'] = "Authorised Signatory";
+$lang['all_rights_reserved'] = "All rights reserved.";
+$lang['print'] = 'Print';
+$lang['company_name'] = 'Choudhary & Company';
+$lang['address'] = 'Address';
+$lang['company_address'] = 'B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.';
+$lang['edit_requisition_slip'] = 'Edit Requisition Slip';
+$lang['weight_slip_no'] = 'Weight Slip No';
+$lang['actual_weight'] = 'Actual Weight';
+$lang['documented_weight'] = 'Documented Weight';
+$lang['weight'] = 'Weight';
+$lang['truck_number'] = 'Truck Number';
+$lang['payment'] = 'Payment';
+$lang['material_received_from'] = 'Material Received From';
 
 // Transporter
 $lang['transporter'] = 'Transporter';
@@ -3238,12 +3843,32 @@ $lang['view_list'] = 'View List';
 $lang['daily_tailing_records'] = 'Daily Tailing Records';
 $lang['add'] = 'Add';
 $lang['view_list'] = 'View List';
-
+$lang['create_new_material_code'] = 'Create New Material Code';
+$lang['create_new_material_code'] = 'Create New Raw Material Code';
 // Production Reports
 $lang['production_reports'] = 'Production Reports';
 $lang['daily_stack_report'] = 'Daily Stack Report';
 $lang['production_register_report'] = 'Production Register Report';
 $lang['daily_stitching_report'] = 'Daily Stitching Report';
+$lang['discount'] = 'Discount';
+$lang['rupees'] = 'Rupees';
+$lang['percentage'] = 'Percentage';
+$lang['enter_discount'] = 'Enter Discount';
+$lang['after_discount'] = 'After Discount';
+$lang['gst'] = 'GST';
+$lang['enter_tax_percent'] = 'Enter Tax %';
+$lang['enter_tax'] = 'Enter Tax';
+$lang['amount_with_tax'] = 'Amount with Tax';
+$lang['grand_total'] = 'Grand Total';
+$lang['vendor_reference'] = 'Vendor Reference';
+$lang['enter_reference'] = 'Enter Reference';
+$lang['delivery_period'] = 'Delivery Period';
+$lang['enter_delivery_schedule'] = 'Enter Delivery Schedule';
+$lang['payment_terms'] = 'Payment Terms';
+$lang['example_cash_cheque'] = 'Ex. Cash, Cheque';
+$lang['freight_status'] = 'Freight Status';
+$lang['paid'] = 'Paid';
+$lang['to_pay'] = 'To Pay';
 
 // PEA Module
 $lang['pea_module'] = 'PEA Module';
@@ -3335,3 +3960,4 @@ $lang['customize_theme'] = 'Customize Theme';
 $lang['primary_theme_color'] = 'Primary Theme Color';
 $lang['navbar_color'] = 'Navbar Color';
 $lang['secondary_theme_color'] = 'Secondary Theme Color';
+$lang['home'] ='Home';

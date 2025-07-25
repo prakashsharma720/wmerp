@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -24,14 +24,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
 <div class="container-fluid">
   <div class="card card-primary card-outline">
     <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
+      <span class="card-title"><?= $this->lang->line('rm_inward_challan_list') ?>
       </span>
        <div class="button-group float-right">
 
@@ -49,13 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> GIR No </th>
-              <th> Invoice/Challan No </th>
-			         <th> Supplier Name </th>
-              <th style="white-space: nowrap;"> Date </th>
-              <th style="white-space: nowrap;">Total Qty</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th ><?=$this ->lang->line('sr_no')?></th>
+              <th> <?=$this ->lang->line('gir_no')?> </th>
+              <th><?=$this ->lang->line('invoice_no')?> </th>
+			         <th> <?=$this ->lang->line('supplier_name')?> </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang->line('date')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang->line('total_qty')?></th>
+              <th style="white-space: nowrap;width: 20%;"><?=$this ->lang->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">GIR Register (<?php echo $obj['gir_no']?>) Details </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('gir_register') ?> (<?php echo $obj['gir_no']?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -93,9 +93,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   margin-bottom: 6px; font-weight: 500;" >
                                                              
                                 <div class="col-md-1">#</div>
-                                <div class="col-md-3">Item Name</div>
-                                <div class="col-md-3">Qty </div>
-                                <div class="col-md-5">Description </div>
+                                <div class="col-md-3"><?=$this ->lang->line('item_name')?></div>
+                                <div class="col-md-3"><?=$this ->lang->line('qty')?> </div>
+                                <div class="col-md-5"><?=$this ->lang->line('description')?> </div>
                               </div>
 
                                     <?php
@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         ?>
                                   </span>
                               </div><div class="col-md-6">
-                                <label class="control-label"> Comment : </label>
+                                <label class="control-label"> <?= $this->lang->line('comment') ?> : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['comments']; 
@@ -134,7 +134,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                           </div>
                         </div>
                       </div>
@@ -146,16 +146,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?=$this ->lang->line('confirm_header')?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete GIR <b><?php echo $obj['gir_no'];?> </b>? </p>
+                            <p><?= $this->lang->line('confirm_delete') ?> <?= $this->lang->line('gir') ?> <b><?php echo $obj['gir_no'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

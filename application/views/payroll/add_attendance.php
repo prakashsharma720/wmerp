@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title"> <?= $title ?></h3>
+                <h3 class="card-title"> <?= $this->lang->line('add_attendance') ?> </h3>
                 <div class="pull-right error_msg">
                     <?php echo validation_errors();?>
                     <?php if (isset($message_display)) {
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-4">
-                            <label class="control-label">Attendance Date</label>
+                            <label class="control-label"><?= $this->lang->line('attendance_date') ?> </label>
                             <input type="date" name="date" class="form-control dateInput">
 
                         </div>
@@ -30,11 +30,11 @@
                             <table width="100%" class="table table-bordered table-striped" id="sample_table1">
                                 <thead width="100%">
                                     <tr width="100%">
-                                        <th width="30%"> Employee </th>
-                                        <th width="20%"> Check In</th>
-                                        <th width="20%"> Check Out </th>
-                                        <th width="20%"> Status </th>
-                                        <th>Action</th>
+                                        <th width="30%"> <?= $this->lang->line('employee') ?>  </th>
+                                        <th width="20%"> <?= $this->lang->line('check_in') ?> </th>
+                                        <th width="20%"> <?= $this->lang->line('check_out') ?>  </th>
+                                        <th width="20%"> <?= $this->lang->line('status') ?>  </th>
+                                        <th><?= $this->lang->line('action') ?> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -57,7 +57,7 @@
                                         </td>
                                         <td>
                                             <select name="status[]" id="" class="form-control" required>
-                                                <option value="">Select</option>
+                                                <option value=""> <?= $this->lang->line('select') ?>  </option>
                                                 <option value="Present">Present</option>
                                                 <option value="Absent">Absent</option>
                                             </select>
@@ -72,7 +72,7 @@
                             </table>
                             <div class="col-md-12" width="100%">
                                 <button type="submit" class="btn btn-primary btn-block">
-                                    <b>Save</b>
+                                    <b> <?= $this->lang->line('save') ?>  </b>
                                 </button>
                             </div>
                         </div>

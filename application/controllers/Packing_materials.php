@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Packing_materials extends CI_Controller {
+Class Packing_materials extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -172,7 +172,7 @@ $this->load->model('categories_model');
 			  $data['units'] = $this->categories_model->getUnits();
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
-			$this->template->load('template','packing_material_view',$data);
+			$this->template->load('layout/template','packing_material_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');
@@ -304,7 +304,7 @@ $this->load->model('categories_model');
 		$data['packingmaterials']=$this->categories_model->pmList('2');
 		
 		//echo var_dump($data['students']);
-		$this->template->load('template','packing_material_report',$data);
+		$this->template->load('layout/template','packing_material_report',$data);
 	}
 	   function createXLS() {
   	  	

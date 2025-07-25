@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Broadcast extends CI_Controller {
+Class Broadcast extends MY_Controller {
 
   public function __construct() {
     parent::__construct();
@@ -69,7 +69,7 @@ endif;
     // echo "<pre>";print_r($data['broadcast']);exit;
 
  
-  $this->template->load('template','broadcast',$data);
+  $this->template->load('layout/template','broadcast',$data);
 }
 
   public function mark_as_read()

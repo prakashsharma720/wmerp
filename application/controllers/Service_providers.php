@@ -4,7 +4,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 //print_r(BASEPATH);exit;
-Class Service_providers extends CI_Controller {
+Class Service_providers extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -63,7 +63,7 @@ public function add($id = NULL) {
     $data['states']=$this->service_provider_model->getStates();
     $data['cities']=$this->service_provider_model->getCities();
     $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-	$this->template->load('template','service_provider_add',$data);
+	$this->template->load('layout/template','service_provider_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -111,7 +111,7 @@ public function add($id = NULL) {
 		}
 		$data['all_service_providers']=$this->service_provider_model->getAllSProviders();
 		$data['categories']=$this->service_provider_model->getCategories();
-		$this->template->load('template','service_provider_view',$data);
+		$this->template->load('layout/template','service_provider_view',$data);
 	
 	}
 	
@@ -135,7 +135,7 @@ public function add($id = NULL) {
 		$data['service_providers'] = $this->service_provider_model->service_provider_list();
 		}
 		//echo var_dump($data['students']);
-		$this->template->load('template','service_provider_report',$data);
+		$this->template->load('layout/template','service_provider_report',$data);
 	}
 	function createXLS() {
   	  	

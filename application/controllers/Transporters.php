@@ -4,7 +4,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 //print_r(BASEPATH);exit;
-Class Transporters extends CI_Controller {
+Class Transporters extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -76,7 +76,7 @@ public function add() {
     $data['categories']=$this->transporter_model->getCategories();
     $data['states']=$this->transporter_model->getStates();
 
-	$this->template->load('template','transporter_add',$data);
+	$this->template->load('layout/template','transporter/transporter_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -96,13 +96,28 @@ public function add() {
 		   {
 		 	$conditions['transporter_id']=$this->input->get('transporter_id');
 		 	$conditions['category_of_approval']=$this->input->get('category_of_approval');
-	       	$conditions['from_date']=date('Y-m-d',strtotime($this->input->get('from_date')));
-        	$conditions['upto_date']=date('Y-m-d',strtotime($this->input->get('upto_date')));
-			
-           $data['transporters'] = $this->transporter_model->transporter_list_by_filter($conditions);
+			if (!empty($this->input->get('upto_date'))) {
+				$conditions['upto_date'] = date('Y-m-d', strtotime($this->input->get('upto_date')));
+			} else {
+				$conditions['upto_date'] = "";
+			}
 
-		}else{
-		$data['transporters'] = $this->transporter_model->transporter_list();
+			if (!empty($this->input->get('from_date'))) {
+				$conditions['from_date'] = date('Y-m-d', strtotime($this->input->get('from_date')));
+			} else {
+				$conditions['from_date'] = "";
+			}
+           	$data['transporters'] = $this->transporter_model->transporter_list_by_filter($conditions);
+			$data['filtered_value'] = $conditions;
+			}
+		else{
+			// $conditions['login_id'] = $login_id;
+			$conditions['transporter_id'] = "";
+			$conditions['category_of_approval'] = "";
+			$conditions['upto_date'] ="";
+			$conditions['from_date'] = "";
+			$data['filtered_value'] = $conditions;
+			$data['transporters'] = $this->transporter_model->transporter_list();
 		}
 			$data['all_transporters']=$this->transporter_model->getAlltransporters();
 		    $data['categories']=$this->transporter_model->getCategories();
@@ -113,7 +128,7 @@ public function add() {
 			//$data['states']=$this->transporter_model->getStates();
 			//print_r($data['transporters']);exit;
 		
-			$this->template->load('template','transporter_view',$data);
+			$this->template->load('layout/template','transporter/transporter_view',$data);
 		}
 
 	public function index() 
@@ -125,7 +140,7 @@ public function add() {
 		$data['title'] = 'transporters Report';
 		$data['transporters'] = $this->transporter_model->transporter_list();
 		//echo var_dump($data['students']);
-		$this->template->load('template','transporter_report',$data);
+		$this->template->load('layout/template','transporter_report',$data);
 	}
 
 	public function add_new_transporter() {
@@ -174,7 +189,7 @@ public function add() {
 			//echo "hy";exit;
 			if(isset($this->session->userdata['logged_in'])){
 			$data['categories']=$this->transporter_model->getCategories();
-			$this->template->load('template','transporter_add',$data);
+			$this->template->load('layout/template','transporter_add',$data);
 			//$this->load->view('admin_page');
 			}else{
 			$this->load->view('login_form');
@@ -249,12 +264,12 @@ public function add() {
 	        else:
 	            $data['vendor_code'] = '';
 	        endif;
-       	//print_r($data['current']);exit;
+       	// echo "<pre>";print_r($data['current']);exit;
         $data['old_id'] = $id; 
        // $data['categories']=$this->transporter_model->getCategoriesEditPage();
 	    $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
         $data['states']=$this->transporter_model->getStates();
-        $this->template->load('template','transporter_edit',$data);
+        $this->template->load('layout/template','transporter/transporter_edit',$data);
 
 	}
 

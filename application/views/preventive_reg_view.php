@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -48,15 +48,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
              <!--  <th><input type="checkbox" id="master"></th> -->
-              <th >Sr.No.</th>
-              <th > Plant</th>
-              <th > Frequency </th>
-              <th  > Date Of Maintenance</th>
-              <th  > Date Of Next Maintenance</th>
-              <th  > Remark </th>
-              <th  > Status </th>
-              <th  > Reported By </th>
-              <th  > Action Button </th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th > <?= $this->lang->line('plant') ?></th>
+              <th > <?= $this->lang->line('frequency') ?> </th>
+              <th  > <?= $this->lang->line('date_of_maintenance') ?></th>
+              <th  > <?= $this->lang->line('date_of_next_maintenance') ?></th>
+              <th  > <?= $this->lang->line('remark') ?> </th>
+              <th  > <?= $this->lang->line('status') ?> </th>
+              <th  > <?= $this->lang->line('reported_by') ?> </th>
+              <th  > <?= $this->lang->line('action_button') ?> </th>
             </tr>
           </thead>
           <tbody>
@@ -143,16 +143,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete this Record ? </p>
+                            <p><?= $this->lang->line('confirm_delete') ?>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>
