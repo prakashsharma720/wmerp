@@ -1093,7 +1093,7 @@ $lang['select_type'] = 'Изберете тип';
 $lang['all'] = 'Всички';
 $lang['from_date'] = 'Начална дата';
 $lang['upto_date'] = 'Крайна дата';
-
+$lang['leave_details'] = 'Данни за отпуска';
 // invoices report
 $lang['invoice_slip_report'] = 'Доклад за фактури';
 $lang['from_date'] = 'Начална дата';
@@ -3164,6 +3164,11 @@ $lang['photos'] = 'Снимка';
 $lang['action'] = 'Действие';
 
 // leave module holidays
+$lang['approved'] = 'Одобрено';        // Bulgarian
+$lang['pending'] = 'В изчакване';
+$lang['on_hold'] = 'Задържано';
+$lang['rejecte'] = 'Отхвърлено';
+$lang['cancel'] = 'Отменено';
 $lang['holidays_master'] = 'Основни празници';
 $lang['title_name'] = 'Заглавие';
 $lang['enter_title_name'] = 'Въведете заглавие';

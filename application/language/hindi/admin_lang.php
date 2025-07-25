@@ -1088,7 +1088,7 @@ $lang['all'] = 'सभी';
 $lang['from_date'] = 'प्रारंभ दिनांक';
 $lang['upto_date'] = 'समाप्ति दिनांक';
 $lang['apply_date'] = 'आवेदन की तिथि';
-$lang['lead_details'] = 'लीड विवरण';
+$lang['leave_details'] = 'छुट्टी विवरण';
 
 // invoices report
 $lang['invoice_slip_report'] = 'चालान पर्ची रिपोर्ट';
@@ -3108,7 +3108,11 @@ $lang['action'] = 'क्रिया';
 
 
 // leave module holidays
-
+$lang['approved'] = 'स्वीकृत';         // Hindi
+$lang['pending'] = 'लंबित';
+$lang['on_hold'] = 'स्थगित';
+$lang['rejected'] = 'अस्वीकृत';
+$lang['cancel'] = 'रद्द';
 
 $lang['holidays_master'] = 'अवकाश मास्टर';
 $lang['title_name'] = 'शीर्षक नाम';

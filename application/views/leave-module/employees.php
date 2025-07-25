@@ -1,31 +1,29 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-
-<style type="text/css">
-.select2 {
-    height: 45px !important;
-    width: 100% !important;
-}
-
-.btnEdit {
-    width: 25%;
-    border-radius: 5px;
-    margin: 1px;
-    padding: 1px;
-}
+<style>
 .control-label {
-    margin: 0.7rem;
+	margin: 0.7rem
 }
 </style>
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <div class="nxl-content">
-                <div class="page-header">
-            <div class="page-header-left d-flex align-items-center">
-                     <div class="page-header-title">
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
                 <h5 class="m-b-10"><?= $this->lang->line('employee') ?></h5>
             </div>
             <ul class="breadcrumb">
@@ -37,21 +35,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </ul>
         </div>
 
-            <!-- <h3 class="card-title"><?= $this->lang->line('add_new_employee') ?></h3> -->
-            <div class="pull-right error_msg">
-                <?php echo validation_errors();?>
-                <?php if (isset($message_display)) {
-                    echo $message_display;
-                } ?>
-                <?php if (isset($error)) {
-                    echo $error;
-                } ?>
-                <?php if (isset($success)) {
-                    echo $success;
-                } ?>
+        <div class="page-header-right ms-auto">
+            <div class="page-header-right-items">
             </div>
-        </div> <!-- /.card-body -->
 
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+        <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
 
         <div class="">
             <form class="form-horizontal" role="form" method="post"
@@ -406,8 +406,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 </div>
+</div>                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+</div>
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 
 <script type="text/javascript">

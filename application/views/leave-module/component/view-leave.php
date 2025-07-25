@@ -1,6 +1,6 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="ViewLeave<?= $obj['id']; ?>">
     <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
-        <h2 class="fs-16 fw-bold text-truncate-1-line"><?= $this->lang->line('lead_details') ?></h2>
+        <h2 class="fs-16 fw-bold text-truncate-1-line"><?= $this->lang->line('leave_details') ?></h2>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 

@@ -1,47 +1,26 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-// echo"<pre>";print_r($employees);exit;
-?>
-
-<style type="text/css">
-.btnEdit {
-    width: 25%;
-    border-radius: 5px;
-    margin: 1px;
-    padding: 1px;
-}
-
-.col-sm-6,
-.col-md-6 {
-    float: left;
-}
-</style>
 
 <?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-</div>
-<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
 <?php endif; ?>
 
 <?php if($this->session->flashdata('failed')): ?>
-<div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-</div>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
 <?php endif; ?>
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <div class="nxl-content">
+	  
+<div class="nxl-content">
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('employees_list') ?></h5>
+                <h5 class="m-b-10"><?= $this->lang->line('employee') ?></h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -51,11 +30,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
             </ul>
         </div>
-            <!-- <span class="card-title"><?= $this->lang->line('employees_list') ?>
-            </span> -->
-</div>
-</div>
-            <div class="button-group float-right d-flex gap-2">
+
+        <div class="page-header-right ms-auto">
+            <div class="page-header-right-items">
+                <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                 
+                    <div class="pull-right d-flex">
+                         <div class="button-group float-right d-flex gap-2">
 
                 <a href="<?php echo base_url(); ?>index.php/Employees/add" class="btn btn-primary" data-toggle="tooltip"
                     title="New Employee"><i class="fa fa-plus"></i></a>
@@ -66,9 +47,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         class="fa fa-trash"></i></button>
 
             </div>
-        </div> <!-- /.card-body -->
-        <div class="card-body">
-            <div class="table-responsive">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+       <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
+ <div class="table-responsive">
                 <!-- <table id="example1" class="table table-bordered table-striped"> -->
                 <table class="table table-hover  table-bordered table-striped" id="proposalList">
 
@@ -386,10 +382,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php  $i++;} ?>
         
         </tbody>
-        </table>
-        
+        </table>                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+</div>  
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">
