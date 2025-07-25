@@ -124,7 +124,7 @@ img.profile-user-img.img-fluid.img-circle {
         </div> <!-- /.card-body -->
     <br>
 
-       
+        <div class="row">
             <div class="col-md-12">
                 <form class="form-horizontal " role="form" method="post"
                     action="<?php echo base_url(); ?>index.php/Employees/editemployee/<?= $id ?>"
