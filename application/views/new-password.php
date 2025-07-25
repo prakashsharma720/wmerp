@@ -102,11 +102,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </li>
                                 </ul>
                                 <div class="d-flex gap-2 text-center pt-4">
-                                    <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
-                                        <i class="feather-trash-2 me-2"></i>
-                                        <span>Delete</span>
-                                    </a>
-                                    <a href="javascript:void(0);" class="w-50 btn btn-primary">
+                                        <!-- <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
+                                            <i class="feather-trash-2 me-2"></i>
+                                            <span>Delete</span>
+                                        </a> -->
+                                    <a href="<?= base_url('index.php/Employees/edit/').$id?>" class="w-50 btn btn-primary">
                                         <i class="feather-edit me-2"></i>
                                         <span>Edit Profile</span>
                                     </a>

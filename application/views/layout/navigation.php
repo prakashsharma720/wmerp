@@ -36,32 +36,7 @@
           </a>
         </li>
 
-        <!-- Account Settings -->
-        <li class="nxl-item nxl-hasmenu">
-          <a href="javascript:void(0);" class="nxl-link">
-            <i class="feather-settings"></i>
-            <span class="nxl-mtext"><?= $this->lang->line('account_settings') ?></span>
-            <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
-          </a>
-          <ul class="nxl-submenu">
-            <li class="nxl-item">
-              <a class="nxl-link" href=" <?= base_url('index.php/Meenus/index') ?>">
-                <i class="feather-menu"></i><?= $this->lang->line('menus') ?>
-              </a>
-            </li>
-            <li class="nxl-item">
-              <a class="nxl-link" href="<?= base_url('index.php/Meenus/UserRights') ?>">
-                <i class="feather-key"></i> <?= $this->lang->line('user_rights') ?>
-              </a>
-            </li>
-            <li class="nxl-item">
-              <a class="nxl-link active" href="<?= base_url('index.php/User_authentication/role_master') ?>">
-                <i class="feather-circle"></i> <?= $this->lang->line('role_master') ?>
-              </a>
-            </li>
-          </ul>
-        </li>
-
+      
         <!-- SCM Module Main Item -->
         <li class="nxl-item nxl-hasmenu">
           <a href="javascript:void(0);" class="nxl-link">
@@ -1005,6 +980,31 @@
             <li class="nxl-item">
               <a class="nxl-link" href="<?= base_url('index.php/CustomerSupport_controller/index') ?>">
                 <i class="feather-circle"></i> <?= $this->lang->line('view_list') ?>
+              </a>
+            </li>
+          </ul>
+        </li>
+          <!-- Account Settings -->
+        <li class="nxl-item nxl-hasmenu">
+          <a href="javascript:void(0);" class="nxl-link">
+            <i class="feather-settings"></i>
+            <span class="nxl-mtext"><?= $this->lang->line('account_settings') ?></span>
+            <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+          </a>
+          <ul class="nxl-submenu">
+            <li class="nxl-item">
+              <a class="nxl-link" href=" <?= base_url('index.php/Meenus/index') ?>">
+                <i class="feather-menu"></i><?= $this->lang->line('menus') ?>
+              </a>
+            </li>
+            <li class="nxl-item">
+              <a class="nxl-link" href="<?= base_url('index.php/Meenus/UserRights') ?>">
+                <i class="feather-key"></i> <?= $this->lang->line('user_rights') ?>
+              </a>
+            </li>
+            <li class="nxl-item">
+              <a class="nxl-link active" href="<?= base_url('index.php/User_authentication/role_master') ?>">
+                <i class="feather-circle"></i> <?= $this->lang->line('role_master') ?>
               </a>
             </li>
           </ul>

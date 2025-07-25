@@ -1,19 +1,3 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible px-4 py-3 mx-3 my-2">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-    <?= $this->session->flashdata('success'); ?>
-  </div>
-<?php endif; ?>
-
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible px-4 py-3 mx-3 my-2">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-exclamation-triangle"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?= $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
-
 
 <div class="nxl-content ">
   <!-- Page Header -->
@@ -32,6 +16,7 @@
     </div>
     <div class="page-header-right ms-auto d-flex align-items-center">
       <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
       <div class="d-md-none d-flex align-items-center">
         <a href="javascript:void(0)" class="page-header-right-open-toggle">
           <i class="feather-align-right fs-20"></i>

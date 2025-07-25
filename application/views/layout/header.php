@@ -1,12 +1,17 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-$language = $this->session->userdata('site_language') ?? 'english';
-$language_label = ucfirst($language);
 $CI = &get_instance();
 $CI->load->model('Employee');
 $CI->load->helper('MY_array');
-
-$language = ucfirst($CI->session->userdata('site_language') ?? 'english');
+$languages = [
+    ['flag' => 'us', 'code'=>'english','name' => 'English'],
+    ['flag' => 'bg', 'code'=>'bulg','name' => 'Bulgerian'],
+    ['flag' => 'in', 'code'=>'hindi','name' => 'Hindi'],
+];
+$selected_lang_code = strtolower($CI->session->userdata('site_language') ?? 'english');
+$selected_lang = array_filter($languages, fn($l) => strtolower($l['code']) === $selected_lang_code);
+$selected_lang = reset($selected_lang) ?: ['flag' => 'us', 'name' => 'English'];
+// echo "dbd".$language_label;exit;
 $logged_in = $CI->session->userdata('logged_in') ?? [];
 $user_id = $logged_in['id'] ?? null;
 $role_id = $logged_in['role_id'] ?? null;
@@ -19,20 +24,7 @@ $designation = $userData['designation'] ?? '';
 $photo = $userData['photo'] ?? 'default.jpg';
 
 $allnotifications = $CI->dynamic_menu->getNoti();
-$languages = [
-    ['code' => 'sa', 'name' => 'Arabic'],
-    ['code' => 'bd', 'name' => 'Bengali'],
-    ['code' => 'ch', 'name' => 'Chinese'],
-    ['code' => 'nl', 'name' => 'Dutch'],
-    ['code' => 'us', 'name' => 'English'],
-    ['code' => 'fr', 'name' => 'French'],
-    ['code' => 'de', 'name' => 'German'],
-    ['code' => 'in', 'name' => 'Hindi'],
-    ['code' => 'ru', 'name' => 'Russian'],
-    ['code' => 'es', 'name' => 'Spanish'],
-    ['code' => 'tr', 'name' => 'Turkish'],
-    ['code' => 'pk', 'name' => 'Urdu']
-];
+
 ?>
 
 <header class="nxl-header">
@@ -77,13 +69,40 @@ $languages = [
         <!-- Right Section -->
         <div class="header-right ms-auto">
             <div class="d-flex align-items-center">
-                <select class="form-control" onchange="location = this.value;" style="width: 100%;">
-                    <option value="<?= site_url('AdminController/change_language/english') ?>" <?= ($language_label == 'English') ? 'selected' : '' ?>>En</option>
-                    <option value="<?= site_url('AdminController/change_language/bulg') ?>" <?= ($language_label == 'Bulg') ? 'selected' : '' ?>>Bg</option>
-                    <option value="<?= site_url('AdminController/change_language/hindi') ?>" <?= ($language_label == 'Hindi') ? 'selected' : '' ?>>Hi</option>
-                </select>
+               <div class="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
+                        <a href="javascript:void(0);" class="nxl-head-link me-0" data-bs-toggle="dropdown">
+                            <div class="avatar-image avatar-sm">
+                                <img src="<?= base_url("assets2/vendors/img/flags/1x1/" . ($selected_lang_code === 'bulg' ? 'bg' : ($selected_lang_code === 'hindi' ? 'in' : 'us')) . ".svg") ?>" class="img-fluid wd-20" alt="Lang" />
+                            </div> 
+                            <!-- &nbsp;<span><?= $selected_lang_code ?></span> -->
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-language-dropdown" data-bs-auto-close="outside" style="margin-top:-20px;">
+                            <div class="language-items-wrapper">
+                                <div class="select-language px-4 py-2 hstack justify-content-between gap-4">
+                                    <div>
+                                        <h6 class="mb-0">Select Language</h6>
+                                        <p class="fs-11 text-muted mb-0"><?= count($languages) ?> languages available!</p>
+                                    </div>
+                                    <a href="javascript:void(0);" class="avatar-text avatar-md" title="Add Language"><i class="feather-plus"></i></a>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <div class="row px-4 pt-3">
+                                    <?php foreach ($languages as $lang): ?>
+                                        <div class="col-sm-4 col-6 language_select <?= strtolower($selected_lang_code) == strtolower($lang['code']) ? 'active' : '' ?>">
+                                            <a href="<?= site_url('AdminController/change_language/') . $lang['code'] ?>" class="d-flex align-items-center gap-2">
+                                                <div class="avatar-image avatar-sm">
+                                                    <img src="<?= base_url("assets2/vendors/img/flags/1x1/{$lang['flag']}.svg") ?>" class="img-fluid" alt="<?= $lang['name'] ?>" />
+                                                </div>
+                                                <span><?= $lang['name'] ?></span>
+                                            </a>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <!-- Language Switcher -->
-                <div class="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
+                <!-- <div class="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
 
                     <a href="javascript:void(0);" class="nxl-head-link me-0" data-bs-toggle="dropdown">
                         <img src="<?= base_url("assets2/vendors/img/flags/4x3/us.svg") ?>" class="img-fluid wd-20" alt="Lang" />
@@ -93,7 +112,7 @@ $languages = [
                             <div class="select-language px-4 py-2 hstack justify-content-between gap-4">
                                 <div>
                                     <h6 class="mb-0">Select Language</h6>
-                                    <p class="fs-11 text-muted mb-0">12 languages available!</p>
+                                    <p class="fs-11 text-muted mb-0">3 languages available!</p>
                                 </div>
                                 <a href="javascript:void(0);" class="avatar-text avatar-md" title="Add Language"><i class="feather-plus"></i></a>
                             </div>
@@ -101,8 +120,8 @@ $languages = [
                             <div class="row px-4 pt-3">
                                 <?php foreach ($languages as $lang): ?>
                                     <div class="col-sm-4 col-6 language_select <?= strtolower($language) == strtolower($lang['name']) ? 'active' : '' ?>">
-                                        <a href="javascript:void(0);" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="<?= base_url("assets2/vendors/img/flags/1x1/{$lang['code']}.svg") ?>" class="img-fluid" alt="" /></div>
+                                        <a href="<?= site_url('AdminController/change_language/').$lang['code'] ?>" class="d-flex align-items-center gap-2">
+                                            <div class="avatar-image avatar-sm"><img src="<?= base_url("assets2/vendors/img/flags/1x1/{$lang['flag']}.svg") ?>" class="img-fluid" alt="" /></div>
                                             <span><?= $lang['name'] ?></span>
                                         </a>
                                     </div>
@@ -110,7 +129,7 @@ $languages = [
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Fullscreen Toggle -->
                 <div class="nxl-h-item d-none d-sm-flex">
