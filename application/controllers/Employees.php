@@ -35,7 +35,7 @@ public function index() {
 			$data['departments'] = $this->employee->getDepartments();	
 			//echo var_dump($data['students']);
 			// print_r($data['employees'] );exit;
-			$this->template->load('layout/template','employee_view',$data);
+			$this->template->load('layout/template','leave-module/employee_view',$data);
 	}
 	public function events()
 	{
@@ -74,7 +74,7 @@ public function index() {
 			$data['designations'] = $this->employee->getDesignation();
 			$data['employees'] = $this->employee->getEmployees();
 			//print_r($data['departments']);exit;
-			$this->template->load('layout/template','employees',$data);
+			$this->template->load('layout/template','leave-module/employees',$data);
 	}
 	public function edit($id = NULL) 
 	{
@@ -340,7 +340,7 @@ public function index() {
 			$data['employees'] = $this->employee->getEmployees();
 			
 			//print_r($data['departments']);exit;
-			$this->template->load('template','employee_edit',$data);
+			$this->template->load('layout/template','leave-module/employee_edit',$data);
 			
     }
 	public function add_new_employee() {

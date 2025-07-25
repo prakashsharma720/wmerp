@@ -1,25 +1,55 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<style>
-    .control-label {
-margin: 0.7rem
-}
-</style>
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title pull-left"> <?= $this->lang->line('leave_action_page') ?></h3>
-        <div class="pull-right ">
-        	<label>  <?= $this->lang->line('leave_application') ?> </label>
-			<b style="color:#37b5fe;"> </b>
-		</div>
-	      </div> <!-- /.card-body -->
-	      	<div class="card-body">
-		      	<div class="row">
-		      		<div class="col-md-12">
-		      	
-							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Leave/leave_action/<?= $id?>">
+
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
+
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+                <h5 class="m-b-10"><?= $this->lang->line('leave_module') ?></h5>
+            </div>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+                </li>
+                <li class="breadcrumb-item"><?= $this->lang->line('leave_action_page') ?>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-header-right ms-auto">
+                   	<label>  <?= $this->lang->line('leave_application') ?> </label>
+
+
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+ <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
+<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Leave/leave_action/<?= $id?>">
 
 				    			<input type="hidden" name="leave_type_id" value="<?php echo $leave_type_id;?>">
 				    			<input type="hidden" name="leave_count" value="<?php echo $total_count;?>">
@@ -57,32 +87,40 @@ margin: 0.7rem
 													<div class="col-md-12 col-sm-12 ">
 														<label class="control-label"> <?= $this->lang->line('leave_status_info') ?></label>
 													<select class="form-control" name="leave_status">
-															<option value="Pending" <?= $pending ?>> Pending </option>
-															<option value="Approved" <?= $approved ?>> Approved </option>
-															<option value="On Hold" <?= $inprocess ?>> On Hold</option>
-															<option value="Rejected" <?= $rejected ?>> Rejected</option>
+															<option value="Pending" <?= $pending ?>> <?= $this->lang->line('pending') ?> </option>
+															<option value="Approved" <?= $approved ?>> <?= $this->lang->line('approved') ?> </option>
+															<option value="On Hold" <?= $inprocess ?>> <?= $this->lang->line('on_hold') ?></option>
+															<option value="Rejected" <?= $rejected ?>> <?= $this->lang->line('rejected') ?></option>
 															<?php if($leave_status =="Approved") { ?>
-															<option value="Cancelled" <?= $Cancelled ?>> Cancel</option>
+															<option value="Cancelled" <?= $Cancelled ?>> <?= $this->lang->line('cancel') ?></option>
 														<?php } ?>
 													</select>
+													
 													</div>
+													
 												</div>
+												
 											<?php } ?>
 												</div>
+												
 							        </div>
+									
 							    </div>
-						    </div>
-					        <span class="help-block"></span>
+								<span class="help-block"></span>
 				           <div class="row col-md-12">
 					            	<label class="control-label" style="visibility: hidden;"> Name</label><br>
 					            	<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 					            </div>
+						    </div>
+					        
 				        </div>
-			        </form>
-				</div>
-			</div>
-		</div>
-	</div>
+			        </form>    
+				                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>

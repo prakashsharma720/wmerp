@@ -20,12 +20,32 @@ $lang['login'] = 'लॉगिन';
 $lang['remember_me'] = 'मुझे याद रखें';
 $lang['loginwithfacebook'] = 'Facebook के साथ लॉगिन करें';
 $lang['loginwithgmail'] = 'Gmail के साथ लॉगिन करें';
-
+$lang['discount'] = 'छूट';
+$lang['add_new_finished_good'] = 'नया तैयार माल जोड़ें';
+$lang['rupees'] = 'रुपये';
+$lang['percentage'] = 'प्रतिशत';
+$lang['enter_discount'] = 'छूट दर्ज करें';
+$lang['after_discount'] = 'छूट के बाद';
+$lang['gst'] = 'जीएसटी';
+$lang['enter_tax_percent'] = 'कर प्रतिशत दर्ज करें';
+$lang['enter_tax'] = 'कर दर्ज करें';
+$lang['amount_with_tax'] = 'कर सहित राशि';
+$lang['grand_total'] = 'कुल योग';
+$lang['vendor_reference'] = 'विक्रेता संदर्भ';
+$lang['enter_reference'] = 'संदर्भ दर्ज करें';
+$lang['delivery_period'] = 'डिलीवरी अवधि';
+$lang['enter_delivery_schedule'] = 'डिलीवरी शेड्यूल दर्ज करें';
+$lang['payment_terms'] = 'भुगतान की शर्तें';
+$lang['example_cash_cheque'] = 'उदाहरण: नकद, चेक';
+$lang['freight_status'] = 'माल ढुलाई की स्थिति';
+$lang['paid'] = 'चुकाया गया';
+$lang['to_pay'] = 'भुगतान शेष';
+$lang['create_new_material_code'] = 'नया कच्चा माल कोड बनाएं';
 $lang['users'] = 'उपयोगकर्ता';
 $lang['logout'] = 'लॉगआउट';
 $lang['account'] = 'खाता';
 // account setting
-
+$lang['create_new_material_code'] = 'नई मटेरियल कोड बनाएं'; 
 $lang['account_setting'] = 'खाता सेटिंग';
 $lang['my_account'] = 'मेरा खाता';
 $lang['change_password'] = 'पासवर्ड बदलें';
@@ -40,6 +60,8 @@ $lang['followups'] = 'फॉलोअप्स';
 $lang['pending'] = 'लंबित कार्य';
 $lang['approve'] = 'स्वीकृत';
 $lang['rejected'] = 'अस्वीकृत';
+$lang['hold'] = 'पकड़';
+
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'कर्मचारी संपादित करें';
@@ -1090,7 +1112,7 @@ $lang['all'] = 'सभी';
 $lang['from_date'] = 'प्रारंभ दिनांक';
 $lang['upto_date'] = 'समाप्ति दिनांक';
 $lang['apply_date'] = 'आवेदन की तिथि';
-$lang['lead_details'] = 'लीड विवरण';
+$lang['leave_details'] = 'छुट्टी विवरण';
 
 // invoices report
 $lang['invoice_slip_report'] = 'चालान पर्ची रिपोर्ट';
@@ -2937,6 +2959,7 @@ $lang['action'] = 'क्रिया';
 // customer complaints    
 // Complaints Data 
 $lang['complaints_data'] = 'शिकायत डेटा';
+$lang['home'] = 'मुख्य';
 
 $lang['search_by_status'] = 'स्थिति द्वारा खोजें';
 $lang['search_by_category'] = 'श्रेणी द्वारा खोजें';
@@ -3037,6 +3060,8 @@ $lang['no_upcoming_anniversaries'] = 'कोई आने वाली कार
 $lang['add_new_employee'] = 'नया कर्मचारी जोड़ें';
 $lang['personal_details'] = 'व्यक्तिगत विवरण';
 $lang['bank_details'] = 'बैंक विवरण';
+$lang['savings'] = 'बचत';
+$lang['current'] = 'चालू';
 $lang['salary_details'] = 'वेतन विवरण';
 $lang['other_details'] = 'अन्य विवरण';
 
@@ -3084,7 +3109,7 @@ $lang['aadhaar_no'] = 'आधार नंबर';
 $lang['enter_aadhaar_no'] = 'आधार नंबर दर्ज करें';
 
 $lang['pan'] = 'पैन (स्थायी खाता संख्या)';
-$lang['pan_placeholder'] = 'उदा. ABCEDE2548K';
+$lang['pan_placeholder'] = 'उदा. एबीसीईडीई2548के';
 
 $lang['copyright'] = 'कॉपीराइट © 2025 Warrgyiz Morsch. सर्वाधिकार सुरक्षित।';
 
@@ -3109,7 +3134,11 @@ $lang['action'] = 'क्रिया';
 
 
 // leave module holidays
-
+$lang['approved'] = 'स्वीकृत';         // Hindi
+$lang['pending'] = 'लंबित';
+$lang['on_hold'] = 'स्थगित';
+$lang['rejected'] = 'अस्वीकृत';
+$lang['cancel'] = 'रद्द';
 
 $lang['holidays_master'] = 'अवकाश मास्टर';
 $lang['title_name'] = 'शीर्षक नाम';
@@ -3216,6 +3245,8 @@ $lang['apply'] = 'आवेदन करें';
 $lang['daily_task_master'] = 'दैनिक कार्य मास्टर';
 $lang['project_name'] = 'प्रोजेक्ट का नाम';
 $lang['enter_project_name'] = 'प्रोजेक्ट का नाम दर्ज करें';
+$lang['in_process'] = 'प्रक्रिया में';
+$lang['completed'] = 'पूरा हुआ';
 
 $lang['start_date'] = 'प्रारंभ तिथि';
 $lang['end_date'] = 'अंतिम तिथि';
@@ -3333,7 +3364,7 @@ $lang['female'] = 'महिला';
 $lang['aadhaar_no'] = 'आधार नंबर';
 $lang['enter_aadhaar_no'] = 'आधार नंबर दर्ज करें';
 $lang['dob'] = 'जन्म तिथि';
-$lang['dd_mm_yyyy'] = 'दि-महीना-वर्ष';
+$lang['dd_mm_yyyy'] = 'दिन-महीना-वर्ष';
 $lang['upload_photo'] = 'फोटो अपलोड करें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल नहीं चुनी गई';
 $lang['medical_test'] = 'चिकित्सा परीक्षण';
@@ -3905,3 +3936,4 @@ $lang['customize_theme'] = 'थीम अनुकूलित करें';
 $lang['primary_theme_color'] = 'प्राथमिक थीम रंग';
 $lang['navbar_color'] = 'नेवबार रंग';
 $lang['secondary_theme_color'] = 'द्वितीयक थीम रंग';
+$lang['home'] ='मुख्य';

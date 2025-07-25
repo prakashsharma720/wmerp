@@ -14,15 +14,37 @@ $lang['Create_an_Account'] = 'Създайте акаунт';
 $lang['Are you new?'] = 'Нов ли сте?';
 $lang['google_signin'] = 'Вход с Google';
 $lang['or'] = 'или';
+$lang['add_new_finished_good'] = 'Добавяне на нов готов продукт';
+
 $lang['login'] = 'Вход';
 $lang['remember_me'] = 'Запомни ме';
 $lang['loginwithfacebook'] = 'Вход с Facebook';
 $lang['loginwithgmail'] = 'Вход с Gmail';
+$lang['discount'] = 'Отстъпка';
+$lang['rupees'] = 'Рупии';
+$lang['percentage'] = 'Процент';
+$lang['create_new_material_code'] = 'Създаване на нов код за суровина';
+$lang['enter_discount'] = 'Въведете отстъпка';
+$lang['after_discount'] = 'След отстъпката';
+$lang['gst'] = 'ДДС';
+$lang['enter_tax_percent'] = 'Въведете ДДС %';
+$lang['enter_tax'] = 'Въведете данък';
+$lang['amount_with_tax'] = 'Сума с данък';
+$lang['grand_total'] = 'Обща сума';
+$lang['vendor_reference'] = 'Референция на доставчик';
+$lang['enter_reference'] = 'Въведете референция';
+$lang['delivery_period'] = 'Срок на доставка';
+$lang['enter_delivery_schedule'] = 'Въведете график за доставка';
+$lang['payment_terms'] = 'Условия за плащане';
+$lang['example_cash_cheque'] = 'Пример: В брой, Чек';
+$lang['freight_status'] = 'Статус на транспорта';
+$lang['paid'] = 'Платено';
+$lang['to_pay'] = 'За плащане';
 
 $lang['users'] = 'Потребители';
 $lang['logout'] = 'Изход';
 $lang['account'] = 'Акаунт';
-
+$lang['create_new_material_code'] = 'Създаване на нов код за материал';
 // account setting
 
 $lang['account_setting'] = 'Настройки на акаунта';
@@ -38,6 +60,8 @@ $lang['followups'] = 'Проследявания: 0';
 $lang['pending'] = 'Висящи задачи: 0';
 $lang['approve'] = 'Одобрени: 0';
 $lang['rejected'] = 'Отхвърлени: 0';
+$lang['hold'] = 'задържам';
+
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'Редактиране на служител';
@@ -53,6 +77,8 @@ $lang['emergency_no'] = 'Спешен номер';
 $lang['employee_detail'] = 'Данни за служителя';
 $lang['personal_details'] = 'Лични данни';
 $lang['bank_details'] = 'Банкови данни';
+$lang['savings'] = 'Спестовна';
+$lang['current'] = 'Текуща';
 $lang['salary_details'] = 'Данни за заплата';
 $lang['other_details'] = 'Други данни';
 
@@ -1095,7 +1121,7 @@ $lang['select_type'] = 'Изберете тип';
 $lang['all'] = 'Всички';
 $lang['from_date'] = 'Начална дата';
 $lang['upto_date'] = 'Крайна дата';
-
+$lang['leave_details'] = 'Данни за отпуска';
 // invoices report
 $lang['invoice_slip_report'] = 'Доклад за фактури';
 $lang['from_date'] = 'Начална дата';
@@ -3142,7 +3168,7 @@ $lang['aadhaar_no'] = 'Номер Aadhaar';
 $lang['enter_aadhaar_no'] = 'Въведете номер Aadhaar';
 
 $lang['pan'] = 'ПАН (Постоянен акаунт номер)';
-$lang['pan_placeholder'] = 'напр. ABCEDE2548K';
+$lang['pan_placeholder'] = 'напр. АВСЕДЕ2548К';
 
 $lang['copyright'] = 'Авторско право © 2025 Warrgyiz Morsch. Всички права запазени.';
 
@@ -3166,6 +3192,11 @@ $lang['photos'] = 'Снимка';
 $lang['action'] = 'Действие';
 
 // leave module holidays
+$lang['approved'] = 'Одобрено';        // Bulgarian
+$lang['pending'] = 'В изчакване';
+$lang['on_hold'] = 'Задържано';
+$lang['rejecte'] = 'Отхвърлено';
+$lang['cancel'] = 'Отменено';
 $lang['holidays_master'] = 'Основни празници';
 $lang['title_name'] = 'Заглавие';
 $lang['enter_title_name'] = 'Въведете заглавие';
@@ -3277,6 +3308,8 @@ $lang['apply'] = 'Кандидатствай';
 $lang['daily_task_master'] = 'Дневни задачи - основни данни';
 $lang['project_name'] = 'Име на проекта';
 $lang['enter_project_name'] = 'Въведете име на проекта';
+$lang['in_process'] = 'В процес';
+$lang['completed'] = 'Завършен';
 
 $lang['start_date'] = 'Начална дата';
 $lang['end_date'] = 'Крайна дата';
@@ -3906,3 +3939,5 @@ $lang['customize_theme'] = 'Персонализиране на тема';
 $lang['primary_theme_color'] = 'Основен цвят на темата';
 $lang['navbar_color'] = 'Цвят на навигационната лента';
 $lang['secondary_theme_color'] = 'Вторичен цвят на темата';
+$lang['home'] = 'Начало';
+

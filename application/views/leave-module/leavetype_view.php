@@ -1,44 +1,55 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 <style>
-    .control-label {
-margin: 0.7rem
+.control-label {
+	margin: 0.7rem
 }
 </style>
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $this->lang->line('leave_master') ?></h3>
-        <div class="pull-right ">
-			
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+                <h5 class="m-b-10"><?= $this->lang->line('leave_module') ?></h5>
+            </div>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+                </li>
+                <li class="breadcrumb-item"><?= $this->lang->line('leave_types') ?>
+                </li>
+            </ul>
+        </div>
 
-			    <!-- <span class="error_mesg"><?php echo $this->session->flashdata('failed'); ?></span> -->
-		</div>
-	      </div> <!-- /.card-body -->
-	      	<div class="card-body">
-		      	<div class="row">
-				  <?php
-              if($designation_id=='1')
-              { ?> 
-		      		<div class="col-md-6">
-		      			<?php  //echo $title; exit; ?>
+        <div class="page-header-right ms-auto">
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+	 <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-6">
+<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
 				    		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Leave/editLeavetype/<?= $id ?>">
 				    			<input type="hidden" name="category_id" value="<?= $id?>">
@@ -75,8 +86,8 @@ margin: 0.7rem
 				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"> <?= $this->lang->line('status') ?> </label>
 					               <select class="form-control" name="flag">
-					               		<option value="0"> Active</option>
-					               		<option value="1"> De-active</option>
+					               		<option value="0"> <?= $this->lang->line('active') ?> </option>
+					               		<option value="1"> <?= $this->lang->line('de_active') ?> </option>
 					               </select>
 					            </div>
 				        	</div>
@@ -90,10 +101,8 @@ margin: 0.7rem
 				        </div>
 				        </form>
 					</div>
-					<?php }?>
-				 <!-- /form -->
-				<div class="col-md-6">
-					<h5> <?= $this->lang->line('leave_list') ?></h5>
+                        <div class="col-lg-6">
+<h5> <?= $this->lang->line('leave_list') ?></h5>
 					<table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
@@ -121,9 +130,13 @@ margin: 0.7rem
 						<?php $i++;} ?>
 						</tbody>
 						
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+					</table>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>	
 </div>
+
+
+
+

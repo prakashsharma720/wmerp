@@ -1,6 +1,6 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="ViewLeave<?= $obj['id']; ?>">
     <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
-        <h2 class="fs-16 fw-bold text-truncate-1-line"><?= $this->lang->line('lead_details') ?></h2>
+        <h2 class="fs-16 fw-bold text-truncate-1-line"><?= $this->lang->line('leave_details') ?></h2>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
@@ -55,13 +55,7 @@
                     <?= $obj['upto_date'] ?? '-' ?></span>
                 </div>
             </div>
-             <div class="col-lg-6 mb-4">
-                <span class="fw-bold text-dark"><?= $this->lang->line('employee') ?>:</span>
-                <div>
-                    <span class="fs-12 fw-bold text-default">
-                    <?= $obj['employee'] ?? '-' ?></span>
-                </div>
-            </div>
+            
              <div class="col-lg-6 mb-4">
                 <span class="fw-bold text-dark"><?= $this->lang->line('leave_category') ?>:</span>
                 <div>
@@ -77,13 +71,7 @@
                 </div>
             </div>
           
-               <div class="col-lg-6 mb-4">
-                <span class="fw-bold text-dark"><?= $this->lang->line('leave_reason') ?>:</span>
-                <div>
-                    <span class="fs-12 fw-bold text-default">
-                    <?= $obj['leave_reason'] ?? '-' ?></span>
-                </div>
-            </div>
+              
              <div class="col-lg-6 mb-4">
                 <span class="fw-bold text-dark"><?= $this->lang->line('total_days') ?>:</span>
                 <div>
@@ -91,7 +79,21 @@
                     <?= $obj['total_days'] ?? '-' ?></span>
                 </div>
             </div>
-            <div class="col-lg-6 mb-4">
+             <div class="col-lg-6 mb-4">
+                <span class="fw-bold text-dark"><?= $this->lang->line('employee') ?>:</span>
+                <div>
+                    <span class="fs-12 fw-bold text-default">
+                    <?= $obj['employee'] ?? '-' ?></span>
+                </div>
+            </div>
+             <div class="col-lg-12 mb-4">
+                <span class="fw-bold text-dark"><?= $this->lang->line('leave_reason') ?>:</span>
+                <div>
+                    <span class="fs-12 fw-bold text-default">
+                    <?= $obj['leave_reason'] ?? '-' ?></span>
+                </div>
+            </div>
+            <div class="col-lg-12 mb-4">
                 <span class="fw-bold text-dark"><?= $this->lang->line('message') ?>:</span>
                 <div>
                     <span class="fs-12 fw-bold text-default">
