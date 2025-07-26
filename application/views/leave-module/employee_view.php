@@ -37,14 +37,19 @@
                  
                     <div class="pull-right d-flex">
                          <div class="button-group float-right d-flex gap-2">
+                             <!-- Collapse Filter -->
+            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" data-toggle="tooltip" title="Filter">
+              <i class="feather-filter"></i>
+            </a>
 
-                <a href="<?php echo base_url(); ?>index.php/Employees/add" class="btn btn-primary" data-toggle="tooltip"
-                    title="New Employee"><i class="fa fa-plus"></i></a>
-                <button class="btn btn-primary" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
+                <a href="<?php echo base_url(); ?>index.php/Employees/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip"
+                    title="New Employee"><i class="feather feather-plus"></i></a>
+                <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
                         class="fa fa-refresh"></i></button>
 
-                <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i
-                        class="fa fa-trash"></i></button>
+                <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete"><i
+                        class="feather feather-trash "></i></button>
 
             </div>
                     </div>
@@ -73,6 +78,8 @@
 
                     <thead>
                         <tr>
+                            <th><input type="checkbox" id="master"></th>
+
                             <th><?= $this->lang->line('sr_no') ?></th>
                             <th> <?= $this->lang->line('name') ?> </th>
 
@@ -93,6 +100,8 @@
                         <?php
           $i=1;foreach($employees as $obj){ ?>
                         <tr>
+                                                        <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
+
                             <td><?php echo $i;?></td>
                             <td><?php  
                $voucher_no= $obj['employee_code']; 
@@ -111,6 +120,7 @@
                     echo $obj['name'].'('.$employee_id_code.')';
 
                 ?></td>
+                
                             <td><?php echo $obj['email']; ?></td>
                             <td><?php echo $obj['role']; ?></td>
                             <td><?php echo $obj['mobile_no']; ?></td>
@@ -133,27 +143,15 @@
                                             <i class="feather feather-eye"></i>
                                             </a>
                             
-                            
-
                                 <a class="avatar-text avatar-md"
                                     href="<?php echo base_url(); ?>index.php/Employees/edit/<?php echo $obj['id'];?>"><i
                                         class="feather feather-edit-3"></i></a>
-<<<<<<< Updated upstream
-=======
-
                                         
                                 
                                          <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteEmployees<?= $obj['id']; ?>" class="avatar-text avatar-md">
-    <i class="feather feather-trash"></i>
-</a>
+                                            <i class="feather feather-trash"></i>
+                                        </a>
 
-                                
-                                
->>>>>>> Stashed changes
-
-
-                                <!--   <a href="<?php //echo base_url(); ?>index.php/welcome/deleteSupplier/<?php echo $obj['id'];?>"
-                   onclick="return confirm(\'Confirm Deletion.\')">Delete</a> -->
                                 </div>
                             </td>
 
