@@ -1,5 +1,6 @@
 <?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible px-4 py-3 mx-3 my-2">
+  <div class="alert alert-success alert-dismissible px-4 py-3 mx-3 my-2" 
+       style="background-color:#fff; color:#155724; border:1px solid #d4edda;">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
     <?= $this->session->flashdata('success'); ?>
@@ -7,7 +8,8 @@
 <?php endif; ?>
 
 <?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible px-4 py-3 mx-3 my-2">
+  <div class="alert alert-danger alert-dismissible px-4 py-3 mx-3 my-2" 
+       style="background-color:#fff; color:#721c24; border:1px solid #f5c6cb;">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h5><i class="icon fa fa-exclamation-triangle"></i> <?= $this->lang->line('alert') ?>!</h5>
     <?= $this->session->flashdata('failed'); ?>
@@ -15,7 +17,9 @@
 <?php endif; ?>
 
 
-<div class="nxl-content ">
+
+<div class="nxl-content" style="background-color: #fff;">
+
   <!-- Page Header -->
   <div class="page-header">
     <div class="page-header-left d-flex align-items-center">
@@ -94,9 +98,12 @@
                 <td><?= $i++ ?></td>
                 <td><?= $category['category_name'] ?></td>
                 <td>
-                 <a href="<?= base_url("index.php/Category/index/" . $category['id']) ?>" class="border rounded bg-light shadow-sm text-dark px-1 py-0" style="padding: 2px 3px;">
+     <a href="<?= base_url("index.php/Category/index/" . $category['id']) ?>" 
+   class="d-inline-flex align-items-center justify-content-center border bg-white shadow-sm text-dark"
+   style="width:32px; height:32px; border-radius:50%;">
   <i class="feather feather-edit-3"></i>
 </a>
+
 
                 </td>
               </tr>
