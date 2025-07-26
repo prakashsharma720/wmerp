@@ -3109,7 +3109,7 @@ $lang['aadhaar_no'] = 'आधार नंबर';
 $lang['enter_aadhaar_no'] = 'आधार नंबर दर्ज करें';
 
 $lang['pan'] = 'पैन (स्थायी खाता संख्या)';
-$lang['pan_placeholder'] = 'उदा. एबीसीईडीई2548के';
+$lang['pan_placeholder'] = 'उदा. ABCEDE2548K';
 
 $lang['copyright'] = 'कॉपीराइट © 2025 Warrgyiz Morsch. सर्वाधिकार सुरक्षित।';
 
