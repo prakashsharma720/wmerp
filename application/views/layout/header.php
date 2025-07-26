@@ -101,35 +101,6 @@ $allnotifications = $CI->dynamic_menu->getNoti();
                             </div>
                         </div>
                     </div>
-                <!-- Language Switcher -->
-                <!-- <div class="dropdown nxl-h-item nxl-header-language d-none d-sm-flex">
-
-                    <a href="javascript:void(0);" class="nxl-head-link me-0" data-bs-toggle="dropdown">
-                        <img src="<?= base_url("assets2/vendors/img/flags/4x3/us.svg") ?>" class="img-fluid wd-20" alt="Lang" />
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-language-dropdown">
-                        <div class="language-items-wrapper">
-                            <div class="select-language px-4 py-2 hstack justify-content-between gap-4">
-                                <div>
-                                    <h6 class="mb-0">Select Language</h6>
-                                    <p class="fs-11 text-muted mb-0">3 languages available!</p>
-                                </div>
-                                <a href="javascript:void(0);" class="avatar-text avatar-md" title="Add Language"><i class="feather-plus"></i></a>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="row px-4 pt-3">
-                                <?php foreach ($languages as $lang): ?>
-                                    <div class="col-sm-4 col-6 language_select <?= strtolower($language) == strtolower($lang['name']) ? 'active' : '' ?>">
-                                        <a href="<?= site_url('AdminController/change_language/').$lang['code'] ?>" class="d-flex align-items-center gap-2">
-                                            <div class="avatar-image avatar-sm"><img src="<?= base_url("assets2/vendors/img/flags/1x1/{$lang['flag']}.svg") ?>" class="img-fluid" alt="" /></div>
-                                            <span><?= $lang['name'] ?></span>
-                                        </a>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
                 <!-- Fullscreen Toggle -->
                 <div class="nxl-h-item d-none d-sm-flex">
@@ -155,9 +126,9 @@ $allnotifications = $CI->dynamic_menu->getNoti();
                     </a>
                     <div class="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-notifications-menu">
                         <div class="d-flex justify-content-between notifications-head">
-                            <h6 class="fw-bold text-dark mb-0">Notifications</h6>
+                            <h6 class="fw-bold text-dark mb-0"><?= $this->lang->line('notification') ?></h6>
                             <a href="javascript:void(0);" class="fs-11 text-success" title="Mark as Read">
-                                <i class="feather-check"></i><span>Mark as Read</span>
+                                <i class="feather-check"></i><span><?= $this->lang->line('mark_as_read') ?></span>
                             </a>
                         </div>
                         <div class="notifications-scrollable" style="max-height: 300px; overflow-y: auto;">
@@ -191,7 +162,7 @@ $allnotifications = $CI->dynamic_menu->getNoti();
                             <?php endif; ?>
                         </div>
                         <div class="text-center notifications-footer">
-                            <a href="<?= base_url('index.php/Notifications/index') ?>" class="fs-13 fw-semibold text-dark">All Notifications</a>
+                            <a href="<?= base_url('index.php/Notifications/index') ?>" class="fs-13 fw-semibold text-dark"><?= $this->lang->line('all_notifications') ?></a>
                         </div>
                     </div>
                 </div>
@@ -207,11 +178,11 @@ $allnotifications = $CI->dynamic_menu->getNoti();
                                 <span class="fs-12 text-muted"><?= $email ?></span>
                             </div>
                         </div>
-                        <a href="<?= base_url('index.php/User_authentication/MyPasswordChangeView') ?>" class="dropdown-item"><i class="feather-user"></i><span>Change Password</span></a>
-                        <a href="<?= base_url('index.php/Notifications/index') ?>" class="dropdown-item"><i class="feather-bell"></i><span>Notifications</span></a>
-                        <a href="<?= base_url('index.php/Employees/edit/' . $user_id) ?>" class="dropdown-item"><i class="feather-settings"></i><span>Account Settings</span></a>
+                        <a href="<?= base_url('index.php/User_authentication/MyPasswordChangeView') ?>" class="dropdown-item"><i class="feather-user"></i><span><?= $this->lang->line('change_password') ?></span></a>
+                        <a href="<?= base_url('index.php/Notifications/index') ?>" class="dropdown-item"><i class="feather-bell"></i><span><?= $this->lang->line('notification') ?></span></a>
+                        <a href="<?= base_url('index.php/Employees/edit/' . $user_id) ?>" class="dropdown-item"><i class="feather-settings"></i><span><?= $this->lang->line('account_setting') ?></span></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?= base_url('index.php/User_authentication/logout') ?>" class="dropdown-item"><i class="feather-log-out"></i><span>Logout</span></a>
+                        <a href="<?= base_url('index.php/User_authentication/logout') ?>" class="dropdown-item"><i class="feather-log-out"></i><span><?= $this->lang->line('logout') ?></span></a>
                     </div>
                 </div>
 

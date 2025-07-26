@@ -16,11 +16,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="page-header">
                 <div class="page-header-left d-flex align-items-center">
                     <div class="page-header-title">
-                        <h5 class="m-b-10">Customers</h5>
+                        <h5 class="m-b-10"><?= $this->lang->line('users') ?></h5>
                     </div>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item">View</li>
+                        <li class="breadcrumb-item"><a href="index.html"><?= $this->lang->line('home') ?></a></li>
+                        <li class="breadcrumb-item"><?= $this->lang->line('change_password') ?></li>
                     </ul>
                 </div>
                 <div class="page-header-right ms-auto">
@@ -28,10 +28,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="d-flex d-md-none">
                             <a href="javascript:void(0)" class="page-header-right-close-toggle">
                                 <i class="feather-arrow-left me-2"></i>
-                                <span>Back</span>
+                                <span><?= $this->lang->line('back') ?></span>
                             </a>
                         </div>
-                        <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                        <!-- <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                             <a href="javascript:void(0);" class="btn btn-icon btn-light-brand successAlertMessage">
                                 <i class="feather-star"></i>
                             </a>
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="feather-plus me-2"></i>
                                 <span>Create Customer</span>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="d-md-none d-flex align-items-center">
                         <a href="javascript:void(0)" class="page-header-right-open-toggle">
@@ -75,29 +75,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4">
                                         <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
                                             <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                            <p class="fs-12 text-muted mb-0">Followers</p>
+                                            <p class="fs-12 text-muted mb-0"><?= $this->lang->line('followups') ?></p>
                                         </div>
                                         <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
                                             <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                            <p class="fs-12 text-muted mb-0">Following</p>
+                                            <p class="fs-12 text-muted mb-0"><?= $this->lang->line('total_assign') ?></p>
                                         </div>
                                         <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
                                             <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                            <p class="fs-12 text-muted mb-0">Engagement</p>
+                                            <p class="fs-12 text-muted mb-0"><?= $this->lang->line('total_leads') ?></p>
                                         </div>
                                     </div>
                                 </div>
                                 <ul class="list-unstyled mb-4">
                                     <li class="hstack justify-content-between mb-4">
-                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-map-pin"></i>Location</span>
+                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-map-pin"></i><?= $this->lang->line('location') ?></span>
                                         <a href="javascript:void(0);" class="float-end"><?= $address ?></a>
                                     </li>
                                     <li class="hstack justify-content-between mb-4">
-                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-phone"></i>Phone</span>
+                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-phone"></i><?= $this->lang->line('phone') ?></span>
                                         <a href="javascript:void(0);" class="float-end">+<?= $mobile_no ?></a>
                                     </li>
                                     <li class="hstack justify-content-between mb-0">
-                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-mail"></i>Email</span>
+                                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-mail"></i><?= $this->lang->line('email') ?></span>
                                         <a href="javascript:void(0);" class="float-end"><?= $email ?></a>
                                     </li>
                                 </ul>
@@ -108,7 +108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </a> -->
                                     <a href="<?= base_url('index.php/Employees/edit/').$id?>" class="w-50 btn btn-primary">
                                         <i class="feather-edit me-2"></i>
-                                        <span>Edit Profile</span>
+                                        <span><?= $this->lang->line('edit_employee') ?></span>
                                     </a>
                                 </div>
                             </div>
@@ -121,10 +121,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs flex-wrap w-100 text-center customers-nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link " data-bs-toggle="tab" data-bs-target="#overviewTab" role="tab">Overview</a>
+                                        <a href="javascript:void(0);" class="nav-link " data-bs-toggle="tab" data-bs-target="#overviewTab" role="tab"><?= $this->lang->line('details') ?></a>
                                     </li>
                                     <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link active" data-bs-toggle="tab" data-bs-target="#securityTab" role="tab">Security</a>
+                                        <a href="javascript:void(0);" class="nav-link active" data-bs-toggle="tab" data-bs-target="#securityTab" role="tab"><?= $this->lang->line('security') ?></a>
                                     </li>
                                 </ul>
                             </div>
@@ -322,15 +322,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                    <form action="<?php echo base_url() ;?>index.php/User_authentication/UserPasswordChange" method="post" >
 					    	            <input type="hidden" name="emp_id" value="<?= $this->session->userdata['logged_in']['id']; ?>">
                                         <div class="p-4 mb-4 border border-dashed border-gray-3 rounded-1">
-                                            <h6 class="fw-bolder"><a href="javascript:void(0);">Change Password</a></h6>
+                                            <h6 class="fw-bolder"><a href="javascript:void(0);"><?= $this->lang->line('change_password') ?></a></h6>
                                             <div class="my-4 py-2">
-                                                <input type="password" class="form-control" placeholder="Enter your password" name="password" required>
+                                                <input type="password" class="form-control" placeholder="<?= $this->lang->line('enter_new_password') ?>" name="password" required>
                                             </div>
                                             <div class="my-4 py-2">
-                                                <input type="password" class="form-control" placeholder="Enter Confirm password" name="confirm_password" required>
+                                                <input type="password" class="form-control" placeholder="<?= $this->lang->line('confirm_password') ?>" name="confirm_password" required>
                                             </div>
                                             <div class="my-4 py-2">
-                                                <button type="submit" class="w-100 btn btn-primary"> Submit</button>
+                                                <button type="submit" class="w-100 btn btn-primary"> <?= $this->lang->line('submit') ?></button>
                                             </div>
                                         </div>
                                     </form>

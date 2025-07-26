@@ -163,8 +163,8 @@ $lang['sign_out'] = 'Sign Out';
 // my account click
 
 // Header Section
-$lang['total_assign'] = 'Total Assignments: 0';
-$lang['followups'] = 'Followups: 0';
+$lang['total_assign'] = 'Total Assignments';
+$lang['followups'] = 'Followups';
 // $lang['pending'] = 'Pending Tasks: 0';
 // $lang['approve'] = 'Approved: 0';
 // $lang['rejected'] = 'Rejected: 0';

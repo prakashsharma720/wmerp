@@ -34,58 +34,9 @@ Class CustomerSupport_controller extends MY_Controller {
 		$data['department_id']=$this->session->userdata['logged_in']['department_id'];
 		$data['role_id']=$this->session->userdata['logged_in']['role_id'];
 		$data['auth_id']=$this->session->userdata['logged_in']['auth_id'];
-	
-		$conditions=[];
-		if($this->input->get()) {
-			// print_r($conditions);exit;				
-		 	$conditions['category_name']  = $this->input->get('category_name');
-            $conditions['lead_code'] = $this->input->get('lead_code');
-            $conditions['lead_status'] = $this->input->get('lead_status');
-			$conditions['employee_id'] 	 = $this->input->get('employee_id');
-            $conditions['mobile'] = $this->input->get('mobile');
-            $conditions['email'] = $this->input->get('email');
-            $conditions['lead_title'] = $this->input->get('lead_title');
-
-
-            if(!empty($this->input->get('upto_date'))) {
-				$conditions['upto_date']=date('Y-m-d',strtotime($this->input->get('upto_date')));
-			} else {
-				$conditions['upto_date']= "";
-			}
-
-			if(!empty($this->input->get('from_date'))) {
-				$conditions['from_date']=date('Y-m-d',strtotime($this->input->get('from_date')));
-			} else {
-				$conditions['from_date']= "";
-			}
-			
-
-			// echo "<pre>";
-			// print_r($_GET);
-			
-			$data['filtered_value']=$conditions;
-			$data['leads'] = $this->Leads_model->LeadListCSV($conditions);
-		
-			$data['leads_id'] = $this->Leads_model->duplicate();
-			
-		} else {
-			
-			// $data['filtered_value']='';
-			$conditions['category_name']='';
-			$conditions['lead_code']='';
-			$conditions['lead_status']='';
-			$conditions['upto_date']='';
-			$conditions['from_date']='';
-			$conditions['employee_id'] 	= "";
-		
-			$data['filtered_value']=$conditions;
-			$conditions['mobile'] = $this->input->get('mobile');
-            $conditions['email'] = $this->input->get('email');
-            $conditions['lead_title'] = $this->input->get('lead_title');
-		 	$data['leads'] = $this->CustomerSupport_model->getList($data);
-		}
+		$data['leads'] = $this->CustomerSupport_model->getList($data);
      
-		// print_r($data['auth_id']);exit;
+		//  echo "<pre>"; print_r($data['leads']);exit;
 
 		$this->template->load('layout/template','CustomerSupport/customerview',$data);
 	}
@@ -111,7 +62,7 @@ Class CustomerSupport_controller extends MY_Controller {
 
 
 
-		public function tracking($id = NULL) 
+	public function tracking($id = NULL) 
 	{
 		$data=[];
 		$data['id']=$this->uri->segment('3');

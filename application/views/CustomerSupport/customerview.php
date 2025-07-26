@@ -26,7 +26,7 @@
                     <a
                         href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
                 </li>
-                <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+                <li class="breadcrumb-item"><?= $this->lang->line('complaints_data') ?>
                 </li>
             </ul>
         </div>
@@ -48,18 +48,14 @@
             </a>
         </div>
     </div>
-
-
-
     <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-12">
-
                         <div class="card card-primary card-outline">
                             <div class="card-header">
-                                <span class="card-title"><?= $this->lang->line('customer_data') ?>
+                                <span class="card-title"><?= $this->lang->line('complaints_data') ?>
                                 </span>
                             </div>
                             <div class="table-responsive">
@@ -67,7 +63,6 @@
                                 <table class="table table-hover  table-bordered table-striped" id="example1">
                                     <thead>
                                         <tr>
-
                                             <th> <?= $this->lang->line('sr_no') ?></th>
                                             <th><?= $this->lang->line('date') ?></th>
                                             <th> <?= $this->lang->line('complaint_category') ?></th>
@@ -80,35 +75,30 @@
                                             <th> <?= $this->lang->line('action') ?></th>
                                         </tr>
                                     </thead>
-                                    <tbody> <?php
-
-
-										if (!empty($leads)) {
-											$i = 1;
-											foreach ($leads as $obj) {
-
+                                    <tbody>
+                                        <?php
+										if (!empty($leads)) {$i = 1; foreach ($leads as $obj) {
 										?>
-
                                         <tr>
 
                                             <td> <?= $i ?> </td>
-                                            <td> <?= $obj['date'] ?> </td>
-                                            <td> <?= $obj['category'] ?> </td>
+                                            <td> <?= $obj['ticket_data']['date'] ?> </td>
+                                            <td> <?= $obj['ticket_data']['category'] ?> </td>
                                             <td><?php if (!empty($obj['order_id'])) { ?>
-                                                <?= $obj['order_id'] ?>
+                                                <?= $obj['ticket_data']['order_id'] ?>
                                                 <?php } else { ?>
                                                 <span>--</span>
                                                 <?php } ?>
                                             </td>
-                                            <td> <?= $obj['ticket'] ?> </td>
-                                            <td> <?= $obj['c_name'] ?> </td>
-                                            <td> <?= $obj['email'] ?> </td>
-                                            <td> <?= $obj['phone'] ?> </td>
+                                            <td> <?= $obj['ticket_data']['ticket'] ?> </td>
+                                            <td> <?= $obj['ticket_data']['c_name'] ?> </td>
+                                            <td> <?= $obj['ticket_data']['email'] ?> </td>
+                                            <td> <?= $obj['ticket_data']['phone'] ?> </td>
 
-                                            <td> <?php if ($obj['status'] == 'Open') { ?>
-                                                <span class="badge badge-danger"><?= $obj['status'] ?></span>
+                                            <td> <?php if ($obj['ticket_data']['status'] == 'Open') { ?>
+                                                <span class="badge badge-danger"><?= $obj['ticket_data']['status'] ?></span>
                                                 <?php } else { ?>
-                                                <span class="badge badge-success"><?= $obj['status'] ?></span>
+                                                <span class="badge badge-success"><?= $obj['ticket_data']['status'] ?></span>
 
                                                 <?php } ?>
                                             </td>
@@ -116,85 +106,85 @@
 
 
                                             <td>
+                                            <div class="hstack gap-2 justify-content-start">
+                                                <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewDetails<?php echo $obj['ticket_data']['id']; ?>" title="View More">
+                                                    <i class="feather feather-eye "></i>
+                                                </a>
+                                                <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/CustomerSupport_controller/followups/<?php echo $obj['ticket_data']['ticket']; ?>" title=" Lead Followup">  <i class="feather feather-edit "></i>
+                                                </a>
+                                                 <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewTracking<?php echo $obj['ticket_data']['id']; ?>" title="Ticket Tracking">
+                                                    <i class="feather feather-map "></i>
+                                                </a>
+                                                
+                                            </div>
+                                                <div class="offcanvas offcanvas-end" tabindex="-1"
+                                                    id="ViewDetails<?= $obj['ticket_data']['id']; ?>">
+                                                    <div
+                                                        class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
+                                                        <h2 class="fs-16 fw-bold text-truncate-1-line">Ticket Details</h2>
+                                                        <button type="button" class="btn-close"
+                                                            data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                                    </div>
 
-                                                <div class="d-flex gap-2">
-                                                    <a class="  avatar-text btnEdit" data-bs-toggle="offcanvas"
-                                                        data-bs-target="#view<?php echo $obj['id']; ?>"
-                                                        title=" view details"><i class="fa fa-check"></i></a>
-                                                    <a class="avatar-text  btnEdit"
-                                                        href="<?php echo base_url();?>index.php/CustomerSupport_controller/followups/<?php echo $obj['ticket']; ?>"
-                                                        title=" Lead Followup"><i class="fa fa-comment"></i></a>
-                                                    <a class="avatar-text btnEdit"
-                                                        href="<?php echo base_url();?>index.php/CustomerSupport_controller/tracking/<?php echo $obj['ticket']; ?>"
-                                                        title=" view details"><i class="fa fa-bullseye"></i></a>
-
-                                                </div>
-
-                                               <div class="offcanvas offcanvas-end" tabindex="-1" id="view<?= $obj['id']; ?>">
-												<div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
-													<h2 class="fs-16 fw-bold text-truncate-1-line">Lead Details</h2>
-													<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-												</div>
-											
                                                     <div class="offcanvas-body">
                                                         <form class="form-horizontal" role="form" method="post"
                                                             action="<?php echo base_url(); ?>index.php/CustomerSupport_controller/update_status/">
-                                                            <input type="hidden" name="id" value="<?= $obj['id'] ?>">
-															<label class="control-label"> Select Status</label>
+                                                            <input type="hidden" name="id" value="<?= $obj['ticket_data']['id'] ?>">
+                                                            <label class="control-label"> Select Status</label>
                                                             <select name="status" class="form-control">
                                                                 <option value="">
                                                                     <?= $this->lang->line('select_status') ?></option>
                                                                 <option value="Open"
-                                                                    <?= ($obj['status'] == 'Open') ? 'selected' : '' ?>>
+                                                                    <?= ($obj['ticket_data']['status'] == 'Open') ? 'selected' : '' ?>>
                                                                     <?= $this->lang->line('open') ?></option>
                                                                 <option value="InProcess"
-                                                                    <?= ($obj['status'] == 'InProcess') ? 'selected' : '' ?>>
+                                                                    <?= ($obj['ticket_data']['status'] == 'InProcess') ? 'selected' : '' ?>>
                                                                     <?= $this->lang->line('inprocess') ?></option>
                                                                 <option value="Closed"
-                                                                    <?= ($obj['status'] == 'Closed') ? 'selected' : '' ?>>
+                                                                    <?= ($obj['ticket_data']['status'] == 'Closed') ? 'selected' : '' ?>>
                                                                     <?= $this->lang->line('closed') ?></option>
                                                                 <option value="Resolved"
-                                                                    <?= ($obj['status'] == 'Resolved') ? 'selected' : '' ?>>
+                                                                    <?= ($obj['ticket_data']['status'] == 'Resolved') ? 'selected' : '' ?>>
                                                                     <?= $this->lang->line('resolved') ?></option>
                                                             </select>
-														</form>
-													</div>
-													 <div
+                                                        </form>
+                                                    </div>
+                                                    <div
                                                         class="px-4 gap-2 d-flex align-items-center ht-80 border border-end-0 border-gray-2">
                                                         <a href="javascript:void(0);" class="btn btn-danger w-50"
                                                             data-bs-dismiss="offcanvas">Cancel</a>
                                                     </div>
-												</div>
-											
-                   	 </td>
-                    </tr>
-                    <?php $i++;
+                                                </div>
+                                            <?php $this->load->view('CustomerSupport/tracking_model', ['obj' => $obj]); ?>
+                                            </td>
+                                        </tr>
+                                        <?php $i++;
 											}
 										} else { ?>
-                    <tr>
-                        <td colspan="100">
-                            <h5 style="text-align: center;"> No Leads Found</h5>
-                        </td>
-                    </tr>
-                    <?php  } ?>
-                    </tbody>
-                    </table>
-                    </form>
+                                        <tr>
+                                            <td colspan="100">
+                                                <h5 style="text-align: center;"> No Leads Found</h5>
+                                            </td>
+                                        </tr>
+                                        <?php  } ?>
+                                    </tbody>
+                                </table>
+                                </form>
 
 
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
 
                 </div>
-
             </div>
-
-
-
         </div>
-
     </div>
-</div>
-</div>
-</div>
 
 </div>
 
