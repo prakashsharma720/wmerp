@@ -24,7 +24,7 @@ margin: 0.7rem
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('leave_module') ?></h5>
+               <h5> <a href="<?php echo base_url('index.php/Leave/balance'); ?>"><?= $this->lang->line('leave_module') ?></a></h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -34,6 +34,27 @@ margin: 0.7rem
                 </li>
             </ul>
         </div>
+			            <div class="page-header-right ms-auto">
+<div class="page-header-right-items">
+          <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper hstack">
+             <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
+                            <?php if (!empty($filtered_value)) {
+                                foreach ($filtered_value as $key => $value) { ?>
+                                    <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
+                            } ?>
+                            <button type="submit" class="btn btn-icon btn-light-brand"> 
+                                    <i class="feather feather-download "></i> 
+                            </button>
+                        </form> &nbsp;
+                        <div>
+                           <a href="<?php echo base_url('index.php/Leave/create'); ?>" class="btn btn-icon btn-light-brand">
+                                <i class="feather feather-plus"></i>
+                                <!-- <span><?= $this->lang->line('apply_for_leave') ?>  -->
+                                </span>
+                            </a>
+                        </div>
+        </div>
+            </div>
 
             <!-- Mobile Toggle -->
             <div class="d-md-none d-flex align-items-center">
@@ -42,6 +63,7 @@ margin: 0.7rem
                 </a>
             </div>
         </div>
+		</div>
 		 <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
