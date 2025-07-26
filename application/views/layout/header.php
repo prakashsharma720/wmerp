@@ -189,4 +189,5 @@ $allnotifications = $CI->dynamic_menu->getNoti();
             </div>
         </div>
     </div>
+
 </header>
