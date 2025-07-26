@@ -41,7 +41,7 @@ public function index() {
     $data['employees']  = $this->Leave_model->getEmployeesList();
     $data['totalemployees']  = $this->Payroll_model->getTotalEmployee();
     
-    $this->template->load('layout/template', 'payroll/attendance', $data);
+    $this->template->load('layout/template', 'leave-module/attendance', $data);
 }
 
 public function add() {

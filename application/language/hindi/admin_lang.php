@@ -3269,6 +3269,10 @@ $lang['action'] = 'क्रिया';
 $lang['create'] = 'बनाएं';
 $lang['update_task'] = 'कार्य अपडेट करें';
 $lang['task_history_description'] = 'कार्य इतिहास विवरण';
+$lang['create_task'] = 'कार्य बनाएँ';
+$lang['easy'] = 'आसान';
+$lang['medium'] = 'मध्यम';
+$lang['hard'] = 'कठिन';
 
 $lang['reference'] = 'संदर्भ';
 $lang['reference_name'] = 'संदर्भ नाम';

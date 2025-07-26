@@ -85,12 +85,12 @@ margin: 0.7rem
 					           <!--start date-->	
 									<div class="col-md-12 col-sm-12">
 						            	<label class="control-label"> <?= $this->lang->line('start_date') ?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date" class="form-control date-picker" value="<?php echo $start_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
+						                <input type="date" data-date-formate="dd-mm-yyyy" name="start_date"  class="form-control date-picker"  value="<?php echo $start_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-12 col-sm-12">
 						            	<label class="control-label"> <?= $this->lang->line('end_date') ?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" value="<?php echo $end_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
+						                <input type="date" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker"  value="<?php echo $end_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 									<!-- status -->
 									 <!--Status-->

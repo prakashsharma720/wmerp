@@ -3318,6 +3318,11 @@ $lang['upto_date'] = 'Крайна дата';
 $lang['show_entries'] = 'Показване';
 $lang['entries'] = 'Записи';
 $lang['search'] = 'Търсене';
+$lang['easy'] = 'Лесно';
+$lang['medium'] = 'Средно';
+$lang['hard'] = 'Трудно';
+$lang['create_task'] = 'Създаване на задача';
+
 
 $lang['project'] = 'Проект';
 $lang['task_title'] = 'Заглавие на задачата';

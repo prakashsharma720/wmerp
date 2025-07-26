@@ -1,29 +1,62 @@
-<?php
-	defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+
 <style>
     .control-label {
 margin: 0.7rem
 }
 </style>
-<div class="container-fluid">
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-    <div class="card card-primary card-outline">
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+               <h5> <a href="<?php echo base_url('index.php/Leave/create'); ?>"><?= $this->lang->line('leave_module') ?></a></h5>
+            </div>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+                </li>
+                <li class="breadcrumb-item"><?= $this->lang->line('apply_for_leave') ?>
+                </li>
+            </ul>
+        </div>
 
-		<!-- card-header -->
-      	<div class="card-header">
-        	<h3 class="card-title pull-left"><?= $this->lang->line('apply_for_leave') ?></h3>
-			<div class="pull-right">
+        <div class="page-header-right ms-auto">
+            <div class="page-header-right-items">
+               <div class="pull-right">
 				<label> <?= $this->lang->line('leave_application') ?> : </label><b style="color:#37b5fe;"> <?= $lead_code?></b>
 			</div>
-		</div>
-		<!-- / card-header -->
+            </div>
 
-	    <!-- card-body -->
-		<div class="card-body">
-			<div class="row">
-				<div class="col-md-12">
-					<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Leave/add_new_item">
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+  <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
+<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Leave/add_new_item">
 						<!-- <input type="hidden" name="lead_code" value="<?php echo $lead_code;?>"> -->
 						<?php 
 							if(!empty($generation_date)) 
@@ -147,16 +180,14 @@ margin: 0.7rem
 							</div>
 							<!-- / Row -->
 						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- / card-body -->
-
-	</div>
-	<!-- / card card-primary card-outline -->
+					</form>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- / container-fluid -->
+
+</div>
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 
