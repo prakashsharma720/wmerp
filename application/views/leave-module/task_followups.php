@@ -30,7 +30,7 @@
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('daily_tasks') ?></h5>
+				<h5> <a href="<?php echo base_url('index.php/Dailytasks/tasks'); ?>"><?= $this->lang->line('daily_tasks') ?></a></h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">

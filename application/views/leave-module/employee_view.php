@@ -24,7 +24,7 @@
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="<?php echo base_url('index.php/Employees/index'); ?>"><?= $this->lang->line('home') ?></a>
+                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
                 </li>
                 <li class="breadcrumb-item"><?= $this->lang->line('view_list') ?>
                 </li>

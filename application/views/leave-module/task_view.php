@@ -20,7 +20,7 @@
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('daily_tasks') ?></h5>
+               <h5> <a href="<?php echo base_url('index.php/Dailytasks/tasks'); ?>"><?= $this->lang->line('daily_tasks') ?></a></h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -44,13 +44,16 @@
                         <i class="feather-filter"></i>
                     </a>
                          
-                    <a href="<?php echo base_url(); ?>index.php/Employees/task_add" class="btn btn-primary" data-toggle="tooltip"
-                    title="New Employee"><i class="fa fa-plus"></i></a>
-                     <button class="btn btn-primary" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
+                  <a href="<?php echo base_url('index.php/Dailytasks/task_add'); ?>" class="btn btn-icon btn-light-brand">
+                                <i class="feather feather-plus"></i>
+                                </span>
+                            </a>
+                     <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
                         class="fa fa-refresh"></i></button>
 
-                        <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i
-                        class="fa fa-trash"></i></button>
+                        <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete">
+                  <i class="feather feather-trash "></i> 
+              </button>
 
                     </div>
                     </div>
