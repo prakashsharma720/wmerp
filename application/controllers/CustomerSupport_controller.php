@@ -280,7 +280,7 @@ Class CustomerSupport_controller extends MY_Controller {
 	}
 	
 
-	public function update_satus(){
+	public function update_status(){
 		// echo "<pre>"; print_r($_POST); exit;
 			$id= $this->input->post('id');
 			 $status = $this->input->post('status');

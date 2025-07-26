@@ -985,7 +985,7 @@
           </ul>
         </li>
           <!-- Account Settings -->
-        <li class="nxl-item nxl-hasmenu">
+        <!-- <li class="nxl-item nxl-hasmenu">
           <a href="javascript:void(0);" class="nxl-link">
             <i class="feather-settings"></i>
             <span class="nxl-mtext"><?= $this->lang->line('account_settings') ?></span>
@@ -1008,7 +1008,7 @@
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
     </div>
 
   </div>

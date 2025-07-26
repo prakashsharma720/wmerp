@@ -96,32 +96,54 @@
                                             <td> <?= $obj['ticket_data']['phone'] ?> </td>
 
                                             <td> <?php if ($obj['ticket_data']['status'] == 'Open') { ?>
-                                                <span class="badge badge-danger"><?= $obj['ticket_data']['status'] ?></span>
+                                                <span
+                                                    class="badge bg-soft-primary text-primary"><?= $obj['ticket_data']['status'] ?></span>
+                                                <?php } else if ($obj['ticket_data']['status'] == 'Closed') { ?>
+                                                <span
+                                                    class="badge bg-soft-danger text-danger"><?= $obj['ticket_data']['status'] ?></span>
+                                                <?php } else if ($obj['ticket_data']['status'] == 'Resolved') { ?>
+                                                <span
+                                                    class="badge bg-soft-success text-success"><?= $obj['ticket_data']['status'] ?></span>
                                                 <?php } else { ?>
-                                                <span class="badge badge-success"><?= $obj['ticket_data']['status'] ?></span>
-
-                                                <?php } ?>
+                                                    <span
+                                                    class="badge bg-soft-warning text-warning"><?= $obj['ticket_data']['status'] ?></span>
+                                                    <?php } ?>
                                             </td>
 
 
 
                                             <td>
-                                            <div class="hstack gap-2 justify-content-start">
-                                                <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewDetails<?php echo $obj['ticket_data']['id']; ?>" title="View More">
-                                                    <i class="feather feather-eye "></i>
-                                                </a>
-                                                <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/CustomerSupport_controller/followups/<?php echo $obj['ticket_data']['ticket']; ?>" title=" Lead Followup">  <i class="feather feather-edit "></i>
-                                                </a>
-                                                 <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewTracking<?php echo $obj['ticket_data']['id']; ?>" title="Ticket Tracking">
-                                                    <i class="feather feather-map "></i>
-                                                </a>
-                                                
-                                            </div>
+                                                <div class="hstack gap-2 justify-content-start">
+                                                    <a class="btn btn-icon avatar-text avatar-md"
+                                                        data-bs-toggle="offcanvas"
+                                                        data-bs-target="#ViewDetails<?php echo $obj['ticket_data']['id']; ?>"
+                                                        title="View More">
+                                                        <i class="feather feather-eye "></i>
+                                                    </a>
+                                                    <!-- <a href="javascript:void(0);" class="btn btn-primary w-100" id="add-notes">
+                                                    <i class="feather-plus me-2"></i>
+                                                    <span>Add Notes</span>
+                                                </a> -->
+
+                                                    <a class="btn btn-icon avatar-text avatar-md"
+                                                        href="<?php echo base_url(); ?>index.php/CustomerSupport_controller/followups/<?php echo $obj['ticket_data']['ticket']; ?>"
+                                                        title=" Lead Followup"> <i class="feather feather-edit "></i>
+                                                    </a>
+                                                    <a class="btn btn-icon avatar-text avatar-md"
+                                                        data-bs-toggle="offcanvas"
+                                                        data-bs-target="#ViewTracking<?php echo $obj['ticket_data']['id']; ?>"
+                                                        title="Ticket Tracking">
+                                                        <i class="feather feather-map "></i>
+                                                    </a>
+
+                                                </div>
+
                                                 <div class="offcanvas offcanvas-end" tabindex="-1"
                                                     id="ViewDetails<?= $obj['ticket_data']['id']; ?>">
                                                     <div
                                                         class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
-                                                        <h2 class="fs-16 fw-bold text-truncate-1-line">Ticket Details</h2>
+                                                        <h2 class="fs-16 fw-bold text-truncate-1-line">Ticket Details
+                                                        </h2>
                                                         <button type="button" class="btn-close"
                                                             data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                                     </div>
@@ -129,7 +151,8 @@
                                                     <div class="offcanvas-body">
                                                         <form class="form-horizontal" role="form" method="post"
                                                             action="<?php echo base_url(); ?>index.php/CustomerSupport_controller/update_status/">
-                                                            <input type="hidden" name="id" value="<?= $obj['ticket_data']['id'] ?>">
+                                                            <input type="hidden" name="id"
+                                                                value="<?= $obj['ticket_data']['id'] ?>">
                                                             <label class="control-label"> Select Status</label>
                                                             <select name="status" class="form-control">
                                                                 <option value="">
@@ -139,7 +162,7 @@
                                                                     <?= $this->lang->line('open') ?></option>
                                                                 <option value="InProcess"
                                                                     <?= ($obj['ticket_data']['status'] == 'InProcess') ? 'selected' : '' ?>>
-                                                                    <?= $this->lang->line('inprocess') ?></option>
+                                                                    <?= $this->lang->line('in_process') ?></option>
                                                                 <option value="Closed"
                                                                     <?= ($obj['ticket_data']['status'] == 'Closed') ? 'selected' : '' ?>>
                                                                     <?= $this->lang->line('closed') ?></option>
@@ -147,15 +170,18 @@
                                                                     <?= ($obj['ticket_data']['status'] == 'Resolved') ? 'selected' : '' ?>>
                                                                     <?= $this->lang->line('resolved') ?></option>
                                                             </select>
-                                                        </form>
+
                                                     </div>
                                                     <div
                                                         class="px-4 gap-2 d-flex align-items-center ht-80 border border-end-0 border-gray-2">
+                                                        <button type="submit" class="btn btn-xs btn-primary w-50">
+                                                            Submit</button>
                                                         <a href="javascript:void(0);" class="btn btn-danger w-50"
                                                             data-bs-dismiss="offcanvas">Cancel</a>
                                                     </div>
+                                                    </form>
                                                 </div>
-                                            <?php $this->load->view('CustomerSupport/tracking_model', ['obj' => $obj]); ?>
+                                                <?php $this->load->view('CustomerSupport/tracking_model', ['obj' => $obj]); ?>
                                             </td>
                                         </tr>
                                         <?php $i++;
@@ -318,4 +344,11 @@ jQuery('#delete').on('click', function(e) {
         }
     }
 });
+</script>
+<script>
+// $("#add-notes").on("click", function(event) {
+//     $("#addnotesmodal").modal("show");
+//     $("#btn-n-save").hide();
+//     $("#btn-n-add").show();
+// });
 </script>

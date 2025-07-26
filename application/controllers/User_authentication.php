@@ -190,8 +190,8 @@ public function admin_dashboard() {
 	
 	// $this->template->load('template', 'super_dashboard',$data);
 	//   $this->load->view('layouts/darulux', $data);
-		$this->template->load('layout/template', 'crm_dashboard', $data);
-//$this->load->view('dashboard',$data);
+	$this->template->load('layout/template', 'crm_dashboard', $data);
+	//$this->load->view('dashboard',$data);
 }
 
 
@@ -366,9 +366,11 @@ public function new_user_registration() {
 		$this->index();
 	//$this->load->view('admin_page');
 	}else{
+
 	$this->load->view('login_form');
 	}
 	} else {
+			
 	$data = array(
 	'username' => $this->input->post('username'),
 	'password' => $new_password

@@ -9,7 +9,7 @@
 
         <div class="offcanvas-body">
             <div class="drive-comments">
-                <div class="px-4 py-2 fw-bold text-dark border-top border-bottom sticky-top bg-gray-100"> Activity</div>
+                <div class="px-4 py-2 fw-bold text-dark border-top border-bottom  bg-gray-100"> Activity</div>
                 <div class="p-4">
                     <ul class="list-unstyled activity-feed">
                         <li class="d-flex justify-content-between feed-item feed-item-success">
@@ -42,7 +42,7 @@
                 </div>
             </div>
            <div class="drive-comments">
-            <div class="px-4 py-2 fw-bold text-dark border-top border-bottom sticky-top bg-gray-100">Comments</div>
+            <div class="px-4 py-2 fw-bold text-dark border-top border-bottom  bg-gray-100">Comments</div>
                 <div class="p-4">
                   
                     <div class="mb-4 d-flex align-items-start">

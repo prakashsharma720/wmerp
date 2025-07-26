@@ -3470,6 +3470,10 @@ $lang['gatepass'] = "Gatepass";
 $lang['enter_reason'] = "Enter Reason";
 $lang['apply'] = 'Apply';
 
+$lang['open'] = 'Open';
+$lang['closed'] = 'Closed';
+$lang['resolved'] = 'Resolved';
+
 // daily tasks project
 $lang['daily_task_master'] = 'Daily Task Master';
 $lang['project_name'] = 'Project Name';
