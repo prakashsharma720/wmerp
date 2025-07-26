@@ -1,3 +1,55 @@
+<?php if ($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
+    <?= $this->session->flashdata('success'); ?>
+  </div>
+<?php endif; ?>
+
+<?php if ($this->session->flashdata('failed')): ?>
+  <div class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
+    <h5><i class="icon fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
+    <?= $this->session->flashdata('failed'); ?>
+  </div>
+<?php endif; ?>
+
+<div class="nxl-content">
+  <div class="page-header mb-3">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"><?= $this->lang->line('purchase_orders_report') ?></h5>
+      </div>
+      <ul class="breadcrumb ml-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-header-right ms-auto">
+      <div class="page-header-right-items">
+        <form method="post" action="<?php echo base_url(); ?>index.php/Purchase_order/createXLS">
+
+          <?php 
+          if(!empty($conditions)){
+            foreach ($conditions as $key => $value) { ?>
+            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
+          <?php } }?>
+           <button type="submit" class="btn btn-info"> <?=$this ->lang ->line('export')?> </button>
+         </form>
+      </div>
+      <div class="d-md-none d-flex align-items-center">
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $current_page=current_url();
@@ -24,27 +76,11 @@ $data=explode('?', $current_page);
       <?php endif; ?>
 <div class="container-fluid">
   <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?=$this ->lang ->line('purchase_orders_report')?>
-      </span>
-       <div class="pull-right error_msg">
-        <form method="post" action="<?php echo base_url(); ?>index.php/Purchase_order/createXLS">
-
-          <?php 
-          if(!empty($conditions)){
-            foreach ($conditions as $key => $value) { ?>
-            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
-          <?php } }?>
-           <button type="submit" class="btn btn-info"> <?=$this ->lang ->line('export')?> </button>
-         </form>
-        <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
-      </div>
-    </div> <!-- /.card-body -->
     <div class="card-body">
       <form method="get" id="filterForm">
           <div class="row">
 
-              <div class="col-md-4 col-sm-4 ">
+              <div class="col-md-4 col-sm-4  md-3 mb-3">
                 <label  class="control-label"><?=$this ->lang ->line('filter_by_supplier')?> <span class="required">*</span></label>
                 <select name="supplier_id" class="form-control select2 employees" >
                     <option value="0"><?=$this ->lang ->line('select_supplier')?></option>
@@ -109,12 +145,19 @@ $data=explode('?', $current_page);
                 <div class="row">
                    <div class="col-md-6 col-sm-6 ">
                    </div>
-                   <div class="col-sm-4 col-sm-4   ">
-                      <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?></label><br>
-                      <input type="submit" class="btn btn-primary" value="<?= $this->lang->line('search'); ?>" /> 
-                      <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                      <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?></a>
-                  </div>
+                   <div class="col-sm-4 d-flex align-items-end gap-2 p-3">
+    <!-- Hidden label to preserve alignment -->
+    <label class="control-label invisible"><?= $this->lang->line('grade') ?></label>
+
+    <!-- Search Button -->
+    <input type="submit" class="btn btn-primary" value="<?= $this->lang->line('search'); ?>" />
+
+    <!-- Reset Button -->
+    <a href="<?= base_url(uri_string()); ?>" class="btn btn-danger">
+        <?= $this->lang->line('reset') ?>
+    </a>
+</div>
+
                 </div>
             
         </form>

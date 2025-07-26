@@ -203,7 +203,7 @@
 								<td><?= $electrical_good['code'] ?></td>
 								<td><?= $electrical_good['company_name'] ?></td>
 								<td><?= $electrical_good['description'] ?></td>
-								<td> <a class="btn btn-sm border-0 shadow-none p-1 text-dark" href="<?php echo base_url(); ?>index.php/Electrical_goods/index/<?php echo $electrical_good['id'];?>"><i class="fa fa-edit"></i></a></td>
+								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Electrical_goods/index/<?php echo $electrical_good['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>

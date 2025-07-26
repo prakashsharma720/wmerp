@@ -11,6 +11,8 @@ $lang['Are you new?'] = 'Нов ли сте?';
 $lang['google_signin'] = 'Вход с Google';
 $lang['or'] = 'или';
 $lang['add_new_finished_good'] = 'Добавяне на нов готов продукт';
+$lang['tentative_date_of_return'] = 'Прогнозна дата на връщане';
+$lang['select_customer'] = 'Изберете клиент';
 
 $lang['login'] = 'Вход';
 $lang['remember_me'] = 'Запомни ме';

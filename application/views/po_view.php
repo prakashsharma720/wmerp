@@ -87,7 +87,7 @@
               <th> <?= $this->lang->line('po_no') ?> </th>
               <th style="white-space: nowrap;"> <?= $this->lang->line('supplier_name') ?> </th>
               <th style="white-space: nowrap;"> <?= $this->lang->line('date') ?> </th>
-              <th style="white-space: nowrap;"><?= $this->lang->line('total_amount') ?> (&#8377;)</th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('total_amount') ?> </th>
               <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?> </th>
             </tr>
           </thead>
@@ -134,12 +134,15 @@
                   </a>
 
                   <a class="btn border rounded bg-light shadow-sm text-dark me-2 px-3 py-2" href="<?php echo base_url(); ?>index.php/Purchase_order/edit/<?php echo $obj['id']; ?>">
-                    <i class="fa fa-edit"></i>
+                    <i class="feather feather-edit-3"></i>
                   </a>
 
-                  <a class="btn border rounded bg-light shadow-sm text-dark px-3 py-2" data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>">
-                    <i class="fa fa-trash"></i>
+
+                  <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#DeletePO<?php echo $obj['id']; ?>" title="Delete">
+                    <i class="fa fa-trash "></i>
                   </a>
+
+
 
 
                 </td>
@@ -171,6 +174,9 @@
                   </div>
                 </div>
                 <?php $this->load->view('leave-module/component/orderview.php', ['obj' => $obj]); ?>
+                <?php $this->load->view('leave-module/component/delete.php', ['obj' => $obj]); ?>
+
+
 
               </tr>
 

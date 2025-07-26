@@ -44,15 +44,15 @@
 
 
             <!-- Action Buttons -->
-            <a href="<?= base_url(); ?>index.php/Purchase_order/add" class="btn btn-lg border-0 shadow-none px-3 py-2 text-dark" data-bs-toggle="tooltip" title="New PO">
+            <a href="<?= base_url(); ?>index.php/Purchase_order/add" class="border rounded bg-light shadow-sm text-dark px-2 py-1 me-1"" data-bs-toggle="tooltip" title="New PO">
               <i class="fa fa-plus"></i>
             </a>
 
-            <button class="btn btn-lg border-0 shadow-none px-3 py-2 text-dark" data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
+            <button class="border rounded bg-light shadow-sm text-dark px-2 py-1 me-1" data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
   <i class="fa fa-refresh fa-lg"></i>
 </button>
 
-<button class="btn btn-lg border-0 shadow-none px-3 py-2 text-dark" data-bs-toggle="tooltip" title="Bulk Delete">
+<button class="border rounded bg-light shadow-sm text-dark px-2 py-1 me-1"" data-bs-toggle="tooltip" title="Bulk Delete">
   <i class="fa fa-trash fa-lg"></i>
 </button>
 
@@ -95,12 +95,21 @@
                   <td><?= $obj['rm_code']; ?></td>
                   <td>
                     <div class="d-flex align-items-center">
-  <a class="btn btn-sm border-0 shadow-none p-1 text-dark" href="<?= base_url(); ?>index.php/Rm_code/edit/<?= $obj['id']; ?>" title="Edit">
-    <i class="fa fa-edit"></i>
-  </a>
-  <a class="btn btn-sm border-0 shadow-none p-1 text-dark ml-2" data-toggle="modal" data-target="#delete<?= $obj['id']; ?>" title="Delete">
-    <i class="fa fa-trash"></i>
-  </a>
+ <!-- Edit Button -->
+<a href="<?= base_url(); ?>index.php/Rm_code/edit/<?= $obj['id']; ?>"
+   class="border rounded bg-light shadow-sm text-dark px-2 py-1 me-1"
+   data-bs-toggle="tooltip" title="Edit">
+  <i class="feather feather-edit-3"></i>
+</a>
+
+<!-- Delete Button -->
+<a href="javascript:void(0);" 
+   class="border rounded bg-light shadow-sm text-dark px-2 py-1"
+   data-bs-toggle="modal" data-bs-target="#delete<?= $obj['id']; ?>" 
+   title="Delete">
+  <i class="fa fa-trash"></i>
+</a>
+
 </div>
 
                   </td>

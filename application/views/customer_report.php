@@ -1,153 +1,165 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
-$data=explode('?', $current_page);
-/*echo $category_id=$_GET['categories_id'];
-echo $supplier_id=$_GET['supplier_id'];
-echo $category_of_approval=$_GET['category_of_approval'];*/
-//print_r($conditions);
-?>
+<?php if ($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
+    <?= $this->session->flashdata('success'); ?>
+  </div>
+<?php endif; ?>
 
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
+<?php if ($this->session->flashdata('failed')): ?>
+  <div class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
+    <h5><i class="icon fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
+    <?= $this->session->flashdata('failed'); ?>
+  </div>
+<?php endif; ?>
 
-</style>
+<div class="nxl-content">
+  <div class="page-header mb-3">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"><?= $this->lang->line('customer_report') ?></h5>
+      </div>
+      <ul class="breadcrumb ml-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+        </li>
+      </ul>
+    </div>
 
-<?php // echo $data; exit; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <label class="card-title"><?=$this ->lang ->line('customers_report')?></label>
-       <div class="pull-right error_msg">
-        <form method="post" action="<?php echo base_url(); ?>index.php/Customers/createXLS">
+    <div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Filter Button -->
+      <button id="toggleFilter" class="btn btn-warning me-2" type="button">
+  <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+</button>
 
-          <?php 
+
+      <!-- Export Button -->
+      <form method="post" action="<?php echo base_url(); ?>index.php/Customers/createXLS">
+        <?php 
           if(!empty($conditions)){
             foreach ($conditions as $key => $value) { ?>
-            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
-          <?php } }?>
-           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
-         </form>
-        <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
-      </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-        <form method="get" id="filterForm">
-      <div class="row">
-
-              <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"><?= $this->lang->line('name_of_customer') ?> <span class="required">*</span></label>
-                <select name="customer_id" class="form-control select2 suppliers" >
-                    <option value="0">Select Customer</option>
-                    <?php
-                         if ($all_customers): ?> 
-                          <?php 
-                            foreach ($all_customers as $value) : ?>
-                              <?php 
-                                  if ($value['id'] == $customer_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['customer_name'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['customer_name'] ?></option>
-                                  <?php endif;   ?>
-                                   <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?= $this->lang->line('no_result') ?></option>
-                        <?php endif; ?>
-                </select>
-              </div>
-             
-             <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> <?= $this->lang->line('from_date') ?></label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> <?= $this->lang->line('upto_date') ?></label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-              </div>
-                <div class="row">
-                  
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
-              </div>
-          </div>
-            
-        </form>
-            <hr>
-
-      <div class="table-responsive">
-        <table  class="table table-bordered table-striped" >
-          <thead>
-            <tr >
-              <th> <?= $this->lang->line('name') ?> </th>
-              <th style="white-space: nowrap;"><?= $this->lang->line('registration_date') ?> </th>
-              <th style="white-space: nowrap;"> <?= $this->lang->line('contact_person') ?> </th>
-              <th> <?= $this->lang->line('email') ?></th>
-              <th> <?= $this->lang->line('mobile_no') ?></th>
-              <th> <?= $this->lang->line('website') ?></th>
-              <th> <?= $this->lang->line('shipping_address') ?></th>
-              <!-- <th style="white-space: nowrap;">Bank Name</th>
-              <th> Account No</th>
-              <th  style="white-space: nowrap;"> Service State</th>
-              <th style="white-space: nowrap;">Approval Date</th>
-              <th style="white-space: nowrap;"> Next Evalution</th> -->
-            </tr>
-          </thead>
-          <tbody >
-           <?php
-          $i=1;foreach($customers as $obj){ ?>
-              <tr>
-                <!-- <td><?php echo $i;?></td> -->
-                <td><?php echo $obj['customer_name'].' ('.$obj['customer_code'].')'; ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['reg_date'])); ?></td>
-                <td><?php echo $obj['contact_person']; ?></td>
-                <td><?php echo $obj['email']; ?></td>
-                <td><?php echo $obj['mobile_no']; ?></td>
-                <td><?php echo $obj['website']; ?></td>
-
-               <td><?php echo $obj['shipping_address']; ?></td>
-                <!-- <td><?php echo $obj['bank_name']; ?></td>
-                <td><?php echo $obj['account_no']; ?></td>
-                <td><?php echo $obj['state']; ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['date_of_approval'])); ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['date_of_evalution'])); ?></td> -->
-              </tr>
-            <?php  $i++;} ?>
-          </tbody>
-        </table>
-    </div>
+              <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
+        <?php } } ?>
+        <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
+      </form>
     </div>
   </div>
 </div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+$current_page = current_url();
+$data = explode('?', $current_page);
+?>
+
+<style>
+  .col-sm-6, .col-md-6 {
+    float: left;
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="card card-primary card-outline">
+    <div class="card-body">
+
+      <!-- Filter Form Wrapper (initially hidden) -->
+      <div id="filterFormWrapper" style="display: none;">
+        <form method="get" id="filterForm">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <label class="control-label"><?= $this->lang->line('name_of_customer') ?> <span class="required">*</span></label>
+              <select name="customer_id" class="form-control select2 suppliers">
+                <option value="0"><?= $this->lang->line('select_customer') ?></option>
+                <?php if ($all_customers): ?>
+                  <?php foreach ($all_customers as $value): ?>
+                    <option value="<?= $value['id'] ?>" <?= ($value['id'] == $customer_id) ? 'selected' : '' ?>>
+                      <?= $value['customer_name'] ?>
+                    </option>
+                  <?php endforeach; ?>
+                <?php else: ?>
+                  <option value="0"><?= $this->lang->line('no_result') ?></option>
+                <?php endif; ?>
+              </select>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+              <label class="control-label"><?= $this->lang->line('from_date') ?></label>
+              <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+              <label class="control-label"><?= $this->lang->line('upto_date') ?></label>
+              <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4 d-flex align-items-end gap-2 p-3">
+              <input type="submit" class="btn btn-sm btn-primary" value="<?= $this->lang->line('search') ?>" />
+              <a href="<?= $data[0] ?>" class="btn btn-sm btn-danger"><?= $this->lang->line('reset') ?></a>
+            </div>
+          </div>
+        </form>
+        <hr>
+      </div>
+
+      <!-- Customer Table -->
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th><?= $this->lang->line('name') ?></th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('registration_date') ?></th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('contact_person') ?></th>
+              <th><?= $this->lang->line('email') ?></th>
+              <th><?= $this->lang->line('mobile_no') ?></th>
+              <th><?= $this->lang->line('website') ?></th>
+              <th><?= $this->lang->line('shipping_address') ?></th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $i = 1; foreach ($customers as $obj): ?>
+              <tr>
+                <td><?= $obj['customer_name'] . ' (' . $obj['customer_code'] . ')' ?></td>
+                <td><?= date('d-M-Y', strtotime($obj['reg_date'])) ?></td>
+                <td><?= $obj['contact_person'] ?></td>
+                <td><?= $obj['email'] ?></td>
+                <td><?= $obj['mobile_no'] ?></td>
+                <td><?= $obj['website'] ?></td>
+                <td><?= $obj['shipping_address'] ?></td>
+              </tr>
+            <?php $i++; endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
 
 <script type="text/javascript">
   $(document).ready(function() {
-    var base_url='<?php echo base_url() ;?>';
-    //alert(base_url);
-    $(document).on('change','.category',function(){
-        var category_id = $('.category').find('option:selected').val();
-        //var aa= base_url+"index.php/Meenus/rolewisedata/"+role_id;
-        //alert(category_id);
-        $.ajax({
-                  type: "POST",
-                  url:"<?php echo base_url('index.php/Suppliers/getSupplierByCategory/') ?>"+category_id,
-                  //data: {id:role_id},
-                  dataType: 'html',
-                  success: function (response) {
-                    //alert(response);
-                      $(".suppliers").html(response);
-                      $('.select2').select2();
-                      //$('.category').find('option:selected').prop('required',true);
+    // Toggle Filter Form
+    $('#toggleFilter').click(function () {
+      $('#filterFormWrapper').slideToggle();
+    });
 
-                  }
-              });
-      }); 
+    // AJAX: Load customer based on category (optional, if you later add it)
+    $(document).on('change', '.category', function () {
+      var category_id = $(this).val();
+      $.ajax({
+        type: "POST",
+        url: "<?= base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
+        dataType: 'html',
+        success: function (response) {
+          $(".suppliers").html(response);
+          $('.select2').select2();
+        }
+      });
+    });
   });
-</script> 
+</script>

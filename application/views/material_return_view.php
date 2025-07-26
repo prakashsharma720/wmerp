@@ -1,3 +1,60 @@
+
+
+<?php if ($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
+    <?php echo $this->session->flashdata('success'); ?>
+  </div>
+  <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
+
+<?php if ($this->session->flashdata('failed')): ?>
+  <div class="alert alert-error alert-dismissible ">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
+    <?php echo $this->session->flashdata('failed'); ?>
+  </div>
+<?php endif; ?>
+
+<!-- Page Header -->
+<div class="nxl-content">
+  <div class="page-header mb-3">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"><?= $this->lang->line('gir_register_list') ?></h5>
+      </div>
+      <ul class="breadcrumb ml-3">
+        <li class="breadcrumb-item">
+          <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+        </li>
+        <!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?></li> -->
+
+      </ul>
+
+    </div>
+
+    
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $current_page=current_url();
@@ -14,31 +71,8 @@ $data=explode('?', $current_page);
  
 </style>
 
-    <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?> !</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?> !</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?=$this ->lang ->line('gir_register_list')?>
-      </span>
-       <div class="button-group float-right">
-      </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
+    <div class="card-body p-3">
 	<form method="get" id="filterForm">
       <div class="row">
           <div class="col-md-4 col-sm-4 ">
@@ -112,16 +146,28 @@ $data=explode('?', $current_page);
                     <label  class="control-label"> <?=$this ->lang ->line('upto_date')?> </label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?> </label><br>
-                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?> </a>
-              </div>
-          </div>
+                 <div class="col-md-4 col-sm-4">
+  <!-- Hidden label to align with other form elements -->
+  <label class="control-label" style="opacity: 0; height: 20px;">
+    <?= $this->lang->line('grade') ?>
+  </label>
+
+  <div class="d-flex">
+    <!-- Search Button -->
+    <button type="submit" class="btn btn-sm btn-primary me-2">
+      <?= $this->lang->line('search') ?>
+    </button>
+
+    <!-- Reset Button -->
+    <button type="reset" class="btn btn-sm btn-outline-secondary">
+      <?= $this->lang->line('reset') ?>
+    </button>
+  </div>
+</div>
+
         </form>
         <br></br>
-      <div class="table-responsive">
+      <div class="table-responsive p-3">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
@@ -166,13 +212,25 @@ $data=explode('?', $current_page);
                 <td><?php echo $obj['supplier']; ?></td>
                 <td><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
                 <td><?php echo $obj['total_qty']; ?></td>
-                <td >
-                   <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>" title="View GIR Register"><i style="color:#fff;"class="fa fa-eye"></i></a>
-				  
-				    <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id'];?>" title="Print  Register"><i class="fa fa-print"></i></a>
-				
-          <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id'];?> " title="Create Return Slip" ><i class="fa fa-exchange"></i></a>
-           </td>
+              <td>
+  <div class="d-flex gap-2">
+    <!-- View Button -->
+    <a class="btn btn-xs border btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>" title="View GIR Register">
+      <i class="fa fa-eye text-dark"></i>
+    </a>
+
+    <!-- Print Button -->
+    <a class="btn btn-xs border btnEdit" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id'];?>" title="Print Register">
+      <i class="fa fa-print text-dark"></i>
+    </a>
+
+    <!-- Return Slip Button -->
+    <a class="btn btn-xs border btnEdit" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id'];?> " title="Create Return Slip">
+      <i class="fa fa-exchange text-dark"></i>
+    </a>
+  </div>
+</td>
+
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <!-- Modal content-->

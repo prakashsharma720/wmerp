@@ -116,7 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<tr>
 								<td><?= $i ?></td>
 								<td><?= $grid['grid_name']?></td>
-								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" style="padding: 2px 3px;" href="<?php echo base_url(); ?>index.php/Grid/index/<?php echo $grid['id'];?>"><i class="fa fa-edit"></i></a></td>
+								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" style="padding: 2px 3px;" href="<?php echo base_url(); ?>index.php/Grid/index/<?php echo $grid['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>

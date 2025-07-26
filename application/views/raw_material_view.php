@@ -202,7 +202,7 @@
 								<td><?= $raw_material['name'] ?></td>
 					            <td><?= $raw_material['grade'] ?></td>
 								<td><?= $raw_material['grade_name'] ?></td>
-								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" style="padding: 2px 3px;" href="<?php echo base_url(); ?>index.php/Raw_material/index/<?php echo $raw_material['id'];?>"><i class="fa fa-edit"></i></a></td>
+								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" style="padding: 2px 3px;" href="<?php echo base_url(); ?>index.php/Raw_material/index/<?php echo $raw_material['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++; } ?>
 						</tbody>
