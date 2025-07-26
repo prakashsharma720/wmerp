@@ -81,7 +81,7 @@
                <td>
   <div class="d-flex gap-1">
     <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Finish_goods/edit/<?php echo $obj['id']; ?>">
-      <i class="fa fa-edit"></i>
+      <i class="feather feather-edit-3"></i>
     </a>
     <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>">
       <i class="fa fa-trash"></i>

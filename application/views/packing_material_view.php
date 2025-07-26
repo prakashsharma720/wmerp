@@ -191,7 +191,7 @@
 										<td><?= $packing_material['name']  ?></td>
 										<td><?= $packing_material['bag_packing'] ?></td>
 										<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" style="padding: 2px 3px;" href="<?php echo base_url(); ?>index.php/Packing_materials/index/<?php echo $packing_material['id']; ?>">
-											<i class="feather-edit"></i>
+											<i class="feather feather-edit-3"></i>
 										</a></td>
 									</tr>
 								<?php $i++;

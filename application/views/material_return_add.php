@@ -1,19 +1,62 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-//print_r($items);exit;
-?>
+<?php if ($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
+    <?php echo $this->session->flashdata('success'); ?>
+  </div>
+  <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?=$this ->lang ->line('material_out_return_register')?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
-		
+<?php if ($this->session->flashdata('failed')): ?>
+  <div class="alert alert-error alert-dismissible ">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
+    <?php echo $this->session->flashdata('failed'); ?>
+  </div>
+<?php endif; ?>
+
+<!-- Page Header -->
+<div class="nxl-content">
+  <div class="page-header mb-3">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"><?= $this->lang->line('material_return_register') ?></h5>
+      </div>
+      <ul class="breadcrumb ml-3">
+        <li class="breadcrumb-item">
+          <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+        </li>
+        <!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?></li> -->
+
+      </ul>
+
+    </div>
+
+    
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
 		</div>
+	</div>
 
-      </div> <!-- /.card-body -->
-      <div class="card-body">
+
+
+
+
+
+
+
+
+		
+      <div class="card-body p-3">
 		    <form class="form-horizontal " role="form" method="post" action="<?php echo base_url(); ?>index.php/Material_return_records/add_new_gir/">
 		        <div class="form-group">
 		        	<div class="row ">
@@ -53,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					            </select> 
 			            </div>
 			           	<div class="col-md-4 col-sm-4 ">
-			            	 <label  class="control-label"><?=$this ->lang ->line('name_of_sup]lier')?>  <span class="required">*</span></label>
+			            	 <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?>  <span class="required">*</span></label>
 			            	<select name="supplier_id" class="form-control select2 suppliers" required="required">
 			            		<option value=""> <?=$this ->lang ->line('select_supplier')?> </option>
 						        <?php
@@ -134,9 +177,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										</td>
 										
 										<td style="width:13%">
-											<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-											<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
-										</td>
+  <!-- Add Row Button -->
+  <button type="button" class="btn btn-xs border addrow" role="button" title="Add Row">
+    <i class="fa fa-plus text-dark"></i>
+  </button>
+
+  <!-- Delete Row Button -->
+  <button type="button" class="btn btn-xs border deleterow" role="button" title="Delete Row">
+    <i class="fa fa-minus text-dark"></i>
+  </button>
+</td>
+
 									</tr>
 			        			</tbody>
 			        			<tfoot>

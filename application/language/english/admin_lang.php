@@ -357,6 +357,9 @@ $lang['enter_gate_pass_no'] = 'Enter Gate Pass No';
 $lang['minimum_inventory_levels_report'] = 'Minimum Inventory Levels Report';
 $lang['add_new_finished_good'] = 'Add New Finished Good';
 $lang['delete'] = 'Delete';
+$lang['tentative_date_of_return'] = 'Tentative Date of Return';
+$lang['select_customer'] = 'Select Customer';
+
 $lang['transaction_category'] = 'Transaction Category';
 $lang['invoice_date'] = 'Invoice Date';
 $lang['invoice_number'] = 'Invoice Number';

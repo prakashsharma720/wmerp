@@ -136,7 +136,7 @@
 								<td><?= $consultancy['code'] ?></td>
 								
 								<td><?= $consultancy['description'] ?></td>
-								<td> <a class="btn btn-sm border-0 shadow-none p-1 text-dark" href="<?php echo base_url(); ?>index.php/Consultancy/index/<?php echo $consultancy['id'];?>"><i class="fa fa-edit"></i></a></td>
+								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Consultancy/index/<?php echo $consultancy['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>

@@ -207,7 +207,7 @@
 										<!--<td><?= $lab_chemical['grade'] ?></td>-->
 										<td><?= $lab_chemical['bag_size'] ?></td>
 										<td><?= $lab_chemical['expiry_date'] ?></td>
-										<td> <a class="btn btn-sm border-0 shadow-none p-1 text-dark" href="<?php echo base_url(); ?>index.php/Lab_chemicals/index/<?php echo $lab_chemical['id']; ?>"><i class="fa fa-edit"></i></a></td>
+										<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Lab_chemicals/index/<?php echo $lab_chemical['id']; ?>"><i class="feather feather-edit-3"></i></a></td>
 									</tr>
 								<?php $i++;
 								} ?>

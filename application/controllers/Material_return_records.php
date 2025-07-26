@@ -489,7 +489,7 @@ public function add() {
 		$data['current'] = $this->material_return_model->getById($id);
 		//print_r($data['current']);exit;
 	    $data['title']='Material Return Record  Profile';
-        $this->template->load('template','material_return_print',$data);
+        $this->template->load('layout/template','material_return_print',$data);
     } 
 }
 

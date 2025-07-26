@@ -1,263 +1,206 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
-$data=explode('?', $current_page);
-//print_r($po_data);exit;
-?>
+<?php if ($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
+    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
+    <?= $this->session->flashdata('success'); ?>
+  </div>
+<?php endif; ?>
 
+<?php if ($this->session->flashdata('failed')): ?>
+  <div class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
+    <h5><i class="icon fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
+    <?= $this->session->flashdata('failed'); ?>
+  </div>
+<?php endif; ?>
 
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+<div class="nxl-content">
+  <div class="page-header mb-3 d-flex justify-content-between align-items-center">
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?=$this ->lang ->line('requisition_slip_report')?>
-      </span>
-       <div class="pull-right error_msg">
-        <form method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/createXLS">
+    <!-- Left Side: Title and Breadcrumb -->
+    <div>
+      <h5><?= $this->lang->line('requisition_slip_report') ?></h5>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-          <?php 
-          if(!empty($conditions)){
-            foreach ($conditions as $key => $value) { ?>
-            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
-          <?php } }?>
-           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
-         </form>
-        <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
+    <!-- Right Side: Filter & Export Buttons -->
+    <div class="d-flex gap-2">
+      <!-- Filter Button -->
+      <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper">
+        <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+      </button>
+
+      <!-- Export Form -->
+      <form method="post" action="<?= base_url('index.php/Requisition_slips/createXLS') ?>">
+        <?php if (!empty($conditions)): foreach ($conditions as $key => $value): ?>
+            <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
+        <?php endforeach; endif; ?>
+        <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<!-- Collapsible Filter Form -->
+<div class="collapse <?php if (!empty($_GET)) echo 'show'; ?>" id="filterFormWrapper">
+  <div class="card card-body border ">
+    <form method="get" id="filterForm">
+      <div class="row">
+        <!-- Employee Filter -->
+        <div class="col-md-4">
+          <label><?= $this->lang->line('name_of_employee'); ?></label>
+          <select name="employee_id" class="form-control select2 employees">
+            <option value="0"><?= $this->lang->line('select_employee'); ?></option>
+            <?php foreach ($employees ?? [] as $value): ?>
+              <option value="<?= $value['id'] ?>" <?= set_select('employee_id', $value['id'], @$_GET['employee_id'] == $value['id']) ?>>
+                <?= $value['name'] ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+
+        <!-- Department Filter -->
+        <div class="col-md-4">
+          <label><?= $this->lang->line('name_of_department'); ?></label>
+          <select name="department_id" class="form-control select2">
+            <option value="0"><?= $this->lang->line('select_department'); ?></option>
+            <?php foreach ($departments ?? [] as $value): ?>
+              <option value="<?= $value['id'] ?>" <?= set_select('department_id', $value['id'], @$_GET['department_id'] == $value['id']) ?>>
+                <?= $value['department_name'] ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+
+        <!-- Status Filter -->
+        <div class="col-md-4">
+          <label><?= $this->lang->line('requisition_status'); ?></label>
+          <select name="approved_status" class="form-control select2">
+            <option value=""><?= $this->lang->line('select_status'); ?></option>
+            <?php foreach ($req_status ?? [] as $status): ?>
+              <option value="<?= $status ?>" <?= set_select('approved_status', $status, @$_GET['approved_status'] == $status) ?>>
+                <?= $status ?>
+              </option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+
+        <!-- Date Filters -->
+        <div class="col-md-4">
+          <label><?= $this->lang->line('from_date'); ?></label>
+          <input type="text" name="from_date" class="form-control date-picker" value="<?= @$_GET['from_date'] ?>" placeholder="dd-mm-yyyy" autocomplete="off">
+        </div>
+
+        <div class="col-md-4">
+          <label><?= $this->lang->line('upto_date'); ?></label>
+          <input type="text" name="upto_date" class="form-control date-picker" value="<?= @$_GET['upto_date'] ?>" placeholder="dd-mm-yyyy" autocomplete="off">
+        </div>
+
+        <!-- Search / Reset -->
+        <div class="col-md-4 d-flex align-items-end gap-2">
+          <input type="submit" class="btn btn-primary" value="<?= $this->lang->line('search'); ?>">
+          <a href="<?= current_url(); ?>" class="btn btn-danger"><?= $this->lang->line('reset'); ?></a>
+        </div>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-      <form method="get" id="filterForm">
-          <div class="row">
+    </form>
+  </div>
+</div>
 
-              <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"> <?= $this->lang->line('name_of_employee'); ?> <span class="required">*</span></label>
-                <select name="employee_id" class="form-control select2 employees" >
-                    <option value="0"><?= $this->lang->line('select_employee'); ?></option>
-                    <?php
-                         if ($employees): ?> 
-                          <?php 
-                            foreach ($employees as $value) : ?>
-                                    <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
-                            <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?= $this->lang->line('no_result'); ?></option>
-                        <?php endif; ?>
-                </select>
-              </div>
-              <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"> <?= $this->lang->line('name_of_department'); ?> <span class="required">*</span></label>
-                <select name="department_id" class="form-control select2 employees" >
-                    <option value="0"><?= $this->lang->line('select_department'); ?></option>
-                    <?php
-                         if ($departments): ?> 
-                          <?php 
-                            foreach ($departments as $value) : ?>
-                               <option value="<?= $value['id'] ?>"><?= $value['department_name'] ?></option>
-                            <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?= $this->lang->line('no_result'); ?></option>
-                        <?php endif; ?>
-                </select>
-              </div>
-               <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"><?= $this->lang->line('requisition_status'); ?> <span class="required">*</span></label>
-                <select name="approved_status" class="form-control select2 " >
-                    <?php
-                         if ($req_status): ?> 
-                          <?php 
-                            foreach ($req_status as $value) : ?>
-                               <option value="<?= $value ?>"><?= $value ?></option>
-                            <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?= $this->lang->line('no_result'); ?></option>
-                        <?php endif; ?>
-                </select>
-              </div>
-
-             <div class="col-md-4 col-sm-4">
-                      <label  class="control-label">   <?= $this->lang->line('from_date'); ?></label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label">   <?= $this->lang->line('upto_date'); ?></label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-              </div>
-                <div class="row">
-                  
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;">   <?= $this->lang->line('grade'); ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" >   <?= $this->lang->line('reset'); ?></a>
-              </div>
-          </div>
-            
-        </form>
-            <hr>
-
-      <div class="table-responsive">
-        <table id="example2" class="table table-bordered table-striped">
-          <thead>
-            <!-- <tr>
-              <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Requisition No </th>
-              <th style="white-space: nowrap;"> Requisition Date </th>
-              <th style="white-space: nowrap;">Request By </th>
-              <th style="white-space: nowrap;"> Status </th>
-              <th style="white-space: nowrap;"> Action Date </th>
-              <th style="white-space: nowrap;"> Action By <span style="color: white;">Name</span></th>
-              </tr>
-              <tr>
-              <th style="white-space: nowrap;"> Material Name </th>
-              <th style="white-space: nowrap;"> Required Qty (Unit)</th>
-              <th style="white-space: nowrap;"> Issue Qty (Unit)</th>
-            </tr> -->
-          </thead>
-          <tbody>
-           <?php
-          $i=1;foreach($requisition_data as $obj){ ?>
+<!-- Table -->
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th><?= $this->lang->line('sr_no') ?></th>
+            <th><?= $this->lang->line('requisition_no') ?></th>
+            <th><?= $this->lang->line('requisition_date') ?></th>
+            <th><?= $this->lang->line('request_by') ?></th>
+            <th><?= $this->lang->line('status') ?></th>
+            <th><?= $this->lang->line('action_date') ?></th>
+            <th><?= $this->lang->line('action_by') ?></th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php $i = 1;
+          foreach ($requisition_data as $obj): ?>
             <tr>
-              <th ><?=$this ->lang ->line('sr_no')?>.</th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_no')?> </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('requisition_date')?> </th>
-              <th style="white-space: nowrap;"><?=$this ->lang ->line('request_by')?> </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('status')?> </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_date')?> </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('action_by')?> </th>
+              <td><?= $i++ ?></td>
+              <td>
+                <?php
+                $num = str_pad($obj['requisition_slip_no'], 4, '0', STR_PAD_LEFT);
+                echo 'RS' . $num;
+                ?>
+              </td>
+              <td><?= date('d-M-Y', strtotime($obj['transaction_date'])) ?></td>
+              <td><?= $obj['requestor'] ?></td>
+              <td><?= $obj['approved_status'] ?></td>
+              <td>
+                <?php
+                if ($obj['approved_status'] == 'Pending') echo 'NA';
+                elseif ($obj['approved_status'] == 'Rejected') echo date('d-m-Y', strtotime($obj['rejected_date']));
+                elseif ($obj['approved_status'] == 'Approved') echo date('d-m-Y', strtotime($obj['approved_date']));
+                ?>
+              </td>
+              <td>
+                <?= ($obj['approved_status'] == 'Approved') ? $obj['approver'] : (($obj['approved_status'] == 'Rejected') ? $obj['rejector'] : 'NA') ?>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="2"><?= $this->lang->line('material_name') ?></th>
+              <th colspan="5"><?= $this->lang->line('required_qty') ?> (Unit)</th>
+            </tr>
+            <?php foreach ($obj['requisition_details'] as $detail): ?>
+              <tr>
+                <td colspan="2"><?= $detail['material_name'] ?> (<?= $detail['material_code'] ?>)</td>
+                <td colspan="5"><?= $detail['quantity'] ?> <?= $detail['unit'] ?></td>
               </tr>
-              <tr >
-                  <td rowspan="2"><?php echo $i;?></td>
-                <td>
-                  <?php 
-                         $inv_number=$obj['requisition_slip_no'];
-                          if($inv_number<10){
-                            $inv_number1='RS000'.$inv_number;
-                            }
-                            else if(($inv_number>=10) && ($inv_number<=99)){
-                              $inv_number1='RS00'.$inv_number;
-                            }
-                            else if(($inv_number>=100) && ($inv_number<=999)){
-                              $inv_number1='RS0'.$inv_number;
-                            }
-                            else{
-                              $inv_number1='RS'.$inv_number;
-                            }
-                            echo $inv_number1; ?>
-                </td>
-                <td ><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
-                <!-- <td><?php echo $obj['total_qty']; ?></td> -->
-                <td><?php echo $obj['requestor']; ?></td>
-                <td><?php echo $obj['approved_status']; ?></td>
-                <td><?php 
-                if($obj['approved_status']=='Pending'){
-                    echo 'NA';
-                } else if($obj['approved_status']=='Rejected'){
-                    echo date('d-m-y',strtotime($obj['rejected_date']));
-                }else if($obj['approved_status']=='Approved'){
-                    echo date('d-m-y',strtotime($obj['approved_date']));
-                }
-                ?>
-                </td>
-                <td>
-                <?php 
-                if($obj['approved_status']=='Pending'){
-                    echo 'NA';
-                } else if($obj['approved_status']=='Rejected'){
-                    echo $obj['rejector'];
-                }else if($obj['approved_status']=='Approved'){
-                    echo $obj['approver'];
-                }
-                ?>
-                 </td>
-                </tr>
-                
-                 <tr>
-                  <th style="white-space: nowrap;">   <?= $this->lang->line('material_name'); ?> </th>
-                  <th colspan="5" style="white-space: nowrap;"> <?=$this ->lang ->line('required_qty')?> (Unit)</th>
-                  <!-- <th style="white-space: nowrap;"> Issue Qty (Unit)</th>
-                  <th style="white-space: nowrap;"> Pending Qty (Unit)</th> -->
-                </tr>
-                    <?php
-                          $j=1;foreach($obj['requisition_details'] as $po_detail)
-                          { ?>
-                           <tr>
-                            <td colspan="1"></td>
-                            <td> <?= $po_detail['material_name'].' ('.$po_detail['material_code'].')' ;?> </td>
-                            <td  colspan="5"><?= $po_detail['quantity'].' '.$po_detail['unit'] ;?></td>
-                            <!-- <td><?= $po_detail['issue_qty'].' '.$po_detail['unit'] ;?></td>
-                            <td><?= $po_detail['pending_qty'].' '.$po_detail['unit'] ;?></td> -->
-                          </tr>
-
-                    <?php } ?>
-            <?php  $i++;} ?>
-          </tbody>
-        </table>
-      </div>
+            <?php endforeach; ?>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+</div>
+
+<!-- Scripts -->
+<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
 <script type="text/javascript">
-  $( document ).ready(function() {
-     
-    jQuery('#master').on('click', function(e) {
-    if($(this).is(':checked',true))  
-    {
-      $(".sub_chk").prop('checked', true);  
-    }  
-    else  
-    {  
-      $(".sub_chk").prop('checked',false);  
-    }  
-  });
-    jQuery('.delete_all').on('click', function(e) { 
-    var allVals = [];  
-    $(".sub_chk:checked").each(function() {  
-      allVals.push($(this).val());
-    });  
-    //alert(allVals.length); return false;  
-    if(allVals.length <=0)  
-    {  
-      alert("Please select row.");  
-    }  
-    else {  
-      WRN_PROFILE_DELETE = "Are you sure you want to delete all selected records?";  
-      var check = confirm(WRN_PROFILE_DELETE);  
-      if(check == true){  
-        var join_selected_values = allVals.join(","); 
-        $.ajax({   
-          type: "POST",  
-          url: "<?php echo base_url(); ?>index.php/Requisition_slips/deleteRequisition",  
-          cache:false,  
-          data: 'ids='+join_selected_values,  
-          success: function(response)  
-          {   
-            $(".successs_mesg").html(response);
-            location.reload();
-          }   
-        });
-           
-      }  
-    }  
-  });
+  $(document).ready(function() {
+    $('#master').on('click', function() {
+      $(".sub_chk").prop('checked', this.checked);
+    });
 
-  });
+    $('.delete_all').on('click', function() {
+      var allVals = $(".sub_chk:checked").map(function() {
+        return $(this).val();
+      }).get();
 
+      if (allVals.length <= 0) {
+        alert("Please select row.");
+      } else {
+        if (confirm("Are you sure you want to delete all selected records?")) {
+          $.ajax({
+            type: "POST",
+            url: "<?= base_url('index.php/Requisition_slips/deleteRequisition') ?>",
+            data: {
+              ids: allVals.join(",")
+            },
+            success: function(response) {
+              location.reload();
+            }
+          });
+        }
+      }
+    });
+  });
 </script>

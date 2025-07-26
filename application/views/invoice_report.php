@@ -1,168 +1,150 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
-$data=explode('?', $current_page);
-//print_r($po_data);exit;
-?>
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+<!-- Success & Failure Flash Messages -->
+<?php if ($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <h5><i class="fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
+    <?= $this->session->flashdata('success'); ?>
+  </div>
+<?php endif; ?>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
+<?php if ($this->session->flashdata('failed')): ?>
+  <div class="alert alert-danger alert-dismissible fade show">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <h5><i class="fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
+    <?= $this->session->flashdata('failed'); ?>
+  </div>
+<?php endif; ?>
 
-      <span class="card-title"><?=$this ->lang ->line('invoice_slip_report')?>
-      </span>
-       <div class="button-group float-right">
-         <form method="post" action="<?php echo base_url(); ?>index.php/Invoice/createXLS">
-
-          <?php 
-          if(!empty($conditions)){
-            foreach ($conditions as $key => $value) { ?>
-            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
-          <?php } }?>
-           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
-         </form>
-        
+<div class="nxl-content">
+  <div class="page-header mb-3">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5><?= $this->lang->line('invoice_slip_report') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-	  <form method="get" id="filterForm">
-          <div class="row">
-             <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> <?= $this->lang->line('from_date') ?></label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> <?= $this->lang->line('upto_date') ?></label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-              </div>
-            <div class="row">
-                  
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
-              </div>
-			</div>
-            
+      <ul class="breadcrumb ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-header-right ms-auto">
+      <div class="page-header-right-items d-flex align-items-center">
+
+        <!-- Filter Button (no background, toggle enabled) -->
+        <button id="filterToggleBtn" class="btn btn-warning me-2" type="button">
+          <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+        </button>
+
+        <!-- EXPORT FORM -->
+        <form method="post" action="<?= base_url('index.php/Invoice/createXLS') ?>">
+          <?php 
+            if (!empty($conditions)) {
+              foreach ($conditions as $key => $value) {
+                echo '<input type="hidden" name="'.$key.'" value="'.$value.'">';
+              }
+            }
+          ?>
+          <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
         </form>
-            <hr>
-			
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th ><?= $this->lang->line('sr_no') ?>.</th>
-              <th style="white-space: nowrap;"> <?= $this->lang->line('invoice_no') ?> </th>
-              <th style="white-space: nowrap;"> <?= $this->lang->line('invoice_date') ?> </th>
-              <th style="white-space: nowrap;"> <?= $this->lang->line('vendor_code') ?></th>
-              <th style="white-space: nowrap;"> <?= $this->lang->line('grand_total') ?>l</th>
-            </tr>
-          </thead>
-          <tbody>
-           <?php
-          $i=1;foreach($invoice_data as $obj){ ?>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLAPSIBLE FILTER FORM -->
+  <div class="collapse mt-3" id="filterFormWrapper">
+    <div class="card card-body">
+      <form method="get" id="filterForm">
+        <div class="row">
+          <div class="col-md-4">
+            <label><?= $this->lang->line('from_date') ?></label>
+            <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <label><?= $this->lang->line('upto_date') ?></label>
+            <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-4 d-flex align-items-center gap-2">
+            <input type="submit" class="btn btn-sm btn-primary" value="<?= $this->lang->line('search') ?>" />
+            <a href="<?= current_url() ?>" class="btn btn-sm btn-danger"><?= $this->lang->line('reset') ?></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- INVOICE TABLE -->
+  <div class="container-fluid">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
               <tr>
-                <td><?php echo $i;?></td>
-                <td>
-                  <?php 
-                         $inv_number=$obj['invoice_no'];
-                          if($inv_number<10){
-                            $inv_number1='CNC/A/000'.$inv_number;
-                            }
-                            else if(($inv_number>=10) && ($inv_number<=99)){
-                              $inv_number1='CNC/A/00'.$inv_number;
-                            }
-                            else if(($inv_number>=100) && ($inv_number<=999)){
-                              $inv_number1='CNC/A/0'.$inv_number;
-                            }
-                            else{
-                              $inv_number1='CNC/A/'.$inv_number;
-                            }
-                            echo $inv_number1; ?>
-                </td>
-                <td ><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
-                <td>
-                 
-                     <?php 
-                            echo $obj['vendor_code']; ?>
-                  </td>
-                <td>
-                <?php 
-	                //$amount = '10000.00';
-					setlocale(LC_MONETARY, 'en_IN');
-					$amount = number_format($obj['grand_total'],2);
-					echo $amount; 
-                ?></td>
+                <th><?= $this->lang->line('sr_no') ?>.</th>
+                <th><?= $this->lang->line('invoice_no') ?></th>
+                <th><?= $this->lang->line('invoice_date') ?></th>
+                <th><?= $this->lang->line('vendor_code') ?></th>
+                <th><?= $this->lang->line('grand_total') ?></th>
               </tr>
-            <?php  $i++;} ?>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <?php $i=1; foreach($invoice_data as $obj): ?>
+                <tr>
+                  <td><?= $i ?></td>
+                  <td>
+                    <?php
+                      $inv_number = $obj['invoice_no'];
+                      $inv_number1 = 'CNC/A/' . str_pad($inv_number, 4, '0', STR_PAD_LEFT);
+                      echo $inv_number1;
+                    ?>
+                  </td>
+                  <td><?= date('d-M-Y', strtotime($obj['transaction_date'])) ?></td>
+                  <td><?= $obj['vendor_code'] ?></td>
+                  <td><?= number_format($obj['grand_total'], 2) ?></td>
+                </tr>
+              <?php $i++; endforeach; ?>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript">
-  $( document ).ready(function() {
-     
-    jQuery('#master').on('click', function(e) {
-    if($(this).is(':checked',true))  
-    {
-      $(".sub_chk").prop('checked', true);  
-    }  
-    else  
-    {  
-      $(".sub_chk").prop('checked',false);  
-    }  
-  });
-    jQuery('.delete_all').on('click', function(e) { 
-    var allVals = [];  
-    $(".sub_chk:checked").each(function() {  
-      allVals.push($(this).val());
-    });  
-    //alert(allVals.length); return false;  
-    if(allVals.length <=0)  
-    {  
-      alert("Please select row.");  
-    }  
-    else {  
-      WRN_PROFILE_DELETE = "Are you sure you want to delete all selected records?";  
-      var check = confirm(WRN_PROFILE_DELETE);  
-      if(check == true){  
-        var join_selected_values = allVals.join(","); 
-        $.ajax({   
-          type: "POST",  
-          url: "<?php echo base_url(); ?>index.php/Invoice/deleteInvoice",  
-          cache:false,  
-          data: 'ids='+join_selected_values,  
-          success: function(response)  
-          {   
+
+<!-- JS Scripts -->
+<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // Toggle filter section on button click (manual control)
+    $('#filterToggleBtn').on('click', function () {
+      $('#filterFormWrapper').collapse('toggle');
+    });
+
+    // Checkbox & delete logic (your original code)
+    $('#master').click(function () {
+      $(".sub_chk").prop('checked', $(this).is(':checked'));
+    });
+
+    $('.delete_all').click(function () {
+      var allVals = $(".sub_chk:checked").map(function () {
+        return $(this).val();
+      }).get();
+
+      if (allVals.length <= 0) {
+        alert("Please select row.");
+      } else {
+        if (confirm("Are you sure you want to delete all selected records?")) {
+          $.post("<?= base_url('index.php/Invoice/deleteInvoice') ?>", { ids: allVals.join(",") }, function (response) {
             $(".successs_mesg").html(response);
             location.reload();
-          }   
-        });
-           
-      }  
-    }  
+          });
+        }
+      }
+    });
   });
-
-  });
-
 </script>
