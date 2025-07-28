@@ -116,6 +116,10 @@ img.profile-user-img.img-fluid.img-circle {
                 </li>
             </ul>
         </div>
+        <div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
+    </div>
         </div>
         </div>
 

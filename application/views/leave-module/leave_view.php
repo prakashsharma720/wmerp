@@ -12,6 +12,7 @@
                 </li>
             </ul>
         </div>
+      <?php $this->load->view('layout/alerts'); ?>
 
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
@@ -52,23 +53,7 @@
     <!-- Load Filter -->
     <?php $this->load->view('leave-module/component/filter'); ?>
 
-    <?php if($this->session->flashdata('success')): ?>
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>
-            <!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <?php endif; ?>
-
-    <?php if($this->session->flashdata('failed')): ?>
-        <div class="alert alert-error alert-dismissible ">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>
-            <!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-    <?php endif; ?>
+   
 
   <div class="main-content">
     <div class="row">
@@ -120,19 +105,19 @@
                                     <td><?= $obj['employee']?></td>
                                     <?php 
                                         if($obj['leave_status'] == 'Pending'){
-                                        $btn_class='btn-pending';
+                                        $btn_class='badge bg-warning text-dark';
 
                                         }else if($obj['leave_status'] == 'Approved'){
-                                        $btn_class='btn-approved';
+                                        $btn_class='badge bg-success text-white';
 
                                         }else if($obj['leave_status'] == 'On Hold'){
-                                        $btn_class='btn-inprocess';
+                                        $btn_class='badge bg-primary text-white';
                                         }else if($obj['leave_status'] == 'Rejected'){
-                                        $btn_class='btn-rejected';
+                                        $btn_class='badge bg-danger text-white';
 
                                         }
                                         else if($obj['leave_status'] == 'Cancelled'){
-                                        $btn_class='btn-cancel';
+                                        $btn_class='badge bg-secondary text-white';
 
                                         }
                                         ?>
@@ -169,18 +154,18 @@
                                             if( $obj['employee_id']!==$login_id)
                                             { ?>
                                             <a href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id']; ?>" 
-                                            class="avatar-text avatar-md" >
+                                            class="btn btn-icon avatar-text avatar-md" >
                                             <i class="feather feather-edit-3 "></i>
                                             </a>
 
                                             <?php }?>
-                                            <a class="avatar-text avatar-md" data-bs-toggle="offcanvas"
+                                            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas"
                                             data-bs-target="#delete<?php echo $obj['id'];?>">
                                             <i class="feather feather-trash "></i>
                                             </a>
                                            
-                                            <a class="avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewLeave<?php echo $obj['id']; ?>">
-                                            <i class="feather feather-eye"></i>
+                                            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewLeave<?php echo $obj['id']; ?>">
+                                            <i class="fa fa-eye"></i>
                                             </a>
                                             </div>
                                         </td>

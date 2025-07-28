@@ -3,22 +3,7 @@
     float: left;
   }
 </style>
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible" >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Success!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible " >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Alert!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-<?php endif; ?>
 	  
 <div class="nxl-content">
     <div class="page-header">
@@ -34,6 +19,7 @@
                 </li>
             </ul>
         </div>
+      <?php $this->load->view('layout/alerts'); ?>
 
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
@@ -105,19 +91,19 @@
                 <td><?= $obj['employee']?></td>
                 <?php 
                 if($obj['leave_status'] == 'Pending'){
-                  $btn_class='btn-pending';
+                  $btn_class='badge bg-warning text-dark';
 
                 }else if($obj['leave_status'] == 'Approved'){
-                  $btn_class='btn-approved';
+                  $btn_class='badge bg-success text-white';
 
                 }else if($obj['leave_status'] == 'On Hold'){
-                  $btn_class='btn-inprocess';
+                  $btn_class='badge bg-primary text-white';
                 }else if($obj['leave_status'] == 'Rejected'){
-                  $btn_class='btn-rejected';
+                  $btn_class='badge bg-danger text-white';
 
                 }
                 else if($obj['leave_status'] == 'Cancelled'){
-                  $btn_class='btn-cancel';
+                  $btn_class='badge bg-secondary text-white';
 
                 }
                 ?>
@@ -231,7 +217,7 @@
                
                 
                  
-                  <a class="avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id'];?>"><i class="feather feather-edit-3 "></i></a>
+                  <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id'];?>"><i class="feather feather-edit-3 "></i></a>
                   
                 </td>
 

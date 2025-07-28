@@ -116,13 +116,13 @@
             if ($obj['status'] == 'In Process') {
         ?>
             <a href="<?php echo base_url(); ?>index.php/Dailytasks/edit/<?php echo $obj['id']; ?>" 
-                class="avatar-text avatar-md ">
+                class="btn btn-icon avatar-text avatar-md">
                 <i class="feather feather-edit-3"></i>
             </a>
         <?php 
             } 
         ?>
-            <a class="avatar-text avatar-md " data-bs-toggle="offcanvas"
+            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas"
                 data-bs-target="#delete<?php echo $obj['id']; ?>">
                 <i class="feather feather-trash"></i>
             </a>
@@ -131,7 +131,7 @@
         ?>
         
         <a href="<?php echo base_url(); ?>index.php/Dailytasks/task_history/<?php echo $obj['id']; ?>" 
-            class="avatar-text avatar-md ">
+            class="btn btn-icon avatar-text avatar-md">
             <i class="fa fa-envelope"></i>
         </a>
     </div>

@@ -2127,6 +2127,7 @@ $lang['date_of_work'] = 'कार्य की तिथि *';
 $lang['work_area'] = 'कार्य क्षेत्र';
 $lang['select_mill'] = 'मिल का चयन करें';
 $lang['total_workers'] = 'कुल श्रमिक';
+$lang['edit_worker'] = 'वर्कर संपादित करें';
 
 // Work Allocation Detail Table
 $lang['work_allocation_detail'] = 'कार्य आवंटन विवरण';
@@ -2995,7 +2996,9 @@ $lang['leave_allotment_month'] = 'अवकाश आवंटन माह';
 $lang['select_period'] = 'अवधि चुनें';
 $lang['first_half'] = 'पहला भाग';
 $lang['second_half'] = 'दूसरा भाग'; // वैकल्पिक, यदि इस्तेमाल हो रहा हो
-
+$lang['half_day_type'] = 'आधे दिन का प्रकार';
+$lang['from_time'] = 'समय से';
+$lang['to_time'] = 'समय तक';
 $lang['criteria_name'] = 'मापदंड नाम';
 $lang['criteria_point'] = 'मापदंड अंक';
 $lang['self_review'] = 'स्व-मूल्यांकन';

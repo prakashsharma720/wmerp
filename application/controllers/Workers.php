@@ -39,7 +39,7 @@ public function index() {
 			$data['departments'] = $this->worker->getDepartments();	
 			//echo var_dump($data['students']);
 			//print_r($roles);exit;
-			$this->template->load('layout/template','worker_view',$data);
+			$this->template->load('layout/template','leave-module/worker_view',$data);
 	}
 
 	
@@ -70,7 +70,7 @@ public function index() {
    //          $data['worker_code']=$worker_id_code;
 			$data['departments'] = $this->worker->getDepartments();
 			//print_r($data['departments']);exit;
-			$this->template->load('layout/template','workers',$data);
+			$this->template->load('layout/template','leave-module/workers',$data);
 	}
 	public function edit($id = NULL) 
 	{
@@ -194,7 +194,7 @@ public function index() {
 			
 			$data['departments'] = $this->worker->getDepartments();
 			//print_r($data['departments']);exit;
-			$this->template->load('template','worker_edit',$data);
+			$this->template->load('layout/template','leave-module/worker_edit',$data);
 	}
 	public function add_new_worker() {
 		$this->form_validation->set_rules('name', 'name ', 'required');
