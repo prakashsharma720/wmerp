@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         	<h3 class="card-title"><?= $title ?></h3>
         	<div class="pull-right "></div>
 		</div> <!-- /.card-body -->
-      	<div class="card-body">
+      	<div class="card-body bg-white">
 	      	<div class="row">
 	          <div class="col-12">
 	            <!-- Custom Tabs -->

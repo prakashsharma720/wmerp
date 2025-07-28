@@ -1,6 +1,6 @@
 
 <div class="nxl-content">
-	<div class="page-header mt-3 mb-4 px-3">
+	<div class="page-header mt-3 mb-4 px-3 d-flex justify-content-between align-items-center">
 		<div class="page-header-left d-flex align-items-center">
 			<div class="page-header-title">
 				<h5 class="m-b-10"><?= $this->lang->line('add_new_finished_good') ?></h5>
@@ -138,8 +138,11 @@
 					</div>
 				</div>
 			</div>
+			</form>
 		</div>
 	</div>
+</div>
+</div>
 </div>
 
 
@@ -149,55 +152,45 @@
 	$(document).ready(function() {
 
 		//alert(base_url);
-		$(document).on('change','.category_id',function(){
-				var category_id = $('.category_id').find('option:selected').val();
-				//var aa= base_url+"index.php/Meenus/rolewisedata/"+role_id;
-				//alert(category_id);
-				$.ajax({
-	                type: "POST",
-	                url:"<?php echo base_url('index.php/Grades/getGradeByCategory/') ?>"+category_id,
-	                //data: {id:role_id},
-	                dataType: 'html',
-	                success: function (response) {
-	                	//alert(response);
-	                    $(".grades").html(response);
-	                    $('.select2').select2();
-	                }
-            	});
-			}); 
-				$(document).on('change','.mineral_name',function(){
-				var hsn_id = $('.mineral_name').find('option:selected').val();
-				//alert(hsn_id);
-				if(hsn_id!=' '){
-					$.ajax({
-		                type: "POST",
-		                url:"<?php echo base_url('index.php/HSN/getmineralById/') ?>"+hsn_id,
-		                data: {hsn_id:hsn_id},
-		                dataType: 'html',
-		                
-		                success: function (response) {
-		                	//alert(response);
-		                    $(".hsn_code").html(response);
-							//$('.select2').select2();
-						}
-	            	});
-				}else{
-					$(".clear_hsn").val('');
+		$(document).on('change', '.category_id', function() {
+			var category_id = $('.category_id').find('option:selected').val();
+			//var aa= base_url+"index.php/Meenus/rolewisedata/"+role_id;
+			//alert(category_id);
+			$.ajax({
+				type: "POST",
+				url: "<?php echo base_url('index.php/Grades/getGradeByCategory/') ?>" + category_id,
+				//data: {id:role_id},
+				dataType: 'html',
+				success: function(response) {
+					//alert(response);
+					$(".grades").html(response);
+					$('.select2').select2();
 				}
-				
+			});
+		});
+		$(document).on('change', '.mineral_name', function() {
+			var hsn_id = $('.mineral_name').find('option:selected').val();
+			//alert(hsn_id);
+			if (hsn_id != ' ') {
+				$.ajax({
+					type: "POST",
+					url: "<?php echo base_url('index.php/HSN/getmineralById/') ?>" + hsn_id,
+					data: {
+						hsn_id: hsn_id
+					},
+					dataType: 'html',
 
-			}); 
+					success: function(response) {
+						//alert(response);
+						$(".hsn_code").html(response);
+						//$('.select2').select2();
+					}
+				});
+			} else {
+				$(".clear_hsn").val('');
+			}
+
+
+		});
 	});
-</script> 
-
-
-
-
-
-
-
-
-
-
-
-
+</script>

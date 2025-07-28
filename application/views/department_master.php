@@ -45,7 +45,7 @@
 	</div>
 	
 
-	      	<div class="card-body p-3">
+	      	<div class="card-body p-3 bg-white">
 		      	<div class="row">
 		      		<div class="col-md-6">
 		      			<?php  //echo $title; exit; ?>

@@ -1,5 +1,7 @@
 
-<div class="nxl-content ">
+
+<div class="nxl-content" style="background-color: #fff;">
+
   <!-- Page Header -->
   <div class="page-header">
     <div class="page-header-left d-flex align-items-center">
