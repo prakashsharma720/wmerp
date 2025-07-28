@@ -1,133 +1,85 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
-//$current_page='https://www.muskowl.com/chaudhary_minerals/index.php/Meenus/UserRights';
-$data=explode('?', $current_page);
-//print_r($data[0]);exit;
-?>
 <style type="text/css">
   .col-md-6{
     float: left;
   }
 </style>
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+               <h5> <a href="<?php echo base_url('index.php/Leave/Approval'); ?>"><?= $this->lang->line('leave_module') ?></a></h5>
+            </div>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+                </li>
+                <li class="breadcrumb-item"><?= $this->lang->line('leave_approval') ?>
+                </li>
+            </ul>
+        </div>
 
-  <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
-
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-      
-      <div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title">
-<?= $this->lang->line('leave_approval') ?>      </span>
-       <div class="d-flex align-items-center gap-1 page-header-right-items-wrapper">
+        <div class="page-header-right ms-auto">
+            <div class="page-header-right-items">
+                <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                     <!-- Collapse Filter -->
                     <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne">
                         <i class="feather-filter"></i>
                     </a>
-                    
-      <div class="pull-right d-flex">
-        <div>          
-          <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
-            <?php if(!empty($filtered_value)){ foreach ($filtered_value as $key => $value) { ?> 
-                <input type="hidden" name="<?= $key ?>" value="<?=$value ?>"> <?php } }?>
-            <button type="submit" class="btn btn-info">  <?= $this->lang->line('export') ?> </button>
-          </form>
-        </div>
+                    <div class="pull-right d-flex">
+                        <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
+                            <?php if (!empty($filtered_value)) {
+                                foreach ($filtered_value as $key => $value) { ?>
+                                    <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
+                            } ?>
+                            <button type="submit" class="btn btn-icon btn-light-brand"> 
+                                    <i class="feather feather-download "></i> 
+                            </button>
+                        </form> &nbsp;
+                        <div>
+                           <a href="<?php echo base_url('index.php/Leave/create'); ?>" class="btn btn-icon btn-light-brand">
+                                <i class="feather feather-plus"></i>
+                                <!-- <span><?= $this->lang->line('apply_for_leave') ?>  -->
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        &nbsp;
-        <div>          
-          <a class="btn btn-xs btn-primary " href="<?php echo base_url(); ?>index.php/Leave/create">
-            <i class="fa fa-plus"></i>  <?= $this->lang->line('apply_for_leave') ?>
-          </a>
+
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
         </div>
-      </div>
-    </div> <!-- /.card-body -->
-     <!-- Load Filter -->
+    </div>
+        <!-- Load Filter -->
     <?php $this->load->view('leave-module/component/filter'); ?>
-    <div class="card-body">
-      
- <!--        <form action="<?php echo base_url(); ?>index.php/Leads/importdata" enctype="multipart/form-data" method="post" role="form">
-        <div class="row">
-          <div class="col-md-12">
-              <div class="col-md-6">
-                  <label class="control-label"> 
-                    load File</label><span class="required"> (Only Excel/CSV File Import. in given format)</span>
-                  <input type="file" name="uploadFile" value="" required="required" />
-              </div>
-              <div class="col-md-6">
-                <button type="submit" class="btn btn-success" name="submit" value="submit">Upload Excel/CSV File Here</button>
-              </div>
-          </div>  
-        </div>
-      </form>
-
-      <hr> -->
-
-      <!-- <form method="get" id="filterForm">
-          <div class="row">
-          
-               
-         
-                <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label"> <?= $this->lang->line('search_by_category') ?></label>
-                  <select name="category_name" class="form-control select2 suppliers" >
-                    <option value=""> <?= $this->lang->line('search_by_category') ?> </option>
-                    <option <?php if(!empty($filtered_value["category_name"])) { if($filtered_value['category_name']=='half') {echo "selected"; } } ?> value="half"> Half </option>
-                    <option <?php if(!empty($filtered_value["category_name"])) { if($filtered_value['category_name']=='full') {echo "selected"; } } ?> value="full"> Full </option>
-                  </select>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                  <label  class="control-label"> <?= $this->lang->line('search_by_status') ?> </label>
-                  <select name="leave_status" class="form-control select2" >
-                     <option value=""><?= $this->lang->line('search_by_status') ?></option>
-                        <option <?php if(!empty($filtered_value["leave_status"])) { if($filtered_value['leave_status']=='Pending') {echo "selected"; } } ?> value="Pending" > Pending </option>
-                        <option value="Approved" > Approved </option>
-                        <option value="On Hold" > On Hold</option>
-                        <option value="Rejected" > Rejected</option>
-                        <option value="Cancelled" > Cancel</option>
-                    </select>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                  <label  class="control-label">  <?= $this->lang->line('from_date') ?></label>
-                  <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="<?php if(!empty($filtered_value['from_date'])) { echo date('d-m-Y',strtotime($filtered_value['from_date'])); } ?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  autocomplete="off" autocomplete="off">
-                </div>
-                <div class="col-md-4 col-sm-4">
-                  <label  class="control-label">  <?= $this->lang->line('upto_date') ?></label>
-                  <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="<?php if(!empty($filtered_value['upto_date'])) { echo date('d-m-Y',strtotime($filtered_value['upto_date'])); } ?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  autocomplete="off" autocomplete="off">
-                </div>
-
-                <div class="col-md-1 col-sm-1 ">
-                      <label  class="control-label" style="visibility: hidden;">Grade</label>
-                      <input type="submit" class="btn btn-xs btn-primary" value="Search" />
-                  </div>
-                  <div class="col-md-1 col-sm-1 ">
-                      <label  class="control-label" style="visibility: hidden;"> Grade</label>
-                      <a href="<?php echo $data[0]?>" class="btn btn-danger" >  <?= $this->lang->line('reset') ?></a>
-                  </div>
-                </div>
-        </form> -->
-        <hr>
-
-
-      <div class="table-responsive">
+     <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
+  <div class="table-responsive">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
            <tr>
@@ -279,7 +231,7 @@ $data=explode('?', $current_page);
                
                 
                  
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id'];?>"><i class="fa fa-edit"></i></a>
+                  <a class="avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Leave/edit/<?php echo $obj['id'];?>"><i class="feather feather-edit-3 "></i></a>
                   
                 </td>
 
@@ -314,11 +266,12 @@ $data=explode('?', $current_page);
               </tr>
            <?php  }?>
           </tbody>
-        </table>
-      </div>
+        </table>                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
  <script type="text/javascript">
 
    $(document).ready(function () {

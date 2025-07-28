@@ -34,58 +34,9 @@ Class CustomerSupport_controller extends MY_Controller {
 		$data['department_id']=$this->session->userdata['logged_in']['department_id'];
 		$data['role_id']=$this->session->userdata['logged_in']['role_id'];
 		$data['auth_id']=$this->session->userdata['logged_in']['auth_id'];
-	
-		$conditions=[];
-		if($this->input->get()) {
-			// print_r($conditions);exit;				
-		 	$conditions['category_name']  = $this->input->get('category_name');
-            $conditions['lead_code'] = $this->input->get('lead_code');
-            $conditions['lead_status'] = $this->input->get('lead_status');
-			$conditions['employee_id'] 	 = $this->input->get('employee_id');
-            $conditions['mobile'] = $this->input->get('mobile');
-            $conditions['email'] = $this->input->get('email');
-            $conditions['lead_title'] = $this->input->get('lead_title');
-
-
-            if(!empty($this->input->get('upto_date'))) {
-				$conditions['upto_date']=date('Y-m-d',strtotime($this->input->get('upto_date')));
-			} else {
-				$conditions['upto_date']= "";
-			}
-
-			if(!empty($this->input->get('from_date'))) {
-				$conditions['from_date']=date('Y-m-d',strtotime($this->input->get('from_date')));
-			} else {
-				$conditions['from_date']= "";
-			}
-			
-
-			// echo "<pre>";
-			// print_r($_GET);
-			
-			$data['filtered_value']=$conditions;
-			$data['leads'] = $this->Leads_model->LeadListCSV($conditions);
-		
-			$data['leads_id'] = $this->Leads_model->duplicate();
-			
-		} else {
-			
-			// $data['filtered_value']='';
-			$conditions['category_name']='';
-			$conditions['lead_code']='';
-			$conditions['lead_status']='';
-			$conditions['upto_date']='';
-			$conditions['from_date']='';
-			$conditions['employee_id'] 	= "";
-		
-			$data['filtered_value']=$conditions;
-			$conditions['mobile'] = $this->input->get('mobile');
-            $conditions['email'] = $this->input->get('email');
-            $conditions['lead_title'] = $this->input->get('lead_title');
-		 	$data['leads'] = $this->CustomerSupport_model->getList($data);
-		}
+		$data['leads'] = $this->CustomerSupport_model->getList($data);
      
-		// print_r($data['auth_id']);exit;
+		//  echo "<pre>"; print_r($data['leads']);exit;
 
 		$this->template->load('layout/template','CustomerSupport/customerview',$data);
 	}
@@ -106,12 +57,12 @@ Class CustomerSupport_controller extends MY_Controller {
 		//$data['categories'] = $this->CustomerSupport_model->getCategories();
 		//echo var_dump($data['students']);
 		// echo "<pre>";print_r($data['customer_data']);exit;
-		$this->template->load('template','CustomerSupport/customer_followup',$data);
+		$this->template->load('layout/template','CustomerSupport/customer_followup',$data);
 	}
 
 
 
-		public function tracking($id = NULL) 
+	public function tracking($id = NULL) 
 	{
 		$data=[];
 		$data['id']=$this->uri->segment('3');
@@ -122,7 +73,7 @@ Class CustomerSupport_controller extends MY_Controller {
 		$data['lead_title'] = $data['customer_data']['order_id'];
 		//$data['categories'] = $this->CustomerSupport_model->getCategories();
 		//echo var_dump($data['students']);
-		$this->template->load('template','CustomerSupport/customer_tracking',$data);
+		$this->template->load('layout/template','CustomerSupport/customer_tracking',$data);
 	}
 
 	
@@ -186,11 +137,11 @@ Class CustomerSupport_controller extends MY_Controller {
   	 	$result =$this->CustomerSupport_model->deletefollowup($id);
   	 	if ($result == TRUE) {
 			$this->session->set_flashdata('success', 'Follow Up deleted Successfully !');
-			redirect('CustomerSupport_controller/followups/'.$customer_id, 'refresh');
+			redirect('CustomerSupport_controller/followups/103088'.$customer_id, 'refresh');
 			//$this->fetchSuppliers();
 		} else {
 			$this->session->set_flashdata('failed', 'Operation Failed!');
-			redirect('CustomerSupport_controller/followups/'.$customer_id, 'refresh');
+			redirect('CustomerSupport_controller/followups/103088'.$customer_id, 'refresh');
 		}
   	}
 	public function add($id=NULL) 
@@ -329,7 +280,7 @@ Class CustomerSupport_controller extends MY_Controller {
 	}
 	
 
-	public function update_satus(){
+	public function update_status(){
 		// echo "<pre>"; print_r($_POST); exit;
 			$id= $this->input->post('id');
 			 $status = $this->input->post('status');

@@ -1,48 +1,85 @@
-<?php
-	defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 <style>
     .control-label {
-margin: 0.7rem
+margin: 0.9rem
 }
 </style>
-    <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+    
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Leave/add_leave_allotment">
-    <div class="container-fluid">
-        <div class="card card-primary card-outline">
-            <div class="card-header">
-                    <h3 class="card-title"> <?= $this->lang->line('leave_allotment') ?></h3>
-                    <div class="pull-right error_msg">
-                        <?php echo validation_errors();?>
-                        <?php if (isset($message_display)) {
-                        echo $message_display;
-                        } ?>		
-                    </div>
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+               <h5> <a href="<?php echo base_url('index.php/Leave/leave_allotment'); ?>"><?= $this->lang->line('leave_module') ?></a></h5>
             </div>
-            <!-- closed card-header -->
-            <!-- card-body -->
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+                </li>
+                <li class="breadcrumb-item"><?= $this->lang->line('leave_allotment') ?>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-header-right ms-auto">
+            <div class="page-header-right-items">
+          <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper hstack">
+             <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
+                            <?php if (!empty($filtered_value)) {
+                                foreach ($filtered_value as $key => $value) { ?>
+                                    <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
+                            } ?>
+                            <button type="submit" class="btn btn-icon btn-light-brand"> 
+                                    <i class="feather feather-download "></i> 
+                            </button>
+                        </form> &nbsp;
+                        <div>
+                           <a href="<?php echo base_url('index.php/Leave/create'); ?>" class="btn btn-icon btn-light-brand">
+                                <i class="feather feather-plus"></i>
+                                <!-- <span><?= $this->lang->line('apply_for_leave') ?>  -->
+                                </span>
+                            </a>
+                        </div>
+        </div>
+            </div>
+
+            <div class="page-header-right-items">
+               
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+     <div class="main-content">
+        <div class="card card-primary card-outline">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">                            
+                    <div class="row">
+                    <div class="col-lg-6">
                         <div class="col-md-12">
                             <label class="control-label"> <?= $this->lang->line('leave_allotment_month') ?></label>
                             <?php echo form_dropdown('month_id', $months,'','required="required"'); ?>
                         </div>
+                        <br>
                         <div class="table-responsive">
                             <table width="100%"  class="table table-bordered table-striped" id="sample_table1">
                                 <thead width="100%">
@@ -69,16 +106,16 @@ margin: 0.7rem
                                     <?php } ?>
                                 </tbody>
                             </table>
+                            <br>
                             <div class="col-md-12" width="100%">
                                 <button type="submit" class="btn btn-primary btn-block">
                                     <b> <?= $this->lang->line('submit') ?></b>
                                 </button>
                             </div>
                         </div>
-                        <!-- table-responsive -->
                     </div>
-                    <div class="col-md-8">
-                        <div class="table-responsive">
+                        <div class="col-lg-6">
+<div class="table-responsive">
                             <table class="table table-bordered table-striped table table-hover" id="proposalList">
 
                                 <thead>
@@ -100,14 +137,12 @@ margin: 0.7rem
                                     <?php } } ?>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
+                                            </div>
                 </div>
-                <!-- Row -->
-            </div> <!-- card-body closed -->
-        </div> <!-- card-outline closed -->
-    </div> <!-- container-fluid -->
-</form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">

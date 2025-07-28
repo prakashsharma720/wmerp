@@ -1,47 +1,26 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-// echo"<pre>";print_r($employees);exit;
-?>
-
-<style type="text/css">
-.btnEdit {
-    width: 25%;
-    border-radius: 5px;
-    margin: 1px;
-    padding: 1px;
-}
-
-.col-sm-6,
-.col-md-6 {
-    float: left;
-}
-</style>
 
 <?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-</div>
-<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
 <?php endif; ?>
 
 <?php if($this->session->flashdata('failed')): ?>
-<div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-</div>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
 <?php endif; ?>
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <div class="nxl-content">
+	  
+<div class="nxl-content">
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('employees_list') ?></h5>
+               <h5> <a href="<?php echo base_url('index.php/Employees/index'); ?>"><?= $this->lang->line('employee') ?></a></h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -51,29 +30,56 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
             </ul>
         </div>
-            <!-- <span class="card-title"><?= $this->lang->line('employees_list') ?>
-            </span> -->
-</div>
-</div>
-            <div class="button-group float-right d-flex gap-2">
 
-                <a href="<?php echo base_url(); ?>index.php/Employees/add" class="btn btn-primary" data-toggle="tooltip"
-                    title="New Employee"><i class="fa fa-plus"></i></a>
-                <button class="btn btn-primary" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
+        <div class="page-header-right ms-auto">
+            <div class="page-header-right-items">
+                <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                 
+                    <div class="pull-right d-flex">
+                         <div class="button-group float-right d-flex gap-2">
+                             <!-- Collapse Filter -->
+            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" data-toggle="tooltip" title="Filter">
+              <i class="feather-filter"></i>
+            </a>
+
+                <a href="<?php echo base_url(); ?>index.php/Employees/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip"
+                    title="New Employee"><i class="feather feather-plus"></i></a>
+                <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
                         class="fa fa-refresh"></i></button>
 
-                <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i
-                        class="fa fa-trash"></i></button>
+                <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete"><i
+                        class="feather feather-trash "></i></button>
 
             </div>
-        </div> <!-- /.card-body -->
-        <div class="card-body">
-            <div class="table-responsive">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Load Filter -->
+    <?php $this->load->view('leave-module/component/employeefilter'); ?>
+    </div>
+    
+       <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
+ <div class="table-responsive">
                 <!-- <table id="example1" class="table table-bordered table-striped"> -->
                 <table class="table table-hover  table-bordered table-striped" id="proposalList">
 
                     <thead>
                         <tr>
+                            <th><input type="checkbox" id="master"></th>
+
                             <th><?= $this->lang->line('sr_no') ?></th>
                             <th> <?= $this->lang->line('name') ?> </th>
 
@@ -94,6 +100,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <?php
           $i=1;foreach($employees as $obj){ ?>
                         <tr>
+                                                        <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
+
                             <td><?php echo $i;?></td>
                             <td><?php  
                $voucher_no= $obj['employee_code']; 
@@ -112,6 +120,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     echo $obj['name'].'('.$employee_id_code.')';
 
                 ?></td>
+                
                             <td><?php echo $obj['email']; ?></td>
                             <td><?php echo $obj['role']; ?></td>
                             <td><?php echo $obj['mobile_no']; ?></td>
@@ -134,15 +143,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <i class="feather feather-eye"></i>
                                             </a>
                             
-                            
-
                                 <a class="avatar-text avatar-md"
                                     href="<?php echo base_url(); ?>index.php/Employees/edit/<?php echo $obj['id'];?>"><i
-                                        class="feather feather-edit "></i></a>
+                                        class="feather feather-edit-3"></i></a>
+                                        
+                                
+                                         <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteEmployees<?= $obj['id']; ?>" class="avatar-text avatar-md">
+                                            <i class="feather feather-trash"></i>
+                                        </a>
 
-
-                                <!--   <a href="<?php //echo base_url(); ?>index.php/welcome/deleteSupplier/<?php echo $obj['id'];?>"
-                   onclick="return confirm(\'Confirm Deletion.\')">Delete</a> -->
                                 </div>
                             </td>
 
@@ -382,14 +391,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php $this->load->view('leave-module/component/view-employee', ['obj' => $obj]); ?>
 
         </tr>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="deleteEmployees<?= $obj['id']; ?>">
+    <form method="post" action="<?= base_url('index.php/Employees/deleteEmployee/' . $obj['id']); ?>">
         
+        <!-- Header with Cancel Button on Right -->
+        <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5 ">
+            <h2 class="fs-16 fw-bold mb-0"><?= $this->lang->line('confirm') ?></h2>
+            <button type="button" class="btn-close btn-close-gray ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="offcanvas-body">
+            <p class="fs-15">
+                <?= $this->lang->line('confirm_delete') ?>: <strong><?= $obj['name'] ?></strong>?
+            </p>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div class="px-4 gap-2 d-flex align-items-center justify-content-between ht-80 border-top border-gray-2">
+            <button type="submit" class="btn btn-primary w-50">
+                <?= $this->lang->line('yes') ?>
+            </button>
+            <button type="button" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">
+                <?= $this->lang->line('cancel') ?>
+            </button>
+        </div>
+    </form>
+</div>
+
         <?php  $i++;} ?>
         
         </tbody>
-        </table>
-        
+        </table>                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+</div>  
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">

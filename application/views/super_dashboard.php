@@ -14,17 +14,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           $hh=implode(',',(array)$result);
          
         }
-        // print_r ($hh);
-         
-       
-      
-        
-        // echo implode(",",$monthdata);
-
-          //  echo date('M',strtotime($all[$key]['date']));
-          // print_r($id);
-        
-
    
    ?>
 <style>

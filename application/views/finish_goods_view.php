@@ -1,19 +1,4 @@
-<?php if ($this->session->flashdata('success')): ?>
-	<div class="alert alert-success alert-dismissible">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-		<?php echo $this->session->flashdata('success'); ?>
-	</div>
-	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-	<div class="alert alert-error alert-dismissible ">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-		<?php echo $this->session->flashdata('failed'); ?>
-	</div>
-<?php endif; ?>
 
 <div class="nxl-content">
 	<div class="page-header">
@@ -32,7 +17,7 @@
 
 		<div class="page-header-right ms-auto">
 			<div class="page-header-right-items">
-
+          <?php $this->load->view('layout/alerts'); ?>
 			</div>
 
 			<!-- Mobile Toggle -->
@@ -49,11 +34,11 @@
           <thead>
            <tr>
                <th><?= $this->lang->line('sr_no') ?></th>
-<th><?= $this->lang->line('mineral_name') ?></th>
-<th><?= $this->lang->line('grade_name') ?></th>
-<th><?= $this->lang->line('packing_type') ?></th>
-<th><?= $this->lang->line('packing') ?></th>
-<th><?= $this->lang->line('action') ?></th>
+              <th><?= $this->lang->line('mineral_name') ?></th>
+              <th><?= $this->lang->line('grade_name') ?></th>
+              <th><?= $this->lang->line('packing_type') ?></th>
+              <th><?= $this->lang->line('packing') ?></th>
+              <th><?= $this->lang->line('action') ?></th>
               </tr>
           </thead>
           <tbody>

@@ -1,5 +1,10 @@
 <?php
 
+$lang['ticket_id'] = 'टिकट आईडी ';
+$lang['add_reply'] = 'उत्तर जोड़ें';
+$lang['home'] ='मुख्य';
+$lang['submit_answer'] ='उत्तर प्रस्तुत करें';
+
 $lang['dashboard'] = 'डैशबोर्ड';
 $lang['elevate'] = 'स्मार्ट समाधानों के साथ अपने व्यवसाय को ऊँचाई दें।';
 $lang['sign_in_session'] = 'अपना सत्र शुरू करने के लिए साइन इन करें';
@@ -1110,7 +1115,7 @@ $lang['all'] = 'सभी';
 $lang['from_date'] = 'प्रारंभ दिनांक';
 $lang['upto_date'] = 'समाप्ति दिनांक';
 $lang['apply_date'] = 'आवेदन की तिथि';
-$lang['lead_details'] = 'लीड विवरण';
+$lang['leave_details'] = 'छुट्टी विवरण';
 
 // invoices report
 $lang['invoice_slip_report'] = 'चालान पर्ची रिपोर्ट';
@@ -2971,6 +2976,7 @@ $lang['ticket_no'] = 'टिकट संख्या';
 $lang['name'] = 'नाम';
 $lang['email'] = 'ईमेल';
 $lang['phone_no'] = 'फोन नंबर';
+$lang['complaint_category'] = 'शिकायत श्रेणी';
 $lang['category'] = 'श्रेणी';
 $lang['order_id'] = 'ऑर्डर आईडी';
 $lang['picture'] = 'चित्र';
@@ -3057,6 +3063,8 @@ $lang['no_upcoming_anniversaries'] = 'कोई आने वाली कार
 $lang['add_new_employee'] = 'नया कर्मचारी जोड़ें';
 $lang['personal_details'] = 'व्यक्तिगत विवरण';
 $lang['bank_details'] = 'बैंक विवरण';
+$lang['savings'] = 'बचत';
+$lang['current'] = 'चालू';
 $lang['salary_details'] = 'वेतन विवरण';
 $lang['other_details'] = 'अन्य विवरण';
 
@@ -3104,7 +3112,7 @@ $lang['aadhaar_no'] = 'आधार नंबर';
 $lang['enter_aadhaar_no'] = 'आधार नंबर दर्ज करें';
 
 $lang['pan'] = 'पैन (स्थायी खाता संख्या)';
-$lang['pan_placeholder'] = 'उदा. ABCEDE2548K';
+$lang['pan_placeholder'] = 'उदा. एबीसीईडीई2548के';
 
 $lang['copyright'] = 'कॉपीराइट © 2025 Warrgyiz Morsch. सर्वाधिकार सुरक्षित।';
 
@@ -3129,7 +3137,11 @@ $lang['action'] = 'क्रिया';
 
 
 // leave module holidays
-
+$lang['approved'] = 'स्वीकृत';         // Hindi
+$lang['pending'] = 'लंबित';
+$lang['on_hold'] = 'स्थगित';
+$lang['rejected'] = 'अस्वीकृत';
+$lang['cancel'] = 'रद्द';
 
 $lang['holidays_master'] = 'अवकाश मास्टर';
 $lang['title_name'] = 'शीर्षक नाम';
@@ -3236,6 +3248,8 @@ $lang['apply'] = 'आवेदन करें';
 $lang['daily_task_master'] = 'दैनिक कार्य मास्टर';
 $lang['project_name'] = 'प्रोजेक्ट का नाम';
 $lang['enter_project_name'] = 'प्रोजेक्ट का नाम दर्ज करें';
+$lang['in_process'] = 'प्रक्रिया में';
+$lang['completed'] = 'पूरा हुआ';
 
 $lang['start_date'] = 'प्रारंभ तिथि';
 $lang['end_date'] = 'अंतिम तिथि';
@@ -3282,6 +3296,10 @@ $lang['action'] = 'क्रिया';
 $lang['create'] = 'बनाएं';
 $lang['update_task'] = 'कार्य अपडेट करें';
 $lang['task_history_description'] = 'कार्य इतिहास विवरण';
+$lang['create_task'] = 'कार्य बनाएँ';
+$lang['easy'] = 'आसान';
+$lang['medium'] = 'मध्यम';
+$lang['hard'] = 'कठिन';
 
 $lang['reference'] = 'संदर्भ';
 $lang['reference_name'] = 'संदर्भ नाम';
@@ -3393,6 +3411,10 @@ $lang['customer_name'] = 'ग्राहक का नाम';
 $lang['email'] = 'ईमेल';
 $lang['phone'] = 'फोन';
 $lang['action'] = 'क्रिया';
+
+$lang['open'] = 'खुला';
+$lang['closed'] = 'बंद';
+$lang['resolved'] = 'सुलझाया गया';
 
 
 // finish             ---------------------------------------------------------------------

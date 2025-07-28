@@ -1,4 +1,8 @@
 <?php
+
+$lang['ticket_id'] = 'идентификатор на билета ';
+$lang['add_reply'] = 'Добавете отговор';
+$lang['submit_answer'] ='изпратете отговор';
 $lang['dashboard'] = 'Табло';
 $lang['elevate'] = 'Развийте бизнеса си с интелигентни решения.';
 $lang['sign_in_session'] = 'Влезте, за да започнете сесията си';
@@ -75,6 +79,8 @@ $lang['emergency_no'] = 'Спешен номер';
 $lang['employee_detail'] = 'Данни за служителя';
 $lang['personal_details'] = 'Лични данни';
 $lang['bank_details'] = 'Банкови данни';
+$lang['savings'] = 'Спестовна';
+$lang['current'] = 'Текуща';
 $lang['salary_details'] = 'Данни за заплата';
 $lang['other_details'] = 'Други данни';
 
@@ -823,6 +829,7 @@ $lang['showing_entries'] = 'Показване на 1 до 10 от 14 запис
 // $lang['grade_standard'] = 'Стандартен';
 
 // units
+$lang['home'] = 'дома';
 $lang['product_unit_master'] = 'Модул за единици на продуктите';
 $lang['unit_name'] = 'Име на единицата';
 $lang['enter_unit_name'] = 'Въведете име на единицата';
@@ -1116,7 +1123,7 @@ $lang['select_type'] = 'Изберете тип';
 $lang['all'] = 'Всички';
 $lang['from_date'] = 'Начална дата';
 $lang['upto_date'] = 'Крайна дата';
-
+$lang['leave_details'] = 'Данни за отпуска';
 // invoices report
 $lang['invoice_slip_report'] = 'Доклад за фактури';
 $lang['from_date'] = 'Начална дата';
@@ -2023,7 +2030,6 @@ $lang['from_date'] = 'Начална дата';
 $lang['upto_date'] = 'Крайна дата';
 
 $lang['select_material'] = 'Изберете материал';
-$lang['select_status'] = 'Изберете статус';
 $lang['select_department'] = 'Изберете отдел';
 $lang['select_employee'] = 'Изберете служител';
 
@@ -3031,6 +3037,7 @@ $lang['ticket_no'] = 'Номер на билет';
 $lang['name'] = 'Име';
 $lang['email'] = 'Имейл';
 $lang['phone_no'] = 'Телефонен номер';
+$lang['complaint_category'] = 'Категория на жалбата';
 $lang['category'] = 'Категория';
 $lang['order_id'] = 'Номер на поръчка';
 $lang['picture'] = 'Снимка';
@@ -3162,7 +3169,7 @@ $lang['aadhaar_no'] = 'Номер Aadhaar';
 $lang['enter_aadhaar_no'] = 'Въведете номер Aadhaar';
 
 $lang['pan'] = 'ПАН (Постоянен акаунт номер)';
-$lang['pan_placeholder'] = 'напр. ABCEDE2548K';
+$lang['pan_placeholder'] = 'напр. АВСЕДЕ2548К';
 
 $lang['copyright'] = 'Авторско право © 2025 Warrgyiz Morsch. Всички права запазени.';
 
@@ -3186,6 +3193,11 @@ $lang['photos'] = 'Снимка';
 $lang['action'] = 'Действие';
 
 // leave module holidays
+$lang['approved'] = 'Одобрено';        // Bulgarian
+$lang['pending'] = 'В изчакване';
+$lang['on_hold'] = 'Задържано';
+$lang['rejecte'] = 'Отхвърлено';
+$lang['cancel'] = 'Отменено';
 $lang['holidays_master'] = 'Основни празници';
 $lang['title_name'] = 'Заглавие';
 $lang['enter_title_name'] = 'Въведете заглавие';
@@ -3297,6 +3309,8 @@ $lang['apply'] = 'Кандидатствай';
 $lang['daily_task_master'] = 'Дневни задачи - основни данни';
 $lang['project_name'] = 'Име на проекта';
 $lang['enter_project_name'] = 'Въведете име на проекта';
+$lang['in_process'] = 'В процес';
+$lang['completed'] = 'Завършен';
 
 $lang['start_date'] = 'Начална дата';
 $lang['end_date'] = 'Крайна дата';
@@ -3331,6 +3345,11 @@ $lang['upto_date'] = 'Крайна дата';
 $lang['show_entries'] = 'Показване';
 $lang['entries'] = 'Записи';
 $lang['search'] = 'Търсене';
+$lang['easy'] = 'Лесно';
+$lang['medium'] = 'Средно';
+$lang['hard'] = 'Трудно';
+$lang['create_task'] = 'Създаване на задача';
+
 
 $lang['project'] = 'Проект';
 $lang['task_title'] = 'Заглавие на задачата';
@@ -3463,6 +3482,10 @@ $lang['customer_name'] = 'Име на клиента';
 $lang['email'] = 'Имейл';
 $lang['phone'] = 'Телефон';
 $lang['action'] = 'Действие';
+
+$lang['open'] = 'Отворен';
+$lang['closed'] = 'Затворен';
+$lang['resolved'] = 'Разрешен';
 
 // finish             ---------------------------------------------------------------------
 // all side bar  list name ---------------------------------------------------------------------------------

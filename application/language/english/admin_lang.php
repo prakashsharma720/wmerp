@@ -1,4 +1,6 @@
 <?php
+$lang['ticket_id'] = 'ticket id ';
+$lang['add_reply'] = 'add reply';
 $lang['dashboard'] = 'Dashboard';
 $lang['elevate'] = 'Elevate Your Business with Smart Solutions.';
 $lang['sign_in_session'] = 'Sign In to Start Your Session';
@@ -36,7 +38,7 @@ $lang['id'] = 'ID';
 $lang['enter_id'] = 'Enter ID';
 $lang['apply_date'] = 'Apply Date';
 $lang['lead_details'] = 'Lead Details';
-
+$lang['leave_details'] = 'Leave Details';    
 
 
 $lang['model'] = 'Model';
@@ -63,6 +65,8 @@ $lang['edit_employee'] = 'Edit Employee';
 $lang['employee_detail'] = 'Employee Detail';
 $lang['personal_details'] = 'Personal Details';
 $lang['bank_details'] = 'Bank Details';
+$lang['savings'] = 'Savings';
+$lang['current'] = 'Current';
 $lang['salary_details'] = 'Salary Details';
 $lang['other_details'] = 'Other Details';
 $lang['name'] = 'Name';
@@ -159,8 +163,8 @@ $lang['sign_out'] = 'Sign Out';
 // my account click
 
 // Header Section
-$lang['total_assign'] = 'Total Assignments: 0';
-$lang['followups'] = 'Followups: 0';
+$lang['total_assign'] = 'Total Assignments';
+$lang['followups'] = 'Followups';
 // $lang['pending'] = 'Pending Tasks: 0';
 // $lang['approve'] = 'Approved: 0';
 // $lang['rejected'] = 'Rejected: 0';
@@ -3202,6 +3206,7 @@ $lang['search'] = 'Search';
 
 $lang['sr_no'] = 'Sr. No.';
 $lang['ticket_no'] = 'Ticket Number';
+$lang['complaint_category'] = 'complaint category';
 $lang['name'] = 'Name';
 $lang['email'] = 'Email';
 $lang['phone_no'] = 'Phone Number';
@@ -3360,7 +3365,11 @@ $lang['photos'] = 'Photo';
 $lang['action'] = 'Action';
 
 // leave module holidays
-
+$lang['approved'] = 'Approved';        // English
+$lang['pending'] = 'Pending';
+$lang['on_hold'] = 'On Hold';
+$lang['rejected'] = 'Rejected';
+$lang['cancel'] = 'Cancelled';
 $lang['holidays_master'] = 'Holidays Master';
 $lang['title_name'] = 'Title Name';
 $lang['enter_title_name'] = 'Enter Title Name';
@@ -3464,10 +3473,16 @@ $lang['gatepass'] = "Gatepass";
 $lang['enter_reason'] = "Enter Reason";
 $lang['apply'] = 'Apply';
 
+$lang['open'] = 'Open';
+$lang['closed'] = 'Closed';
+$lang['resolved'] = 'Resolved';
+
 // daily tasks project
 $lang['daily_task_master'] = 'Daily Task Master';
 $lang['project_name'] = 'Project Name';
 $lang['enter_project_name'] = 'Enter Project Name';
+$lang['in_process'] = 'In Process';
+$lang['completed'] = 'Completed';
 
 $lang['start_date'] = 'Start Date';
 $lang['end_date'] = 'End Date';
@@ -3513,6 +3528,9 @@ $lang['action'] = 'Action';
 $lang['create'] = 'Create';
 $lang['update_task'] = 'Update Task';
 $lang['task_history_description'] = 'Task History Description';
+$lang['easy'] = 'Easy';
+$lang['medium'] = 'Medium';
+$lang['hard'] = 'Hard';
 
 $lang['reference'] = 'Reference';
 $lang['reference_name'] = 'Reference Name';
@@ -3525,6 +3543,7 @@ $lang['document'] = 'Document';
 $lang['followup_time'] = 'Followup Time';
 $lang['delete_task_history_confirm'] = 'Are you sure, you want to delete this task history?';
 $lang['confirm_header'] = 'Confirm';
+$lang['create_task'] = 'Create Task';
 
 
 // payroll module attendance list
@@ -3964,3 +3983,4 @@ $lang['primary_theme_color'] = 'Primary Theme Color';
 $lang['navbar_color'] = 'Navbar Color';
 $lang['secondary_theme_color'] = 'Secondary Theme Color';
 $lang['home'] ='Home';
+$lang['submit_answer'] ='Submit Answer';

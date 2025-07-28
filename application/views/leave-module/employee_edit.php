@@ -105,7 +105,8 @@ img.profile-user-img.img-fluid.img-circle {
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('employee') ?></h5>
+               <h5> <a href="<?php echo base_url('index.php/Employees/index'); ?>"><?= $this->lang->line('employee') ?></a></h5>
+
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -124,75 +125,8 @@ img.profile-user-img.img-fluid.img-circle {
         </div> <!-- /.card-body -->
     <br>
 
-        <div class="row">
-            <div class="col-md-3">
-
-                <!-- Profile Image -->
-                <div class="card card-primary card-outline">
-                    <div class="card-body box-profile">
-                        <div class="text-center" style="margin-left: 53px;">
-                            <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
-                                style="--value:100"></div>
-
-
-                            <img class="profile-user-img img-fluid img-circle" src="<?= get_avatar_url($photo) ?>"
-                                alt="User profile picture">
-
-                        </div>
-
-
-
-                        <h3 class="profile-username text-center"><?= $name?></h3>
-
-                        <p class="text-muted text-center"><?php echo $designation?></p>
-
-                        <ul class="list-group list-group-unbordered mb-3">
-                        <div class="top-progress-bar">
-                            <div class="top-progress-fill">
-                                <span class="progress-text"><?= $this->lang->line('profile_complete') ?> : 50%</span>
-                            </div>
-                        </div>
-                            <li class="list-group-item">
-                                <b><?= $this->lang->line('email') ?></b> <a class="float-right"><?= $email?></a>
-                            </li>
-                            <li class="list-group-item">
-                                <b><?= $this->lang->line('mobile_no') ?></b> <a class="float-right"><?= $mobile_no?></a>
-                            </li>
-                            <li class="list-group-item">
-                                <b><?= $this->lang->line('date_of_birth') ?></b> <a class="float-right"><?= $dob?></a>
-                            </li>
-                        </ul>
-
-                        <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-
-                <!-- About Me Box -->
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title"><?= $this->lang->line('about_me') ?></h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-
-
-                        <strong><i class="fa fa-map-marker mr-1"></i> <?= $this->lang->line('location') ?></strong>
-
-                        <p class="text-muted"><?= $address?></p>
-
-                        <hr>
-
-                        <strong><i class="fa fa-file-text-o mr-1"></i><?= $this->lang->line('emergency_no') ?></strong>
-
-                        <p class="text-muted"><?= $emobile_no?> (<?= $ename?>)</p>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-            <div class="col-md-9">
+       
+            <div class="col-md-12">
                 <form class="form-horizontal " role="form" method="post"
                     action="<?php echo base_url(); ?>index.php/Employees/editemployee/<?= $id ?>"
                     enctype="multipart/form-data">
@@ -201,17 +135,24 @@ img.profile-user-img.img-fluid.img-circle {
                     <div class="card">
                         <!-- Custom Progress Bar with Text -->
                         
-                        <div class="card-header p-2">
-                            <ul class="nav nav-pills" style="margin-bottom: -8px;">
-                                <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('personal_details') ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('bank_details') ?></a>
-                                </li>
-                                <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('salary_details') ?></a>
-                                </li>
-                                <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('other_details') ?></a>
-                                </li>
-                            </ul>
-                        </div><!-- /.card-header -->
+                        <div class="d-flex align-items-center justify-content-between">
+                    <div class="nav-tabs-wrapper page-content-left-sidebar-wrapper">
+                        <div class="d-flex d-md-none">
+                        </div>
+                        <ul class="nav nav-tabs nav-tabs-custom-style" id="myTab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab"><?= $this->lang->line('personal_details') ?></a>
+                        </li>
+
+                           <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><?= $this->lang->line('bank_details') ?></a>
+                        </li>
+                           <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab"><?= $this->lang->line('salary_details') ?></a>
+                        </li>
+                           <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $this->lang->line('other_details') ?></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+                        <!-- /.card-header -->
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="tab-pane active show" id="activity">
@@ -389,13 +330,13 @@ img.profile-user-img.img-fluid.img-circle {
                                                 <label class="control-label"><?= $this->lang->line('account_type') ?><span
                                                         class="required">*</span></label>
                                                 <select name="account_type" class="form-control">
-                                                    <option value="">Select Type</option>
+                                                    <option value=""><?= $this->lang->line('select_type') ?></option>
                                                     <option value="savings"
                                                         <?= ($account_type == 'savings') ? 'selected' : ''; ?>>
-                                                        Savings</option>
+                                                        <?= $this->lang->line('savings') ?></option>
                                                     <option value="current"
                                                         <?= ($account_type == 'current') ? 'selected' : ''; ?>>
-                                                        Current</option>
+                                                        <?= $this->lang->line('current') ?></option>
                                                 </select>
                                             </div>
                                         </div>
@@ -499,11 +440,17 @@ img.profile-user-img.img-fluid.img-circle {
                                 </div>
                                 <!-- /.tab-pane -->
                                 <div class="row col-md-12">
-                                    <div class="col-md-12 col-sm-12 ">
-                                        <label class="control-label" style="visibility: hidden;"> Name</label><br>
-                                        <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('update') ?></button>
-                                    </div>
-                                </div>
+    <div class="col-md-12 col-sm-12">
+        <label class="control-label" style="visibility: hidden;"> Name</label><br>
+        <div class="d-flex gap-2">
+                                                    
+            <button type="submit" id="updateBtns" class="btn btn-primary" >
+                <?= $this->lang->line('update') ?>
+            </button>
+        </div>
+    </div>
+</div>
+
                             </div>
                             <!-- /.tab-content -->
                         </div><!-- /.card-body -->
@@ -520,6 +467,8 @@ img.profile-user-img.img-fluid.img-circle {
 </div>
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function() {
     function readURL(input) {
@@ -642,5 +591,6 @@ function calculateTotal() {
     document.getElementById('total_net_salary').value = total.toFixed(2);
 }
 </script>
+
 
 

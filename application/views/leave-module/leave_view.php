@@ -2,13 +2,13 @@
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
-                <h5 class="m-b-10"><?= $this->lang->line('leave_module') ?></h5>
+               <h5> <a href="<?php echo base_url('index.php/Leave/index'); ?>"><?= $this->lang->line('leave_module') ?></a></h5>
             </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
                 </li>
-                <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+                <li class="breadcrumb-item"><?= $this->lang->line('leave_application') ?>
                 </li>
             </ul>
         </div>
@@ -27,12 +27,13 @@
                                 foreach ($filtered_value as $key => $value) { ?>
                                     <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
                             } ?>
-                            <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
+                            <button type="submit" class="btn btn-icon btn-light-brand">
+                                <i class="feather feather-download ">
+                                </i>  </button>
                         </form> &nbsp;
                         <div>
-                           <a href="<?php echo base_url('index.php/Leave/create'); ?>" class="btn btn-primary">
-                                <i class="feather-plus me-2"></i>
-                                <span><?= $this->lang->line('apply_for_leave') ?> 
+                           <a href="<?php echo base_url('index.php/Leave/create'); ?>" class="btn btn-icon btn-light-brand">
+                                <i class="feather feather-plus"></i>
                                 </span>
                             </a>
                         </div>
@@ -69,7 +70,7 @@
         </div>
     <?php endif; ?>
 
-    <div class="main-content">
+  <div class="main-content">
     <div class="row">
         <div class="col-lg-12">
             <div class="card stretch stretch-full">

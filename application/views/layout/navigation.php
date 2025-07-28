@@ -1,10 +1,10 @@
 <nav class="nxl-navigation">
   <div class="navbar-wrapper">
     <div class="m-header">
-      <a href="index.html" class="b-brand">
+      <a href="<?php echo base_url() . "index.php/User_authentication/admin_dashboard"; ?>" class="b-brand">
         <!-- ========   change your logo here   ============ -->
-        <img src="<?php echo base_url() . "assets2/"; ?>/images/logo-full.png" alt="" class="logo logo-lg" />
-        <img src="<?php echo base_url() . "assets2/"; ?>/images/logo-abbr.png" alt="" class="logo logo-sm" />
+        <img src="<?php echo base_url() . "uploads/"; ?>mlogo.jpg" alt="" class="logo logo-lg w-50" />
+        <img src="<?php echo base_url() . "uploads/"; ?>mlogo.jpg" alt="" class="logo logo-sm" />
       </a>
     </div>
     <div class="navbar-content">
@@ -12,7 +12,7 @@
         <li class="nxl-item nxl-caption">
           <label>Navigation</label>
         </li>
-        
+
         <!-- <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-send"></i></span>
@@ -36,31 +36,6 @@
           </a>
         </li>
 
-        <!-- Account Settings -->
-        <li class="nxl-item nxl-hasmenu">
-          <a href="javascript:void(0);" class="nxl-link">
-            <i class="feather-settings"></i>
-            <span class="nxl-mtext"><?= $this->lang->line('account_settings') ?></span>
-            <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
-          </a>
-          <ul class="nxl-submenu">
-            <li class="nxl-item">
-              <a class="nxl-link" href=" <?= base_url('index.php/Meenus/index') ?>">
-                <i class="feather-menu"></i><?= $this->lang->line('menus') ?>
-              </a>
-            </li>
-            <li class="nxl-item">
-              <a class="nxl-link" href="<?= base_url('index.php/Meenus/UserRights') ?>">
-                <i class="feather-key"></i> <?= $this->lang->line('user_rights') ?>
-              </a>
-            </li>
-            <li class="nxl-item">
-              <a class="nxl-link active" href="<?= base_url('index.php/User_authentication/role_master') ?>">
-                <i class="feather-circle"></i> <?= $this->lang->line('role_master') ?>
-              </a>
-            </li>
-          </ul>
-        </li>
 
         <!-- SCM Module Main Item -->
         <li class="nxl-item nxl-hasmenu">
@@ -121,29 +96,59 @@
                     <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                   </a>
                   <ul class="nxl-submenu">
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/raw_material/index') ?>"><?= $this->lang->line('raw_material') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/packing_materials/index') ?>"><?= $this->lang->line('packing_material') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/lab_chemicals/index') ?>"><?= $this->lang->line('lab_chemicals') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/plant_and_machinery/index') ?>"><?= $this->lang->line('plant_and_machinery') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/services/index') ?>"><?= $this->lang->line('services') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/consultancy/index') ?>"><?= $this->lang->line('consultancy') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/computer_periperals/index') ?>"><?= $this->lang->line('computer_periperals') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/electrical_goods/index') ?>"><?= $this->lang->line('electrical_goods') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/building_materials/index') ?>"><?= $this->lang->line('building_materials') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/mechanical_items/index') ?>"><?= $this->lang->line('mechanical_items') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/green_plant_chemicals/index') ?>"><?= $this->lang->line('green_plant_chemicals') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/protective_equipments/index') ?>"><?= $this->lang->line('protective_equipments') ?></a></li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/raw_material/index') ?>"><?= $this->lang->line('raw_material') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/packing_materials/index') ?>"><?= $this->lang->line('packing_material') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/lab_chemicals/index') ?>"><?= $this->lang->line('lab_chemicals') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/plant_and_machinery/index') ?>"><?= $this->lang->line('plant_and_machinery') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/services/index') ?>"><?= $this->lang->line('services') ?></a></li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/consultancy/index') ?>"><?= $this->lang->line('consultancy') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/computer_periperals/index') ?>"><?= $this->lang->line('computer_periperals') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/electrical_goods/index') ?>"><?= $this->lang->line('electrical_goods') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/building_materials/index') ?>"><?= $this->lang->line('building_materials') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/mechanical_items/index') ?>"><?= $this->lang->line('mechanical_items') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/green_plant_chemicals/index') ?>"><?= $this->lang->line('green_plant_chemicals') ?></a>
+                    </li>
+                    <li class="nxl-item"><a class="nxl-link"
+                        href="<?= base_url('index.php/protective_equipments/index') ?>"><?= $this->lang->line('protective_equipments') ?></a>
+                    </li>
 
 
                   </ul>
                 </li>
 
                 <!-- Other Items -->
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/grades/index') ?>"><?= $this->lang->line('grades') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/unit/index') ?>"><?= $this->lang->line('units') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/sub_category/index') ?>"><?= $this->lang->line('sub_categories') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/department/index') ?>"><?= $this->lang->line('departments') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/hsn/index') ?>"><?= $this->lang->line('hsn_code') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/grades/index') ?>"><?= $this->lang->line('grades') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/unit/index') ?>"><?= $this->lang->line('units') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/sub_category/index') ?>"><?= $this->lang->line('sub_categories') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/department/index') ?>"><?= $this->lang->line('departments') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/hsn/index') ?>"><?= $this->lang->line('hsn_code') ?></a></li>
               </ul>
             </li>
             <!-- Suppliers -->
@@ -194,15 +199,33 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/suppliers/report') ?>"><?= $this->lang->line('suppliers_report') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/transporters/report') ?>"><?= $this->lang->line('transporters_report') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/purchase_order/report') ?>"><?= $this->lang->line('purchase_orders_report') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Invoice/report') ?>"><?= $this->lang->line('invoices_report') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/service_providers/report') ?>"><?= $this->lang->line('service_provider_report') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/customers/report') ?>"><?= $this->lang->line('customer_report') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/requisition_slips/report') ?>"><?= $this->lang->line('requisition_slips') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/gir_registers/report') ?>"><?= $this->lang->line('gir_register_report') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Stock_registers/report') ?>"><?= $this->lang->line('current_stock_report') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/suppliers/report') ?>"><?= $this->lang->line('suppliers_report') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/transporters/report') ?>"><?= $this->lang->line('transporters_report') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/purchase_order/report') ?>"><?= $this->lang->line('purchase_orders_report') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Invoice/report') ?>"><?= $this->lang->line('invoices_report') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/service_providers/report') ?>"><?= $this->lang->line('service_provider_report') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/customers/report') ?>"><?= $this->lang->line('customer_report') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/requisition_slips/report') ?>"><?= $this->lang->line('requisition_slips') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/gir_registers/report') ?>"><?= $this->lang->line('gir_register_report') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Stock_registers/report') ?>"><?= $this->lang->line('current_stock_report') ?></a>
+                </li>
               </ul>
             </li>
             <!-- GIR Registers -->
@@ -213,8 +236,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Gir_registers/index') ?>"><?= $this->lang->line('general_gir') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Gir_registers/rm_gir_index') ?>"><?= $this->lang->line('rm_challan_inward') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Gir_registers/index') ?>"><?= $this->lang->line('general_gir') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Gir_registers/rm_gir_index') ?>"><?= $this->lang->line('rm_challan_inward') ?></a>
+                </li>
               </ul>
             </li>
             <!-- Issue Slips -->
@@ -225,8 +252,10 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Issue_slips/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Issue_slips/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Issue_slips/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Issue_slips/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
               </ul>
             </li>
 
@@ -238,8 +267,11 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Transporters/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Transporters/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Transporters/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Transporters/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -327,8 +359,11 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Service_providers/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Service_providers/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Service_providers/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Service_providers/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
             <!-- requisition slips-->
@@ -339,8 +374,11 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Requisition_slips/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Requisition_slips/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Requisition_slips/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Requisition_slips/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
             <!-- approval-->
@@ -351,8 +389,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Requisition_slips/approval') ?>"><?= $this->lang->line('requisitions') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Purchase_order/approval') ?>"><?= $this->lang->line('po_approval') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Requisition_slips/approval') ?>"><?= $this->lang->line('requisitions') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Purchase_order/approval') ?>"><?= $this->lang->line('po_approval') ?></a>
+                </li>
               </ul>
             </li>
             <!-- approval-->
@@ -363,8 +405,10 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Customers/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Customers/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Customers/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Customers/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
               </ul>
             </li>
             <!-- invoices-->
@@ -375,8 +419,10 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Invoice/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Invoice/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Invoice/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Invoice/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
               </ul>
             </li>
             <!-- stock_registers-->
@@ -387,9 +433,15 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Stock_registers/materials') ?>"><?= $this->lang->line('material_wise') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/minimum_inventory_levels') ?>"><?= $this->lang->line('minimum_inventory_level') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Stock_registers/current_stocks') ?>"><?= $this->lang->line('current_stock') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Stock_registers/materials') ?>"><?= $this->lang->line('material_wise') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/minimum_inventory_levels') ?>"><?= $this->lang->line('minimum_inventory_level') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Stock_registers/current_stocks') ?>"><?= $this->lang->line('current_stock') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -401,8 +453,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Stock_registers/fg_stock_register') ?>"><?= $this->lang->line('fg_stock_ledgers') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Stock_registers/fg_current_stock') ?>"><?= $this->lang->line('fg_current_stock') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Stock_registers/fg_stock_register') ?>"><?= $this->lang->line('fg_stock_ledgers') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Stock_registers/fg_current_stock') ?>"><?= $this->lang->line('fg_current_stock') ?></a>
+                </li>
 
               </ul>
             </li>
@@ -414,8 +470,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Material_return_records/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Material_return_records/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Material_return_records/add') ?>"><?= $this->lang->line('add') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Material_return_records/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
 
               </ul>
             </li>
@@ -444,8 +504,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Production_registers/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Production_registers/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Production_registers/add') ?>"><?= $this->lang->line('add') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Production_registers/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -456,8 +520,11 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Work_allotments/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Work_allotments/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Work_allotments/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Work_allotments/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -468,8 +535,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Daily_stacking_records/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Daily_stacking_records/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Daily_stacking_records/add') ?>"><?= $this->lang->line('add') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Daily_stacking_records/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -480,8 +551,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Daily_stitching_records/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Daily_stitching_records/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Daily_stitching_records/add') ?>"><?= $this->lang->line('add') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Daily_stitching_records/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -492,8 +567,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Production_logsheets/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Production_logsheets/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Production_logsheets/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Production_logsheets/add') ?>"><?= $this->lang->line('add') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -504,8 +583,11 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Process_logsheets/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Process_logsheets/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Process_logsheets/add') ?>"><?= $this->lang->line('add') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Process_logsheets/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
 
@@ -516,8 +598,12 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Power_monitoring_registers/add') ?>"><?= $this->lang->line('add') ?></a></li>
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Power_monitoring_registers/index') ?>"><?= $this->lang->line('view_list') ?></a></li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Power_monitoring_registers/add') ?>"><?= $this->lang->line('add') ?></a>
+                </li>
+                <li class="nxl-item"><a class="nxl-link"
+                    href="<?= base_url('index.php/Power_monitoring_registers/index') ?>"><?= $this->lang->line('view_list') ?></a>
+                </li>
               </ul>
             </li>
             <!-- Printing Logsheet -->
@@ -1009,6 +1095,31 @@
             </li>
           </ul>
         </li>
+        <!-- Account Settings -->
+        <!-- <li class="nxl-item nxl-hasmenu">
+          <a href="javascript:void(0);" class="nxl-link">
+            <i class="feather-settings"></i>
+            <span class="nxl-mtext"><?= $this->lang->line('account_settings') ?></span>
+            <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+          </a>
+          <ul class="nxl-submenu">
+            <li class="nxl-item">
+              <a class="nxl-link" href=" <?= base_url('index.php/Meenus/index') ?>">
+                <i class="feather-menu"></i><?= $this->lang->line('menus') ?>
+              </a>
+            </li>
+            <li class="nxl-item">
+              <a class="nxl-link" href="<?= base_url('index.php/Meenus/UserRights') ?>">
+                <i class="feather-key"></i> <?= $this->lang->line('user_rights') ?>
+              </a>
+            </li>
+            <li class="nxl-item">
+              <a class="nxl-link active" href="<?= base_url('index.php/User_authentication/role_master') ?>">
+                <i class="feather-circle"></i> <?= $this->lang->line('role_master') ?>
+              </a>
+            </li>
+          </ul>
+        </li> -->
     </div>
 
   </div>

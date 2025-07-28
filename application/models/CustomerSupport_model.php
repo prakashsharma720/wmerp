@@ -37,13 +37,19 @@ Class CustomerSupport_model extends MY_Model {
 
 	public function getList() 
 	{
-		
+		$data =[];
 		$this->db->select('*');
 		$this->db->from('customer_support');
+		$query= $this->db->get()->result_array();
+		//   echo "<pre>";print_r($data['ticket_data']);exit;
+		foreach($query as $key=>$row){
+			$data[$key]['ticket_data'] = $row;
+			// $data[$key]['customer_data'] = $this->getFollowupById($row['ticket']);
+			$data[$key]['followups'] = $this->getFollowUps($row['ticket']);
+		}
 
-		$query = $this->db->get();
-		//print_r($query);exit;
-		return $query->result_array();
+		// echo "<pre>";print_r($data);exit;
+		return $data;
 
 	}
 	

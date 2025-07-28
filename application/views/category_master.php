@@ -1,21 +1,3 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible px-4 py-3 mx-3 my-2" 
-       style="background-color:#fff; color:#155724; border:1px solid #d4edda;">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-    <?= $this->session->flashdata('success'); ?>
-  </div>
-<?php endif; ?>
-
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible px-4 py-3 mx-3 my-2" 
-       style="background-color:#fff; color:#721c24; border:1px solid #f5c6cb;">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-exclamation-triangle"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?= $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
-
 
 
 <div class="nxl-content" style="background-color: #fff;">
@@ -36,6 +18,7 @@
     </div>
     <div class="page-header-right ms-auto d-flex align-items-center">
       <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
       <div class="d-md-none d-flex align-items-center">
         <a href="javascript:void(0)" class="page-header-right-open-toggle">
           <i class="feather-align-right fs-20"></i>
@@ -44,72 +27,76 @@
     </div>
   </div>
 
-  <!-- Form & Table Section -->
-  <div class="card-body pt-4 px-4">
-    <div class="row">
-      <!-- Form Section -->
-      <div class="col-md-6">
-        <?php if (!empty($id)): ?>
-          <form class="form-horizontal" method="post" action="<?= base_url("index.php/Category/editCategory/$id") ?>">
-            <input type="hidden" name="category_id" value="<?= $id ?>">
-        <?php else: ?>
-          <form class="form-horizontal" method="post" action="<?= base_url("index.php/Category/add_new_category") ?>">
-        <?php endif; ?>
+<!-- Form & Table Section -->
+<div class="main-content">
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="card stretch stretch-full">
+          <div class="card-body pt-4 px-4">
+            <div class="row">
+              <!-- Form Section -->
+              <div class="col-md-6">
+                <?php if (!empty($id)): ?>
+                  <form class="form-horizontal" method="post" action="<?= base_url("index.php/Category/editCategory/$id") ?>">
+                    <input type="hidden" name="category_id" value="<?= $id ?>">
+                <?php else: ?>
+                  <form class="form-horizontal" method="post" action="<?= base_url("index.php/Category/add_new_category") ?>">
+                <?php endif; ?>
 
-          <div class="form-group">
-            <label class="control-label"><?= $this->lang->line('service_name') ?></label>
-            <input type="text" name="category_name" class="form-control"
-                   placeholder="<?= $this->lang->line('enter_service_name') ?>"
-                   value="<?= $category_name ?>" required autofocus>
-          </div>
+                  <div class="form-group">
+                    <label class="control-label"><?= $this->lang->line('service_name') ?></label>
+                    <input type="text" name="category_name" class="form-control"
+                          placeholder="<?= $this->lang->line('enter_service_name') ?>"
+                          value="<?= $category_name ?>" required autofocus>
+                  </div>
 
-          <?php if (!empty($id)): ?>
-            <div class="form-group">
-              <label class="control-label"><?= $this->lang->line('status') ?></label>
-              <select class="form-control" name="flag">
-                <option value="0"><?= $this->lang->line('active') ?></option>
-                <option value="1"><?= $this->lang->line('de_active') ?></option>
-              </select>
+                  <?php if (!empty($id)): ?>
+                    <div class="form-group">
+                      <label class="control-label"><?= $this->lang->line('status') ?></label>
+                      <select class="form-control" name="flag">
+                        <option value="0"><?= $this->lang->line('active') ?></option>
+                        <option value="1"><?= $this->lang->line('de_active') ?></option>
+                      </select>
+                    </div>
+                  <?php endif; ?>
+
+                  <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-primary btn-block">
+                      <?= $this->lang->line('save') ?>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Table Section -->
+              <div class="col-md-6">
+                <h5><?= $this->lang->line('services_list') ?></h5>
+                <table id="example" class="table table-bordered table-striped w-100">
+                  <thead>
+                    <tr>
+                      <th><?= $this->lang->line('sr_no') ?></th>
+                      <th><?= $this->lang->line('services') ?></th>
+                      <th><?= $this->lang->line('action') ?></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php $i = 1; foreach ($categories as $category): ?>
+                      <tr>
+                        <td><?= $i++ ?></td>
+                        <td><?= $category['category_name'] ?></td>
+                        <td>
+                        <a href="<?= base_url("index.php/Category/index/" . $category['id']) ?>" class="btn btn-icon avatar-text avatar-md" style="padding: 2px 3px;">
+                          <i class="feather feather-edit-3"></i>
+                        </a>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          <?php endif; ?>
-
-          <div class="form-group mt-3">
-            <button type="submit" class="btn btn-primary btn-block">
-              <?= $this->lang->line('save') ?>
-            </button>
           </div>
-        </form>
-      </div>
-
-      <!-- Table Section -->
-      <div class="col-md-6">
-        <h5><?= $this->lang->line('services_list') ?></h5>
-        <table id="example" class="table table-bordered table-striped w-100">
-          <thead>
-            <tr>
-              <th><?= $this->lang->line('sr_no') ?></th>
-              <th><?= $this->lang->line('services') ?></th>
-              <th><?= $this->lang->line('action') ?></th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php $i = 1; foreach ($categories as $category): ?>
-              <tr>
-                <td><?= $i++ ?></td>
-                <td><?= $category['category_name'] ?></td>
-                <td>
-     <a href="<?= base_url("index.php/Category/index/" . $category['id']) ?>" 
-   class="d-inline-flex align-items-center justify-content-center border bg-white shadow-sm text-dark"
-   style="width:32px; height:32px; border-radius:50%;">
-  <i class="feather feather-edit-3"></i>
-</a>
-
-
-                </td>
-              </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
+        </div>
       </div>
     </div>
   </div>

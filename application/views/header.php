@@ -133,25 +133,16 @@ $photo = $userData['photo'];
                 $this->db->from('lead_csv');
                 $this->db->where(['assign_to'=>$login_id,'assign_date'=>date('Y-m-d')]);
                 $AssignLead=$this->db->get()->num_rows();
-
-                            ?>
-
+                ?>
                 <div>
 
-
-                    <?php 
-               if($role_id=='3'){
-              foreach($count as $target){?>
-
-                    <Label style="color:red;">Target :</Label><span style="color:red;"> <?php echo $target  ?> <span
-                            style="border-right:1px solid black;"></span></span> &nbsp;
-                    <?php }?>
-                    <label style="color:red;">Goal Achieved :</label><span style="color:red;">
-                        <?php echo $toodayLeads  ?> <span style="border-right:1px solid black;"></span></span>&nbsp;
-                    <label style="color:red;">Duplicate: </label><span style="color:red;">
-                        <?php echo $duplicateLeads  ?></span>&nbsp;
+                <Label style="color:red;"><?= $this->lang->line('target') ?> :</Label><span style="color:red;"> <?php echo $target  ?> <span
+                        style="border-right:1px solid black;"></span></span> &nbsp;
+                <label style="color:red;"><?= $this->lang->line('goal_achieved') ?> :</label><span style="color:red;">
+                    <?php echo $toodayLeads  ?> <span style="border-right:1px solid black;"></span></span>&nbsp;
+                <label style="color:red;">Duplicate: </label><span style="color:red;">
+                    <?php echo $duplicateLeads  ?></span>&nbsp;
                 </div>
-                <?php } if($role_id=='6'){?>
 
                 <div>
                     <Label style="color:red;"> Total Assign :</Label><span style="color:red;">
@@ -164,7 +155,6 @@ $photo = $userData['photo'];
                             style="border-right:1px solid black;"></span></span>&nbsp;
                     <label style="color:red;">Rejected: </label><span style="color:red;"> <?php echo $reject  ?> </span>
                 </div>
-                <?php }?>
 
             </div>
         </li>
