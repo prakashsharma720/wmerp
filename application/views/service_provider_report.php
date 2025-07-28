@@ -31,14 +31,14 @@
       <!-- Filter Button -->
      <button
   id="toggleFilter"
-  class="btn btn-warning me-2"
+  class="btn btn-icon avatar-text avatar-md"
   type="button">
-  <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+  <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
 </button>
 
 
       <!-- Export Button -->
-      <form method="post" action="<?= base_url(); ?>index.php/Service_providers/createXLS">
+      <form method="post" action="<?= base_url(); ?>index.php/Service_providers/createXLS" style="margin-left:5px;">
         <?php if (!empty($conditions)) {
           foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">

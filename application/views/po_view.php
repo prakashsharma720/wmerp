@@ -43,17 +43,29 @@
 
 
             <!-- Action Buttons -->
-            <a href="<?= base_url(); ?>index.php/Purchase_order/add" class="btn border rounded bg-light shadow-sm text-dark me-2 px-3 py-2" data-bs-toggle="tooltip" title="New PO">
-              <i class="fa fa-plus"></i>
-            </a>
+<a href="<?= base_url(); ?>index.php/Purchase_order/add" 
+   class="btn btn-icon avatar-text avatar-md" 
+   data-bs-toggle="tooltip" 
+   title="New PO" 
+   style="margin-left:5px;">
+  <i class="fa fa-plus"></i>
+</a>
 
-            <button class="btn border rounded bg-light shadow-sm text-dark me-2 px-3 py-2" data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
-              <i class="fa fa-refresh"></i>
-            </button>
+<button class="btn btn-icon avatar-text avatar-md" 
+        style="margin-left:5px;" 
+        data-bs-toggle="tooltip" 
+        title="Refresh" 
+        onclick="location.reload();">
+  <i class="fa fa-refresh"></i>
+</button>
 
-            <button class="btn border rounded bg-light shadow-sm text-dark me-2 px-3 py-2" data-bs-toggle="tooltip" title="Bulk Delete">
-              <i class="fa fa-trash"></i>
-            </button>
+<button class="btn btn-icon avatar-text avatar-md" 
+        style="margin-left:5px;" 
+        data-bs-toggle="tooltip" 
+        title="Bulk Delete">
+  <i class="fa fa-trash"></i>
+</button>
+
           </div>
         </div>
       </div>
@@ -127,13 +139,13 @@
 
 
                   <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewPO<?php echo $obj['id']; ?>" title="View More">
-                    <i class="fa fa-eye"></i>
+                    <i class="feather feather-eye"></i>
                   </a>
-                  <a class="btn border rounded bg-light shadow-sm text-dark me-2 px-3 py-2" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id']; ?>">
+                  <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id']; ?>">
                     <i class="fa fa-print"></i>
                   </a>
 
-                  <a class="btn border rounded bg-light shadow-sm text-dark me-2 px-3 py-2" href="<?php echo base_url(); ?>index.php/Purchase_order/edit/<?php echo $obj['id']; ?>">
+                  <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Purchase_order/edit/<?php echo $obj['id']; ?>">
                     <i class="feather feather-edit-3"></i>
                   </a>
 

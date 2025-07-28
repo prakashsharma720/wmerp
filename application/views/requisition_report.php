@@ -32,12 +32,12 @@
     <!-- Right Side: Filter & Export Buttons -->
     <div class="d-flex gap-2">
       <!-- Filter Button -->
-      <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper">
-        <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+      <button class="btn btn-icon avatar-text avatar-md" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper">
+        <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
 
       <!-- Export Form -->
-      <form method="post" action="<?= base_url('index.php/Requisition_slips/createXLS') ?>">
+      <form method="post" action="<?= base_url('index.php/Requisition_slips/createXLS') ?>" style="margin-left:5px;">
         <?php if (!empty($conditions)): foreach ($conditions as $key => $value): ?>
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php endforeach; endif; ?>

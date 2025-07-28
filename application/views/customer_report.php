@@ -29,13 +29,13 @@
 
     <div class="page-header-right ms-auto d-flex align-items-center">
       <!-- Filter Button -->
-      <button id="toggleFilter" class="btn btn-warning me-2" type="button">
-  <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+      <button id="toggleFilter" class="btn btn-icon avatar-text avatar-md" type="button">
+  <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
 </button>
 
 
       <!-- Export Button -->
-      <form method="post" action="<?php echo base_url(); ?>index.php/Customers/createXLS">
+      <form method="post" action="<?php echo base_url(); ?>index.php/Customers/createXLS" style="margin-left:5px;">
         <?php 
           if(!empty($conditions)){
             foreach ($conditions as $key => $value) { ?>

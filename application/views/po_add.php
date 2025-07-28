@@ -33,7 +33,7 @@
 		<div class="page-header-right ms-auto">
 			<div class="page-header-right-items">
 				<!-- Filter Button -->
-				<button class="btn btn-warning me-2" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="false" aria-controls="filterFormWrapper">
+				<button class="btn btn-icon avatar-text avatar-md" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="false" aria-controls="filterFormWrapper">
 					<i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
 				</button>
 
@@ -58,7 +58,7 @@
 <div class="collapse mt-3" id="filterFormWrapper">
 
 	<form method="get" id="filterForm">
-		<div class="card-body">
+		<div class="card-body ">
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Purchase_order/add_new_po">
 				<!-- <input type="hidden" name="req_id" value="<?= $requisitions['0']['id'] ?>"> -->
 				<div class="form-group">
@@ -103,21 +103,22 @@
 </div>
 <br>
 <div class="form-group">
-	<div class="row col-md-12">
-		<div class="table-responsive">
-			<table class="table table-bordered " id="maintable" style="width: 100% !important;">
-				<thead style="background-color: #ca6b24;">
-					<tr>
-						<th style="width:%;">" <?= $this->lang->line('sr_no') ?>".</th>
-						<th style="width:15%;white-space: nowrap;"> " <?= $this->lang->line('material_description') ?>"</th>
-						<th style="width:10%;white-space: nowrap;"> " <?= $this->lang->line('requisition_qty') ?>"y</th>
-						<th style="width:10%;white-space: nowrap;"> " <?= $this->lang->line('order_qty') ?>"y</th>
-						<th style="width:10%;white-space: nowrap;">" <?= $this->lang->line('pending_qty') ?>"y</th>
-						<th style="width:17%;white-space: nowrap;">" <?= $this->lang->line('item_rate') ?>"</th>
-						<th style="width:28%;white-space: nowrap;"> " <?= $this->lang->line('total_amount') ?>"</th>
-						<th style="width:10%;"> " <?= $this->lang->line('action') ?>"</th>
-					</tr>
-				</thead>
+  <div class="row col-md-12">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="maintable" style="width: 100% !important;">
+        <thead style="background-color: white;">
+          <tr>
+            <th style="width: 5%;"><?= $this->lang->line('sr_no') ?></th>
+            <th style="width: 15%; white-space: nowrap;"><?= $this->lang->line('material_description') ?></th>
+            <th style="width: 10%; white-space: nowrap;"><?= $this->lang->line('requisition_qty') ?></th>
+            <th style="width: 10%; white-space: nowrap;"><?= $this->lang->line('order_qty') ?></th>
+            <th style="width: 10%; white-space: nowrap;"><?= $this->lang->line('pending_qty') ?></th>
+            <th style="width: 17%; white-space: nowrap;"><?= $this->lang->line('item_rate') ?></th>
+            <th style="width: 28%; white-space: nowrap;"><?= $this->lang->line('total_amount') ?></th>
+            <th style="width: 10%;"><?= $this->lang->line('action') ?></th>
+          </tr>
+        </thead>
+        <tbody >
 				<tbody id="mainbody">
 					<?php
 
@@ -166,7 +167,7 @@
 						}
 					} ?>
 				</tbody>
-				<tfoot>
+				<tfoot style="background-color: white;">
 					<tr>
 						<td colspan="2" style="text-align: right;"><b>" <?= $this->lang->line('total') ?>"</b></td>
 						<td colspan="">
@@ -225,38 +226,47 @@
 	</div>
 </div>
 
-<div class="form-group">
-	<div class="row col-md-12">
-		<div class="col-md-6 col-sm-6 ">
-			<label class="control-label"> " <?= $this->lang->line('vendor_reference') ?>"</label>
-			<input type="text" placeholder=" <?= $this->lang->line('enter_reference') ?>" name="reference_by" class="form-control" autofocus>
-		</div>
-		<div class="col-md-6 col-sm-6 ">
-			<label class="control-label">" <?= $this->lang->line('delivery_period') ?>"</label>
-			<input type="text" placeholder=" Enter Delivery Schedule" name="delivery_period" class="form-control" autofocus>
-		</div>
-		<div class="col-md-6 col-sm-6 ">
-			<label class="control-label"> " <?= $this->lang->line('payment_terms') ?>"</label>
-			<input type="text" placeholder=" Ex. Cash,Cheque" name="payment_term" class="form-control" autofocus>
-		</div>
-		<div class="col-md-6 col-sm-6 ">
-			<label class="control-label"> " <?= $this->lang->line('freight_status') ?>"s</label>
-			<div>
-				<input class="freight_status" type="radio" name="freight_status" value="Paid" checked> " <?= $this->lang->line('paid') ?>"</input>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<input class="freight_status" type="radio" name="freight_status" value="To Pay"> " <?= $this->lang->line('to_pay') ?>"</input>
-			</div>
-		</div>
+<div class="form-group bg-white">
+    <div class="row p-3">
 
-	</div>
+        <div class="col-md-6 col-sm-6 mb-3">
+            <label class="control-label"><?= $this->lang->line('vendor_reference') ?></label>
+            <input type="text" class="form-control" name="reference_by" placeholder="<?= $this->lang->line('enter_reference') ?>" autofocus>
+        </div>
+
+        <div class="col-md-6 col-sm-6">
+            <label class="control-label"><?= $this->lang->line('delivery_period') ?></label>
+            <input type="text" class="form-control" name="delivery_period" placeholder="<?= $this->lang->line('enter_delivery_schedule') ?>" autofocus>
+        </div>
+
+        <div class="col-md-6 col-sm-6 mt-3">
+            <label class="control-label"><?= $this->lang->line('payment_terms') ?></label>
+            <input type="text" class="form-control" name="payment_term" placeholder="<?= $this->lang->line('example_cash_cheque') ?>" autofocus>
+        </div>
+
+        <div class="col-md-6 col-sm-6 mt-3">
+            <label class="control-label d-block"><?= $this->lang->line('freight_status') ?></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input freight_status" type="radio" name="freight_status" value="Paid" checked>
+                <label class="form-check-label"><?= $this->lang->line('paid') ?></label>
+            </div>
+            <div class="form-check form-check-inline ms-3">
+                <input class="form-check-input freight_status" type="radio" name="freight_status" value="To Pay">
+                <label class="form-check-label"><?= $this->lang->line('to_pay') ?></label>
+            </div>
+        </div>
+
+    </div>
 </div>
-<div class="form-group">
-	<div class="row col-md-12">
-		<div class="col-md-12 col-sm-12 ">
-			<label class="control-label" style="visibility: hidden;"> " <?= $this->lang->line('grade') ?>"</label>
-			<button type="submit" class="btn btn-primary btn-block"> " <?= $this->lang->line('submit') ?>"</button>
-		</div>
-	</div>
+
+<div class="form-group mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary btn-block w-100">
+                <?= $this->lang->line('submit') ?>
+            </button>
+        </div>
+    </div>
 </div>
 
 

@@ -30,19 +30,21 @@
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items d-flex">
         <!-- Filter Button -->
-        <button class="btn btn-warning me-2" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="false" aria-controls="filterFormWrapper">
-          
-          <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
-        </button>
+<button class="btn btn-icon avatar-text avatar-md" type="button" 
+        data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" 
+        aria-expanded="false" aria-controls="filterFormWrapper">
+  <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
+</button>
 
-        <!-- Export Button -->
-        <form method="post" action="<?= base_url('index.php/Suppliers/createXLS'); ?>">
-          <?php if (!empty($conditions)) {
-            foreach ($conditions as $key => $value): ?>
-              <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
-          <?php endforeach; } ?>
-          <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
-        </form>
+<!-- Export Button -->
+<form method="post" action="<?= base_url('index.php/Suppliers/createXLS'); ?>" style="margin-left:5px;">
+  <?php if (!empty($conditions)) {
+    foreach ($conditions as $key => $value): ?>
+      <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
+  <?php endforeach; } ?>
+  <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+</form>
+
       </div>
     </div>
   </div>

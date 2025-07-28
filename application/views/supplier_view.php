@@ -39,24 +39,38 @@
       <div class="d-flex">
         <!-- New Filter Button -->
         <!-- Filter Button -->
-<button class="btn btn-sm border-0 shadow-none p-2 text-dark fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="false" aria-controls="filterFormWrapper" data-bs-toggle="tooltip" title="Filter">
-  <i class="fa fa-filter fa-lg"></i>
+<!-- Filter Button -->
+<!-- Filter Button -->
+<!-- Filter Button -->
+<button class="btn btn-icon avatar-text avatar-md " type="button"
+        data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="false" 
+        aria-controls="filterFormWrapper" data-bs-toggle="tooltip" title="Filter">
+  <i class="feather-filter"></i>
 </button>
 
 <!-- Add Button -->
-<a href="<?= base_url(); ?>index.php/Purchase_order/add" class="btn btn-sm border-0 shadow-none p-2 text-dark fs-5" data-bs-toggle="tooltip" title="New PO">
-  <i class="fa fa-plus fa-lg"></i>
+<a href="<?= base_url(); ?>index.php/suppliers/add" 
+   class="btn btn-icon avatar-text avatar-md p-1"
+   data-bs-toggle="tooltip" title="New PO">
+  <i class="feather feather-plus"></i>
 </a>
 
 <!-- Refresh Button -->
-<button class="btn btn-sm border-0 shadow-none p-2 text-dark fs-5" data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
-  <i class="fa fa-refresh fa-lg"></i>
+<!-- Refresh Button -->
+<button class="btn btn-icon avatar-text avatar-md " 
+        data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
+  <i class="fa fa-refresh"></i>
 </button>
 
 <!-- Bulk Delete Button -->
-<button class="btn btn-sm border-0 shadow-none p-2 text-dark fs-5" data-bs-toggle="tooltip" title="Bulk Delete">
-  <i class="fa fa-trash fa-lg"></i>
+<button class="btn btn-icon avatar-text avatar-md " 
+        data-bs-toggle="tooltip" title="Bulk Delete">
+  <i class="fa fa-trash"></i>
 </button>
+
+
+
+
 
       </div>
     </div>
@@ -153,10 +167,10 @@
 </div>
 
   <div class="container-fluid">
-<div class="card-body"></div>
+
         
     <!-- /.card-body -->
-    <div class="card-body">
+    <div class="card-body bg-white">
       
         
           <!--  <div class="col-md-4 col-sm-4">-->
@@ -212,26 +226,37 @@
                 <td><?php echo $obj['mobile_no']; ?></td>
                 <td><?php echo $obj['category_of_approval']; ?></td>
                 <td>
-  <div class="d-flex gap-2">
-    <!-- View Button -->
-    <a class="btn btn-sm border-0 shadow-none p-1 text-dark" data-toggle="modal" data-target="#view<?php echo $obj['id']; ?>" title="View">
-      <i class="fa fa-eye"></i>
-    </a>
+  <div class="d-flex gap-1">
+  <!-- View Button -->
+  <a class="btn btn-icon avatar-text avatar-md" 
+     data-bs-toggle="tooltip" data-bs-toggle="offcanvas" data-bs-toggle="modal" data-bs-target="#ViewPO<?php echo $obj['id']; ?>">
+    <i class="feather feather-eye"></i>
+  </a>
+  <!-- View Button -->
 
-    <!-- Print Button -->
-    <a class="btn btn-sm border-0 shadow-none p-1 text-dark" href="<?php echo base_url(); ?>index.php/Suppliers/print/<?php echo $obj['id']; ?>" title="Print">
-      <i class="fa fa-print"></i>
-    </a>
 
-    <!-- Edit Button -->
-    <a class="btn btn-sm border-0 shadow-none p-1 text-dark" href="<?php echo base_url(); ?>index.php/Suppliers/edit_supplier_view/<?php echo $obj['id']; ?>" title="Edit">
-      <i class="fa fa-edit"></i>
-    </a>
+  <!-- <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewPO<?php echo $obj['id']; ?>" title="View More">
+                    <i class="fa fa-eye"></i>
+                  </a> -->
+  <!-- Print Button -->
+  <a class="btn btn-icon avatar-text avatar-md" 
+     data-bs-toggle="tooltip" title="Print" href="<?php echo base_url(); ?>index.php/Suppliers/print/<?php echo $obj['id']; ?>">
+    <i class="fa fa-print"></i>
+  </a>
 
-    <!-- Delete Button -->
-    <a class="btn btn-sm border-0 shadow-none p-1 text-dark" data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>" title="Delete">
-      <i class="fa fa-trash"></i>
-    </a>
+  <!-- Edit Button -->
+  <a class="btn btn-icon avatar-text avatar-md" 
+     data-bs-toggle="tooltip" title="Edit" href="<?php echo base_url(); ?>index.php/Suppliers/edit_supplier_view/<?php echo $obj['id']; ?>">
+    <i class="fa fa-edit"></i>
+  </a>
+
+  <!-- Delete Button -->
+  <a class="btn btn-icon avatar-text avatar-md" 
+     data-bs-toggle="tooltip" title="Delete" data-bs-toggle="modal" data-bs-target="#delete<?php echo $obj['id']; ?>">
+    <i class="fa fa-trash"></i>
+  </a>
+</div>
+
   </div>
 </td>
 
@@ -403,7 +428,7 @@
                     </form>
                   </div>
                 </div>
-
+  <?php $this->load->view('leave-module/component/orderview.php', ['obj' => $obj]); ?>
               </tr>
             <?php $i++;
             } ?>
@@ -414,6 +439,7 @@
     
   </div>
 </div>
+
 <script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {

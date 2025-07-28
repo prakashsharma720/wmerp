@@ -32,12 +32,12 @@
       <div class="page-header-right-items d-flex align-items-center">
 
         <!-- Filter Button (no background, toggle enabled) -->
-        <button id="filterToggleBtn" class="btn btn-warning me-2" type="button">
-          <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+        <button id="filterToggleBtn" class="btn btn-icon avatar-text avatar-md" type="button">
+          <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
         </button>
 
         <!-- EXPORT FORM -->
-        <form method="post" action="<?= base_url('index.php/Invoice/createXLS') ?>">
+        <form method="post" action="<?= base_url('index.php/Invoice/createXLS') ?>"style="margin-left:5px;">
           <?php 
             if (!empty($conditions)) {
               foreach ($conditions as $key => $value) {
