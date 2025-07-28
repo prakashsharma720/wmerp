@@ -24,10 +24,8 @@
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
             <div class="page-header-title">
- <div class="page-header-title">
                <h5> <a href="<?php echo base_url('index.php/Employees/add'); ?>"><?= $this->lang->line('employee') ?></a></h5>
-
-            </div>            </div>
+            </div>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
@@ -141,15 +139,14 @@
                                     </div>
                                     <div class="col-md-4 col-sm-4">
                                         <label class="control-label"> <?= $this->lang->line('date_of_joining') ?></label>
-                                        <input type="text" data-date-formate="dd-mm-yyyy" name="doj"
-                                            class="form-control date-picker" value="" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"
-                                            autofocus>
+                                      		<input type="date" class="form-control date1" id="date_picker" name="doj">
+
+                                        
                                     </div>
                                     <div class="col-md-4 col-sm-4">
                                         <label class="control-label"> <?= $this->lang->line('date_of_birth') ?> </label>
-                                        <input type="text" data-date-formate="dd-mm-yyyy" name="dob"
-                                            class="form-control date-picker" value="" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"
-                                            autofocus>
+                                        <input type="date" class="form-control date1" id="date_picker" name="dob">
+
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
                                         <label class="control-label"> <?= $this->lang->line('username') ?> <span class="required">*</span> </label>

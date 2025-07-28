@@ -85,7 +85,7 @@ margin: 0.9rem
                                 <thead width="100%">
                                     <tr width="100%">
                                         <th width="80%">  <?= $this->lang->line('employee') ?> </th>
-                                        <th width="15%">  <?= $this->lang->line('leave_count') ?> </th>
+                                        <th width="20%">  <?= $this->lang->line('leave_count') ?> </th>
                                         <th width="10%">  <?= $this->lang->line('action') ?> </th>
                                     </tr>
                                 </thead>

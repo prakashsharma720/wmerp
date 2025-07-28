@@ -73,13 +73,13 @@ margin: 0.7rem
 								<!--start date-->	
 									<div class="col-md-4">
 						            	<label class="control-label"><?=$this ->lang->line('start_date')?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"
+						                <input type="date" data-date-formate="dd-mm-yyyy" name="start_date"
 										 class="form-control date-picker"  placeholder="<?=$this ->lang->line('start_date')?>"  value="<?php echo $start_date?>" required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
 						            	<label class="control-label"><?=$this ->lang->line('end_date')?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?=$this ->lang->line('end_date')?> " value="<?php echo $end_date?>" required>
+						                <input type="date" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?=$this ->lang->line('end_date')?> " value="<?php echo $end_date?>" required>
 			            			</div>
 
 					        	<!--Prioroty-->	
@@ -105,9 +105,9 @@ margin: 0.7rem
 									  <div class="col-md-4  ">
 										  <label class="control-label"> <?=$this ->lang->line('priority')?></label>
 										 <select class="form-control" name="priority">
-												 <option value="Hard" <?= $hard ?>> Hard </option>
-												 <option value="Medium" <?= $medium ?>>Medium </option>
-												 <option value="Easy" <?= $easy ?>> Easy</option>
+												 <option value="Hard" <?= $hard ?>> <?=$this ->lang->line('hard')?> </option>
+												 <option value="Medium" <?= $medium ?>><?=$this ->lang->line('medium')?> </option>
+												 <option value="Easy" <?= $easy ?>> <?=$this ->lang->line('easy')?></option>
 												
 										 </select>
 									  </div>

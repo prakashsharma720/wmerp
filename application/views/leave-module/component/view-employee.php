@@ -8,7 +8,7 @@
 
     <div class="offcanvas-body">
         <div class="row ">
-            <div class="offcanvas-header ht-80 px-0 border-bottom border-gray-5">
+            <div class="offcanvas-header ht-80 px-0 ">
                 <div class="w-100 bg-light p-3 mb-3 rounded-0">
                 <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
             <?= $this->lang->line('personal_details') ?>
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <!-- Bank Details -->
-<div class="offcanvas-header ht-80 px-0 border-bottom border-gray-5">
+<div class="offcanvas-header ht-80 px-0 ">
     <div class="w-100 bg-light p-3 mb-3 rounded-0">
         <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
             <?= $this->lang->line('bank_details') ?>
@@ -129,7 +129,7 @@
 </div>
 
 <!-- Salary Details -->
-<div class="offcanvas-header ht-80 px-0 border-bottom border-gray-5">
+<div class="offcanvas-header ht-80 px-0 ">
     <div class="w-100 bg-light p-3 mb-3 rounded-0">
         <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
             <?= $this->lang->line('salary_details') ?>
@@ -167,7 +167,7 @@
 </div>
 
 <!-- Other Details -->
-<div class="offcanvas-header ht-80 px-0 border-bottom border-gray-5">
+<div class="offcanvas-header ht-80 px-0 ">
     <div class="w-100 bg-light p-3 mb-3 rounded-0">
         <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
             <?= $this->lang->line('other_details') ?>

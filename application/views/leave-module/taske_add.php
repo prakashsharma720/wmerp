@@ -1,18 +1,58 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title pull-left"><?= $page_title ?></h3>
-        
-	      </div> <!-- /.card-body -->
-	      	<div class="card-body">
-		      	<div class="row">
-		      		<div class="col-md-12">
-		      	
-							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Dailytasks/add_new_task">
+<style>
+    .control-label {
+margin: 0.7rem
+}
+</style>
+<?php if($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Success!</h5>
+            <?php echo $this->session->flashdata('success'); ?>
+        </div>
+    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
+<?php endif; ?>
+
+<?php if($this->session->flashdata('failed')): ?>
+    <div class="alert alert-error alert-dismissible " >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-check"></i> Alert!</h5>
+            <?php echo $this->session->flashdata('failed'); ?>
+        </div>
+<?php endif; ?>
+	  
+<div class="nxl-content">
+    <div class="page-header">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+               <h5> <a href="<?php echo base_url('index.php/Dailytasks/projects'); ?>"><?= $this->lang->line('daily_tasks') ?></a></h5>
+            </div>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+                </li>
+                <li class="breadcrumb-item"><?= $this->lang->line('create_task') ?>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-header-right ms-auto">
+           
+
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+	 <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                    <div class="row">
+                    <div class="col-lg-12">
+	<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Dailytasks/add_new_task">
 
 				    			<!-- <input type="hidden" name="lead_code" value="<?php echo $lead_code;?>"> -->
 				    			
@@ -34,13 +74,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<!--start date-->	
 									<div class="col-md-4">
 						            	<label class="control-label"><?=$this ->lang->line('start_date')?> </label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"
+						                <input type="date" data-date-formate="dd-mm-yyyy" name="start_date"
 										 class="form-control date-picker"  placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-4 col-sm-4">
 						            	<label class="control-label"><?=$this ->lang->line('end_date')?></label> <span class="required">*</span>
-						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
+						                <input type="date" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 
 					        	<!--Prioroty-->	
@@ -99,9 +139,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						    
 							</div>
 				        </div>
-			        </form>
-				</div>
-			</div>
-		</div>
-	</div>
+			        </form>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+</div>
+
+

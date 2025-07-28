@@ -3528,6 +3528,9 @@ $lang['action'] = 'Action';
 $lang['create'] = 'Create';
 $lang['update_task'] = 'Update Task';
 $lang['task_history_description'] = 'Task History Description';
+$lang['easy'] = 'Easy';
+$lang['medium'] = 'Medium';
+$lang['hard'] = 'Hard';
 
 $lang['reference'] = 'Reference';
 $lang['reference_name'] = 'Reference Name';
@@ -3540,6 +3543,7 @@ $lang['document'] = 'Document';
 $lang['followup_time'] = 'Followup Time';
 $lang['delete_task_history_confirm'] = 'Are you sure, you want to delete this task history?';
 $lang['confirm_header'] = 'Confirm';
+$lang['create_task'] = 'Create Task';
 
 
 // payroll module attendance list
