@@ -2480,6 +2480,8 @@ $lang['create_daily_stitching_record'] = 'Create Daily Stitching Record';
 $lang['date'] = 'Date *';
 $lang['department'] = 'Department';
 $lang['total_workers'] = 'Total Workers';
+$lang['edit_worker'] = 'Edit Worker';
+
 
 // Table Headers
 $lang['sr_no'] = 'Serial Number';
@@ -3222,7 +3224,9 @@ $lang['leave_allotment_month'] = 'Leave Allotment Month';
 $lang['select_period'] = 'Select Period';
 $lang['first_half'] = 'First Half';
 $lang['second_half'] = 'Second Half'; // Optional, if used
-
+$lang['half_day_type'] = 'Half Day Type';
+$lang['from_time'] = 'From Time';
+$lang['to_time'] = 'To Time';
 $lang['criteria_name'] = 'Criteria Name';
 $lang['criteria_point'] = 'Criteria Points';
 $lang['self_review'] = 'Self Review';

@@ -136,10 +136,10 @@ margin: 0.7rem
 								</div>
 
 								<div class="col-md-4 half_div">
-									<label class="control-label">Half Day Type</label>
+									<label class="control-label"> <?= $this->lang->line('half_day_type') ?></label>
 									<select class="form-control halfday" name="halfday_type">
-										<option value="9.30AM To 1.45PM" > First Half </option>
-										<option value="1.45PM To 6PM" > Second Half </option>
+										<option value="9.30AM To 1.45PM" > <?= $this->lang->line('first_half') ?> </option>
+										<option value="1.45PM To 6PM" > <?= $this->lang->line('second_half') ?> </option>
 									</select>
 								</div>
 								<!-- / Half Day Divs -->
@@ -152,12 +152,12 @@ margin: 0.7rem
 								</div>
 
 								<div class="col-md-2 gatepass_div">
-									<label class="control-label">From Time</label>
+									<label class="control-label"> <?= $this->lang->line('from_time') ?></label>
 									<input type="time" id="gate_time_from" name="gate_time_from" min="10`:00" max="18:00" class="form-control">
 								</div>
 
 								<div class="col-md-2 gatepass_div">
-									<label class="control-label">To Time</label>
+									<label class="control-label"> <?= $this->lang->line('to_time') ?></label>
 									<input type="time" id="gate_time_to" name="gate_time_to" class="form-control" value="" readonly>
 								</div>
 								<!-- / Gatepass Divs -->

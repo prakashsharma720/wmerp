@@ -69,7 +69,7 @@ public function edit($date = null) {
     $data['employees']  = $this->Leave_model->getEmployeesList();
 
     $data['title'] = "Edit Attendance - " . date("d-m-Y", strtotime($date));
-    $this->template->load('template', 'payroll/edit_attandace', $data);
+    $this->template->load('layout/template', 'leave-module/edit_attandace', $data);
 }
 
 public function update_attendance()

@@ -1,20 +1,4 @@
 
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible" >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Success!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
-
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible " >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Alert!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-<?php endif; ?>
 	  
 <div class="nxl-content">
     <div class="page-header">
@@ -34,7 +18,8 @@
             
         </div>
         
-
+  <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
         <div class="page-header-right ms-auto">
             <a href="<?php echo base_url(); ?>index.php/PayrollController/add/" class="btn btn-icon btn-light-brand"><i
             class="feather feather-plus"></i> <?= $this->lang->line('add_employee') ?></a>
@@ -54,7 +39,7 @@
                     <div class="col-lg-12">
 <div class="table-responsive">
                             <!-- Attendance Date List -->
-                            <table class="table table-bordered table-striped text-center">
+                <table class="table table-hover  table-bordered table-striped" id="proposalList">
                                 <thead>
                                     <tr>
                                         <th><?= $this->lang->line('date') ?></th>
@@ -71,12 +56,13 @@
                                         <td><span class="badge badge-success"><?= $obj['present_count']?></span></td>
                                         <!-- Display formatted date -->
                                         <td class="d-flex ">
-                                            <button style="color:white;margin-right:10px;" type="button"
-                                                class="btn btn-md btn-warning btnViewAttendance"
+                                            <button  
+                                        
+                                                class="btn btn-icon avatar-text avatar-md"
                                                 data-date="<?= $obj['date'] ?>" data-toggle="modal"
                                                 data-target="#attendanceModal<?php echo $obj['id']?>">
-                                                <i class="fa fa-eye"></i> <?= $this->lang->line('view') ?> </button>
-                                            <a href="<?php echo base_url(); ?>index.php/PayrollController/edit/<?php echo $obj['date']; ?>" class="btn btn-md btn-primary"> <i class="fa fa-edit"></i> <?= $this->lang->line('edit') ?>  </a>
+                                                <i class="fa fa-eye"></i> </button>
+                                            <a href="<?php echo base_url(); ?>index.php/PayrollController/edit/<?php echo $obj['date']; ?>" class="btn btn-icon avatar-text avatar-md"> <i class="feather feather-edit-3"></i>  </a>
                                             <div class="modal fade" id="attendanceModal<?php echo $obj['id']?>"
                                                 tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog">

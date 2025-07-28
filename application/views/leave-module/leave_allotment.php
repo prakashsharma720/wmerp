@@ -3,23 +3,7 @@
 margin: 0.9rem
 }
 </style>
-    
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible" >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Success!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible " >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Alert!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-<?php endif; ?>
 	  
 <div class="nxl-content">
     <div class="page-header">
@@ -35,6 +19,7 @@ margin: 0.9rem
                 </li>
             </ul>
         </div>
+      <?php $this->load->view('layout/alerts'); ?>
 
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
@@ -100,7 +85,7 @@ margin: 0.9rem
                                             <input type="text" name="leave_count[]" value="2" class="form-control" readonly>
                                         </td>
                                         <td>
-                                            <button type="button" class="avatar-text avatar-md deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+                                            <button type="button" class="btn btn-icon avatar-text avatar-md deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
                                         </td>
                                     </tr>
                                     <?php } ?>

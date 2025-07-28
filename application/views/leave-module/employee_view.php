@@ -82,16 +82,9 @@
 
                             <th><?= $this->lang->line('sr_no') ?></th>
                             <th> <?= $this->lang->line('name') ?> </th>
-
-                            <th style="white-space: nowrap;"> <?= $this->lang->line('email') ?> </th>
                             <th style="white-space: nowrap;"> <?= $this->lang->line('role') ?></th>
-                            <th style="white-space: nowrap;"><?= $this->lang->line('mobile_no') ?></th>
-
                             <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?></th>
                             <th style="white-space: nowrap;"> <?= $this->lang->line('designation') ?></th>
-                            <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_joining') ?></th>
-                            <th style="white-space: nowrap;"> <?= $this->lang->line('select_authority_person') ?> </th>
-                            <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_birth') ?></th>
                             <th style="white-space: nowrap;"> <?= $this->lang->line('photo') ?></th>
                             <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action') ?></th>
                         </tr>
@@ -121,15 +114,15 @@
 
                 ?></td>
                 
-                            <td><?php echo $obj['email']; ?></td>
+                            <!-- <td><?php echo $obj['email']; ?></td> -->
                             <td><?php echo $obj['role']; ?></td>
-                            <td><?php echo $obj['mobile_no']; ?></td>
+                            <!-- <td><?php echo $obj['mobile_no']; ?></td> -->
 
                             <td><?php echo $obj['department_name']; ?></td>
                             <td><?php echo $obj['designation']; ?></td>
-                            <td><?php echo $obj['date_of_joining']; ?></td>
+                            <!-- <td><?php echo $obj['date_of_joining']; ?></td>
                             <td><?php echo $obj['author_email']; ?></td>
-                            <td><?php echo $obj['dob']; ?></td>
+                            <td><?php echo $obj['dob']; ?></td> -->
                             <td>
                                 <?php if(!empty($obj['photo'])) { ?>
                                 <div style="height: 10%;width: 100%;">
@@ -139,16 +132,16 @@
                             </td>
                             <td>
                                 <div class="d-flex align-items-center gap-2">
-                             <a class="avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewLeave<?php echo $obj['id']; ?>">
-                                            <i class="feather feather-eye"></i>
+                             <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewLeave<?php echo $obj['id']; ?>">
+                                            <i class="fa fa-eye"></i>
                                             </a>
                             
-                                <a class="avatar-text avatar-md"
+                                <a class="btn btn-icon avatar-text avatar-md"
                                     href="<?php echo base_url(); ?>index.php/Employees/edit/<?php echo $obj['id'];?>"><i
                                         class="feather feather-edit-3"></i></a>
                                         
                                 
-                                         <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteEmployees<?= $obj['id']; ?>" class="avatar-text avatar-md">
+                                         <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteEmployees<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
                                             <i class="feather feather-trash"></i>
                                         </a>
 

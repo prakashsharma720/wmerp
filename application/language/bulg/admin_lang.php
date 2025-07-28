@@ -2269,6 +2269,8 @@ $lang['create_daily_stitching_record'] = 'Създаване на дневен �
 $lang['date'] = 'Дата *';
 $lang['department'] = 'Отдел';
 $lang['total_workers'] = 'Общо работници';
+$lang['edit_worker'] = 'Редактиране на работник';
+
 
 // Table Headers
 $lang['sr_no'] = '№';
@@ -3028,7 +3030,9 @@ $lang['leave_allotment_month'] = 'Месец на отпуск';
 $lang['select_period'] = 'Изберете период';
 $lang['first_half'] = 'Първа половина';
 $lang['second_half'] = 'Втора половина';
-
+$lang['half_day_type'] = 'Тип за половин ден';
+$lang['from_time'] = 'От време';
+$lang['to_time'] = 'До време';
 $lang['criteria_name'] = 'Име на критерий';
 $lang['criteria_point'] = 'Точки за критерий';
 $lang['self_review'] = 'Самооценка';
