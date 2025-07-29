@@ -1,21 +1,3 @@
-
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible" >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Success!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
-
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible " >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Alert!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-<?php endif; ?>
-	  
 <div class="nxl-content">
     <div class="page-header">
         <div class="page-header-left d-flex align-items-center">
@@ -30,7 +12,9 @@
                 </li>
             </ul>
         </div>
-
+<div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
                 <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
@@ -54,6 +38,7 @@
             </div>
         </div>
     </div>
+</div>    
      <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">

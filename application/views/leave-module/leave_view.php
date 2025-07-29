@@ -12,8 +12,9 @@
                 </li>
             </ul>
         </div>
+<div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
       <?php $this->load->view('layout/alerts'); ?>
-
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
                 <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
@@ -50,6 +51,7 @@
             </div>
         </div>
     </div>
+                        </div>
     <!-- Load Filter -->
     <?php $this->load->view('leave-module/component/filter'); ?>
 
@@ -159,13 +161,14 @@
                                             </a>
 
                                             <?php }?>
-                                            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas"
-                                            data-bs-target="#delete<?php echo $obj['id'];?>">
-                                            <i class="feather feather-trash "></i>
-                                            </a>
+                                            
                                            
                                             <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewLeave<?php echo $obj['id']; ?>">
                                             <i class="fa fa-eye"></i>
+                                            </a>
+                                            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas"
+                                            data-bs-target="#delete<?php echo $obj['id'];?>">
+                                            <i class="feather feather-trash "></i>
                                             </a>
                                             </div>
                                         </td>

@@ -3,22 +3,7 @@
 	margin: 0.7rem
 }
 </style>
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible" >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Success!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible " >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Alert!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-<?php endif; ?>
 	  
 <div class="nxl-content">
     <div class="page-header">
@@ -34,7 +19,9 @@
                 </li>
             </ul>
         </div>
-
+<div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
             </div>
@@ -47,6 +34,7 @@
             </div>
         </div>
     </div>
+</div>    
         <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
@@ -139,13 +127,13 @@
                                     </div>
                                     <div class="col-md-4 col-sm-4">
                                         <label class="control-label"> <?= $this->lang->line('date_of_joining') ?></label>
-                                      		<input type="date" class="form-control date1" id="date_picker" name="doj">
+                                      		<input type="text" class="form-control date1" id="startDate" name="doj">
 
                                         
                                     </div>
                                     <div class="col-md-4 col-sm-4">
                                         <label class="control-label"> <?= $this->lang->line('date_of_birth') ?> </label>
-                                        <input type="date" class="form-control date1" id="date_picker" name="dob">
+                                        <input type="text" class="form-control date1" id="dueDate" name="dob">
 
                                     </div>
                                     <div class="col-md-4 col-sm-4 ">
@@ -182,7 +170,7 @@
                                    <div class="col-md-4 col-sm-4">
     <label class="control-label">
         <?= $this->lang->line('gender') ?> <span class="required">*</span>
-    </label>
+    </label><br>
     <div class="form-check form-check-inline">
         <label class="form-check-label">
             <input class="form-check-input" type="radio" name="gender" value="Male" checked>

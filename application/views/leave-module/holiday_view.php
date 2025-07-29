@@ -19,8 +19,9 @@ margin: 0.7rem
             </ul>
         </div>
 
+  <div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
       <?php $this->load->view('layout/alerts'); ?>
-
             <div class="page-header-right ms-auto">
 
              <div class="page-header-right-items">
@@ -42,6 +43,7 @@ margin: 0.7rem
                             </a>
                         </div>
         </div>
+                        </div>
             </div>
 
            
@@ -86,7 +88,7 @@ margin: 0.7rem
 								 
                             <div class="col-md-12 col-sm-12">
                                 <label  class="control-label"> <?= $this->lang->line('date') ?></label>
-                                <input type="date" class="form-control date2" id="holiday_date" name="holiday_date" value="<?= date('Y-m-d', strtotime($holiday_date)) ?>">
+                                <input type="text" class="form-control date2" id="startDate" name="holiday_date" value="<?= date('Y-m-d', strtotime($holiday_date)) ?>">
                             </div>
                         </div>
                             <span class="help-block"></span>
@@ -141,7 +143,7 @@ margin: 0.7rem
                                             class="btn btn-icon avatar-text avatar-md" >
                                             <i class="feather feather-edit-3 "></i>
                                             </a>
-                                <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#deleteHoliday<?php echo $category['id']; ?>">
+                                <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#deleteHolidays<?php echo $category['id']; ?>">
                                     <i class="feather feather-trash"></i>
                                 </a>
                             <?php }?>
@@ -155,8 +157,8 @@ margin: 0.7rem
 </td>
 
                             </tr>
-                            <div class="offcanvas offcanvas-end" tabindex="-1" id="deleteHoliday<?php echo $category['id']; ?>">
-    <form method="post" action="<?php echo base_url(); ?>index.php/Leave/deleteHoliday/<?php echo $category['id']; ?>">
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="deleteHolidays<?php echo $category['id']; ?>">
+    <form method="post" action="<?php echo base_url(); ?>index.php/Leave/deleteHolidays/<?php echo $category['id']; ?>">
         <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
             <h2 class="fs-16 fw-bold"><?= $this->lang->line('confirm') ?></h2>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>

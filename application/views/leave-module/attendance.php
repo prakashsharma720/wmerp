@@ -17,6 +17,9 @@
             </ul>
             
         </div>
+         <div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
         
   <!-- Placeholder for additional actions -->
       <?php $this->load->view('layout/alerts'); ?>
@@ -32,6 +35,7 @@
             </div>
         </div>
     </div>
+</div>
      <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
