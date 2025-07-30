@@ -14,10 +14,13 @@ $lang['Create_an_Account'] = 'Създайте акаунт';
 $lang['Are you new?'] = 'Нов ли сте?';
 $lang['google_signin'] = 'Вход с Google';
 $lang['or'] = 'или';
+$lang['supplier_profile_details'] = 'Данни за профила на доставчика';
+$lang['approval_timeline'] = 'График за одобрение';
+
 $lang['add_new_finished_good'] = 'Добавяне на нов готов продукт';
 $lang['tentative_date_of_return'] = 'Прогнозна дата на връщане';
 $lang['select_customer'] = 'Изберете клиент';
-
+$lang['suppliers_detail'] = 'Данни за доставчици';
 $lang['login'] = 'Вход';
 $lang['remember_me'] = 'Запомни ме';
 $lang['loginwithfacebook'] = 'Вход с Facebook';

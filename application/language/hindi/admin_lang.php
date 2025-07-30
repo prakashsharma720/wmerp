@@ -24,8 +24,11 @@ $lang['discount'] = 'छूट';
 $lang['add_new_finished_good'] = 'नया तैयार माल जोड़ें';
 $lang['tentative_date_of_return'] = 'अनुमानित वापसी की तिथि';
 $lang['select_customer'] = 'ग्राहक चुनें';
-
+$lang['suppliers_detail'] = 'आपूर्तिकर्ताओं का विवरण';
 $lang['rupees'] = 'रुपये';
+$lang['supplier_profile_details'] = 'आपूर्तिकर्ता प्रोफ़ाइल विवरण';
+$lang['approval_timeline'] = 'स्वीकृति समयरेखा';
+
 $lang['percentage'] = 'प्रतिशत';
 $lang['enter_discount'] = 'छूट दर्ज करें';
 $lang['after_discount'] = 'छूट के बाद';
