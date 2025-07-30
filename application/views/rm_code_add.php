@@ -102,7 +102,7 @@
 			            		echo form_dropdown('grade', $grades)
 			            		?>
 				        </div>
-				          <div class="col-md-4 col-sm-4 ">
+				          <div class="col-md-4 col-sm-4  " style="position: relative; left:13px">
 			            	<label  class="control-label"><?=$this ->lang ->line('code')?> <span class="required">*</span></label>	
 			            	<input type="text"  placeholder="<?=$this ->lang ->line('enter_code')?>" name="rm_code" class="form-control"  required autofocus>
 			            </div>
