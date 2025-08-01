@@ -1,18 +1,4 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible fade show">
-    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-    <?= $this->session->flashdata('success'); ?>
-  </div>
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible fade show">
-    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
-    <h5><i class="icon fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?= $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
 
 <div class="nxl-content">
   <div class="page-header mb-3">
@@ -29,6 +15,7 @@
 
     <div class="page-header-right ms-auto d-flex align-items-center">
       <!-- Filter Button -->
+        <?php $this->load->view('layout/alerts'); ?>
       <button id="toggleFilter" class="btn btn-icon avatar-text avatar-md" type="button">
   <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
 </button>

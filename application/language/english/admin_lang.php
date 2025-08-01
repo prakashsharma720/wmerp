@@ -2020,7 +2020,75 @@ $lang['edit_gir_register'] = "Edit GIR Register";
 $lang['product_name'] = "Product Name";
 $lang['material_received_throught'] = "Material Received Through";
 $lang['enter_source'] = "Enter Source";
+$lang['rate'] = 'Rate';
+$lang['item_details'] = 'Item Details'; // Hindi: वस्तु विवरण | Bulgarian: Подробности за артикула
+$lang['sr_no'] = 'Sr. No.';
+$lang['material_description'] = 'Material Description';
+$lang['requisition_qty'] = 'Requisition Qty';
+$lang['order_qty'] = 'Order Qty';
+$lang['pending_qty'] = 'Pending Quantity';
+$lang['rate'] = 'Rate';
+$lang['total_amount'] = 'Total Amount';
+$lang['no_items_added'] = 'No item details found';
+$lang['purchase_order'] = 'Purchase Order';
+$lang['po_details'] = 'PO Details';
+$lang['po_number'] = 'PO Number';
+$lang['order_type'] = 'Order Type';
+$lang['purchase_indent'] = 'Purchase Indent';
+$lang['supplier_name'] = 'Supplier Name';
+$lang['po_date'] = 'PO Date';
+$lang['total_amount'] = 'Total Amount';
+$lang['remarks'] = 'Remarks';
+$lang['status'] = 'Status';
+$lang['item_details'] = 'Item Details';
+$lang['close'] = 'Close';
+$lang['purchase_order'] = 'Purchase Order';
+$lang['po_details'] = 'PO Details';
+$lang['po_number'] = 'PO Number';
+$lang['order_type'] = 'Order Type';
+$lang['purchase_indent'] = 'Purchase Indent';
+$lang['po_date'] = 'PO Date';
 
+$lang['supplier_details'] = 'Supplier Details';
+$lang['supplier_name'] = 'Supplier Name';
+$lang['vendor_reference'] = 'Vendor Reference';
+
+$lang['financial_details'] = 'Financial Details';
+$lang['total_amount'] = 'Total Amount';
+$lang['discount_rupees'] = 'Discount (₹)';
+$lang['discount_percent'] = 'Discount (%)';
+$lang['gst'] = 'GST (₹)';
+$lang['grand_total'] = 'Grand Total';
+
+$lang['delivery_payment_terms'] = 'Delivery & Payment Terms';
+$lang['delivery_period'] = 'Delivery Period';
+$lang['payment_terms'] = 'Payment Terms';
+$lang['freight_status'] = 'Freight Status';
+
+$lang['additional_info'] = 'Additional Info';
+$lang['status'] = 'Status';
+$lang['remarks'] = 'Remarks';
+
+$lang['bank_details'] = 'Bank Details';
+$lang['bank_name'] = 'Bank Name';
+$lang['account_number'] = 'Account Number';
+
+$lang['close'] = 'Close';
+$lang['delivery_period'] = 'Delivery Period';
+$lang['payment_terms'] = 'Payment Terms';
+$lang['freight_status'] = 'Freight Status';
+$lang['remarks'] = 'Remarks';
+$lang['status'] = 'Status';
+$lang['bank_details'] = 'Bank Details';
+$lang['bank_name'] = 'Bank Name';
+$lang['account_number'] = 'Account Number';
+$lang['additional_info'] = 'Additional Info';
+
+$lang['pending'] = 'Pending';
+$lang['enter_qty'] = 'Enter Qty';
+$lang['enter_rate'] = 'Enter Rate';
+$lang['total_amount'] = 'Total Amount';
+$lang['edit_purchase_order'] = 'Edit Purchase Order';  
 $lang['create_purchase_order'] = "Create Purchase Order";
 $lang['date'] = "Date";
 $lang['name_of_supplier'] = "Name of Supplier";

@@ -1,25 +1,10 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible fade show">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <h5><i class="fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-    <?= $this->session->flashdata('success'); ?>
-  </div>
-<?php endif; ?>
-
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible fade show">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <h5><i class="fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?= $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
 
 
 <div class="nxl-content">
   <div class="page-header mb-3">
     <div class="page-header-left d-flex align-items-center">
       <div class="page-header-title">
-        <h5><?= $this->lang->line('create_purchase_order') ?></h5>
+        <h5><?= $this->lang->line('edit_purchase_order') ?></h5>
       </div>
       <ul class="breadcrumb ms-3">
         <li class="breadcrumb-item">
@@ -32,14 +17,8 @@
 
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items d-flex align-items-center">
-        <!-- Filter Button -->
-        <button class="btn btn-icon avatar-text avatar-md" type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#filterFormWrapper"
-          aria-expanded="false"
-          aria-controls="filterFormWrapper">
-          <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
-        </button>
+          <?php $this->load->view('layout/alerts'); ?>
+        
 
         <div class="d-md-none d-flex align-items-center">
           <a href="javascript:void(0)" class="page-header-right-open-toggle">
@@ -50,22 +29,22 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-body">
+  
+      <div class="card-body p-3 bg-white">
 
         <?php if (!empty($id)) { ?>
           <form class="form-horizontal" method="post"
             action="<?php echo base_url(); ?>index.php/Purchase_order/edit_po/<?= $id ?>">
             <input type="hidden" name="po_id_old" value="<?= $id ?>">
-            <input type="hidden" name="requisition_slip_id" value="<?= $requisition_slip_id ?>">
+            <input type="hidden" name="requisition_slip_id" value="<?= isset($requisition_slip_id) ? $requisition_slip_id : '' ?>">
+
+            <!-- <input type="hidden" name="requisition_slip_id" value="<?= $requisition_slip_id ?>"> -->
         <?php } else { ?>
           <form class="form-horizontal" method="post"
             action="<?php echo base_url(); ?>index.php/Purchase_order/add_new_po">
         <?php } ?>
 
-          <!-- COLLAPSIBLE AREA -->
-          <div class="collapse" id="filterFormWrapper">
+          
             <div class="form-group">
               <div class="row col-md-12">
                 <div class="col-md-4 col-sm-4 ">
@@ -84,7 +63,7 @@
                     class="form-control" value="<?= $po_number ?>" required>
                 </div>
               </div>
-            </div>
+           
 
             <div class="form-group">
               <div class="row col-md-12">
@@ -147,19 +126,19 @@
                           </select>
                         </td>
                         <td style="width:15%">
-                          <input type="text" name="req_qty[]" class="form-control req_qty" readonly>
+                          <input type="text" placeholder="<?= $this->lang->line('qty'); ?>" name="req_qty[]" class="form-control req_qty" readonly>
                         </td>
                         <td style="width:15%">
-                          <input type="text" name="ordered_qty[]" class="form-control qty" value="<?= $po_detail['quantity']; ?>" required>
+                          <input type="text"  placeholder="<?= $this->lang->line('enter_qty'); ?>" name="ordered_qty[]" class="form-control qty" value="<?= $po_detail['quantity']; ?>" required>
                         </td>
                         <td style="width:15%">
-                          <input type="text" name="pending_qty[]" class="form-control pending_qty" readonly>
+                          <input type="text"placeholder="<?= $this->lang->line('pending'); ?>" name="pending_qty[]" class="form-control pending_qty" readonly>
                         </td>
                         <td style="width:15%">
-                          <input type="text" name="rate[]" class="form-control rate" value="<?= $po_detail['rate'] ?>" required>
+                          <input type="text"   placeholder="<?= $this->lang->line('enter_rate'); ?>" name="rate[]" class="form-control rate" value="<?= $po_detail['rate'] ?>" required>
                         </td>
                         <td style="width:15%">
-                          <input type="text" name="total[]" class="form-control total" value="<?= $po_detail['amount']; ?>" readonly required>
+                          <input type="text"  placeholder=" <?= $this->lang->line('total_amount'); ?>" name="total[]" class="form-control total" value="<?= $po_detail['amount']; ?>" readonly required>
                         </td>
                         <td style="width:15%">
                           <button type="button" class="btn btn-icon avatar-text avatar-md"><i class="feather feather-minus"></i></button>
@@ -231,29 +210,29 @@
                             $per_checked = 'checked';
                           }
                         ?>
-                        <input type="radio" name="discount_type" value="1" <?= $rs_checked; ?>> Rupees
+                        <input type="radio" name="discount_type" value="1" <?= $rs_checked; ?>> <?= $this->lang->line('rupees'); ?>
                         &nbsp;&nbsp;
-                        <input type="radio" name="discount_type" value="2" <?= $per_checked; ?>> Percentage
+                        <input type="radio" name="discount_type" value="2" <?= $per_checked; ?>> <?= $this->lang->line('percentage'); ?>
                       </td>
                       <td>
-                        <input type="text" name="discount" class="form-control discount_value" value="<?= $discount ?>">
+                        <input type="text" placeholder=" <?= $this->lang->line('enter_value'); ?>" name="discount" class="form-control discount_value" value="<?= $discount ?>">
                         <input type="hidden" value="<?= $discount_amount ?>" name="discount_amount" class="discount_amount">
                       </td>
                       <td colspan="2">
-                        <input type="text" name="amount_after_discount" class="form-control amount_after_discount" value="<?= $total_amount ?>" readonly>
+                        <input type="text" placeholder="Amount after discount" name="amount_after_discount" class="form-control amount_after_discount" value="<?= $total_amount ?>" readonly>
                       </td>
                     </tr>
                     <!-- GST -->
                     <tr>
                       <td colspan="3" style="text-align: right;"><b><?= $this->lang->line('gst'); ?></b></td>
                       <td>
-                        <input type="text" name="tax_per" class="form-control tax_per" value="<?= $gst_per ?>">
+                        <input type="text"placeholder=" Enter Tax %" name="tax_per" class="form-control tax_per" value="<?= $gst_per ?>">
                       </td>
                       <td>
-                        <input type="text" name="gst_amount" class="form-control gst_amount" value="<?= $gst_amount ?>" readonly>
+                        <input type="text"  placeholder=" Enter Tax " name="gst_amount" class="form-control gst_amount" value="<?= $gst_amount ?>" readonly>
                       </td>
                       <td colspan="3">
-                        <input type="text" name="grand_total" class="form-control grand_total" value="<?= $grand_total ?>" readonly>
+                        <input type="text" placeholder=" Amount included Tax" name="grand_total" class="form-control grand_total" value="<?= $grand_total ?>" readonly>
                       </td>
                     </tr>
                     <!-- Final Total -->
@@ -273,15 +252,15 @@
             <div class="row col-md-12">
               <div class="col-md-6 col-sm-6 ">
                 <label class="control-label"><?= $this->lang->line('vendor_reference'); ?></label>
-                <input type="text" name="reference_by" class="form-control" value="<?= $reference_by ?>">
+                <input type="text" placeholder="  <?= $this->lang->line('enter_reference'); ?> " name="reference_by" class="form-control" value="<?= $reference_by ?>">
               </div>
               <div class="col-md-6 col-sm-6 ">
                 <label class="control-label"><?= $this->lang->line('delivery_period'); ?></label>
-                <input type="text" name="delivery_period" class="form-control" value="<?= $delivery_period ?>">
+                <input type="text"  placeholder="  <?= $this->lang->line('enter_delivery_schedule'); ?>" name="delivery_period" class="form-control" value="<?= $delivery_period ?>">
               </div>
               <div class="col-md-6 col-sm-6 ">
                 <label class="control-label"><?= $this->lang->line('payment_terms'); ?></label>
-                <input type="text" name="payment_term" class="form-control" value="<?= $payment_term ?>">
+                <input type="text"  placeholder=" Ex. Cash,Cheque" name="payment_term" class="form-control" value="<?= $payment_term ?>">
               </div>
               <div class="col-md-6 col-sm-6 ">
                 <label class="control-label"><?= $this->lang->line('freight_status'); ?></label>
@@ -297,9 +276,9 @@
                       }
                     }
                   ?>
-                  <input type="radio" name="freight_status" value="Paid" <?= $paid ?>> Paid
+                  <input type="radio" name="freight_status" value="Paid" <?= $paid ?>> <?= $this->lang->line('paid'); ?>
                   &nbsp;&nbsp;
-                  <input type="radio" name="freight_status" value="To Pay" <?= $to_pay ?>> To Pay
+                  <input type="radio" name="freight_status" value="To Pay" <?= $to_pay ?>> <?= $this->lang->line('to_pay'); ?>
                 </div>
               </div>
             </div>
@@ -329,25 +308,26 @@
         <select name="item_id[]" class="form-control drop">
           <?php if ($items): ?>
             <?php foreach ($items as $value) : ?>
-              <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+              <option value="<?= @$item['id'] ?>"><?= @$item['name'] ?></option>
+             
             <?php endforeach; ?>
           <?php else: ?>
-            <option value="0">No result</option>
+            <option value="0"><?= $this->lang->line('no_result'); ?></option>
           <?php endif; ?>
         </select>
       </td>
       <td style="width:15%">
-        <input type="text" name="ordered_qty[]" class="form-control qty" required>
-      </td>
-      <td style="width:15%">
-        <input type="text" name="pending_qty[]" class="form-control pending_qty" readonly>
-      </td>
-      <td style="width:15%">
-        <input type="text" name="rate[]" class="form-control rate" required>
-      </td>
-      <td style="width:15%">
-        <input type="text" name="total[]" class="form-control total" readonly required>
-      </td>
+        <input type="text" placeholder="Enter Qty" name="ordered_qty[]" class="form-control qty"  autofocus required>
+			</td>
+			<td style="width:15%">
+				<input type="text"  placeholder="Pending" name="pending_qty[]" class="form-control pending_qty"  value="" autofocus required readonly>
+			</td>
+			<td style="width:15%">
+				<input type="text"  placeholder="Enter rate" name="rate[]" class="form-control rate"  autofocus required>
+			</td>
+			<td style="width:15%">
+				<input type="text"  placeholder=" total amount" name="total[]" class="form-control total"  readonly  required>
+			</td>
       <td style="width:15%">
         <button type="button" class="btn btn-xs btn-primary addrow"><i class="fa fa-plus"></i></button>
         <button type="button" class="btn btn-xs btn-danger deleterow"><i class="fa fa-minus"></i></button>
@@ -500,7 +480,7 @@
           final_total = 0;
         }
 
-        tax_amount = (grand_total * tax_per) / 100;
+ tax_amount = (grand_total * tax_per) / 100;
         final_total = grand_total + tax_amount;
         table.find("tfoot tr input.gst_amount").val(tax_amount.toFixed(2));
         table.find("tfoot tr input.grand_total").val(final_total.toFixed(2));
@@ -513,3 +493,1079 @@
 
   });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+       

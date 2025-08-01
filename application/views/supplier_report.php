@@ -1,19 +1,3 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible fade show">
-    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-    <?= $this->session->flashdata('success'); ?>
-  </div>
-<?php endif; ?>
-
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible fade show">
-    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">×</button>
-    <h5><i class="icon fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?= $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
-
 <div class="nxl-content">
   <div class="page-header mb-3">
     <div class="page-header-left d-flex align-items-center">
@@ -29,34 +13,39 @@
 
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items d-flex">
+        <?php $this->load->view('layout/alerts'); ?>
         <!-- Filter Button -->
-<button class="btn btn-icon avatar-text avatar-md" type="button" 
-        data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" 
-        aria-expanded="false" aria-controls="filterFormWrapper">
-  <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
-</button>
+        <button class="btn btn-icon avatar-text avatar-md" type="button"
+          data-bs-toggle="collapse" data-bs-target="#filterFormWrapper"
+          aria-expanded="false" aria-controls="filterFormWrapper">
+          <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
+        </button>
 
-<!-- Export Button -->
-<form method="post" action="<?= base_url('index.php/Suppliers/createXLS'); ?>" style="margin-left:5px;">
-  <?php if (!empty($conditions)) {
-    foreach ($conditions as $key => $value): ?>
-      <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
-  <?php endforeach; } ?>
-  <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
-</form>
+        <!-- Export Button -->
+        <form method="post" action="<?= base_url('index.php/Suppliers/createXLS'); ?>" style="margin-left:5px;">
+          <?php if (!empty($conditions)) {
+            foreach ($conditions as $key => $value): ?>
+              <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
+          <?php endforeach;
+          } ?>
+          <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+        </form>
 
       </div>
     </div>
   </div>
 
   <style>
-    .col-sm-6, .col-md-6 { float: left; }
+    .col-sm-6,
+    .col-md-6 {
+      float: left;
+    }
   </style>
 
   <?php
-    defined('BASEPATH') OR exit('No direct script access allowed');
-    $current_page = current_url();
-    $data = explode('?', $current_page);
+  defined('BASEPATH') or exit('No direct script access allowed');
+  $current_page = current_url();
+  $data = explode('?', $current_page);
   ?>
 
   <div class="container-fluid">
@@ -72,10 +61,11 @@
                 <select name="categories_id" class="form-control select2 category">
                   <option value="0"><?= $this->lang->line('select_category') ?></option>
                   <?php if ($categories): foreach ($categories as $value): ?>
-                    <option value="<?= $value['id'] ?>" <?= ($value['id'] == $current[0]->categories_id) ? 'selected' : '' ?>>
-                      <?= $value['category_name'] ?>
-                    </option>
-                  <?php endforeach; else: ?>
+                      <option value="<?= $value['id'] ?>" <?= ($value['id'] == $current[0]->categories_id) ? 'selected' : '' ?>>
+                        <?= $value['category_name'] ?>
+                      </option>
+                    <?php endforeach;
+                  else: ?>
                     <option value="0"><?= $this->lang->line('no_result') ?></option>
                   <?php endif; ?>
                 </select>
@@ -86,10 +76,11 @@
                 <select name="supplier_id" class="form-control select2 suppliers">
                   <option value="0"><?= $this->lang->line('select_supplier') ?></option>
                   <?php if ($all_suppliers): foreach ($all_suppliers as $value): ?>
-                    <option value="<?= $value['id'] ?>" <?= ($value['id'] == $supplier_id) ? 'selected' : '' ?>>
-                      <?= $value['supplier_name'] ?>
-                    </option>
-                  <?php endforeach; else: ?>
+                      <option value="<?= $value['id'] ?>" <?= ($value['id'] == $supplier_id) ? 'selected' : '' ?>>
+                        <?= $value['supplier_name'] ?>
+                      </option>
+                    <?php endforeach;
+                  else: ?>
                     <option value="0"><?= $this->lang->line('no_result') ?></option>
                   <?php endif; ?>
                 </select>
@@ -97,14 +88,14 @@
 
               <div class="col-md-4">
                 <label class="control-label"><?= $this->lang->line('category_of_approval') ?></label>
-                <?php 
-                  $app_cat = [
-                    'No' => 'Select Option',
-                    'A' => 'A',
-                    'B' => 'B',
-                    'C' => 'C'
-                  ];
-                  echo form_dropdown('category_of_approval', $app_cat, $category_of_approval ?? '', ['class' => 'form-control']);
+                <?php
+                $app_cat = [
+                  'No' => 'Select Option',
+                  'A' => 'A',
+                  'B' => 'B',
+                  'C' => 'C'
+                ];
+                echo form_dropdown('category_of_approval', $app_cat, $category_of_approval ?? '', ['class' => 'form-control']);
                 ?>
               </div>
             </div>
@@ -126,57 +117,63 @@
           </form>
         </div>
 
-        <hr>
+        
+        <div class="container card-white-box">
 
-        <div class="table-responsive">
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th><?= $this->lang->line('name') ?></th>
-                <th><?= $this->lang->line('registration_date') ?></th>
-                <th><?= $this->lang->line('contact_person') ?></th>
-                <th><?= $this->lang->line('email') ?></th>
-                <th><?= $this->lang->line('mobile_no') ?></th>
-                <th><?= $this->lang->line('website') ?></th>
-                <th><?= $this->lang->line('category') ?></th>
-                <th><?= $this->lang->line('approval_category') ?></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($suppliers as $obj): ?>
-                <tr>
-                  <td><?= $obj['supplier_name'] . ' (' . $obj['vendor_code'] . ')' ?></td>
-                  <td><?= date('d-M-Y', strtotime($obj['reg_date'])) ?></td>
-                  <td><?= $obj['contact_person'] ?></td>
-                  <td><?= $obj['email'] ?></td>
-                  <td><?= $obj['mobile_no'] ?></td>
-                  <td><?= $obj['website'] ?></td>
-                  <td><?= $obj['category'] ?></td>
-                  <td><?= $obj['category_of_approval'] ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+          <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+
+
+            <div class="col-sm-12">
+              <table class="table table-hover align-middle" id="proposalList">
+                <thead class="table-light">
+
+
+                  <tr>
+                    <th><?= $this->lang->line('name') ?></th>
+                    <th><?= $this->lang->line('registration_date') ?></th>
+                    <th><?= $this->lang->line('contact_person') ?></th>
+                    <th><?= $this->lang->line('email') ?></th>
+                    <th><?= $this->lang->line('mobile_no') ?></th>
+                    <th><?= $this->lang->line('website') ?></th>
+                    <th><?= $this->lang->line('category') ?></th>
+                    <th><?= $this->lang->line('approval_category') ?></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($suppliers as $obj): ?>
+                    <tr>
+                      <td><?= $obj['supplier_name'] . ' (' . $obj['vendor_code'] . ')' ?></td>
+                      <td><?= date('d-M-Y', strtotime($obj['reg_date'])) ?></td>
+                      <td><?= $obj['contact_person'] ?></td>
+                      <td><?= $obj['email'] ?></td>
+                      <td><?= $obj['mobile_no'] ?></td>
+                      <td><?= $obj['website'] ?></td>
+                      <td><?= $obj['category'] ?></td>
+                      <td><?= $obj['category_of_approval'] ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-<script>
-  $(document).ready(function () {
-    $('.category').on('change', function () {
-      var category_id = $(this).val();
-      $.ajax({
-        type: "POST",
-        url: "<?= base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
-        dataType: 'html',
-        success: function (response) {
-          $(".suppliers").html(response);
-          $('.select2').select2();
-        }
+    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+    <script>
+      $(document).ready(function() {
+        $('.category').on('change', function() {
+          var category_id = $(this).val();
+          $.ajax({
+            type: "POST",
+            url: "<?= base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
+            dataType: 'html',
+            success: function(response) {
+              $(".suppliers").html(response);
+              $('.select2').select2();
+            }
+          });
+        });
       });
-    });
-  });
-</script>
+    </script>

@@ -1,3 +1,28 @@
+
+<div class="nxl-content">
+  <div class="page-header mb-3 d-flex justify-content-between align-items-center">
+
+    <!-- Left side: Title + Breadcrumb -->
+    <div class="d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10 mb-0"><?php  echo $title; ?></h5>
+      </div>
+      <ul class="breadcrumb ml-3 mb-0">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+      </ul>
+    </div>
+<!-- Right side: Button group -->
+    <div class="d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+
+  
+    </div>
+
+  </div>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -15,38 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       float: left;
   }
 </style>
- <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+ 
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<?php //  echo $data; exit; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
-      </span>
-      <div class="button-group float-right">
-        <!--  <a href="<?php echo base_url(); ?>index.php/Purchase_order/add" class="btn btn-success" data-toggle="tooltip" title="New PO"><i class="fa fa-plus"></i></a>
 
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button> -->
-        
-      </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
+    <div class="card-body bg-white">
       <div class="table-responsive">
         <table id="example1" class="table table-bordered table-striped">
           <thead>
@@ -87,12 +84,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $obj['supplier']; ?></td>
                 <td><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
                 <td><?php echo $obj['grand_total']; ?></td>
-                <td>
-                  <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-eye"></i></a>
+                <td style="display: flex;">
+                 <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" href="#ViewPO<?= $obj['id']; ?>">
+  <i class="feather feather-eye"></i>
+</a>
 
-				          <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
 
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Gir_registers/raw_add/<?php echo $obj['id'];?>" data-toggle="tooltip" title="Convert to GIR Register" ><i class="fa fa-refresh"></i> </a>
+				          <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
+
+                  <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Gir_registers/raw_add/<?php echo $obj['id'];?>" data-toggle="tooltip" title="Convert to GIR Register" ><i class="fa fa-refresh"></i> </a>
                 </td>
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                       <div class="modal-dialog modal-lg">
@@ -238,6 +238,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     
               </tr>
+               <?php $this->load->view('leave-module/component/pop.php', ['obj' => $obj]); ?>
             <?php  $i++;} } ?>
           </tbody>
         </table>

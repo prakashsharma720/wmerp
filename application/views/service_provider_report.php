@@ -1,19 +1,3 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible fade show">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-    <?= $this->session->flashdata('success'); ?>
-  </div>
-<?php endif; ?>
-
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible fade show">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <h5><i class="icon fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?= $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
-
 <div class="nxl-content">
   <div class="page-header mb-3">
     <div class="page-header-left d-flex align-items-center">
@@ -29,12 +13,13 @@
 
     <div class="page-header-right ms-auto d-flex align-items-center">
       <!-- Filter Button -->
-     <button
-  id="toggleFilter"
-  class="btn btn-icon avatar-text avatar-md"
-  type="button">
-  <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
-</button>
+        <?php $this->load->view('layout/alerts'); ?>
+      <button
+        id="toggleFilter"
+        class="btn btn-icon avatar-text avatar-md"
+        type="button">
+        <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
+      </button>
 
 
       <!-- Export Button -->
@@ -107,12 +92,15 @@
   </div>
 
   <!-- TABLE SECTION -->
-  <div class="container-fluid mt-3">
-    <div class="card card-primary card-outline">
-      <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-bordered table-striped">
-            <thead>
+  
+            <div class="container card-white-box">
+ 
+  <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+
+
+    <div class="col-sm-12">
+      <table class="table table-hover align-middle" id="proposalList">
+        <thead class="table-light">
               <tr>
                 <th><?= $this->lang->line('name') ?></th>
                 <th><?= $this->lang->line('registration_date') ?></th>
@@ -150,20 +138,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  $(document).ready(function () {
+  $(document).ready(function() {
     // Toggle filter section
-    $('#toggleFilter').click(function () {
+    $('#toggleFilter').click(function() {
       $('#filterFormWrapper').slideToggle();
     });
 
     // Category -> Service Provider AJAX load
-    $('.category').change(function () {
+    $('.category').change(function() {
       let category_id = $(this).val();
       $.ajax({
         url: "<?= base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
         method: "POST",
         dataType: "html",
-        success: function (response) {
+        success: function(response) {
           $('.suppliers').html(response);
           $('.select2').select2();
         }

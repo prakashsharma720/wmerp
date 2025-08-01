@@ -1,20 +1,12 @@
-<?php if ($this->session->flashdata('success')): ?>
-	<div class="alert alert-success alert-dismissible">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-		<?php echo $this->session->flashdata('success'); ?>
-	</div>
-	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-	<div class="alert alert-error alert-dismissible ">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-		<?php echo $this->session->flashdata('failed'); ?>
-	</div>
-<?php endif; ?>
-
+<style>
+    .table td, .table th {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
+</style>
 <div class="nxl-content">
 	<div class="page-header">
 		<div class="page-header-left d-flex align-items-center">
@@ -32,7 +24,7 @@
 
 		<div class="page-header-right ms-auto">
 			<div class="page-header-right-items">
-
+<?php $this->load->view('layout/alerts'); ?>
 			</div>
 
 			<!-- Mobile Toggle -->
@@ -45,15 +37,7 @@
 	</div>
 	
 
-
-
-
-
-
-
-
-
-	      	<div class="card-body p-3">
+	      	<div class="card-body p-3 bg-white" style="position:relative;top:15px;">
 		      	<div class="row">
 		      		<div class="col-md-4">
 		      			<?php  //echo $title; exit; ?>
@@ -203,7 +187,7 @@
 								<td><?= $electrical_good['code'] ?></td>
 								<td><?= $electrical_good['company_name'] ?></td>
 								<td><?= $electrical_good['description'] ?></td>
-								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Electrical_goods/index/<?php echo $electrical_good['id'];?>"><i class="feather feather-edit-3"></i></a></td>
+								<td> <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Electrical_goods/index/<?php echo $electrical_good['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>

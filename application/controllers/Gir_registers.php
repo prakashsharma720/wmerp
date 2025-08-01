@@ -64,7 +64,7 @@ public function ApprovedPOlistForGIR() {
     //$data['departments'] = $this->issue_slip_model->getDepartments();
     $this->load->model('gir_register_model');
     $data['units'] = $this->gir_register_model->getUnits();*/
-    $this->template->load('template','po_list_for_gir',$data);
+    $this->template->load('layout/template','po_list_for_gir',$data);
 }
 public function ApprovedPOlistForRM_GIR() {
     $data = array();
@@ -95,7 +95,7 @@ public function ApprovedPOlistForRM_GIR() {
     //$data['departments'] = $this->issue_slip_model->getDepartments();
     $this->load->model('gir_register_model');
     $data['units'] = $this->gir_register_model->getUnits();*/
-    $this->template->load('template','po_list_for_rm_gir',$data);
+    $this->template->load('layout/template','po_list_for_rm_gir',$data);
 }
 
 public function add($id=NULL) {
@@ -253,7 +253,7 @@ public function add($id=NULL) {
     $data['categories'] = $this->gir_register_model->getCategories();
 	$data['units'] = $this->gir_register_model->getUnits();
 	//$data['states']=$this->gir_register_model->getStates();
-	$this->template->load('template','gir_register_add',$data);
+	$this->template->load('layout/template','gir_register_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -413,7 +413,7 @@ public function raw_add($id=NULL) {
     $data['categories'] = $this->gir_register_model->getCategories();
 	$data['units'] = $this->gir_register_model->getUnits();
 	//$data['states']=$this->gir_register_model->getStates();
-	$this->template->load('template','raw_material_gir_add',$data);
+	$this->template->load('layout/template','raw_material_gir_add',$data);
 
 	//$this->load->view('footer');
 	
@@ -556,7 +556,7 @@ public function raw_add($id=NULL) {
 	$this->load->model('login_database');
     $data['categories'] = $this->gir_register_model->getCategories();
 	//$data['states']=$this->gir_register_model->getStates();
-	$this->template->load('template','gir_register_edit',$data);
+	$this->template->load('layout/template','gir_register_edit',$data);
 
 	//$this->load->view('footer');
 	
@@ -1072,7 +1072,7 @@ public function raw_add($id=NULL) {
 		$data['current'] = $this->gir_register_model->getById($id);
 		//print_r($data['current']);exit;
 	    $data['title']='GIR Register Profile';
-        $this->template->load('template','gir_register_print',$data);
+        $this->template->load('layout/template','gir_register_print',$data);
     } 
 }
 

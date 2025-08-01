@@ -1,21 +1,25 @@
 
 
-<?php if ($this->session->flashdata('success')): ?>
-	<div class="alert alert-success alert-dismissible">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-		<?php echo $this->session->flashdata('success'); ?>
-	</div>
-	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
+<style>
+    .table td, .table th {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
 
-<?php if ($this->session->flashdata('failed')): ?>
-	<div class="alert alert-error alert-dismissible ">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-		<?php echo $this->session->flashdata('failed'); ?>
-	</div>
-<?php endif; ?>
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    td:nth-child(5) {
+        max-width: 200px;
+    }
+
+    .btn-icon {
+        padding: 4px 8px;
+    }
+</style>
 
 <div class="nxl-content">
 	<div class="page-header">
@@ -34,7 +38,7 @@
 
 		<div class="page-header-right ms-auto">
 			<div class="page-header-right-items">
-
+<?php $this->load->view('layout/alerts'); ?>
 			</div>
 
 			<!-- Mobile Toggle -->
@@ -46,15 +50,7 @@
 		</div>
 	</div>
 	
-
-
-
-
-
-
-
-
-		<div class="card-body p-3 bg-white">
+		<div class="card-body p-3 bg-white" style="position: relative;top:15px">
 			<div class="row">
 				<div class="col-md-4">
 					<?php  //echo $title; exit; 
@@ -190,7 +186,7 @@
 										<td><?= $packing_material['supplier'] ?></td>
 										<td><?= $packing_material['name']  ?></td>
 										<td><?= $packing_material['bag_packing'] ?></td>
-										<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" style="padding: 2px 3px;" href="<?php echo base_url(); ?>index.php/Packing_materials/index/<?php echo $packing_material['id']; ?>">
+										<td> <a class="btn btn-icon avatar-text avatar-md" style="padding: 2px 3px;" href="<?php echo base_url(); ?>index.php/Packing_materials/index/<?php echo $packing_material['id']; ?>">
 											<i class="feather feather-edit-3"></i>
 										</a></td>
 									</tr>

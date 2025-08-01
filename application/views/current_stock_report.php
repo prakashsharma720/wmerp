@@ -1,67 +1,73 @@
 
 
+<div class="nxl-content">
+  <div class="page-header mb-3 d-flex justify-content-between align-items-center">
+
+    <!-- Left Side: Title and Breadcrumb -->
+    <div>
+      <h5><?=$this ->lang ->line('current_stock_report')?></h5>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <!-- <?= $this->lang->line('home') ?> -->
+          </a>
+        </li>
+      </ul>
+    </div>
 
 
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$base_url=  base_url();
-//print_r($base_url);exit;
-?>
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+<!-- Right Side: Filter & Export Buttons -->
+    <div class="d-flex gap-2">
+      <button class="btn btn-icon avatar-text avatar-md" type="button" id="toggleFilter">
+        <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
+      </button>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?=$this ->lang ->line('current_stock_report')?>
-      </span>
-      <div class="pull-right error_msg">
-        	<form method="post" action="<?php echo base_url(); ?>index.php/Stock_registers/createXLS">
-				<?php 
-		          if(!empty($conditions)){
-		            foreach ($conditions as $key => $value) { ?>
-		            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
-	          	<?php } }?>
-	           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
-	         </form>  
-	     </div>
-       <form method="get" id="filterForm">
+      <form method="post" action="<?= base_url(); ?>index.php/Stock_registers/createXLS" class="d-inline-block">
+        <?php if (!empty($conditions)) {
+          foreach ($conditions as $key => $value) { ?>
+            <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
+        <?php }} ?>
+        <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+      </form>
+    </div>
+  </div>
 
-                <div class="row">
-                  <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> <?= $this->lang->line('from_date') ?></label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> <?= $this->lang->line('upto_date') ?></label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
-                  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger" ><?= $this->lang->line('reset') ?></a>
-              </div>
-          </div>
-        </form>
-    </div> <!-- /.card-body -->
+  <!-- Alerts -->
+  <?php $this->load->view('layout/alerts'); ?>
+
+      <!-- Filter Form -->
+  <div class="card mb-3" id="filterBox" style="display: none;">
     <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
+      <form method="get" id="filterForm">
+        <div class="row">
+          <div class="col-md-4">
+            <label><?= $this->lang->line('from_date') ?></label>
+            <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <label><?= $this->lang->line('upto_date') ?></label>
+            <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary mr-2"><?= $this->lang->line('search') ?></button>
+            <a href="<?= base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger"><?= $this->lang->line('reset') ?></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+      
+    
+     
+    <div class="container card-white-box">
+ 
+  <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+
+
+    <div class="col-sm-12">
+      <table class="table table-hover align-middle" id="proposalList">
+        <thead class="table-light">
             <tr>
               <th ><?= $this->lang->line('sr_no') ?>.</th>
               <th style="white-space: nowrap;">  <?= $this->lang->line('material_description') ?> </th>
@@ -119,6 +125,44 @@ $base_url=  base_url();
   </div>
 </div>
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // Filter box show/hide
+    $('#toggleFilter').click(function () {
+      $('#filterBox').slideToggle(); // This toggles the filter card
+    });
+
+    // (Optional) Checkbox master toggle
+    $('#master').on('click', function () {
+      $('.sub_chk').prop('checked', this.checked);
+    });
+
+    // (Optional) Bulk delete
+    $('.delete_all').on('click', function () {
+      var allVals = $(".sub_chk:checked").map(function () {
+        return $(this).val();
+      }).get();
+
+      if (allVals.length <= 0) {
+        alert("Please select row.");
+      } else {
+        if (confirm("Are you sure you want to delete all selected records?")) {
+          $.ajax({
+            type: "POST",
+            url: "<?= base_url(); ?>index.php/Requisition_slips/deleteRequisition",
+            data: 'ids=' + allVals.join(","),
+            success: function (response) {
+              $(".successs_mesg").html(response);
+              location.reload();
+            }
+          });
+        }
+      }
+    });
+  });
+</script>
+
 <script type="text/javascript">
   $( document ).ready(function() {
      

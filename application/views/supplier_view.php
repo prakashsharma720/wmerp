@@ -128,7 +128,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 "> -->
 <div class="container card-white-box">
-  <!-- <div id="proposalList_wrapper" style="background-color: white;position:relative;top:20px;  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);  padding:15px" class="dataTables_wrapper dt-bootstrap5 no-footer "> -->
+ 
   <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
 
 

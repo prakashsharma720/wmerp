@@ -2959,13 +2959,71 @@ $lang['assign_by'] = 'असाइन करने वाला';
 $lang['reject_reason'] = 'अस्वीकृति का कारण';
 $lang['last_update'] = 'अंतिम अपडेट';
 $lang['action'] = 'क्रिया';
-
+$lang['enter_qty'] = 'मात्रा दर्ज करें';
+$lang['enter_rate'] = 'दर दर्ज करें';
+$lang['total_amount'] = 'कुल राशि';
+$lang['edit_purchase_order'] = 'क्रय आदेश संपादित करें'; 
 // mo website leads   lead report chal nahi raha hai        ----------------xxxxxxxxxxxxxx-----------------
+$lang['item_details'] = 'वस्तु विवरण';
+$lang['sr_no'] = 'क्रमांक';
+$lang['material_description'] = 'सामग्री विवरण';
+$lang['requisition_qty'] = 'अनुरोधित मात्रा';
+$lang['order_qty'] = 'आदेश मात्रा';
+$lang['pending_qty'] = 'लंबित मात्रा';
+$lang['rate'] = 'दर';
+$lang['total_amount'] = 'कुल राशि';
+$lang['no_items_added'] = 'कोई वस्तु विवरण नहीं मिला';
+$lang['purchase_order'] = 'क्रय आदेश';
+$lang['po_details'] = 'पीओ विवरण';
+$lang['po_number'] = 'पीओ नंबर';
+$lang['order_type'] = 'ऑर्डर प्रकार';
+$lang['purchase_indent'] = 'क्रय प्रपत्र';
+$lang['supplier_name'] = 'आपूर्तिकर्ता का नाम';
+$lang['po_date'] = 'पीओ तिथि';
+$lang['total_amount'] = 'कुल राशि';
+$lang['remarks'] = 'टिप्पणी';
+$lang['status'] = 'स्थिति';
+$lang['item_details'] = 'वस्तु विवरण';
+$lang['close'] = 'बंद करें';
+$lang['purchase_order'] = 'खरीद आदेश';
+$lang['po_details'] = 'पीओ विवरण';
+$lang['po_number'] = 'पीओ नंबर';
+$lang['order_type'] = 'आदेश का प्रकार';
+$lang['purchase_indent'] = 'खरीद इन्डेंट';
+$lang['po_date'] = 'पीओ दिनांक';
+
+$lang['supplier_details'] = 'आपूर्तिकर्ता विवरण';
+$lang['supplier_name'] = 'आपूर्तिकर्ता का नाम';
+$lang['vendor_reference'] = 'विक्रेता संदर्भ';
+
+$lang['financial_details'] = 'वित्तीय विवरण';
+$lang['total_amount'] = 'कुल राशि';
+$lang['discount_rupees'] = 'छूट (₹)';
+$lang['discount_percent'] = 'छूट (%)';
+$lang['gst'] = 'जीएसटी (₹)';
+$lang['grand_total'] = 'कुल योग';
+
+$lang['delivery_payment_terms'] = 'वितरण और भुगतान की शर्तें';
+$lang['delivery_period'] = 'वितरण अवधि';
+$lang['payment_terms'] = 'भुगतान की शर्तें';
+$lang['freight_status'] = 'ढुलाई स्थिति';
+
+$lang['additional_info'] = 'अतिरिक्त जानकारी';
+$lang['status'] = 'स्थिति';
+$lang['remarks'] = 'टिप्पणियाँ';
+
+$lang['bank_details'] = 'बैंक विवरण';
+$lang['bank_name'] = 'बैंक का नाम';
+$lang['account_number'] = 'खाता संख्या';
+
+$lang['close'] = 'बंद करें';
 
 // customer complaints    
 // Complaints Data 
 $lang['complaints_data'] = 'शिकायत डेटा';
 $lang['home'] = 'मुख्य';
+$lang['rate'] = 'दर';
+$lang['pending'] = 'लंबित';
 
 $lang['search_by_status'] = 'स्थिति द्वारा खोजें';
 $lang['search_by_category'] = 'श्रेणी द्वारा खोजें';
