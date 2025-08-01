@@ -214,13 +214,13 @@ img.profile-user-img.img-fluid.img-circle {
                                             <div class="col-md-4 col-sm-4">
                                                 <label class="control-label"> <?= $this->lang->line('date_of_joining') ?> </label>
                                                 <input type="text" data-date-formate="dd-mm-yyyy" name="doj"
-                                                    class="form-control date-picker"
+                                                    class="form-control date-picker" id="startDate"
                                                     value="<?php echo $date_of_joining?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"
                                                     autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4">
                                                 <label class="control-label"> <?= $this->lang->line('date_of_birth') ?> </label>
-                                                <input type="text" data-date-formate="dd-mm-yyyy" name="dob"
+                                                <input type="text" data-date-formate="dd-mm-yyyy" name="dob" id="dueDate"
                                                     class="form-control date-picker" value="<?php echo $dob?>"
                                                     placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autofocus>
                                             </div>

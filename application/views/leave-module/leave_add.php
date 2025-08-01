@@ -4,22 +4,6 @@
 margin: 0.7rem
 }
 </style>
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible" >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Success!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
-
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible " >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Alert!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-<?php endif; ?>
 	  
 <div class="nxl-content">
     <div class="page-header">
@@ -35,6 +19,9 @@ margin: 0.7rem
                 </li>
             </ul>
         </div>
+		<div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
 
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
@@ -51,6 +38,7 @@ margin: 0.7rem
             </div>
         </div>
     </div>
+</div>	
   <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
@@ -112,13 +100,13 @@ margin: 0.7rem
 								<!-- Full Day Divs -->
 								<div class="col-md-3 full_div">
 									<label class="control-label"> <?= $this->lang->line('from_date') ?> </label>
-									<input type="date" class="form-control date1" id="date_picker" name="from_date">
+									<input type="text" class="form-control date1" id="startDate" name="from_date">
 
 									<!-- <input type="date" class="form-control date1 fullday"  id="date_picker" name="from_date" value="" data-date-formate="dd-mm-yyyy"> -->
 								</div>
 								<div class="col-md-3 full_div">
 									<label class="control-label"> <?= $this->lang->line('upto_date') ?> </label>
-									<input type="date" class="form-control date2" id="date_picker_to" name="upto_date">
+									<input type="text" class="form-control date2" id="dueDate" name="upto_date">
 
 									<!-- <input type="date" class="form-control date2 fullday" id="date_picker_to" name="upto_date" data-date-formate="dd-mm-yyyy"> -->
 								</div>
@@ -158,7 +146,7 @@ margin: 0.7rem
 
 								<div class="col-md-2 gatepass_div">
 									<label class="control-label"> <?= $this->lang->line('to_time') ?></label>
-									<input type="time" id="gate_time_to" name="gate_time_to" class="form-control" value="" readonly>
+									<input type="time" id="gate_time_to" name="gate_time_to"  class="form-control" value="" readonly>
 								</div>
 								<!-- / Gatepass Divs -->
 

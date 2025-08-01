@@ -19,8 +19,9 @@ margin: 0.7rem
                 </li>
             </ul>
         </div>
+<div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
       <?php $this->load->view('layout/alerts'); ?>
-
         <div class="page-header-right ms-auto">
            <div class="page-header-right-items">
           <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper hstack">
@@ -50,6 +51,7 @@ margin: 0.7rem
             </div>
         </div>
     </div>
+						</div>
 	 <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
@@ -71,12 +73,12 @@ margin: 0.7rem
 					           <!--start date-->	
 									<div class="col-md-12 col-sm-12">
 						            	<label class="control-label"> <?= $this->lang->line('start_date') ?> </label> <span class="required">*</span>
-						                <input type="date" data-date-formate="dd-mm-yyyy" name="start_date"  class="form-control date-picker"  value="<?php echo $start_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="start_date"  class="form-control date-picker" id="startDate"  value="<?php echo $start_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 								<!--end date-->	
 									<div class="col-md-12 col-sm-12">
 						            	<label class="control-label"> <?= $this->lang->line('end_date') ?> </label> <span class="required">*</span>
-						                <input type="date" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker"  value="<?php echo $end_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
+						                <input type="text" data-date-formate="dd-mm-yyyy" name="end_date" class="form-control date-picker" id="dueDate"  value="<?php echo $end_date;?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"  required>
 			            			</div>
 									<!-- status -->
 									 <!--Status-->

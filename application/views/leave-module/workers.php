@@ -3,22 +3,7 @@
 margin: 0.7rem
 }
 </style>
-<?php if($this->session->flashdata('success')): ?>
-    <div class="alert alert-success alert-dismissible" >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Success!</h5>
-            <?php echo $this->session->flashdata('success'); ?>
-        </div>
-    <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if($this->session->flashdata('failed')): ?>
-    <div class="alert alert-error alert-dismissible " >
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fa fa-check"></i> Alert!</h5>
-            <?php echo $this->session->flashdata('failed'); ?>
-        </div>
-<?php endif; ?>
 	  
 <div class="nxl-content">
     <div class="page-header">
@@ -34,7 +19,9 @@ margin: 0.7rem
                 </li>
             </ul>
         </div>
-
+<div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Placeholder for additional actions -->
+      <?php $this->load->view('layout/alerts'); ?>
         <div class="page-header-right ms-auto">
             <div class="page-header-right-items">
                 <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
@@ -50,6 +37,8 @@ margin: 0.7rem
             </div>
         </div>
     </div>
+</div>	
+
 	 <div class="main-content">
         <div class="card card-primary card-outline">
             <div class="card-body">
@@ -131,7 +120,7 @@ margin: 0.7rem
 								<div class="col-md-4 col-sm-4">
 									<label class="control-label"><?= $this->lang->line('dob') ?></label>
 									<input type="text" data-date-formate="dd-mm-yyyy" name="dob"
-										class="form-control date-picker" value="" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autofocus>
+										class="form-control date-picker" id="startDate" value="" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autofocus>
 								</div>
 								<div class="col-md-4 col-sm-4 ">
 									<label class="control-label"><?= $this->lang->line('upload_photo') ?></label>
