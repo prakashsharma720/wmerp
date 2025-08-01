@@ -1,18 +1,30 @@
+<div class="nxl-content">
+  <div class="page-header mb-3 d-flex justify-content-between align-items-center">
+
+    <!-- Left side: Title + Breadcrumb -->
+    <div class="d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10 mb-0"><?= $title ?></h5>
+      </div>
+      <ul class="breadcrumb ml-3 mb-0">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 //print_r($items);exit;
 ?>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
-        <div class="pull-right error_msg">
-			
-		</div>
-
-      </div> <!-- /.card-body -->
-      <div class="card-body">
+ 
+      <div class="card-body bg-white">
 					<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Gir_registers/add_new_gir">
 			    
 		        <div class="form-group">
@@ -117,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        	<div class="row col-md-12">
 		        		<div class="table-responsive">
 			        	<table class="table table-bordered " id="maintable" style="width: 100% !important;">
-			        			<thead style="background-color: #ca6b24;">
+			        			<thead >
 			        				<tr>
 			        					<th style="width: 5%;">  Sr.No.</th>
 			        					<th style="width: 30%;white-space: nowrap;"> Material Description</th>

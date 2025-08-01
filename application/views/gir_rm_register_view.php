@@ -1,3 +1,41 @@
+<div class="nxl-content">
+  <div class="page-header mb-3 d-flex justify-content-between align-items-center">
+
+    <!-- Left side: Title + Breadcrumb -->
+    <div class="d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10 mb-0"><?= $this->lang->line('rm_inward_challan_list') ?></h5>
+      </div>
+      <ul class="breadcrumb ml-3 mb-0">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right side: Button group -->
+    <div class="d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+
+      <a href="<?= base_url(); ?>index.php/Gir_registers/ApprovedPOlistForRM_GIR" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="New GIR Register">
+        <i class="fa fa-plus"></i>
+      </a>
+
+      <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();">
+        <i class="fa fa-refresh"></i>
+      </button>
+
+      <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete">
+        <i class="fa fa-trash"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -12,38 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
 </style>
 
-    <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+    
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?= $this->lang->line('rm_inward_challan_list') ?>
-      </span>
-       <div class="button-group float-right">
-
-         <a href="<?php echo base_url(); ?>index.php/Gir_registers/ApprovedPOlistForRM_GIR" class="btn btn-success red-tooltip" data-toggle="tooltip" title="New GIR Register" ><i class="fa fa-plus"></i></a>
-
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>
-        
-      </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
+    <div class="card-body bg-white">
       <div class="table-responsive">
         <table id="example1" class="table table-bordered table-striped">
           <thead>

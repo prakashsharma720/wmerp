@@ -1,19 +1,5 @@
 <!-- Success & Failure Flash Messages -->
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible fade show">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <h5><i class="fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
-    <?= $this->session->flashdata('success'); ?>
-  </div>
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-danger alert-dismissible fade show">
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <h5><i class="fa fa-times"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?= $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
 
 <div class="nxl-content">
   <div class="page-header mb-3">
@@ -30,14 +16,14 @@
 
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items d-flex align-items-center">
-
+ <?php $this->load->view('layout/alerts'); ?>
         <!-- Filter Button (no background, toggle enabled) -->
-        <button id="filterToggleBtn" class="btn btn-warning me-2" type="button">
-          <i class="fa fa-filter"></i> <?= $this->lang->line('filter') ?>
+        <button id="filterToggleBtn" class="btn btn-icon avatar-text avatar-md" type="button">
+          <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
         </button>
 
         <!-- EXPORT FORM -->
-        <form method="post" action="<?= base_url('index.php/Invoice/createXLS') ?>">
+        <form method="post" action="<?= base_url('index.php/Invoice/createXLS') ?>"style="margin-left:5px;">
           <?php 
             if (!empty($conditions)) {
               foreach ($conditions as $key => $value) {
@@ -76,12 +62,20 @@
   </div>
 
   <!-- INVOICE TABLE -->
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-body">
         <div class="table-responsive">
           <table id="example1" class="table table-bordered table-striped">
-            <thead>
+            <thead> -->
+              <div class="container card-white-box">
+ 
+  <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+
+
+    <div class="col-sm-12">
+      <table class="table table-hover align-middle" id="proposalList">
+        <thead class="table-light">
               <tr>
                 <th><?= $this->lang->line('sr_no') ?>.</th>
                 <th><?= $this->lang->line('invoice_no') ?></th>

@@ -14,10 +14,18 @@ $lang['Create_an_Account'] = 'Създайте акаунт';
 $lang['Are you new?'] = 'Нов ли сте?';
 $lang['google_signin'] = 'Вход с Google';
 $lang['or'] = 'или';
+$lang['supplier_profile_details'] = 'Данни за профила на доставчика';
+$lang['approval_timeline'] = 'График за одобрение';
+$lang['rate'] = 'Ставка';
+$lang['pending'] = 'Изчакващ';
+$lang['enter_qty'] = 'Въведете количество';
+$lang['enter_rate'] = 'Въведете ставка';
+$lang['total_amount'] = 'Обща сума';
+
 $lang['add_new_finished_good'] = 'Добавяне на нов готов продукт';
 $lang['tentative_date_of_return'] = 'Прогнозна дата на връщане';
 $lang['select_customer'] = 'Изберете клиент';
-
+$lang['suppliers_detail'] = 'Данни за доставчици';
 $lang['login'] = 'Вход';
 $lang['remember_me'] = 'Запомни ме';
 $lang['loginwithfacebook'] = 'Вход с Facebook';
@@ -1522,6 +1530,53 @@ $lang['date'] = "Дата";
 $lang['delete_service_provider_confirm'] = 'Сигурни ли сте, че искате да изтриете доставчика на услуги?';
 $lang['suppliers_personal_detail'] = 'Лични данни на доставчика';
 $lang['tan_no'] = 'TAN номер';
+$lang['item_details'] = 'Подробности за артикула';
+$lang['sr_no'] = 'Сериен номер';
+$lang['material_description'] = 'Описание на материала';
+$lang['requisition_qty'] = 'Заявено количество';
+$lang['order_qty'] = 'Поръчано количество';
+$lang['pending_qty'] = 'Неполучено количество';
+$lang['rate'] = 'Ставка';
+$lang['total_amount'] = 'Обща сума';
+$lang['no_items_added'] = 'Няма добавени артикули';
+$lang['purchase_order'] = 'Поръчка за покупка';
+$lang['po_details'] = 'Данни за поръчката';
+$lang['po_number'] = 'Номер на поръчка';
+$lang['order_type'] = 'Тип на поръчката';
+$lang['purchase_indent'] = 'Индент за покупка';
+$lang['supplier_name'] = 'Име на доставчика';
+$lang['po_date'] = 'Дата на поръчката';
+$lang['total_amount'] = 'Обща сума';
+$lang['remarks'] = 'Забележки';
+$lang['status'] = 'Статус';
+$lang['item_details'] = 'Детайли за артикули';
+$lang['close'] = 'Затвори';
+$lang['purchase_order'] = 'Поръчка за покупка';
+$lang['po_details'] = 'Детайли на поръчката';
+$lang['po_number'] = 'Номер на поръчката';
+$lang['order_type'] = 'Тип поръчка';
+$lang['purchase_indent'] = 'Заявка за покупка';
+$lang['po_date'] = 'Дата на поръчката';
+
+$lang['supplier_details'] = 'Данни за доставчика';
+$lang['supplier_name'] = 'Име на доставчика';
+$lang['vendor_reference'] = 'Референция на доставчика';
+
+$lang['financial_details'] = 'Финансови данни';
+$lang['total_amount'] = 'Обща сума';
+$lang['discount_rupees'] = 'Отстъпка (₹)';
+$lang['discount_percent'] = 'Отстъпка (%)';
+$lang['gst'] = 'ДДС (₹)';
+$lang['grand_total'] = 'Крайна сума';
+
+$lang['delivery_payment_terms'] = 'Условия за доставка и плащане';
+$lang['delivery_period'] = 'Период на доставка';
+$lang['payment_terms'] = 'Условия за плащане';
+$lang['freight_status'] = 'Статус на транспорта';
+
+$lang['additional_info'] = 'Допълнителна информация';
+$lang['status'] = 'Статус';
+
 
 $lang['purchase_order'] = 'Поръчка за покупка';
 $lang['company_details'] = 'Данни за фирмата';
@@ -3307,7 +3362,7 @@ $lang['half'] = 'Половин';
 $lang['gatepass'] = 'Пропуск';
 $lang['enter_reason'] = 'Въведете причина';
 $lang['apply'] = 'Кандидатствай';
-
+$lang['edit_purchase_order'] = 'Редактиране на поръчка за покупка'; 
 
 // daily tasks project
 $lang['daily_task_master'] = 'Дневни задачи - основни данни';

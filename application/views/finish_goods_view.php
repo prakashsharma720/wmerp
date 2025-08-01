@@ -28,10 +28,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="card-body p-3 bg-white">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
+	<div class="container card-white-box">
+
+          <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+
+
+            <div class="col-sm-12">
+              <table class="table table-hover align-middle" id="proposalList">
+                <thead class="table-light">
+
            <tr>
                <th><?= $this->lang->line('sr_no') ?></th>
               <th><?= $this->lang->line('mineral_name') ?></th>
@@ -65,10 +70,10 @@
                 <td><?= $obj['packing_size']?></td>
                <td>
   <div class="d-flex gap-1">
-    <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Finish_goods/edit/<?php echo $obj['id']; ?>">
+    <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Finish_goods/edit/<?php echo $obj['id']; ?>">
       <i class="feather feather-edit-3"></i>
     </a>
-    <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>">
+    <a class="btn btn-icon avatar-text avatar-md" data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>">
       <i class="fa fa-trash"></i>
     </a>
   </div>

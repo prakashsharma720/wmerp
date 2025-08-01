@@ -1,19 +1,4 @@
-<?php if ($this->session->flashdata('success')): ?>
-	<div class="alert alert-success alert-dismissible">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-		<?php echo $this->session->flashdata('success'); ?>
-	</div>
-	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-	<div class="alert alert-error alert-dismissible ">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-		<?php echo $this->session->flashdata('failed'); ?>
-	</div>
-<?php endif; ?>
 
 <div class="nxl-content">
 	<div class="page-header">
@@ -32,7 +17,7 @@
 
 		<div class="page-header-right ms-auto">
 			<div class="page-header-right-items">
-
+  <?php $this->load->view('layout/alerts'); ?>
 			</div>
 
 			<!-- Mobile Toggle -->
@@ -45,7 +30,7 @@
 	</div>
 	
 
-	      	<div class="card-body p-3 bg-white">
+	      	<div class="card-body p-3 bg-white " style="position: relative; top:20px;left:5px;">
 		      	<div class="row">
 		      		<div class="col-md-6">
 		      			<?php  //echo $title; exit; ?>
@@ -110,7 +95,7 @@
 								<td><?= $i ?></td>
 								<td><?=$this ->lang->line('mineral_name')?></td>
 								<td><?= $HSN['hsn_code']?></td>
-								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/HSN/index/<?php echo $HSN['id'];?>"><i class="feather feather-edit-3"></i></a></td>
+								<td> <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/HSN/index/<?php echo $HSN['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>
