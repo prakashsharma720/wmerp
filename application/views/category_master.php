@@ -1,6 +1,6 @@
 
 
-<div class="nxl-content" style="background-color: #fff;">
+<div class="nxl-content" >
 
   <!-- Page Header -->
   <div class="page-header">
@@ -30,8 +30,8 @@
 <!-- Form & Table Section -->
 <div class="main-content">
   <div class="row">
-    <div class="col-lg-12">
-        <div class="card stretch stretch-full">
+    <div class="col-lg-12 bg-white">
+        <!-- <div class="card stretch stretch-full"> -->
           <div class="card-body pt-4 px-4">
             <div class="row">
               <!-- Form Section -->
@@ -69,9 +69,9 @@
               </div>
 
               <!-- Table Section -->
-              <div class="col-md-6">
+              <div class="col-md-6 ">
                 <h5><?= $this->lang->line('services_list') ?></h5>
-                <table id="example" class="table table-bordered table-striped w-100">
+                <table id="example" class="table table-bordered table-striped w-100 bg-white">
                   <thead>
                     <tr>
                       <th><?= $this->lang->line('sr_no') ?></th>

@@ -1561,13 +1561,18 @@ $lang['po_date'] = 'Дата на поръчката';
 $lang['supplier_details'] = 'Данни за доставчика';
 $lang['supplier_name'] = 'Име на доставчика';
 $lang['vendor_reference'] = 'Референция на доставчика';
-
+$lang['select_mineral'] = 'Изберете минерал';
+$lang['packing_type'] = 'Тип опаковка';
+$lang['linear'] = 'Линеен';
+$lang['non_linear'] = 'Нелинеен';
+$lang['finish_goods'] = 'Готова продукция'; // Bulgarian
 $lang['financial_details'] = 'Финансови данни';
 $lang['total_amount'] = 'Обща сума';
 $lang['discount_rupees'] = 'Отстъпка (₹)';
 $lang['discount_percent'] = 'Отстъпка (%)';
 $lang['gst'] = 'ДДС (₹)';
 $lang['grand_total'] = 'Крайна сума';
+$lang['lab_chemical'] = 'Лабораторен химикал';
 
 $lang['delivery_payment_terms'] = 'Условия за доставка и плащане';
 $lang['delivery_period'] = 'Период на доставка';

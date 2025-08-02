@@ -11,14 +11,16 @@
 	<div class="page-header">
 		<div class="page-header-left d-flex align-items-center">
 			<div class="page-header-title">
-				<h5 class="m-b-10"><?= $this->lang->line('building_material_master') ?></h5>
+				<h5 class="m-b-10"><?= $this->lang->line('building_material') ?></h5>
 			</div>
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
 					<a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
 						<?= $this->lang->line('home') ?>
 					</a>
+
 				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('building_material_master') ?>
 			</ul>
 		</div>
 
@@ -35,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="card-body p-3 bg-white"style="position:relative;top:15px;">
+	<div class="card-body p-3 bg-white"style="position:relative;top:15px; left:15px">
 		<div class="row">
 			<!-- Left Form -->
 			<div class="col-md-4">

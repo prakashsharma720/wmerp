@@ -2059,15 +2059,20 @@ $lang['discount_rupees'] = 'Discount (₹)';
 $lang['discount_percent'] = 'Discount (%)';
 $lang['gst'] = 'GST (₹)';
 $lang['grand_total'] = 'Grand Total';
+$lang['select_mineral'] = 'Select Mineral';
+$lang['packing_type'] = 'Packing Type';
 
 $lang['delivery_payment_terms'] = 'Delivery & Payment Terms';
 $lang['delivery_period'] = 'Delivery Period';
 $lang['payment_terms'] = 'Payment Terms';
 $lang['freight_status'] = 'Freight Status';
-
+$lang['linear'] = 'Linear';
+$lang['non_linear'] = 'Non-Linear';
+$lang['finish_goods'] = 'Finish Goods'; // English
 $lang['additional_info'] = 'Additional Info';
 $lang['status'] = 'Status';
 $lang['remarks'] = 'Remarks';
+$lang['lab_chemical'] = 'Lab Chemical';
 
 $lang['bank_details'] = 'Bank Details';
 $lang['bank_name'] = 'Bank Name';

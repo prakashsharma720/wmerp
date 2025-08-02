@@ -1,15 +1,14 @@
-
 <div class="nxl-content">
 	<div class="page-header mt-3 mb-4 px-3 d-flex justify-content-between align-items-center">
 		<div class="page-header-left d-flex align-items-center">
 			<div class="page-header-title">
-				<h5 class="m-b-10"><?= $this->lang->line('add_new_finished_good') ?></h5>
+				<h5 class="m-b-10"><?= $this->lang->line('finish_good') ?></h5>
 			</div>
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+				<li class="breadcrumb-item"><?= $this->lang->line('add_new_finished_good') ?>
 				</li>
 			</ul>
 		</div>
@@ -27,13 +26,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="main-content">
-			<div class="row">
-				<div class="col-lg-12">
-				<!-- /.card-body -->
-					<div class="card stretch stretch-full">
-						<div class="card card-primary card-outline">
-						<div class="card-body ">
+	
+     
+	<div class="main-content" >
+		<div class="row">
+			<div class="col-lg-12 ">
+				
+					<div class="card card-primary card-outlinep-4 mx-3 mt-2">
+						<div class="card-body" >
 							<div class="row">
 								<div class="col-md-12 ">
 									<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/add_new_fg">
@@ -44,14 +44,14 @@
 													autofocus readonly="readonly">
 												<input type="hidden" name="fg_code" value="<?php echo $fg_code; ?>">
 											</div>
-						
+
 											<div class="col-md-6 mb-3">
 												<label class="control-label"><?= $this->lang->line('grade_name') ?></label>
 												<input type="text" placeholder="<?= $this->lang->line('enter_grade_name') ?>" name="grade_name"
 													class="form-control" value="" required autofocus>
 											</div>
 										</div>
-						
+
 										<div class="row col-md-12 px-3">
 											<div class="col-md-6 mb-3">
 												<label class="control-label"> <?= $this->lang->line('mineral_name') ?></label>
@@ -79,7 +79,7 @@
 												<input type="text" placeholder="<?= $this->lang->line('enter_hsn_code') ?>" name="hsn_code"
 													class="form-control clear_hsn" value="" autocomplete="off" autofocus readonly="readonly">
 											</div>
-						
+
 										</div>
 										<span class="help-block"></span>
 										<div class="row col-md-12 px-3">
@@ -101,7 +101,7 @@
 														<option value="0"><?= $this->lang->line('no_result') ?></option>
 													<?php endif; ?>
 												</select>
-						
+
 											</div>
 											<div class="col-md-6">
 												<label class="control-label"><?= $this->lang->line('packing_type') ?> </label>
@@ -122,7 +122,7 @@
 													<?php endif; ?>
 												</select>
 											</div>
-						
+
 										</div>
 										<span class="help-block"></span>
 										<br>
@@ -146,7 +146,7 @@
 </div>
 
 
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {

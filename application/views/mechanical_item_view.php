@@ -23,7 +23,7 @@
 	<div class="page-header">
 		<div class="page-header-left d-flex align-items-center">
 			<div class="page-header-title">
-				<h5 class="m-b-10"><?= $this->lang->line('mechanical_items_master') ?></h5>
+				<h5 class="m-b-10"><?= $this->lang->line('mechanical_items') ?></h5>
 			</div>
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
@@ -31,7 +31,7 @@
 						<?= $this->lang->line('home') ?>
 					</a>
 				</li>
-				<li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?></li>
+				<li class="breadcrumb-item"><?= $this->lang->line('mechanical_items_master') ?></li>
 			</ul>
 		</div>
 
@@ -50,7 +50,7 @@
 	</div>
 
 	<div class="container card-white-box">
-		<div class="card-body p-3 bg-white" style="position:relative; top:15px;">
+		<div class="card-body p-3 bg-white" style="position:relative; top:15px; left:15px">
 			<div class="row">
 				<!-- Left Form Column -->
 				<div class="col-md-4">

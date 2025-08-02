@@ -24,13 +24,13 @@
 	<div class="page-header">
 		<div class="page-header-left d-flex align-items-center">
 			<div class="page-header-title">
-				<h5 class="m-b-10"><?= $this->lang->line('plant_and_machinery_master') ?></h5>
+				<h5 class="m-b-10"><?= $this->lang->line('plant_and_machinery') ?></h5>
 			</div>
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?> -->
+				<li class="breadcrumb-item"><?= $this->lang->line('plant_and_machinery_master') ?>
 				</li>
 			</ul>
 		</div>
@@ -50,7 +50,7 @@
 	</div>
 	
 
-	      	<div class="card-body p-3 bg-white" style="position: relative; top:15px">
+	      	<div class="card-body p-3 bg-white" style="position: relative; top:15px;left:15px">
 		      	<div class="row">
 		      		<div class="col-md-4">
 		      			<?php  //echo $title; exit; ?>
