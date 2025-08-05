@@ -14,8 +14,9 @@
 
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items">
-        <a class="btn btn-info" href="<?= base_url('index.php/Transporters/createXLS') ?>">
-          <?= $this->lang->line('export') ?>
+        
+        <a class="btn btn-icon btn-light-brand" href="<?= base_url('index.php/Transporters/createXLS') ?>">
+          <i class="feather feather-download "></i> 
         </a>
       </div>
       <div class="d-md-none d-flex align-items-center">
@@ -33,14 +34,12 @@
 
   
 
-      <div class="container card-white-box">
-
-          <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
-
-
-            <div class="col-sm-12">
-              <table class="table table-hover align-middle" id="proposalList">
-                <thead class="table-light">
+      <div class="container card-white-box " style="position: relative; top:35px">
+  <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
+        <thead class="table-light text-center bg-white">
+          
 
               <tr>
                 <th><?= $this->lang->line('name') ?></th>

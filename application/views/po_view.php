@@ -68,21 +68,20 @@
 </div>
 
 
-<div class="container card-white-box">
+<div class="container card-white-box" style="position: relative; top:33px">
 
-  <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
 
 
     <div class="col-sm-12">
-      <table class="table table-hover align-middle" id="proposalList">
-        <thead class="table-light">
+      <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+					<div class="table-responsive">
+						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+							<thead class="table-light">
+      <!-- <table class="table table-hover align-middle" id="proposalList">
+        <thead class="table-light"> -->
 
 
-          <!-- 
-    <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped"> -->
-          <!-- <thead> -->
+         
           <tr>
             <th><input type="checkbox" id="master"></th>
             <th><?= $this->lang->line('sr_no') ?> </th>
@@ -126,47 +125,47 @@
               <td><?php echo date('d-M-Y', strtotime($obj['transaction_date'])); ?></td>
               <td><?php echo $obj['grand_total']; ?> &#8377;</td>
               <td>
-  <div class="d-flex gap-2">
-    <!-- View Button (Outside Dropdown) -->
-    <a class="btn btn-icon avatar-text avatar-md"
-       data-bs-toggle="offcanvas"
-       data-bs-target="#ViewPO<?= $obj['id']; ?>"
-       title="View More">
-      <i class="feather feather-eye"></i>
-    </a>
+                <div class="d-flex gap-2">
+                  <!-- View Button (Outside Dropdown) -->
+                  <a class="btn btn-icon avatar-text avatar-md"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#ViewPO<?= $obj['id']; ?>"
+                    title="View More">
+                    <i class="feather feather-eye"></i>
+                  </a>
 
-    <!-- Dropdown Menu for Print, Edit, Delete -->
-    <div class="dropdown">
-      <a href="javascript:void(0)"
-         class="btn btn-icon avatar-text avatar-md"
-         data-bs-toggle="dropdown"
-         aria-expanded="false">
-        <i class="feather feather-more-horizontal"></i>
-      </a>
-      <ul class="dropdown-menu">
-        <li>
-          <a class="dropdown-item"
-             href="<?= base_url('index.php/Purchase_order/print/' . $obj['id']); ?>">
-            <i class="fa fa-print me-2"></i> <?= $this->lang->line('print') ?>
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item"
-             href="<?= base_url('index.php/Purchase_order/edit/' . $obj['id']); ?>">
-            <i class="feather feather-edit-3 me-2"></i> <?= $this->lang->line('edit') ?>
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item "
-             href="javascript:void(0);"
-             onclick="deletePO(<?= $obj['id'] ?>)">
-            <i class="feather feather-trash me-2"></i> <?= $this->lang->line('delete') ?>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</td>
+                  <!-- Dropdown Menu for Print, Edit, Delete -->
+                  <div class="dropdown">
+                    <a href="javascript:void(0)"
+                      class="btn btn-icon avatar-text avatar-md"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="feather feather-more-horizontal"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item"
+                          href="<?= base_url('index.php/Purchase_order/print/' . $obj['id']); ?>">
+                          <i class="fa fa-print me-2"></i> <?= $this->lang->line('print') ?>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item"
+                          href="<?= base_url('index.php/Purchase_order/edit/' . $obj['id']); ?>">
+                          <i class="feather feather-edit-3 me-2"></i> <?= $this->lang->line('edit') ?>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item "
+                          href="javascript:void(0);"
+                          onclick="deletePO(<?= $obj['id'] ?>)">
+                          <i class="feather feather-trash me-2"></i> <?= $this->lang->line('delete') ?>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </td>
 
 
 

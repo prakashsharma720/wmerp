@@ -1,6 +1,6 @@
 
 
-<div class="nxl-content" style="background-color: #fff;">
+<div class="nxl-content" >
 
   <!-- Page Header -->
   <div class="page-header">
@@ -28,10 +28,10 @@
   </div>
 
 <!-- Form & Table Section -->
-<div class="main-content">
+<div class="main-content " style="position:relative;left:15px;right:15px">
   <div class="row">
-    <div class="col-lg-12">
-        <div class="card stretch stretch-full">
+    <div class="col-lg-12 bg-white">
+        <!-- <div class="card stretch stretch-full"> -->
           <div class="card-body pt-4 px-4">
             <div class="row">
               <!-- Form Section -->
@@ -68,18 +68,20 @@
                 </form>
               </div>
 
-              <!-- Table Section -->
-              <div class="col-md-6">
-                <h5><?= $this->lang->line('services_list') ?></h5>
-                <table id="example" class="table table-bordered table-striped w-100">
-                  <thead>
-                    <tr>
-                      <th><?= $this->lang->line('sr_no') ?></th>
-                      <th><?= $this->lang->line('services') ?></th>
-                      <th><?= $this->lang->line('action') ?></th>
-                    </tr>
-                  </thead>
-                  <tbody>
+              <div class="col-md-6 bg-white">
+  <h5 style="background-color: white;"><?= $this->lang->line('services_list') ?></h5>
+
+  <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+        <thead class="table-light">
+          <tr>
+            <th style="background-color: white;"><?= $this->lang->line('sr_no') ?></th>
+            <th style="background-color: white;"><?= $this->lang->line('services') ?></th>
+            <th style="background-color: white;"><?= $this->lang->line('action') ?></th>
+          </tr>
+        </thead>
+        <tbody>
                     <?php $i = 1; foreach ($categories as $category): ?>
                       <tr>
                         <td><?= $i++ ?></td>

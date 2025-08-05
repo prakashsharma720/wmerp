@@ -30,8 +30,8 @@
 	</div>
 	
 
-	      	<div class="card-body p-3 bg-white" style="position: relative; top:15px;left:5px">
-		      	<div class="row">
+	      	<div class="card-body p-3 bg-white" style="position: relative; top:15px;left:15px">
+		      	<div class="row bg-white">
 		      		<div class="col-md-4">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
@@ -121,12 +121,13 @@
 				        </form>
 					</div>
 				 <!-- /form -->
-				<div class="col-md-8">
+				<div class="col-md-8 bg-white">
 					<h5> <?=$this->lang->line('protective_equipments_list')?></h5>
 
+					<div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
 					<div class="table-responsive">
-					<table id="example1" class="table table-bordered table-striped">
-						<thead>
+						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+							<thead class="table-light">
 							<tr>
 								<th> <?=$this ->lang ->line('sr_no')?>.</th>
 								<th> <?=$this ->lang ->line('name')?></th>

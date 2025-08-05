@@ -2,13 +2,13 @@
 	<div class="page-header">
 		<div class="page-header-left d-flex align-items-center">
 			<div class="page-header-title">
-				<h5 class="m-b-10"><?= $this->lang->line('department_master') ?></h5>
+				<h5 class="m-b-10"><?= $this->lang->line('department') ?></h5>
 			</div>
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+				<li class="breadcrumb-item"><?= $this->lang->line('department_master') ?>
 				</li>
 			</ul>
 		</div>
@@ -28,9 +28,9 @@
 	</div>
 
 
-	<div class="card-body p-3 bg-white" style="position: relative; top:15px ;left:5px" >
+	<div class="card-body p-3 bg-white" style="position: relative; top:15px ;left:15px" >
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6 bg-white">
 				<?php  //echo $title; exit; 
 				?>
 				<?php if (!empty($id)) { ?>
@@ -75,11 +75,14 @@
 						</form>
 			</div>
 			<!-- /form -->
+			 
+				
 			<div class="col-md-6">
 				<h5> <?= $this->lang->line('department_list') ?></h5>
-				<div class="table-responsive">
-					<table id="example1" class="table table-bordered table-striped">
-						<thead>
+				<div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+					<div class="table-responsive">
+						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+							<thead class="table-light">
 							<tr>
 								<th> <?= $this->lang->line('sr_no') ?>.</th>
 								<th> <?= $this->lang->line('department') ?></th>

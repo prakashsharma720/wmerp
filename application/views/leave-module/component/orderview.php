@@ -4,130 +4,89 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
-    <div class="offcanvas-body">
+    <div class="offcanvas-body" style="max-height: calc(100vh - 160px)" ;>
         <div class="row">
 
-            <!-- Supplier Profile Details -->
+
             <div class="col-12 mb-3 border-bottom pb-2">
-                <h5 class="fw-bold text-primary">Supplier Profile Details</h5>
+                <h5 class="fw-bold bg-light p-2">Supplier Profile Details</h5>
             </div>
+            <!-- <div class="offcanvas-body overflow-auto" style="max-height: calc(100vh - 160px);">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h5 class="fw-bold bg-light p-2">Order Details</h5>
+            </div> -->
 
             <?php
             $fields = [
-                ['name', 'supplier_name'],
-                ['email', 'email'],
-                ['contact_person', 'contact_person'],
-                ['mobile_no', 'mobile_no'],
-                ['supplier_code', 'supplier_code'],
-                ['supplier_type', 'supplier_type'],
-                ['category', 'category'],
-                ['approval_category', 'category_of_approval'],
-                ['registration_date', 'registration_date']
+                ['supplier_name', 'Supplier Name'],
+                ['contact_person', 'Contact Person'],
+                ['mobile_no', 'Mobile Number'],
+                ['email', 'Email'],
+                ['supplier_type', 'Supplier Type'],
+                ['category', 'Category'],
+                ['approval_category', 'Approval Category'],
+                ['supplier_code', 'Supplier Code'],
+                ['state', 'State'],
+                ['city', 'City'],
+                ['address', 'Address'],
+                ['website', 'Website'],
+                ['registration_date', 'Registration Date'],
+                ['date_of_evalution', 'Evaluation Date'],
+                ['date_of_approval', 'Date of Approval'],
             ];
-
-            foreach ($fields as [$labelKey, $dataKey]) {
+            foreach ($fields as [$key, $label]) {
                 echo '<div class="col-lg-6 mb-3">
-                        <label class="fw-bold text-dark">' . $this->lang->line($labelKey) . ':</label>
-                        <div>' . ($obj[$dataKey] ?? '-') . '</div>
+                        <label class="fw-bold text-dark">' . $label . ':</label>
+                        <div>' . ($obj[$key] ?? '-') . '</div>
                       </div>';
             }
             ?>
 
-            <!-- GST & Tax Details -->
-            <div class="col-12 mt-3 mb-2 border-top pt-3">
-                <h5 class="fw-bold text-primary">GST & Tax Details</h5>
+            <div class="col-12 mb-3">
+                <h5 class="fw-bold bg-light p-2">GST & Tax Details</h5>
             </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark"><?= $this->lang->line('gst_status') ?>:</label>
-                <div><?= $obj['gst_status'] ?? '-' ?></div>
-            </div>
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">GSTIN / URP:</label>
-                <div><?= $obj['gst_number'] ?? '-' ?></div>
-            </div>
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">PAN:</label>
-                <div><?= $obj['pan_number'] ?? '-' ?></div>
-            </div>
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">TAN:</label>
-                <div><?= $obj['tan_number'] ?? '-' ?></div>
-            </div>
-
-            <!-- Address Details -->
-            <div class="col-12 mt-3 mb-2 border-top pt-3">
-                <h5 class="fw-bold text-primary">Address Details</h5>
-            </div>
+            <?php
+            $gstFields = [
+                ['gst_status', 'GST Status'],
+                ['gst_number', 'GSTIN / URP'],
+                ['pan_number', 'PAN'],
+                ['tan_number', 'TAN']
+            ];
+            foreach ($gstFields as [$key, $label]) {
+                echo '<div class="col-lg-6 mb-3">
+                        <label class="fw-bold text-dark">' . $label . ':</label>
+                        <div>' . ($obj[$key] ?? '-') . '</div>
+                      </div>';
+            }
+            ?>
 
             <div class="col-12 mb-3">
-                <label class="fw-bold text-dark"><?= $this->lang->line('address') ?>:</label>
-                <div><?= $obj['supplier_address'] ?? '-' ?></div>
+                <h5 class="fw-bold bg-light p-2">Bank Details</h5>
             </div>
 
-            <div class="col-lg-4 mb-3">
-                <label class="fw-bold text-dark"><?= $this->lang->line('country') ?>:</label>
-                <div><?= $obj['country'] ?? '-' ?></div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <label class="fw-bold text-dark"><?= $this->lang->line('state') ?>:</label>
-                <div><?= $obj['state'] ?? '-' ?></div>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <label class="fw-bold text-dark"><?= $this->lang->line('city') ?>:</label>
-                <div><?= $obj['city'] ?? '-' ?></div>
-            </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark"><?= $this->lang->line('website') ?>:</label>
-                <div><?= $obj['website'] ?? '-' ?></div>
-            </div>
-
-            <!-- Bank Details -->
-            <div class="col-12 mt-3 mb-2 border-top pt-3">
-                <h5 class="fw-bold text-primary"><?= $this->lang->line('bank_details') ?></h5>
-            </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">Bank Name:</label>
-                <div><?= $obj['bank_name'] ?? '-' ?></div>
-            </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">Branch Address:</label>
-                <div><?= $obj['branch_address'] ?? '-' ?></div>
-            </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">IFSC Code:</label>
-                <div><?= $obj['ifsc_code'] ?? '-' ?></div>
-            </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">Account Number:</label>
-                <div><?= $obj['account_number'] ?? '-' ?></div>
-            </div>
-
-            <!-- Approval Timeline -->
-            <div class="col-12 mt-3 mb-2 border-top pt-3">
-                <h5 class="fw-bold text-primary"><?= $this->lang->line('approval_timeline') ?></h5>
-            </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">Date of Approval:</label>
-                <div><?= $obj['date_of_approval'] ?? '-' ?></div>
-            </div>
-
-            <div class="col-lg-6 mb-3">
-                <label class="fw-bold text-dark">Next Evaluation:</label>
-                <div><?= $obj['date_of_evalution'] ?? '-' ?></div>
-            </div>
+            <?php
+            $bankFields = [
+                ['account_holder_name', 'Account Holder Name'],
+                ['bank_name', 'Bank Name'],
+                ['account_number', 'Account Number'],
+                ['ifsc_code', 'IFSC Code'],
+                ['branch_address', 'Branch Address'],
+                ['account_type', 'Account Type'],
+                ['upi_id', 'UPI ID']
+            ];
+            foreach ($bankFields as [$key, $label]) {
+                echo '<div class="col-lg-6 mb-3">
+                        <label class="fw-bold text-dark">' . $label . ':</label>
+                        <div>' . ($obj[$key] ?? '-') . '</div>
+                      </div>';
+            }
+            ?>
 
         </div>
     </div>
 
-    <div class="px-4 d-flex justify-content-end ht-80 border-top">
-        <button class="btn btn-danger" data-bs-dismiss="offcanvas"><?= $this->lang->line('close') ?></button>
+    <div class="px-4 gap-2 d-flex align-items-center ht-80 border border-end-0 border-gray-2">
+        <a href="javascript:void(0);" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">Close</a>
     </div>
-    
 </div>

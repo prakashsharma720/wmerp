@@ -2059,15 +2059,20 @@ $lang['discount_rupees'] = 'Discount (₹)';
 $lang['discount_percent'] = 'Discount (%)';
 $lang['gst'] = 'GST (₹)';
 $lang['grand_total'] = 'Grand Total';
+$lang['select_mineral'] = 'Select Mineral';
+$lang['packing_type'] = 'Packing Type';
 
 $lang['delivery_payment_terms'] = 'Delivery & Payment Terms';
 $lang['delivery_period'] = 'Delivery Period';
 $lang['payment_terms'] = 'Payment Terms';
 $lang['freight_status'] = 'Freight Status';
-
+$lang['linear'] = 'Linear';
+$lang['non_linear'] = 'Non-Linear';
+$lang['finish_goods'] = 'Finish Goods'; // English
 $lang['additional_info'] = 'Additional Info';
 $lang['status'] = 'Status';
 $lang['remarks'] = 'Remarks';
+$lang['lab_chemical'] = 'Lab Chemical';
 
 $lang['bank_details'] = 'Bank Details';
 $lang['bank_name'] = 'Bank Name';
@@ -3740,9 +3745,10 @@ $lang['add'] = 'Add';
 $lang['view_list'] = 'View List';
 
 $lang['grids'] = 'Grids';
+$lang['mechanical_item_list'] = 'Mechanical Item List';
 
 $lang['categories'] = 'Categories';
-
+$lang['plant_and_machinery(list)'] = 'Plant and Machinery (List)'; // English
 $lang['raw_material'] = 'Raw Material';
 $lang['packing_material'] = 'Packaging Material';
 $lang['lab_chemicals'] = 'Laboratory Chemicals';
@@ -3756,7 +3762,8 @@ $lang['building_materials'] = 'Building Materials';
 $lang['mechanical_items'] = 'Mechanical Items';
 $lang['general_plant_chemicals'] = 'General Plant Chemicals';
 $lang['protective_equipments'] = 'Protective Equipment';
-
+$lang['edit_rm_code'] = 'Edit RM Code';
+$lang['sub_category_list'] = 'Sub Category List';
 $lang['grades'] = 'Grades';
 $lang['units'] = 'Units';
 $lang['sub_categories'] = 'Sub-Categories';

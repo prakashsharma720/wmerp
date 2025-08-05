@@ -10,7 +10,7 @@
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
+				<li class="breadcrumb-item"><?= $this->lang->line('hsn_master') ?>
 				</li>
 			</ul>
 		</div>
@@ -30,9 +30,9 @@
 	</div>
 	
 
-	      	<div class="card-body p-3 bg-white " style="position: relative; top:20px;left:5px;">
+	      	<div class="card-body p-3 bg-white " style="position: relative; top:20px;left:20px;">
 		      	<div class="row">
-		      		<div class="col-md-6">
+		      		<div class="col-md-6 bg-white">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
 				    		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/HSN/editHSN/<?= $id ?>">
@@ -78,10 +78,13 @@
 					</div>
 				 <!-- /form -->
 				<div class="col-md-6">
-				  <div class="table-responsive">
+				  
 					<h5> <?= $this->lang->line('hsn_list'); ?></h5>
-					<table id="example1" class="table table-bordered table-striped">
-						<thead>
+					
+				<div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+					<div class="table-responsive">
+						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+							<thead class="table-light">
 							<tr>
 								<th> <?=$this ->lang->line('sr_no')?>.</th>
 								<th><?=$this ->lang->line('mineral_name')?></th>

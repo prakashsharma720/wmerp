@@ -18,9 +18,7 @@
 			<div class="page-header-right-items">
 				<?php $this->load->view('layout/alerts'); ?>
 				<!-- Filter Button -->
-				<button class="btn btn-icon avatar-text avatar-md" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="false" aria-controls="filterFormWrapper">
-					<i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
-				</button>
+				
 
 				</form>
 			</div>
@@ -39,10 +37,8 @@
 
 
 <!-- Filter Form Wrapper -->
-<div class="collapse mt-3" id="filterFormWrapper">
 
-	<form method="get" id="filterForm">
-		<div class="card-body ">
+		<div class="card-body p-3 ">
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Purchase_order/add_new_po">
 				<!-- <input type="hidden" name="req_id" value="<?= $requisitions['0']['id'] ?>"> -->
 				<div class="form-group p-3 bg-white">

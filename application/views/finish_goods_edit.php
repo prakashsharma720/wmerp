@@ -32,7 +32,7 @@
 
 
 
-	<div class="card-body p-3 bg-white" style="position:relative;top:15px">
+	<div class="card-body p-3 bg-white" style="position:relative;top:15px;left:15px">
 		<div class="row">
 			<div class="col-md-12">
 				<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/editFG/<?= $id ?>">

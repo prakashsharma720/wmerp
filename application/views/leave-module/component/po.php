@@ -6,12 +6,12 @@
   </div>
 
   <!-- Scrollable content -->
-  <div class="offcanvas-body scrollable-offcanvas px-4">
+  <div class="offcanvas-body scrollable-offcanvas px-4 ">
     <div class="row">
 
       <!-- PO Details -->
-      <div class="col-12 mb-3 border-bottom pb-2">
-        <h5 class="fw-bold text-primary"><?= $this->lang->line('po_details') ?></h5>
+      <div class="col-12 mb-3 border-bottom pb-2 bg-light">
+        <h5 class="fw-bold text-black"><?= $this->lang->line('po_details') ?></h5>
       </div>
 
       <div class="col-lg-6 mb-3">
@@ -30,8 +30,8 @@
       </div>
 
       <!-- Supplier Details -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2">
-        <h5 class="fw-bold text-primary"><?= $this->lang->line('supplier_details') ?></h5>
+      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
+        <h5 class="fw-bold text-black bg-light "><?= $this->lang->line('supplier_details') ?></h5>
       </div>
 
       <div class="col-lg-6 mb-3">
@@ -45,8 +45,8 @@
       </div>
 
       <!-- Financial Details -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2">
-        <h5 class="fw-bold text-primary"><?= $this->lang->line('financial_details') ?></h5>
+      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
+        <h5 class="fw-bold text-black"><?= $this->lang->line('financial_details') ?></h5>
       </div>
 
       <div class="col-lg-6 mb-3">
@@ -75,8 +75,8 @@
       </div>
 
       <!-- Delivery & Terms -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2">
-        <h5 class="fw-bold text-primary"><?= $this->lang->line('delivery_payment_terms') ?></h5>
+      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
+        <h5 class="fw-bold text-black"><?= $this->lang->line('delivery_payment_terms') ?></h5>
       </div>
 
       <div class="col-lg-6 mb-3">
@@ -95,8 +95,8 @@
       </div>
 
       <!-- Additional Info -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2">
-        <h5 class="fw-bold text-primary"><?= $this->lang->line('additional_info') ?></h5>
+      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
+        <h5 class="fw-bold text-black"><?= $this->lang->line('additional_info') ?></h5>
       </div>
 
       <div class="col-lg-6 mb-3">
@@ -110,8 +110,8 @@
       </div>
 
       <!-- Bank Details -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2">
-        <h5 class="fw-bold text-primary"><?= $this->lang->line('bank_details') ?></h5>
+      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
+        <h5 class="fw-bold text-black"><?= $this->lang->line('bank_details') ?></h5>
       </div>
 
       <div class="col-lg-6 mb-3">
@@ -128,9 +128,9 @@
   </div> <!-- /offcanvas-body -->
 
   <!-- Footer -->
-  <div class="px-4 d-flex justify-content-end ht-80 border-top align-items-center">
-    <button class="btn btn-danger" data-bs-dismiss="offcanvas"><?= $this->lang->line('close') ?></button>
-  </div>
+  <div class="px-4 gap-2 d-flex align-items-center ht-80 border border-end-0 border-gray-2">
+        <a href="javascript:void(0);" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">Close</a>
+    </div>
 </div>
 
 <!-- Custom CSS (add to your CSS file or <style> tag) -->

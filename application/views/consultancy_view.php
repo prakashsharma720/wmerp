@@ -1,24 +1,27 @@
-
+<!-- Page Content -->
 <div class="nxl-content">
+	<!-- Page Header -->
 	<div class="page-header">
 		<div class="page-header-left d-flex align-items-center">
 			<div class="page-header-title">
-				<h5 class="m-b-10"><?= $this->lang->line('consultancy_master') ?></h5>
+				<h5 class="m-b-10"><?= $this->lang->line('consultancy') ?></h5>
 			</div>
 			<ul class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+					<a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+						<?= $this->lang->line('home') ?>
+					</a>
 				</li>
-				<li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?>
-				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('consultancy_master') ?></li>
 			</ul>
 		</div>
-
-		<div class="page-header-right ms-auto">
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+     <div class="page-header-right ms-auto">
 			<div class="page-header-right-items">
-<?php $this->load->view('layout/alerts'); ?>
+				<?php $this->load->view('layout/alerts'); ?>
 			</div>
-
 			<!-- Mobile Toggle -->
 			<div class="d-md-none d-flex align-items-center">
 				<a href="javascript:void(0)" class="page-header-right-open-toggle">
@@ -27,15 +30,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="main-content">
+  <div class="main-content">
 		<div class="card card-primary card-outline">
-			<div class="card-body">
-				<div class="row">
-					<div class="col-lg-12">
-						<label class="control-label"><?= $this->lang->line('category') ?></label>
-						<select name="categories_id" class="form-control select2 " required="required">
-
-		<div class="card-body p-3">
+	      	<div class="card-body">
 		      	<div class="row">
 		      		<div class="col-md-4">
 		      			<?php  //echo $title; exit; ?>
@@ -46,7 +43,7 @@
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Consultancy/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				        <?=$this ->lang ->line('consultancy_code')?>	 :  <label class="control-label"> <?= $service_code_view ?></label>
+				        	Consultancy Code :  <label class="control-label"> <?= $service_code_view ?></label>
 				        	<div class="row col-md-12">
 					                <?php
 					                 if ($categories): ?> 
@@ -58,7 +55,7 @@
 
 						                        	<input type="hidden" name="code" value="<?= $service_code_view ?>" >
 
-						                        <label class="control-label"> <?=$this ->lang ->line('consultancy')?> <?=$this ->lang ->line('name')?></label>
+						                        <label class="control-label"> <?= $value['category_name'] ?> <?=$this ->lang ->line('name')?></label>
 						                     
 						                        <?php endif;   ?>
 					                    <?php  endforeach;  ?>
@@ -100,8 +97,10 @@
 				<div class="col-md-8">
 					<h5> <?=$this ->lang ->line('consultancy')?></h5>
 					<div class="table-responsive">
-					<table id="example1" class="table table-bordered table-striped">
-						<thead>
+					 <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+					<div class="table-responsive">
+						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+							<thead class="table-light">
 							<tr>
 								<th> <?=$this ->lang ->line('sr_no')?>.</th>
 								<th> <?=$this ->lang ->line('name')?></th>
@@ -120,7 +119,7 @@
 								<td><?= $consultancy['code'] ?></td>
 								
 								<td><?= $consultancy['description'] ?></td>
-								<td> <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Consultancy/index/<?php echo $consultancy['id'];?>"><i class="feather feather-edit-3"></i></a></td>
+								<td> <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Consultancy/index/<?php echo $consultancy['id'];?>"><i class="feather feather-edit-3 "></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>
@@ -130,4 +129,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>+

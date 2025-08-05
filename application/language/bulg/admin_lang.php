@@ -1557,17 +1557,26 @@ $lang['po_number'] = 'Номер на поръчката';
 $lang['order_type'] = 'Тип поръчка';
 $lang['purchase_indent'] = 'Заявка за покупка';
 $lang['po_date'] = 'Дата на поръчката';
+$lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
+$lang['mechanical_item_list'] = 'Списък с механични артикули';
 
+$lang['sub_category_list'] = 'Списък на подкатегорията';
 $lang['supplier_details'] = 'Данни за доставчика';
 $lang['supplier_name'] = 'Име на доставчика';
 $lang['vendor_reference'] = 'Референция на доставчика';
-
+$lang['select_mineral'] = 'Изберете минерал';
+$lang['packing_type'] = 'Тип опаковка';
+$lang['linear'] = 'Линеен';
+$lang['non_linear'] = 'Нелинеен';
+$lang['finish_goods'] = 'Готова продукция'; // Bulgarian
 $lang['financial_details'] = 'Финансови данни';
 $lang['total_amount'] = 'Обща сума';
 $lang['discount_rupees'] = 'Отстъпка (₹)';
 $lang['discount_percent'] = 'Отстъпка (%)';
 $lang['gst'] = 'ДДС (₹)';
 $lang['grand_total'] = 'Крайна сума';
+$lang['lab_chemical'] = 'Лабораторен химикал';
+$lang['edit_rm_code'] = 'Редактиране на RM код';
 
 $lang['delivery_payment_terms'] = 'Условия за доставка и плащане';
 $lang['delivery_period'] = 'Период на доставка';
