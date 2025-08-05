@@ -43,7 +43,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Consultancy/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				        	Consultancy Code :  <label class="control-label"> <?= $service_code_view ?></label>
+							<div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; display: inline-block;">
+    <strong> Consultancy Code:  </strong>
+    <label class="control-label"><?= $service_code_view ?> </label>
+								</div>
+				        	
 				        	<div class="row col-md-12 mt-2">
 					                <?php
 					                 if ($categories): ?> 

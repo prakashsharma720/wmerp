@@ -50,9 +50,12 @@
 					<form class="form-horizontal" method="post" action="<?= base_url('index.php/Building_materials/add_newPM') ?>">
 				<?php } ?>
 
-					<div class="form-group mt-2">
-						<?= $this->lang->line('new_material_code') ?> :
-						<label class="control-label"><?= $bm_code_view ?></label>
+					<div class="form-group ">
+						<div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; display: inline-block;">
+    <strong> <?= $this->lang->line('new_material_code') ?> :   </strong>
+    <label class="control-label"><?= $bm_code_view ?> </label>
+								</div>
+						
 						<input type="hidden" name="code" value="<?= $bm_code_view ?>">
 					</div>
 

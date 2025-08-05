@@ -41,7 +41,11 @@
                         <?php endif; ?>
 
                             <div class="form-group">
-                                <?= $this->lang->line('new_lab_chemical_code') ?> : <label class="control-label"> <?= $code_view ?></label>
+                                <div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; display: inline-block;">
+    <strong><?= $this->lang->line('new_lab_chemical_code') ?>:</strong>
+    <label class="control-label"> <?= $code_view ?></label>
+								</div>
+				        
 
                                 <div class="row col-md-12">
                                     <?php if ($categories): ?>

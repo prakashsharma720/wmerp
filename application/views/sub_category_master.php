@@ -10,7 +10,7 @@
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<li class="breadcrumb-item"><?= $this->lang->line('sub_category_master') ?>
+				<li class="breadcrumb-item"><?= $this->lang->line('view_list') ?>
 				</li>
 			</ul>
 		</div>
@@ -34,7 +34,7 @@
 		<div class="card card-primary card-outline">
 	      	<div class="card-body">
 		      	<div class="row">
-		      		<div class="col-md-6">
+		      		<div class="col-md-4">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
 				    		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Sub_category/editsub_category/<?= $id ?>">
@@ -44,7 +44,7 @@
 				    			<?php } ?>
 				        <div class="form-group">
 						<div class="row col-md-12 mt-2">
-							<div class="col-md-8 col-sm-8 ">
+							<div class="col-md-12 col-sm-12 ">
 								<label class="control-label"> <?=$this ->lang ->line('category')?></label>
 								<select name="categories_id" class="form-control select2 " >
 										<?php
@@ -66,7 +66,7 @@
 					        </div>
 					        <span class="help-block"></span>
 				        	<div class="row col-md-12 mt-2">
-				        		<div class="col-md-8 col-sm-8 ">
+				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"><?=$this ->lang ->line('sub_category_name')?></label>
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_sub_category_name')?>" name="sub_category_name" class="form-control" value="<?= $sub_category_name?>" required autofocus>
 					            </div>
@@ -74,7 +74,7 @@
 							
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12 mt-2">
-				        		<div class="col-md-8 col-sm-8 ">
+				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"><?=$this ->lang ->line('status')?></label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"><?=$this ->lang ->line('active')?></option>
@@ -84,7 +84,7 @@
 				        	</div>
 				        <?php } ?>
 				           <div class="row col-md-12 mt-2">
-					            <div class="col-md-8 col-sm-8 ">
+					            <div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('name')?></label><br>
 					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang ->line('save')?></button>
 					            </div>
@@ -94,7 +94,7 @@
 					</div>
 				 <!-- /form -->
 				
-				<div class="col-md-6">
+				<div class="col-md-8">
 				<h5><?= $this->lang->line('sub_category_list') ?></h5>
 				<div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
 					<div class="table-responsive">

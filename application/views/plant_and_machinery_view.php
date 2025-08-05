@@ -63,7 +63,11 @@
 							<form class="form-horizontal mt-2" role="form" method="post" action="<?php echo base_url(); ?>index.php/Plant_and_machinery/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				        		New P & M/c  Code :  <label class="control-label"> <?= $pt_code_view ?></label>
+							 <div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; display: inline-block;">
+    <strong> New P & M/c  Code:</strong>
+    <label class="control-label"> <?= $pt_code_view ?></label>
+								</div>
+				        		
 				        	<div class="row col-md-12 mt-2">					            	
 					                <?php
 					                 if ($categories): ?> 

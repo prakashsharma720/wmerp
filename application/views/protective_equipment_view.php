@@ -42,8 +42,12 @@
 				    			<?php } else { ?>
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Protective_equipments/add_newPM">
 				    			<?php } ?>
-				        <div class="form-group mt-2">
-				       <?=$this ->lang ->line('equipment_code')?> :  <label class="control-label"> <?= $bm_code_view ?></label>
+				        <div class="form-group ">
+							<div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; display: inline-block;">
+                                        <strong> <?= $this->lang->line('equipment_code') ?> : </strong>
+                                        <label class="control-label"><?= $bm_code_view ?> </label>
+                                    </div>
+				      
 				       <input type="hidden" name="code" value="<?= $bm_code_view ?>" > 
 				        	<div class="row col-md-12 mt-2">
 					                <?php

@@ -10,7 +10,7 @@
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<li class="breadcrumb-item"><?= $this->lang->line('hsn_master') ?>
+				<li class="breadcrumb-item"><?= $this->lang->line('view_list') ?>
 				</li>
 			</ul>
 		</div>
@@ -34,7 +34,7 @@
 		<div class="card card-primary card-outline">
 	      	<div class="card-body">
 		      	<div class="row">
-		      		<div class="col-md-6 bg-white">
+		      		<div class="col-md-4 bg-white">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
 				    		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/HSN/editHSN/<?= $id ?>">
@@ -44,7 +44,7 @@
 				    			<?php } ?>
 				        <div class="form-group">
 						<div class="row col-md-12 mt-2">
-							<div class="col-md-8 col-sm-8 ">
+							<div class="col-md-12 col-sm-12 ">
 								<label class="control-label"> <?=$this ->lang->line('mineral_name')?></label>
 						<input type="text" placeholder="<?=$this ->lang ->line('enter_mineral_name')?>" name="mineral_name" class="form-control" value="<?= $mineral_name?>" required autofocus>
 
@@ -52,7 +52,7 @@
 					        </div>
 					        <span class="help-block"></span>
 				        	<div class="row col-md-12 mt-2">
-				        		<div class="col-md-8 col-sm-8 ">
+				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"><?=$this ->lang->line('hsn_code')?></label>
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_hsn_code')?>" name="hsn_code" class="form-control" value="<?= $hsn_code?>" required autofocus>
 					            </div>
@@ -60,7 +60,7 @@
 							
 					        <?php if(!empty($id)) { ?>
 				           <div class="row col-md-12 mt-2">
-				        		<div class="col-md-8 col-sm-8 ">
+				        		<div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label"><?=$this ->lang->line('status')?></label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"> <?=$this ->lang->line('active')?></option>
@@ -70,7 +70,7 @@
 				        	</div>
 				        <?php } ?>
 				           <div class="row col-md-12 mt-2">
-					            <div class="col-md-8 col-sm-8 ">
+					            <div class="col-md-12 col-sm-12 ">
 					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
 					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('save')?></button>
 					            </div>
@@ -79,7 +79,7 @@
 				        </form>
 					</div>
 				 <!-- /form -->
-				<div class="col-md-6">
+				<div class="col-md-8">
 				  
 					<h5> <?= $this->lang->line('hsn_list'); ?></h5>
 					
