@@ -13,10 +13,10 @@
 
     <div class="page-header-right ms-auto d-flex align-items-center">
       <!-- Filter Button -->
-        <?php $this->load->view('layout/alerts'); ?>
+      <?php $this->load->view('layout/alerts'); ?>
       <button
         id="toggleFilter"
-        class="btn btn-icon avatar-text avatar-md"
+        class="btn btn-icon btn-light-brand"
         type="button">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
@@ -29,7 +29,9 @@
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php }
         } ?>
-        <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
+        <button type="submit" class="btn btn-icon btn-light-brand">
+          <i class="feather feather-download "></i>
+        </button>
       </form>
     </div>
   </div>
@@ -92,16 +94,18 @@
   </div>
 
   <!-- TABLE SECTION -->
-  
-            <div class="container card-white-box">
- 
-  <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+
+  <div class="container card-white-box" style="position:relative;top:35px">
+
+    <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
 
 
-    <div class="col-sm-12">
-      <table class="table table-hover align-middle" id="proposalList">
-        <thead class="table-light">
-              <tr>
+      <div class="col-sm-12">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
+            <thead class="table-light text-center bg-white">
+              <tr style="background-color:white">
+
                 <th><?= $this->lang->line('name') ?></th>
                 <th><?= $this->lang->line('registration_date') ?></th>
                 <th><?= $this->lang->line('contact_person') ?></th>

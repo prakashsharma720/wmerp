@@ -19,7 +19,7 @@
     <div class="d-flex gap-2">
        <?php $this->load->view('layout/alerts'); ?>
       <!-- Filter Button -->
-      <button class="btn btn-icon avatar-text avatar-md" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper">
+      <button class="btn btn-icon btn-light-brand" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
 
@@ -28,7 +28,9 @@
         <?php if (!empty($conditions)): foreach ($conditions as $key => $value): ?>
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php endforeach; endif; ?>
-        <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+          <button type="submit" class="btn btn-icon btn-light-brand">
+          <i class="feather feather-download "></i>
+        </button>
       </form>
     </div>
 

@@ -14,8 +14,10 @@
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items d-flex">
         <?php $this->load->view('layout/alerts'); ?>
+
+
         <!-- Filter Button -->
-        <button class="btn btn-icon avatar-text avatar-md" type="button"
+        <button class="btn btn-icon btn-light-brand" type="button"
           data-bs-toggle="collapse" data-bs-target="#filterFormWrapper"
           aria-expanded="false" aria-controls="filterFormWrapper">
           <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
@@ -28,7 +30,10 @@
               <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
           <?php endforeach;
           } ?>
-          <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+          <!-- <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button> -->
+          <button type="submit" class="btn btn-icon btn-light-brand">
+            <i class="feather feather-download "></i>
+          </button>
         </form>
 
       </div>
@@ -49,131 +54,128 @@
   ?>
 
   <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-body">
 
-        <!-- Filter Form Collapse -->
-        <div class="collapse" id="filterFormWrapper">
-          <form method="get" id="filterForm">
-            <div class="row">
-              <div class="col-md-4">
-                <label class="control-label"><?= $this->lang->line('supplier_category') ?> <span class="required">*</span></label>
-                <select name="categories_id" class="form-control select2 category">
-                  <option value="0"><?= $this->lang->line('select_category') ?></option>
-                  <?php if ($categories): foreach ($categories as $value): ?>
-                      <option value="<?= $value['id'] ?>" <?= ($value['id'] == $current[0]->categories_id) ? 'selected' : '' ?>>
-                        <?= $value['category_name'] ?>
-                      </option>
-                    <?php endforeach;
-                  else: ?>
-                    <option value="0"><?= $this->lang->line('no_result') ?></option>
-                  <?php endif; ?>
-                </select>
-              </div>
+    <div class="card-body">
 
-              <div class="col-md-4">
-                <label class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
-                <select name="supplier_id" class="form-control select2 suppliers">
-                  <option value="0"><?= $this->lang->line('select_supplier') ?></option>
-                  <?php if ($all_suppliers): foreach ($all_suppliers as $value): ?>
-                      <option value="<?= $value['id'] ?>" <?= ($value['id'] == $supplier_id) ? 'selected' : '' ?>>
-                        <?= $value['supplier_name'] ?>
-                      </option>
-                    <?php endforeach;
-                  else: ?>
-                    <option value="0"><?= $this->lang->line('no_result') ?></option>
-                  <?php endif; ?>
-                </select>
-              </div>
-
-              <div class="col-md-4">
-                <label class="control-label"><?= $this->lang->line('category_of_approval') ?></label>
-                <?php
-                $app_cat = [
-                  'No' => 'Select Option',
-                  'A' => 'A',
-                  'B' => 'B',
-                  'C' => 'C'
-                ];
-                echo form_dropdown('category_of_approval', $app_cat, $category_of_approval ?? '', ['class' => 'form-control']);
-                ?>
-              </div>
+      <!-- Filter Form Collapse -->
+      <div class="collapse" id="filterFormWrapper">
+        <form method="get" id="filterForm">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="control-label"><?= $this->lang->line('supplier_category') ?> <span class="required">*</span></label>
+              <select name="categories_id" class="form-control select2 category">
+                <option value="0"><?= $this->lang->line('select_category') ?></option>
+                <?php if ($categories): foreach ($categories as $value): ?>
+                    <option value="<?= $value['id'] ?>" <?= ($value['id'] == $current[0]->categories_id) ? 'selected' : '' ?>>
+                      <?= $value['category_name'] ?>
+                    </option>
+                  <?php endforeach;
+                else: ?>
+                  <option value="0"><?= $this->lang->line('no_result') ?></option>
+                <?php endif; ?>
+              </select>
             </div>
 
-            <div class="row mt-2">
-              <div class="col-md-4">
-                <label class="control-label"><?= $this->lang->line('from_date') ?></label>
-                <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
-              </div>
-              <div class="col-md-4">
-                <label class="control-label"><?= $this->lang->line('upto_date') ?></label>
-                <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
-              </div>
-              <div class="col-md-4 d-flex align-items-end">
-                <input type="submit" class="btn btn-primary me-2" value="<?= $this->lang->line('search') ?>">
-                <a href="<?= $data[0] ?>" class="btn btn-danger"><?= $this->lang->line('reset') ?></a>
-              </div>
+            <div class="col-md-4">
+              <label class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
+              <select name="supplier_id" class="form-control select2 suppliers">
+                <option value="0"><?= $this->lang->line('select_supplier') ?></option>
+                <?php if ($all_suppliers): foreach ($all_suppliers as $value): ?>
+                    <option value="<?= $value['id'] ?>" <?= ($value['id'] == $supplier_id) ? 'selected' : '' ?>>
+                      <?= $value['supplier_name'] ?>
+                    </option>
+                  <?php endforeach;
+                else: ?>
+                  <option value="0"><?= $this->lang->line('no_result') ?></option>
+                <?php endif; ?>
+              </select>
             </div>
-          </form>
-        </div>
 
-        
-        <div class="container card-white-box">
+            <div class="col-md-4">
+              <label class="control-label"><?= $this->lang->line('category_of_approval') ?></label>
+              <?php
+              $app_cat = [
+                'No' => 'Select Option',
+                'A' => 'A',
+                'B' => 'B',
+                'C' => 'C'
+              ];
+              echo form_dropdown('category_of_approval', $app_cat, $category_of_approval ?? '', ['class' => 'form-control']);
+              ?>
+            </div>
+          </div>
 
-          <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+          <div class="row mt-2">
+            <div class="col-md-4">
+              <label class="control-label"><?= $this->lang->line('from_date') ?></label>
+              <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+            </div>
+            <div class="col-md-4">
+              <label class="control-label"><?= $this->lang->line('upto_date') ?></label>
+              <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+              <input type="submit" class="btn btn-primary me-2" value="<?= $this->lang->line('search') ?>">
+              <a href="<?= $data[0] ?>" class="btn btn-danger"><?= $this->lang->line('reset') ?></a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container card-white-box " style="position: relative; top:35px">
+        <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
+              <thead class="table-light text-center bg-white">
+                <tr style="background-color:white">
 
 
-            <div class="col-sm-12">
-              <table class="table table-hover align-middle" id="proposalList">
-                <thead class="table-light">
 
-
+                  <th><?= $this->lang->line('name') ?></th>
+                  <th><?= $this->lang->line('registration_date') ?></th>
+                  <th><?= $this->lang->line('contact_person') ?></th>
+                  <th><?= $this->lang->line('email') ?></th>
+                  <th><?= $this->lang->line('mobile_no') ?></th>
+                  <th><?= $this->lang->line('website') ?></th>
+                  <th><?= $this->lang->line('category') ?></th>
+                  <th><?= $this->lang->line('approval_category') ?></th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($suppliers as $obj): ?>
                   <tr>
-                    <th><?= $this->lang->line('name') ?></th>
-                    <th><?= $this->lang->line('registration_date') ?></th>
-                    <th><?= $this->lang->line('contact_person') ?></th>
-                    <th><?= $this->lang->line('email') ?></th>
-                    <th><?= $this->lang->line('mobile_no') ?></th>
-                    <th><?= $this->lang->line('website') ?></th>
-                    <th><?= $this->lang->line('category') ?></th>
-                    <th><?= $this->lang->line('approval_category') ?></th>
+                    <td><?= $obj['supplier_name'] . ' (' . $obj['vendor_code'] . ')' ?></td>
+                    <td><?= date('d-M-Y', strtotime($obj['reg_date'])) ?></td>
+                    <td><?= $obj['contact_person'] ?></td>
+                    <td><?= $obj['email'] ?></td>
+                    <td><?= $obj['mobile_no'] ?></td>
+                    <td><?= $obj['website'] ?></td>
+                    <td><?= $obj['category'] ?></td>
+                    <td><?= $obj['category_of_approval'] ?></td>
                   </tr>
-                </thead>
-                <tbody>
-                  <?php foreach ($suppliers as $obj): ?>
-                    <tr>
-                      <td><?= $obj['supplier_name'] . ' (' . $obj['vendor_code'] . ')' ?></td>
-                      <td><?= date('d-M-Y', strtotime($obj['reg_date'])) ?></td>
-                      <td><?= $obj['contact_person'] ?></td>
-                      <td><?= $obj['email'] ?></td>
-                      <td><?= $obj['mobile_no'] ?></td>
-                      <td><?= $obj['website'] ?></td>
-                      <td><?= $obj['category'] ?></td>
-                      <td><?= $obj['category_of_approval'] ?></td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
-            </div>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
-    <script>
-      $(document).ready(function() {
-        $('.category').on('change', function() {
-          var category_id = $(this).val();
-          $.ajax({
-            type: "POST",
-            url: "<?= base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
-            dataType: 'html',
-            success: function(response) {
-              $(".suppliers").html(response);
-              $('.select2').select2();
-            }
-          });
+  <script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+  <script>
+    $(document).ready(function() {
+      $('.category').on('change', function() {
+        var category_id = $(this).val();
+        $.ajax({
+          type: "POST",
+          url: "<?= base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
+          dataType: 'html',
+          success: function(response) {
+            $(".suppliers").html(response);
+            $('.select2').select2();
+          }
         });
       });
-    </script>
+    });
+  </script>

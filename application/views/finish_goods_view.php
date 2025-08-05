@@ -38,11 +38,11 @@
 
 
   <!-- Data Table Card -->
-  <div class="card shadow-sm p-3 mt-3 ms-2 mb-4 rounded bg-white">
+  <div class="card shadow-sm p-3 mt-3 ms-2 mb-4 rounded bg-white" style="position: relative; top:12px;left:12px">
     <div class="table-responsive">
       <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
         <thead class="table-light text-center bg-white">
-          <tr>
+          <tr style="background-color:white">
             <th><?= $this->lang->line('sr_no') ?></th>
             <th><?= $this->lang->line('mineral_name') ?></th>
             <th><?= $this->lang->line('grade_name') ?></th>

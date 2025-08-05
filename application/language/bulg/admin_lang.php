@@ -1557,7 +1557,10 @@ $lang['po_number'] = 'Номер на поръчката';
 $lang['order_type'] = 'Тип поръчка';
 $lang['purchase_indent'] = 'Заявка за покупка';
 $lang['po_date'] = 'Дата на поръчката';
+$lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
+$lang['mechanical_item_list'] = 'Списък с механични артикули';
 
+$lang['sub_category_list'] = 'Списък на подкатегорията';
 $lang['supplier_details'] = 'Данни за доставчика';
 $lang['supplier_name'] = 'Име на доставчика';
 $lang['vendor_reference'] = 'Референция на доставчика';
@@ -1573,6 +1576,7 @@ $lang['discount_percent'] = 'Отстъпка (%)';
 $lang['gst'] = 'ДДС (₹)';
 $lang['grand_total'] = 'Крайна сума';
 $lang['lab_chemical'] = 'Лабораторен химикал';
+$lang['edit_rm_code'] = 'Редактиране на RM код';
 
 $lang['delivery_payment_terms'] = 'Условия за доставка и плащане';
 $lang['delivery_period'] = 'Период на доставка';

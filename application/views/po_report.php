@@ -23,7 +23,10 @@
             foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
           <?php } }?>
-           <button type="submit" class="btn btn-info"> <?=$this ->lang ->line('export')?> </button>
+           <!-- <button type="submit" class="btn btn-info"> <?=$this ->lang ->line('export')?> </button> -->
+            <button type="submit" class="btn btn-icon btn-light-brand"> 
+                                    <i class="feather feather-download "></i> 
+                            </button>
          </form>
       </div>
       <div class="d-md-none d-flex align-items-center">

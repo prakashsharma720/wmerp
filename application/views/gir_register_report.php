@@ -15,7 +15,7 @@
       <?php $this->load->view('layout/alerts'); ?>
       
       <!-- Filter Button -->
-      <button class="btn btn-icon avatar-text avatar-md" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="<?= !empty($_GET) ? 'true' : 'false' ?>" aria-controls="filterFormWrapper">
+      <button class="btn btn-icon btn-light-brand" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="<?= !empty($_GET) ? 'true' : 'false' ?>" aria-controls="filterFormWrapper">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
 
@@ -26,7 +26,9 @@
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php }
         } ?>
-        <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+       <button type="submit" class="btn btn-icon btn-light-brand">
+          <i class="feather feather-download "></i>
+        </button>
       </form>
     </div>
   </div>
@@ -116,10 +118,14 @@
   </div>
 
   <!-- Table: Always Visible -->
-  <div class="table-responsive p-3 mt-3 bg-white">
-    <table id="example1" class="table table-bordered table-striped">
-      <thead>
-        <tr>
+  <div class="table-responsive p-3 mt-3 bg-white" style="position: relative; left:15px">
+    <!-- <table id="example1" class="table table-bordered table-striped"> -->
+      
+
+      <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
+            <thead class="table-light text-center bg-white">
+              <tr style="background-color:white">
+        
           <th><input type="checkbox" id="master"></th>
           <th><?= $this->lang->line('sr_no') ?></th>
           <th><?= $this->lang->line('gir_no') ?></th>

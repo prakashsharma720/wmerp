@@ -16,7 +16,7 @@
     <div class="page-header-right ms-auto d-flex align-items-center">
       <!-- Filter Button -->
         <?php $this->load->view('layout/alerts'); ?>
-      <button id="toggleFilter" class="btn btn-icon avatar-text avatar-md" type="button">
+      <button id="toggleFilter" class="btn btn-icon btn-light-brand" type="button">
   <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
 </button>
 
@@ -28,7 +28,9 @@
             foreach ($conditions as $key => $value) { ?>
               <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
         <?php } } ?>
-        <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
+        <button type="submit" class="btn btn-icon btn-light-brand">
+          <i class="feather feather-download "></i>
+        </button>
       </form>
     </div>
   </div>
@@ -92,10 +94,12 @@ $data = explode('?', $current_page);
       </div>
 
       <!-- Customer Table -->
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
+       <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
+            <thead class="table-light text-center bg-white">
+              <tr style="background-color:white">
+
+            
               <th><?= $this->lang->line('name') ?></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('registration_date') ?></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('contact_person') ?></th>

@@ -184,11 +184,18 @@
 				        </form>
 					</div>
 				 <!-- /form -->
-				<div class="col-md-8">
+				<!-- <div class="col-md-8">
 					<h5> <?=$this ->lang ->line('raw_material')?>l</h5>
 					<div class="table-responsive">
 					<table id="example1" class="table table-bordered table-striped">
-						<thead>
+						<thead> -->
+							<!-- <div class="container card-white-box " style="position: relative; top:35px"> -->
+								<div class="col-md-8">
+									<h5> <?=$this ->lang ->line('raw_material')?>l</h5>
+  <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+					<div class="table-responsive">
+						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+							<thead class="table-light">
 							<tr>
 								<th> <?=$this ->lang ->line('sr_no')?>.</th>
 								<th style="white-space: nowrap;"><?=$this ->lang ->line('supplier_name')?></th>

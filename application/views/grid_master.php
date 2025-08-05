@@ -11,7 +11,7 @@
           </a>
         </li>
         <li class="breadcrumb-item">
-          <?= $this->lang->line('leave_history') ?>
+          <?= $this->lang->line('product_grid_master') ?>
         </li>
       </ul>
     </div>
@@ -75,13 +75,15 @@
       </div>
 
       <!-- Right Table Section -->
-      <div class="col-md-6">
-        <div class="card shadow-sm p-3 mb-4 rounded" style="position: relative; left:5px">
+      <div class="col-md-6 bg-white">
+        
           <div class="table-responsive">
             <h5 class="mb-3"><?= $this->lang->line('grid_list') ?></h5>
-            <table id="example1" class="table table-bordered table-hover table-striped align-middle mb-0 w-100">
-              <thead class="table-light text-center">
-                <tr>
+            <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
+					<div class="table-responsive">
+						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
+							<thead class="table-light">
+                <tr style="background-color: white;">
                   <th><?= $this->lang->line('sr_no') ?></th>
                   <th><?= $this->lang->line('grid_name') ?></th>
                   <th><?= $this->lang->line('action') ?></th>

@@ -50,10 +50,9 @@
 	<div class="main-content">
 		<div class="card card-primary card-outline">
 			<div class="card-body">
-				
+					<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Rm_code/add_new_rmcode">
 		        <div class="form-group">
 		        	<div class="row col-md-12">
-			           <div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
 			            	<label class="control-label"><?=$this ->lang ->line('grid_number')?> <span class="required">*</span></label>
 			            	<?php echo form_dropdown('grid_number',$grids);?>
@@ -86,12 +85,16 @@
 						    </select>
 			            	
 			            </div>
-			   <div class="row col-md-12">
+		        	</div>
+		        </div>
+		        <div class="form-group">
+		        	<div class="row col-md-12">
 			            <div class="col-md-4 col-sm-4 ">
 			            	<label  class="control-label"> <?=$this ->lang ->line('raw_material')?><span class="required">*</span></label>	
 			            	<?php echo form_dropdown('rm_name',$raw_materials);?>
 			            	<!--<input type="text"  placeholder="Enter raw material name" name="rm_name" class="form-control"  required autofocus>-->
 			            </div>
+			   
 			         <div class="col-md-4 col-sm-4 ">
 				            <label class="control-label"> <?=$this ->lang ->line('grade')?></label>
 			                	<?php  $grades = array(
@@ -102,7 +105,7 @@
 			            		echo form_dropdown('grade', $grades)
 			            		?>
 				        </div>
-				          <div class="col-md-4 col-sm-4  " style="position: relative; left:13px">
+				          <div class="col-md-4 col-sm-4 ">
 			            	<label  class="control-label"><?=$this ->lang ->line('code')?> <span class="required">*</span></label>	
 			            	<input type="text"  placeholder="<?=$this ->lang ->line('enter_code')?>" name="rm_code" class="form-control"  required autofocus>
 			            </div>
@@ -145,9 +148,6 @@
 			}); 
 	});
 </script> 
-
-
-
 
 
 

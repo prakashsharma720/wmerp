@@ -28,7 +28,7 @@
 	</div>
 	
      
-	<div class="main-content" >
+	<div class="main-content" style="position: relative; left:15px;right:15px" >
 		<div class="row">
 			<div class="col-lg-12 ">
 				
