@@ -116,7 +116,7 @@
 <!-- Supplier Table -->
  
 <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff; position:relative; top
-:15px;left:25px">
+:15px;left:25px; border-radius:7px">
 					<div class="table-responsive">
 						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">
 							<thead class="table-light">

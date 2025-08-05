@@ -30,7 +30,9 @@
 	</div>
 	
 
-	      	<div class="card-body p-3 bg-white"style="position:relative;top:15px;left:15px">
+	    	<div class="main-content">
+		<div class="card card-primary card-outline">
+	      	<div class="card-body">
 		      	<div class="row">
 		      		<div class="col-md-6">
 		      			<?php  //echo $title; exit; ?>
@@ -41,7 +43,7 @@
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Unit/add_new_unit">
 				    			<?php } ?>
 				        <div class="form-group">
-				        	<div class="row col-md-12">
+				        	<div class="row col-md-12 mt-2">
 				        		<div class="col-md-8 col-sm-8 ">
 					            	<label class="control-label"><?=$this ->lang->line('unit_name')?></label>
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_unit_name')?>" name="unit_name" class="form-control" value="<?= $unit_name?>" required autofocus>
@@ -49,7 +51,7 @@
 					        </div>
 					        <span class="help-block"></span>
 					        <?php if(!empty($id)) { ?>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 				        		<div class="col-md-8 col-sm-8 ">
 					            	<label class="control-label"><?=$this ->lang->line('status')?></label>
 					               <select class="form-control" name="flag">
@@ -59,7 +61,7 @@
 					            </div>
 				        	</div>
 				        <?php } ?>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 					            <div class="col-md-8 col-sm-8 ">
 					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang->line('name')?></label><br>
 					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang->line('save')?></button>

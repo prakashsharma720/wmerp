@@ -30,9 +30,11 @@
 	</div>
 	
 
-	      	<div class="card-body p-3 bg-white" style="position: relative; top:15px;left:15px">
-		      	<div class="row bg-white">
-		      		<div class="col-md-4">
+	      	<div class="main-content">
+		<div class="card card-primary card-outline">
+	      	<div class="card-body">
+		      	<div class="row">
+		      		<div class="col-md-4 ">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
 				    		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Protective_equipments/editPM/<?= $id ?>">
@@ -40,10 +42,10 @@
 				    			<?php } else { ?>
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Protective_equipments/add_newPM">
 				    			<?php } ?>
-				        <div class="form-group">
+				        <div class="form-group mt-2">
 				       <?=$this ->lang ->line('equipment_code')?> :  <label class="control-label"> <?= $bm_code_view ?></label>
 				       <input type="hidden" name="code" value="<?= $bm_code_view ?>" > 
-				        	<div class="row col-md-12">
+				        	<div class="row col-md-12 mt-2">
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -59,19 +61,19 @@
 					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					        </div>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 mt-2">
 					            	<!-- <label class="control-label"> Name</label>  -->
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_name')?>" name="name" class="form-control" value="<?= $name?>" required autofocus>
 					            </div>
 						   	
-						    	<div class="row col-md-12">
+						    	<div class="row col-md-12 mt-2">
 									<label class="control-label"> <?=$this ->lang ->line('minimum_inventory_qty')?></label>
 								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimum_inventory_qty')?>"
 					            	 class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
 
 					            </div>
 
-					            <div class="row col-md-12">
+					            <div class="row col-md-12 mt-2">
 					        		<label class="control-label"> <?=$this ->lang ->line('select_unit')?></label>
 							         <select name="unit_name" class="form-control select2" required="required">
 						        		 <option value=""><?=$this ->lang ->line('select')?></option>
@@ -92,18 +94,18 @@
 							            </select>
 							     	</div>
 
-					            <div class="row col-md-12">
+					            <div class="row col-md-12 mt-2">
 				        		
 					            	<label class="control-label"> <?=$this ->lang ->line('description')?></label>
 					                <textarea type="text"  placeholder="<?=$this ->lang ->line('enter_description')?>" name="description"
 									class="form-control" value="<?= $description?>"  autofocus><?= $description ?></textarea>
 					            </div>
 					        <?php if(!empty($id)) { ?>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 mt-2">
 					            <label class="control-label"> <?=$this ->lang ->line('opening_stock_qty')?></label>
 								<input type="text"  placeholder="<?=$this ->lang ->line('enter_opening_stock_qty')?>" name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty?>"  autofocus>
 					        </div>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 				        		
 					            	<label class="control-label"><?=$this ->lang ->line('status')?></label>
 					               <select class="form-control" name="flag">
@@ -112,7 +114,7 @@
 					               </select>
 					            </div>
 				        <?php } ?>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 					            
 					            	<label class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('name')?></label><br>
 					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang ->line('save')?></button>

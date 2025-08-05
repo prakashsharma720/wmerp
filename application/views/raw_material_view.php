@@ -54,9 +54,12 @@
 
 
   
+ <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                <div class="row">
 	      
-	      	<div class="card-body p-3 bg-white" style="position:relative;top:15px ;left:15px">
-		      	<div class="row">
+	      	
 		      		<div class="col-md-4">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
@@ -67,7 +70,7 @@
 				    			<?php } ?>
 				        <div class="form-group">
 				        	<?= $this->lang->line('new_material_code') ?> :  <label class="control-label"> <?= $rm_code_view ?></label>
-						<div class="row col-md-12">
+						<div class="row col-md-12 p-1">
 			          		<label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?> <span class="required">*</span></label>
 							<select name="supplier_id" class="form-control select2 suppliers" required="required">
 							<option selected><?=$this ->lang ->line('select_supplier')?></option>
@@ -83,7 +86,7 @@
 						            <?php   endforeach;  ?>
 						    </select>
 			            	</div>
-				        	<div class="row col-md-12">
+				        	<div class="row col-md-12 p-1">
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -100,7 +103,7 @@
 					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					         </div>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 ">
 					            	<!-- <label class="control-label"> Name</label>  -->
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_name')?>" name="name" class="form-control" value="<?= $name?>" required autofocus>
 					        </div>
@@ -110,7 +113,7 @@
 						                <input type="text"  placeholder="Enter Code" name="code" class="form-control" value="<?= $code?>" required autofocus>
 								</div>
 							</div> -->
-								<div class="row col-md-12">
+								<div class="row col-md-12 p-1">
 									<label class="control-label"><?=$this ->lang ->line('classification')?></label>
 						            	<select name="grade_id" class="form-control select2 grades" required="required">
 											<option value=""><?=$this ->lang ->line('select_classification')?></option>
@@ -133,11 +136,11 @@
 										
 								</div>
 
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 p-1">
 					            	<label class="control-label"> <?=$this ->lang ->line('grade')?></label>
 								<input type="text"  placeholder="<?=$this ->lang ->line('enter_grade_name')?>" name="grade_name" class="form-control" value="<?= $grade_name?>" required autofocus>
 					        </div>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 p-1">
 					        	<label class="control-label"> <?=$this ->lang ->line('select_unit')?></label>
 						         <select name="unit_name" class="form-control select2" required="required">
 					        		 <option value=""><?=$this ->lang ->line('select')?></option>
@@ -157,13 +160,13 @@
 						                <?php endif; ?>
 						            </select>
 						     </div>
-							 <div class="row col-md-12">
+							 <div class="row col-md-12 p-1">
 					            <label class="control-label"><?=$this ->lang ->line('minimum_inventory_qty')?> </label>
 								<input type="text"  placeholder="<?= $this->lang->line('enter_minimum_inventory_qty') ?>"name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" autofocus>
 					        </div>
 					        <?php if(!empty($id)) { ?>
 					        	
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 p-1">
 					            <label class="control-label"> <?=$this ->lang ->line('opening_stock_qty')?></label>
 								<input type="text"  placeholder="<?=$this ->lang ->line('enter_opening_stock_qty')?>" name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty?>"  autofocus>
 					        </div>
@@ -176,7 +179,7 @@
 					               </select>
 					            </div>-->
 				        <?php } ?>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 p-1">
 					            <label class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('name')?></label><br>
 					            <button type="submit" class="btn btn-primary btn-block"><?=$this ->lang ->line('save')?></button>
 					        </div>

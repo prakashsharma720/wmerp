@@ -47,12 +47,12 @@
         </div>
     </div>
 
-    <!-- 👇 Top spacing added with mt-4 -->
-    <div class="container card-white-box " style="position: relative; top:53px">
-        <div class="card-body bg-white p-4">
-            <div class="row">
+    <div class="main-content">
+		<div class="card card-primary card-outline">
+	      	<div class="card-body">
+		      	<div class="row">
                 <!-- Left Form Column -->
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     <?php if (!empty($id)) { ?>
                         <form class="form-horizontal" role="form" method="post"
                               action="<?php echo base_url(); ?>index.php/Mechanical_items/editPM/<?= $id ?>">
@@ -62,13 +62,13 @@
                               action="<?php echo base_url(); ?>index.php/Mechanical_items/add_newPM">
                     <?php } ?>
 
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <?= $this->lang->line('item_code') ?>:
                             <label class="control-label"><?= $mi_code_view ?></label>
                             <input type="hidden" name="code" value="<?= $mi_code_view ?>">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <?php if ($categories): ?>
                                 <?php foreach ($categories as $value): ?>
                                     <?php if ($value['id'] == $categories_id): ?>
@@ -81,25 +81,25 @@
                             <?php endif; ?>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <input type="text" placeholder="<?= $this->lang->line('enter_name') ?>" name="name"
                                    class="form-control" value="<?= $name ?>" required autofocus>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label class="control-label"><?= $this->lang->line('size') ?></label>
                             <input type="text" placeholder="<?= $this->lang->line('enter_size') ?>" name="bag_size"
                                    class="form-control" value="<?= $bag_size ?>" required>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label class="control-label"><?= $this->lang->line('minimum_inventory_qty') ?></label>
                             <input type="text" placeholder="<?= $this->lang->line('enter_minimum_inventory_qty') ?>"
                                    class="form-control" name="minimum_inventory_qty"
                                    value="<?= $minimum_inventory_qty ?>" required>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label class="control-label"><?= $this->lang->line('select_unit') ?></label>
                             <select name="unit_name" class="form-control select2" required>
                                 <option value=""><?= $this->lang->line('select') ?></option>
@@ -115,20 +115,20 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <label class="control-label"><?= $this->lang->line('description') ?></label>
                             <textarea placeholder="<?= $this->lang->line('enter_description') ?>" name="description"
                                       class="form-control"><?= $description ?></textarea>
                         </div>
 
                         <?php if (!empty($id)) { ?>
-                            <div class="form-group">
+                            <div class="form-group mt-2">
                                 <label class="control-label"><?= $this->lang->line('opening_stock_qty') ?></label>
                                 <input type="text" placeholder="<?= $this->lang->line('enter_opening_stock_qty') ?>"
                                        name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty ?>">
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group mt-2">
                                 <label class="control-label"><?= $this->lang->line('status') ?></label>
                                 <select class="form-control" name="flag">
                                     <option value="0"><?= $this->lang->line('active') ?></option>
