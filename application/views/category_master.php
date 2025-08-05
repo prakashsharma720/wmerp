@@ -28,12 +28,16 @@
   </div>
 
 <!-- Form & Table Section -->
-<div class="main-content " style="position:relative;left:15px;right:15px">
+  <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                <div class="row">
+<!-- <div class="main-content " >
   <div class="row">
     <div class="col-lg-12 bg-white">
-        <!-- <div class="card stretch stretch-full"> -->
+       
           <div class="card-body pt-4 px-4">
-            <div class="row">
+            <div class="row"> -->
               <!-- Form Section -->
               <div class="col-md-6">
                 <?php if (!empty($id)): ?>

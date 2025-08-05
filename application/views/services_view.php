@@ -51,9 +51,11 @@
 	</div>
 
  
-	      	<div class="card-body p-3 bg-white" style="position: relative; top:15px;left:15px">
-		      	<div class="row">
-		      		<div class="col-md-4">
+	      	<div class="main-content">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+		      		<div class="col-md-4 ">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
 				    		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Services/editPM/<?= $id ?>">
@@ -63,7 +65,7 @@
 				    			<?php } ?>
 				        <div class="form-group">
 				        		<?= $this->lang->line('service_code'); ?> :  <label class="control-label"> <?= $service_code_view ?></label>
-				        	<div class="row col-md-12">
+				        	<div class="row col-md-12 mt-2">
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -81,7 +83,7 @@
 					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					            </div>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 mt-2">
 					            	<!-- <label class="control-label"> Name</label>  -->
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_name')?>" name="name" class="form-control" value="<?= $name?>" required autofocus>
 					            </div>
@@ -91,17 +93,17 @@
 						                <input type="text"  placeholder="Enter Code" name="code" class="form-control" value="<?= $code?>" required autofocus>
 								</div>
 								</div>-->
-							<div class="row col-md-12">
+							<div class="row col-md-12 mt-2">
 								 <label class="control-label"> <?=$this ->lang ->line('type')?></label>
 						                <input type="text"  placeholder="<?=$this ->lang ->line('enter_type')?>" name="type" class="form-control" value="<?= $type?>"  autofocus>
 								</div>
 					        <span class="help-block"></span>
-					            <div class="row col-md-12">
+					            <div class="row col-md-12 mt-2">
 					            	<label class="control-label"> <?=$this ->lang ->line('description')?></label>
 					                <textarea type="text"  placeholder="<?=$this ->lang ->line('enter_description')?>" name="description" class="form-control" value="<?= $description?>"  autofocus><?= $description ?></textarea>
 					            </div>
 					        <?php if(!empty($id)) { ?>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 					            	<label class="control-label"><?=$this ->lang ->line('status')?></label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"> <?=$this ->lang ->line('active')?></option>
@@ -109,7 +111,7 @@
 					               </select>
 					            </div>
 				        <?php } ?>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 					            	<label class="control-label" style="visibility: hidden;"><?=$this ->lang ->line('name')?></label><br>
 					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang ->line('save')?></button>
 					            </div>
@@ -118,7 +120,7 @@
 					</div>
 				 <!-- /form -->
 				<div class="col-md-8">
-					<h5> Services</h5>
+					<h5><?=$this ->lang ->line('services')?> </h5>
 					<div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
 					<div class="table-responsive">
 						<table class="table table-hover table-bordered table-striped dataTable no-footer align-middle" id="proposalList" aria-describedby="proposalList_info">

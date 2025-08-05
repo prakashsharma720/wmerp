@@ -38,7 +38,7 @@
 
 
   <!-- Data Table Card -->
-  <div class="card shadow-sm p-3 mt-3 ms-2 mb-4 rounded bg-white" style="position: relative; top:12px;left:12px">
+  <div class="card shadow-sm p-3 mt-3 ms-2 mb-4 rounded bg-white" style="position: relative; top:15px;left:15px; border-radius:10px">
     <div class="table-responsive">
       <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
         <thead class="table-light text-center bg-white">

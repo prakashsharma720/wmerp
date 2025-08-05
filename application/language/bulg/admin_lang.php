@@ -1559,6 +1559,7 @@ $lang['purchase_indent'] = 'Заявка за покупка';
 $lang['po_date'] = 'Дата на поръчката';
 $lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
 $lang['mechanical_item_list'] = 'Списък с механични артикули';
+$lang['select_classification'] = 'Изберете класификация';
 
 $lang['sub_category_list'] = 'Списък на подкатегорията';
 $lang['supplier_details'] = 'Данни за доставчика';

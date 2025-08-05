@@ -1756,6 +1756,7 @@ $lang['requisition_slip'] = "अनुसंधान पर्ची";
 $lang['requisition_slip_details'] = "अनुसंधान पर्ची विवरण";
 $lang['delete_transporter_confirm'] = "क्या आप वाकई ट्रांसपोर्टर को हटाना चाहते हैं?";
 $lang['mechanical_item_list'] = 'यांत्रिक वस्तुओं की सूची';
+$lang['select_classification'] = 'वर्गीकरण चुनें';
 
 $lang['sub_category_list'] = 'उप श्रेणी सूची';
 $lang['plant_and_machinery(list)'] = 'संयंत्र और मशीनरी (सूची)'; // Hindi

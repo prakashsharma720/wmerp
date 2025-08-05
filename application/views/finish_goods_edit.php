@@ -17,23 +17,25 @@
 			<div class="page-header-right-items">
 				<?php $this->load->view('layout/alerts'); ?>
 			</div>
-
+</div>
 			<!-- Mobile Toggle -->
 			<div class="d-md-none d-flex align-items-center">
 				<a href="javascript:void(0)" class="page-header-right-open-toggle">
 					<i class="feather-align-right fs-20"></i>
 				</a>
 			</div>
-		</div>
+		
 	</div>
 
 
 
 
+ <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                <div class="row">
 
-
-	<div class="card-body p-3 bg-white" style="position:relative;top:15px;left:15px">
-		<div class="row">
+	
 			<div class="col-md-12">
 				<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Finish_goods/editFG/<?= $id ?>">
 					<input type="hidden" name="old_fg_id" value="<?= $id ?>">

@@ -50,19 +50,21 @@
 	</div>
 	
 
-	      	<div class="card-body p-3 bg-white" style="position: relative; top:15px;left:15px">
-		      	<div class="row">
-		      		<div class="col-md-4">
+	      <div class="main-content">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+		      		<div class="col-md-4 mt-2">
 		      			<?php  //echo $title; exit; ?>
 		      			<?php if(!empty($id)) { ?>
 				    		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Plant_and_machinery/editPM/<?= $id ?>">
 				    			<input type="hidden" name="pm_id" value="<?= $id?>">
 				    			<?php } else { ?>
-							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Plant_and_machinery/add_newPM">
+							<form class="form-horizontal mt-2" role="form" method="post" action="<?php echo base_url(); ?>index.php/Plant_and_machinery/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
 				        		New P & M/c  Code :  <label class="control-label"> <?= $pt_code_view ?></label>
-				        	<div class="row col-md-12">					            	
+				        	<div class="row col-md-12 mt-2">					            	
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -80,7 +82,7 @@
 					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					            </div>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 mt-2">
 					            	<!-- <label class="control-label"> Name</label>  -->
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_name')?>" name="name" class="form-control" value="<?= $name?>" required autofocus>
 					        </div>
@@ -90,21 +92,21 @@
 						                <input type="text"  placeholder="Enter Code" name="code" class="form-control" value="<?= $code?>" required autofocus>
 								</div>
 								</div>-->
-							<div class="row col-md-12">
+							<div class="row col-md-12 mt-2">
 								 <label class="control-label"> <?=$this ->lang ->line('type')?></label>
 					                
 						                <input type="text"  placeholder="<?=$this ->lang ->line('enter_type')?>" name="type" class="form-control" value="<?= $type?>"  autofocus>
 								</div>
 					        <span class="help-block"></span>
-					            <div class="row col-md-12">
+					            <div class="row col-md-12 mt-2">
 					            	<label class="control-label"> <?=$this ->lang ->line('size')?></label>
 					                <input type="text"  placeholder="<?=$this ->lang ->line('enter_size')?>" name="bag_size" class="form-control" value="<?= $bag_size?>"  autofocus>
 					            </div>
-							<div class="row col-md-12">
+							<div class="row col-md-12 mt-2">
 					            	<label class="control-label"> <?=$this ->lang ->line('minimum_inventory_qty')?></label>
 								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimum_inventory_qty')?>" name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>"  autofocus>
 					            </div>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 mt-2">
 					        	<label class="control-label"><?=$this ->lang ->line('select_unit')?></label>
 						        <select name="unit_name" class="form-control select2" required="required">
 					        		 <option value=""><?=$this ->lang ->line('select')?></option>
@@ -126,17 +128,17 @@
 						     </div>
 
 					         <span class="help-block"></span>
-					            <div class="row col-md-12">
+					            <div class="row col-md-12 mt-2">
 					            	<label class="control-label"> <?=$this ->lang ->line('description')?></label>
 					                <textarea type="text"  placeholder="<?=$this ->lang ->line('enter_description')?>" name="description" class="form-control" value="<?= $description?>"  autofocus><?= $description ?></textarea>
 					        </div>
 					        <?php if(!empty($id)) { ?>
-							<div class="row col-md-12">
+							<div class="row col-md-12 mt-2">
 					            <label class="control-label"> <?=$this ->lang ->line('opening_stock_qty')?></label>
 								<input type="text"  placeholder="<?=$this ->lang ->line('enter_opening_stock_qty')?>" name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty?>" required autofocus>
 					        </div>
 
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 					            	<label class="control-label"><?=$this ->lang ->line('status')?></label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"> <?=$this ->lang ->line('active')?></option>
@@ -144,7 +146,7 @@
 					               </select>
 					            </div>
 				        <?php } ?>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 					            	<label class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('name')?></label><br>
 					            	<button type="submit" class="btn btn-primary btn-block"><?=$this ->lang ->line('save')?></button>
 					        </div>

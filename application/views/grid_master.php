@@ -32,8 +32,11 @@
 
   <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-  <div class="card-body p-3 bg-white" style="position: relative; top:15px; left:15px">
-    <div class="row">
+ <div class="main-content">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                <div class="row">
+  
       <!-- Left Form -->
       <div class="col-md-6">
         <?php if (!empty($id)) { ?>
@@ -53,7 +56,7 @@
             <span class="help-block"></span>
 
             <?php if (!empty($id)) { ?>
-              <div class="row col-md-12">
+              <div class="row col-md-12 mt-2">
                 <div class="col-md-8 col-sm-8">
                   <label class="control-label"><?= $this->lang->line('status') ?></label>
                   <select class="form-control" name="flag">

@@ -37,8 +37,10 @@
 		</div>
 	</div>
 
-	<div class="card-body p-3 bg-white"style="position:relative;top:15px; left:15px">
-		<div class="row">
+	 	<div class="main-content">
+		<div class="card card-primary card-outline">
+	      	<div class="card-body">
+		      	<div class="row">
 			<!-- Left Form -->
 			<div class="col-md-4">
 				<?php if (!empty($id)) { ?>
@@ -48,7 +50,7 @@
 					<form class="form-horizontal" method="post" action="<?= base_url('index.php/Building_materials/add_newPM') ?>">
 				<?php } ?>
 
-					<div class="form-group">
+					<div class="form-group mt-2">
 						<?= $this->lang->line('new_material_code') ?> :
 						<label class="control-label"><?= $bm_code_view ?></label>
 						<input type="hidden" name="code" value="<?= $bm_code_view ?>">
@@ -65,16 +67,16 @@
 						<?php endforeach; ?>
 					<?php endif; ?>
 
-					<div class="form-group">
+					<div class="form-group mt-2">
 						<input type="text" placeholder="<?= $this->lang->line('enter_name') ?>" name="name" class="form-control" value="<?= $name ?>" required autofocus>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group mt-2">
 						<label class="control-label"><?= $this->lang->line('minimum_inventory_qty') ?></label>
 						<input type="text" placeholder="<?= $this->lang->line('enter_minimum_inventory_qty') ?>" name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty ?>">
 					</div>
 
-					<div class="form-group">
+					<div class="form-group mt-2">
 						<label class="control-label"><?= $this->lang->line('select_unit') ?></label>
 						<select name="unit_name" class="form-control select2" required>
 							<option value=""><?= $this->lang->line('select') ?></option>
@@ -90,7 +92,7 @@
 						</select>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group mt-2">
 						<label class="control-label"><?= $this->lang->line('description') ?></label>
 						<textarea placeholder="<?= $this->lang->line('enter_description') ?>" name="description" class="form-control"><?= $description ?></textarea>
 					</div>

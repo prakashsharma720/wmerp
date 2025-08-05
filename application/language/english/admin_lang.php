@@ -3742,6 +3742,7 @@ $lang['view_list'] = 'View List';
 
 $lang['grids'] = 'Grids';
 $lang['mechanical_item_list'] = 'Mechanical Item List';
+$lang['select_classification'] = 'Select Classification';
 
 $lang['categories'] = 'Categories';
 $lang['plant_and_machinery(list)'] = 'Plant and Machinery (List)'; // English
