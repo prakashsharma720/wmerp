@@ -3766,6 +3766,7 @@ $lang['units'] = 'Units';
 $lang['sub_categories'] = 'Sub-Categories';
 $lang['departments'] = 'Departments';
 $lang['hsn_code'] = 'HSN Code';
+$lang['report'] = 'Report';
 
 // Section: Suppliers
 $lang['suppliers'] = 'Suppliers';

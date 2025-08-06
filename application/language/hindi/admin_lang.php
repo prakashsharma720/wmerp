@@ -1770,6 +1770,7 @@ $lang['finish_goods'] = 'समाप्त माल';
 $lang['lab_chemical'] = 'प्रयोगशाला रसायन';
     // Hindi
     $lang['edit_rm_code'] = 'आरएम कोड संपादित करें';
+$lang['report'] = 'रिपोर्ट';
 
 $lang['item_name'] = "आइटम का नाम";
 $lang['out_qty'] = "निकासी मात्रा";

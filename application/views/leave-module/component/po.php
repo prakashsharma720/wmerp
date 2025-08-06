@@ -9,10 +9,14 @@
   <div class="offcanvas-body scrollable-offcanvas px-4 ">
     <div class="row">
 
+    <div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+                    <?= $this->lang->line('po_details') ?>    </h2>
+            </div>
+    </div>
       <!-- PO Details -->
-      <div class="col-12 mb-3 border-bottom pb-2 bg-light">
-        <h5 class="fw-bold text-black"><?= $this->lang->line('po_details') ?></h5>
-      </div>
+     
 
       <div class="col-lg-6 mb-3">
         <label class="fw-bold text-dark"><?= $this->lang->line('po_number') ?>:</label>
@@ -30,9 +34,13 @@
       </div>
 
       <!-- Supplier Details -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
-        <h5 class="fw-bold text-black bg-light "><?= $this->lang->line('supplier_details') ?></h5>
-      </div>
+       <div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+                    <?= $this->lang->line('supplier_details') ?>    </h2>
+            </div>
+    </div>
+     
 
       <div class="col-lg-6 mb-3">
         <label class="fw-bold text-dark"><?= $this->lang->line('supplier_name') ?>:</label>
@@ -45,9 +53,13 @@
       </div>
 
       <!-- Financial Details -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
-        <h5 class="fw-bold text-black"><?= $this->lang->line('financial_details') ?></h5>
-      </div>
+       <div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+                    <?= $this->lang->line('financial_details') ?>    </h2>
+            </div>
+    </div>
+    
 
       <div class="col-lg-6 mb-3">
         <label class="fw-bold text-dark"><?= $this->lang->line('total_amount') ?>:</label>
@@ -75,9 +87,13 @@
       </div>
 
       <!-- Delivery & Terms -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
-        <h5 class="fw-bold text-black"><?= $this->lang->line('delivery_payment_terms') ?></h5>
-      </div>
+       <div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+                    <?= $this->lang->line('delivery_payment_terms') ?>    </h2>
+            </div>
+    </div>
+      
 
       <div class="col-lg-6 mb-3">
         <label class="fw-bold text-dark"><?= $this->lang->line('delivery_period') ?>:</label>
@@ -95,9 +111,13 @@
       </div>
 
       <!-- Additional Info -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
-        <h5 class="fw-bold text-black"><?= $this->lang->line('additional_info') ?></h5>
-      </div>
+       <div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+                    <?= $this->lang->line('additional_info') ?>    </h2>
+            </div>
+    </div>
+      
 
       <div class="col-lg-6 mb-3">
         <label class="fw-bold text-dark"><?= $this->lang->line('status') ?>:</label>
@@ -110,9 +130,13 @@
       </div>
 
       <!-- Bank Details -->
-      <div class="col-12 mb-3 border-bottom pt-3 pb-2 bg-light">
-        <h5 class="fw-bold text-black"><?= $this->lang->line('bank_details') ?></h5>
-      </div>
+       <div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+                    <?= $this->lang->line('bank_details') ?>    </h2>
+            </div>
+    </div>
+      
 
       <div class="col-lg-6 mb-3">
         <label class="fw-bold text-dark"><?= $this->lang->line('bank_name') ?>:</label>

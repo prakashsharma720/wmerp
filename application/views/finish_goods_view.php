@@ -1,14 +1,13 @@
 
 
-     
 <!-- Page Header -->
 <div class="nxl-content">
   <div class="page-header d-flex justify-content-between align-items-center">
     <div class="page-header-left d-flex align-items-center">
       <div class="page-header-title">
-       <h5 class="m-b-10"><?= $this->lang->line('finish_goods') ?></h5>
+        <h5 class="m-b-10"><?= $this->lang->line('finish_goods') ?></h5>
       </div>
-     <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
           <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
             <?= $this->lang->line('home') ?>
@@ -22,7 +21,7 @@
     <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
       <a href="<?= base_url('index.php/Finish_goods/add') ?>" class="btn btn-icon avatar-text avatar-md">
-        
+
         <i class="feather feather-plus"></i> <?= $this->lang->line('add_new') ?>
       </a>
 
@@ -60,16 +59,16 @@
                       <td><?= $i++ ?></td>
                       <td><?= $obj['mineral_name'] . ' (' . $obj['hsn_code'] . ')' ?></td>
                       <?php
-                        $voucher_no = $obj['fg_code'];
-                        if ($voucher_no < 10) {
-                          $fg_code = 'FG000' . $voucher_no;
-                        } elseif ($voucher_no <= 99) {
-                          $fg_code = 'FG00' . $voucher_no;
-                        } elseif ($voucher_no <= 999) {
-                          $fg_code = 'FG0' . $voucher_no;
-                        } else {
-                          $fg_code = 'FG' . $voucher_no;
-                        }
+                      $voucher_no = $obj['fg_code'];
+                      if ($voucher_no < 10) {
+                        $fg_code = 'FG000' . $voucher_no;
+                      } elseif ($voucher_no <= 99) {
+                        $fg_code = 'FG00' . $voucher_no;
+                      } elseif ($voucher_no <= 999) {
+                        $fg_code = 'FG0' . $voucher_no;
+                      } else {
+                        $fg_code = 'FG' . $voucher_no;
+                      }
                       ?>
                       <td><?= $obj['grade_name'] . ' (' . $fg_code . ')' ?></td>
                       <td><?= $obj['packing_type'] ?></td>
@@ -107,9 +106,3 @@
     }
   }
 </script>
-
-
-
-
-
-

@@ -9,7 +9,7 @@
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?> -->
+				<li class="breadcrumb-item"><?= $this->lang->line('add') ?>
 				</li>
 			</ul>
 		</div>

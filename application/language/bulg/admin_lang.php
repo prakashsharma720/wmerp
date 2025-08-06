@@ -1578,6 +1578,7 @@ $lang['gst'] = 'ДДС (₹)';
 $lang['grand_total'] = 'Крайна сума';
 $lang['lab_chemical'] = 'Лабораторен химикал';
 $lang['edit_rm_code'] = 'Редактиране на RM код';
+$lang['report'] = 'Доклад';
 
 $lang['delivery_payment_terms'] = 'Условия за доставка и плащане';
 $lang['delivery_period'] = 'Период на доставка';

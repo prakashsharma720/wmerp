@@ -7,10 +7,13 @@
     <div class="offcanvas-body" style="max-height: calc(100vh - 160px)" ;>
         <div class="row">
 
-
-            <div class="col-12 mb-3 border-bottom pb-2">
-                <h5 class="fw-bold bg-light p-2">Supplier Profile Details</h5>
+<div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+           Supplier Profile Details               </h2>
             </div>
+    </div>
+           
             <!-- <div class="offcanvas-body overflow-auto" style="max-height: calc(100vh - 160px);">
         <div class="row">
             <div class="col-12 mb-3">
@@ -43,9 +46,15 @@
             }
             ?>
 
-            <div class="col-12 mb-3">
+            <!-- <div class="col-12 mb-3">
                 <h5 class="fw-bold bg-light p-2">GST & Tax Details</h5>
+            </div> -->
+            <div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+                   GST & Tax Details      </h2>
             </div>
+    </div>
             <?php
             $gstFields = [
                 ['gst_status', 'GST Status'],
@@ -61,10 +70,15 @@
             }
             ?>
 
-            <div class="col-12 mb-3">
+            <!-- <div class="col-12 mb-3">
                 <h5 class="fw-bold bg-light p-2">Bank Details</h5>
+            </div> -->
+<div class="offcanvas-header ht-80 px-0 ">
+                <div class="w-100 bg-light p-3 mb-3 rounded-0">
+                <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">
+           Bank Details               </h2>
             </div>
-
+    </div>
             <?php
             $bankFields = [
                 ['account_holder_name', 'Account Holder Name'],

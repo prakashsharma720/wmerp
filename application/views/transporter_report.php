@@ -1,24 +1,29 @@
 
 <div class="nxl-content">
-  <div class="page-header mb-3">
+  <div class="page-header d-flex justify-content-between align-items-center">
     <div class="page-header-left d-flex align-items-center">
       <div class="page-header-title">
         <h5 class="m-b-10"><?= $this->lang->line('transporters_report') ?></h5>
+
       </div>
-      <ul class="breadcrumb ml-3">
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
-          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
         </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('report') ?></li>
       </ul>
     </div>
 
-    <div class="page-header-right ms-auto">
-      <div class="page-header-right-items">
-        
-        <a class="btn btn-icon btn-light-brand" href="<?= base_url('index.php/Transporters/createXLS') ?>">
+    <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      <a class="btn btn-icon btn-light-brand" href="<?= base_url('index.php/Transporters/createXLS') ?>">
           <i class="feather feather-download "></i> 
         </a>
-      </div>
+
+      <!-- Mobile Toggle -->
       <div class="d-md-none d-flex align-items-center">
         <a href="javascript:void(0)" class="page-header-right-open-toggle">
           <i class="feather-align-right fs-20"></i>
@@ -26,7 +31,7 @@
       </div>
     </div>
   </div>
-
+  
 
 
    
@@ -34,14 +39,16 @@
 
   
 
-      <div class="container card-white-box " style="position: relative; top:35px">
-  <div class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
-        <thead class="table-light text-center bg-white">
-          
-
-              <tr>
+    
+        <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>   
                 <th><?= $this->lang->line('name') ?></th>
                 <th><?= $this->lang->line('code') ?></th>
                 <th style="white-space: nowrap;"><?= $this->lang->line('contact_person') ?></th>
