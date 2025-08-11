@@ -36,8 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				        		<label class="control-label"> <?=$this ->lang->line('transporter_type')?> </label>
 				        			<div class="form-check">
 					               		<input class="form-check-input transporter_type" type="radio" name="transporter_type" value="New"  > <?=$this ->lang ->line('new')?></input>
-					               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					               		<input class="form-check-input transporter_type" type="radio" name="transporter_type" value="<?=$this ->lang ->line('existing')?>"  checked><?= $this->lang->line('existing'); ?></input>
+					               	
+					               		<input class="form-check-input transporter_type " type="radio" name="transporter_type" value="<?=$this ->lang ->line('existing')?>"  checked><?= $this->lang->line('existing'); ?></input>
 			            		</div>
 			            	</div>
 							 <div class="col-md-4 col-sm-4 category_of_approval">
