@@ -1,25 +1,22 @@
-<div class="page-header mb-3 d-flex justify-content-between align-items-center flex-wrap">
-  <!-- Left side -->
-  <div class="page-header-left d-flex align-items-center mb-2 mb-md-0">
-    <div class="page-header-title">
-      <h5 class="m-b-10"><?= $this->lang->line('gir_register_list') ?></h5>
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('gir_register_list') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+      </ul>
     </div>
-    <ul class="breadcrumb ml-3 mb-0">
-      <li class="breadcrumb-item">
-        <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
-          <?= $this->lang->line('home') ?>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Right side -->
-
-  <div class="page-header-right d-flex align-items-center gap-2">
-    <?php $this->load->view('layout/alerts'); ?>
-
-    <!-- Filter Button -->
-        <button class="btn btn-icon avatar-text avatar-md" type="button"
+<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      <!-- Filter Button -->
+     <button class="btn btn-icon avatar-text avatar-md" type="button"
           data-bs-toggle="collapse" data-bs-target="#filterFormWrapper"
           aria-expanded="false" aria-controls="filterFormWrapper">
           <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
@@ -38,9 +35,21 @@
     <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete">
       <i class="fa fa-trash"></i>
     </button>
-  </div>
-</div>
 
+      
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+    
+  <!-- Right side -->
+
+  
 
 
   <?php
@@ -66,50 +75,65 @@
         <div class="row">
           <div class="col-md-4">
             <label class="control-label"><?= $this->lang->line('category') ?> <span class="required">*</span></label>
-            <select name="categories_id" class="form-control select2 category">
-              <option value="0"><?= $this->lang->line('select category') ?></option>
-              <?php if ($categories): ?>
-                <?php foreach ($categories as $value): ?>
-                  <option value="<?= $value['id'] ?>" <?= ($value['id'] == $current[0]->categories_id) ? 'selected' : '' ?>>
-                    <?= $value['category_name'] ?>
-                  </option>
-                <?php endforeach; ?>
-              <?php else: ?>
-                <option value="0"><?= $this->lang->line('no_result') ?></option>
-              <?php endif; ?>
-            </select>
+            <select name="categories_id" class="form-control select2 category" >
+                     <option value="0"><?=$this ->lang->line('select_category')?></option>
+                        <?php
+                         if ($categories): ?> 
+                          <?php 
+                            foreach ($categories as $value) : ?>
+                                <?php 
+                                  if ($value['id'] == $current[0]->categories_id): ?>
+                                      <option value="<?= $value['id'] ?>" selected><?= $value['category_name'] ?></option>
+                                  <?php else: ?>
+                                      <option value="<?= $value['id'] ?>"><?= $value['category_name'] ?></option>
+                                  <?php endif;   ?>
+                            <?php   endforeach;  ?>
+                        <?php else: ?>
+                            <option value="0"><?=$this ->lang->line('no_result')?></option>
+                        <?php endif; ?>
+                    </select>
           </div>
 
           <div class="col-md-4">
             <label class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
-            <select name="supplier_id" class="form-control select2 suppliers">
-              <option value="0">Select Supplier</option>
-              <?php if ($all_suppliers): ?>
-                <?php foreach ($all_suppliers as $value): ?>
-                  <option value="<?= $value['id'] ?>" <?= ($value['id'] == $supplier_id) ? 'selected' : '' ?>>
-                    <?= $value['supplier_name'] ?>
-                  </option>
-                <?php endforeach; ?>
-              <?php else: ?>
-                <option value="0"><?= $this->lang->line('no_result') ?></option>
-              <?php endif; ?>
-            </select>
+            <select name="supplier_id" class="form-control select2 suppliers" >
+                    <option value="0"><?=$this ->lang->line('select_supplier')?> </option>
+                    <?php
+                         if ($all_suppliers): ?> 
+                          <?php 
+                            foreach ($all_suppliers as $value) : ?>
+                              <?php 
+                                  if ($value['id'] == $supplier_id): ?>
+                                      <option value="<?= $value['id'] ?>" selected><?= $value['supplier_name'] ?></option>
+                                  <?php else: ?>
+                                      <option value="<?= $value['id'] ?>"><?= $value['supplier_name'] ?></option>
+                                  <?php endif;   ?>
+                                   <?php   endforeach;  ?>
+                        <?php else: ?>
+                            <option value="0"><?=$this ->lang->line('no_result')?></option>
+                        <?php endif; ?>
+                </select>
           </div>
 
           <div class="col-md-4">
             <label class="control-label"><?= $this->lang->line('gir_number') ?> <span class="required">*</span></label>
-            <select name="gir_no" class="form-control select2">
-              <option value="0"><?= $this->lang->line('select_gir_number') ?></option>
-              <?php if ($gir_nos): ?>
-                <?php foreach ($gir_nos as $value): ?>
-                  <option value="<?= $value['id'] ?>" <?= ($value['id'] == $id) ? 'selected' : '' ?>>
-                    <?= $value['gir_no'] ?>
-                  </option>
-                <?php endforeach; ?>
-              <?php else: ?>
-                <option value="0"><?= $this->lang->line('no_result') ?></option>
-              <?php endif; ?>
-            </select>
+            <select name="gir_no" class="form-control select2 suppliers" >
+                    <option value="0"><?=$this ->lang->line('select_gir_number')?></option>
+                    <?php
+                         if ($gir_nos): ?> 
+                          <?php 
+                            foreach ($gir_nos as $value) : ?>
+                              <?php 
+                                  if ($value['id'] == $id): ?>
+                                      <option value="<?= $value['id'] ?>" selected><?= $value['gir_no'] ?></option>
+                                  <?php else: ?>
+                                      <option value="<?= $value['id'] ?>"><?= $value['gir_no'] ?></option>
+                                  <?php endif;   ?>
+                                   <?php   endforeach;  ?>
+                        <?php else: ?>
+                            <option value="0"><?=$this ->lang->line('no_result')?></option>
+                        <?php endif; ?>
+                </select>
           </div>
         </div>
 
@@ -132,10 +156,15 @@
   </div>
 </div>
 
-      <div class="table-responsive bg-white">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
+        <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
               <th><input type="checkbox" id="master"></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('sr_no') ?></th>
               <th style="white-space: nowrap;"> <?= $this->lang->line('gir_no') ?> </th>

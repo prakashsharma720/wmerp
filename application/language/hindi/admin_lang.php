@@ -1758,6 +1758,8 @@ $lang['delete_transporter_confirm'] = "क्या आप वाकई ट्�
 $lang['mechanical_item_list'] = 'यांत्रिक वस्तुओं की सूची';
 $lang['select_classification'] = 'वर्गीकरण चुनें';
 
+$lang['Pending_Purchase_Orders_for_GIR'] = 'GIR के लिए लंबित खरीद आदेश';
+
 $lang['sub_category_list'] = 'उप श्रेणी सूची';
 $lang['plant_and_machinery(list)'] = 'संयंत्र और मशीनरी (सूची)'; // Hindi
 $lang['material_return_register'] = "सामग्री वापसी रजिस्टर";

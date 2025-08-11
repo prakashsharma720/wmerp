@@ -3,19 +3,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //print_r($items);exit;
 ?>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?=$this ->lang ->line('create_requisition_slip')?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
+  <div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('create_requisition_slip') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+      </ul>
+    </div>
+	<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
 
-		</div>
-
-      </div> <!-- /.card-body -->
-      <div class="card-body">
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+      <div class="card-body p-4">
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/add_new_requisition">
-		        <div class="form-group">
+		        <div class="form-group bg-white">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
 			            	<label class="control-label"><?=$this ->lang ->line('date')?> <span class="required">*</span></label>
@@ -51,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        	</div>
 		        </div>
 		        
-		        <div class="form-group">
+		        <div class="form-group bg-white">
 			        <div class="row col-md-12">
 			        	<div class="col-md-3 col-sm-3 ">
 					        <label  class="control-label"> <?=$this ->lang ->line('requisition_for')?> : </label>
@@ -176,12 +194,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        </div>
 			    </div>
 
-		        <div class="form-group">
-		        	<div class="row col-md-12">
-		        		<div class="table-responsive">
-			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #ca6b24;">
-			        				<tr>
+		         <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?>.</th>
 			        					<th style="width: 30%;"> <?=$this ->lang ->line('material_description')?>n</th>
 			        					<th style="width: 15%;"> <?=$this ->lang ->line('qty')?></th>

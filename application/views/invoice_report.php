@@ -65,16 +65,15 @@
   </div>
 
 
-  <div class="container card-white-box" style="position:relative;top:35px">
-
-    <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
-
-
-      <div class="col-sm-12" >
-        <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
-            <thead class="table-light text-center bg-white">
-              <tr style="background-color:white">
+ <div class="main-content " style="position: relative; bottom:13px">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
 
                 <th><?= $this->lang->line('sr_no') ?>.</th>
                 <th><?= $this->lang->line('invoice_no') ?></th>

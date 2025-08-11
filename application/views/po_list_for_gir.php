@@ -1,21 +1,33 @@
 
 <div class="nxl-content">
-  <div class="page-header mb-3">
+  <div class="page-header d-flex justify-content-between align-items-center">
     <div class="page-header-left d-flex align-items-center">
       <div class="page-header-title">
-        <h5><?php  echo $title; ?></h5>
-          
+        <h5 class="m-b-10"> <?= $this->lang->line('Pending_Purchase_Orders_for_GIR') ?></h5>
       </div>
-      <ul class="breadcrumb ml-3">
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
-          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
         </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
       </ul>
     </div>
-
+ <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
     
-  </div>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
 
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -34,35 +46,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   }
 </style>
 
-<?php //  echo $data; exit; ?>
-<!-- <div class="container-fluid">
-  <div class="card card-primary card-outline"> -->
-  
-     
-      <!-- <div class="button-group float-right"> -->
-        <!--  <a href="<?php echo base_url(); ?>index.php/Purchase_order/add" class="btn btn-success" data-toggle="tooltip" title="New PO"><i class="fa fa-plus"></i></a>
-
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button> -->
-        
-      </div>
-    </div> 
 
 
-    <div class="container card-white-box">
- 
-  <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
 
+ <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
 
-    <div class="col-sm-12">
-      <table class="table table-hover align-middle" id="proposalList">
-        <thead class="table-light">
-    <!-- <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead> -->
-            <tr>
+            
               <th><input type="checkbox" id="master"></th>
               <th ><?=$this ->lang ->line('sr_no')?>.</th>
               <th> <?=$this ->lang ->line('po_no')?> </th>

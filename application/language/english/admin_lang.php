@@ -3744,6 +3744,8 @@ $lang['grids'] = 'Grids';
 $lang['mechanical_item_list'] = 'Mechanical Item List';
 $lang['select_classification'] = 'Select Classification';
 
+$lang['Pending_Purchase_Orders_for_GIR'] = 'Pending Purchase Orders for GIR';
+
 $lang['categories'] = 'Categories';
 $lang['plant_and_machinery(list)'] = 'Plant and Machinery (List)'; // English
 $lang['raw_material'] = 'Raw Material';

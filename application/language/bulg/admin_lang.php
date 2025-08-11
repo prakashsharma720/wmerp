@@ -1561,6 +1561,8 @@ $lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Сп
 $lang['mechanical_item_list'] = 'Списък с механични артикули';
 $lang['select_classification'] = 'Изберете класификация';
 
+$lang['Pending_Purchase_Orders_for_GIR'] = 'Изчакващи поръчки за покупка за GIR';
+
 $lang['sub_category_list'] = 'Списък на подкатегорията';
 $lang['supplier_details'] = 'Данни за доставчика';
 $lang['supplier_name'] = 'Име на доставчика';

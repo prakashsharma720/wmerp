@@ -1,19 +1,20 @@
-<div class="nxl-content ">
-  <div class="page-header mb-3">
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
     <div class="page-header-left d-flex align-items-center">
       <div class="page-header-title">
-        <h5 class="m-b-10"><?= $this->lang->line('gir_register_report') ?></h5>
+        <h5 class="m-b-10"> <?= $this->lang->line('gir_register_report') ?></h5>
       </div>
-      <ul class="breadcrumb ml-3">
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
-          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
         </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('report') ?></li>
       </ul>
     </div>
-
-    <div class="page-header-right ms-auto d-flex align-items-center">
+<div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
-      
       <!-- Filter Button -->
       <button class="btn btn-icon btn-light-brand" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="<?= !empty($_GET) ? 'true' : 'false' ?>" aria-controls="filterFormWrapper">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
@@ -30,9 +31,16 @@
           <i class="feather feather-download "></i>
         </button>
       </form>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
     </div>
   </div>
-
+    
   <style>
     .col-sm-6, .col-md-6 { float: left; }
   </style>
@@ -118,14 +126,15 @@
   </div>
 
   <!-- Table: Always Visible -->
-  <div class="table-responsive p-3 mt-3 bg-white" style="position: relative; left:15px">
-    <!-- <table id="example1" class="table table-bordered table-striped"> -->
-      
-
-      <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
-            <thead class="table-light text-center bg-white">
-              <tr style="background-color:white">
-        
+  <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
           <th><input type="checkbox" id="master"></th>
           <th><?= $this->lang->line('sr_no') ?></th>
           <th><?= $this->lang->line('gir_no') ?></th>

@@ -81,13 +81,13 @@
     </div>
             <?php
             $bankFields = [
-                ['account_holder_name', 'Account Holder Name'],
+              
                 ['bank_name', 'Bank Name'],
                 ['account_number', 'Account Number'],
                 ['ifsc_code', 'IFSC Code'],
                 ['branch_address', 'Branch Address'],
-                ['account_type', 'Account Type'],
-                ['upi_id', 'UPI ID']
+               
+             
             ];
             foreach ($bankFields as [$key, $label]) {
                 echo '<div class="col-lg-6 mb-3">

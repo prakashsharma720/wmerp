@@ -1,24 +1,24 @@
 
 
 <div class="nxl-content">
-  <div class="page-header mb-3 d-flex justify-content-between align-items-center">
-
-    <!-- Left Side: Title and Breadcrumb -->
-    <div>
-      <h5><?= $this->lang->line('requisition_slip_report') ?></h5>
-      <ul class="breadcrumb">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('requisition_slip_report') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
           <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
             <?= $this->lang->line('home') ?>
           </a>
         </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('report') ?></li>
       </ul>
     </div>
 
-    <!-- Right Side: Filter & Export Buttons -->
-    <div class="d-flex gap-2">
-       <?php $this->load->view('layout/alerts'); ?>
-      <!-- Filter Button -->
+    
+<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
       <button class="btn btn-icon btn-light-brand" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
@@ -32,11 +32,16 @@
           <i class="feather feather-download "></i>
         </button>
       </form>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
     </div>
-
   </div>
-</div>
-
+    
 <!-- Collapsible Filter Form -->
 <div class="collapse <?php if (!empty($_GET)) echo 'show'; ?>" id="filterFormWrapper">
   <div class="card card-body border ">
@@ -104,12 +109,15 @@
 
 <!-- Table -->
  
-<div class="card mt-3">
-  <div class="card-body">
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
+<div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
             <th><?= $this->lang->line('sr_no') ?></th>
             <th><?= $this->lang->line('requisition_no') ?></th>
             <th><?= $this->lang->line('requisition_date') ?></th>

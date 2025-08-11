@@ -1,54 +1,36 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-  </div>
-  <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
 
-<!-- Page Header -->
 <div class="nxl-content">
-  <div class="page-header mb-3">
+  <div class="page-header d-flex justify-content-between align-items-center">
     <div class="page-header-left d-flex align-items-center">
       <div class="page-header-title">
-        <h5 class="m-b-10"><?= $this->lang->line('material_return_register') ?></h5>
+        <h5 class="m-b-10"> <?= $this->lang->line('material_return_register') ?></h5>
       </div>
-      <ul class="breadcrumb ml-3">
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
         </li>
-        <!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?></li> -->
-
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
       </ul>
-
     </div>
 
     
-		<div class="page-header-right ms-auto">
-			<div class="page-header-right-items">
 
-			</div>
+ <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
 
-			<!-- Mobile Toggle -->
-			<div class="d-md-none d-flex align-items-center">
-				<a href="javascript:void(0)" class="page-header-right-open-toggle">
-					<i class="feather-align-right fs-20"></i>
-				</a>
-			</div>
-		</div>
-	</div>
-
-
-
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -122,12 +104,15 @@
 						
 					</div>
 					
-		        	<div class="row ">
-		        		<div class="col-md-12 ">
-		        		<div class="table-responsive">
-			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #ca6b24;">
-			        				<tr>
+		        	<div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?> </th>
 			        					<th style="width: 30%;"> <?=$this ->lang ->line('material_description')?> </th>
 			        					<th style="width: 15%;"> <?=$this ->lang ->line('unit')?>  </th>
