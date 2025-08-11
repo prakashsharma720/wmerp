@@ -36,23 +36,23 @@
 
 
 
-	<div class="card-body p-3">
+	<div class="card-body p-3" style="position: relative; top:15px">
 		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Purchase_order/add_new_po">
 			<!-- <input type="hidden" name="req_id" value="<?= $requisitions['0']['id'] ?>"> -->
 			<div class="form-group bg-white">
-				<div class="row col-md-12">
+				<div class="row col-md-12" style="position: relative; border-radius:20px">
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label">Date <span class="required">*</span></label>
+						<label class="control-label"><?= $this->lang->line('date') ?> <span class="required">*</span></label>
 						<input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?= date('d-m-Y') ?>" autofocus>
 					</div>
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label">Name of Supplier <span class="required">*</span></label>
+						<label class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
 						<?php
 						echo form_dropdown('supplier_id', $suppliers, ' ', 'required="required"')
 						?>
 					</div>
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> PO Number <span class="required">*</span></label>
+						<label class="control-label"><?= $this->lang->line('po_number') ?> <span class="required">*</span></label>
 						<input type="text" value="<?= $po_code_view ?>" name="po_numbersss" class="form-control" autofocus required="required" readonly>
 						<input type="hidden" name="po_number" value="<?= $po_no ?>">
 					</div>
@@ -62,17 +62,17 @@
 			<div class="form-group bg-white">
 				<div class="row col-md-12">
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label">Quotation No </label>
-						<input type="text" placeholder=" Enter Quatation No" name="quotation_no" class="form-control" autofocus>
+						<label class="control-label"><?= $this->lang->line('quotation_no') ?> </label>
+						<input type="text" placeholder="<?= $this->lang->line('placeholder_enter_quotation_no') ?>" name="quotation_no" class="form-control" autofocus>
 					</div>
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Quotation Date <span class="required">*</span></label>
+						<label class="control-label"> <?= $this->lang->line('quotation_date') ?> <span class="required">*</span></label>
 						<input type="text" data-date-formate="dd-mm-yyyy" name="quotation_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?= date('d-m-Y') ?>" autofocus>
 					</div>
 
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Comment</label>
-						<textarea type="text" placeholder=" Enter comment" name="comment" class="form-control" autofocus style="resize: none"></textarea>
+						<label class="control-label"> <?= $this->lang->line('comment') ?></label>
+						<textarea type="text" placeholder=" <?= $this->lang->line('placeholder_enter_comment') ?>" name="comment" class="form-control" autofocus style="resize: none"></textarea>
 					</div>
 
 				</div>
@@ -84,14 +84,14 @@
 						<table class="table table-bordered " id="maintable" style="width: 100% !important;">
 							<thead style="background-color: white;">
 								<tr>
-									<th style="width:15%;"> Sr.No.</th>
-									<th style="width:15%;white-space: nowrap;"> Material Description</th>
-									<th style="width:10%;white-space: nowrap;"> Requisition Qty</th>
-									<th style="width:10%;white-space: nowrap;"> Order Qty</th>
-									<th style="width:10%;white-space: nowrap;"> Pending Qty</th>
-									<th style="width:17%;white-space: nowrap;"> Item Rate</th>
-									<th style="width:28%;white-space: nowrap;"> Total Amount</th>
-									<th style="width:10%;"> Action</th>
+													<th><?= $this->lang->line('sr_no') ?></th>
+									<th style="white-space: nowrap;"><?= $this->lang->line('material_description') ?></th>
+									<th style="white-space: nowrap;"><?= $this->lang->line('requisition_qty') ?></th>
+									<th style="white-space: nowrap;"><?= $this->lang->line('order_qty') ?></th>
+									<th style="white-space: nowrap;"><?= $this->lang->line('pending_qty') ?></th>
+									<th style="white-space: nowrap;"><?= $this->lang->line('item_rate') ?></th>
+									<th style="white-space: nowrap;"><?= $this->lang->line('total_amount') ?></th>
+									<th><?= $this->lang->line('action') ?></th>
 								</tr>
 							</thead>
 							<tbody id="mainbody">
@@ -115,22 +115,22 @@
 											<td>
 												<div class="input-group">
 													<div class="input-group-prepend">
-														<input type="text" placeholder="Qty" name="req_qty[]" class="form-control req_qty" value="<?= $po_data['order_pending_qty'] ?>" autofocus required readonly> &nbsp;
+														<input type="text" placeholder="<?= $this->lang->line('qty') ?>" name="req_qty[]" class="form-control req_qty" value="<?= $po_data['order_pending_qty'] ?>" autofocus required readonly> &nbsp;
 														<span><?= $po_data['unit'] ?></span>
 													</div>
 												</div>
 											</td>
 											<td>
-												<input type="text" placeholder="Qty" name="ordered_qty[]" class="form-control ordered_qty" value="" autofocus required oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+												<input type="text" placeholder="<?= $this->lang->line('qty') ?>" name="ordered_qty[]" class="form-control ordered_qty" value="" autofocus required oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
 											</td>
 											<td>
-												<input type="text" placeholder="Pending" name="pending_qty[]" class="form-control pending_qty" value="" autofocus required readonly>
+												<input type="text" placeholder="<?= $this->lang->line('pending') ?>" name="pending_qty[]" class="form-control pending_qty" value="" autofocus required readonly>
 											</td>
 											<td>
-												<input type="text" placeholder="Rate" name="rate[]" class="form-control rate" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" autofocus required>
+												<input type="text" placeholder="<?= $this->lang->line('rate') ?>" name="rate[]" class="form-control rate" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" autofocus required>
 											</td>
 											<td colspan="">
-												<input type="text" placeholder="Total" name="total[]" class="form-control total" readonly required>
+												<input type="text" placeholder="<?= $this->lang->line('total') ?>" name="total[]" class="form-control total" readonly required>
 											</td>
 											<td>
 												<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
@@ -146,52 +146,52 @@
 								<tr>
 									<td colspan="2" style="text-align: right;"><b>Total</b></td>
 									<td colspan="">
-										<input type="text" placeholder="Total" name="req_total_qty" value="<?= @$total_req_qty ?>" class="form-control req_total_qty" readonly>
+										<input type="text" placeholder="<?= $this->lang->line('total') ?>" name="req_total_qty" value="<?= @$total_req_qty ?>" class="form-control req_total_qty" readonly>
 									</td>
 									<td colspan="">
-										<input type="text" placeholder="Total" name="total_qty" class="form-control total_qty" readonly>
+										<input type="text" placeholder="<?= $this->lang->line('total') ?>" name="total_qty" class="form-control total_qty" readonly>
 									</td>
 									<td colspan="">
-										<input type="text" placeholder="Total" name="pending_total_qty" class="form-control pending_total_qty" readonly>
+										<input type="text" placeholder="<?= $this->lang->line('total') ?>" name="pending_total_qty" class="form-control pending_total_qty" readonly>
 									</td>
 									<td>
-										<input type="text" placeholder="Total" name="total_rate" class="form-control total_rate" readonly>
+										<input type="text" placeholder="<?= $this->lang->line('total') ?>" name="total_rate" class="form-control total_rate" readonly>
 									</td>
 									<td colspan="2">
-										<input type="text" placeholder="Total" name="total_amount" class="form-control total_amount" readonly>
+										<input type="text" placeholder="<?= $this->lang->line('total') ?>" name="total_amount" class="form-control total_amount" readonly>
 									</td>
 								</tr>
 								<tr>
 									<td colspan="2" style="text-align: right;"><b> Discount</b></td>
 									<td colspan="2">
-										<input class="discount_type" type="radio" name="discount_type" value="1" checked> Rupees</input>
+										<input class="discount_type" type="radio" name="discount_type" value="1" checked> <?= $this->lang->line('rupees') ?></input>
 										&nbsp;&nbsp;&nbsp;&nbsp;
-										<input class="discount_type" type="radio" name="discount_type" value="2"> Percentage</input>
+										<input class="discount_type" type="radio" name="discount_type" value="2"><?= $this->lang->line('percentage') ?></input>
 									</td>
 									<td colspan="2">
-										<input type="text" placeholder=" Enter Discount" name="discount" class="form-control discount_value" required autofocus>
+										<input type="text" placeholder=" <?= $this->lang->line('enter_discount') ?>" name="discount" class="form-control discount_value" required autofocus>
 										<input type="hidden" name="discount_amount" class="discount_amount">
 									</td>
 									<td colspan="2">
-										<input type="text" placeholder=" After discount" name="amount_after_discount" class="form-control amount_after_discount" readonly>
+										<input type="text" placeholder=" <?= $this->lang->line('after_discount') ?>" name="amount_after_discount" class="form-control amount_after_discount" readonly>
 									</td>
 								</tr>
 								<tr>
-									<td colspan="2" style="text-align: right;"><b> GST</b></td>
+									<td colspan="2" style="text-align: right;"><b> <?= $this->lang->line('gst') ?></b></td>
 									<td colspan="2">
-										<input type="text" placeholder=" Enter Tax %" name="tax_per" class="form-control tax_per" autofocus>
+										<input type="text" placeholder=" <?= $this->lang->line('enter_tax') ?> %" name="tax_per" class="form-control tax_per" autofocus>
 									</td>
 									<td colspan="2">
-										<input type="text" placeholder=" Enter Tax " name="gst_amount" class="form-control gst_amount" readonly>
+										<input type="text" placeholder=" <?= $this->lang->line('enter_tax') ?> " name="gst_amount" class="form-control gst_amount" readonly>
 									</td>
 									<td colspan="2">
-										<input type="text" placeholder=" Amount with Tax" name="grand_total" class="form-control grand_total" readonly>
+										<input type="text" placeholder=" <?= $this->lang->line('amount_with_tax') ?>" name="grand_total" class="form-control grand_total" readonly>
 									</td>
 								</tr>
 								<tr>
-									<td colspan="6" style="text-align: right;"><b> Grand Total</b></td>
+									<td colspan="6" style="text-align: right;"><b> <?= $this->lang->line('grand_total') ?></b></td>
 									<td colspan="2">
-										<input type="text" placeholder=" Grand Total" name="final_total_amount" class="form-control final_total_amount" autofocus readonly>
+										<input type="text" placeholder=" <?= $this->lang->line('grand_total') ?>" name="final_total_amount" class="form-control final_total_amount" autofocus readonly>
 									</td>
 								</tr>
 
@@ -204,23 +204,23 @@
 			<div class="form-group bg-white">
 				<div class="row col-md-12">
 					<div class="col-md-6 col-sm-6 ">
-						<label class="control-label"> Vendor Reference</label>
-						<input type="text" placeholder=" Enter Reference " name="reference_by" class="form-control" autofocus>
+						<label class="control-label"> <?= $this->lang->line('vendor_reference') ?></label>
+						<input type="text" placeholder=" <?= $this->lang->line('enter_reference') ?> " name="reference_by" class="form-control" autofocus>
 					</div>
 					<div class="col-md-6 col-sm-6 ">
-						<label class="control-label">Delivery Period</label>
-						<input type="text" placeholder=" Enter Delivery Schedule" name="delivery_period" class="form-control" autofocus>
+						<label class="control-label"><?= $this->lang->line('delivery_period') ?></label>
+						<input type="text" placeholder=" <?= $this->lang->line('enter_delivery_schedule') ?>" name="delivery_period" class="form-control" autofocus>
 					</div>
 					<div class="col-md-6 col-sm-6 ">
-						<label class="control-label"> Payment Terms</label>
+						<label class="control-label"> <?= $this->lang->line('payment_terms') ?></label>
 						<input type="text" placeholder=" Ex. Cash,Cheque" name="payment_term" class="form-control" autofocus>
 					</div>
 					<div class="col-md-6 col-sm-6 ">
-						<label class="control-label"> Freight Status</label>
+						<label class="control-label"> <?= $this->lang->line('freight_status') ?></label>
 						<div>
-							<input class="freight_status" type="radio" name="freight_status" value="Paid" checked> Paid</input>
+							<input class="freight_status" type="radio" name="freight_status" value="Paid" checked> <?= $this->lang->line('paid') ?></input>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input class="freight_status" type="radio" name="freight_status" value="To Pay"> To Pay</input>
+							<input class="freight_status" type="radio" name="freight_status" value="To Pay"> <?= $this->lang->line('to_pay') ?></input>
 						</div>
 					</div>
 
@@ -229,8 +229,8 @@
 			<div class="form-group">
 				<div class="row col-md-12">
 					<div class="col-md-12 col-sm-12 ">
-						<label class="control-label" style="visibility: hidden;"> Grade</label>
-						<button type="submit" class="btn btn-primary btn-block"> Submit</button>
+						<label class="control-label" style="visibility: hidden;"><?= $this->lang->line('grade') ?></label>
+						<button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
 					</div>
 				</div>
 			</div>

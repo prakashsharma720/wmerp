@@ -93,16 +93,20 @@
                         }
                         ?>
                       </td>
-                      <td>
-                        <a class="btn btn-icon btn-light-brand " data-toggle="modal" data-target="#view<?php echo $obj['id']; ?>" title="View Details"><i  class="feather feather-eye"></i></a>
+                      <td style="display: flex; gap: 5px; align-items: center;">
+                        <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#viewapp<?= $obj['id']; ?>" title="View Details">
+                            <i class="feather feather-eye"></i>
+                          </a>
+                        <!-- <a class="btn btn-icon btn-light-brand " data-toggle="modal" data-target="#viewapp<?php echo $obj['id']; ?>" title="View Details"><i  class="feather feather-eye"></i></a> -->
                         <?php if ($obj['approved_status'] == 'Pending') { ?>
                           <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id']; ?>" title="Edit"><i class="fa fa-edit"></i></a>
                         <?php } ?>
 
                         <a class=" btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/CreateIssueSlip/<?php echo $obj['id']; ?>" data-toggle="tooltip" title="Convert to Issue Slip"><i class="fa fa-refresh"></i> </a>
 
-                        <!--  <a class="btn btn-xs btn-danger " data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>"><i style="color:#fff;"class="fa fa-trash"></i></a> -->
+                        
                       </td>
+                       <?php $this->load->View('leave-module/component/leave.php', ['obj' => $obj]); ?>
                       <div class="modal fade" id="view<?php echo $obj['id']; ?>" role="dialog">
                         <div class="modal-dialog modal-lg">
                           <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/deletePO/<?php echo $obj['id']; ?>">

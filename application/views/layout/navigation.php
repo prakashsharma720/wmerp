@@ -184,7 +184,7 @@
                 <span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
               </a>
               <ul class="nxl-submenu">
-                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Purchase_order/add') ?>">
+                <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Purchase_order/ApprovedReqListForPO') ?>">
                     <?= $this->lang->line('add') ?></a></li>
                 <li class="nxl-item"><a class="nxl-link" href="<?= base_url('index.php/Purchase_order/index') ?>">
                     <?= $this->lang->line('view_list') ?></a></li>
