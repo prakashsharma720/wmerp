@@ -15,20 +15,20 @@
     </div>
     <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
-<a href="<?= base_url(); ?>index.php/Purchase_order/add"
-              class="btn btn-icon avatar-text avatar-md"
-              data-bs-toggle="tooltip"
-              title="New PO"
-              style="margin-left:5px;">
-              <i class="fa fa-plus"></i>
-            </a>
+      <a href="<?= base_url(); ?>index.php/Purchase_order/add"
+        class="btn btn-icon avatar-text avatar-md"
+        data-bs-toggle="tooltip"
+        title="New PO"
+        style="margin-left:5px;">
+        <i class="fa fa-plus"></i>
+      </a>
 
-             <button class="btn btn-icon avatar-text avatar-md delete_all"
-              style="margin-left:5px;"
-              data-bs-toggle="tooltip"
-              title="Bulk Delete">
-              <i class="fa fa-trash"></i>
-            </button>
+      <button class="btn btn-icon avatar-text avatar-md delete_all"
+        style="margin-left:5px;"
+        data-bs-toggle="tooltip"
+        title="Bulk Delete">
+        <i class="fa fa-trash"></i>
+      </button>
       <!-- Mobile Toggle -->
       <div class="d-md-none d-flex align-items-center">
 
@@ -307,4 +307,6 @@
           });
 
         });
+
+        
       </script>

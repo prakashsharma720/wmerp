@@ -1,20 +1,37 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <h3 class="card-title"> <?=$this ->lang->line('edit_transporter')?></h3>
-            <div class="pull-right error_msg">
-                <?php echo validation_errors();?>
+<div class="nxl-content">
+	<!-- [ page-header ] start -->
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('edit_transporter'); ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item"><a href="<?= base_url() ?>"><?= $this->lang->line('home'); ?></a></li>
+				<li class="breadcrumb-item"><?= $this->lang->line(''); ?></li>
+			</ul>
+		</div>
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+				<?php $this->load->view('layout/alerts'); ?>
+			</div>
 
-                <?php if (isset($message_display)) {
-			echo $message_display;
-			} ?>
-            </div>
-
-        </div> <!-- /.card-body -->
-        <div class="card-body">
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+<div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
+					<div class="card-body">
+        
             <form class="form-horizontal" role="form" method="post"
                 action="<?php echo base_url(); ?>index.php/Transporters/edittransporter/<?= $old_id?>">
                 <?php echo form_hidden('id',$old_id);  ?>
@@ -43,13 +60,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        			?>
                         <div class="col-md-4 col-sm-4 ">
                             <label class="control-label"><?=$this ->lang->line('transporter_type')?> </label>
-                            <div class="form-check">
-                                <input class="form-check-input transporter_type" type="radio" name="transporter_type"
-                                    value="New" <?php echo $new; ?>> <?=$this ->lang->line('new')?></input>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input class="form-check-input transporter_type" type="radio" name="transporter_type"
-                                    value="Existing" <?php echo $existing; ?>><?=$this ->lang->line('existing')?>
-                                </input>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input transporter_type" type="radio"
+                                           name="transporter_type" value="New"
+                                        <?= ($current[0]->transporter_type ?? '') == 'New' ? 'checked' : '' ?>>
+                                    <label class="form-check-label"><?= $this->lang->line('new') ?></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input transporter_type" type="radio"
+                                           name="transporter_type" value="<?= $this->lang->line('existing') ?>"
+                                        <?= ($current[0]->transporter_type ?? '') != 'New' ? 'checked' : '' ?>>
+                                    <label class="form-check-label"><?= $this->lang->line('existing') ?></label>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 category_of_approval">
@@ -67,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"><?=$this ->lang->line('transporter_code')?></label>
                             <input type="text" name="tp_code" class="form-control" value="<?= $vendor_code?>" autofocus
                                 readonly="readonly">
@@ -75,35 +98,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                         </div>
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"></label><?=$this ->lang->line('contact_person')?>
-                            <div class="input-group input-group-lg">
-                                <div class="input-group-prepend">
-                                    <select name="prefix">
-                                        <?php
-					                 if ($prefix): ?>
-                                        <?php 
-					                    foreach ($prefix as $value) : ?>
-                                        <?php 
-												if ($value == $current[0]->prefix): ?>
-                                        <option value="<?= $value?>" selected><?= $value ?></option>
-                                        <?php else: ?>
-                                        <option value="<?= $value ?>"><?= $value ?></option>
-                                        <?php endif;   ?>
-                                        <?php   endforeach;  ?>
-                                        <?php else: ?>
-                                        <option value="0"><?=$this ->lang->line('no_result')?></option>
-                                        <?php endif; ?>
-                                    </select>
-                                    <input type="text" id="firstName"
-                                        placeholder="<?=$this ->lang->line('enter_contact_person')?>"
-                                        name="contact_person" class="form-control"
-                                        value="<?php echo $current[0]->contact_person; ?>" autofocus>
-                                </div>
+                            <div class="input-group">
+                                <select name="prefix" class="form-select" style="max-width: 90px;">
+                                    <?php if ($prefix): foreach ($prefix as $value): ?>
+                                        <option value="<?= $value ?>" <?= ($value == $current[0]->prefix) ? 'selected' : '' ?>>
+                                            <?= $value ?>
+                                        </option>
+                                    <?php endforeach; else: ?>
+                                        <option value="0"><?= $this->lang->line('no_result') ?></option>
+                                    <?php endif; ?>
+                                </select>
+                                <input type="text" name="contact_person" class="form-control"
+                                       placeholder="<?= $this->lang->line('enter_contact_person') ?>"
+                                       value="<?= $current[0]->contact_person ?? '' ?>">
                             </div>
                         </div>
-
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"><?=$this ->lang->line('email')?></label>
                             <input type="email" id="lastName" placeholder="<?=$this ->lang->line('enter_email')?>"
                                 name="email" class="form-control" value="<?php echo $current[0]->email; ?>" autofocus>
@@ -113,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"> <?=$this ->lang->line('mobile_no')?></label>
                             <input type="text" id="firstName" placeholder="<?=$this ->lang->line('enter_mobile')?>"
                                 name="mobile_no" class="form-control mobile"
@@ -124,17 +136,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <?php echo form_error('mobile_no'); ?>
                             </span>
                         </div>
-                        <div class="col-md-4 col-sm-4">
-                            <label class="control-label"> <?=$this ->lang->line('alternate_contact_no')?>.</label>
+                        <div class="col-md-4 col-sm-4 mt-2">
+                            <label class="control-label"> <?=$this ->lang->line('alternate_number')?></label>
                             <input type="text" id="firstName"
-                                placeholder="<?=$this ->lang->line('enter_alternate_contact')?>" name="alternate_no"
+                                placeholder="<?=$this ->lang->line('enter_alternate_number')?>" name="alternate_no"
                                 class="form-control mobile" value="<?php echo $current[0]->alternate_no; ?>"
                                 maxlength="10" minlength="10" autofocus>
                             <span class="required">
                                 <?php echo form_error('alternate_no'); ?>
                             </span>
                         </div>
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"><?=$this ->lang->line('website')?></label>
                             <input type="text" id="lastName" placeholder="<?=$this ->lang->line('enter_website')?>"
                                 name="website" class="form-control" value="<?php echo $current[0]->website; ?>"
@@ -143,9 +155,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     </div>
                 </div>
+                
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"> <?=$this ->lang->line('service_for_the_state')?></label>
 
                             <?php  
@@ -155,7 +168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                         </div>
-                        <div class="col-md-8 col-sm-8 ">
+                        <div class="col-md-8 col-sm-8 mt-2 ">
                             <label class="control-label"> <?=$this ->lang->line('address')?></label>
                             <textarea type="text" placeholder="<?=$this ->lang->line('enter_address')?>" name="address"
                                 class="form-control" rows="3" value="<?php echo $current[0]->ifsc_code; ?>" required
@@ -165,7 +178,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4mt-2">
                             <label class="control-label"><?=$this ->lang->line('reg_date')?></label>
                             <input type="text" data-date-formate="dd-mm-yyyy" name="reg_date"
                                 class="form-control date-picker"
@@ -184,59 +197,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	    						}
 	        				?>
-                        <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> <?=$this ->lang->line('gst_registration_status')?> </label>
-                            <div class="form-check">
-                                <input class="form-check-input gst_status" type="radio" name="gst_status" value="Yes"
-                                    <?= $new ?>> <?=$this ->lang->line('yes')?></input>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input class="form-check-input gst_status" type="radio" name="gst_status"
-                                    value="Un-registered Dealer" <?= $existing ?>>
-                                <?=$this ->lang->line('unregistered_dealer')?> </input>
-                            </div>
-                        </div>
-                        <?php 
-	    						$available='';
-	    						$not_available='';
-	    						if(!empty($current[0]->tds_declaration)) {
-	    							if($current[0]->tds_declaration=='Available'){
-	    								$available='checked';
-	    							}else{
-	    								$not_available='checked';
-	    							}
 
-	    						}
+                            
+										
+										
+                       <!-- GST Registration Status -->
+<div class="col-md-4 col-sm-4 ">
+    <label class="control-label"><?= $this->lang->line('gst_registration_status') ?></label>
+    <div class="d-flex align-items-center">
+        <div class="form-check me-3 mt-2">
+            <input class="form-check-input gst_status" type="radio" id="gst_yes" name="gst_status" value="Yes" <?= $new ?>>
+            <label class="form-check-label" for="gst_yes"><?= $this->lang->line('yes') ?></label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input gst_status" type="radio" id="gst_no" name="gst_status" value="Un-registered Dealer" <?= $existing ?>>
+            <label class="form-check-label" for="gst_no"><?= $this->lang->line('unregistered_dealer') ?></label>
+        </div>
+    </div>
+</div>
 
-	        			?>
-                        <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> <?= $this->lang->line('no_tds_declaration') ?></label>
-                            <div class="form-check">
-                                <input class="form-check-input tds_declaration" type="radio" name="tds_declaration"
-                                    value="Available"
-                                    <?php echo $available; ?>><?= $this->lang->line('available') ?></input>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input class="form-check-input tds_declaration" type="radio" name="tds_declaration"
-                                    value="Not-Available" <?php echo $not_available; ?>>
-                                <?= $this->lang->line('not_available') ?> </input>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<?php 
+    $available = '';
+    $not_available = '';
+    if (!empty($current[0]->tds_declaration)) {
+        if ($current[0]->tds_declaration == 'Available') {
+            $available = 'checked';
+        } else {
+            $not_available = 'checked';
+        }
+    }
+?>
+
+<!-- TDS Declaration -->
+<div class="col-md-4 col-sm-4 mt-2">
+    <label class="control-label"><?= $this->lang->line('no_tds_declaration') ?></label>
+    <div class="d-flex align-items-center">
+        <div class="form-check me-3">
+            <input class="form-check-input tds_declaration" type="radio" id="tds_available" name="tds_declaration" value="Available" <?= $available ?>>
+            <label class="form-check-label" for="tds_available"><?= $this->lang->line('available') ?></label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input tds_declaration" type="radio" id="tds_not_available" name="tds_declaration" value="Not-Available" <?= $not_available ?>>
+            <label class="form-check-label" for="tds_not_available"><?= $this->lang->line('not_available') ?></label>
+        </div>
+    </div>
+</div>
+
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <b> <?=$this ->lang->line('pan')?> </b> <span> </span>
                             <input type="text" id="lastName" placeholder="<?=$this ->lang->line('enter_pan')?>"
                                 name="pan_no" class="form-control pan_no" value="<?php echo $current[0]->pan_no; ?>"
                                 autofocus autocomplete="off" maxlength="10" minlength="10">
                         </div>
-                        <div class="col-md-4 col-sm-4 gst_div">
+                        <div class="col-md-4 col-sm-4 gst_div mt-2">
                             <b><?=$this ->lang->line('gst_in')?></b><span>( Ex. : 08ABCDE1234K1AZ)</span>
                             <input type="text" placeholder="Ex. 08ABCDE12341AZ" name="gst_no"
                                 class="form-control gstnumber" value="<?php echo $current[0]->gst_no; ?>" autofocus
                                 autocomplete="off" maxlength="15" minlength="15">
                         </div>
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <b> <?=$this ->lang->line('tan')?> </b> <span> </span>
                             <input type="text" id="firstName" placeholder="<?=$this ->lang->line('enter_tin_no')?>."
                                 name="tds" class="form-control tan_number" value="<?php echo $current[0]->tds; ?>"
@@ -246,8 +267,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> <?=$this ->lang->line('bank_nm')?></label>
+                        <div class="col-md-4 col-sm-4 mt-2">
+                            <label class="control-label"> <?=$this ->lang->line('bank_name')?></label>
                             <?php
 							$bank_nm =array('No' => 'Select Option',
 							'Allahabad Bank' => 'Allahabad Bank',      
@@ -298,13 +319,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							?>
                             <!-- <input type="text" placeholder="Enter bank name" name="bank_name" class="form-control" value="<?php echo $current[0]->bank_name; ?>" required autofocus>-->
                         </div>
-                        <div class="col-md-4 col-sm-4 ">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"> <?=$this ->lang->line('branch_name')?></label>
                             <input type="text" placeholder="<?=$this ->lang->line('enter_branch_name')?>"
                                 name="branch_name" class="form-control" value="<?php echo $current[0]->branch_name; ?>"
                                 autofocus>
                         </div>
-                        <div class="col-md-4 col-sm-4 ">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"> <?=$this ->lang->line('ifsc_code')?></label>
                             <input type="text" id="firstName" placeholder="<?=$this ->lang->line('enter_ifsc_code')?>"
                                 name="ifsc_code" class="form-control" value="<?php echo $current[0]->ifsc_code; ?>"
@@ -314,21 +335,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> <?=$this ->lang->line('account_no')?>r</label>
+                        <div class="col-md-4 col-sm-4 mt-2">
+                            <label class="control-label"> <?=$this ->lang->line('account_number')?></label>
                             <input type="text" id="firstName" placeholder="<?=$this ->lang->line('enter_account_no')?>"
                                 name="account_no" class="form-control" value="<?php echo $current[0]->account_no; ?>"
                                 autofocus autocomplete="off">
                         </div>
-                        <div class="col-md-4 col-sm-4 date_of_approval_div">
+                        <div class="col-md-4 col-sm-4 date_of_approval_div mt-2">
                             <label class="control-label"><?=$this ->lang->line('date_of_approval')?></label>
                             <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_approval"
                                 class="form-control date-picker date_of_approval" value="<?php echo date('d-m-Y'); ?>"
                                 placeholder="dd-mm-yyyy" autofocus>
                         </div>
-                        <div class="col-md-4 col-sm-4 date_of_evalution_div">
-                            <label class="control-label"> <?=$this ->lang->line('date_of_next_evalution')?></label>
-                            <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_evalution"
+                        <div class="col-md-4 col-sm-4 date_of_evalution_div mt-2">
+                            <label class="control-label"> <?=$this ->lang->line('date_of_next_evaluation')?></label>
+                            <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_evaluation"
                                 class="form-control date-picker date_of_evalution" value="<?php echo date('d-m-Y'); ?> "
                                 placeholder="dd-mm-yyyy" autofocus>
                         </div>
@@ -336,7 +357,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
 
-                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang->line('save')?></button>
+                <button type="submit" class="btn btn-primary btn-block mt-2"> <?=$this ->lang->line('save')?></button>
             </form> <!-- /form -->
         </div>
     </div>

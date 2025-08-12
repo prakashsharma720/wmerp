@@ -1757,9 +1757,9 @@ $lang['requisition_slip_details'] = "अनुसंधान पर्ची �
 $lang['delete_transporter_confirm'] = "क्या आप वाकई ट्रांसपोर्टर को हटाना चाहते हैं?";
 $lang['mechanical_item_list'] = 'यांत्रिक वस्तुओं की सूची';
 $lang['select_classification'] = 'वर्गीकरण चुनें';
-
+$lang['edit_transporter'] = 'ट्रांसपोर्टर संपादित करें';
 $lang['Pending_Purchase_Orders_for_GIR'] = 'GIR के लिए लंबित खरीद आदेश';
-
+$lang['edit_supplier_evaluation_panel'] = "आपूर्तिकर्ता मूल्यांकन पैनल संपादित करें";
 $lang['sub_category_list'] = 'उप श्रेणी सूची';
 $lang['plant_and_machinery(list)'] = 'संयंत्र और मशीनरी (सूची)'; // Hindi
 $lang['material_return_register'] = "सामग्री वापसी रजिस्टर";
@@ -1773,7 +1773,8 @@ $lang['lab_chemical'] = 'प्रयोगशाला रसायन';
     // Hindi
     $lang['edit_rm_code'] = 'आरएम कोड संपादित करें';
 $lang['report'] = 'रिपोर्ट';
-
+$lang['edit_transporter_evaluation_panel'] = "परिवहनकर्ता मूल्यांकन पैनल संपादित करें";
+$lang['select_provider_category'] = "प्रदाता श्रेणी चुनें";
 $lang['item_name'] = "आइटम का नाम";
 $lang['out_qty'] = "निकासी मात्रा";
 $lang['description'] = "विवरण";

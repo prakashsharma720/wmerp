@@ -90,7 +90,7 @@
  <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#viewpoo<?= $obj['id']; ?>" title="View Details">
                             <i class="feather feather-eye"></i>
                           </a>
-                      <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit"></i></a>
+                      <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit-3"></i></a>
 
                       <!-- <a class="btn btn-icon btn-light-brand delete_all" data-toggle="modal" data-target="#deleteissue<?php echo $obj['id']; ?>"><i  class="fa fa-trash"></i></a> -->
                       <a href="javascript:void(0);" 

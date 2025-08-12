@@ -12,37 +12,48 @@ $data=explode('?', $current_page);
   }
  
 </style>
+<div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('transporter_evaluation_panel') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('view_list') ?>
+				</li>
+			</ul>
+		</div>
 
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items d-flex align-items-center gap-2">
+    <?php $this->load->view('layout/alerts'); ?>
+      <a href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_transporter_add" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="New Evaluation" ><i class="feather feather-plus"></i></a>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?><div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?=$this ->lang->line('transporter_evaluation_panel')?>
-      </span>
-       <div class="button-group float-right">
+         <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+
+          <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="feather feather-trash"></i></button>
+
+</div>
+
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+  
+
+    <div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">    
         
-         <a href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_transporter_add" class="btn btn-success red-tooltip" data-toggle="tooltip" title="New Evaluation" ><i class="fa fa-plus"></i></a>
-
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>
-        
-      </div>
-    </div> <!-- /.card-body -->
     <div class="card-body">
 	  <form method="get" id="filterForm">
       <div class="row">
@@ -92,15 +103,19 @@ $data=explode('?', $current_page);
                    <label  class="control-label" style="visibility: hidden;"><?= $this->lang->line('grade') ?></label><br>
                   <input type="submit" class="btn btn-primary" value="<?=$this ->lang->line('search')?>" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" style="position: relative; width:80px;left:80px;bottom:38px" > <?= $this->lang->line('reset') ?></a>
               </div>
           </div>
         </form>
-      <hr>
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
+       <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
               <th><input type="checkbox" id="master"></th>
               <th ><?= $this->lang->line('sr_no') ?>.</th>
               <th> <?= $this->lang->line('transporter_name') ?> </th>
@@ -125,15 +140,23 @@ $data=explode('?', $current_page);
                 <td><?php echo $obj['percentage']; ?></td>
                 <td><?php echo $obj['approval_grade']; ?></td>
                 <td><?php echo date('d-M-Y',strtotime($obj['date'])); ?></td>
-                <td >
-                   <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-eye"></i></a>
-                   <?php //$gir_id=encrypt_url($obj['id']);?>
-				<a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Evaluation_result/print_sup/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
+                <td  style="display: flex; gap:8px; align-items:center">
+                   <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i class="feather feather-eye"></i></a> -->
+                   <?php ?>
 
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_transporter_edit/<?php echo $obj['id'];?> "><i class="fa fa-edit"></i></a>
+ <a class="btn btn-icon btn-light-brand"  data-bs-toggle="offcanvas" data-bs-target="#eva<?= $obj['id']; ?>"><i class="feather feather-eye"></i></a>
+
+
+				<a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Evaluation_result/print_sup/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
+
+                  <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_transporter_edit/<?php echo $obj['id'];?> "><i class="feather feather-edit-3"></i></a>
                   
-                  <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
+                 
+  <a class="btn btn-icon btn-light-brand" href="javascript:void(0);"onclick="deleteERT(<?= $obj['id'] ?>)"> <i class="feather feather-trash"></i></a>
+                  
                 </td>
+
+                 <?php $this->load->view('leave-module/component/eva.php', ['obj' => $obj]); ?>
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <!-- Modal content-->
@@ -227,6 +250,14 @@ $data=explode('?', $current_page);
     </div>
   </div>
 </div>
+ <script>
+function deleteERT(id) {
+    if (confirm("Are you sure you want to delete this evaluation?")) {
+        window.location.href = "<?= base_url('index.php/Evaluation_result/deleteERT/') ?>" + id;
+    }
+}
+</script>
+
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">
   $( document ).ready(function() {

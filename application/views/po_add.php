@@ -35,8 +35,11 @@
 	?>
 
 
-
-	<div class="card-body p-3" style="position: relative; top:15px">
+<div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
+	<div class="card-body ">
 		<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Purchase_order/add_new_po">
 			<!-- <input type="hidden" name="req_id" value="<?= $requisitions['0']['id'] ?>"> -->
 			<div class="form-group bg-white">

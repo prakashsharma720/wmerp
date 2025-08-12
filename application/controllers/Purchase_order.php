@@ -241,7 +241,7 @@ $this->excel = new PHPExcel(); */
 		$data['departments'] = $this->po_model->getDepartments();
 		$data['req_status'] = array('All' => 'All', 'Pending' => 'Pending', 'Approved' => 'Approved', 'Rejected' => 'Rejected');
 		//echo var_dump($data['students']);
-		$this->template->load('template', 'po_report', $data);
+		$this->template->load('layout/template', 'po_report', $data);
 	}
 
 	public function add_new_po()
@@ -438,7 +438,7 @@ $this->excel = new PHPExcel(); */
 			$this->template->load('template', 'po_print_indent', $data);
 		} else {
 			$data['title'] = 'Purchase Order ';
-			$this->template->load('template', 'po_print', $data);
+			$this->template->load('layout/template', 'po_print', $data);
 		}
 	}
 	function convert_number_to_words($number)

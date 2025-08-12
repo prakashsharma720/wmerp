@@ -3743,7 +3743,7 @@ $lang['view_list'] = 'View List';
 $lang['grids'] = 'Grids';
 $lang['mechanical_item_list'] = 'Mechanical Item List';
 $lang['select_classification'] = 'Select Classification';
-
+$lang['edit_transporter'] = 'Edit Transporter';
 $lang['Pending_Purchase_Orders_for_GIR'] = 'Pending Purchase Orders for GIR';
 
 $lang['categories'] = 'Categories';
@@ -3769,12 +3769,13 @@ $lang['sub_categories'] = 'Sub-Categories';
 $lang['departments'] = 'Departments';
 $lang['hsn_code'] = 'HSN Code';
 $lang['report'] = 'Report';
-
+$lang['edit_supplier_evaluation_panel'] = "Edit Supplier Evaluation Panel";
 // Section: Suppliers
 $lang['suppliers'] = 'Suppliers';
 $lang['add'] = 'Add';
 $lang['view_list'] = 'View List';
-
+$lang['edit_transporter_evaluation_panel'] = "Edit Transporter Evaluation Panel";
+$lang['select_provider_category'] = "Select Provider Category";
 // Section: RM Code
 $lang['rm_code'] = 'RM Code';
 $lang['rm_add'] = 'Add';  // Can be the same as 'add'

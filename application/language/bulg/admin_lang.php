@@ -1560,9 +1560,9 @@ $lang['po_date'] = 'Дата на поръчката';
 $lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
 $lang['mechanical_item_list'] = 'Списък с механични артикули';
 $lang['select_classification'] = 'Изберете класификация';
-
+$lang['edit_transporter'] = 'Редактиране на превозвач';
 $lang['Pending_Purchase_Orders_for_GIR'] = 'Изчакващи поръчки за покупка за GIR';
-
+$lang['edit_supplier_evaluation_panel'] = "Редактиране на панела за оценка на доставчика";
 $lang['sub_category_list'] = 'Списък на подкатегорията';
 $lang['supplier_details'] = 'Данни за доставчика';
 $lang['supplier_name'] = 'Име на доставчика';
@@ -1581,7 +1581,8 @@ $lang['grand_total'] = 'Крайна сума';
 $lang['lab_chemical'] = 'Лабораторен химикал';
 $lang['edit_rm_code'] = 'Редактиране на RM код';
 $lang['report'] = 'Доклад';
-
+$lang['edit_transporter_evaluation_panel'] = "Редактиране на панела за оценка на транспортера";
+$lang['select_provider_category'] = "Изберете категория доставчик";
 $lang['delivery_payment_terms'] = 'Условия за доставка и плащане';
 $lang['delivery_period'] = 'Период на доставка';
 $lang['payment_terms'] = 'Условия за плащане';

@@ -4,16 +4,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
-			
+  <div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('service_provider_evaluation_panel') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('add') ?>
+				</li>
+			</ul>
 		</div>
 
-      </div> <!-- /.card-body -->
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items d-flex align-items-center gap-2">
+    <?php $this->load->view('layout/alerts'); ?>
+     
+
+</div>
+
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+  
+
+    <div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
       <div class="card-body">
 					<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Evaluation_result/add_new_ER">
 		        <div class="form-group">

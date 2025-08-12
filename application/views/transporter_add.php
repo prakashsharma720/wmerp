@@ -127,7 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            </div>
 							<div class="col-md-4 col-sm-4">
 			            	<label class="control-label"><?=$this ->lang->line('alternate_number')?></label>
-			                <input type="text" id="firstName" placeholder="<?=$this ->lang ->line('enter_alternate_no')?>" name="alternate_no" class="form-control mobile" value=""
+			                <input type="text" id="firstName" placeholder="<?=$this ->lang->line('enter_alternate_number')?>"name="alternate_no" class="form-control mobile" value=""
 			                maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
 			                			  autofocus>
 			                <span class="">
