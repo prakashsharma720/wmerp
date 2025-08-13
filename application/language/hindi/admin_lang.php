@@ -1754,11 +1754,17 @@ $lang['contact_details'] = "संपर्क विवरण";
 $lang['bank_details'] = "बैंक विवरण";
 $lang['gst_tax_details'] = "जीएसटी और कर विवरण";
 $lang['other_details'] = "अन्य विवरण";
-
+$lang['select_finish_grade'] = "फिनिश ग्रेड चुनें";
+$lang['select_mineral_name'] = "खनिज का नाम चुनें";
 $lang['stock_unavailable'] = "स्टॉक उपलब्ध नहीं है";
 $lang['issue_slip_no'] = "इश्यू स्लिप नंबर";
 $lang['issue_to'] = "जारी किया गया (कर्मचारी का नाम)";
 $lang['enter_comment_here'] = "टिप्पणी यहां दर्ज करें";
+
+$lang['equipment_name'] = "उपकरण का नाम";
+$lang['select_equipment'] = "उपकरण चुनें";
+$lang['enter_purpose_here'] = "यहां उद्देश्य दर्ज करें";
+
 $lang['requisition_slip'] = "अनुसंधान पर्ची";
 $lang['requisition_slip_details'] = "अनुसंधान पर्ची विवरण";
 $lang['delete_transporter_confirm'] = "क्या आप वाकई ट्रांसपोर्टर को हटाना चाहते हैं?";

@@ -31,7 +31,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
     </div>
   </div>
-      <div class="card-body p-4">
+  <div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
+      <div class="card-body ">
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/add_new_requisition">
 		        <div class="form-group bg-white">
 		        	<div class="row col-md-12">
@@ -71,10 +75,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        
 		        <div class="form-group bg-white">
 			        <div class="row col-md-12">
-			        	<div class="col-md-3 col-sm-3 ">
+			        	<div class="col-md-3 col-sm-3  mt-3">
 					        <label  class="control-label"> <?=$this ->lang ->line('requisition_for')?> : </label>
 					    </div>
-				        <div class="col-md-9 col-sm-9 ">
+				        <div class="col-md-9 col-sm-9  mt-3">
 				        	<select name="rs_for" class="form-control select2 rs_for" required="required">
 								<option value=""> <?=$this ->lang ->line('select_option')?></option>
 					                <?php
@@ -93,19 +97,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                <?php endif; ?>
 					            </select>
 
-		        			<!-- <div class="form-check">
-			               	<input class="form-check-input user_for" type="radio" name="rs_for" value="Raw Material" checked> Raw Material</input>
-			               		&nbsp;&nbsp;&nbsp;&nbsp;
-			               		<input class="form-check-input user_for" type="radio" name="rs_for" value="Packing Material" > Packing Material</input>
-			               		&nbsp;&nbsp;&nbsp;&nbsp;
-			               	<input class="form-check-input user_for" type="radio" name="rs_for" value="Consumable & Chemicals"> For Consumable & Chemicals </input>
-		            	</div> -->
 					</div>
 				</div>
 				<br>
 				<div class="form-group for_raw_materials">
 			        <div class="row col-md-12">
-			        	<div class="col-md-6 col-sm-6 ">
+			        	<div class="col-md-6 col-sm-6  ">
 								<label  class="control-label"> <?=$this ->lang ->line('product')?> <span class="required">*</span></label>
 								<select name="finish_good" class="form-control select2 product_name" required="required">
 									<option value=""> <?=$this ->lang ->line('select_mineral_name')?></option>
@@ -153,18 +150,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 			        </div>
 			        <div class="row col-md-12">
-			        	<div class="col-md-6 col-sm-6 ">
+			        	<div class="col-md-6 col-sm-6 mt-2 ">
 								<label  class="control-label"> <?=$this ->lang ->line('lot_no')?>. <span class="required">*</span></label>
 								<input type="text" placeholder="<?=$this ->lang ->line('enter_lot_no')?>" name="lot_no" class="form-control lot_no" required="required" value="" autofocus>
 							</div>
-							<div class="col-md-6 col-sm-6 ">
+							<div class="col-md-6 col-sm-6 mt-2 ">
 								<label  class="control-label"> <?=$this ->lang ->line('batch_no')?> <span class="required">*</span></label>
 								<input type="text" placeholder="<?=$this ->lang ->line('enter_batch_no')?> " name="batch_no" class="form-control batch_no" required="required" value="" autofocus>
 							</div>
 			        </div>
 			        <div class="row col-md-12 raw_mesg">
-			        	<div class="col-md-12 col-sm-12 ">
-			        	    <h4 style="color:red;"><?=$this ->lang ->line('quantity_note')?> .</h4>
+			        	<div class="col-md-12 col-sm-12 mt-2 ">
+			        	    <h4 style="color:gray;"><?=$this ->lang ->line('quantity_note')?> .</h4>
 			        	</div>
 			        </div>
 			    </div>
@@ -172,7 +169,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    <div class="form-group for_chemicals hide">
 			        <div class="row col-md-12">
 
-							<div class="col-md-6 col-sm-6">
+							<div class="col-md-6 col-sm-6 mt-2">
 								<label  class="control-label"> <?=$this ->lang ->line('equipment_name')?> <span class="required">*</span></label>
 								<select name="equipment_name" class="form-control select2 equipment_name">
 									<option value=""> <?=$this ->lang ->line('select_equipment')?></option>
@@ -194,13 +191,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        </div>
 			    </div>
 
-		         <div class="main-content ">
+		         <!-- <div class="main-content ">
     <div class="card card-primary card-outline">
       <div class="card-body">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="table-responsive">
-              <table class="table table-hover table-bordered table-striped" id="proposalList">
+          <div class="col-lg-12"> -->
+            <div class="table-responsive mt-2">
+              <!-- <table class="table table-hover table-bordered table-striped" id="proposalList"> -->
+				 <table class="table table-hover table-bordered table-striped">
                 <thead>
                   <tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?>.</th>
@@ -272,14 +270,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        	</div>
 		        </div>
 		        <div class="form-group">
-			        <div class="row col-md-12">
+			        <div class="row col-md-12 p-3 ">
 		        		<label  class="control-label"> <?=$this ->lang ->line('comment')?></label>
-			    		<textarea class="form-control Comment" rows="2" placeholder="<?=$this ->lang ->line('enter_comment_here')?>" name="comment" ></textarea>
+			    		<textarea class="form-control Comment " style="position:relative;left:10px" rows="2" placeholder="<?=$this ->lang ->line('enter_comment_here')?>" name="comment" ></textarea>
 			    	</div>
 			    </div>
 		        <div class="form-group">
-		        	<div class="row col-md-12">
-			            <div class="col-md-12 col-sm-12 ">
+		        	<div class="row col-md-8">
+			            <div class="col-md-12 col-sm-12 p-3">
 			            	<label  class="control-label" style="visibility: hidden;"><?=$this ->lang ->line('grade')?></label>
 			                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang ->line('submit')?></button>
 		        		</div>

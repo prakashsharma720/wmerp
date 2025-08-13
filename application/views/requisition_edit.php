@@ -3,16 +3,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //print_r($items);exit;
 ?>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?=$this ->lang->line('edit_requisition_slip')?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
 
-		</div>
 
-      </div> <!-- /.card-body -->
+  <div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('edit_requisition_slip') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('edit') ?></li>
+      </ul>
+    </div>
+	<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
+
       <div class="card-body">
 		    	<form class="form-horizontal " role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/edit_requisition/<?= $id ?>">
 		    			<input type="hidden" name="requisition_id_old" value="<?= $id?>">
@@ -53,10 +78,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		                <div class="form-group">
 			        <div class="row col-md-12">
-			        	<div class="col-md-3 col-sm-3 ">
+			        	<div class="col-md-3 col-sm-3  mt-2">
 					        <label  class="control-label"> <?=$this ->lang->line('requisition_for')?> : </label>
 					    </div>
-				        <div class="col-md-9 col-sm-9 ">
+				        <div class="col-md-9 col-sm-9  mt-2">
 				        	<select name="rs_for" class="form-control select2 rs_for" required="required">
 								<option value=""> <?=$this ->lang->line('select_option')?></option>
 					                <?php
@@ -138,11 +163,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 			        </div>
 			        <div class="row col-md-12">
-			        	<div class="col-md-6 col-sm-6 ">
+			        	<div class="col-md-6 col-sm-6  mt-2">
 								<label  class="control-label"> <?=$this ->lang->line('lot_no')?>. <span class="required">*</span></label>
 								<input type="text" placeholder="<?=$this ->lang->line('enter_lot_no')?> " name="lot_no" class="form-control lot_no" required="required" value="<?= $lot_no?>" autofocus>
 							</div>
-							<div class="col-md-6 col-sm-6 ">
+							<div class="col-md-6 col-sm-6 mt-2 ">
 								<label  class="control-label"> <?=$this ->lang->line('batch_no')?> <span class="required">*</span></label>
 								<input type="text" placeholder="<?=$this ->lang->line('enter_batch_no')?> " name="batch_no" class="form-control batch_no" required="required" value="<?= $batch_no?>" autofocus>
 							</div>
@@ -152,7 +177,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    <div class="form-group for_chemicals">
 			        <div class="row col-md-12">
 
-							<div class="col-md-6 col-sm-6">
+							<div class="col-md-6 col-sm-6 mt-2">
 								<label  class="control-label"> <?=$this ->lang->line('equipment_name')?> <span class="required">*</span></label>
 								<select name="equipment_name" class="form-control select2 equipment_name">
 									<option value=""> <?=$this ->lang->line('select_equipment')?></option>
@@ -172,7 +197,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                <?php endif; ?>
 					            </select>
 							</div>
-							<div class="col-md-6 col-sm-6">
+							<div class="col-md-6 col-sm-6 mt-2">
 			        	 		<label  class="control-label"> <?=$this ->lang->line('purpose')?> <span class="required">*</span></label>
 				            	<textarea class="form-control purpose" rows="2" placeholder="<?=$this ->lang->line('enter_purpose_here')?>" name="purpose" value="<?= $purpose ?>" > <?= $purpose ?></textarea>
 				            </div>
@@ -180,10 +205,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    </div>
 
 		        <div class="form-group">
-		        	<div class="row col-md-12">
+		        	<div class="row col-md-12 mt-2">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #ca6b24;">
+			        			<thead style="background-color: white;">
 			        				<tr>
 			        					<th style="width: 5%;">  <?=$this ->lang->line('sr_no')?></th>
 			        					<th style="width: 30%;"> <?=$this ->lang->line('product_name')?></th>

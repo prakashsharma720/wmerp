@@ -204,7 +204,7 @@ public function edit($id=NULL) {
 		$this->template->load('template','requisition_edit_store',$data);
 	}else{
 		$data['title']='Edit Requisition Slip';
-		$this->template->load('template','requisition_edit',$data);
+		$this->template->load('layout/template','requisition_edit',$data);
 	}
 
 	
@@ -577,7 +577,7 @@ public function edit($id=NULL) {
 		$data['current'] = $this->requisition_slip_model->getById($id);
 		//print_r($data['current']);exit;
 	    $data['title']='Requisition Slip Print View';
-        $this->template->load('template','requisition_print',$data);
+        $this->template->load('layout/template','requisition_print',$data);
     } 
      function createXLS() {
   	  	

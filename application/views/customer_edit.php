@@ -2,18 +2,33 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"> Edit Customer</h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
+  <div class="nxl-content">
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+                <h5 class="m-b-10"> <?= $this->lang->line('edit_customer') ?></h5>
+            </div>
+            <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+                <li class="breadcrumb-item">
+                    <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+                        <?= $this->lang->line('home') ?>
+                    </a>
+                </li>
+                <li class="breadcrumb-item"> <?= $this->lang->line('edit') ?></li>
+            </ul>
+        </div>
 
-			<?php if (isset($message_display)) {
-			echo $message_display;
-			} ?>		
-		</div>
-      </div> <!-- /.card-body -->
+        <!-- Add New Button -->
+        <div class="page-header-right d-flex align-items-center gap-2">
+            <?php $this->load->view('layout/alerts'); ?>
+
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card stretch stretch-full">
       <div class="card-body">
 		    	<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Customers/editcustomer/<?= $old_id?>">
 				<fieldset>

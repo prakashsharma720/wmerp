@@ -1564,6 +1564,13 @@ $lang['bank_details'] = "Банкови данни";
 $lang['gst_tax_details'] = "Данни за ДДС и данъци";
 $lang['other_details'] = "Други подробности";
 
+$lang['equipment_name'] = "Име на оборудването";
+$lang['select_equipment'] = "Изберете оборудване";
+$lang['enter_purpose_here'] = "Въведете цел тук";
+
+$lang['select_finish_grade'] = "Изберете степен на завършване";
+$lang['select_mineral_name'] = "Изберете име на минерал";
+
 $lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
 $lang['mechanical_item_list'] = 'Списък с механични артикули';
 $lang['select_classification'] = 'Изберете класификация';

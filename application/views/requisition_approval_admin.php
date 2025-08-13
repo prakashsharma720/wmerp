@@ -4,35 +4,43 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 ?>
 
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?> !</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-  </div>
-  <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
-
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?> !</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?= $this->lang->line('pending_requisition_slips_for_action') ?>
-      </span>
-      <div class="button-group float-right">
-
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('pending_requisition_slips_for_action') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('') ?></li>
+      </ul>
+    </div>
+	<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+   <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
               <th><?= $this->lang->line('sr_no'); ?></th>
@@ -42,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
               <th style="white-space: nowrap;"><?= $this->lang->line('requisition_by'); ?></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('status'); ?></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('action_date'); ?></th>
-              <th style="white-space: nowrap;"><?= $this->lang->line('store_approval_by'); ?> <span style="color:white;"><?= $this->lang->line('name'); ?></span></th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('store_approval_by'); ?> <span ><?= $this->lang->line('name'); ?></span></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('admin_approval'); ?></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('action_date'); ?></th>
               <th style="white-space: nowrap;"><?= $this->lang->line('action_button'); ?></th>
@@ -107,17 +115,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
                   }
                   ?>
                 </td>
-                <td>
+                <td style="display:flex;gap:8px;align-items:center">
                   <?php if ($obj['admin_approve_status'] == 'Pending') { ?>
-                    <a class="btn btn-xs btn-success btnEdit" data-toggle="modal" data-target="#approve<?php echo $obj['id']; ?>"><i style="color:#fff;" class="fa fa-check"></i></a>
+                    <a class="btn btn-icon btn-light-brand"  data-bs-toggle="offcanvas" data-bs-target="#approve<?php echo $obj['id']; ?>"><i  class="fa fa-check"></i></a>
                     <?php if ($obj['admin_approve_status'] == 'Pending') { ?>
-                      <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id']; ?>"><i class="fa fa-edit"></i></a>
+                      <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit-3"></i></a>
                     <?php } ?>
-                    <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#reject<?php echo $obj['id']; ?>"><i style="color:#fff;" class="fa fa-window-close"></i></a>
+                    <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#reject<?php echo $obj['id']; ?>"><i class="fa fa-window-close"></i></a>
                   <?php } ?>
 
-                  <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id']; ?>"><i style="color:#fff;" class="fa fa-eye"></i></a>
+             
+                   <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#Viewapproval<?= $obj['id']; ?>" title="View More">
+                            <i class="feather feather-eye"></i>
+                          </a>
                 </td>
+
+                 <?php $this->load->view('leave-module/component/Viewapproval.php', ['obj' => $obj]); ?>
+                 <?php $this->load->view('leave-module/component/approve.php', ['obj' => $obj]); ?>
+                 <?php $this->load->view('leave-module/component/reject.php', ['obj' => $obj]); ?>
+
                 <div class="modal fade" id="view<?php echo $obj['id']; ?>" role="dialog">
                   <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -263,7 +279,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div class="modal fade" id="approve<?php echo $obj['id']; ?>" role="dialog">
                   <div class="modal-dialog">
                     <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/ActionRequisition">
-                      <!-- Modal content-->
+                     
                       <div class="modal-content">
                         <div class="modal-header" style="background-color: #168c56;color: azure;">
                           <h4 class="modal-title"><?= $this->lang->line('confirm_header'); ?>  </h4>

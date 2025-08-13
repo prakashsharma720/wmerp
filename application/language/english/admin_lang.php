@@ -3752,6 +3752,13 @@ $lang['bank_details'] = "Bank Details";
 $lang['gst_tax_details'] = "GST & Tax Details";
 $lang['other_details'] = "Other Details";
 
+$lang['equipment_name'] = "Equipment Name";
+$lang['select_equipment'] = "Select Equipment";
+$lang['enter_purpose_here'] = "Enter purpose here";
+
+$lang['select_finish_grade'] = "Select Finish Grade";
+$lang['select_mineral_name'] = "Select Mineral Name";
+
 $lang['categories'] = 'Categories';
 $lang['plant_and_machinery(list)'] = 'Plant and Machinery (List)'; // English
 $lang['raw_material'] = 'Raw Material';
