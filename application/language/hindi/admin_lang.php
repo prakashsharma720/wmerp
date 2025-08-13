@@ -1748,6 +1748,13 @@ $lang['action'] = "क्रिया";
 $lang['total'] = "कुल";
 $lang['comment'] = "टिप्पणी";
 $lang['submit'] = "जमा करें";
+$lang['approval_details'] = "अनुमोदन विवरण";
+$lang['basic_details'] = "मूल विवरण";
+$lang['contact_details'] = "संपर्क विवरण";
+$lang['bank_details'] = "बैंक विवरण";
+$lang['gst_tax_details'] = "जीएसटी और कर विवरण";
+$lang['other_details'] = "अन्य विवरण";
+
 $lang['stock_unavailable'] = "स्टॉक उपलब्ध नहीं है";
 $lang['issue_slip_no'] = "इश्यू स्लिप नंबर";
 $lang['issue_to'] = "जारी किया गया (कर्मचारी का नाम)";

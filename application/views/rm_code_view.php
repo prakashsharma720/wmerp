@@ -74,13 +74,13 @@
                   <div class="d-flex align-items-center gap-2">
                     <!-- Edit -->
                     <a href="<?= base_url('index.php/Rm_code/edit/' . $obj['id']); ?>"
-                       class="btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="Edit">
+                       class="btn btn-icon btn-light-brand" data-bs-toggle="tooltip" title="Edit">
                       <i class="feather feather-edit-3"></i>
                     </a>
 
                     <!-- Delete -->
                     <a href="javascript:void(0);" onclick="deletermcode(<?= $obj['id'] ?>)"
-                       class="btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="Delete">
+                       class="btn btn-icon btn-light-brand" data-bs-toggle="tooltip" title="Delete">
                       <i class="fa fa-trash"></i>
                     </a>
                   </div>

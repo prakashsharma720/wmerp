@@ -1557,6 +1557,13 @@ $lang['po_number'] = 'Номер на поръчката';
 $lang['order_type'] = 'Тип поръчка';
 $lang['purchase_indent'] = 'Заявка за покупка';
 $lang['po_date'] = 'Дата на поръчката';
+$lang['approval_details'] = "Подробности за одобрението";
+$lang['basic_details'] = "Основни данни";
+$lang['contact_details'] = "Данни за контакт";
+$lang['bank_details'] = "Банкови данни";
+$lang['gst_tax_details'] = "Данни за ДДС и данъци";
+$lang['other_details'] = "Други подробности";
+
 $lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
 $lang['mechanical_item_list'] = 'Списък с механични артикули';
 $lang['select_classification'] = 'Изберете класификация';

@@ -336,7 +336,7 @@ public function add($id = NULL) {
 	    $data['states']=$this->service_provider_model->getStates();
 	    $data['cities']=$this->service_provider_model->getCities();
 	    $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-        $this->template->load('template','service_provider_edit',$data);
+        $this->template->load('layout/template','service_provider_edit',$data);
 
 	}
 
@@ -457,7 +457,7 @@ public function add($id = NULL) {
 	            $data['service_provider_code'] = '';
 	        endif;
 	        $data['title']='Service Provider Profile';
-        $this->template->load('template','print_service_provider',$data);
+        $this->template->load('layout/template','print_service_provider',$data);
     }
 	public function deleteService_provider($id= null){
 			$ids=$this->input->post('ids');

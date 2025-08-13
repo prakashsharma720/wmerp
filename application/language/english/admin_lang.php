@@ -3745,6 +3745,12 @@ $lang['mechanical_item_list'] = 'Mechanical Item List';
 $lang['select_classification'] = 'Select Classification';
 $lang['edit_transporter'] = 'Edit Transporter';
 $lang['Pending_Purchase_Orders_for_GIR'] = 'Pending Purchase Orders for GIR';
+$lang['approval_details'] = "Approval Details";
+$lang['basic_details'] = "Basic Details";
+$lang['contact_details'] = "Contact Details";
+$lang['bank_details'] = "Bank Details";
+$lang['gst_tax_details'] = "GST & Tax Details";
+$lang['other_details'] = "Other Details";
 
 $lang['categories'] = 'Categories';
 $lang['plant_and_machinery(list)'] = 'Plant and Machinery (List)'; // English
