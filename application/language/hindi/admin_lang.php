@@ -1760,7 +1760,7 @@ $lang['stock_unavailable'] = "स्टॉक उपलब्ध नहीं �
 $lang['issue_slip_no'] = "इश्यू स्लिप नंबर";
 $lang['issue_to'] = "जारी किया गया (कर्मचारी का नाम)";
 $lang['enter_comment_here'] = "टिप्पणी यहां दर्ज करें";
-
+$lang['material_return_register_details'] = 'सामग्री वापसी रजिस्टर विवरण';
 $lang['equipment_name'] = "उपकरण का नाम";
 $lang['select_equipment'] = "उपकरण चुनें";
 $lang['enter_purpose_here'] = "यहां उद्देश्य दर्ज करें";

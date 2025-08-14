@@ -1566,7 +1566,7 @@ $lang['other_details'] = "Други подробности";
 $lang['other_details'] = 'Други детайли';
 $lang['tax_details'] = 'Данъчни подробности';
 $lang['address_details'] = 'Адресни подробности';
-
+$lang['material_return_register_details'] = 'Детайли за регистъра на върнатите материали';
 $lang['equipment_name'] = "Име на оборудването";
 $lang['select_equipment'] = "Изберете оборудване";
 $lang['enter_purpose_here'] = "Въведете цел тук";

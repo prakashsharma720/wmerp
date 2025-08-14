@@ -3793,7 +3793,7 @@ $lang['select_provider_category'] = "Select Provider Category";
 $lang['rm_code'] = 'RM Code';
 $lang['rm_add'] = 'Add';  // Can be the same as 'add'
 $lang['rm_view_list'] = 'View List';
-
+$lang['material_return_register_details'] = 'Material Return Register Details';
 // Section: Purchase Orders
 $lang['purchase_orders'] = 'Purchase Orders';
 $lang['purchase_add'] = 'Add';
