@@ -3798,7 +3798,7 @@ $lang['rm_view_list'] = 'View List';
 $lang['purchase_orders'] = 'Purchase Orders';
 $lang['purchase_add'] = 'Add';
 $lang['purchase_view_list'] = 'View List';
-
+$lang['edit_customers'] = "Edit Customers";
 // Section: Reports
 $lang['reports'] = 'Reports';
 $lang['suppliers_report'] = 'Suppliers Report';
@@ -3812,7 +3812,7 @@ $lang['customer_report'] = 'Customer Report';
 $lang['requisition_slips'] = 'Requisition Slips';
 $lang['gir_register_report'] = 'GIR Register Report';
 $lang['current_stock_report'] = 'Current Stock Report';
-
+$lang['address_first_part_note'] = "Please put first part of address only, Maximum Length 80 Characters.";
 // GIR Registers
 $lang['gir_registers'] = 'GIR Registers';
 $lang['general_gir'] = 'General GIR';
@@ -3829,6 +3829,9 @@ $lang['out_qty'] = "Out Qty";
 $lang['description'] = "Description";
 $lang['gir_register'] = "GIR Register";
 
+$lang['other_details'] = 'Other Details';
+$lang['tax_details'] = 'Tax Details';
+$lang['address_details'] = 'Address Details';
 
 // Issue Slips
 $lang['issue_slips'] = 'Issue Slips';

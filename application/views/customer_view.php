@@ -170,19 +170,17 @@ $data=explode('?', $current_page);
                         <td><?php echo date('d-M-Y',strtotime($obj['reg_date'])); ?></td>
                         <td><?php echo $obj['destination'];?></td>
                         <td><?php echo $obj['state'];?></td>
-                        <td>
-                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" 
-                                data-bs-target="#custom"<?php echo $obj['id'];?>"><i"
-                                    class="feather feather-eye"></i></a>
-                          
+                        <td style="display:flex;align-items:center;gap:8px">
+                           
+                           <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#custom<?= $obj['id']; ?>" title="View Details">
+                            <i class="feather feather-eye"></i>
+                          </a>
 
                             <a class="btn btn-icon btn-light-brand"
                                 href="<?php echo base_url(); ?>index.php/Customers/edit_customer_view/<?php echo $obj['id'];?>"><i
                                     class="feather feather-edit-3"></i></a>
 
-                            <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal"
-                                data-target="#delete<?php echo $obj['id'];?>"><i "
-                                    class="feather feather-trash"></i></a> -->
+                           
                        <a href="javascript:void(0);" 
    onclick="deletecustomer(<?= $obj['id'] ?>)" 
    class="btn btn-icon btn-light-brand" 

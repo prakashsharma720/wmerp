@@ -164,7 +164,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 class="form-control" rows="2" required autofocus autocomplete="off"
                                                 style="resize: none;" oninput="checkMaxLength(this, 'billingAddressError1')"></textarea>
                                             <span id="billingAddressError1" style="color:red;font-size:13px"></span>
-                                            <span style="color:red;font-size:13px">(Please Put First part of address only, Maximum Length 80 Characters.)</span>
+                                            <span style="color:red;font-size:13px"><?= $this->lang->line('address_first_part_note') ?></span>
                                         </div>
 
                                         <div class="col-md-4 col-sm-4 mt-2">
@@ -173,7 +173,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                                 class="form-control" rows="2" required autofocus autocomplete="off"
                                                 style="resize: none;" oninput="checkMaxLength(this, 'billingAddressError2')"></textarea>
                                             <span id="billingAddressError2" style="color:red;font-size:13px"></span>
-                                            <span style="color:red;font-size:13px">(Please Put Second part of address only, Maximum Length 80 Characters.)</span>
+                                            <span style="color:red;font-size:13px"><?= $this->lang->line('address_first_part_note') ?></span>
                                         </div>
                                         <div class="col-md-4 col-sm-4 mt-2">
                                             <label class="control-label"> <?= $this->lang->line('pincode') ?></label>
@@ -259,7 +259,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                             <hr>
                             <fieldset class="shipping_details" style="display:none">
-                                <legend> </legend>
+                                <legend><?= $this->lang->line('shipping_details') ?> </legend>
                                 <div class="row col-md-12">
                                     <div class="col-md-4 col-sm-4 ">
                                         <label class="control-label"> <?= $this->lang->line('gst_registration_status') ?> </label>

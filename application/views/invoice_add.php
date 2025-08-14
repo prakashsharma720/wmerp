@@ -12,15 +12,34 @@ td {
     padding: 10px;
 }
 </style>
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <h3 class="card-title"><?=$this ->lang ->line('create_invoice')?></h3>
-            <div class="pull-right error_msg">
-                <?=$this ->lang ->line('previous_invoice_no')?> : <b> <?= $last_invoice_no ?></b>
-            </div>
 
-        </div> <!-- /.card-body -->
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('create_invoice') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+    <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      
+ <?=$this ->lang ->line('previous_invoice_no')?> : <b> <?= $last_invoice_no ?></b>
+    </div>
+  </div>
+
+ <div class="main-content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card stretch stretch-full">
         <div class="card-body">
             <form class="form-horizontal" role="form" method="post"
                 action="<?php echo base_url(); ?>index.php/Invoice/add_new_invoice">
@@ -44,50 +63,76 @@ td {
                             <!-- <input type="hidden" name="invoice_code" value="<?= $invoice_code ?>"> -->
                         </div>
                         <div class="row col-md-12 ">
-                            <div class="col-md-4 col-sm-4 ">
+                            <div class="col-md-4 col-sm-4 mt-2 ">
                                 <label class="control-label"> <?=$this ->lang ->line('po_no')?>  <span class="required">*</span></label>
                                 <input type="text" placeholder=" <?=$this ->lang ->line('enter_po_no')?> " name="po_no" class="form-control"
                                     value="" required="required" />
                             </div>
-                            <div class="col-md-4 col-sm-4 ">
+                            <div class="col-md-4 col-sm-4  mt-2">
                                 <label class="control-label"><?=$this ->lang ->line('po_date')?>  <span class="required">*</span></label>
                                 <input type="text" data-date-formate="dd-mm-yyyy" name="po_date"
                                     class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"
                                     value="<?php echo date('d-m-Y'); ?>" autofocus required>
                             </div>
 
-                            <div class="col-md-4 col-sm-4">
+                            <div class="col-md-4 col-sm-4 mt-2">
                                 <label class="control-label"> <?=$this ->lang ->line('remarks')?> </label>
                                 <textarea class="form-control " rows="2" placeholder="<?=$this ->lang ->line('enter_remarks_here')?> "
                                     name="remarks"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 vendor_code">
-                            <label class="control-label"><?=$this ->lang ->line('customer_code')?>  <span class="required">*</span></label>
-                            <?php echo form_dropdown('customer_id',$vendorcodes);?>
-                        </div>
-                    </div>
-                    <div class="row col-md-12 insert_div">
-                        <div class="col-md-4 col-sm-4 gst_no">
-                            <label class="control-label"><?=$this ->lang ->line('vender_service_tax_no')?> </label>
-                            <input type="text" placeholder=" <?=$this ->lang ->line('vender_service_tax_no')?> " name="vendor_service_tax_no"
-                                class="form-control clear_gst" value="" autocomplete="off" autofocus
-                                readonly="readonly">
-                        </div>
-                        <div class="col-md-4 col-sm-4 buyer_item_code">
-                            <label class="control-label"><?=$this ->lang ->line('buyer_item_code')?> </label>
-                            <textarea class="form-control buyer_item_code1" rows="2" placeholder="<?=$this ->lang ->line('enter_buyer_item_code')?> "
-                                name="buyer_item_code"></textarea>
-                        </div>
-                        <div class="col-md-4 col-sm-4 destination">
-                            <label class="control-label"> <?=$this ->lang ->line('destination')?> </label>
-                            <textarea class="form-control destination1" rows="2" placeholder="<?=$this ->lang ->line('enter_destination_here')?> "
-                                name="destination"></textarea>
-                        </div>
-                    </div>
+                        <div class="row">
+    <!-- Customer Code -->
+    <div class="col-md-4 col-sm-4 vendor_code">
+        <label class="control-label">
+            <?= $this->lang->line('customer_code') ?> <span class="required">*</span>
+        </label>
+        <?= form_dropdown('customer_id', $vendorcodes, '', 'class="form-control"'); ?>
+    </div>
+</div>
+
+<div class="row insert_div mt-3">
+    <!-- Vendor Service Tax No -->
+    <div class="col-md-4 col-sm-4 gst_no">
+        <label class="control-label">
+            <?= $this->lang->line('vender_service_tax_no') ?>
+        </label>
+        <input type="text"
+               name="vendor_service_tax_no"
+               class="form-control clear_gst"
+               placeholder="<?= $this->lang->line('vender_service_tax_no') ?>"
+               value=""
+               readonly
+               autocomplete="off"
+               autofocus>
+    </div>
+
+    <!-- Buyer Item Code -->
+    <div class="col-md-4 col-sm-4 buyer_item_code">
+        <label class="control-label">
+            <?= $this->lang->line('buyer_item_code') ?>
+        </label>
+        <textarea class="form-control buyer_item_code1"
+                  name="buyer_item_code"
+                  rows="2"
+                  placeholder="<?= $this->lang->line('enter_buyer_item_code') ?>"></textarea>
+    </div>
+
+    <!-- Destination -->
+    <div class="col-md-4 col-sm-4 destination">
+        <label class="control-label">
+            <?= $this->lang->line('destination') ?>
+        </label>
+        <textarea class="form-control destination1"
+                  name="destination"
+                  rows="2"
+                  placeholder="<?= $this->lang->line('enter_destination_here') ?>"></textarea>
+    </div>
+</div>
+
                     <br><br>
                     <div class="form-group">
-                        <div class="row col-md-12">
+                        <div class="row col-md-12 mt-2">
                             <div class="table-responsive">
                                 <table id="maintable">
                                     <thead style="background-color: #ca6b24;">
@@ -228,26 +273,31 @@ td {
                         </div>
                     </div>
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4 ">
+                        <div class="col-md-4 col-sm-4  mt-2">
                             <label class="control-label"> <?=$this ->lang ->line('tp_no')?> </label>
                             <input type="text" placeholder="<?=$this ->lang ->line('enter_tp_no')?>" name="tp_no" class="form-control"
                                 value="" />
                         </div>
-                        <div class="col-md-4 col-sm-4 ">
+                        <div class="col-md-4 col-sm-4  mt-2">
                             <label class="control-label"> <?=$this ->lang ->line('truck_no')?><span class="required">*</span></label>
                             <input type="text" placeholder=" <?=$this ->lang ->line('enter_truck_no')?>" name="truck_no" class="form-control"
                                 required="required" value="" />
                         </div>
 
-                         <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label required"> <?=$this ->lang ->line('e_way_bill_needed')?></label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ewaybillstatus" value="Yes" checked>
-                                <?=$this ->lang ->line('yes')?></input>&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;
-                                <input class="form-check-input" type="radio" name="ewaybillstatus" value="No" ><?=$this ->lang ->line('no')?></input>
-                            </div>
-                        </div>
-                        
+                         <div class="col-md-4 col-sm-4 mt-2">
+    <label class="control-label required"><?= $this->lang->line('e_way_bill_needed') ?></label>
+    <div class="form-check">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ewaybillstatus" id="ewayYes" value="Yes" checked>
+            <label class="form-check-label" for="ewayYes"><?= $this->lang->line('yes') ?></label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="ewaybillstatus" id="ewayNo" value="No">
+            <label class="form-check-label" for="ewayNo"><?= $this->lang->line('no') ?></label>
+        </div>
+    </div>
+</div>
+
                     </div>
                     <div class="row col-md-12">
 
@@ -271,12 +321,12 @@ td {
                         </div>
                     </div>
                     <div class="row col-md-12">
-                        <div class="col-md-6 col-sm-6 ">
+                        <div class="col-md-6 col-sm-6  mt-2">
                             <label class="control-label"> <?=$this ->lang ->line('driver_name')?> (2)</label>
                             <input type="text" placeholder="<?=$this ->lang ->line('enter_driver_name')?>" name="driver_name2" class="form-control"
                                 value="" />
                         </div>
-                        <div class="col-md-6 col-sm-6 ">
+                        <div class="col-md-6 col-sm-6 mt-2 ">
                             <label class="control-label"> <?=$this ->lang ->line('mobile_no')?> (2)</label>
                             <input type="text" placeholder=" <?=$this ->lang ->line('enter_mobile_no')?>" name="contact2"
                                 class="form-control mobile"
@@ -285,12 +335,12 @@ td {
                         </div>
                     </div>
                     <div class="row col-md-12">
-                        <div class="col-md-6 col-sm-6 ">
+                        <div class="col-md-6 col-sm-6 mt-2 ">
                             <label class="control-label"><?=$this ->lang ->line('owner_name')?></label>
                             <input type="text" placeholder=" <?=$this ->lang ->line('enter_owner_name')?>" name="driver_name3" class="form-control"
                                 value="" />
                         </div>
-                        <div class="col-md-6 col-sm-6 ">
+                        <div class="col-md-6 col-sm-6  mt-2">
                             <label class="control-label"> <?=$this ->lang ->line('owner_no')?></label>
                             <input type="text" placeholder=" <?=$this ->lang ->line('enter_mobile_no')?>" name="contact3"
                                 class="form-control mobile"
@@ -307,16 +357,19 @@ td {
                             <input type="text" placeholder=" <?=$this ->lang ->line('enter_test_report_no')?>" name="test_report_no"
                                 class="form-control" value="" />
                         </div>
-                        <div class="col-md-4 col-sm-4 ">
-                            <label class="control-label"> <?=$this ->lang ->line('sending_status')?> </label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="report_sending_status"
-                                    value="Enclosed" checked><?=$this ->lang ->line('enclosed')?></input>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <input class="form-check-input" type="radio" name="report_sending_status"
-                                    value="Being Send by Post"> <?=$this ->lang ->line('being_send_by_post')?></input>
-                            </div>
-                        </div>
+                        <div class="col-md-4 col-sm-4">
+    <label class="control-label"><?= $this->lang->line('sending_status') ?></label>
+    <br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="report_sending_status" id="enclosed" value="Enclosed" checked>
+        <label class="form-check-label" for="enclosed"><?= $this->lang->line('enclosed') ?></label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="report_sending_status" id="post" value="Being Send by Post">
+        <label class="form-check-label" for="post"><?= $this->lang->line('being_send_by_post') ?></label>
+    </div>
+</div>
+
                         <div class="col-md-4 col-sm-4 ">
                             <label class="control-label"><?=$this ->lang ->line('testing_date')?></label>
                             <input type="text" data-date-formate="dd-mm-yyyy" name="testing_date"

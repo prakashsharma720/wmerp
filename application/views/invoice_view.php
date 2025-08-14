@@ -4,48 +4,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $current_page=current_url();
 $data=explode('?', $current_page);
 ?>
-<?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-</div>
-<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
-
-<?php if($this->session->flashdata('failed')): ?>
-<div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-</div>
-<?php endif; ?>
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-
-            <span class="card-title"><?=$this ->lang ->line('invoice_list')?>
-            </span>
-            <div class="button-group float-right">
-
-
-
-                <a href="<?php echo base_url(); ?>index.php/Invoice/add" class="btn btn-success" data-toggle="tooltip"
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('invoice_list') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+    <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      
+ <a href="<?php echo base_url(); ?>index.php/Invoice/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip"
                     title="New Invoice"><i class="fa fa-plus"></i></a>
 
-                <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
+                <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
                         class="fa fa-refresh"></i></button>
 
-                <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i
+                <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete"><i
                         class="fa fa-trash"></i></button>
-                <button class="btn btn-primary generate_json" data-toggle="tooltip" title="Bulk generate_json"><i
+                <button class="btn btn-icon btn-light-brand generate_json" data-toggle="tooltip" title="Bulk generate_json"><i
                         class="fa fa-download"></i></i></button>
+                        
 
-                &nbsp;
+    </div>
+  </div>
 
-            </div>
+ <div class="main-content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card stretch stretch-full">
 
-        </div> <!-- /.card-body -->
         <div class="card-body">
             <form method="post" action="<?php echo base_url(); ?>index.php/Invoice/importdata"
                 enctype="multipart/form-data">
@@ -68,16 +65,21 @@ $data=explode('?', $current_page);
 						   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?></label><br>
 						  <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" /> 
 						  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-						  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?=$this ->lang ->line('reset')?></a>
+						  <a href="<?php echo $data[0]?>" class="btn btn-danger" style="position:relative;width:85px;left:80px;bottom:38px" > <?=$this ->lang ->line('reset')?></a>
 					  </div>
 					</div>
 				</form>
 				<hr>
 				<br>
+             <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
             <div class="table-responsive">
-                <table id="example1" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
                             <th><input type="checkbox" id="master"></th>
                             <th><?=$this ->lang ->line('sr_no')?>.</th>
                             <th style="white-space: nowrap;"> <?=$this ->lang ->line('invoice_no')?> </th>
@@ -127,22 +129,55 @@ $data=explode('?', $current_page);
                                     ?>
                             </td>
 
-                            <td>
-                                <a class="btn btn-xs btn-info btnEdit"
+                            <td style="display:flex;gap:8px;align-items:center">
+                                <a class="btn btn-icon btn-light-brand"
                                     href="<?php echo base_url(); ?>index.php/Invoice/print_invoice/<?php echo $obj['id'];?>"><i
-                                        style="color:#fff;" class="fa fa-print"></i></a>
+                                        class="fa fa-print"></i></a>
 
-                                <a class="btn btn-xs btn-primary btnEdit" data-toggle="modal"
-                                    data-target="#send_mail<?php echo $obj['id'];?>"><i style="color:#fff;"
-                                        class="fa fa-envelope"></i></a>
+                                <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal"
+                                    data-target="#send_mail<?php echo $obj['id'];?>"><i 
+                                        class="fa fa-envelope"></i></a> -->
+ <a href="javascript:void(0);" 
+   class="btn btn-icon btn-light-brand send-invoice-btn" 
+   data-id="<?= $obj['id']; ?>">
+   <i class="fa fa-envelope"></i>
+</a>
+                      <a href="javascript:void(0);" 
+   class="btn btn-icon btn-light-brand" 
+   onclick="deleteInvoice(<?= $obj['id']; ?>)">
+   <i class="feather feather-trash"></i>
+</a>
+        
+                                <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal"
+                                    data-target="#delete<?php echo $obj['id'];?>"><i
+                                        class="feather feather-trash"></i></a> -->
 
-                                <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal"
-                                    data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"
-                                        class="fa fa-trash"></i></a>
-                                <a class="btn btn-xs btn-primary btnEdit"
+                                <a class="btn btn-icon btn-light-brand"
                                     href="<?php echo base_url(); ?>index.php/Invoice/generate_json/<?php echo $obj['id'];?>"><i
                                         class="fa fa-download"></i></a>
+
+                                       
+
                             </td>
+
+
+
+<div id="customConfirmBox" 
+     style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%, -30%); background:#fff; border:1px solid #ccc; padding:20px; z-index:9999; width:400px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+  
+  <h5 style="margin-bottom: 15px ; background:black;height:30px;color:white">Confirm Header</h5>
+  <p>Are you sure, you want to send Invoice to customer email?</p>
+  
+  <div style="text-align:right;">
+    <button id="confirmYes" class="btn btn-sm btn-primary">YES</button>
+    <button id="confirmNo" class="btn btn-sm btn-secondary" style="position:relative;left:60px; bottom:27px">NO</button>
+  </div>
+</div>
+
+
+
+
+
 
                             <div class="modal fade" id="send_mail<?php echo $obj['id'];?>" role="dialog">
                                 <div class="modal-dialog">
@@ -206,6 +241,42 @@ $data=explode('?', $current_page);
         </div>
     </div>
 </div>
+
+ <script>
+        function deleteInvoice(id) {
+  if (confirm("Are you sure you want to delete this invoice?")) {
+    window.location.href = "<?= base_url('index.php/invoice/deleteinvoice/') ?>" + id;
+  }
+}
+
+        </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let selectedId = null;
+
+    // Show popup on click
+    document.querySelectorAll('.send-invoice-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            selectedId = this.getAttribute('data-id');
+            document.getElementById('customConfirmBox').style.display = 'block';
+        });
+    });
+
+    // On YES, redirect to send invoice URL
+    document.getElementById('confirmYes').addEventListener('click', function() {
+        if (selectedId) {
+            window.location.href = "<?= base_url('index.php/Invoice/send_mail/') ?>" + selectedId;
+        }
+    });
+
+    // On NO, hide the popup
+    document.getElementById('confirmNo').addEventListener('click', function() {
+        document.getElementById('customConfirmBox').style.display = 'none';
+        selectedId = null;
+    });
+});
+</script>
+
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {

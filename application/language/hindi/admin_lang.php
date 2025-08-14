@@ -1764,7 +1764,9 @@ $lang['enter_comment_here'] = "टिप्पणी यहां दर्ज �
 $lang['equipment_name'] = "उपकरण का नाम";
 $lang['select_equipment'] = "उपकरण चुनें";
 $lang['enter_purpose_here'] = "यहां उद्देश्य दर्ज करें";
-
+$lang['address_first_part_note'] = "कृपया केवल पते का पहला भाग दर्ज करें, अधिकतम लंबाई 80 अक्षर।";
+$lang['is_shipping_address_different'] = "क्या शिपिंग पता बिलिंग पते से अलग है?";
+$lang['edit_customers'] = "ग्राहकों को संपादित करें";
 $lang['requisition_slip'] = "अनुसंधान पर्ची";
 $lang['requisition_slip_details'] = "अनुसंधान पर्ची विवरण";
 $lang['delete_transporter_confirm'] = "क्या आप वाकई ट्रांसपोर्टर को हटाना चाहते हैं?";
@@ -1783,6 +1785,10 @@ $lang['linear'] = 'रेखीय';
 $lang['non_linear'] = 'गैर-रेखीय';
 $lang['finish_goods'] = 'समाप्त माल';  
 $lang['lab_chemical'] = 'प्रयोगशाला रसायन';
+$lang['other_details'] = 'अन्य विवरण';
+$lang['tax_details'] = 'कर विवरण';
+$lang['address_details'] = 'पता विवरण';
+
     // Hindi
     $lang['edit_rm_code'] = 'आरएम कोड संपादित करें';
 $lang['report'] = 'रिपोर्ट';

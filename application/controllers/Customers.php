@@ -217,7 +217,7 @@ public function add() {
 	    $data['states']=$this->customer_model->getStates();
 	    $data['cities']=$this->customer_model->getCities();
 	    $data['prefix']= array('Mr.' => 'Mr.','Miss.'=>'Miss.','Ms.'=>'Ms.');
-        $this->template->load('template','customer_edit',$data);
+        $this->template->load('layout/template','customer_edit',$data);
 	
 	}
 

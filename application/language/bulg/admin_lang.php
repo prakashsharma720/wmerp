@@ -1563,14 +1563,17 @@ $lang['contact_details'] = "Данни за контакт";
 $lang['bank_details'] = "Банкови данни";
 $lang['gst_tax_details'] = "Данни за ДДС и данъци";
 $lang['other_details'] = "Други подробности";
+$lang['other_details'] = 'Други детайли';
+$lang['tax_details'] = 'Данъчни подробности';
+$lang['address_details'] = 'Адресни подробности';
 
 $lang['equipment_name'] = "Име на оборудването";
 $lang['select_equipment'] = "Изберете оборудване";
 $lang['enter_purpose_here'] = "Въведете цел тук";
-
+$lang['edit_customers'] = "Редактиране на клиенти";
 $lang['select_finish_grade'] = "Изберете степен на завършване";
 $lang['select_mineral_name'] = "Изберете име на минерал";
-
+$lang['address_first_part_note'] = "Моля, въведете само първата част на адреса, максимална дължина 80 знака.";
 $lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
 $lang['mechanical_item_list'] = 'Списък с механични артикули';
 $lang['select_classification'] = 'Изберете класификация';
