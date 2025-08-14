@@ -1,21 +1,6 @@
 
 
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-  </div>
-  <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
 
 <!-- Page Header -->
 <div class="nxl-content">
@@ -28,7 +13,7 @@
         <li class="breadcrumb-item">
           <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
         </li>
-        <!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?></li> -->
+        <li class="breadcrumb-item"><?= $this->lang->line('view_list') ?></li>
 
       </ul>
 
@@ -71,8 +56,11 @@ $data=explode('?', $current_page);
  
 </style>
 
-
-    <div class="card-body p-3">
+ <div class="main-content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card stretch stretch-full">
+    <div class="card-body ">
 	<form method="get" id="filterForm">
       <div class="row">
           <div class="col-md-4 col-sm-4 ">
@@ -154,7 +142,7 @@ $data=explode('?', $current_page);
 
   <div class="d-flex">
     <!-- Search Button -->
-    <button type="submit" class="btn btn-sm btn-primary me-2">
+    <button type="submit" class="btn btn-sm btn-primary me-2 ">
       <?= $this->lang->line('search') ?>
     </button>
 
@@ -167,10 +155,15 @@ $data=explode('?', $current_page);
 
         </form>
         <br></br>
-      <div class="table-responsive p-3">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
+      <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
               <th><input type="checkbox" id="master"></th>
               <th style="white-space: nowrap;"><?=$this ->lang ->line('sr_no')?> .</th>
               <th style="white-space: nowrap;"> <?=$this ->lang ->line('mr_no')?>  </th>
@@ -214,23 +207,22 @@ $data=explode('?', $current_page);
                 <td><?php echo $obj['total_qty']; ?></td>
               <td>
   <div class="d-flex gap-2">
-    <!-- View Button -->
-    <a class="btn btn-xs border btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>" title="View GIR Register">
-      <i class="fa fa-eye text-dark"></i>
-    </a>
-
+    
+ <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#material<?= $obj['id']; ?>" title="View Details">
+                            <i class="feather feather-eye"></i>
+                          </a>
     <!-- Print Button -->
-    <a class="btn btn-xs border btnEdit" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id'];?>" title="Print Register">
+    <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id'];?>" title="Print Register">
       <i class="fa fa-print text-dark"></i>
     </a>
 
     <!-- Return Slip Button -->
-    <a class="btn btn-xs border btnEdit" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id'];?> " title="Create Return Slip">
+    <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id'];?> " title="Create Return Slip">
       <i class="fa fa-exchange text-dark"></i>
     </a>
   </div>
 </td>
-
+   <?php $this->load->view('leave-module/component/material.php', ['obj' => $obj]); ?>
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <!-- Modal content-->

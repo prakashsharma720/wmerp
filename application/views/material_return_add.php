@@ -12,7 +12,7 @@
             <?= $this->lang->line('home') ?>
           </a>
         </li>
-        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('add') ?></li>
       </ul>
     </div>
 
@@ -36,9 +36,12 @@
 
 
 
-
+ <div class="main-content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card stretch stretch-full">
 		
-      <div class="card-body p-3">
+      <div class="card-body ">
 		    <form class="form-horizontal " role="form" method="post" action="<?php echo base_url(); ?>index.php/Material_return_records/add_new_gir/">
 		        <div class="form-group">
 		        	<div class="row ">
@@ -57,7 +60,7 @@
 			            </div>
 		        	</div>
 		        	<div class="row ">
-		        	 	<div class="col-md-4 col-sm-4 ">
+		        	 	<div class="col-md-4 col-sm-4 mt-2 ">
 							<label class="control-label"> <?=$this ->lang ->line('category')?> </label>
 			            	 <select name="categories_id" class="form-control select2 category" required="required">
 			            	 	<option value=""> <?=$this ->lang ->line('select_category')?> </option>
@@ -77,7 +80,7 @@
 					                <?php endif; ?>
 					            </select> 
 			            </div>
-			           	<div class="col-md-4 col-sm-4 ">
+			           	<div class="col-md-4 col-sm-4 mt-2 ">
 			            	 <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?>  <span class="required">*</span></label>
 			            	<select name="supplier_id" class="form-control select2 suppliers" required="required">
 			            		<option value=""> <?=$this ->lang ->line('select_supplier')?> </option>
@@ -97,7 +100,7 @@
 						        <?php endif; ?>
 						    </select>
 						</div>
-						<div class="col-md-4 col-sm-4 ">
+						<div class="col-md-4 col-sm-4 mt-2">
 			            	<label class="control-label"> <?=$this ->lang ->line('tentative_date_of_return')?>  <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="return_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"	value="" autofocus required >
 			            </div>

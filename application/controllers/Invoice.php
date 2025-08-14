@@ -88,7 +88,7 @@ public function add() {
     $data['amount_in_words']=$this->convert_number_to_words(round($grand_total));   
     // echo "<pre>";print_r($data['invoice_data']);exit;
 
-    $this->template->load('template','invoice_print',$data);
+    $this->template->load('layout/template','invoice_print',$data);
     }
 
     public function send_mail($id){
