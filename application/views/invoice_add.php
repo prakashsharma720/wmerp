@@ -135,7 +135,7 @@ td {
                         <div class="row col-md-12 mt-2">
                             <div class="table-responsive">
                                 <table id="maintable">
-                                    <thead style="background-color: #ca6b24;">
+                                    <thead style="background-color: white; border:2px solid gray">
                                         <tr>
                                             <th>#</th>
                                             <th> <?=$this ->lang ->line('item_name')?> </th>

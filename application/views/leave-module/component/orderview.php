@@ -103,4 +103,5 @@
     <div class="px-4 gap-2 d-flex align-items-center ht-80 border border-end-0 border-gray-2">
         <a href="javascript:void(0);" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">Close</a>
     </div>
+    
 </div>
