@@ -1574,6 +1574,11 @@ $lang['edit_customers'] = "Редактиране на клиенти";
 $lang['select_finish_grade'] = "Изберете степен на завършване";
 $lang['select_mineral_name'] = "Изберете име на минерал";
 $lang['address_first_part_note'] = "Моля, въведете само първата част на адреса, максимална дължина 80 знака.";
+
+$lang['enter_ifsc_code'] = 'Въведете IFSC код';
+$lang['enter_branch_address'] = 'Въведете адрес на клон';
+$lang['enter_account_number'] = 'Въведете номер на сметка';
+
 $lang['plant_and_machinery(list)'] = 'Машини и съоръжения (Списък)'; // Bulgarian
 $lang['mechanical_item_list'] = 'Списък с механични артикули';
 $lang['select_classification'] = 'Изберете класификация';

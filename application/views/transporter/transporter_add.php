@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <div class="nxl-content">
 	<!-- [ page-header ] start -->
@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<!-- [ page-header ] end -->
 	<!-- [ Main Content ] start -->
- 	<div class="main-content">
+	<div class="main-content">
 		<div class="row">
 			<div class="col-xl-12">
 				<div class="card stretch stretch-full">
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="row">
 									<div class="col-lg-4 col-md-4 mb-4">
 										<label class="form-label"><?= $this->lang->line('transporter_name') ?></label>
-										<input type="text" name="transporter_name" class="form-control" 
+										<input type="text" name="transporter_name" class="form-control"
 											placeholder="<?= $this->lang->line('enter_name') ?>" required autocomplete="off">
 									</div>
 									<div class="col-lg-4 col-md-4 mb-4">
@@ -52,14 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									</div>
 									<div class="col-lg-4 col-md-4 mb-4 category_of_approval">
 										<label class="form-label"><?= $this->lang->line('category_of_approval') ?></label>
-										<?php  
-											$app_cat = [
-												'No' => 'Select Option',
-												'A'  => 'A',
-												'B'  => 'B',
-												'C'  => 'C'
-											];
-											echo form_dropdown('category_of_approval', $app_cat, '', 'class="form-control"');
+										<?php
+										$app_cat = [
+											'No' => 'Select Option',
+											'A'  => 'A',
+											'B'  => 'B',
+											'C'  => 'C'
+										];
+										echo form_dropdown('category_of_approval', $app_cat, '', 'class="form-control"');
 										?>
 									</div>
 								</div>
@@ -118,33 +118,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 
 
-							
-						<!-- State & Address -->
-<div class="form-group">
-    <div class="row">
-        <div class="col-lg-4 col-md-4 mb-4">
-            <label class="form-label fw-bold"><?= $this->lang->line('service_for_the_state') ?></label>
-            <?= form_multiselect(
-                'states[]',
-                $states,
-                '',
-                'class="form-select" style="height:auto; min-height: calc(1.5em + .75rem + 2px);"'
-            ); ?>
-        </div>
-        <div class="col-lg-8 col-md-8 mb-4">
-            <label class="form-label fw-bold"><?= $this->lang->line('address') ?></label>
-            <textarea 
-                name="address" 
-                class="form-control" 
-                rows="3" 
-                placeholder="<?= $this->lang->line('enter_address') ?>" 
-                required 
-                style="resize: none;"
-            ></textarea>
-            <?= form_error('address', '<span class="text-danger">', '</span>'); ?>
-        </div>
-    </div>
-</div>
+
+							<!-- State & Address -->
+							<div class="form-group">
+								<div class="row">
+									<div class="col-lg-4 col-md-4 mb-4">
+										<label class="form-label fw-bold"><?= $this->lang->line('service_for_the_state') ?></label>
+										<?= form_multiselect(
+											'states[]',
+											$states,
+											'',
+
+											'class="form-select" style="height:auto; min-height: calc(1.5em + .75rem + 2px);"'
+										); ?>
+									</div>
+									<div class="col-lg-8 col-md-8 mb-4">
+										<label class="form-label fw-bold"><?= $this->lang->line('address') ?></label>
+										<textarea
+											name="address"
+											class="form-control"
+											rows="3"
+											placeholder="<?= $this->lang->line('enter_address') ?>"
+											required
+											style="resize: none;"></textarea>
+										<?= form_error('address', '<span class="text-danger">', '</span>'); ?>
+									</div>
+								</div>
+							</div>
 
 
 							<!-- Dates & GST & TDS -->
@@ -206,52 +206,53 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="row">
 									<div class="col-lg-4 col-md-4 mb-4">
 										<label class="form-label"><?= $this->lang->line('bank_name') ?></label>
-										<label class="form-label"> <?=$this ->lang->line('bank_name')?></label>
+										<label class="form-label"> <?= $this->lang->line('bank_name') ?></label>
 										<?php
-										$bank_nm =array('No' => 'Select Option',
-										'Allahabad Bank' => 'Allahabad Bank',      
-										'Andhra Bank' => 'Andhra Bank',
-										'Axis Bank' => 'Axis Bank',
-										'Bank of Baroda - Corporate Banking' => 'Bank of Baroda - Corporate Banking',
-										'Bank of Baroda - Retail Banking' => 'Bank of Baroda - Retail Banking',
-										'Bank of India' => 'Bank of India',
-										'Bank of Maharashtra' => 'Bank of Maharashtra',
-										'Canara Bank' => 'Canara Bank',
-										'Central Bank of India' => 'Central Bank of India',
-										'City Union Bank' => 'City Union Bank',
-										'Corporation Bank' => 'Corporation Bank',
-										'Development Credit Bank' => 'Development Credit Bank',
-										'Dhanlaxmi Bank' => 'Dhanlaxmi Bank',
-										'ICICI Bank' => 'ICICI Bank',
-										'IDBI Bank' => 'IDBI Bank',
-										'Indian Bank' => 'Indian Bank',
-										'Indian Overseas Bank' => 'Indian Overseas Bank',
-										'IndusInd Bank' => 'IndusInd Bank',
-										'ING Vysya Bank' => 'ING Vysya Bank',
-										'Jammu and Kashmir Bank' => 'Jammu and Kashmir Bank',
-										'Karnataka Bank Ltd' => 'Karnataka Bank Ltd',
-										'Karur Vysya Bank' => 'Karur Vysya Bank',
-										'Kotak Bank' => 'Kotak Bank',
-										'Laxmi Vilas Bank' => 'Laxmi Vilas Bank',
-										'Oriental Bank of Commerce' => 'Oriental Bank of Commerce',
-										'Punjab National Bank - Corporate Banking' => 'Punjab National Bank - Corporate Banking',
-										'Punjab National Bank - Retail Banking' => 'Punjab National Bank - Retail Banking',
-										'Punjab & Sind Bank' => 'Punjab & Sind Bank',
-										'Shamrao Vitthal Co-operative Bank' => 'Shamrao Vitthal Co-operative Bank',
-										'South Indian Bank' => 'South Indian Bank',
-										'State Bank of Bikaner & Jaipur' =>'State Bank of Bikaner & Jaipur',
-										'State Bank of Hyderabad' => 'State Bank of Hyderabad',
-										'State Bank of India' => 'State Bank of India',
-										'State Bank of Mysore' => 'State Bank of Mysore',
-										'State Bank of Patiala' => 'State Bank of Patiala',
-										'State Bank of Travancore' => 'State Bank of Travancore',
-										'Syndicate Bank' => 'Syndicate Bank',
-										'Tamilnad Mercantile Bank Ltd.' => 'Tamilnad Mercantile Bank Ltd.',
-										'UCO Bank' => 'UCO Bank',
-										'Union Bank of India' => 'Union Bank of India',
-										'United Bank of India' => 'United Bank of India',
-										'Vijaya Bank' => 'Vijaya Bank',
-										'Yes Bank Ltd' => 'Yes Bank Ltd'
+										$bank_nm = array(
+											'No' => 'Select Option',
+											'Allahabad Bank' => 'Allahabad Bank',
+											'Andhra Bank' => 'Andhra Bank',
+											'Axis Bank' => 'Axis Bank',
+											'Bank of Baroda - Corporate Banking' => 'Bank of Baroda - Corporate Banking',
+											'Bank of Baroda - Retail Banking' => 'Bank of Baroda - Retail Banking',
+											'Bank of India' => 'Bank of India',
+											'Bank of Maharashtra' => 'Bank of Maharashtra',
+											'Canara Bank' => 'Canara Bank',
+											'Central Bank of India' => 'Central Bank of India',
+											'City Union Bank' => 'City Union Bank',
+											'Corporation Bank' => 'Corporation Bank',
+											'Development Credit Bank' => 'Development Credit Bank',
+											'Dhanlaxmi Bank' => 'Dhanlaxmi Bank',
+											'ICICI Bank' => 'ICICI Bank',
+											'IDBI Bank' => 'IDBI Bank',
+											'Indian Bank' => 'Indian Bank',
+											'Indian Overseas Bank' => 'Indian Overseas Bank',
+											'IndusInd Bank' => 'IndusInd Bank',
+											'ING Vysya Bank' => 'ING Vysya Bank',
+											'Jammu and Kashmir Bank' => 'Jammu and Kashmir Bank',
+											'Karnataka Bank Ltd' => 'Karnataka Bank Ltd',
+											'Karur Vysya Bank' => 'Karur Vysya Bank',
+											'Kotak Bank' => 'Kotak Bank',
+											'Laxmi Vilas Bank' => 'Laxmi Vilas Bank',
+											'Oriental Bank of Commerce' => 'Oriental Bank of Commerce',
+											'Punjab National Bank - Corporate Banking' => 'Punjab National Bank - Corporate Banking',
+											'Punjab National Bank - Retail Banking' => 'Punjab National Bank - Retail Banking',
+											'Punjab & Sind Bank' => 'Punjab & Sind Bank',
+											'Shamrao Vitthal Co-operative Bank' => 'Shamrao Vitthal Co-operative Bank',
+											'South Indian Bank' => 'South Indian Bank',
+											'State Bank of Bikaner & Jaipur' => 'State Bank of Bikaner & Jaipur',
+											'State Bank of Hyderabad' => 'State Bank of Hyderabad',
+											'State Bank of India' => 'State Bank of India',
+											'State Bank of Mysore' => 'State Bank of Mysore',
+											'State Bank of Patiala' => 'State Bank of Patiala',
+											'State Bank of Travancore' => 'State Bank of Travancore',
+											'Syndicate Bank' => 'Syndicate Bank',
+											'Tamilnad Mercantile Bank Ltd.' => 'Tamilnad Mercantile Bank Ltd.',
+											'UCO Bank' => 'UCO Bank',
+											'Union Bank of India' => 'Union Bank of India',
+											'United Bank of India' => 'United Bank of India',
+											'Vijaya Bank' => 'Vijaya Bank',
+											'Yes Bank Ltd' => 'Yes Bank Ltd'
 										);
 										echo form_dropdown('bank_name', $bank_nm)
 										?>
@@ -259,7 +260,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									</div>
 									<div class="col-lg-4 col-md-4 mb-4">
 										<label class="form-label"><?= $this->lang->line('branch_name') ?></label>
-										<input type="text" name="branch_name" class="form-control" placeholder="<?= $this->lang->line('enter_branch_name') ?>">
+										<input type="text" name="branch_name" class="form-control" placeholder="<?= $this->lang->line('enter_branch_address') ?>">
 									</div>
 									<div class="col-lg-4 col-md-4 mb-4">
 										<label class="form-label"><?= $this->lang->line('ifsc_code') ?></label>
@@ -273,7 +274,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="row">
 									<div class="col-lg-4 col-md-4 mb-4">
 										<label class="form-label"><?= $this->lang->line('account_number') ?></label>
-										<input type="text" name="account_no" class="form-control" placeholder="<?= $this->lang->line('enter_acount_number') ?>">
+										<input type="text" name="account_no" class="form-control" placeholder="<?= $this->lang->line('enter_account_number') ?>">
 									</div>
 									<div class="col-lg-4 col-md-4 mb-4 date_of_approval">
 										<label class="form-label"><?= $this->lang->line('date_of_approval') ?></label>
@@ -298,32 +299,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<!-- [ Main Content ] end -->
 </div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		var base_url='<?php echo base_url() ;?>';
+		var base_url = '<?php echo base_url(); ?>';
 		//alert(base_url);
-		$(document).on('blur','.transporter_code',function(){
-				var transporter_code = $('.transporter_code').val();
-				//var aa= base_url+"index.php/Transporters/CheckTrasnferCode/"+transporter_code;
-				//alert(aa);
-				$.ajax({
-	                type: "POST",
-	                url:"<?php echo base_url('index.php/Transporters/CheckTrasnferCode/') ?>"+transporter_code,
+		$(document).on('blur', '.transporter_code', function() {
+			var transporter_code = $('.transporter_code').val();
+			//var aa= base_url+"index.php/Transporters/CheckTrasnferCode/"+transporter_code;
+			//alert(aa);
+			$.ajax({
+				type: "POST",
+				url: "<?php echo base_url('index.php/Transporters/CheckTrasnferCode/') ?>" + transporter_code,
 
-	                //data: {id:role_id},
-	                dataType: 'html',
-	                success: function (response) {
-	                	//alert(response);
-	                   if(response==1){
-	                   	alert('This Trasnporter Code is already taken');
-	                   	$('.transporter_code').val('');
-	                   }
-	                }
-            	});
-			}); 
-			
+				//data: {id:role_id},
+				dataType: 'html',
+				success: function(response) {
+					//alert(response);
+					if (response == 1) {
+						alert('This Trasnporter Code is already taken');
+						$('.transporter_code').val('');
+					}
+				}
+			});
+		});
+
 		/*	$("input[type='radio']").click(function(){
             var transporter_type = $("input[name='transporter_type']:checked").val();
 				if(transporter_type=='New'){
@@ -338,46 +339,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					//$(".category_of_approval").addClass('show');
 				}
 			});*/
-			
-		var transporter_type = $("input[name='transporter_type']:checked").val();
-		  if(transporter_type=='New'){
-					$(".category_of_approval").hide();
-					$(".date_of_evalution").addClass('hide');
-					$(".date_of_approval").addClass('hide');
-					//$(".category_of_approval").removeClass('show');
-				}
-				else {
-					$(".category_of_approval").show();
-					$(".date_of_evalution").removeClass('hide');
-                    $(".date_of_approval").removeClass('hide');
-					//$(".category_of_approval").addClass('show');
-				}
 
-		 	$("input[type='radio']").click(function(){
-            var transporter_type = $("input[name='transporter_type']:checked").val();
-				if(transporter_type=='New'){
-					$(".category_of_approval").hide();
-					$(".date_of_evalution").addClass('hide');
-					$(".date_of_approval").addClass('hide');
-				}
-				else {
-					$(".category_of_approval").show();
-                    $(".date_of_evalution").removeClass('hide');
-                    $(".date_of_approval").removeClass('hide');
-					//$(".category_of_approval").addClass('show');
-				}
-			});
-			$("input[type='radio']").click(function(){
-            var gst_status = $("input[name='gst_status']:checked").val();
-				if(gst_status=='Yes'){
-					$(".gst_div").css('visibility', 'visible');
-					$(".gstnumber").attr('required', 'required');
-				}
-				else {
-					$(".gst_div").css('visibility', 'hidden');
-					$(".gstnumber").removeAttr('required');
-					$(".gstnumber").val('');
-				}
+		var transporter_type = $("input[name='transporter_type']:checked").val();
+		if (transporter_type == 'New') {
+			$(".category_of_approval").hide();
+			$(".date_of_evalution").addClass('hide');
+			$(".date_of_approval").addClass('hide');
+			//$(".category_of_approval").removeClass('show');
+		} else {
+			$(".category_of_approval").show();
+			$(".date_of_evalution").removeClass('hide');
+			$(".date_of_approval").removeClass('hide');
+			//$(".category_of_approval").addClass('show');
+		}
+
+		$("input[type='radio']").click(function() {
+			var transporter_type = $("input[name='transporter_type']:checked").val();
+			if (transporter_type == 'New') {
+				$(".category_of_approval").hide();
+				$(".date_of_evalution").addClass('hide');
+				$(".date_of_approval").addClass('hide');
+			} else {
+				$(".category_of_approval").show();
+				$(".date_of_evalution").removeClass('hide');
+				$(".date_of_approval").removeClass('hide');
+				//$(".category_of_approval").addClass('show');
+			}
+		});
+		$("input[type='radio']").click(function() {
+			var gst_status = $("input[name='gst_status']:checked").val();
+			if (gst_status == 'Yes') {
+				$(".gst_div").css('visibility', 'visible');
+				$(".gstnumber").attr('required', 'required');
+			} else {
+				$(".gst_div").css('visibility', 'hidden');
+				$(".gstnumber").removeAttr('required');
+				$(".gstnumber").val('');
+			}
 		});
 	});
-</script> 
+</script>

@@ -3203,6 +3203,10 @@ $lang['gender'] = 'लिंग';
 $lang['male'] = 'पुरुष';
 $lang['female'] = 'महिला';
 
+$lang['enter_ifsc_code'] = 'IFSC कोड दर्ज करें';
+$lang['enter_branch_address'] = 'शाखा का पता दर्ज करें';
+$lang['enter_account_number'] = 'खाता नंबर दर्ज करें';
+
 $lang['address'] = 'पता';
 $lang['enter_address'] = 'पता दर्ज करें';
 

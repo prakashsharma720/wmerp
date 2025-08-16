@@ -161,12 +161,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"> <?=$this ->lang->line('service_for_the_state')?></label>
 
-                            <?php  
+                            <!-- <?php  
 									$statess=explode(',',$current[0]->states);
 			            			echo form_multiselect('states[]', $states,$statess)
-			            	?>
+			            	?> -->
 
-
+<?php  
+                $statess = explode(',', $current[0]->states);
+                echo form_multiselect(
+                    'states[]', 
+                    $states, 
+                    $statess, 
+                    'class="form-control form-select" style="height:80px; border-radius:8px;"'
+                );
+            ?>
                         </div>
                         <div class="col-md-8 col-sm-8 mt-2 ">
                             <label class="control-label"> <?=$this ->lang->line('address')?></label>
@@ -178,7 +186,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="form-group">
                     <div class="row col-md-12">
-                        <div class="col-md-4 col-sm-4mt-2">
+                        <div class="col-md-4 col-sm-4 mt-2">
                             <label class="control-label"><?=$this ->lang->line('reg_date')?></label>
                             <input type="text" data-date-formate="dd-mm-yyyy" name="reg_date"
                                 class="form-control date-picker"
@@ -202,14 +210,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										
 										
                        <!-- GST Registration Status -->
-<div class="col-md-4 col-sm-4 ">
+<div class="col-md-4 col-sm-4  mt-2">
     <label class="control-label"><?= $this->lang->line('gst_registration_status') ?></label>
     <div class="d-flex align-items-center">
         <div class="form-check me-3 mt-2">
             <input class="form-check-input gst_status" type="radio" id="gst_yes" name="gst_status" value="Yes" <?= $new ?>>
             <label class="form-check-label" for="gst_yes"><?= $this->lang->line('yes') ?></label>
         </div>
-        <div class="form-check">
+        <div class="form-check mt-2">
             <input class="form-check-input gst_status" type="radio" id="gst_no" name="gst_status" value="Un-registered Dealer" <?= $existing ?>>
             <label class="form-check-label" for="gst_no"><?= $this->lang->line('unregistered_dealer') ?></label>
         </div>
