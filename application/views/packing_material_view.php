@@ -143,13 +143,20 @@
                     <input type="text" placeholder="<?= $this->lang->line('enter_opening_stock_qty') ?>" name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty ?>" required>
                   </div>
 
-                  <div class="row col-md-12 mt-3">
+                  <!-- <div class="row col-md-12 mt-3">
                     <label class="control-label"><?= $this->lang->line('status') ?></label>
                     <select class="form-control" name="flag">
                       <option value="0" <?= ($flag == 0) ? 'selected' : '' ?>><?= $this->lang->line('active') ?></option>
                       <option value="1" <?= ($flag == 1) ? 'selected' : '' ?>><?= $this->lang->line('de_active') ?></option>
                     </select>
-                  </div>
+                  </div> -->
+                  <div class="row col-md-12 ">
+					            <label class="control-label"><?=$this ->lang ->line('status')?></label>
+					            <select class="form-control" name="flag">
+					             	<option value="0"> <?=$this ->lang ->line('active')?></option>
+					               	<option value="1"> <?=$this ->lang ->line('de_active')?></option>
+					            </select>
+				        	</div>
                 <?php } ?>
 
                 <div class="row col-md-12 mt-4">
@@ -187,6 +194,7 @@
                           </a>
                         </td>
                       </tr>
+                      
                     <?php $i++; } ?>
                   </tbody>
                 </table>

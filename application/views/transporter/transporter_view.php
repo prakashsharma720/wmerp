@@ -206,7 +206,7 @@
                                       <div class="row">
                                         <div class="col-md-12">
                                           <div class="col-md-6 col-sm-6 ">
-                                            <label class="control-label"><?= $this->lang->line('banh_name') ?>:</label>
+                                            <label class="control-label"><?= $this->lang->line('bank_name') ?>:</label>
                                             <span> <?php echo $obj['bank_name']; ?></span>
                                           </div>
                                           <div class="col-md-6 col-sm-6 ">

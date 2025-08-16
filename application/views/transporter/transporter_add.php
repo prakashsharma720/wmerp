@@ -117,20 +117,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 							</div>
 
-							<!-- State & Address -->
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-4 col-md-4 mb-4">
-										<label class="form-label"><?= $this->lang->line('service_for_the_state') ?></label>
-										<?= form_multiselect('states[]', $states, '', 'class="form-control"'); ?>
-									</div>
-									<div class="col-lg-8 col-md-8 mb-4">
-										<label class="form-label"><?= $this->lang->line('address') ?></label>
-										<textarea name="address" class="form-control" rows="3" placeholder="<?= $this->lang->line('enter_address') ?>" required style="resize: none;"></textarea>
-										<?= form_error('address', '<span class="text-danger">', '</span>'); ?>
-									</div>
-								</div>
-							</div>
+
+							
+						<!-- State & Address -->
+<div class="form-group">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 mb-4">
+            <label class="form-label fw-bold"><?= $this->lang->line('service_for_the_state') ?></label>
+            <?= form_multiselect(
+                'states[]',
+                $states,
+                '',
+                'class="form-select" style="height:auto; min-height: calc(1.5em + .75rem + 2px);"'
+            ); ?>
+        </div>
+        <div class="col-lg-8 col-md-8 mb-4">
+            <label class="form-label fw-bold"><?= $this->lang->line('address') ?></label>
+            <textarea 
+                name="address" 
+                class="form-control" 
+                rows="3" 
+                placeholder="<?= $this->lang->line('enter_address') ?>" 
+                required 
+                style="resize: none;"
+            ></textarea>
+            <?= form_error('address', '<span class="text-danger">', '</span>'); ?>
+        </div>
+    </div>
+</div>
+
 
 							<!-- Dates & GST & TDS -->
 							<div class="form-group">

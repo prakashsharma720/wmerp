@@ -112,7 +112,7 @@
 							<tr>
 								<td><?= $i ?></td>
 								<td><?= $sub_category['sub_category_name']?></td>
-								<td> <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?php echo base_url(); ?>index.php/Sub_category/index/<?php echo $sub_category['id'];?>"><i class="feather feather-edit-3"></i></a></td>
+								<td> <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Sub_category/index/<?php echo $sub_category['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>
