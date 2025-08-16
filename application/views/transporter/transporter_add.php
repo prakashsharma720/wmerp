@@ -14,7 +14,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</ul>
 		</div>
 		<div class="page-header-right ms-auto">
+			 
 			<div class="page-header-right-items d-flex align-items-center gap-2">
+				 <?php $this->load->view('layout/alerts'); ?>
 				<a class="btn btn-light-brand"><span>Transporter Code</span></a>
 				<a class="btn btn-primary"><span><?= $tp_code; ?></span></a>
 			</div>
@@ -119,42 +121,145 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 
-							<!-- State & Address -->
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-4 col-md-4 mb-4">
-										<label class="form-label fw-bold"><?= $this->lang->line('service_for_the_state') ?></label>
-										<?= form_multiselect(
-											'states[]',
-											$states,
-											'',
+							<style>
+/* Multiselect Container */
+.custom-multiselect {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px;
+  min-height: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  background: #fff;
+}
 
-											'class="form-select" style="height:auto; min-height: calc(1.5em + .75rem + 2px);"'
-										); ?>
-									</div>
-									<div class="col-lg-8 col-md-8 mb-4">
-										<label class="form-label fw-bold"><?= $this->lang->line('address') ?></label>
-										<textarea
-											name="address"
-											class="form-control"
-											rows="3"
-											placeholder="<?= $this->lang->line('enter_address') ?>"
-											required
-											style="resize: none;"></textarea>
-										<?= form_error('address', '<span class="text-danger">', '</span>'); ?>
-									</div>
-								</div>
-							</div>
+/* Selected Tags */
+
+.selected-tag span {
+  margin-left: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Options Dropdown */
+.options-box {
+  display: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 2px;
+  max-height: 150px;
+  overflow-y: auto;
+  background: white;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+
+.options-box div {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.options-box div:hover {
+  background: #f1f1f1;
+}
+
+/* Address textarea */
+.address-textarea {
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px;
+  resize: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+</style>
+
+<div class="form-group">
+  <div class="row">
+    <!-- States Dropdown -->
+    <div class="col-lg-4 col-md-4 mb-4" style="position: relative;">
+      <label class="form-label fw-bold"><?= $this->lang->line('service_for_the_state') ?></label>
+      <div class="custom-multiselect" id="multiSelect"> <?= $this->lang->line('select_state') ?></div>
+      <div class="options-box" id="optionsBox"></div>
+    </div>
+
+    <!-- Address Field -->
+    <div class="col-lg-8 col-md-8 mb-4">
+      <label class="form-label fw-bold"><?= $this->lang->line('address') ?></label>
+      <textarea name="address" class="address-textarea" placeholder="<?= $this->lang->line('enter_address') ?>" required></textarea>
+    </div>
+  </div>
+</div>
+
+<script>
+// States List
+const states = [
+  "All India","ANDHRA PRADESH","ASSAM","ARUNACHAL PRADESH","BIHAR","GUJRAT",
+  "HARYANA","HIMACHAL PRADESH","JAMMU & KASHMIR","KARNATAKA","KERALA",
+  "MADHYA PRADESH","MAHARASHTRA","MANIPUR","MEGHALAYA","MIZORAM","NAGALAND",
+  "ORISSA","PUNJAB","RAJASTHAN","SIKKIM","TAMIL NADU","TRIPURA","UTTAR PRADESH",
+  "WEST BENGAL","DELHI","GOA","PONDICHERY","LAKSHDWEEP","DAMAN & DIU",
+  "DADRA & NAGAR","CHANDIGARH","ANDAMAN & NICOBAR","UTTARANCHAL",
+  "JHARKHAND","TELANGANA"
+];
+
+const multiSelect = document.getElementById("multiSelect");
+const optionsBox = document.getElementById("optionsBox");
+let selectedStates = [];
+
+// Fill dropdown options
+states.forEach(state => {
+  const div = document.createElement("div");
+  div.textContent = state;
+  div.addEventListener("click", () => selectState(state));
+  optionsBox.appendChild(div);
+});
+
+// Toggle options
+multiSelect.addEventListener("click", () => {
+  optionsBox.style.display = optionsBox.style.display === "block" ? "none" : "block";
+});
+
+// Select state
+function selectState(state) {
+  if (!selectedStates.includes(state)) {
+    selectedStates.push(state);
+    renderTags();
+  }
+}
+
+// Render selected tags
+function renderTags() {
+  multiSelect.innerHTML = "";
+  selectedStates.forEach(state => {
+    const tag = document.createElement("div");
+    tag.className = "selected-tag";
+    tag.innerHTML = `${state} <span onclick="removeState('${state}')">&times;</span>`;
+    multiSelect.appendChild(tag);
+  });
+}
+
+// Remove state
+function removeState(state) {
+  selectedStates = selectedStates.filter(s => s !== state);
+  renderTags();
+}
+</script>
 
 
 							<!-- Dates & GST & TDS -->
 							<div class="form-group">
 								<div class="row">
-									<div class="col-lg-4 col-md-4 mb-4">
+									<div class="col-lg-4 col-md-4 mb-4 " style="position:relative;bottom:5px">
 										<label class="form-label"><?= $this->lang->line('reg_date') ?></label>
 										<input type="text" name="reg_date" class="form-control date-picker" value="<?= date('d-m-Y'); ?>" placeholder="dd-mm-yyyy" autocomplete="off">
 									</div>
-									<div class="col-lg-4 col-md-4 mb-4">
+									<div class="col-lg-4 col-md-4 mb-4" style="position:relative;bottom:5px">
 										<label class="form-label"><?= $this->lang->line('gst_status') ?></label>
 										<div class="d-flex align-items-center">
 											<div class="form-check me-3">

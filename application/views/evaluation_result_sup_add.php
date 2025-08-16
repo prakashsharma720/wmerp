@@ -73,10 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		        </div>
 		        <div class="form-group">
-		        	<div class="row col-md-12">
+		        	<div class="row col-md-12 mt-2">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #dc7629;">
+			        			<thead style="background-color: white;">
 			        				<tr>
 			        					<th> <?= $this->lang->line('sr_no') ?>.</th>
 			        					<th> <?= $this->lang->line('checklist_for_evalution') ?></th>

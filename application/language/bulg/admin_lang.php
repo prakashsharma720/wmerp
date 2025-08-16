@@ -1574,7 +1574,7 @@ $lang['edit_customers'] = "Редактиране на клиенти";
 $lang['select_finish_grade'] = "Изберете степен на завършване";
 $lang['select_mineral_name'] = "Изберете име на минерал";
 $lang['address_first_part_note'] = "Моля, въведете само първата част на адреса, максимална дължина 80 знака.";
-
+$lang['select_state'] = "Изберете държава";
 $lang['enter_ifsc_code'] = 'Въведете IFSC код';
 $lang['enter_branch_address'] = 'Въведете адрес на клон';
 $lang['enter_account_number'] = 'Въведете номер на сметка';

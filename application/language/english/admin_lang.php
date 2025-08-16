@@ -3802,7 +3802,7 @@ $lang['edit_customers'] = "Edit Customers";
 $lang['enter_ifsc_code'] = 'Enter IFSC Code';
 $lang['enter_branch_address'] = 'Enter Branch Address';
 $lang['enter_account_number'] = 'Enter Account Number';
-
+$lang['select_state'] = "Select State";
 // Section: Reports
 $lang['reports'] = 'Reports';
 $lang['suppliers_report'] = 'Suppliers Report';

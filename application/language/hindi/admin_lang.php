@@ -3198,7 +3198,7 @@ $lang['select_employees'] = 'कर्मचारी चुनें...';
 
 $lang['upload_photo'] = 'फोटो अपलोड करें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल चयनित नहीं';
-
+$lang['select_state'] = "राज्य चुनें";
 $lang['gender'] = 'लिंग';
 $lang['male'] = 'पुरुष';
 $lang['female'] = 'महिला';
