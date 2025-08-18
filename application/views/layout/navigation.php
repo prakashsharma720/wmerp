@@ -110,12 +110,18 @@
                     </li>
                     <li class="nxl-item"><a class="nxl-link"
                         href="<?= base_url('index.php/services/index') ?>"><?= $this->lang->line('services') ?></a></li>
-                    <li class="nxl-item"><a class="nxl-link"
-                        href="<?= base_url('index.php/consultancy/index') ?>"><?= $this->lang->line('consultancy') ?></a>
-                    </li>
-                    <li class="nxl-item"><a class="nxl-link"
-                        href="<?= base_url('index.php/computer_periperals/index') ?>"><?= $this->lang->line('computer_periperals') ?></a>
-                    </li>
+                    <li class="nxl-item">
+  <a class="nxl-link" href="<?= base_url('index.php/consultancy/index') ?>">
+    <?= $this->lang->line('consultancy') ?>
+  </a>
+</li>
+
+<li class="nxl-item">
+  <a class="nxl-link" href="<?= base_url('index.php/computer_peripherals/index') ?>">
+    <?= $this->lang->line('computer_periperals') ?>
+  </a>
+</li>
+
                     <li class="nxl-item"><a class="nxl-link"
                         href="<?= base_url('index.php/electrical_goods/index') ?>"><?= $this->lang->line('electrical_goods') ?></a>
                     </li>
@@ -125,9 +131,13 @@
                     <li class="nxl-item"><a class="nxl-link"
                         href="<?= base_url('index.php/mechanical_items/index') ?>"><?= $this->lang->line('mechanical_items') ?></a>
                     </li>
-                    <li class="nxl-item"><a class="nxl-link"
-                        href="<?= base_url('index.php/green_plant_chemicals/index') ?>"><?= $this->lang->line('green_plant_chemicals') ?></a>
-                    </li>
+                    <li class="nxl-item">
+  <a class="nxl-link" href="<?= base_url('index.php/general_plant_chemicals/index') ?>">
+    <?= $this->lang->line('general_plant_chemicals') ?>
+  </a>
+</li>
+
+
                     <li class="nxl-item"><a class="nxl-link"
                         href="<?= base_url('index.php/protective_equipments/index') ?>"><?= $this->lang->line('protective_equipments') ?></a>
                     </li>

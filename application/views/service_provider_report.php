@@ -37,7 +37,7 @@
   </div>
 
   <!-- FILTER FORM (initially hidden) -->
-  <div class="card card-body" id="filterFormWrapper" style="display: none;">
+  <div class="card card-body" id="filterFormWrapper" style="display: none; position:relative; left:35px;right:35px;width:1553px;border-radius:10px">
     <form method="get" id="filterForm">
       <div class="row g-3">
         <!-- Category -->

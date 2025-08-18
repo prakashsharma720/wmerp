@@ -137,11 +137,10 @@
                                 </a>
                               </li>
                               <li>
-                                <a class="dropdown-item "
-                                  href="javascript:void(0);"
-                                  onclick="deletePO(<?= $obj['id'] ?>)">
-                                  <i class="feather feather-trash me-2"></i> <?= $this->lang->line('delete') ?>
-                                </a>
+                                 <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#podelete<?= $obj['id']; ?>" class="btn btn-icon btn-light-brand">
+                                            <i class="feather feather-trash me-1"></i>
+                                            <?= $this->lang->line('delete') ?>
+                                        </a>
                               </li>
                             </ul>
                           </div>
@@ -152,7 +151,7 @@
 
                       <?php $this->load->view('leave-module/component/po.php', ['obj' => $obj]); ?>
 
-
+ <?php $this->load->view('leave-module/component/podelete.php', ['obj' => $obj]); ?>
 
 
                     </tr>
@@ -167,13 +166,7 @@
         </div>
       </div>
       <script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
-      <script>
-        function deletePO(id) {
-          if (confirm("Are you sure you want to delete this ?")) {
-            window.location.href = "<?= base_url('index.php/purchase_order/deletePO/') ?>" + id;
-          }
-        }
-      </script>
+     
       <script type="text/javascript">
         $(document).ready(function() {
 

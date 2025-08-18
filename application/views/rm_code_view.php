@@ -79,12 +79,13 @@
                     </a>
 
                     <!-- Delete -->
-                    <a href="javascript:void(0);" onclick="deletermcode(<?= $obj['id'] ?>)"
-                       class="btn btn-icon btn-light-brand" data-bs-toggle="tooltip" title="Delete">
-                      <i class="fa fa-trash"></i>
-                    </a>
+                   <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteRM<?= $obj['id']; ?>" class="btn btn-icon btn-light-brand">
+                                            <i class="feather feather-trash me-1"></i>
+                                        </a>
+
                   </div>
                 </td>
+                <?php $this->load->view('leave-module/component/deleteRM.php', ['obj' => $obj]); ?>
               </tr>
             <?php endforeach; ?>
           </tbody>
@@ -98,12 +99,7 @@
 <script src="<?= base_url("assets/plugins/jquery/jquery.min.js"); ?>"></script>
 
 <script>
-  // Delete Single RM Code
-  function deletermcode(id) {
-    if (confirm("Are you sure you want to delete this RM Code?")) {
-      window.location.href = "<?= base_url('index.php/Rm_code/deleteRM/') ?>" + id;
-    }
-  }
+  
 
   // Master Checkbox & Bulk Delete
   $(document).ready(function () {

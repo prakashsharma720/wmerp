@@ -3790,6 +3790,28 @@ $lang['view_list'] = 'View List';
 $lang['edit_transporter_evaluation_panel'] = "Edit Transporter Evaluation Panel";
 $lang['select_provider_category'] = "Select Provider Category";
 // Section: RM Code
+
+$lang['marks'] = "Marks";
+$lang['total_marks'] = "Total Marks";
+$lang['obtained_marks'] = "Obtained Marks";
+$lang['total_marks_obtained'] = "Total Marks Obtained";
+$lang['grade'] = "Grade";
+$lang['percentage'] = "Percentage";
+$lang['criteria_name'] = "Criteria Name";
+$lang['supplier_evaluation_results'] = "Supplier Evaluation Results";
+$lang['evaluation_details'] = "Evaluation Details";
+$lang['supplier_details'] = "Supplier Details";
+$lang['name'] = "Name";
+$lang['category'] = "Category";
+$lang['evaluation_date'] = "Evaluation Date";
+$lang['comment'] = "Comment";
+$lang['close'] = "Close";
+
+$lang['po_item_details'] = "PO Item Details";
+$lang['marks'] = "Marks";
+$lang['total_marks_obtained'] = "Total Marks Obtained";
+$lang['green_plant_chemicals'] = 'Green Plant Chemicals';
+$lang['computer_periperals'] = 'Computer Peripherals';
 $lang['rm_code'] = 'RM Code';
 $lang['rm_add'] = 'Add';  // Can be the same as 'add'
 $lang['rm_view_list'] = 'View List';

@@ -141,8 +141,7 @@ $data=explode('?', $current_page);
                 <td><?php echo $obj['approval_grade']; ?></td>
                 <td><?php echo date('d-M-Y',strtotime($obj['date'])); ?></td>
                 <td  style="display: flex; gap:8px; align-items:center">
-                   <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i class="feather feather-eye"></i></a> -->
-                   <?php ?>
+                  
 
  <a class="btn btn-icon btn-light-brand"  data-bs-toggle="offcanvas" data-bs-target="#eva<?= $obj['id']; ?>"><i class="feather feather-eye"></i></a>
 
@@ -152,11 +151,14 @@ $data=explode('?', $current_page);
                   <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_transporter_edit/<?php echo $obj['id'];?> "><i class="feather feather-edit-3"></i></a>
                   
                  
-  <a class="btn btn-icon btn-light-brand" href="javascript:void(0);"onclick="deleteERT(<?= $obj['id'] ?>)"> <i class="feather feather-trash"></i></a>
+  <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deletetp<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                    <i class="feather feather-trash me-1"></i>
+                                  </a>
                   
                 </td>
 
                  <?php $this->load->view('leave-module/component/eva.php', ['obj' => $obj]); ?>
+                 <?php $this->load->view('leave-module/component/deletetp.php', ['obj' => $obj]); ?>
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <!-- Modal content-->
@@ -195,14 +197,7 @@ $data=explode('?', $current_page);
                            <div class="row col-md-12" style="
                                   margin: 0px;
                                   margin-bottom: 6px;" >
-                              <!-- <div class="col-md-6">
-                                <label class="control-label"> Material Received Throught : </label>
-                                  <span > 
-                                      <?php 
-                                          //echo $obj['material_received_from']; 
-                                        ?>
-                                  </span>
-                              </div> -->
+                              
                               <div class="col-md-12">
                                 <label class="control-label"> <?= $this->lang->line('comment') ?> : </label>
                                   <span > 
@@ -250,13 +245,7 @@ $data=explode('?', $current_page);
     </div>
   </div>
 </div>
- <script>
-function deleteERT(id) {
-    if (confirm("Are you sure you want to delete this evaluation?")) {
-        window.location.href = "<?= base_url('index.php/Evaluation_result/deleteERT/') ?>" + id;
-    }
-}
-</script>
+
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">

@@ -43,8 +43,8 @@
 <!--
   
 
-      <!-- Filter Form -->
-  <div class="card mb-3" id="filterBox" style="display: none;">
+     <!-- Filter Form -->
+  <div class="card mb-3" id="filterBox" style="display: none; position:relative;left:35px;right:35px;width:1553px;top:20px">
     <div class="card-body">
       <form method="get" id="filterForm">
         <div class="row">
@@ -57,7 +57,7 @@
             <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
           </div>
           <div class="col-md-4 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary mr-2"><?= $this->lang->line('search') ?></button>
+            <button type="submit" style="gap:5px" class="btn btn-primary mr-2 "><?= $this->lang->line('search') ?></button>
             <a href="<?= base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger"><?= $this->lang->line('reset') ?></a>
           </div>
         </div>

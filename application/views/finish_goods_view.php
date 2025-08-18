@@ -1,5 +1,4 @@
 
-
 <!-- Page Header -->
 <div class="nxl-content">
   <div class="page-header d-flex justify-content-between align-items-center">
@@ -78,12 +77,16 @@
                           <a class="btn btn-icon avatar-text avatar-md" href="<?= base_url('index.php/Finish_goods/edit/' . $obj['id']); ?>">
                             <i class="feather feather-edit-3"></i>
                           </a>
-                          <a class="btn btn-icon avatar-text avatar-md" href="javascript:void(0);" onclick="deleteFG(<?= $obj['id'] ?>)">
+                          <!-- <a class="btn btn-icon avatar-text avatar-md" href="javascript:void(0);" onclick="deleteFG(<?= $obj['id'] ?>)">
                             <i class="feather feather-trash me-1"></i>
-                          </a>
+                          </a> -->
+                          <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteFG<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                            <i class="feather feather-trash me-1"></i>
+                                        </a>
                         </div>
                       </td>
                     </tr>
+                    <?php $this->load->view('leave-module/component/deleteFG.php', ['obj' => $obj]); ?>
                   <?php endforeach; ?>
                 </tbody>
               </table>

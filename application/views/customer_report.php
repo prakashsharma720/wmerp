@@ -55,20 +55,26 @@ $data = explode('?', $current_page);
 
 
       <!-- Filter Form Wrapper (initially hidden) -->
-      <div id="filterFormWrapper" style="display: none;">
+      <div id="filterFormWrapper" style="display: none;position:relative;left:35px;right:35px;width:1553px;border-radius:10px;top:20px; background-color:white; padding:3px">
         <form method="get" id="filterForm">
           <div class="row">
             <div class="col-md-4 col-sm-4">
+              
               <label class="control-label"><?= $this->lang->line('name_of_customer') ?> <span class="required">*</span></label>
               <select name="customer_id" class="form-control select2 suppliers">
                 <option value="0"><?= $this->lang->line('select_customer') ?></option>
-                <?php if ($all_customers): ?>
-                  <?php foreach ($all_customers as $value): ?>
-                    <option value="<?= $value['id'] ?>" <?= ($value['id'] == $customer_id) ? 'selected' : '' ?>>
-                      <?= $value['customer_name'] ?>
-                    </option>
-                  <?php endforeach; ?>
-                <?php else: ?>
+                <?php
+                         if ($all_customers): ?> 
+                          <?php 
+                            foreach ($all_customers as $value) : ?>
+                              <?php 
+                                  if ($value['id'] == $customer_id): ?>
+                                      <option value="<?= $value['id'] ?>" selected><?= $value['customer_name'] ?></option>
+                                  <?php else: ?>
+                                      <option value="<?= $value['id'] ?>"><?= $value['customer_name'] ?></option>
+                                  <?php endif;   ?>
+                                   <?php   endforeach;  ?>
+                        <?php else: ?>
                   <option value="0"><?= $this->lang->line('no_result') ?></option>
                 <?php endif; ?>
               </select>

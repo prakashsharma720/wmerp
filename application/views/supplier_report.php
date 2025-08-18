@@ -58,11 +58,12 @@
   $data = explode('?', $current_page);
   ?>
 
-
+<div class="collapse bg-white" id="filterFormWrapper" style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; top:20px ">
+    
   <!-- Filter Form Collapse -->
-  <div class="collapse" id="filterFormWrapper">
-    <form method="get" id="filterForm">
-      <div class="row">
+ 
+    
+      <div class="row p-3">
         <div class="col-md-4 col-sm-4 ">
           <label class="control-label"><?= $this->lang->line('supplier_category') ?> <span class="required">*</span></label>
           <select name="categories_id" class="form-control select2 category">
@@ -115,7 +116,7 @@
           ?>
         </div>
       </div>
-      <div class="row">
+      <div class="row p-3">
         <div class="col-md-4 col-sm-4">
           <label class="control-label"> <?= $this->lang->line('from_date') ?></label>
           <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">

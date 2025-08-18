@@ -53,7 +53,7 @@
 
 					</div>
 					<div class="row col-md-12">
-						<div class="col-md-6">
+						<div class="col-md-6 mt-2">
 							<label class="control-label"> <?= $this->lang->line('mineral_name') ?></label>
 							<select name="mineral_name" class="form-control select2 mineral_name">
 								<?php
@@ -72,7 +72,7 @@
 								<?php endif; ?>
 							</select>
 						</div>
-						<div class="col-md-6 hsn_code">
+						<div class="col-md-6 hsn_code mt-2">
 							<label class="control-label"><?= $this->lang->line('hsn_code') ?></label>
 							<input type="text" placeholder="" name="hsn_code" class="form-control clear_hsn" value="<?= $hsn_code ?>" autocomplete="off" autofocus readonly="readonly">
 						</div>
@@ -80,7 +80,7 @@
 					</div>
 					<span class="help-block"></span>
 					<div class="row col-md-12">
-						<div class="col-md-6">
+						<div class="col-md-6 mt-2">
 							<label class="control-label"> <?= $this->lang->line('packing') ?> </label>
 							<select name="packing_size" class="form-control" required="required">
 								<?php
@@ -100,7 +100,7 @@
 							</select>
 
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6 mt-2">
 							<label class="control-label"> <?= $this->lang->line('packing_type') ?></label>
 							<select class="form-control" name="packing_type" required="required">
 								<?php
@@ -119,14 +119,14 @@
 								<?php endif; ?>
 							</select>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6 mt-2">
 							<label class="control-label"> <?= $this->lang->line('opening_stock_qty_mt') ?> </label>
 							<input type="text" name="finishgood_code" class="form-control" value="<?= $finish_good_code ?>" autofocus readonly="readonly">
 							<input type="hidden" name="fg_code" value="<?php echo $fg_code; ?>">
 						</div>
 					</div>
 					<br>
-					<div class="row col-md-12">
+					<div class="row col-md-12 mt-2">
 						<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
 						<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 					</div>

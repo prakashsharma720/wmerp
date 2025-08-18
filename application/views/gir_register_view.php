@@ -68,7 +68,7 @@
   </style>
 
 <!-- Filter Form Collapse -->
-<div class="collapse" id="filterFormWrapper">
+<div class="collapse" id="filterFormWrapper" style="position:relative;left:35px;right:35px;width:1553px; top:20px">
   <div class="card card-primary card-outline">
     <div class="card-body">
       <form method="get" id="filterForm">

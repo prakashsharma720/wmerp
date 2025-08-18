@@ -46,7 +46,7 @@
   </style>
 
   <!-- Filter Form inside Collapse -->
-  <div class="collapse <?= !empty($_GET) ? 'show' : '' ?>" id="filterFormWrapper">
+  <div class="collapse <?= !empty($_GET) ? 'show' : '' ?>" id="filterFormWrapper" style="position:relative;left:35px;right:35px;width:1553px;top:20px">
     <div class="card card-body border bg-white">
       <form method="get" id="filterForm">
         <div class="row">

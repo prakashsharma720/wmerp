@@ -43,7 +43,8 @@
   </div>
     
 <!-- Collapsible Filter Form -->
-<div class="collapse <?php if (!empty($_GET)) echo 'show'; ?>" id="filterFormWrapper">
+ 
+<div class="collapse <?php if (!empty($_GET)) echo 'show'; ?>" id="filterFormWrapper" style="position:relative;left:35px;right:35px;width:1553px; top:20px">
   <div class="card card-body border ">
     <form method="get" id="filterForm">
       <div class="row">

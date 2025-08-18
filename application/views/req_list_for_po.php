@@ -125,6 +125,7 @@
                           <!--  <a class="btn btn-xs btn-danger " data-toggle="modal" data-target="#delete<?php echo $obj['id']; ?>"><i style="color:#fff;"class="fa fa-trash"></i></a> -->
                         </td>
                         <?php $this->load->View('leave-module/component/approved.php', ['obj' => $obj]); ?>
+                        
                         <div class="modal fade" id="view<?php echo $obj['id']; ?>" role="dialog">
                           <div class="modal-dialog modal-lg">
                             <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/deletePO/<?php echo $obj['id']; ?>">

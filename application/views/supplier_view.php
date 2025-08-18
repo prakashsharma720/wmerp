@@ -56,7 +56,7 @@ $data = explode('?', $current_page);
 
 
   <!-- Filter Section -->
-  <div class="collapse bg-white" id="filterFormWrapper">
+  <div class="collapse bg-white" id="filterFormWrapper" style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; ">
     <div class="card border-0 shadow-sm mt-3 mb-3 mx-2">
       <div class="card-body p-3">
         <form method="get" action="<?= base_url('index.php/suppliers/index') ?>">
@@ -207,26 +207,24 @@ $data = explode('?', $current_page);
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="<?= base_url('index.php/Suppliers/edit_supplier_view/' . $obj['id']) ?>"><i class="feather feather-edit-3 me-3"></i><?= $this->lang->line('edit') ?></a></li>
                               <li><a class="dropdown-item printBTN" href="<?= base_url('index.php/Suppliers/print/' . $obj['id']) ?>"><i class="feather feather-printer me-3"></i><?= $this->lang->line('print') ?></a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);" onclick="deleteSupplier(<?= $obj['id'] ?>)"><i class="feather feather-trash me-3"></i><?= $this->lang->line('delete') ?></a></li>
+                              <!-- <li><a class="dropdown-item" href="javascript:void(0);" onclick="deleteSupplier(<?= $obj['id'] ?>)"><i class="feather feather-trash me-3"></i><?= $this->lang->line('delete') ?></a></li> -->
+                              <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteorder<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                            <i class="feather feather-trash me-1"></i>
+                                       <?= $this->lang->line('delete') ?></a></li> 
                             </ul>
                           </div>
                         </div>
                       </td>
                     </tr>
                     <?php $this->load->view('leave-module/component/orderview.php', ['obj' => $obj]); ?>
+                     <?php $this->load->view('leave-module/component/deleteorder.php', ['obj' => $obj]); ?>
                   <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <script>
-          function deleteSupplier(id) {
-            if (confirm("Are you sure you want to delete this supplier?")) {
-              window.location.href = "<?= base_url('index.php/Suppliers/deleteSupplier/') ?>" + id;
-            }
-          }
-        </script>
+        
         <script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript">
           $(document).ready(function() {

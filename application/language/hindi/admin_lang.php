@@ -3192,10 +3192,30 @@ $lang['dd_mm_yyyy'] = 'दिन-माह-वर्ष';
 $lang['username'] = 'उपयोगकर्ता नाम';
 $lang['password'] = 'पासवर्ड';
 $lang['enter_password'] ='पासवर्ड  दर्ज करें';
-
+$lang['green_plant_chemicals'] = 'हरित पौधा रसायन';
 $lang['select_authority_person'] = 'अधिकार प्राप्त व्यक्ति चुनें (केवल अवकाश अनुमोदन हेतु)';
-$lang['select_employees'] = 'कर्मचारी चुनें...';
 
+$lang['marks'] = "अंक";
+$lang['total_marks'] = "कुल अंक";
+$lang['obtained_marks'] = "प्राप्तांक";
+$lang['total_marks_obtained'] = "कुल प्राप्तांक";
+$lang['grade'] = "श्रेणी";
+$lang['percentage'] = "प्रतिशत";
+$lang['criteria_name'] = "मापदंड का नाम";
+$lang['supplier_evaluation_results'] = "सप्लायर मूल्यांकन परिणाम";
+$lang['evaluation_details'] = "मूल्यांकन विवरण";
+$lang['supplier_details'] = "सप्लायर विवरण";
+$lang['name'] = "नाम";
+$lang['category'] = "श्रेणी";
+$lang['evaluation_date'] = "मूल्यांकन तिथि";
+$lang['comment'] = "टिप्पणी";
+$lang['close'] = "बंद करें";
+
+$lang['total_marks_obtained'] = "कुल प्राप्तांक";
+$lang['po_item_details'] = "पीओ आइटम विवरण";  // "Purchase Order Item Details"
+$lang['marks'] = "अंक";
+$lang['select_employees'] = 'कर्मचारी चुनें...';
+$lang['computer_periperals'] = 'कंप्यूटर सहायक उपकरण';
 $lang['upload_photo'] = 'फोटो अपलोड करें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल चयनित नहीं';
 $lang['select_state'] = "राज्य चुनें";

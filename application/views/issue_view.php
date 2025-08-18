@@ -32,17 +32,6 @@
   </div>
 
 
-
-<!-- <style type="text/css">
-    .col-sm-6,
-    .col-md-6 {
-      float: left;
-    }
-  </style> -->
-
-
-
-
 <div class="main-content ">
   <div class="card card-primary card-outline">
     <div class="card-body">
@@ -86,21 +75,20 @@
                     <td style="display: flex; gap: 5px; align-items: center;">
                       <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/print/<?php echo $obj['id']; ?>"><i class="fa fa-print"></i></a>
 
-                      <!-- <a class="btn btn-icon btn-light-brand"  data-bs-toggle="offcanvas" data-target="#viewpoo<?php echo $obj['id']; ?>"><i  class="feather feather-eye"></i></a> -->
+                     
  <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#viewpoo<?= $obj['id']; ?>" title="View Details">
                             <i class="feather feather-eye"></i>
                           </a>
                       <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit-3"></i></a>
 
                       <!-- <a class="btn btn-icon btn-light-brand delete_all" data-toggle="modal" data-target="#deleteissue<?php echo $obj['id']; ?>"><i  class="fa fa-trash"></i></a> -->
-                      <a href="javascript:void(0);" 
-   class="btn btn-icon btn-light-brand" 
-   onclick="deleteissue(<?= $obj['id']; ?>)">
-   <i class="fa fa-trash"></i>
-</a>
+                     <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteissue<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                            <i class="feather feather-trash me-1"></i>
+                                        </a>
                     </td>
 
                         <?php $this->load->view('leave-module/component/slip.php', ['obj' => $obj]); ?>
+                        <?php $this->load->view('leave-module/component/deleteissue.php', ['obj' => $obj]); ?>
                     <div class="modal fade" id="view<?php echo $obj['id']; ?>" role="dialog">
                       <div class="modal-dialog modal-lg">
                         <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Issue_slips/deletePO/<?php echo $obj['id']; ?>">
@@ -197,14 +185,7 @@
         </div>
       </div>
     </div>
-     <script>
-         function deleteissue(id) {
-  if (confirm("Are you sure you want to delete this issue?")) {
-    window.location.href = "<?= base_url('index.php/issue_slips/deleteissue/') ?>" + id;
-  }
-}
-
-        </script>
+    
     <script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {

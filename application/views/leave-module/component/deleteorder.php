@@ -1,0 +1,56 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="deleteorder<?= $obj['id']; ?>" aria-labelledby="offcanvasLabel<?= $obj['id']; ?>">
+  <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
+    <h5 class="offcanvas-title fs-16 fw-bold" id="offcanvasLabel<?= $obj['id']; ?>">
+      <?= $this->lang->line('confirm'); ?>
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column" style="padding:1.5rem;">
+
+    <?php
+      $supplier_code = $obj['s_code'] ?? '';
+      if ($supplier_code && is_numeric($supplier_code)) {
+          if ($supplier_code < 10) {
+              $formatted_code = 'SUP000' . $supplier_code;
+          } elseif ($supplier_code <= 99) {
+              $formatted_code = 'SUP00' . $supplier_code;
+          } elseif ($supplier_code <= 999) {
+              $formatted_code = 'SUP0' . $supplier_code;
+          } else {
+              $formatted_code = 'SUP' . $supplier_code;
+          }
+      } else {
+          $formatted_code = $supplier_code;
+      }
+    ?>
+
+    <form method="post" action="<?= base_url(); ?>index.php/Suppliers/deleteSupplier/<?= $obj['id']; ?>" class="d-flex flex-column h-100">
+
+      <input type="hidden" name="id" value="<?= $obj['id']; ?>">
+
+      <div class="mb-3" style="position: relative; bottom:700px">
+        <p class="fs-14 mb-0">
+          <?= $this->lang->line('are_you_sure_you_want_to'); ?>
+            <b style="color: green;"><?= $this->lang->line('delete'); ?></b>
+                 
+          <span><?= $obj['supplier_name']; ?></span>
+          <?php if ($formatted_code): ?>
+            (<?= $formatted_code; ?>)
+          <?php endif; ?>
+          ?
+        </p>
+      </div>
+
+      <div class="mt-auto d-flex justify-content-between border-top pt-3">
+        <button type="submit" class="btn btn-primary w-50 me-2">
+          <?= $this->lang->line('yes'); ?>
+        </button>
+        <button type="button" class="btn btn-danger w-50" data-bs-dismiss="offcanvas">
+          <?= $this->lang->line('cancel'); ?>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

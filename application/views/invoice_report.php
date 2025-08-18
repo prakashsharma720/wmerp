@@ -41,7 +41,8 @@
   </div>
 
   <!-- COLLAPSIBLE FILTER FORM -->
-  <div class="collapse mt-3" id="filterFormWrapper">
+   <div class="collapse bg-white" id="filterFormWrapper" style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; top:20px ">
+  
     <div class="card card-body">
       <form method="get" id="filterForm">
         <div class="row">
