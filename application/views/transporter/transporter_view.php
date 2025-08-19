@@ -19,19 +19,19 @@
           <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper hstack">
              <?php $this->load->view('layout/alerts'); ?>
             <!-- Collapse Filter -->
-            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
+            <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse"
               data-bs-target="#collapseOne" data-toggle="tooltip" title="Filter">
               <i class="feather-filter"></i>
             </a>
             <div class="hstack gap-2 justify-content-end">
              
-                <a href="<?php echo base_url('index.php/Transporters/add'); ?>" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Add New Supplier">
+                <a href="<?php echo base_url('index.php/Transporters/add'); ?>" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Add New Supplier">
                   <i class="feather feather-plus"></i>
                   <span><?= $this->lang->line('transporter_add') ?>
                   </span>
                 </a>
               
-                <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete">
+                <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete">
                   <i class="feather feather-trash "></i> 
               </button>
                <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
@@ -40,7 +40,7 @@
                     <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
                 } ?>
             
-                <button type="submit" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Excel Download"> 
+                <button type="submit" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Excel Download"> 
                  <i class="feather feather-download "></i> 
                  <!-- <i class="fa fa-file-download"></i>  -->
                 </button>

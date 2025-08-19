@@ -206,7 +206,7 @@
                         <td>
                           <div class="d-flex gap-2">
 
-                            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#material<?= $obj['id']; ?>" title="View Details">
+                            <a class="btn btn-icon avatar-text avatar-md " data-bs-toggle="offcanvas" data-bs-target="#material<?= $obj['id']; ?>" title="View Details">
                               <i class="feather feather-eye"></i>
                             </a>
                             <!-- Print Button -->
