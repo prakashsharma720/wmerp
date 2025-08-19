@@ -32,6 +32,7 @@ $data = explode('?', $current_page);
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items d-flex align-items-center gap-2">
         <?php $this->load->view('layout/alerts'); ?>
+        
         <a href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_supplier_add" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="New Evaluation"><i class="feather feather-plus"></i></a>
 
         <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>

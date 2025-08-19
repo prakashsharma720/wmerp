@@ -107,15 +107,12 @@
 						
 					</div>
 					
-		        	<div class="main-content ">
-    <div class="card card-primary card-outline">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="table-responsive">
-              <table class="table table-hover table-bordered table-striped" id="proposalList">
-                <thead>
-                  <tr>
+		        	<div class="row ">
+		        		<div class="col-md-12  mt-3">
+		        		<div class="table-responsive">
+			        		<table class="table table-bordered " id="maintable" >
+			        			<thead style="background-color: #ca6b24;">
+			        				<tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?> </th>
 			        					<th style="width: 30%;"> <?=$this ->lang ->line('material_description')?> </th>
 			        					<th style="width: 15%;"> <?=$this ->lang ->line('unit')?>  </th>
@@ -155,27 +152,19 @@
 									        </select>
 										</td>
 							   			<td >
-											<input type="text"  placeholder="<?=$this ->lang ->line('enter_qty')?>" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
+											<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
 
 												<input type="hidden" name="status[]" value="Out">
 										</td>
 										
 										<td>
-											<textarea name="description[]" class="form-control description" type="textarea" placeholder=" <?=$this ->lang ->line('enter_description')?>"></textarea>
+											<textarea name="description[]" class="form-control description" type="textarea" placeholder="Enter description"></textarea>
 										</td>
 										
 										<td style="width:13%">
-  <!-- Add Row Button -->
-  <button type="button" class="btn btn-xs border addrow" role="button" title="Add Row">
-    <i class="fa fa-plus text-dark"></i>
-  </button>
-
-  <!-- Delete Row Button -->
-  <button type="button" class="btn btn-xs border deleterow" role="button" title="Delete Row">
-    <i class="fa fa-minus text-dark"></i>
-  </button>
-</td>
-
+											<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+											<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+										</td>
 									</tr>
 			        			</tbody>
 			        			<tfoot>
@@ -202,7 +191,7 @@
 		    </div>
 	        <div class="form-group">
 	        	<div class="row ">
-		            <div class="col-md-12 col-sm-12 ">
+		            <div class="col-md-12 col-sm-12 mt-2 ">
 		            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?> </label>
 		                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang ->line('submit')?> </button>
 	        		</div>
@@ -214,6 +203,7 @@
 		</div>
 	</div>
 </div>
+
 
 <table id="sample_table1" style="display: none;">
 	<tbody>

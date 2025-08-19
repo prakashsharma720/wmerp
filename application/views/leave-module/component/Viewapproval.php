@@ -21,9 +21,9 @@
         <div class="modal-body">
           <!-- Table Header -->
           <div class="row col-md-12 w-100 bg-light p-3 mb-3 rounded-0" style="border: 1px solid #f3ecec;
-              height: 45px; padding: 10px; margin: 0px; margin-bottom: 6px; font-weight: 500;">
+              height: 75px; padding: 10px; margin: 0px; margin-bottom: 6px; font-weight: 500;">
             <div class="col-md-1">#</div>
-            <div class="col-md-5"><?= $this->lang->line('item_name'); ?> </div>
+            <div class="col-md-5 mt-2"><?= $this->lang->line('item_name'); ?> </div>
             <div class="col-md-2"><?= $this->lang->line('qty'); ?> </div>
             <div class="col-md-4"><?= $this->lang->line('description'); ?></div>
           </div>
@@ -36,7 +36,7 @@
                 height: 45px; padding: 10px; margin: 0px; margin-bottom: 6px;">
               <div class="col-md-1"><?= $j; ?> </div>
               <div class="col-md-5"><?= $po_detail['name'] . ' (' . $po_detail['code'] . ')'; ?> </div>
-              <div class="col-md-2"><?= $po_detail['quantity'] . ' ' . $po_detail['unit_name']; ?> </div>
+              <div class="col-md-2 "><?= $po_detail['quantity'] . ' ' . $po_detail['unit_name']; ?> </div>
               <div class="col-md-4"><?= $po_detail['description']; ?> </div>
             </div>
           <?php $j++;
