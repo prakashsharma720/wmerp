@@ -179,7 +179,7 @@ $data = explode('?', $current_page);
                                   <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_supplier_edit/<?php echo $obj['id']; ?> "><i class="feather feather-edit-3"></i></a>
 
 
-                                  <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteev<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                  <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteev<?= $obj['id']; ?>" class=" btn btn-icon btn-light-brand">
                                     <i class="feather feather-trash me-1"></i>
                                   </a>
 

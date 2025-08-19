@@ -110,7 +110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#Viewreq<?= $obj['id']; ?>" title="View More">
                             <i class="feather feather-eye"></i>
                           </a>
-                   <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i class="feather feather-eye"></i></a> -->
+                 
 				          <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
 
 				        <?php 
@@ -118,18 +118,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id'];?>"><i class="feather feather-edit-3"></i></a>
                   <?php } ?>
 
-                  <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i class="feather feather-trash"></i></a> -->
-                            <a href="javascript:void(0);" 
-   onclick="deleteRequisition(<?= $obj['id'] ?>)" 
-   class="btn btn-icon btn-light-brand" 
-   data-bs-toggle="tooltip" 
-   title="Delete">
-   <i class="feather feather-trash"></i>
-</a>
+                  <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#deleterequisition<?php echo $obj['id'];?>"><i class="feather feather-trash"></i></a>
+                            
                 </td>
 
 
                  <?php $this->load->view('leave-module/component/Viewreq.php', ['obj' => $obj]); ?>
+                 <?php $this->load->view('leave-module/component/deleterequisition.php', ['obj' => $obj]); ?>
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                       <div class="modal-dialog modal-lg">
                         <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/deletePO/<?php echo $obj['id'];?>">
@@ -279,17 +274,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
   </div>
 </div>
-<script>
 
-
-  function deleteRequisition(id) {
-    if (confirm("Are you sure you want to delete this requisition?")) {
-       
-        window.location.href = "<?= base_url('index.php/requisition_slips/deleteRequisition/') ?>" + id;
-
-    }
-}
-</script>
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">
   $( document ).ready(function() {

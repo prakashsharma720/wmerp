@@ -142,15 +142,9 @@ $data=explode('?', $current_page);
    data-id="<?= $obj['id']; ?>">
    <i class="fa fa-envelope"></i>
 </a>
-                      <a href="javascript:void(0);" 
-   class="btn btn-icon btn-light-brand" 
-   onclick="deleteInvoice(<?= $obj['id']; ?>)">
-   <i class="feather feather-trash"></i>
-</a>
-        
-                                <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal"
-                                    data-target="#delete<?php echo $obj['id'];?>"><i
-                                        class="feather feather-trash"></i></a> -->
+                      
+        <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#deleteinvoice<?php echo $obj['id'];?>"><i class="feather feather-trash"></i></a>
+                                
 
                                 <a class="btn btn-icon btn-light-brand"
                                     href="<?php echo base_url(); ?>index.php/Invoice/generate_json/<?php echo $obj['id'];?>"><i
@@ -160,7 +154,7 @@ $data=explode('?', $current_page);
 
                             </td>
 
-
+<?php $this->load->view('leave-module/component/deleteinvoice.php', ['obj' => $obj]); ?>
 
 <div id="customConfirmBox" 
      style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%, -30%); background:#fff; border:1px solid #ccc; padding:20px; z-index:9999; width:400px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">

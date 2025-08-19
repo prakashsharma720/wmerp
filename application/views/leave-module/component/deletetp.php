@@ -12,8 +12,7 @@
       <p>
         <?= $this->lang->line('are_you_sure_you_want_to'); ?>
         <?= $this->lang->line('delete'); ?> 
-        <?= $this->lang->line('transporter_name'); ?> 
-        <b><?= !empty($obj['transporter']) ? $obj['transporter'] : '-'; ?></b>
+        <b><?= !empty($obj['transporter_name']) ? $obj['transporter_name'] : '-'; ?></b>
         <?= $this->lang->line('evaluation'); ?>?
       </p>
     </div>

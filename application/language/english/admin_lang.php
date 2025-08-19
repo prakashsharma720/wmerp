@@ -3790,6 +3790,7 @@ $lang['view_list'] = 'View List';
 $lang['edit_transporter_evaluation_panel'] = "Edit Transporter Evaluation Panel";
 $lang['select_provider_category'] = "Select Provider Category";
 // Section: RM Code
+$lang['profile_details'] = "Profile Details";
 
 $lang['marks'] = "Marks";
 $lang['total_marks'] = "Total Marks";

@@ -3194,6 +3194,7 @@ $lang['password'] = 'पासवर्ड';
 $lang['enter_password'] ='पासवर्ड  दर्ज करें';
 $lang['green_plant_chemicals'] = 'हरित पौधा रसायन';
 $lang['select_authority_person'] = 'अधिकार प्राप्त व्यक्ति चुनें (केवल अवकाश अनुमोदन हेतु)';
+$lang['profile_details'] = "प्रोफ़ाइल विवरण";
 
 $lang['marks'] = "अंक";
 $lang['total_marks'] = "कुल अंक";

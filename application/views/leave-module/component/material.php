@@ -1,3 +1,4 @@
+<!-- Material Return Register Details Offcanvas -->
 <div class="offcanvas offcanvas-end d-flex flex-column" tabindex="-1" id="material<?= $obj['id']; ?>">
     <!-- Header -->
     <div class="offcanvas-header ht-80 px-4 border-bottom border-gray-5">
@@ -12,7 +13,7 @@
             <!-- Section Heading -->
             <div class="offcanvas-header ht-80 px-0">
                 <div class="w-100 bg-light p-3 mb-3 rounded-0">
-                    <h2 class="fs-16 fw-bold text-truncate-1-line mb-0">Profile Details</h2>
+                    <h2 class="fs-16 fw-bold mb-0"><?= $this->lang->line('profile_details') ?></h2>
                 </div>
             </div>
 
@@ -59,7 +60,34 @@
                 <label class="fw-bold text-dark"><?= $this->lang->line('total_qty') ?>:</label>
                 <div><?= !empty($obj['total_qty']) ? $obj['total_qty'] : '-' ?></div>
             </div>
+        </div>
 
+        <!-- ================== Items Table ================== -->
+        <div class="mt-3">
+            <!-- Table Header -->
+            <div class="row col-md-12 fw-bold border bg-light py-2 m-0 mb-2">
+                <div class="col-md-1">#</div>
+                <div class="col-md-3"><?= $this->lang->line('item_name') ?></div>
+                <div class="col-md-3"><?= $this->lang->line('out_qty') ?></div>
+                <div class="col-md-5"><?= $this->lang->line('description') ?></div>
+            </div>
+
+            <!-- Table Rows -->
+            <?php $j=1; foreach($obj['gir_details'] as $gir_detail) { ?>
+                <div class="row col-md-12 border-bottom py-2 m-0 mb-2">
+                    <div class="col-md-1"><?= $j;?> </div>
+                    <div class="col-md-3 text-wrap"><?= $gir_detail['item'] ;?> </div>
+                    <div class="col-md-3"><?= $gir_detail['quantity'].' '.$gir_detail['unit']; ?> </div>
+                    <div class="col-md-5 text-wrap"><?= $gir_detail['description'] ;?> </div>
+                </div>
+            <?php $j++; } ?>
+
+            <hr>
+            <!-- Comments -->
+            <div class="row col-md-12 mt-2 m-0 mb-2">
+                <label class="fw-bold"><?= $this->lang->line('comment') ?> :</label>
+                <div class="text-wrap"><?= !empty($obj['comments']) ? $obj['comments'] : '-' ?></div>
+            </div>
         </div>
     </div>
 

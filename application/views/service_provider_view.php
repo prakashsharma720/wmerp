@@ -171,17 +171,14 @@ $data=explode('?', $current_page);
                   
                   <!-- <a class="btn btn-icon btn-light-brand" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i class="feather feather-trash"></i></a> -->
                 
-                 <a href="javascript:void(0);" 
-   onclick="deleteService_provider(<?= $obj['id'] ?>)" 
-   class="btn btn-icon btn-light-brand" 
-   data-bs-toggle="tooltip" 
-   title="Delete">
-   <i class="feather feather-trash"></i>
-</a>
+                 <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteservice<?= $obj['id']; ?>" class="btn btn-icon btn-light-brand">
+                                            <i class="feather feather-trash me-1"></i>
+                                        </a>
 
                 </td>
 
                 <?php $this->load->view('leave-module/component/Viewservice.php', ['obj' => $obj]); ?>
+                <?php $this->load->view('leave-module/component/deleteservice.php', ['obj' => $obj]); ?>
                  <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                       <div class="modal-dialog modal-lg">
                         <!-- Modal content-->
@@ -342,14 +339,7 @@ $data=explode('?', $current_page);
   </div>
 </div>
 <script>
-function deleteService_provider(id) {
-    if (confirm("Are you sure you want to delete this service provider?")) {
-       
-        window.location.href = "<?= base_url('index.php/Service_providers/deleteService_provider/') ?>" + id;
 
-    }
-}
-</script>
 
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">

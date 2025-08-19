@@ -180,16 +180,13 @@ $data=explode('?', $current_page);
                                 href="<?php echo base_url(); ?>index.php/Customers/edit_customer_view/<?php echo $obj['id'];?>"><i
                                     class="feather feather-edit-3"></i></a>
 
-                           
-                       <a href="javascript:void(0);" 
-   onclick="deletecustomer(<?= $obj['id'] ?>)" 
-   class="btn btn-icon btn-light-brand" 
-   data-bs-toggle="tooltip" 
-   title="Delete">
-   <i class="feather feather-trash"></i>
-</a>
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deletecustomer<?= $obj['id']; ?>" class="btn btn-icon btn-light-brand">
+                                            <i class="feather feather-trash me-1"></i>
+                                        </a>
+    
                         </td>
                           <?php $this->load->view('leave-module/component/custom.php', ['obj' => $obj]); ?>
+                          <?php $this->load->view('leave-module/component/deletecustomer.php', ['obj' => $obj]); ?>
                         <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                             <div class="modal-dialog modal-lg">
                                 <!-- Modal content-->

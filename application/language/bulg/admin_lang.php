@@ -1563,6 +1563,7 @@ $lang['po_item_details'] = "Детайли за артикулите на Пор
 $lang['marks'] = "Оценки";
 $lang['total_marks_obtained'] = "Общо получени точки";
 $lang['green_plant_chemicals'] = 'Зелен растителен химикал';
+$lang['profile_details'] = "Данни за профила";
 
 $lang['marks'] = "Точки";
 $lang['total_marks'] = "Общо точки";

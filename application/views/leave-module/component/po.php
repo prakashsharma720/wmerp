@@ -15,7 +15,7 @@
           <h3 class="fs-16 fw-bold mb-0"><?= $this->lang->line('po_item_details') ?></h3>
         </div>
 
-        <div class="row bg-secondary text-white fw-bold py-2 px-3 rounded-top">
+        <div class="row bg-light text-black fw-bold py-2 px-3 rounded-top">
           <div class="col-1">#</div>
           <div class="col-5"><?= $this->lang->line('item_name') ?></div>
           <div class="col-2"><?= $this->lang->line('qty') ?></div>
