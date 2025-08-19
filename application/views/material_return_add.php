@@ -111,7 +111,7 @@
 		        		<div class="col-md-12  mt-3">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #ca6b24;">
+			        			<thead style="background-color: white;">
 			        				<tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?> </th>
 			        					<th style="width: 30%;"> <?=$this ->lang ->line('material_description')?> </th>
@@ -161,9 +161,10 @@
 											<textarea name="description[]" class="form-control description" type="textarea" placeholder="Enter description"></textarea>
 										</td>
 										
-										<td style="width:13%">
-											<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-											<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+										<td style="width:13% ; display:flex; gap:5px">
+											<button type="button" class="btn btn-icon avatar-text avatar-md addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+											
+											<button type="button" class="btn btn-icon avatar-text avatar-md deleterow"  style="gap:5px"href="#" role='button'><i class="fa fa-minus"></i></button>
 										</td>
 									</tr>
 			        			</tbody>
@@ -244,11 +245,12 @@
 				<textarea name="description[]" class="form-control description" type="textarea" placeholder="<?=$this ->lang ->line('enter_description')?> "></textarea>
 			</td>
 			
-			<td style="width:13%">
-				<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-				<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+			<td style="width:13%; display:flex; gap:5px">
+				<button type="button" class="btn btn-icon avatar-text avatar-md addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+				<button type="button" class="btn btn-icon avatar-text avatar-md deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
 			</td>
 		</tr>
+		
 	</tbody>
 </table>
 

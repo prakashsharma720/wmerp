@@ -1,7 +1,3 @@
-
-
-
-
 <!-- Page Header -->
 <div class="nxl-content">
   <div class="page-header mb-3">
@@ -19,318 +15,316 @@
 
     </div>
 
-    
-		<div class="page-header-right ms-auto">
-			<div class="page-header-right-items">
 
-			</div>
+    <div class="page-header-right ms-auto">
+      <div class="page-header-right-items">
+        <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+          <i class="feather-filter"></i>
+        </a>
+      </div>
 
-			<!-- Mobile Toggle -->
-			<div class="d-md-none d-flex align-items-center">
-				<a href="javascript:void(0)" class="page-header-right-open-toggle">
-					<i class="feather-align-right fs-20"></i>
-				</a>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-
-
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
-//$current_page='https://www.muskowl.com/chaudhary_minerals/index.php/Meenus/UserRights';
-$data=explode('?', $current_page);
-//print_r($data[0]);exit;
-?>
-
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
- 
-</style>
-
- <div class="main-content">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card stretch stretch-full">
-    <div class="card-body ">
-	<form method="get" id="filterForm">
-      <div class="row">
-          <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label"><?=$this ->lang ->line('category')?>  <span class="required">*</span></label>
-                  <select name="categories_id" class="form-control select2 category" >
-                     <option value="0"><?=$this ->lang ->line('select_category')?> </option>
-                        <?php
-                         if ($categories): ?> 
-                          <?php 
-                            foreach ($categories as $value) : ?>
-                                <?php 
-                                  if ($value['id'] == $current[0]->categories_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['category_name'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['category_name'] ?></option>
-                                  <?php endif;   ?>
-                            <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?=$this ->lang ->line('no_result')?> </option>
-                        <?php endif; ?>
-                    </select>
-            </div>
-			
-            <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?>  <span class="required">*</span></label>
-                <select name="supplier_id" class="form-control select2 suppliers" >
-                    <option value="0"> <?=$this ->lang ->line('select_supplier')?> </option>
-                    <?php
-                         if ($all_suppliers): ?> 
-                          <?php 
-                            foreach ($all_suppliers as $value) : ?>
-                              <?php 
-                                  if ($value['id'] == $supplier_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['supplier_name'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['supplier_name'] ?></option>
-                                  <?php endif;   ?>
-                                   <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?=$this ->lang ->line('no_result')?> </option>
-                        <?php endif; ?>
-                </select>
-			</div>
-            <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label"> <?=$this ->lang ->line('material_return_register_number')?>  <span class="required">*</span></label>
-                <select name="voucher_code" class="form-control select2 suppliers" >
-                    <option value="0"> <?=$this ->lang ->line('select_gir_number')?> </option>
-                    <?php
-                         if ($gir_nos): ?> 
-                          <?php 
-                            foreach ($gir_nos as $value) : ?>
-                              <?php 
-                                  if ($value['id'] == $id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['voucher_code'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['voucher_code'] ?></option>
-                                  <?php endif;   ?>
-                                   <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0"><?=$this ->lang ->line('no_result')?> </option>
-                        <?php endif; ?>
-                </select>
-			</div>
-        </div>
-                <div class="row">
-                  <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> <?=$this ->lang ->line('from_date')?> </label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> <?=$this ->lang ->line('upto_date')?> </label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-                 <div class="col-md-4 col-sm-4">
-  <!-- Hidden label to align with other form elements -->
-  <label class="control-label" style="opacity: 0; height: 20px;">
-    <?= $this->lang->line('grade') ?>
-  </label>
-
-  <div class="d-flex">
-    <!-- Search Button -->
-    <button type="submit" class="btn btn-sm btn-primary me-2 ">
-      <?= $this->lang->line('search') ?>
-    </button>
-
-    <!-- Reset Button -->
-    <button type="reset" class="btn btn-sm btn-outline-secondary">
-      <?= $this->lang->line('reset') ?>
-    </button>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
 
-        </form>
-        <br></br>
-      <div class="main-content ">
+
+
+
+
+
+
+  <?php
+  defined('BASEPATH') or exit('No direct script access allowed');
+  $current_page = current_url();
+  //$current_page='https://www.muskowl.com/chaudhary_minerals/index.php/Meenus/UserRights';
+  $data = explode('?', $current_page);
+  //print_r($data[0]);exit;
+  ?>
+
+  <style type="text/css">
+    .col-sm-6,
+    .col-md-6 {
+      float: left;
+    }
+  </style>
+
+
+
+  <!-- ✅ Collapsible Filter Form -->
+  <div class="collapse bg-white" id="filterFormWrapper"style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; top:20px ">
+    <form method="get" id="filterForm" class="mb-3 border p-3 rounded ">
+
+      <div class="row">
+        <div class="col-md-4 col-sm-4 ">
+          <label class="control-label"><?= $this->lang->line('category') ?> <span class="required">*</span></label>
+          <select name="categories_id" class="form-control select2 category">
+            <option value="0"><?= $this->lang->line('select_category') ?> </option>
+            <?php
+            if ($categories): ?>
+              <?php
+              foreach ($categories as $value) : ?>
+                <?php
+                if ($value['id'] == $current[0]->categories_id): ?>
+                  <option value="<?= $value['id'] ?>" selected><?= $value['category_name'] ?></option>
+                <?php else: ?>
+                  <option value="<?= $value['id'] ?>"><?= $value['category_name'] ?></option>
+                <?php endif;   ?>
+              <?php endforeach;  ?>
+            <?php else: ?>
+              <option value="0"><?= $this->lang->line('no_result') ?> </option>
+            <?php endif; ?>
+          </select>
+        </div>
+
+        <div class="col-md-4 col-sm-4 ">
+          <label class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
+          <select name="supplier_id" class="form-control select2 suppliers">
+            <option value="0"> <?= $this->lang->line('select_supplier') ?> </option>
+            <?php
+            if ($all_suppliers): ?>
+              <?php
+              foreach ($all_suppliers as $value) : ?>
+                <?php
+                if ($value['id'] == $supplier_id): ?>
+                  <option value="<?= $value['id'] ?>" selected><?= $value['supplier_name'] ?></option>
+                <?php else: ?>
+                  <option value="<?= $value['id'] ?>"><?= $value['supplier_name'] ?></option>
+                <?php endif;   ?>
+              <?php endforeach;  ?>
+            <?php else: ?>
+              <option value="0"><?= $this->lang->line('no_result') ?> </option>
+            <?php endif; ?>
+          </select>
+        </div>
+        <div class="col-md-4 col-sm-4 ">
+          <label class="control-label"> <?= $this->lang->line('material_return_register_number') ?> <span class="required">*</span></label>
+          <select name="voucher_code" class="form-control select2 suppliers">
+            <option value="0"> <?= $this->lang->line('select_gir_number') ?> </option>
+            <?php
+            if ($gir_nos): ?>
+              <?php
+              foreach ($gir_nos as $value) : ?>
+                <?php
+                if ($value['id'] == $id): ?>
+                  <option value="<?= $value['id'] ?>" selected><?= $value['voucher_code'] ?></option>
+                <?php else: ?>
+                  <option value="<?= $value['id'] ?>"><?= $value['voucher_code'] ?></option>
+                <?php endif;   ?>
+              <?php endforeach;  ?>
+            <?php else: ?>
+              <option value="0"><?= $this->lang->line('no_result') ?> </option>
+            <?php endif; ?>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4">
+          <label class="control-label"> <?= $this->lang->line('from_date') ?> </label>
+          <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <label class="control-label"> <?= $this->lang->line('upto_date') ?> </label>
+          <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <!-- Hidden label to align with other form elements -->
+          <label class="control-label" style="opacity: 0; height: 20px;">
+            <?= $this->lang->line('grade') ?>
+          </label>
+
+          <div class="d-flex">
+            <!-- Search Button -->
+            <button type="submit" class="btn btn-sm btn-primary me-2 ">
+              <?= $this->lang->line('search') ?>
+            </button>
+
+            <!-- Reset Button -->
+            <button type="reset" class="btn btn-sm btn-outline-secondary">
+              <?= $this->lang->line('reset') ?>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- ✅ End Filter Form -->
+
+  <!-- Main Content -->
+  <div class="main-content "style="position: relative; bottom:13px">
     <div class="card card-primary card-outline">
-      <div class="card-body">
+      <div class="card-body" >
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-12" >
             <div class="table-responsive">
               <table class="table table-hover table-bordered table-striped" id="proposalList">
                 <thead>
                   <tr>
-              <th><input type="checkbox" id="master"></th>
-              <th style="white-space: nowrap;"><?=$this ->lang ->line('sr_no')?> .</th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('mr_no')?>  </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('gatepass_no')?>  </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('supplier_name')?>  </th>
-              <th style="white-space: nowrap;"> <?=$this ->lang ->line('date')?> </th>
-              <th style="white-space: nowrap;"><?=$this ->lang ->line('total_qty')?> </th>
-              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?> </th>
-            </tr>
-          </thead>
-          <tbody>
-		  
-           <?php 
-           if($gir_data){
-           $i=1;foreach($gir_data as $obj){ ?>
-              <tr>
-                <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
-                <td><?php echo $i;?></td>
-                <td>
-                  <?php
-						        $voucher_no= $obj['voucher_code']; 
-                    if($voucher_no<10){
-                    $gir_id_code='MR000'.$voucher_no;
-                    }
-                    else if(($voucher_no>=10) && ($voucher_no<=99)){
-                      $gir_id_code='MR00'.$voucher_no;
-                    }
-                    else if(($voucher_no>=100) && ($voucher_no<=999)){
-                      $gir_id_code='MR0'.$voucher_no;
-                    }
-                    else{
-                      $gir_id_code='MR'.$voucher_no;
-                    }
-                    echo $gir_id_code;
-				            ?>
-          
-                 </td>
-                <td><?php echo $obj['gate_pass_no']; ?></td>
-                <td><?php echo $obj['supplier']; ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
-                <td><?php echo $obj['total_qty']; ?></td>
-              <td>
-  <div class="d-flex gap-2">
-    
- <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#material<?= $obj['id']; ?>" title="View Details">
-                            <i class="feather feather-eye"></i>
-                          </a>
-    <!-- Print Button -->
-    <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id'];?>" title="Print Register">
-      <i class="fa fa-print text-dark"></i>
-    </a>
+                    <th><input type="checkbox" id="master"></th>
+                    <th style="white-space: nowrap;"><?= $this->lang->line('sr_no') ?> .</th>
+                    <th style="white-space: nowrap;"> <?= $this->lang->line('mr_no') ?> </th>
+                    <th style="white-space: nowrap;"> <?= $this->lang->line('gatepass_no') ?> </th>
+                    <th style="white-space: nowrap;"> <?= $this->lang->line('supplier_name') ?> </th>
+                    <th style="white-space: nowrap;"> <?= $this->lang->line('date') ?> </th>
+                    <th style="white-space: nowrap;"><?= $this->lang->line('total_qty') ?> </th>
+                    <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?> </th>
+                  </tr>
+                </thead>
+                <tbody>
 
-    <!-- Return Slip Button -->
-    <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id'];?> " title="Create Return Slip">
-      <i class="fa fa-exchange text-dark"></i>
-    </a>
-  </div>
-</td>
-   <?php $this->load->view('leave-module/component/material.php', ['obj' => $obj]); ?>
-                <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
-                    <div class="modal-dialog modal-lg">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title"> <?= $this->lang->line('material_return_register') ?> (<?php echo $gir_id_code?>)<?= $this->lang->line('details') ?> </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
+                  <?php
+                  if ($gir_data) {
+                    $i = 1;
+                    foreach ($gir_data as $obj) { ?>
+                      <tr>
+                        <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
+                        <td><?php echo $i; ?></td>
+                        <td>
+                          <?php
+                          $voucher_no = $obj['voucher_code'];
+                          if ($voucher_no < 10) {
+                            $gir_id_code = 'MR000' . $voucher_no;
+                          } else if (($voucher_no >= 10) && ($voucher_no <= 99)) {
+                            $gir_id_code = 'MR00' . $voucher_no;
+                          } else if (($voucher_no >= 100) && ($voucher_no <= 999)) {
+                            $gir_id_code = 'MR0' . $voucher_no;
+                          } else {
+                            $gir_id_code = 'MR' . $voucher_no;
+                          }
+                          echo $gir_id_code;
+                          ?>
+
+                        </td>
+                        <td><?php echo $obj['gate_pass_no']; ?></td>
+                        <td><?php echo $obj['supplier']; ?></td>
+                        <td><?php echo date('d-M-Y', strtotime($obj['transaction_date'])); ?></td>
+                        <td><?php echo $obj['total_qty']; ?></td>
+                        <td>
+                          <div class="d-flex gap-2">
+
+                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#material<?= $obj['id']; ?>" title="View Details">
+                              <i class="feather feather-eye"></i>
+                            </a>
+                            <!-- Print Button -->
+                            <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id']; ?>" title="Print Register">
+                              <i class="fa fa-print text-dark"></i>
+                            </a>
+
+                            <!-- Return Slip Button -->
+                            <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id']; ?> " title="Create Return Slip">
+                              <i class="fa fa-exchange text-dark"></i>
+                            </a>
                           </div>
-                          <div class="modal-body">
-                              <div class="row col-md-12" style="border: 1px solid #f3ecec;
+                        </td>
+                        <?php $this->load->view('leave-module/component/material.php', ['obj' => $obj]); ?>
+                        <div class="modal fade" id="view<?php echo $obj['id']; ?>" role="dialog">
+                          <div class="modal-dialog modal-lg">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title"> <?= $this->lang->line('material_return_register') ?> (<?php echo $gir_id_code ?>)<?= $this->lang->line('details') ?> </h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                              </div>
+                              <div class="modal-body">
+                                <div class="row col-md-12" style="border: 1px solid #f3ecec;
                                   height: 45px;
                                   padding: 10px;
                                   margin: 0px;
-                                  margin-bottom: 6px; font-weight: 500;" >
-                                                             
-                                <div class="col-md-1">#</div>
-                               <div class="col-md-3"><?= $this->lang->line('item_name') ?></div>
-        <div class="col-md-3"><?= $this->lang->line('out_qty') ?></div>
-        <div class="col-md-5"><?= $this->lang->line('description') ?></div>
-                              </div>
+                                  margin-bottom: 6px; font-weight: 500;">
 
-                                    <?php
-                                      $j=1;foreach($obj['gir_details'] as $gir_detail)
-                                      { ?>
-                                        <div class="row col-md-12" style="border: 0px solid #f3ecec;
+                                  <div class="col-md-1">#</div>
+                                  <div class="col-md-3"><?= $this->lang->line('item_name') ?></div>
+                                  <div class="col-md-3"><?= $this->lang->line('out_qty') ?></div>
+                                  <div class="col-md-5"><?= $this->lang->line('description') ?></div>
+                                </div>
+
+                                <?php
+                                $j = 1;
+                                foreach ($obj['gir_details'] as $gir_detail) { ?>
+                                  <div class="row col-md-12" style="border: 0px solid #f3ecec;
                                           height: 45px;
                                           padding: 10px;
                                           margin: 0px;
                                           margin-bottom: 6px;">
-                                          <div class="col-md-1"><?= $j;?> </div>
-                                          <div class="col-md-3"><?= $gir_detail['item'] ;?> </div>
-                                          <div class="col-md-3"><?= $gir_detail['quantity'].' '.$gir_detail['unit'].'' ;?> </div>
-                                          <div class="col-md-5"><?= $gir_detail['description'] ;?> </div>
-                                        </div>
-                                  <?php $j++; }  ?>
-                                  <hr>
-                            <div class="row col-md-12" style="
+                                    <div class="col-md-1"><?= $j; ?> </div>
+                                    <div class="col-md-3"><?= $gir_detail['item']; ?> </div>
+                                    <div class="col-md-3"><?= $gir_detail['quantity'] . ' ' . $gir_detail['unit'] . ''; ?> </div>
+                                    <div class="col-md-5"><?= $gir_detail['description']; ?> </div>
+                                  </div>
+                                <?php $j++;
+                                }  ?>
+                                <hr>
+                                <div class="row col-md-12" style="
                                   margin: 0px;
-                                  margin-bottom: 6px;" >
-                                <label class="control-label"> <?=$this ->lang ->line('comment')?> : </label>
-                                  <span > 
-                                      <?php 
-                                          echo $obj['comments']; 
-                                        ?>
+                                  margin-bottom: 6px;">
+                                  <label class="control-label"> <?= $this->lang->line('comment') ?> : </label>
+                                  <span>
+                                    <?php
+                                    echo $obj['comments'];
+                                    ?>
                                   </span>
+                                </div>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?> </button>
                               </div>
                             </div>
-                         
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?=$this ->lang ->line('close')?> </button>
                           </div>
                         </div>
-                      </div>
-                    </div>
-              </tr>
-				<?php  $i++;} } ?>
-          </tbody>
-        </table>
+                      </tr>
+                  <?php $i++;
+                    }
+                  } ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript">
-  $( document ).ready(function() {
-     
-    jQuery('#master').on('click', function(e) {
-    if($(this).is(':checked',true))  
-    {
-      $(".sub_chk").prop('checked', true);  
-    }  
-    else  
-    {  
-      $(".sub_chk").prop('checked',false);  
-    }  
-  });
-    jQuery('.delete_all').on('click', function(e) { 
-    var allVals = [];  
-    $(".sub_chk:checked").each(function() {  
-      allVals.push($(this).val());
-    });  
-    //alert(allVals.length); return false;  
-    if(allVals.length <=0)  
-    {  
-      alert("Please select row.");  
-    }  
-    else {  
-      WRN_PROFILE_DELETE = "Are you sure you want to delete all selected records?";  
-      var check = confirm(WRN_PROFILE_DELETE);  
-      if(check == true){  
-        var join_selected_values = allVals.join(","); 
-        $.ajax({   
-          type: "POST",  
-          url: "<?php echo base_url(); ?>index.php/Gir_registers/deletegirGEN",  
-          cache:false,  
-          data: 'ids='+join_selected_values,  
-          success: function(response)  
-          {   
-            $(".successs_mesg").html(response);
-            location.reload();
-          }   
+      <script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+
+          jQuery('#master').on('click', function(e) {
+            if ($(this).is(':checked', true)) {
+              $(".sub_chk").prop('checked', true);
+            } else {
+              $(".sub_chk").prop('checked', false);
+            }
+          });
+          jQuery('.delete_all').on('click', function(e) {
+            var allVals = [];
+            $(".sub_chk:checked").each(function() {
+              allVals.push($(this).val());
+            });
+            //alert(allVals.length); return false;  
+            if (allVals.length <= 0) {
+              alert("Please select row.");
+            } else {
+              WRN_PROFILE_DELETE = "Are you sure you want to delete all selected records?";
+              var check = confirm(WRN_PROFILE_DELETE);
+              if (check == true) {
+                var join_selected_values = allVals.join(",");
+                $.ajax({
+                  type: "POST",
+                  url: "<?php echo base_url(); ?>index.php/Gir_registers/deletegirGEN",
+                  cache: false,
+                  data: 'ids=' + join_selected_values,
+                  success: function(response) {
+                    $(".successs_mesg").html(response);
+                    location.reload();
+                  }
+                });
+
+              }
+            }
+          });
+
         });
-           
-      }  
-    }  
-  });
-
-  });
-
-</script>
+      </script>

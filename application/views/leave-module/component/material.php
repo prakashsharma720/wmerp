@@ -22,17 +22,17 @@
                 <label class="fw-bold text-dark"><?= $this->lang->line('mr_no') ?>:</label>
                 <div>
                     <?php
-                        $voucher_no = $obj['voucher_code'];
-                        if ($voucher_no < 10) {
-                            $gir_id_code = 'MR000' . $voucher_no;
-                        } elseif ($voucher_no < 100) {
-                            $gir_id_code = 'MR00' . $voucher_no;
-                        } elseif ($voucher_no < 1000) {
-                            $gir_id_code = 'MR0' . $voucher_no;
-                        } else {
-                            $gir_id_code = 'MR' . $voucher_no;
-                        }
-                        echo $gir_id_code;
+                    $voucher_no = $obj['voucher_code'];
+                    if ($voucher_no < 10) {
+                        $gir_id_code = 'MR000' . $voucher_no;
+                    } elseif ($voucher_no < 100) {
+                        $gir_id_code = 'MR00' . $voucher_no;
+                    } elseif ($voucher_no < 1000) {
+                        $gir_id_code = 'MR0' . $voucher_no;
+                    } else {
+                        $gir_id_code = 'MR' . $voucher_no;
+                    }
+                    echo $gir_id_code;
                     ?>
                 </div>
             </div>
@@ -72,24 +72,38 @@
                 <div class="col-md-5"><?= $this->lang->line('description') ?></div>
             </div>
 
-            <!-- Table Rows -->
-            <?php $j=1; foreach($obj['gir_details'] as $gir_detail) { ?>
+            <?php
+            $j = 1;
+            $total_qty = 0; // total quantity initialize
+            foreach ($obj['gir_details'] as $gir_detail) {
+                $total_qty += $gir_detail['quantity']; // add quantity to total
+            ?>
                 <div class="row col-md-12 border-bottom py-2 m-0 mb-2">
-                    <div class="col-md-1"><?= $j;?> </div>
-                    <div class="col-md-3 text-wrap"><?= $gir_detail['item'] ;?> </div>
-                    <div class="col-md-3"><?= $gir_detail['quantity'].' '.$gir_detail['unit']; ?> </div>
-                    <div class="col-md-5 text-wrap"><?= $gir_detail['description'] ;?> </div>
+                    <div class="col-md-1"><?= $j; ?> </div>
+                    <div class="col-md-3 text-wrap"><?= $gir_detail['item']; ?> </div>
+                    <div class="col-md-3"><?= $gir_detail['quantity'] . ' ' . $gir_detail['unit']; ?> </div>
+                    <div class="col-md-5 text-wrap"><?= $gir_detail['description']; ?> </div>
                 </div>
-            <?php $j++; } ?>
+            <?php $j++;
+            } ?>
 
-            <hr>
-            <!-- Comments -->
-            <div class="row col-md-12 mt-2 m-0 mb-2">
-                <label class="fw-bold"><?= $this->lang->line('comment') ?> :</label>
-                <div class="text-wrap"><?= !empty($obj['comments']) ? $obj['comments'] : '-' ?></div>
+            <!-- Total Quantity Row -->
+            <div class="row col-md-12 fw-bold border-top py-2 m-0 mt-2 bg-light">
+                <div class="col-md-1"></div>
+                <div class="col-md-3"><?= $this->lang->line('total_qty') ?></div>
+                <div class="col-md-3"><?= $total_qty; ?> </div>
+                <div class="col-md-5"></div>
             </div>
         </div>
+
+        <hr>
+        <!-- Comments -->
+        <div class="row col-md-12 mt-2 m-0 mb-2">
+            <label class="fw-bold"><?= $this->lang->line('comment') ?> :</label>
+            <div class="text-wrap"><?= !empty($obj['comments']) ? $obj['comments'] : '-' ?></div>
+        </div>
     </div>
+
 
     <!-- Footer with Close Button -->
     <div class="px-4 gap-2 d-flex align-items-center justify-content-end ht-80 border-top border-gray-2">

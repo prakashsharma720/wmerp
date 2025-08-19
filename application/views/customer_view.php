@@ -39,6 +39,9 @@ $data=explode('?', $current_page);
         <!-- Add New Button -->
         <div class="page-header-right d-flex align-items-center gap-2">
             <?php $this->load->view('layout/alerts'); ?>
+            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+          <i class="feather-filter"></i>
+        </a>
  <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip"
                     title="New customer"><i class="feather feather-plus"></i></a>
 
@@ -56,14 +59,12 @@ $data=explode('?', $current_page);
             </div>
         </div>
     </div>
-    <div class="main-content">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card stretch stretch-full">
+    
 
-
-        <div class="card-body">
-            <form method="get" id="filterForm">
+ <!-- ✅ Collapsible Filter Form -->
+  <div class="collapse bg-white" id="filterFormWrapper"style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; top:20px ">
+    <form method="get" id="filterForm" class="mb-3 border p-3 rounded ">
+        
                 <div class="row">
                     <!-- <div class="col-md-4 col-sm-4 ">
                   <label  class="control-label">Customer Category <span class="required">*</span></label>

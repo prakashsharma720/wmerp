@@ -192,10 +192,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    </div>
 
 		        <div class="form-group">
-		        	<div class="row col-md-12">
+		        	<div class="row col-md-12 mt-3">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #ca6b24;">
+			        			<thead style="background-color: white;">
 			        				<tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?>.</th>
 			        					<th style="width: 30%;"> <?=$this ->lang ->line('material_description')?>n</th>
@@ -245,9 +245,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								                <textarea class="form-control description" rows="3" placeholder="<?=$this ->lang ->line('enter_description')?>" name="description[]" ></textarea>
 								             </div>
 										</td>
-										<td >
-											<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-											<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+										<td  style="display:flex">
+											<button type="button" class=" btn btn-icon btn-light-brand  addrow"  href="#" role='button'><i class=" fa fa-plus"></i></button> 
+											<button type="button" class="btn btn-icon btn-light-brand deleterow" href="#" role='button'><i class=" fa fa-minus"></i></button>
 										</td>
 									</tr>
 			        			</tbody>
