@@ -245,9 +245,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								                <textarea class="form-control description" rows="3" placeholder="<?=$this ->lang ->line('enter_description')?>" name="description[]" ></textarea>
 								             </div>
 										</td>
-										<td  style="display:flex">
-											<button type="button" class=" btn btn-icon btn-light-brand  addrow"  href="#" role='button'><i class=" fa fa-plus"></i></button> 
-											<button type="button" class="btn btn-icon btn-light-brand deleterow" href="#" role='button'><i class=" fa fa-minus"></i></button>
+										<td  style="display:flex; gap:5px">
+											<button type="button" class="btn btn-icon avatar-text avatar-md  addrow"  href="#" role='button'><i class=" fa fa-plus"></i></button> 
+											<button type="button" class="btn btn-icon avatar-text avatar-md deleterow" href="#" role='button'><i class=" fa fa-minus"></i></button>
 										</td>
 									</tr>
 			        			</tbody>
@@ -324,9 +324,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                <textarea class="form-control description" rows="3" placeholder="<?=$this ->lang ->line('enter_description')?>" name="description[]" ></textarea>
 	             </div>
 			</td>
-			<td >
-				<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-				<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+			<td style="display:flex; gap:5px">
+				<button type="button" class="btn btn-icon avatar-text avatar-md addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+				<button type="button" class="btn btn-icon avatar-text avatar-md deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
 			</td>
 		</tr>
 	</tbody>

@@ -22,11 +22,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 	<div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
-      <a href="<?php echo base_url(); ?>index.php/Requisition_slips/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="New Requisition"><i class="feather feather-plus"></i></a>
+      <a href="<?php echo base_url(); ?>index.php/Requisition_slips/add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="New Requisition"><i class="feather feather-plus"></i></a>
 
-         <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+         <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
-          <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="feather feather-trash"></i></button>
+          <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="feather feather-trash"></i></button>
     
       <!-- Mobile Toggle -->
       <div class="d-md-none d-flex align-items-center">
@@ -107,18 +107,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 ?>
                  </td>
                 <td  style="display:flex;gap:7px;align-items:center">
-                   <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#Viewreq<?= $obj['id']; ?>" title="View More">
+                   <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#Viewreq<?= $obj['id']; ?>" title="View More">
                             <i class="feather feather-eye"></i>
                           </a>
                  
-				          <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
+				          <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Requisition_slips/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
 
 				        <?php 
                 if($obj['approved_status']=='Pending') { ?>
-                  <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id'];?>"><i class="feather feather-edit-3"></i></a>
+                  <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id'];?>"><i class="feather feather-edit-3"></i></a>
                   <?php } ?>
 
-                  <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#deleterequisition<?php echo $obj['id'];?>"><i class="feather feather-trash"></i></a>
+                  <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#deleterequisition<?php echo $obj['id'];?>"><i class="feather feather-trash"></i></a>
                             
                 </td>
 

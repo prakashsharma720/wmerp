@@ -15,11 +15,11 @@
     </div>
     <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
-      <a href="<?php echo base_url(); ?>index.php/Requisition_slips/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="New Requisition"><i class="fa fa-plus"></i></a>
+      <a href="<?php echo base_url(); ?>index.php/Requisition_slips/add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="New Requisition"><i class="fa fa-plus"></i></a>
 
-      <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+      <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
-      <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Bulk Delete"><i class="fa fa-trash"></i></button>
+      <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Bulk Delete"><i class="fa fa-trash"></i></button>
 
 
     </div>
@@ -94,15 +94,15 @@
                         ?>
                       </td>
                       <td style="display: flex; gap: 5px; align-items: center;">
-                        <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#viewapp<?= $obj['id']; ?>" title="View Details">
+                        <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#viewapp<?= $obj['id']; ?>" title="View Details">
                             <i class="feather feather-eye"></i>
                           </a>
                         <!-- <a class="btn btn-icon btn-light-brand " data-toggle="modal" data-target="#viewapp<?php echo $obj['id']; ?>" title="View Details"><i  class="feather feather-eye"></i></a> -->
                         <?php if ($obj['approved_status'] == 'Pending') { ?>
-                          <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id']; ?>" title="Edit"><i class="fa fa-edit"></i></a>
+                          <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id']; ?>" title="Edit"><i class="fa fa-edit"></i></a>
                         <?php } ?>
 
-                        <a class=" btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/CreateIssueSlip/<?php echo $obj['id']; ?>" data-toggle="tooltip" title="Convert to Issue Slip"><i class="fa fa-refresh"></i> </a>
+                        <a class=" btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Issue_slips/CreateIssueSlip/<?php echo $obj['id']; ?>" data-toggle="tooltip" title="Convert to Issue Slip"><i class="fa fa-refresh"></i> </a>
 
                         
                       </td>

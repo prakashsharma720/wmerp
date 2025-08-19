@@ -15,7 +15,7 @@
     </div>
 <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
-      <button id="toggleFilter" class="btn btn-icon btn-light-brand" type="button">
+      <button id="toggleFilter" class="btn btn-icon avatar-text avatar-md" type="button">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
 
@@ -28,7 +28,7 @@
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php }
         } ?>
-        <button type="submit" class="btn btn-icon btn-light-brand">
+        <button type="submit" class="btn btn-icon avatar-text avatar-md">
           <i class="feather feather-download "></i>
         </button>
       </form>

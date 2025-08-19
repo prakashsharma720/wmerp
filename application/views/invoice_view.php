@@ -23,18 +23,18 @@ $data = explode('?', $current_page);
         <div class="page-header-right d-flex align-items-center gap-2">
             <?php $this->load->view('layout/alerts'); ?>
 
-            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+            <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
                 <i class="feather-filter"></i>
             </a>
-            <a href="<?php echo base_url(); ?>index.php/Invoice/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip"
+            <a href="<?php echo base_url(); ?>index.php/Invoice/add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip"
                 title="New Invoice"><i class="fa fa-plus"></i></a>
 
-            <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
+            <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
                     class="fa fa-refresh"></i></button>
 
-            <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete"><i
+            <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete"><i
                     class="fa fa-trash"></i></button>
-            <button class="btn btn-icon btn-light-brand generate_json" data-toggle="tooltip" title="Bulk generate_json"><i
+            <button class="btn btn-icon avatar-text avatar-md generate_json" data-toggle="tooltip" title="Bulk generate_json"><i
                     class="fa fa-download"></i></i></button>
 <form method="post" action="<?php echo base_url(); ?>index.php/Invoice/importdata"
         enctype="multipart/form-data" class="d-flex align-items-center gap-2">
@@ -142,7 +142,7 @@ $data = explode('?', $current_page);
                                         </td>
 
                                         <td style="display:flex;gap:8px;align-items:center">
-                                            <a class="btn btn-icon btn-light-brand"
+                                            <a class="btn btn-icon avatar-text avatar-md"
                                                 href="<?php echo base_url(); ?>index.php/Invoice/print_invoice/<?php echo $obj['id']; ?>"><i
                                                     class="fa fa-print"></i></a>
 
@@ -150,15 +150,15 @@ $data = explode('?', $current_page);
                                     data-target="#send_mail<?php echo $obj['id']; ?>"><i 
                                         class="fa fa-envelope"></i></a> -->
                                             <a href="javascript:void(0);"
-                                                class="btn btn-icon btn-light-brand send-invoice-btn"
+                                                class="btn btn-icon avatar-text avatar-md send-invoice-btn"
                                                 data-id="<?= $obj['id']; ?>">
                                                 <i class="fa fa-envelope"></i>
                                             </a>
 
-                                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#deleteinvoice<?php echo $obj['id']; ?>"><i class="feather feather-trash"></i></a>
+                                            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#deleteinvoice<?php echo $obj['id']; ?>"><i class="feather feather-trash"></i></a>
 
 
-                                            <a class="btn btn-icon btn-light-brand"
+                                            <a class="btn btn-icon avatar-text avatar-md"
                                                 href="<?php echo base_url(); ?>index.php/Invoice/generate_json/<?php echo $obj['id']; ?>"><i
                                                     class="fa fa-download"></i></a>
 

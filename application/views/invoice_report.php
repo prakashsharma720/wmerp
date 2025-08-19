@@ -18,7 +18,7 @@
       <div class="page-header-right-items d-flex align-items-center">
         <?php $this->load->view('layout/alerts'); ?>
         <!-- Filter Button (no background, toggle enabled) -->
-        <button id="filterToggleBtn" class="btn btn-icon btn-light-brand" type="button">
+        <button id="filterToggleBtn" class="btn btn-icon avatar-text avatar-md" type="button">
           <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
         </button>
 
@@ -31,7 +31,7 @@
             }
           }
           ?>
-          <button type="submit" class="btn btn-icon btn-light-brand">
+          <button type="submit" class="btn btn-icon avatar-text avatar-md">
             <i class="feather feather-download "></i>
           </button>
           <!-- <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button> -->

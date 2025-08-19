@@ -29,11 +29,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!-- Add New Button -->
     <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
-      <a href="<?php echo base_url(); ?>index.php/Purchase_order/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="New PO"><i class="fa fa-plus"></i></a>
+      <a href="<?php echo base_url(); ?>index.php/Purchase_order/add" class="btn btn-icon avatar-text avatar-md " data-toggle="tooltip" title="New PO"><i class="fa fa-plus"></i></a>
 
-      <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+      <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
-      <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete"><i class="fa fa-trash"></i></button>
+      <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete"><i class="fa fa-trash"></i></button>
 
     </div>
   </div>
@@ -86,12 +86,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     <td>
 
                       <?php if ((round($obj['grand_total']) > '5000') && ($obj['purchase_indent'] == '0')) { ?>
-                        <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id']; ?>" title="Print PO"><i class="fa fa-print"></i></a>
-                        <a class="btn btn-icon btn-light-brand" data-toggle="modal" data-target="#reject<?php echo $obj['id']; ?>" title="Reject PO"><i  class="fa fa-window-close"></i></a>
-                        <a class="btn btn-icon btn-light-brand" data-toggle="modal" data-target="#approve<?php echo $obj['id']; ?>" title="Approve PO"><i  class="fa fa-check"></i></a>
+                        <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id']; ?>" title="Print PO"><i class="fa fa-print"></i></a>
+                        <a class="btn btn-icon avatar-text avatar-md" data-toggle="modal" data-target="#reject<?php echo $obj['id']; ?>" title="Reject PO"><i  class="fa fa-window-close"></i></a>
+                        <a class="btn btn-icon avatar-text avatar-md" data-toggle="modal" data-target="#approve<?php echo $obj['id']; ?>" title="Approve PO"><i  class="fa fa-check"></i></a>
 
                       <?php } else { ?>
-                        <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Purchase_order/printIndent/<?php echo $obj['id']; ?>"><i class="fa fa-print"></i></a>
+                        <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Purchase_order/printIndent/<?php echo $obj['id']; ?>"><i class="fa fa-print"></i></a>
                       <?php } ?>
 
 

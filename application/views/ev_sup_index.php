@@ -32,16 +32,16 @@ $data = explode('?', $current_page);
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items d-flex align-items-center gap-2">
         <?php $this->load->view('layout/alerts'); ?>
-        <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+        <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
           <i class="feather-filter"></i>
         </a>
-        <a href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_supplier_add" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="New Evaluation"><i class="feather feather-plus"></i></a>
+        <a href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_supplier_add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="New Evaluation"><i class="feather feather-plus"></i></a>
 
-        <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+        <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
 
 
-        <button class="btn btn-icon btn-light-brand delete_all" data-bs-toggle="tooltip" title="Bulk Delete">
+        <button class="btn btn-icon avatar-text avatar-md delete_all" data-bs-toggle="tooltip" title="Bulk Delete">
           <i class="feather feather-trash"></i>
         </button>
 
@@ -173,14 +173,14 @@ $data = explode('?', $current_page);
                       <td style="display: flex;align-items: center;
     gap: 8px;">
 
-                        <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#trans<?= $obj['id']; ?>"><i class="feather feather-eye"></i></a>
+                        <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#trans<?= $obj['id']; ?>"><i class="feather feather-eye"></i></a>
 
-                        <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Evaluation_result/print_sup/<?php echo $obj['id']; ?>"><i class="fa fa-print"></i></a>
+                        <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Evaluation_result/print_sup/<?php echo $obj['id']; ?>"><i class="fa fa-print"></i></a>
 
-                        <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_supplier_edit/<?php echo $obj['id']; ?> "><i class="feather feather-edit-3"></i></a>
+                        <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Evaluation_result/ev_supplier_edit/<?php echo $obj['id']; ?> "><i class="feather feather-edit-3"></i></a>
 
 
-                        <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteev<?= $obj['id']; ?>" class=" btn btn-icon btn-light-brand">
+                        <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteev<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md ">
                           <i class="feather feather-trash me-1"></i>
                         </a>
 

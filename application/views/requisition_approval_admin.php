@@ -117,15 +117,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </td>
                 <td style="display:flex;gap:8px;align-items:center">
                   <?php if ($obj['admin_approve_status'] == 'Pending') { ?>
-                    <a class="btn btn-icon btn-light-brand"  data-bs-toggle="offcanvas" data-bs-target="#approve<?php echo $obj['id']; ?>"><i  class="fa fa-check"></i></a>
+                    <a class="btn btn-icon avatar-text avatar-md"  data-bs-toggle="offcanvas" data-bs-target="#approve<?php echo $obj['id']; ?>"><i  class="fa fa-check"></i></a>
                     <?php if ($obj['admin_approve_status'] == 'Pending') { ?>
-                      <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit-3"></i></a>
+                      <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit-3"></i></a>
                     <?php } ?>
-                    <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#reject<?php echo $obj['id']; ?>"><i class="fa fa-window-close"></i></a>
+                    <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#reject<?php echo $obj['id']; ?>"><i class="fa fa-window-close"></i></a>
                   <?php } ?>
 
              
-                   <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#Viewapproval<?= $obj['id']; ?>" title="View More">
+                   <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#Viewapproval<?= $obj['id']; ?>" title="View More">
                             <i class="feather feather-eye"></i>
                           </a>
                 </td>

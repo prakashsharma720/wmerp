@@ -18,7 +18,7 @@
 
     <div class="page-header-right ms-auto">
       <div class="page-header-right-items">
-        <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+        <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
           <i class="feather-filter"></i>
         </a>
       </div>
@@ -206,16 +206,16 @@
                         <td>
                           <div class="d-flex gap-2">
 
-                            <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#material<?= $obj['id']; ?>" title="View Details">
+                            <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#material<?= $obj['id']; ?>" title="View Details">
                               <i class="feather feather-eye"></i>
                             </a>
                             <!-- Print Button -->
-                            <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id']; ?>" title="Print Register">
+                            <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Material_return_records/print/<?php echo $obj['id']; ?>" title="Print Register">
                               <i class="fa fa-print text-dark"></i>
                             </a>
 
                             <!-- Return Slip Button -->
-                            <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id']; ?> " title="Create Return Slip">
+                            <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Material_return_records/add/<?php echo $obj['id']; ?> " title="Create Return Slip">
                               <i class="fa fa-exchange text-dark"></i>
                             </a>
                           </div>

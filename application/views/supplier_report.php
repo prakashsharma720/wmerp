@@ -21,7 +21,7 @@
       <?php $this->load->view('layout/alerts'); ?>
       <form method="post" action="<?= base_url('index.php/Suppliers/createXLS'); ?>" style="margin-left:5px; display:flex">
         <!-- Filter Button -->
-        <button class="btn btn-icon btn-light-brand" type="button"
+        <button class="btn btn-icon avatar-text avatar-md" type="button"
           data-bs-toggle="collapse" data-bs-target="#filterFormWrapper"
           aria-expanded="false" aria-controls="filterFormWrapper">
           <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
@@ -35,7 +35,7 @@
         <?php endforeach;
         } ?>
         <!-- <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button> -->
-        <button type="submit" class="btn btn-icon btn-light-brand">
+        <button type="submit" class="btn btn-icon avatar-text avatar-md">
           <i class="feather feather-download "></i>
         </button>
       </form>
@@ -128,6 +128,7 @@
 
         <div class="col-md-4 col-sm-4 d-flex align-items-end gap-2">
           <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
+          
           <input type="submit" class="btn btn-primary" value="Search" />
           <a href="<?= $data[0] ?>" class="btn btn-danger "><?= $this->lang->line('reset') ?></a>
         </div>

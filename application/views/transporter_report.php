@@ -19,7 +19,7 @@
     <!-- Add New Button -->
     <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
-      <a class="btn btn-icon btn-light-brand" href="<?= base_url('index.php/Transporters/createXLS') ?>">
+      <a class="btn btn-icon avatar-text avatar-md" href="<?= base_url('index.php/Transporters/createXLS') ?>">
           <i class="feather feather-download "></i> 
         </a>
 

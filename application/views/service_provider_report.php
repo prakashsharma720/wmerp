@@ -16,7 +16,7 @@
       <?php $this->load->view('layout/alerts'); ?>
       <button
         id="toggleFilter"
-        class="btn btn-icon btn-light-brand"
+        class="btn btn-icon avatar-text avatar-md"
         type="button">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
@@ -29,7 +29,7 @@
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php }
         } ?>
-        <button type="submit" class="btn btn-icon btn-light-brand">
+        <button type="submit" class="btn btn-icon avatar-text avatar-md">
           <i class="feather feather-download "></i>
         </button>
       </form>

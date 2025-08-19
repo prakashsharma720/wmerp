@@ -39,16 +39,16 @@ $data=explode('?', $current_page);
         <!-- Add New Button -->
         <div class="page-header-right d-flex align-items-center gap-2">
             <?php $this->load->view('layout/alerts'); ?>
-            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+            <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
           <i class="feather-filter"></i>
         </a>
- <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip"
+ <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip"
                     title="New customer"><i class="feather feather-plus"></i></a>
 
-                <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
+                <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
                         class="fa fa-refresh"></i></button>
 
-                <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete"><i
+                <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete"><i
                         class="feather feather-trash"></i></button>
             <!-- Mobile Toggle -->
             <div class="d-md-none d-flex align-items-center">
@@ -173,15 +173,15 @@ $data=explode('?', $current_page);
                         <td><?php echo $obj['state'];?></td>
                         <td style="display:flex;align-items:center;gap:8px">
                            
-                           <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#custom<?= $obj['id']; ?>" title="View Details">
+                           <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#custom<?= $obj['id']; ?>" title="View Details">
                             <i class="feather feather-eye"></i>
                           </a>
 
-                            <a class="btn btn-icon btn-light-brand"
+                            <a class="btn btn-icon avatar-text avatar-md"
                                 href="<?php echo base_url(); ?>index.php/Customers/edit_customer_view/<?php echo $obj['id'];?>"><i
                                     class="feather feather-edit-3"></i></a>
 
-                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deletecustomer<?= $obj['id']; ?>" class="btn btn-icon btn-light-brand">
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deletecustomer<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
                                             <i class="feather feather-trash me-1"></i>
                                         </a>
     

@@ -16,11 +16,11 @@
     <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
 
-      <a href="<?php echo base_url(); ?>index.php/Issue_slips/add" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="New Issue Slip"><i class="fa fa-plus"></i></a>
+      <a href="<?php echo base_url(); ?>index.php/Issue_slips/add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="New Issue Slip"><i class="fa fa-plus"></i></a>
 
-      <button class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+      <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
-      <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete"><i class="feather feather-trash"></i></button>
+      <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete"><i class="feather feather-trash"></i></button>
       <!-- Mobile Toggle -->
       <div class="d-md-none d-flex align-items-center">
 
@@ -73,16 +73,16 @@
                     <td><?php echo date('d-M-Y', strtotime($obj['transaction_date'])); ?></td>
                     <td><?php echo $obj['total_issue_qty']; ?></td>
                     <td style="display: flex; gap: 5px; align-items: center;">
-                      <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/print/<?php echo $obj['id']; ?>"><i class="fa fa-print"></i></a>
+                      <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Issue_slips/print/<?php echo $obj['id']; ?>"><i class="fa fa-print"></i></a>
 
                      
- <a class="btn btn-icon btn-light-brand" data-bs-toggle="offcanvas" data-bs-target="#viewpoo<?= $obj['id']; ?>" title="View Details">
+ <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#viewpoo<?= $obj['id']; ?>" title="View Details">
                             <i class="feather feather-eye"></i>
                           </a>
-                      <a class="btn btn-icon btn-light-brand" href="<?php echo base_url(); ?>index.php/Issue_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit-3"></i></a>
+                      <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Issue_slips/edit/<?php echo $obj['id']; ?>"><i class="feather feather-edit-3"></i></a>
 
                       <!-- <a class="btn btn-icon btn-light-brand delete_all" data-toggle="modal" data-target="#deleteissue<?php echo $obj['id']; ?>"><i  class="fa fa-trash"></i></a> -->
-                     <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteissue<?= $obj['id']; ?>" class="btn btn-icon btn-light-brand">
+                     <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteissue<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
                                             <i class="feather feather-trash me-1"></i>
                                         </a>
                     </td>

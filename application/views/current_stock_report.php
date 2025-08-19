@@ -19,7 +19,7 @@
 <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
       <!-- Filter Button -->
-      <button class="btn btn-icon btn-light-brand" type="button" id="toggleFilter">
+      <button class="btn btn-icon avatar-text avatar-md" type="button" id="toggleFilter">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
 
@@ -28,7 +28,7 @@
           foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php }} ?>
-        <button type="submit" class="btn btn-icon btn-light-brand"> <i class="feather feather-download "></i></button>
+        <button type="submit" class="btn btn-icon avatar-text avatar-md"> <i class="feather feather-download "></i></button>
       </form>
       <!-- Mobile Toggle -->
       <div class="d-md-none d-flex align-items-center">

@@ -20,15 +20,15 @@
     <div class="page-header-right d-flex align-items-center gap-2">
       <?php $this->load->view('layout/alerts'); ?>
 
-      <a href="<?= base_url('index.php/rm_code/add'); ?>" class="btn btn-icon btn-light-brand" data-bs-toggle="tooltip" title="New PO">
+      <a href="<?= base_url('index.php/rm_code/add'); ?>" class=" btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="New PO">
         <i class="feather feather-plus"></i>
       </a>
 
-      <button class="btn btn-icon btn-light-brand" data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
+      <button class="btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
         <i class="fa fa-refresh"></i>
       </button>
 
-      <button class="btn btn-icon btn-light-brand delete_all" data-bs-toggle="tooltip" title="Bulk Delete">
+      <button class="btn btn-icon avatar-text avatar-md delete_all" data-bs-toggle="tooltip" title="Bulk Delete">
         <i class="feather feather-trash"></i>
       </button>
 
@@ -74,12 +74,12 @@
                   <div class="d-flex align-items-center gap-2">
                     <!-- Edit -->
                     <a href="<?= base_url('index.php/Rm_code/edit/' . $obj['id']); ?>"
-                       class="btn btn-icon btn-light-brand" data-bs-toggle="tooltip" title="Edit">
+                       class="btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="Edit">
                       <i class="feather feather-edit-3"></i>
                     </a>
 
                     <!-- Delete -->
-                   <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteRM<?= $obj['id']; ?>" class="btn btn-icon btn-light-brand">
+                   <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteRM<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
                                             <i class="feather feather-trash me-1"></i>
                                         </a>
 

@@ -24,7 +24,7 @@
           <?php }
           } ?>
           <!-- <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button> -->
-          <button type="submit" class="btn btn-icon btn-light-brand">
+          <button type="submit" class="btn btn-icon avatar-text avatar-md">
             <i class="feather feather-download "></i>
           </button>
         </form>
