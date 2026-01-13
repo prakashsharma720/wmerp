@@ -8,6 +8,7 @@ $data = explode('?', $current_page);
     .control-label {
 margin: 0.7rem
 }
+
 </style>
 <div id="collapseOne" class="accordion-collapse collapse <?= $filtered_value ? 'show' : '' ?> page-header-collapse">
     <div class="accordion-body pb-2">

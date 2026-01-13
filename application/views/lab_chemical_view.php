@@ -41,7 +41,11 @@
                         <?php endif; ?>
 
                             <div class="form-group">
-                                <?= $this->lang->line('new_lab_chemical_code') ?> : <label class="control-label"> <?= $code_view ?></label>
+                                <div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; display: inline-block;">
+    <strong><?= $this->lang->line('new_lab_chemical_code') ?>:</strong>
+    <label class="control-label"> <?= $code_view ?></label>
+								</div>
+				        
 
                                 <div class="row col-md-12">
                                     <?php if ($categories): ?>
@@ -159,25 +163,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        $i = 1;
-                                        foreach ($lab_chemicals as $lab_chemical): ?>
-                                            <tr>
-                                                <td><?= $i ?></td>
-                                                <td><?= htmlspecialchars($lab_chemical['company_name']) ?></td>
-                                                <td><?= htmlspecialchars($lab_chemical['name']) ?></td>
-                                                <td><?= htmlspecialchars($lab_chemical['bag_size']) ?></td>
-                                                <td><?= htmlspecialchars($lab_chemical['expiry_date']) ?></td>
-                                                <td>
-                                                    <a class="border rounded bg-light shadow-sm text-dark px-1 py-0" href="<?= base_url('index.php/Lab_chemicals/index/' . $lab_chemical['id']) ?>" aria-label="Edit">
-                                                        <i class="feather feather-edit-3"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        $i++;
-                                        endforeach; ?>
-                                    </tbody>
+							<?php
+							$i=1;foreach($lab_chemicals as $lab_chemical) { ?>
+							<tr>
+								<td><?= $i ?></td>
+								<td><?= $lab_chemical['company_name'] ?></td>
+								<td><?= $lab_chemical['name'] ?></td>
+								<!--<td><?= $lab_chemical['grade'] ?></td>-->
+								<td><?= $lab_chemical['bag_size'] ?></td>
+								<td><?= $lab_chemical['expiry_date'] ?></td>
+								<td> <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Lab_chemicals/index/<?php echo $lab_chemical['id'];?>"><i class="feather feather-edit-3"></i></a></td>
+							</tr>
+							<?php $i++;} ?>
+						</tbody>
                                 </table>
                             </div>
                         </div>

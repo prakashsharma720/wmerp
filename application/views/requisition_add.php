@@ -3,19 +3,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //print_r($items);exit;
 ?>
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?=$this ->lang ->line('create_requisition_slip')?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
+  <div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('create_requisition_slip') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+      </ul>
+    </div>
+	<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
 
-		</div>
-
-      </div> <!-- /.card-body -->
-      <div class="card-body">
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
+      <div class="card-body ">
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/add_new_requisition">
-		        <div class="form-group">
+		        <div class="form-group bg-white">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
 			            	<label class="control-label"><?=$this ->lang ->line('date')?> <span class="required">*</span></label>
@@ -51,12 +73,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        	</div>
 		        </div>
 		        
-		        <div class="form-group">
+		        <div class="form-group bg-white">
 			        <div class="row col-md-12">
-			        	<div class="col-md-3 col-sm-3 ">
+			        	<div class="col-md-3 col-sm-3  mt-3">
 					        <label  class="control-label"> <?=$this ->lang ->line('requisition_for')?> : </label>
 					    </div>
-				        <div class="col-md-9 col-sm-9 ">
+				        <div class="col-md-9 col-sm-9  mt-3">
 				        	<select name="rs_for" class="form-control select2 rs_for" required="required">
 								<option value=""> <?=$this ->lang ->line('select_option')?></option>
 					                <?php
@@ -75,19 +97,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                <?php endif; ?>
 					            </select>
 
-		        			<!-- <div class="form-check">
-			               	<input class="form-check-input user_for" type="radio" name="rs_for" value="Raw Material" checked> Raw Material</input>
-			               		&nbsp;&nbsp;&nbsp;&nbsp;
-			               		<input class="form-check-input user_for" type="radio" name="rs_for" value="Packing Material" > Packing Material</input>
-			               		&nbsp;&nbsp;&nbsp;&nbsp;
-			               	<input class="form-check-input user_for" type="radio" name="rs_for" value="Consumable & Chemicals"> For Consumable & Chemicals </input>
-		            	</div> -->
 					</div>
 				</div>
 				<br>
 				<div class="form-group for_raw_materials">
 			        <div class="row col-md-12">
-			        	<div class="col-md-6 col-sm-6 ">
+			        	<div class="col-md-6 col-sm-6  ">
 								<label  class="control-label"> <?=$this ->lang ->line('product')?> <span class="required">*</span></label>
 								<select name="finish_good" class="form-control select2 product_name" required="required">
 									<option value=""> <?=$this ->lang ->line('select_mineral_name')?></option>
@@ -135,18 +150,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</div>
 			        </div>
 			        <div class="row col-md-12">
-			        	<div class="col-md-6 col-sm-6 ">
+			        	<div class="col-md-6 col-sm-6 mt-2 ">
 								<label  class="control-label"> <?=$this ->lang ->line('lot_no')?>. <span class="required">*</span></label>
 								<input type="text" placeholder="<?=$this ->lang ->line('enter_lot_no')?>" name="lot_no" class="form-control lot_no" required="required" value="" autofocus>
 							</div>
-							<div class="col-md-6 col-sm-6 ">
+							<div class="col-md-6 col-sm-6 mt-2 ">
 								<label  class="control-label"> <?=$this ->lang ->line('batch_no')?> <span class="required">*</span></label>
 								<input type="text" placeholder="<?=$this ->lang ->line('enter_batch_no')?> " name="batch_no" class="form-control batch_no" required="required" value="" autofocus>
 							</div>
 			        </div>
 			        <div class="row col-md-12 raw_mesg">
-			        	<div class="col-md-12 col-sm-12 ">
-			        	    <h4 style="color:red;"><?=$this ->lang ->line('quantity_note')?> .</h4>
+			        	<div class="col-md-12 col-sm-12 mt-2 ">
+			        	    <h4 style="color:gray;"><?=$this ->lang ->line('quantity_note')?> .</h4>
 			        	</div>
 			        </div>
 			    </div>
@@ -154,7 +169,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    <div class="form-group for_chemicals hide">
 			        <div class="row col-md-12">
 
-							<div class="col-md-6 col-sm-6">
+							<div class="col-md-6 col-sm-6 mt-2">
 								<label  class="control-label"> <?=$this ->lang ->line('equipment_name')?> <span class="required">*</span></label>
 								<select name="equipment_name" class="form-control select2 equipment_name">
 									<option value=""> <?=$this ->lang ->line('select_equipment')?></option>
@@ -177,10 +192,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			    </div>
 
 		        <div class="form-group">
-		        	<div class="row col-md-12">
+		        	<div class="row col-md-12 mt-3">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #ca6b24;">
+			        			<thead style="background-color: white;">
 			        				<tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?>.</th>
 			        					<th style="width: 30%;"> <?=$this ->lang ->line('material_description')?>n</th>
@@ -230,9 +245,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								                <textarea class="form-control description" rows="3" placeholder="<?=$this ->lang ->line('enter_description')?>" name="description[]" ></textarea>
 								             </div>
 										</td>
-										<td >
-											<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-											<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+										<td  style="display:flex; gap:5px">
+											<button type="button" class="btn btn-icon avatar-text avatar-md  addrow"  href="#" role='button'><i class=" fa fa-plus"></i></button> 
+											<button type="button" class="btn btn-icon avatar-text avatar-md deleterow" href="#" role='button'><i class=" fa fa-minus"></i></button>
 										</td>
 									</tr>
 			        			</tbody>
@@ -268,7 +283,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  </div>
 	</div>
 </div>
-
 <table id="sample_table1" style="display: none;">
 	<tbody>
 		<tr class="main_tr1">
@@ -310,9 +324,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                <textarea class="form-control description" rows="3" placeholder="<?=$this ->lang ->line('enter_description')?>" name="description[]" ></textarea>
 	             </div>
 			</td>
-			<td >
-				<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-				<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+			<td style="display:flex; gap:5px">
+				<button type="button" class="btn btn-icon avatar-text avatar-md addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+				<button type="button" class="btn btn-icon avatar-text avatar-md deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
 			</td>
 		</tr>
 	</tbody>

@@ -1,19 +1,4 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-  </div>
-  <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('alert') ?> !</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
 <div class="nxl-content">
     <div class="page-header">
       <div class="page-header-left d-flex align-items-center">
@@ -32,20 +17,21 @@
       <div class="page-header-right ms-auto">
         <div class="page-header-right-items">
           <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper hstack">
+             <?php $this->load->view('layout/alerts'); ?>
             <!-- Collapse Filter -->
-            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse"
+            <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse"
               data-bs-target="#collapseOne" data-toggle="tooltip" title="Filter">
               <i class="feather-filter"></i>
             </a>
             <div class="hstack gap-2 justify-content-end">
              
-                <a href="<?php echo base_url('index.php/Transporters/add'); ?>" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Add New Supplier">
+                <a href="<?php echo base_url('index.php/Transporters/add'); ?>" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Add New Supplier">
                   <i class="feather feather-plus"></i>
                   <span><?= $this->lang->line('transporter_add') ?>
                   </span>
                 </a>
               
-                <button class="btn btn-icon btn-light-brand delete_all" data-toggle="tooltip" title="Bulk Delete">
+                <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete">
                   <i class="feather feather-trash "></i> 
               </button>
                <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
@@ -54,7 +40,7 @@
                     <input type="hidden" name="<?= $key ?>" value="<?= $value ?>"> <?php }
                 } ?>
             
-                <button type="submit" class="btn btn-icon btn-light-brand" data-toggle="tooltip" title="Excel Download"> 
+                <button type="submit" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Excel Download"> 
                  <i class="feather feather-download "></i> 
                  <!-- <i class="fa fa-file-download"></i>  -->
                 </button>
@@ -206,7 +192,7 @@
                                       <div class="row">
                                         <div class="col-md-12">
                                           <div class="col-md-6 col-sm-6 ">
-                                            <label class="control-label"><?= $this->lang->line('banh_name') ?>:</label>
+                                            <label class="control-label"><?= $this->lang->line('bank_name') ?>:</label>
                                             <span> <?php echo $obj['bank_name']; ?></span>
                                           </div>
                                           <div class="col-md-6 col-sm-6 ">

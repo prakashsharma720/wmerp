@@ -162,7 +162,7 @@ public function ev_supplier_add() {
   //print_r($data['criterias']);exit;
 
   //$data['states']=$this->evaluation_result_model->getStates();
-  $this->template->load('template','evaluation_result_sup_edit',$data);
+  $this->template->load('layout/template','evaluation_result_sup_edit',$data);
 
   //$this->load->view('footer');
   
@@ -250,7 +250,7 @@ public function ev_supplier_add() {
   // For edit only //
   $this->load->model('service_provider_model');
   $data['service_providers_data']=$this->service_provider_model->getSProviderById($id);
-  $this->template->load('template','evaluation_result_sprovider_edit',$data);
+  $this->template->load('layout/template','evaluation_result_sprovider_edit',$data);
 
   //$this->load->view('footer');
   
@@ -568,7 +568,7 @@ public function ev_transporter_add() {
   $this->load->model('transporter_model');
 $data['transporters_data']=$this->transporter_model->getTransporterById($id);
   //$data['states']=$this->evaluation_result_model->getStates();
-  $this->template->load('template','evaluation_result_tp_edit',$data);
+  $this->template->load('layout/template','evaluation_result_tp_edit',$data);
 
   //$this->load->view('footer');
   
@@ -774,7 +774,7 @@ $data['transporters_data']=$this->transporter_model->getTransporterById($id);
 		//print_r($data['current']);exit;
        
 	        $data['title']='Supplier Evaluation Result Profile';
-        $this->template->load('template','ev_sup_print',$data);
+        $this->template->load('layout/template','ev_sup_print',$data);
     } 
 
 }

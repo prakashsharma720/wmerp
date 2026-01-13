@@ -34,7 +34,7 @@
 		<div class="card card-primary card-outline">
 			<div class="card-body">
 				<h5 class="mb-3 text-primary border-bottom pb-2"><?= $this->lang->line('supplier_profile_details'); ?>
-</h5>
+				</h5>
 				<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Suppliers/editSupplier/<?= $old_id ?>">
 					<?php echo form_hidden('id', $old_id); ?>
 
@@ -211,9 +211,9 @@
 					</div>
 
 					<!-- 🔵 Bank Details Section -->
-					  <h5 class="my-4 text-success border-bottom pb-2"><?= $this->lang->line('bank_details'); ?>
-</h5>
-			
+					<h5 class="my-4 text-success border-bottom pb-2"><?= $this->lang->line('bank_details'); ?>
+					</h5>
+
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-4">
@@ -292,8 +292,8 @@
 					<!-- <h5 class="my-4 text-warning border-bottom pb-2">
 						<?= $this->lang->line('approval_timeline') ?>
 					</h5> -->
-<h5 class="my-4 text-warning border-bottom pb-2"><?= $this->lang->line('approval_timeline'); ?>
-</h5>
+					<h5 class="my-4 text-warning border-bottom pb-2"><?= $this->lang->line('approval_timeline'); ?>
+					</h5>
 					<div class="row g-4">
 						<div class="col-md-4">
 							<label class="control-label"><?= $this->lang->line('date_of_approval') ?></label>

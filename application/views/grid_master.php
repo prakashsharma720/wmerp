@@ -11,7 +11,7 @@
           </a>
         </li>
         <li class="breadcrumb-item">
-          <?= $this->lang->line('product_grid_master') ?>
+          <?= $this->lang->line('view_list') ?>
         </li>
       </ul>
     </div>
@@ -38,7 +38,7 @@
                 <div class="row">
   
       <!-- Left Form -->
-      <div class="col-md-6">
+      <div class="col-md-4">
         <?php if (!empty($id)) { ?>
           <form class="form-horizontal" role="form" method="post" action="<?= base_url('index.php/Grid/editgrid/' . $id) ?>">
             <input type="hidden" name="grid_id" value="<?= $id ?>">
@@ -48,7 +48,7 @@
 
           <div class="form-group">
             <div class="row col-md-12">
-              <div class="col-md-8 col-sm-8">
+              <div class="col-md-12 col-sm-12">
                 <label class="control-label"><?= $this->lang->line('grid_name') ?></label>
                 <input type="text" placeholder="<?= $this->lang->line('enter_grid_name') ?>" name="grid_name" class="form-control" value="<?= $grid_name ?>" required autofocus>
               </div>
@@ -57,7 +57,7 @@
 
             <?php if (!empty($id)) { ?>
               <div class="row col-md-12 mt-2">
-                <div class="col-md-8 col-sm-8">
+                <div class="col-md-12 col-sm-12">
                   <label class="control-label"><?= $this->lang->line('status') ?></label>
                   <select class="form-control" name="flag">
                     <option value="0"><?= $this->lang->line('active') ?></option>
@@ -68,7 +68,7 @@
             <?php } ?>
 
             <div class="row col-md-12">
-              <div class="col-md-8 col-sm-8">
+              <div class="col-md-12 col-sm-12">
                 <label class="control-label" style="visibility: hidden;"><?= $this->lang->line('name') ?></label><br>
                 <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
               </div>
@@ -78,7 +78,7 @@
       </div>
 
       <!-- Right Table Section -->
-      <div class="col-md-6 bg-white">
+      <div class="col-md-8 bg-white">
         
           <div class="table-responsive">
             <h5 class="mb-3"><?= $this->lang->line('grid_list') ?></h5>

@@ -103,7 +103,7 @@ tfoot {
                 <td style="width:45%;border-bottom: #fff;padding: 5px;">
                     <b>Shipping Address / Consignee:</b><br>
                     <!-- <b>Name </b>:   -->
-                    <?php if($invoice_data['0']['customer_details']['isshipping'] == 'Yes'){ ?>
+                    <?php if(@$invoice_data['0']['customer_details']['isshipping'] == 'Yes'){ ?>
                     <?= $invoice_data['0']['customer_details']['shipping_legal_name']?> <br>
                     <!-- <b>Address </b>:   -->
                     <?= $invoice_data['0']['customer_details']['saddress1'].','.$invoice_data['0']['customer_details']['saddress2'].','.$invoice_data['0']['customer_details']['loc'].'-'.$invoice_data['0']['customer_details']['ship_pincode'].','.$invoice_data['0']['customer_details']['state_name']?><br>
@@ -120,10 +120,10 @@ tfoot {
                     <?php if(!empty($invoice_data['0']['customer_details']['ship_state_code'])){
                              echo  $invoice_data['0']['customer_details']['ship_state_code'];} ?>
                     <?php }else{ ?>
-                    <?= $invoice_data['0']['customer_details']['customer_name']?> <br>
+                    <?= @$invoice_data['0']['customer_details']['customer_name']?> <br>
                     <!-- <b>Address </b>:   -->
-                    <?= $invoice_data['0']['customer_details']['shipping_address'].', '.$invoice_data['0']['customer_details']['billing_address'].','.$invoice_data['0']['customer_details']['destination'].'-'.$invoice_data['0']['customer_details']['billing_pincode'].','.$invoice_data['0']['customer_details']['state_name']?><br>
-                    <b>GSTIN : <?= $invoice_data['0']['customer_details']['gst_no']?></b>
+                    <?= @$invoice_data['0']['customer_details']['shipping_address'].', '.@$invoice_data['0']['customer_details']['billing_address'].','.@$invoice_data['0']['customer_details']['destination'].'-'.@$invoice_data['0']['customer_details']['billing_pincode'].','.@$invoice_data['0']['customer_details']['state_name']?><br>
+                    <b>GSTIN : <?= @$invoice_data['0']['customer_details']['gst_no']?></b>
                     <b>State Code : </b>
                     <?php if(!empty($invoice_data['0']['customer_details']['state_code'])){
                              echo  $invoice_data['0']['customer_details']['state_code'];} ?>
@@ -132,12 +132,12 @@ tfoot {
                     <hr>
                     <b>Billing Address / Buyer:</b> <br>
                     <!-- <b>Name </b>:  -->
-                    <?= $invoice_data['0']['customer_details']['customer_name']?><br>
+                    <?= @$invoice_data['0']['customer_details']['customer_name']?><br>
                     <!-- <b>Address </b>:  -->
-                    <?= $invoice_data['0']['customer_details']['shipping_address'].', '.$invoice_data['0']['customer_details']['billing_address'].','.$invoice_data['0']['customer_details']['destination'].'-'.$invoice_data['0']['customer_details']['billing_pincode'].','.$invoice_data['0']['customer_details']['state_name']?><br>
-                    <b>GSTIN : <?= $invoice_data['0']['customer_details']['gst_no']?></b>
+                    <?= @$invoice_data['0']['customer_details']['shipping_address'].', '.@$invoice_data['0']['customer_details']['billing_address'].','.@$invoice_data['0']['customer_details']['destination'].'-'.@$invoice_data['0']['customer_details']['billing_pincode'].','.@$invoice_data['0']['customer_details']['state_name']?><br>
+                    <b>GSTIN : <?= @$invoice_data['0']['customer_details']['gst_no']?></b>
                     <br>
-                    <b>Buyer's PAN :</b> <?= $invoice_data['0']['customer_details']['pan_no']?>
+                    <b>Buyer's PAN :</b> <?= @$invoice_data['0']['customer_details']['pan_no']?>
                 </td>
                 <td style="width:55%;border-bottom: #fff;padding: 5px;">
                     <b>Document Through : </b> &nbsp;&nbsp;&nbsp; <b>Freight : </b>
@@ -149,13 +149,13 @@ tfoot {
                     <b>Date : </b> <?= date('d-m-Y',strtotime($invoice_data['0']['transaction_date'])) ?> &nbsp;
                     &nbsp;
                     <b>Truck No : </b> <?= $invoice_data['0']['truck_no']?><br>
-					<?php if($invoice_data['0']['customer_details']['isshipping'] == 'Yes'){ ?>
+					<?php if(@$invoice_data['0']['customer_details']['isshipping'] == 'Yes'){ ?>
                     <b>Destination : </b> <?= $invoice_data['0']['customer_details']['loc']?><br>
-					 <?php }else if($invoice_data['0']['customer_details']['isshipping'] == 'No') {?>
+					 <?php }else if(@$invoice_data['0']['customer_details']['isshipping'] == 'No') {?>
 					<b>Destination : </b> <?= $invoice_data['0']['customer_details']['destination']?><br>
 					<?php }; ?>
                     <hr>
-                    <b>Vendor Code No : </b><?= $invoice_data['0']['customer_details']['vendor_code']?>
+                    <b>Vendor Code No : </b><?= @$invoice_data['0']['customer_details']['vendor_code']?>
                     <hr>
                     <b>Your Order No :</b> <?= $invoice_data['0']['po_no']?><br>
                     <b> Date : </b> <?= $invoice_data['0']['po_date'] ?>

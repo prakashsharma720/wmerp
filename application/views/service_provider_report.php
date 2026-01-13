@@ -16,7 +16,7 @@
       <?php $this->load->view('layout/alerts'); ?>
       <button
         id="toggleFilter"
-        class="btn btn-icon btn-light-brand"
+        class="btn btn-icon avatar-text avatar-md"
         type="button">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
@@ -29,7 +29,7 @@
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php }
         } ?>
-        <button type="submit" class="btn btn-icon btn-light-brand">
+        <button type="submit" class="btn btn-icon avatar-text avatar-md">
           <i class="feather feather-download "></i>
         </button>
       </form>
@@ -37,42 +37,64 @@
   </div>
 
   <!-- FILTER FORM (initially hidden) -->
-  <div class="card card-body" id="filterFormWrapper" style="display: none;">
+  <div class="card card-body" id="filterFormWrapper" style="display: none; position:relative; left:35px;right:35px;width:1553px;border-radius:10px">
     <form method="get" id="filterForm">
       <div class="row g-3">
         <!-- Category -->
         <div class="col-md-4">
           <label class="control-label"><?= $this->lang->line('service_provider_category') ?> <span class="required">*</span></label>
-          <select name="categories_id" class="form-control select2 category">
-            <option value="0"><?= $this->lang->line('select_category') ?></option>
-            <?php foreach ($categories as $value): ?>
-              <option value="<?= $value['id'] ?>" <?= ($value['id'] == $current[0]->categories_id) ? 'selected' : '' ?>>
-                <?= $value['category_name'] ?>
-              </option>
-            <?php endforeach; ?>
-          </select>
+          <select name="categories_id" class="form-control select2 category" >
+                     <option value="0">Select Category</option>
+                        <?php
+                         if ($categories): ?> 
+                          <?php 
+                            foreach ($categories as $value) : ?>
+                                <?php 
+                                  if ($value['id'] == $current[0]->categories_id): ?>
+                                      <option value="<?= $value['id'] ?>" selected><?= $value['category_name'] ?></option>
+                                  <?php else: ?>
+                                      <option value="<?= $value['id'] ?>"><?= $value['category_name'] ?></option>
+                                  <?php endif;   ?>
+                            <?php   endforeach;  ?>
+                        <?php else: ?>
+                            <option value="0">No result</option>
+                        <?php endif; ?>
+                    </select>
         </div>
 
         <!-- Service Provider -->
         <div class="col-md-4">
           <label class="control-label"><?= $this->lang->line('name_of_service_provider') ?> <span class="required">*</span></label>
-          <select name="service_provider_id" class="form-control select2 suppliers">
-            <option value="0"><?= $this->lang->line('select_service_provider') ?></option>
-            <?php foreach ($all_sps as $value): ?>
-              <option value="<?= $value['id'] ?>" <?= ($value['id'] == $service_provider_id) ? 'selected' : '' ?>>
-                <?= $value['service_provider_name'] ?>
-              </option>
-            <?php endforeach; ?>
-          </select>
+        <select name="service_provider_id" class="form-control select2 suppliers" >
+                    <option value="0">Select Service Provider</option>
+                    <?php
+                         if ($all_sps): ?> 
+                          <?php 
+                            foreach ($all_sps as $value) : ?>
+                              <?php 
+                                  if ($value['id'] == $service_provider_id): ?>
+                                      <option value="<?= $value['id'] ?>" selected><?= $value['service_provider_name'] ?></option>
+                                  <?php else: ?>
+                                      <option value="<?= $value['id'] ?>"><?= $value['service_provider_name'] ?></option>
+                                  <?php endif;   ?>
+                                   <?php   endforeach;  ?>
+                        <?php else: ?>
+                            <option value="0">No result</option>
+                        <?php endif; ?>
+                </select>
         </div>
 
         <!-- Approval Category -->
         <div class="col-md-4">
-          <label class="control-label"><?= $this->lang->line('category_of_approval') ?></label>
-          <?php
-          $app_cat = array('No' => 'Select Option', 'A' => 'A', 'B' => 'B', 'C' => 'C');
-          echo form_dropdown('category_of_approval', $app_cat, '', 'class="form-control"');
-          ?>
+        <label  class="control-label"> Category of Approval</label>
+                    <?php  $app_cat = array(
+                       'No' => 'Select Option',
+                          'A' => 'A',
+                          'B' => 'B',
+                          'c' => 'C'
+                          );
+                      echo form_dropdown('category_of_approval', $app_cat)
+                    ?>
         </div>
       </div>
 
@@ -95,16 +117,15 @@
 
   <!-- TABLE SECTION -->
 
-  <div class="container card-white-box" style="position:relative;top:35px">
-
-    <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
-
-
-      <div class="col-sm-12">
-        <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
-            <thead class="table-light text-center bg-white">
-              <tr style="background-color:white">
+  <div class="main-content " style="position: relative; bottom:15px">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
 
                 <th><?= $this->lang->line('name') ?></th>
                 <th><?= $this->lang->line('registration_date') ?></th>

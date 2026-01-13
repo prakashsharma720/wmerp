@@ -3,17 +3,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //print_r($items);exit;
 ?>
 
-
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?=$this ->lang->line('supplier_evaluation_panel')?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
-			
+<div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('supplier_evaluation_panel') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('') ?>
+				</li>
+			</ul>
 		</div>
 
-      </div> <!-- /.card-body -->
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+				<?php $this->load->view('layout/alerts'); ?>
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+<div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
       <div class="card-body">
 					<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Evaluation_result/add_new_ER">
 		        <div class="form-group">
@@ -51,10 +73,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		        </div>
 		        <div class="form-group">
-		        	<div class="row col-md-12">
+		        	<div class="row col-md-12 mt-2">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #dc7629;">
+			        			<thead style="background-color: white;">
 			        				<tr>
 			        					<th> <?= $this->lang->line('sr_no') ?>.</th>
 			        					<th> <?= $this->lang->line('checklist_for_evalution') ?></th>

@@ -1,85 +1,50 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//print_r($po_data);exit;
 ?>
-<!-- <div id="ac-wrapper">
-  <div id="popup">
-    <button type="button" class="close" data-dismiss="modal" onClick="PopUp()">&times;</button>
-  </div>
-</div> 
-
-
- <style type="text/css">
-  #ac-wrapper {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(255,255,255,.6);
-z-index: 1001;
-}
-#popup{
-width: 555px;
-height: 375px;
-background-image:url('<?php echo base_url() ;?>uploads/yash.png');
-border: 1px solid #000;
-border-radius: 1px;
--moz-border-radius: 1px;
--webkit-border-radius: 1px;
-box-shadow: #64686e 0px 0px 3px 3px;
--moz-box-shadow: #64686e 0px 0px 3px 3px;
--webkit-box-shadow: #64686e 0px 0px 3px 3px;
-position: relative;
-top: 150px; left: 375px;
-}
-
-</style> 
-<script type="text/javascript">
-function PopUp(){
-        document.getElementById('ac-wrapper').style.display="none"; 
-}
-</script> -->
 
 
 
-
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i><?=$this ->lang ->line('success')?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
-
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?=$this ->lang ->line('requisition_slip_list')?>
-      </span>
-       <div class="button-group float-right">
-
-         <a href="<?php echo base_url(); ?>index.php/Requisition_slips/add" class="btn btn-success" data-toggle="tooltip" title="New Requisition"><i class="fa fa-plus"></i></a>
-
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>
-        
+  <div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('requisition_slip_list') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-      <div class="table-responsive">
-        <table id="example2" class="table table-bordered table-striped">
-          <thead>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+      </ul>
+    </div>
+	<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      <a href="<?php echo base_url(); ?>index.php/Requisition_slips/add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="New Requisition"><i class="feather feather-plus"></i></a>
+
+         <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
+
+          <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="feather feather-trash"></i></button>
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+ <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
               <th ><?=$this ->lang ->line('sr_no')?>.</th>
@@ -141,18 +106,25 @@ function PopUp(){
                 }
                 ?>
                  </td>
-                <td >
-                   <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-eye"></i></a>
-				          <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Requisition_slips/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
+                <td  style="display:flex;gap:7px;align-items:center">
+                   <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#Viewreq<?= $obj['id']; ?>" title="View More">
+                            <i class="feather feather-eye"></i>
+                          </a>
+                 
+				          <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Requisition_slips/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
 
 				        <?php 
                 if($obj['approved_status']=='Pending') { ?>
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id'];?>"><i class="fa fa-edit"></i></a>
+                  <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Requisition_slips/edit/<?php echo $obj['id'];?>"><i class="feather feather-edit-3"></i></a>
                   <?php } ?>
 
-                  <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
-                  
+                  <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#deleterequisition<?php echo $obj['id'];?>"><i class="feather feather-trash"></i></a>
+                            
                 </td>
+
+
+                 <?php $this->load->view('leave-module/component/Viewreq.php', ['obj' => $obj]); ?>
+                 <?php $this->load->view('leave-module/component/deleterequisition.php', ['obj' => $obj]); ?>
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                       <div class="modal-dialog modal-lg">
                         <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Requisition_slips/deletePO/<?php echo $obj['id'];?>">
@@ -302,6 +274,7 @@ function PopUp(){
     </div>
   </div>
 </div>
+
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <script type="text/javascript">
   $( document ).ready(function() {

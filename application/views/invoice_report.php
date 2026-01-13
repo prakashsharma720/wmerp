@@ -18,7 +18,7 @@
       <div class="page-header-right-items d-flex align-items-center">
         <?php $this->load->view('layout/alerts'); ?>
         <!-- Filter Button (no background, toggle enabled) -->
-        <button id="filterToggleBtn" class="btn btn-icon btn-light-brand" type="button">
+        <button id="filterToggleBtn" class="btn btn-icon avatar-text avatar-md" type="button">
           <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
         </button>
 
@@ -31,7 +31,7 @@
             }
           }
           ?>
-          <button type="submit" class="btn btn-icon btn-light-brand">
+          <button type="submit" class="btn btn-icon avatar-text avatar-md">
             <i class="feather feather-download "></i>
           </button>
           <!-- <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button> -->
@@ -41,7 +41,8 @@
   </div>
 
   <!-- COLLAPSIBLE FILTER FORM -->
-  <div class="collapse mt-3" id="filterFormWrapper">
+   <div class="collapse bg-white" id="filterFormWrapper" style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; top:20px ">
+  
     <div class="card card-body">
       <form method="get" id="filterForm">
         <div class="row">
@@ -65,16 +66,15 @@
   </div>
 
 
-  <div class="container card-white-box" style="position:relative;top:35px">
-
-    <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
-
-
-      <div class="col-sm-12" >
-        <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped align-middle mb-0 bg-white" id="proposalList">
-            <thead class="table-light text-center bg-white">
-              <tr style="background-color:white">
+ <div class="main-content " style="position: relative; bottom:13px">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
 
                 <th><?= $this->lang->line('sr_no') ?>.</th>
                 <th><?= $this->lang->line('invoice_no') ?></th>

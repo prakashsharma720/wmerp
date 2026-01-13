@@ -1,22 +1,7 @@
 
 
 
-<?php if ($this->session->flashdata('success')): ?>
-	<div class="alert alert-success alert-dismissible">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-		<?php echo $this->session->flashdata('success'); ?>
-	</div>
-	<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-	<div class="alert alert-error alert-dismissible ">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-		<h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-		<?php echo $this->session->flashdata('failed'); ?>
-	</div>
-<?php endif; ?>
 
 <div class="nxl-content">
 	<div class="page-header">
@@ -28,7 +13,7 @@
 				<li class="breadcrumb-item">
 					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
 				</li>
-				<!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?> -->
+				<li class="breadcrumb-item"><?= $this->lang->line('add') ?>
 				</li>
 			</ul>
 
@@ -37,6 +22,7 @@
 		<div class="page-header-right ms-auto">
 			<div class="page-header-right-items">
 
+      <?php $this->load->view('layout/alerts'); ?>
 			</div>
 
 			<!-- Mobile Toggle -->
@@ -89,13 +75,13 @@
 		        </div>
 		        <div class="form-group">
 		        	<div class="row col-md-12">
-			            <div class="col-md-4 col-sm-4 ">
+			            <div class="col-md-4 col-sm-4  mt-2">
 			            	<label  class="control-label"> <?=$this ->lang ->line('raw_material')?><span class="required">*</span></label>	
 			            	<?php echo form_dropdown('rm_name',$raw_materials);?>
 			            	<!--<input type="text"  placeholder="Enter raw material name" name="rm_name" class="form-control"  required autofocus>-->
 			            </div>
 			   
-			         <div class="col-md-4 col-sm-4 ">
+			         <div class="col-md-4 col-sm-4 mt-2">
 				            <label class="control-label"> <?=$this ->lang ->line('grade')?></label>
 			                	<?php  $grades = array(
 			            		 'No' => 'Select Option',
@@ -105,7 +91,7 @@
 			            		echo form_dropdown('grade', $grades)
 			            		?>
 				        </div>
-				          <div class="col-md-4 col-sm-4 ">
+				          <div class="col-md-4 col-sm-4 mt-2 ">
 			            	<label  class="control-label"><?=$this ->lang ->line('code')?> <span class="required">*</span></label>	
 			            	<input type="text"  placeholder="<?=$this ->lang ->line('enter_code')?>" name="rm_code" class="form-control"  required autofocus>
 			            </div>

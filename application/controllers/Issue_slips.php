@@ -176,7 +176,7 @@ public function add() {
 	$data['departments'] = $this->issue_slip_model->getDepartments();
 	$this->load->model('gir_register_model');
 	$data['units'] = $this->gir_register_model->getUnits();
-	$this->template->load('template','create_issue_slip',$data);
+	$this->template->load('layout/template','create_issue_slip',$data);
 
 	//$this->load->view('footer');
 	
@@ -234,7 +234,7 @@ public function edit($id=NULL) {
 	$data['items']=$this->issue_slip_model->getItems();
 	//$data['grades']=$this->issue_slip_model->getGrades();
 	//$data['states']=$this->issue_slip_model->getStates();
-	$this->template->load('template','issue_edit',$data);
+	$this->template->load('layout/template','issue_edit',$data);
 	//$this->load->view('footer');
 	
 	}
@@ -253,7 +253,7 @@ public function edit($id=NULL) {
 		$data['title'] = 'Issue Slip Report';
 		$data['suppliers'] = $this->issue_slip_model->supplier_list();
 		//echo var_dump($data['students']);
-		$this->template->load('template','supplier_report',$data);
+		$this->template->load('layout/template','supplier_report',$data);
 	}
 
 	public function add_new_issue() {
@@ -410,7 +410,7 @@ public function edit($id=NULL) {
 		$data['current'] = $this->issue_slip_model->getById($id);
 		//print_r($data['current']);exit;
 	    $data['title']='Issue Slip Profile';
-        $this->template->load('template','issue_print',$data);
+        $this->template->load('layout/template','issue_print',$data);
     } 
 }
 

@@ -1,23 +1,24 @@
 
 
 <div class="nxl-content">
-  <div class="page-header mb-3 d-flex justify-content-between align-items-center">
-
-    <!-- Left Side: Title and Breadcrumb -->
-    <div>
-      <h5><?=$this ->lang ->line('current_stock_report')?></h5>
-      <ul class="breadcrumb">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('current_stock_report') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
           <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
-            <!-- <?= $this->lang->line('home') ?> -->
+            <?= $this->lang->line('home') ?>
           </a>
         </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('report') ?></li>
       </ul>
     </div>
 
-
-<!-- Right Side: Filter & Export Buttons -->
-    <div class="d-flex gap-2">
+<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      <!-- Filter Button -->
       <button class="btn btn-icon avatar-text avatar-md" type="button" id="toggleFilter">
         <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
       </button>
@@ -27,16 +28,23 @@
           foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
         <?php }} ?>
-        <button type="submit" class="btn btn-info"><?= $this->lang->line('export') ?></button>
+        <button type="submit" class="btn btn-icon avatar-text avatar-md"> <i class="feather feather-download "></i></button>
       </form>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
     </div>
   </div>
+    
+<!--
+  
 
-  <!-- Alerts -->
-  <?php $this->load->view('layout/alerts'); ?>
-
-      <!-- Filter Form -->
-  <div class="card mb-3" id="filterBox" style="display: none;">
+     <!-- Filter Form -->
+  <div class="card mb-3" id="filterBox" style="display: none; position:relative;left:35px;right:35px;width:1553px;top:20px">
     <div class="card-body">
       <form method="get" id="filterForm">
         <div class="row">
@@ -49,7 +57,7 @@
             <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
           </div>
           <div class="col-md-4 d-flex align-items-end">
-            <button type="submit" class="btn btn-primary mr-2"><?= $this->lang->line('search') ?></button>
+            <button type="submit" style="gap:5px" class="btn btn-primary mr-2 "><?= $this->lang->line('search') ?></button>
             <a href="<?= base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger"><?= $this->lang->line('reset') ?></a>
           </div>
         </div>
@@ -60,15 +68,15 @@
       
     
      
-    <div class="container card-white-box">
- 
-  <div id="proposalList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer shadow-sm p-3 mt-3 rounded" style="background-color: #fff;">
-
-
-    <div class="col-sm-12">
-      <table class="table table-hover align-middle" id="proposalList">
-        <thead class="table-light">
-            <tr>
+     <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
               <th ><?= $this->lang->line('sr_no') ?>.</th>
               <th style="white-space: nowrap;">  <?= $this->lang->line('material_description') ?> </th>
                <th style="white-space: nowrap;"> <?= $this->lang->line('date') ?></th>

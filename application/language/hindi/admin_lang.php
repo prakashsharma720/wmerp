@@ -1748,16 +1748,33 @@ $lang['action'] = "क्रिया";
 $lang['total'] = "कुल";
 $lang['comment'] = "टिप्पणी";
 $lang['submit'] = "जमा करें";
+$lang['approval_details'] = "अनुमोदन विवरण";
+$lang['basic_details'] = "मूल विवरण";
+$lang['contact_details'] = "संपर्क विवरण";
+$lang['bank_details'] = "बैंक विवरण";
+$lang['gst_tax_details'] = "जीएसटी और कर विवरण";
+$lang['other_details'] = "अन्य विवरण";
+$lang['select_finish_grade'] = "फिनिश ग्रेड चुनें";
+$lang['select_mineral_name'] = "खनिज का नाम चुनें";
 $lang['stock_unavailable'] = "स्टॉक उपलब्ध नहीं है";
 $lang['issue_slip_no'] = "इश्यू स्लिप नंबर";
 $lang['issue_to'] = "जारी किया गया (कर्मचारी का नाम)";
 $lang['enter_comment_here'] = "टिप्पणी यहां दर्ज करें";
+$lang['material_return_register_details'] = 'सामग्री वापसी रजिस्टर विवरण';
+$lang['equipment_name'] = "उपकरण का नाम";
+$lang['select_equipment'] = "उपकरण चुनें";
+$lang['enter_purpose_here'] = "यहां उद्देश्य दर्ज करें";
+$lang['address_first_part_note'] = "कृपया केवल पते का पहला भाग दर्ज करें, अधिकतम लंबाई 80 अक्षर।";
+$lang['is_shipping_address_different'] = "क्या शिपिंग पता बिलिंग पते से अलग है?";
+$lang['edit_customers'] = "ग्राहकों को संपादित करें";
 $lang['requisition_slip'] = "अनुसंधान पर्ची";
 $lang['requisition_slip_details'] = "अनुसंधान पर्ची विवरण";
 $lang['delete_transporter_confirm'] = "क्या आप वाकई ट्रांसपोर्टर को हटाना चाहते हैं?";
 $lang['mechanical_item_list'] = 'यांत्रिक वस्तुओं की सूची';
 $lang['select_classification'] = 'वर्गीकरण चुनें';
-
+$lang['edit_transporter'] = 'ट्रांसपोर्टर संपादित करें';
+$lang['Pending_Purchase_Orders_for_GIR'] = 'GIR के लिए लंबित खरीद आदेश';
+$lang['edit_supplier_evaluation_panel'] = "आपूर्तिकर्ता मूल्यांकन पैनल संपादित करें";
 $lang['sub_category_list'] = 'उप श्रेणी सूची';
 $lang['plant_and_machinery(list)'] = 'संयंत्र और मशीनरी (सूची)'; // Hindi
 $lang['material_return_register'] = "सामग्री वापसी रजिस्टर";
@@ -1768,9 +1785,15 @@ $lang['linear'] = 'रेखीय';
 $lang['non_linear'] = 'गैर-रेखीय';
 $lang['finish_goods'] = 'समाप्त माल';  
 $lang['lab_chemical'] = 'प्रयोगशाला रसायन';
+$lang['other_details'] = 'अन्य विवरण';
+$lang['tax_details'] = 'कर विवरण';
+$lang['address_details'] = 'पता विवरण';
+
     // Hindi
     $lang['edit_rm_code'] = 'आरएम कोड संपादित करें';
-
+$lang['report'] = 'रिपोर्ट';
+$lang['edit_transporter_evaluation_panel'] = "परिवहनकर्ता मूल्यांकन पैनल संपादित करें";
+$lang['select_provider_category'] = "प्रदाता श्रेणी चुनें";
 $lang['item_name'] = "आइटम का नाम";
 $lang['out_qty'] = "निकासी मात्रा";
 $lang['description'] = "विवरण";
@@ -3172,16 +3195,41 @@ $lang['dd_mm_yyyy'] = 'दिन-माह-वर्ष';
 $lang['username'] = 'उपयोगकर्ता नाम';
 $lang['password'] = 'पासवर्ड';
 $lang['enter_password'] ='पासवर्ड  दर्ज करें';
-
+$lang['green_plant_chemicals'] = 'हरित पौधा रसायन';
 $lang['select_authority_person'] = 'अधिकार प्राप्त व्यक्ति चुनें (केवल अवकाश अनुमोदन हेतु)';
-$lang['select_employees'] = 'कर्मचारी चुनें...';
+$lang['profile_details'] = "प्रोफ़ाइल विवरण";
 
+$lang['marks'] = "अंक";
+$lang['total_marks'] = "कुल अंक";
+$lang['obtained_marks'] = "प्राप्तांक";
+$lang['total_marks_obtained'] = "कुल प्राप्तांक";
+$lang['grade'] = "श्रेणी";
+$lang['percentage'] = "प्रतिशत";
+$lang['criteria_name'] = "मापदंड का नाम";
+$lang['supplier_evaluation_results'] = "सप्लायर मूल्यांकन परिणाम";
+$lang['evaluation_details'] = "मूल्यांकन विवरण";
+$lang['supplier_details'] = "सप्लायर विवरण";
+$lang['name'] = "नाम";
+$lang['category'] = "श्रेणी";
+$lang['evaluation_date'] = "मूल्यांकन तिथि";
+$lang['comment'] = "टिप्पणी";
+$lang['close'] = "बंद करें";
+
+$lang['total_marks_obtained'] = "कुल प्राप्तांक";
+$lang['po_item_details'] = "पीओ आइटम विवरण";  // "Purchase Order Item Details"
+$lang['marks'] = "अंक";
+$lang['select_employees'] = 'कर्मचारी चुनें...';
+$lang['computer_periperals'] = 'कंप्यूटर सहायक उपकरण';
 $lang['upload_photo'] = 'फोटो अपलोड करें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल चयनित नहीं';
-
+$lang['select_state'] = "राज्य चुनें";
 $lang['gender'] = 'लिंग';
 $lang['male'] = 'पुरुष';
 $lang['female'] = 'महिला';
+
+$lang['enter_ifsc_code'] = 'IFSC कोड दर्ज करें';
+$lang['enter_branch_address'] = 'शाखा का पता दर्ज करें';
+$lang['enter_account_number'] = 'खाता नंबर दर्ज करें';
 
 $lang['address'] = 'पता';
 $lang['enter_address'] = 'पता दर्ज करें';

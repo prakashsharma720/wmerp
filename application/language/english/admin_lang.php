@@ -3747,6 +3747,21 @@ $lang['view_list'] = 'View List';
 $lang['grids'] = 'Grids';
 $lang['mechanical_item_list'] = 'Mechanical Item List';
 $lang['select_classification'] = 'Select Classification';
+$lang['edit_transporter'] = 'Edit Transporter';
+$lang['Pending_Purchase_Orders_for_GIR'] = 'Pending Purchase Orders for GIR';
+$lang['approval_details'] = "Approval Details";
+$lang['basic_details'] = "Basic Details";
+$lang['contact_details'] = "Contact Details";
+$lang['bank_details'] = "Bank Details";
+$lang['gst_tax_details'] = "GST & Tax Details";
+$lang['other_details'] = "Other Details";
+
+$lang['equipment_name'] = "Equipment Name";
+$lang['select_equipment'] = "Select Equipment";
+$lang['enter_purpose_here'] = "Enter purpose here";
+
+$lang['select_finish_grade'] = "Select Finish Grade";
+$lang['select_mineral_name'] = "Select Mineral Name";
 
 $lang['categories'] = 'Categories';
 $lang['plant_and_machinery(list)'] = 'Plant and Machinery (List)'; // English
@@ -3770,22 +3785,51 @@ $lang['units'] = 'Units';
 $lang['sub_categories'] = 'Sub-Categories';
 $lang['departments'] = 'Departments';
 $lang['hsn_code'] = 'HSN Code';
-
+$lang['report'] = 'Report';
+$lang['edit_supplier_evaluation_panel'] = "Edit Supplier Evaluation Panel";
 // Section: Suppliers
 $lang['suppliers'] = 'Suppliers';
 $lang['add'] = 'Add';
 $lang['view_list'] = 'View List';
-
+$lang['edit_transporter_evaluation_panel'] = "Edit Transporter Evaluation Panel";
+$lang['select_provider_category'] = "Select Provider Category";
 // Section: RM Code
+$lang['profile_details'] = "Profile Details";
+
+$lang['marks'] = "Marks";
+$lang['total_marks'] = "Total Marks";
+$lang['obtained_marks'] = "Obtained Marks";
+$lang['total_marks_obtained'] = "Total Marks Obtained";
+$lang['grade'] = "Grade";
+$lang['percentage'] = "Percentage";
+$lang['criteria_name'] = "Criteria Name";
+$lang['supplier_evaluation_results'] = "Supplier Evaluation Results";
+$lang['evaluation_details'] = "Evaluation Details";
+$lang['supplier_details'] = "Supplier Details";
+$lang['name'] = "Name";
+$lang['category'] = "Category";
+$lang['evaluation_date'] = "Evaluation Date";
+$lang['comment'] = "Comment";
+$lang['close'] = "Close";
+
+$lang['po_item_details'] = "PO Item Details";
+$lang['marks'] = "Marks";
+$lang['total_marks_obtained'] = "Total Marks Obtained";
+$lang['green_plant_chemicals'] = 'Green Plant Chemicals';
+$lang['computer_periperals'] = 'Computer Peripherals';
 $lang['rm_code'] = 'RM Code';
 $lang['rm_add'] = 'Add';  // Can be the same as 'add'
 $lang['rm_view_list'] = 'View List';
-
+$lang['material_return_register_details'] = 'Material Return Register Details';
 // Section: Purchase Orders
 $lang['purchase_orders'] = 'Purchase Orders';
 $lang['purchase_add'] = 'Add';
 $lang['purchase_view_list'] = 'View List';
-
+$lang['edit_customers'] = "Edit Customers";
+$lang['enter_ifsc_code'] = 'Enter IFSC Code';
+$lang['enter_branch_address'] = 'Enter Branch Address';
+$lang['enter_account_number'] = 'Enter Account Number';
+$lang['select_state'] = "Select State";
 // Section: Reports
 $lang['reports'] = 'Reports';
 $lang['suppliers_report'] = 'Suppliers Report';
@@ -3799,7 +3843,7 @@ $lang['customer_report'] = 'Customer Report';
 $lang['requisition_slips'] = 'Requisition Slips';
 $lang['gir_register_report'] = 'GIR Register Report';
 $lang['current_stock_report'] = 'Current Stock Report';
-
+$lang['address_first_part_note'] = "Please put first part of address only, Maximum Length 80 Characters.";
 // GIR Registers
 $lang['gir_registers'] = 'GIR Registers';
 $lang['general_gir'] = 'General GIR';
@@ -3816,6 +3860,9 @@ $lang['out_qty'] = "Out Qty";
 $lang['description'] = "Description";
 $lang['gir_register'] = "GIR Register";
 
+$lang['other_details'] = 'Other Details';
+$lang['tax_details'] = 'Tax Details';
+$lang['address_details'] = 'Address Details';
 
 // Issue Slips
 $lang['issue_slips'] = 'Issue Slips';

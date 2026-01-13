@@ -1,31 +1,41 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
+      <!-- Page Header -->
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"><?= $this->lang->line('computer_peripherals_master') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('') ?></li>
+      </ul>
+    </div>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-       <h3 class="card-title"><?= $this->lang->line('computer_peripherals_master'); ?></h3>
+    <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      
 
-        <div class="pull-right ">
-		
-		</div>
-	      </div> <!-- /.card-body -->
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+ <div class="main-content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card stretch stretch-full">
 	      	<div class="card-body">
 		      	<div class="row">
 		      		<div class="col-md-4">
@@ -37,7 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Computer_peripherals/add_newPM">
 				    			<?php } ?>
 				        <div class="form-group">
-				        <?=$this ->lang ->line('device_code')?>	 :  <label class="control-label"> <?= $service_code_view ?></label>
+							<strong style="border: 1px solid #ccc; padding:8px">
+				        <?=$this ->lang ->line('device_code')?>	 :  <label class="control-label"> <?= $service_code_view ?></label></strong>
 				        	<div class="row col-md-12">
 					                <?php
 					                 if ($categories): ?> 
@@ -49,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 						                        	<input type="hidden" name="code" value="<?= $service_code_view ?>" >
 						                        	
-						                        <label class="control-label"> <?= $this->lang->line('computer_peripherals'); ?>
+						                        <label class="control-label mt-2"> <?= $this->lang->line('computer_peripherals'); ?>
  <?=$this ->lang ->line('name')?></label>
 						                     
 						                        <?php endif;   ?>
@@ -68,11 +79,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                <input type="text"  placeholder="Enter Code" name="code" class="form-control" value="<?= $code?>" required autofocus>
 								</div>
 								</div>-->
-							<div class="row col-md-12">
+							<div class="row col-md-12 mt-2">
 					            	<label class="control-label"> <?=$this ->lang ->line('minimum_inventory_qty')?></label>
 								<input type="text"  placeholder="<?=$this ->lang ->line('enter_minimum_inventory_qty')?>" name="minimum_inventory_qty" class="form-control" value="<?= $minimum_inventory_qty?>" required autofocus>
 					        </div>
-							 <div class="row col-md-12">
+							 <div class="row col-md-12 mt-2">
 					        	<label class="control-label"> <?=$this ->lang ->line('select_unit')?></label>
 						         <select name="unit_name" class="form-control select2" required="required">
 					        		 <option value=""><?=$this ->lang ->line('select')?></option>
@@ -92,17 +103,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                <?php endif; ?>
 						            </select>
 						     </div>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 mt-2">
 					            	<label class="control-label"> <?=$this ->lang ->line('description')?></label>
 					                <textarea type="text"  placeholder="<?=$this ->lang ->line('enter_description')?>" name="description" class="form-control" 
 									\value="<?= $description?>"  autofocus><?= $description ?></textarea>
 					            </div>
 					        <?php if(!empty($id)) { ?>
-					        <div class="row col-md-12">
+					        <div class="row col-md-12 mt-2">
 					            <label class="control-label"> <?=$this ->lang ->line('opening_stock_qty')?></label>
 								<input type="text"  placeholder="Enter Opening Stock Qty" name="opening_stock_qty" class="form-control" value="<?= $opening_stock_qty?>" required autofocus>
 					        </div>
-				           <div class="row col-md-12">
+				           <div class="row col-md-12 mt-2">
 					            	<label class="control-label"><?=$this ->lang ->line('status')?></label>
 					               <select class="form-control" name="flag">
 					               		<option value="0"> <?=$this ->lang ->line('active')?></option>
@@ -120,10 +131,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				 <!-- /form -->
 				<div class="col-md-8">
 					<h5> <?=$this ->lang ->line('computer_peripherals')?></h5>
-					<div class="table-responsive">
-					<table id="example1" class="table table-bordered table-striped">
-						<thead>
-							<tr>
+					<div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
 								<th> <?=$this ->lang ->line('sr_no')?>.</th>
 								<th> <?=$this ->lang ->line('name')?></th>
 								
@@ -141,7 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<td><?= $computer_peripheral['code'] ?></td>
 							
 								<td><?= $computer_peripheral['description'] ?></td>
-								<td> <a class="btn btn-xs btn-info btnEdit" href="<?php echo base_url(); ?>index.php/Computer_peripherals/index/<?php echo $computer_peripheral['id'];?>"><i class="fa fa-edit"></i></a></td>
+								<td> <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Computer_peripherals/index/<?php echo $computer_peripheral['id'];?>"><i class="feather feather-edit-3"></i></a></td>
 							</tr>
 						<?php $i++;} ?>
 						</tbody>

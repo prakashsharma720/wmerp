@@ -1,62 +1,47 @@
-<?php if ($this->session->flashdata('success')): ?>
-  <div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?> !</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-  </div>
-  <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
 
-<?php if ($this->session->flashdata('failed')): ?>
-  <div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-  </div>
-<?php endif; ?>
 
-<!-- Page Header -->
 <div class="nxl-content">
-  <div class="page-header mb-3">
+  <div class="page-header d-flex justify-content-between align-items-center">
     <div class="page-header-left d-flex align-items-center">
       <div class="page-header-title">
-        <h5 class="m-b-10"><?= $this->lang->line('material_return_register') ?></h5>
+        <h5 class="m-b-10"> <?= $this->lang->line('material_return_register') ?></h5>
       </div>
-      <ul class="breadcrumb ml-3">
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
         </li>
-        <!-- <li class="breadcrumb-item"><?= $this->lang->line('leave_history') ?></li> -->
-
+        <li class="breadcrumb-item"> <?= $this->lang->line('add') ?></li>
       </ul>
-
     </div>
 
     
-		<div class="page-header-right ms-auto">
-			<div class="page-header-right-items">
 
-			</div>
+ <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
 
-			<!-- Mobile Toggle -->
-			<div class="d-md-none d-flex align-items-center">
-				<a href="javascript:void(0)" class="page-header-right-open-toggle">
-					<i class="feather-align-right fs-20"></i>
-				</a>
-			</div>
-		</div>
-	</div>
-
-
-
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
 
 
 
 
-
+ <div class="main-content">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card stretch stretch-full">
 		
-      <div class="card-body p-3">
+      <div class="card-body ">
 		    <form class="form-horizontal " role="form" method="post" action="<?php echo base_url(); ?>index.php/Material_return_records/add_new_gir/">
 		        <div class="form-group">
 		        	<div class="row ">
@@ -75,7 +60,7 @@
 			            </div>
 		        	</div>
 		        	<div class="row ">
-		        	 	<div class="col-md-4 col-sm-4 ">
+		        	 	<div class="col-md-4 col-sm-4 mt-2 ">
 							<label class="control-label"> <?=$this ->lang ->line('category')?> </label>
 			            	 <select name="categories_id" class="form-control select2 category" required="required">
 			            	 	<option value=""> <?=$this ->lang ->line('select_category')?> </option>
@@ -95,7 +80,7 @@
 					                <?php endif; ?>
 					            </select> 
 			            </div>
-			           	<div class="col-md-4 col-sm-4 ">
+			           	<div class="col-md-4 col-sm-4 mt-2 ">
 			            	 <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?>  <span class="required">*</span></label>
 			            	<select name="supplier_id" class="form-control select2 suppliers" required="required">
 			            		<option value=""> <?=$this ->lang ->line('select_supplier')?> </option>
@@ -115,7 +100,7 @@
 						        <?php endif; ?>
 						    </select>
 						</div>
-						<div class="col-md-4 col-sm-4 ">
+						<div class="col-md-4 col-sm-4 mt-2">
 			            	<label class="control-label"> <?=$this ->lang ->line('tentative_date_of_return')?>  <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="return_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"	value="" autofocus required >
 			            </div>
@@ -123,10 +108,10 @@
 					</div>
 					
 		        	<div class="row ">
-		        		<div class="col-md-12 ">
+		        		<div class="col-md-12  mt-3">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
-			        			<thead style="background-color: #ca6b24;">
+			        			<thead style="background-color: white;">
 			        				<tr>
 			        					<th style="width: 5%;">  <?=$this ->lang ->line('sr_no')?> </th>
 			        					<th style="width: 30%;"> <?=$this ->lang ->line('material_description')?> </th>
@@ -167,27 +152,20 @@
 									        </select>
 										</td>
 							   			<td >
-											<input type="text"  placeholder="<?=$this ->lang ->line('enter_qty')?>" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
+											<input type="text"  placeholder="Enter Qty" name="qty[]" class="form-control qty" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"  autofocus required>
 
 												<input type="hidden" name="status[]" value="Out">
 										</td>
 										
 										<td>
-											<textarea name="description[]" class="form-control description" type="textarea" placeholder=" <?=$this ->lang ->line('enter_description')?>"></textarea>
+											<textarea name="description[]" class="form-control description" type="textarea" placeholder="Enter description"></textarea>
 										</td>
 										
-										<td style="width:13%">
-  <!-- Add Row Button -->
-  <button type="button" class="btn btn-xs border addrow" role="button" title="Add Row">
-    <i class="fa fa-plus text-dark"></i>
-  </button>
-
-  <!-- Delete Row Button -->
-  <button type="button" class="btn btn-xs border deleterow" role="button" title="Delete Row">
-    <i class="fa fa-minus text-dark"></i>
-  </button>
-</td>
-
+										<td style="width:13% ; display:flex; gap:5px">
+											<button type="button" class="btn btn-icon avatar-text avatar-md addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+											
+											<button type="button" class="btn btn-icon avatar-text avatar-md deleterow"  style="gap:5px"href="#" role='button'><i class="fa fa-minus"></i></button>
+										</td>
 									</tr>
 			        			</tbody>
 			        			<tfoot>
@@ -214,7 +192,7 @@
 		    </div>
 	        <div class="form-group">
 	        	<div class="row ">
-		            <div class="col-md-12 col-sm-12 ">
+		            <div class="col-md-12 col-sm-12 mt-2 ">
 		            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?> </label>
 		                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang ->line('submit')?> </button>
 	        		</div>
@@ -226,6 +204,7 @@
 		</div>
 	</div>
 </div>
+
 
 <table id="sample_table1" style="display: none;">
 	<tbody>
@@ -266,11 +245,12 @@
 				<textarea name="description[]" class="form-control description" type="textarea" placeholder="<?=$this ->lang ->line('enter_description')?> "></textarea>
 			</td>
 			
-			<td style="width:13%">
-				<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
-				<button type="button" class="btn btn-xs btn-danger deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
+			<td style="width:13%; display:flex; gap:5px">
+				<button type="button" class="btn btn-icon avatar-text avatar-md addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
+				<button type="button" class="btn btn-icon avatar-text avatar-md deleterow" href="#" role='button'><i class="fa fa-minus"></i></button>
 			</td>
 		</tr>
+		
 	</tbody>
 </table>
 

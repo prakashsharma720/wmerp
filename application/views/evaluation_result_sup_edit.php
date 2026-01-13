@@ -4,16 +4,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
-			
+
+
+    <div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('edit_supplier_evaluation_panel') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('') ?>
+				</li>
+			</ul>
 		</div>
 
-      </div> <!-- /.card-body -->
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+				<?php $this->load->view('layout/alerts'); ?>
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+<div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
       <div class="card-body">
 		    		<form class="form-horizontal " role="form" method="post" action="<?php echo base_url(); ?>index.php/Evaluation_result/edit_ER/<?= $id ?>">
 		    			<input type="hidden" name="er_id_old" value="<?= $id?>">
@@ -23,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        		<div class="col-md-4 col-sm-4 ">
 			            	<label class="control-label"><?= $this->lang->line('date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
-			                 value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } echo date('d-m-Y')?>" autofocus required >
+			                 value="<?php if(@$transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } echo date('d-m-Y')?>" autofocus required >
 			            </div>
 			             <div class="col-md-4 col-sm-4 ">
 			            	<label  class="control-label"><?= $this->lang->line('supplier_category') ?> <span class="required">*</span></label>
@@ -68,22 +93,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		        <div class="form-group ajax_data">
 		        	<div class="row col-md-12">
-			            <div class="col-md-3 col-sm-3">
+			            <div class="col-md-3 col-sm-3 mt-2">
 			              <label  class="control-label"> <?= $this->lang->line('supplier_type') ?></label>
-			                <input type="text" class="form-control" value="<?= $suppliers_data['supplier_type']?>" readonly="readonly">
+			                <input type="text" class="form-control" value="<?= @$suppliers_data['supplier_type']?>" readonly="readonly">
 			            </div>
-			            <div class="col-md-4 col-sm-4">
+			            <div class="col-md-4 col-sm-4 mt-2">
 			              <label class="control-label"> <?= $this->lang->line('contact_person') ?></label>
-			                <input type="text" class="form-control" value="<?= $suppliers_data['contact_person']?>"  readonly="readonly">
+			                <input type="text" class="form-control" value="<?= @$suppliers_data['contact_person']?>"  readonly="readonly">
 			            </div>        
-			          <div class="col-md-5 col-sm-5">
+			          <div class="col-md-5 col-sm-5 mt-2">
 			              <label class="control-label"> <?= $this->lang->line('address') ?> </label>
-			               <textarea class="form-control" readonly="readonly"> <?= $suppliers_data['address']?></textarea>
+			               <textarea class="form-control" readonly="readonly"> </textarea>
 			            </div>
 			            
         			</div>
 		        </div>
-		        <div class="form-group">
+		        <div class="form-group p-3">
 		        	<div class="row col-md-12">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >

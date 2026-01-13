@@ -68,8 +68,13 @@
 				    			<?php } else { ?>
 							<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Raw_material/add_newPM">
 				    			<?php } ?>
-				        <div class="form-group">
-				        	<?= $this->lang->line('new_material_code') ?> :  <label class="control-label"> <?= $rm_code_view ?></label>
+								<div class="form-group">
+								<div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 10px; display: inline-block;">
+    <strong><?= $this->lang->line('new_material_code') ?>:</strong>
+    <label class="control-label"><?= $rm_code_view ?></label>
+								</div>
+				        
+				        	<!-- <?= $this->lang->line('new_material_code') ?> :  <label class="control-label"> <?= $rm_code_view ?></label> -->
 						<div class="row col-md-12 p-1">
 			          		<label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?> <span class="required">*</span></label>
 							<select name="supplier_id" class="form-control select2 suppliers" required="required">
