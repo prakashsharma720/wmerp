@@ -24,7 +24,7 @@
 				<!-- <input type="hidden" name="pme_code" value="<?= $pme_code ?>"> -->
 				<div class="row col-md-12">
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Date <span class="required">*</span></label>
+						<label class="control-label"> <?= $this->lang->line('date') ?> <span class="required">*</span></label>
 						<input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?php echo date('d-m-Y'); ?>" autofocus required>
 					</div>
 				</div>
@@ -32,9 +32,9 @@
 				<div class="row col-md-12">
 					
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Department</label>
+						<label class="control-label"> <?= $this->lang->line('department') ?></label>
 						<select name="department_id" class="form-control select2 ">
-							<option value=""> Select Department</option>
+							<option value=""> <?= $this->lang->line('select_department') ?></option>
 							<?php
 							if ($departments) : ?>
 								<?php
@@ -47,28 +47,28 @@
 									<?php endif;   ?>
 								<?php endforeach;  ?>
 							<?php else : ?>
-								<option value="0">No result</option>
+								<option value="0"><?= $this->lang->line('no_result') ?></option>
 							<?php endif; ?>
 						</select>
 					</div>
 					
 					<div class="col-md-4 col-sm-4 ">
-					    <label class="control-label"> Register No. <span class="required">*</span></label>
+					    <label class="control-label"> <?= $this->lang->line('register_no') ?>. <span class="required">*</span></label>
 						<input type="text"  name="m_code" class="form-control" value="<?= $pme_code ?> "  autofocus readonly="readonly">
 						<input type="hidden" name="pme_code" value="<?php echo $m_code;?>">
 						 
 						
 					</div>
 					<div class="col-md-4 col-sm-4 ">
-					      <label class="control-label"> Equipment Name</label>
+					      <label class="control-label"> <?= $this->lang->line('equipment_name') ?></label>
 						  <select name="equipment_name[]" class="form-control equipment_name select2"  required>
-								<option value=""> Select Name</option>
+								<option value=""> <?= $this->lang->line('select_name') ?></option>
 								<?php if ($plant_machinary_list) : ?>
 									<?php foreach ($plant_machinary_list as $k=>$value) : ?>
 											<option value="<?php echo $value['id']; ?>"><?php echo $value['name'];?></option>
 									<?php endforeach; ?>
 								<?php else : ?>
-									<option value="0">No result</option>
+									<option value="0"><?= $this->lang->line('no_result') ?></option>
 								<?php endif; ?>
 						   </select>
 					</div>
@@ -76,7 +76,7 @@
 				<br>
 				<div class="row col-md-12">
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Maintance Start Date & Time</label>
+						<label class="control-label"> <?= $this->lang->line('maintenance_start'); ?></label>
 						<div class="input-group">
 							<div class="input-group-append">
 								<input type="date" class="form-control date1" name="machine_start_date"  value="" style="width:158px;" />
@@ -97,7 +97,7 @@
 					</div>
 
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Maintance Stop Date & Time</label>
+						<label class="control-label"> <?= $this->lang->line('maintenance_stop'); ?></label>
 						<div class="input-group">
 							<div class="input-group-append">
 								<input type="date"  class="form-control date2" name="machine_stop_date"  value="" style="width:158px;" />
@@ -110,34 +110,34 @@
 					</div>
 
 					<div class="col-md-4 col-sm-4 ">
-					 	<label class="control-label">Machine Down Time (Hrs.) </label>
-						  <input type="text"  placeholder="Total Time" name="machine_total_time[]" class="form-control machine_total_time"  autofocus style="width:150px;" readonly >
+					 	<label class="control-label"><?= $this->lang->line('machine_down_time'); ?> (Hrs.) </label>
+						  <input type="text"  placeholder="<?= $this->lang->line('total_time'); ?>" name="machine_total_time[]" class="form-control machine_total_time"  autofocus style="width:150px;" readonly >
 
 					</div>
 				</div>
 				<br>
 				<div class="row col-md-12">
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Type of Maintenance </label>
-						<textarea placeholder=" Maintanance" name="type_maintance[]" class="form-control" style="width:275px;"  autofocus></textarea>
+						<label class="control-label"><?= $this->lang->line('type_of_maintenance'); ?> </label>
+						<textarea placeholder=" <?= $this->lang->line('maintenance'); ?>" name="type_maintance[]" class="form-control" style="width:275px;"  autofocus></textarea>
 
 					</div>
 
 					<div class="col-md-4 col-sm-4 ">
-					   <label class="control-label"> Details of Maintenance </label>
-					   <textarea placeholder=" Maintanance" name="details_maintance[]" class="form-control" style="width:275px;" autofocus></textarea>
+					   <label class="control-label"><?= $this->lang->line('details_of_maintenance'); ?> </label>
+					   <textarea placeholder=" <?= $this->lang->line('maintenance'); ?>" name="details_maintance[]" class="form-control" style="width:275px;" autofocus></textarea>
 
 					</div>
 
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Parts Replace </label>
-						<textarea placeholder="Parts Replaced" name="parts_replaced[]" class="form-control" style="width:275px;" autofocus></textarea>
+						<label class="control-label"> <?= $this->lang->line('parts_replaced'); ?> </label>
+						<textarea placeholder="<?= $this->lang->line('parts_replaced'); ?>" name="parts_replaced[]" class="form-control" style="width:275px;" autofocus></textarea>
 					</div>
 				</div>
 				<div class="row col-md-12">
 					<div class="col-md-12 col-sm-12 ">
-						<label class="control-label" style="visibility: hidden;"> Grade</label>
-						<button type="submit" class="btn btn-primary btn-block"> Submit</button>
+						<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade'); ?></label>
+						<button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit'); ?></button>
 					</div>
 				</div>
 

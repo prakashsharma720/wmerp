@@ -11,7 +11,7 @@
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -36,18 +36,18 @@
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> PME No </th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('pme_no') ?></th>
               <!-- <th style="white-space: nowrap;"> Date </th> -->
-              <th style="white-space: nowrap;"> Department </th>
-              <th style="white-space: nowrap;"> Created By </th>
-              <th style="white-space: nowrap;"> Equipment Name </th>
-              <th style="white-space: nowrap;"> Equipment ID </th>
-              <th style="white-space: nowrap;"> Model / Type </th>
-              <th style="white-space: nowrap;"> Sr No </th>
-              <th style="white-space: nowrap;"> Make </th>
-              <th style="white-space: nowrap;"> Year of Installation </th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('created_by') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('equipment_name') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('equipment_id') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('model_type') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('sr_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('make') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('year_of_installation') ?> </th>
+              <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>
@@ -102,13 +102,13 @@
                             <div class="container-fluid">
                               <div class="row">
                                 <div class="col-lg-12 col-sm-12 d-flex flex-row" style="border: 1px solid #f3ecec;height: 45px;padding: 10px;margin: 0px;margin-bottom: 6px; font-weight: 500;">
-                                  <div class="col-lg-3">Equipment Name</div>
-                                  <div class="col-lg-3">Transaction Date</div>
-                                  <div class="col-lg-3">Department</div>
-                                  <div class="col-lg-3">Equipment ID</div>
+                                  <div class="col-lg-3"><?= $this->lang->line('equipment_name') ?></div>
+                                  <div class="col-lg-3"><?= $this->lang->line('transaction_date') ?></div>
+                                  <div class="col-lg-3"><?= $this->lang->line('department') ?></div>
+                                  <div class="col-lg-3"><?= $this->lang->line('equipment_id') ?></div>
                                 </div>
                                 <div class="col-lg-12 col-sm-12 d-flex flex-row mb-4">
-                                  <div class="col-lg-3"><?php echo $obj['equip_name']?></div>
+                                  <div class="col-lg-3"><?php echo $obj['equipment_name']?></div>
                                   <div class="col-lg-3"><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></div>
                                   <div class="col-lg-3"><?php echo $obj['department']; ?></div>
                                   <div class="col-lg-3"><?php echo $obj['equipment_id']; ?></div>
@@ -117,9 +117,9 @@
                               <div class="row">
                               <div class="col-lg-12 col-sm-12 d-flex flex-row" style="border: 1px solid #f3ecec;height: 45px;padding: 10px;margin: 0px;margin-bottom: 6px; font-weight: 500;">
                                   <div class="col-lg-3">Model / Type</div>
-                                  <div class="col-lg-3">Sr. No.</div>
-                                  <div class="col-lg-3">Make</div>
-                                  <div class="col-lg-3">Year Of Installation</div>
+                                  <div class="col-lg-3"><?= $this->lang->line('sr_no') ?>.</div>
+                                  <div class="col-lg-3"><?= $this->lang->line('make') ?></div>
+                                  <div class="col-lg-3"><?= $this->lang->line('year_of_installation') ?></div>
                                 </div>
                                 <div class="col-lg-12 col-sm-12 d-flex flex-row mb-5">
                                   <div class="col-lg-3"><?php echo $obj['model_type']; ?></div>
@@ -130,7 +130,7 @@
                               </div>
                             </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <but type="button" class="btn btn-danger" data-dismiss="modal"></but<?= $this->lang->line('close') ?>ton>
                           </div>
                         </div>
                         </form>
@@ -142,16 +142,16 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete This DSR  <b> (<?php echo $inv_number1 ?>) </b>? </p>
+                            <p><?= $this->lang->line('confirm_delete') ?> This DSR  <b> (<?php echo $inv_number1 ?>) </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

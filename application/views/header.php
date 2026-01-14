@@ -65,6 +65,7 @@ $photo = $userData['photo'];
     width: 40px;
 }
 </style>
+
 <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -132,25 +133,16 @@ $photo = $userData['photo'];
                 $this->db->from('lead_csv');
                 $this->db->where(['assign_to'=>$login_id,'assign_date'=>date('Y-m-d')]);
                 $AssignLead=$this->db->get()->num_rows();
-
-                            ?>
-
+                ?>
                 <div>
 
-
-                    <?php 
-               if($role_id=='3'){
-              foreach($count as $target){?>
-
-                    <Label style="color:red;">Target :</Label><span style="color:red;"> <?php echo $target  ?> <span
-                            style="border-right:1px solid black;"></span></span> &nbsp;
-                    <?php }?>
-                    <label style="color:red;">Goal Achieved :</label><span style="color:red;">
-                        <?php echo $toodayLeads  ?> <span style="border-right:1px solid black;"></span></span>&nbsp;
-                    <label style="color:red;">Duplicate: </label><span style="color:red;">
-                        <?php echo $duplicateLeads  ?></span>&nbsp;
+                <Label style="color:red;"><?= $this->lang->line('target') ?> :</Label><span style="color:red;"> <?php echo $target  ?> <span
+                        style="border-right:1px solid black;"></span></span> &nbsp;
+                <label style="color:red;"><?= $this->lang->line('goal_achieved') ?> :</label><span style="color:red;">
+                    <?php echo $toodayLeads  ?> <span style="border-right:1px solid black;"></span></span>&nbsp;
+                <label style="color:red;">Duplicate: </label><span style="color:red;">
+                    <?php echo $duplicateLeads  ?></span>&nbsp;
                 </div>
-                <?php } if($role_id=='6'){?>
 
                 <div>
                     <Label style="color:red;"> Total Assign :</Label><span style="color:red;">
@@ -163,17 +155,19 @@ $photo = $userData['photo'];
                             style="border-right:1px solid black;"></span></span>&nbsp;
                     <label style="color:red;">Rejected: </label><span style="color:red;"> <?php echo $reject  ?> </span>
                 </div>
-                <?php }?>
 
             </div>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto d-flex align-items-center gap-3 pr-3">
-        <select class="form-control" onchange="location = this.value;" style="width: 50%;">
-            <option value="<?= site_url('AdminController/change_language/english') ?>" <?= ($language_label == 'English') ? 'selected' : '' ?>>English</option>
-            <option value="<?= site_url('AdminController/change_language/bulg') ?>" <?= ($language_label == 'Bulg') ? 'selected' : '' ?>>Bulgarian</option>
-            <option value="<?= site_url('AdminController/change_language/hindi') ?>" <?= ($language_label == 'Hindi') ? 'selected' : '' ?>>Hindi</option>
-        </select>
+        <li class="nav-item dropdown" style="width: 75px;">
+            <select class="form-control" onchange="location = this.value;" style="width: 100%;">
+                <option value="<?= site_url('AdminController/change_language/english') ?>" <?= ($language_label == 'English') ? 'selected' : '' ?>>En</option>
+                <option value="<?= site_url('AdminController/change_language/bulg') ?>" <?= ($language_label == 'Bulg') ? 'selected' : '' ?>>Bg</option>
+                <option value="<?= site_url('AdminController/change_language/hindi') ?>" <?= ($language_label == 'Hindi') ? 'selected' : '' ?>>Hi</option>
+            </select>
+        </li>
+
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
                 <i class="fa fa-cog" style="font-size: 30px;"></i>
@@ -310,7 +304,7 @@ $photo = $userData['photo'];
             <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#">
             <img src="<?= get_avatar_url($photo) ?>" class="img-circle mr-2" alt="User Image" style="width: 32px; height: 32px; object-fit: cover;" />
             <span class="text-dark font-weight-bold">
-                <?php echo strlen($name) > 8 ? substr($name, 0, 8).'' : $name; ?>
+                <?php echo strlen($name) > 8 ? substr($name, 0, 6).'' : $name; ?>
             </span>
             <i class="fa fa-angle-down ml-2 text-dark"></i>
             </a>

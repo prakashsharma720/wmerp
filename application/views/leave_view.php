@@ -32,20 +32,20 @@ $data=explode('?', $current_page);
     <div class="card card-primary card-outline">
         <div class="card-header">
             <span class="card-title">
-                <?php  echo $title; ?>
+              <?= $this->lang->line('leave_history') ?>
             </span>
             <div class="pull-right d-flex">
                 <div>
                     <form method="post" action="<?php echo base_url(); ?>index.php/Leave/createXLS">
                         <?php if(!empty($filtered_value)){ foreach ($filtered_value as $key => $value) { ?>
                         <input type="hidden" name="<?= $key ?>" value="<?=$value ?>"> <?php } }?>
-                        <button type="submit" class="btn btn-info"> Export </button>
+                        <button type="submit" class="btn btn-info">  <?= $this->lang->line('export') ?> </button>
                     </form>
                 </div>
                 &nbsp;
                 <div>
                     <a class="btn btn-xs btn-primary " href="<?php echo base_url(); ?>index.php/Leave/create">
-                        <i class="fa fa-plus"></i> Apply For Leave
+                        <i class="fa fa-plus"></i>  <?= $this->lang->line('apply_for_leave') ?>
                     </a>
                 </div>
             </div>
@@ -60,9 +60,9 @@ $data=explode('?', $current_page);
 
 
                     <div class="col-md-4 col-sm-4 ">
-                        <label class="control-label">Search By Category</label>
+                        <label class="control-label"> <?= $this->lang->line('search_by_category') ?></label>
                         <select name="category_name" class="form-control select2 suppliers">
-                            <option value=""> Select Category </option>
+                            <option value=""> <?= $this->lang->line('select_category') ?> </option>
                             <option
                                 <?php if(!empty($filtered_value["category_name"])) { if($filtered_value['category_name']=='half') {echo "selected"; } } ?>
                                 value="half"> Half </option>
@@ -76,9 +76,9 @@ $data=explode('?', $current_page);
                     </div>
 
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label">Search By Status </label>
+                        <label class="control-label"> <?= $this->lang->line('search_by_status') ?> </label>
                         <select name="leave_status" class="form-control select2">
-                            <option value="">Select Status</option>
+                            <option value=""><?= $this->lang->line('select_status') ?></option>
                             <option
                                 <?php if(!empty($filtered_value["leave_status"])) { if($filtered_value['leave_status']=='Pending') {echo "selected"; } } ?>
                                 value="Pending"> Pending </option>
@@ -90,18 +90,18 @@ $data=explode('?', $current_page);
                     </div>
 
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label"> From Date</label>
+                        <label class="control-label">  <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date"
                             class="form-control date-picker"
                             value="<?php if(!empty($filtered_value['from_date'])) { echo date('d-m-Y',strtotime($filtered_value['from_date'])); } ?>"
-                            placeholder="dd-mm-yyyy" autocomplete="off" autocomplete="off">
+                            placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off" autocomplete="off">
                     </div>
                     <div class="col-md-4 col-sm-4">
-                        <label class="control-label"> Upto Date</label>
+                        <label class="control-label">  <?= $this->lang->line('upto_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date"
                             class="form-control date-picker"
                             value="<?php if(!empty($filtered_value['upto_date'])) { echo date('d-m-Y',strtotime($filtered_value['upto_date'])); } ?>"
-                            placeholder="dd-mm-yyyy" autocomplete="off" autocomplete="off">
+                            placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autocomplete="off" autocomplete="off">
                     </div>
 
                     <div class="col-md-1 col-sm-1 ">
@@ -110,7 +110,7 @@ $data=explode('?', $current_page);
                     </div>
                     <div class="col-md-1 col-sm-1 ">
                         <label class="control-label" style="visibility: hidden;"> Grade</label>
-                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> Reset</a>
+                        <a href="<?php echo $data[0]?>" class="btn btn-danger">  <?= $this->lang->line('reset') ?></a>
                     </div>
                 </div>
             </form>
@@ -121,14 +121,14 @@ $data=explode('?', $current_page);
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th> Sr.No.</th>
-                            <th> Employee</th>
-                            <th> Status</th>
-                            <th> Leave Type</th>
-                            <th> Category</th>
-                            <th> Description</th>
-                            <th> Leave Reason</th>
-                            <th> Action</th>
+                            <th>  <?= $this->lang->line('sr_no') ?></th>
+                            <th>  <?= $this->lang->line('employee') ?></th>
+                            <th>  <?= $this->lang->line('status') ?></th>
+                            <th>   <?= $this->lang->line('leave_type') ?></th>
+                            <th>  <?= $this->lang->line('category') ?></th>
+                            <th>  <?= $this->lang->line('description') ?></th>
+                            <th>  <?= $this->lang->line('leave_reason') ?></th></th>
+                            <th>  <?= $this->lang->line('action') ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -204,18 +204,18 @@ $data=explode('?', $current_page);
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Confirm Header </h4>
+                                                <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                                                 <button type="button" class="close"
                                                     data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
-                                                <p>Are you sure, you want to delete
+                                                <p><?= $this->lang->line('confirm_delete') ?>
                                                     <b><?php echo $obj['leave_category'];?> </b>? </p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-primary delete_submit"> Yes
+                                                <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?>
                                                 </button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal"> No
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?>
                                                 </button>
                                             </div>
                                         </div>
@@ -227,7 +227,7 @@ $data=explode('?', $current_page);
                         <?php  $i++;} }else{ ?>
                         <tr>
                             <td colspan="100">
-                                <h5 style="text-align: center;"> No Leads Found</h5>
+                                <h5 style="text-align: center;"><?= $this->lang->line('no_leads_found') ?></h5>
                             </td>
                         </tr>
                         <?php  }?>

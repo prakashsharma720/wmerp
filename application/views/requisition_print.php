@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container-fluid">
     <div class="card card-primary card-outline">
        <div class="card-header no-print">
-         <span class="card-title"><?php  echo $title; ?>
+         <span class="card-title"><?= $this->lang->line('requisition_slip_print_view') ?>
         </span>
           <div class="button-group float-right no-print">
               <button onclick="window.print()" class="btn btn-danger"><i class="fa fa-print"></i> Print</button>
@@ -20,14 +20,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <img src="<?= base_url()?>/uploads/logo.png" height="120" width="300"/>
                 </div>
                <div class="col-sm-4" >
-                <h4 style="padding-top: 20px;"> Choudhary & Company </h4>
+                <h4 style="padding-top: 20px;"><?=$this ->lang ->line('company_name')?> </h4>
                 </div>
                 <div class="col-sm-4" >
-                <strong><u>Company Details:</u></strong><br>
-                  <b>GSTIN : </b>08AABFC2155P1ZA<br>
-                  <b>PAN : </b> AABFC2155P<br>
+                <strong><u><?=$this ->lang ->line('company_details')?>:</u></strong><br>
+                  <b><?=$this ->lang ->line('gstin')?> : </b>08AABFC2155P1ZA<br>
+                  <b><?=$this ->lang ->line('pan')?> : </b> AABFC2155P<br>
                   <!-- <b>State : </b> Rajasthan <b>State Code :</b> 08<br> -->
-                  <b> Address : </b> B-133, Mewar Industrial Area (MIA), Madri, Transport Nagar, Udaipur, Rajasthan 313003.
+                  <b> <?=$this ->lang ->line('address')?> : </b> <?=$this ->lang ->line('company_address')?>
                 </div>
               </div>
               <br>
@@ -37,10 +37,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <table class="table">
                         <tbody>
                            <tr>
-                            <th colspan="6"> <h4 style="text-align: center">Material Requisition Slip </h4></th>
+                            <th colspan="6"> <h4 style="text-align: center"> <?=$this ->lang ->line('material_requisition_slip')?></h4></th>
                           </tr>
                           <tr>
-                            <th> Requisition No </th>
+                            <th> <?=$this ->lang ->line('requisition_no')?> </th>
                             <td> 
                               <?php 
                                   $inv_number=$current['0']['requisition_slip_no'];
@@ -58,40 +58,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   } 
                               ?>
                               <?= $inv_number1?>  </td>
-                               <th>Date </th>
+                               <th><?=$this ->lang ->line('date')?> </th>
                             <td> <?= $current['0']['transaction_date']?> </td>
                           </tr>
                               <tr>
-                                <th > Requisition For: </th>
+                                <th > <?=$this ->lang ->line('requisition_for')?>: </th>
                                 <td > <?= $current['0']['rs_for']?> </td>
-                                <th>Department </th>
+                                <th><?=$this ->lang ->line('department')?> </th>
                                 <td> <?= $current['0']['dept']?> </td>
                               </tr>
                             <?php if($current['0']['rs_for']!='Consumable & Chemicals'){?>
                                <tr>
-                                <th>Product</th>
+                                <th><?=$this ->lang ->line('product')?></th>
                                 <td> <?= $current['0']['mineral']?> </td>
-                                <th> Grade </th>
+                                <th> <?=$this ->lang ->line('grade')?> </th>
                                 <td> <?= $current['0']['grade']?> </td>
                               </tr>
                               <tr>
-                                <th>Lot Number </th>
+                                <th><?=$this ->lang ->line('lot_no')?> </th>
                                 <td><?= $current['0']['lot_no']?> </td>
-                                <th>Batch Number</th>
+                                <th><?=$this ->lang ->line('batch_no')?>r</th>
                                 <td><?= $current['0']['batch_no']?> </td>
                               </tr>
           							<?php }else{ ?>
                             <tr>
-                               <th>Equipment Name</th>
+                               <th><?=$this ->lang ->line('equipment_name')?></th>
                                <td> <?= $current['0']['equipment_name']?> </td>
-                               <th> Purpose </th>
+                               <th> <?=$this ->lang ->line('purpose')?> </th>
                                <td><?= $current['0']['purpose']?> </td>
                             </tr>
                         <?php } ?>
                           <tr>
-                               <th> Total Qty</th>
+                               <th> <?=$this ->lang ->line('total_qty')?></th>
                                <td><?= $current['0']['total_qty']?> </td>
-                               <th>Employee Name</th>
+                               <th><?=$this ->lang ->line('employee_name')?></th>
                                <td> <?= $current['0']['ename']?> </td>
                             </tr>
                        </tbody>
@@ -103,11 +103,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <table class="table table-bordered " id="maintable" >
                     <thead style="background-color: #e8e8e8;">
                     <tr>
-                    <th> S.No.</th>
-                    <th> Material Description</th>
+                    <th> <?=$this ->lang ->line('sr_no')?>.</th>
+                    <th> <?=$this ->lang ->line('material_description')?></th>
                     <!--<th>Requisition Quantity</th>-->
-                    <th>Unit</th>
-                    <th>Required Quantity</th>
+                    <th><?=$this ->lang ->line('unit')?></th>
+                    <th><?=$this ->lang ->line('requuired_quantity')?></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </tr>
                       <?php $i++;} ?>
                     <tr>
-                        <td colspan="3" style="text-align: right;"><b>Total</b></td>
+                        <td colspan="3" style="text-align: right;"><b><?=$this ->lang ->line('total')?></b></td>
                         <td> <?= $current['0']['total_qty']?></td>
                     </tr>
                   </tbody>
@@ -133,29 +133,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <td colspan="2">
                         <?= $current['0']['ename']?> 
                          <br></br><br></br>
-                         <b> User (Name & Sign)</b>
+                        <b><?= $this->lang->line('user_name_sign') ?></b>
                       </td>
                       <td colspan="2">
                        <br></br><br></br>
-                       <b> Store Incharge (Name & Sign)</b>
+                     <b><?= $this->lang->line('store_incharge_sign') ?></b>
                       </td>
 
                     </tr>
                      <tr>
                       <td colspan="2">
-                        Request to Indent for purchase
+                         <?= $this->lang->line('request_to_indent') ?>
                          <br></br><br></br>
-                         <b> Store Dept. (Sign & Date)</b>
+                         <b> <?= $this->lang->line('store_dept_sign_date') ?></b>
                       </td>
                       <td colspan="">
                        
                        <br></br><br></br>
-                       <b> Purchase Dept. (Sign & Date)</b>
+                       <b> <?= $this->lang->line('purchase_dept_sign_date') ?></b>
                       </td>
                       <td colspan="">
                        
                        <br></br><br></br>
-                       <b> Authorized By (Sign & Date)</b>
+                       <b> <?= $this->lang->line('authorized_by_sign_date') ?></b>
                       </td>
                     </tr>
                   </tfoot>

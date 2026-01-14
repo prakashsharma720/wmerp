@@ -1,427 +1,292 @@
+<!-- Page Header -->
+<!-- Page Header -->
+
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
+defined('BASEPATH') or exit('No direct script access allowed');
+$current_page = current_url();
 //$current_page='https://www.muskowl.com/chaudhary_minerals/index.php/Meenus/UserRights';
-$data=explode('?', $current_page);
+$data = explode('?', $current_page);
 //print_r($data[0]);exit;
 ?>
 
-<style type="text/css">
+<!-- <style type="text/css">
  
   .col-sm-6 ,.col-md-6{
       float: left;
   }
-</style>
+</style> -->
 
- <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
-
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?></span>
-       <div class="pull-right error_msg">
-          <a href="<?php echo base_url(); ?>index.php/Suppliers/add" class="btn btn-success" data-toggle="tooltip" title="New supplier"><i class="fa fa-plus"></i></a>
-
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>  
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('suppliers_list') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-      <form method="get" id="filterForm">
-      <div class="row">
-          <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label">Supplier Category <span class="required">*</span></label>
-                  <select name="categories_id" class="form-control select2 category" >
-                     <option value="0">Select Category</option>
-                        <?php
-                         if ($categories): ?> 
-                          <?php 
-                            foreach ($categories as $value) : ?>
-                                <?php 
-                                  if ($value['id'] == $current[0]->categories_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['category_name'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['category_name'] ?></option>
-                                  <?php endif;   ?>
-                            <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0">No result</option>
-                        <?php endif; ?>
-                    </select>
-                </div>
-              <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Supplier <span class="required">*</span></label>
-                <select name="supplier_id" class="form-control select2 suppliers" >
-                    <option value="0"> Select Supplier</option>
-                    <?php
-                         if ($all_suppliers): ?> 
-                          <?php 
-                            foreach ($all_suppliers as $value) : ?>
-                              <?php 
-                                $voucher_no= $value['vendor_code']; 
-                                if($voucher_no<10){
-                                $supplier_id_code='SUP000'.$voucher_no;
-                                }
-                                else if(($voucher_no>=10) && ($voucher_no<=99)){
-                                  $supplier_id_code='SUP00'.$voucher_no;
-                                }
-                                else if(($voucher_no>=100) && ($voucher_no<=999)){
-                                  $supplier_id_code='SUP0'.$voucher_no;
-                                }
-                                else{
-                                  $supplier_id_code='SUP'.$voucher_no;
-                                }
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+      </ul>
+    </div>
 
-                                  if ($value['id'] == $supplier_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['supplier_name'].' ('.$supplier_id_code.')' ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['supplier_name'].' ('.$supplier_id_code.')' ?></option>
-                                  <?php endif;   ?>
-                                   <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0">No result</option>
-                        <?php endif; ?>
-                </select>
-              </div>
-               <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Category of Approval</label>
-                    <?php  $app_cat = array(
-                       'No' => 'Select Option',
-                          'A' => 'A',
-                          'B' => 'B',
-                          'c' => 'C'
-                          );
-                      echo form_dropdown('category_of_approval', $app_cat)
-                    ?>
-                  </div>
-              </div>
-                <div class="row">
-                <!--  <div class="col-md-4 col-sm-4">-->
-                <!--      <label  class="control-label"> From Date</label>-->
-                <!--        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">-->
-                <!--  </div>-->
-                <!--  <div class="col-md-4 col-sm-4">-->
-                <!--    <label  class="control-label"> Upto Date</label>-->
-                <!--      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">-->
-                <!--</div>-->
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
-              </div>
-          </div>
-        </form>
-            <hr>
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> Name </th>
-              <th> Category </th>
-              <th style="white-space: nowrap;"> Contact Person </th>
-              <th> Email</th>
-              <th> Mobile</th>
-              <th> Approval Category</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
-            </tr>
-          </thead>
-          <tbody>
-           <?php
-          $i=1;foreach($suppliers as $obj){ ?>
-              <tr>
-                <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
-                <td><?php echo $i;?></td>
-                <td><?php
-					           $voucher_no= $obj['vendor_code']; 
-                    if($voucher_no<10){
-                    $supplier_id_code='SUP000'.$voucher_no;
-                    }
-                    else if(($voucher_no>=10) && ($voucher_no<=99)){
-                      $supplier_id_code='SUP00'.$voucher_no;
-                    }
-                    else if(($voucher_no>=100) && ($voucher_no<=999)){
-                      $supplier_id_code='SUP0'.$voucher_no;
-                    }
-                    else{
-                      $supplier_id_code='SUP'.$voucher_no;
-                    }
-                    
-				echo $obj['supplier_name'].' ('.$supplier_id_code.')'; ?></td>
-                <td><?php echo $obj['category']; ?></td>
-                <td><?php echo $obj['contact_person']; ?></td>
-                <td><?php echo $obj['email']; ?></td>
-                <td><?php echo $obj['mobile_no']; ?></td>
-                <td><?php echo $obj['category_of_approval']; ?></td>
-                <td >
-                   <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-eye"></i></a>
-                   
-                 <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Suppliers/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
-                 
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Suppliers/edit_supplier_view/<?php echo $obj['id'];?>"><i class="fa fa-edit"></i></a>
-                  
-                  <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
-                <!--   <a href="<?php //echo base_url(); ?>index.php/welcome/deleteSupplier/<?php echo $obj['id'];?>"
-                   onclick="return confirm(\'Confirm Deletion.\')">Delete</a> -->
-                </td>
-                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
-                      <div class="modal-dialog modal-lg">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title"><?php echo $obj['supplier_name'];?> Details </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
-                          </div>
-                          <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> Suplier Code :</label>
-                                    <span> <?php echo $supplier_id_code;?></span>
-                                  </div>
-                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> Contact Person :</label>
-                                      <span> <?php echo $obj['contact_person'];?></span>
-                                  </div>
-                                </div>
-                            </div>
-                             <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Email :</label>
-                                    <span> <?php echo $obj['email'];?></span>
-                                  </div>
-                                  <div class="col-md-6 col-sm-6 ">
-                                      <label class="control-label">Mobile :</label>
-                                      <span> <?php echo $obj['mobile_no'];?></span>
-                                  </div>
-                                </div> 
-                            </div> 
-                             <div class="row">
-                                <div class="col-md-12">
-                                  <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> Website :</label>
-                                    <span> <?php echo $obj['website'];?></span>
-                                  </div>
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> TDS :</label>
-                                    <span> <?php echo $obj['tds'];?></span>
-                                  </div>
-                              </div>  
-                            </div>  
-                            <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">GST No :</label>
-                                    <span> <?php echo $obj['gst_no'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label"> PAN No :</label>
-                                    <span> <?php echo $obj['pan_no'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Category of Approval :</label>
-                                    <span> <?php echo $obj['category_of_approval'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                          
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Approved On:</label>
-                                    <span><?php echo date('d-M-Y',strtotime($obj['date_of_approval'])); ?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Next Evaluation Date:</label>
-                                    <span> <?php echo date('d-M-Y',strtotime($obj['date_of_evalution'])); ?></span>
-                                    
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Bank Name:</label>
-                                    <span> <?php echo $obj['bank_name'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Branch Name:</label>
-                                    <span> <?php echo $obj['branch_name'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">IFSC Code:</label>
-                                    <span> <?php echo $obj['ifsc_code'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Account No:</label>
-                                    <span> <?php echo $obj['account_no'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                           <div class="row">
-                                <div class="col-md-12">
-                                   <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Country:</label>
-                                    <span> <?php echo $obj['country'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">State:</label>
-                                    <span> <?php echo $obj['state'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
+    <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+        <i class="feather-filter"></i>
+      </a>
+      <a href="<?= base_url('index.php/suppliers/add') ?>" class=" btn btn-icon avatar-text avatar-md" title="New PO">
+        <i class="feather feather-plus"></i>
+      </a>
+      <button class="btn btn-icon avatar-text avatar-md" title="Refresh" onclick="location.reload();">
+        <i class="fa fa-refresh"></i>
+      </button>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
 
-                           <div class="row">
-                                <div class="col-md-12">
-                                     <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">City :</label>
-                                    <span> <?php echo $obj['city'];?></span>
-                                  </div>
-                                 <div class="col-md-6 col-sm-6 ">
-                                    <label class="control-label">Address :</label>
-                                    <span> <?php echo $obj['address'];?></span>
-                                  </div>
-                              </div>                              
-                          </div>
-                           <!--  <div class="row col-md-12">
-                                <div class="col-md-12">
-                                  <label class="control-label">Address:</label>
-                                   <span> <?php echo $obj['address'];?></span>
-                             </div>                              
-                          </div>      -->
-                        </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal fade" id="delete<?php echo $obj['id'];?>" role="dialog">
-                      <div class="modal-dialog">
-                        <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Suppliers/deleteSupplier/<?php echo $obj['id'];?>">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
-                          </div>
-                          <div class="modal-body">
-                            <p>Are you sure, you want to delete supplier <b><?php echo $obj['supplier_name'];?> </b>? </p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
-                          </div>
-                        </div>
-                        </form>
-                      </div>
-                    </div>
-                    
-              </tr>
-            <?php  $i++;} ?>
-          </tbody>
-        </table>
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
       </div>
     </div>
   </div>
-</div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript">
-  $( document ).ready(function() {
-   
-    jQuery('#master').on('click', function(e) {
-    if($(this).is(':checked',true))  
-    {
-      $(".sub_chk").prop('checked', true);  
-    }  
-    else  
-    {  
-      $(".sub_chk").prop('checked',false);  
-    }  
-  });
-    jQuery('.delete_all').on('click', function(e) { 
-    var allVals = [];  
-    $(".sub_chk:checked").each(function() {  
-      allVals.push($(this).val());
-    });  
-    //alert(allVals.length); return false;  
-    if(allVals.length <=0)  
-    {  
-      alert("Please select row.");  
-    }  
-    else {  
-      WRN_PROFILE_DELETE = "Are you sure you want to delete all selected suppliers?";  
-      var check = confirm(WRN_PROFILE_DELETE);  
-      if(check == true){  
-        var join_selected_values = allVals.join(","); 
-        $.ajax({   
-          type: "POST",  
-          url: "<?php echo base_url(); ?>index.php/Suppliers/deleteSupplier",  
-          cache:false,  
-          data: 'ids='+join_selected_values,  
-          success: function(response)  
-          {   
-            $(".successs_mesg").html(response);
-            location.reload();
-          }   
-        });
-           
-      }  
-    }  
-  });
 
-  });
 
-</script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    var base_url='<?php echo base_url() ;?>';
-    //alert(base_url);
-    $(document).on('change','.category',function(){
-        var category_id = $('.category').find('option:selected').val();
-        //var aa= base_url+"index.php/Meenus/rolewisedata/"+role_id;
-        //alert(category_id);
-        $.ajax({
-                  type: "POST",
-                  url:"<?php echo base_url('index.php/Suppliers/getSupplierByCategory/') ?>"+category_id,
-                  //data: {id:role_id},
-                  dataType: 'html',
-                  success: function (response) {
-                    //alert(response);
-                      $(".suppliers").html(response);
-                      $('.select2').select2();
-                      //$('.category').find('option:selected').prop('required',true);
+  <!-- Filter Section -->
+  <div class="collapse bg-white" id="filterFormWrapper" style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; ">
+    <div class="card border-0 shadow-sm mt-3 mb-3 mx-2">
+      <div class="card-body p-3">
+        <form method="get" action="<?= base_url('index.php/suppliers/index') ?>">
 
-                  }
+        <!-- <form method="get" action="<?= base_url('index.php/suppliers_order/filter') ?>"> -->
+          <div class="row mb-2">
+            <div class="col-md-4">
+              <label class="form-label">
+                <?= $this->lang->line('supplier_category') ?> <span class="text-danger">*</span>
+              </label>
+              <select name="categories_id" class="form-control select2 category">
+                <option value="0"><?= $this->lang->line('select_category') ?></option>
+                <?php
+                if ($categories): ?>
+                  <?php
+                  foreach ($categories as $value) : ?>
+                    <?php
+                    if ($value['id'] == $current[0]->categories_id): ?>
+                      <option value="<?= $value['id'] ?>" selected><?= $value['category_name'] ?></option>
+                    <?php else: ?>
+                      <option value="<?= $value['id'] ?>"><?= $value['category_name'] ?></option>
+                    <?php endif;   ?>
+                  <?php endforeach;  ?>
+                <?php else: ?>
+                  <option value="0"><?= $this->lang->line('no_result') ?></option>
+                <?php endif; ?>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">
+                <?= $this->lang->line('name_of_supplier') ?> <span class="text-danger">*</span>
+              </label>
+              <select name="supplier_id" class="form-control select2 suppliers">
+                <option value="0"> <?= $this->lang->line('select_supplier') ?></option>
+                <?php
+                if ($all_suppliers): ?>
+                  <?php
+                  foreach ($all_suppliers as $value) : ?>
+                    <?php
+                    $voucher_no = $value['vendor_code'];
+                    if ($voucher_no < 10) {
+                      $supplier_id_code = 'SUP000' . $voucher_no;
+                    } else if (($voucher_no >= 10) && ($voucher_no <= 99)) {
+                      $supplier_id_code = 'SUP00' . $voucher_no;
+                    } else if (($voucher_no >= 100) && ($voucher_no <= 999)) {
+                      $supplier_id_code = 'SUP0' . $voucher_no;
+                    } else {
+                      $supplier_id_code = 'SUP' . $voucher_no;
+                    }
+
+                    if ($value['id'] == $supplier_id): ?>
+                      <option value="<?= $value['id'] ?>" selected><?= $value['supplier_name'] . ' (' . $supplier_id_code . ')' ?></option>
+                    <?php else: ?>
+                      <option value="<?= $value['id'] ?>"><?= $value['supplier_name'] . ' (' . $supplier_id_code . ')' ?></option>
+                    <?php endif;   ?>
+                  <?php endforeach;  ?>
+                <?php else: ?>
+                  <option value="0"><?= $this->lang->line('no_result') ?></option>
+                <?php endif; ?>
+              </select>
+            </div>
+
+
+            <div class="col-md-4 col-sm-4">
+              <label class="control-label"> <?= $this->lang->line('category_of_approval') ?></label>
+              <?php $app_cat = array(
+                'No' => 'Select Option',
+                'A' => 'A',
+                'B' => 'B',
+                'c' => 'C'
+              );
+              echo form_dropdown('category_of_approval', $app_cat)
+              ?>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-md-4 col-sm-4 ">
+                <div class="d-flex gap-2">
+              <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
+              <input type="submit" class="btn btn-primary" value="<?= $this->lang->line('search') ?>" />
+              <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
+              <a href="<?php echo $data[0] ?>" class="btn btn-danger"> <?= $this->lang->line('reset') ?></a>
+            </div>
+            </div>
+          </div>
+          
+          <!-- <div class="row mt-3">
+          <div class="col-md-4">
+            <div class="d-flex gap-2">
+              <input type="submit" class="btn btn-primary" value="Search">
+              <a href="<?= base_url('index.php/suppliers/index') ?>" class="btn btn-danger"> <?= $this->lang->line('reset') ?> </a>
+            </div>
+          </div>
+        </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supplier Table -->
+
+
+  <!-- Main Content -->
+  <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
+                    <th><input type="checkbox" id="master"></th>
+                    <th><?= $this->lang->line('sr_no') ?>.</th>
+                    <th><?= $this->lang->line('name') ?></th>
+                    <th><?= $this->lang->line('category') ?></th>
+                    <th><?= $this->lang->line('contact_person') ?></th>
+                    <th><?= $this->lang->line('email') ?></th>
+                    <th><?= $this->lang->line('mobile') ?></th>
+                    <th><?= $this->lang->line('approval_category') ?></th>
+                    <th><?= $this->lang->line('action_button') ?></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $i = 1;
+                  foreach ($suppliers as $obj): ?>
+                    <?php $supplier_id_code = 'SUP' . str_pad($obj['vendor_code'], 4, '0', STR_PAD_LEFT); ?>
+                    <tr>
+                      <td><input type="checkbox" class="sub_chk" value="<?= $obj['id']; ?>" /></td>
+                      <td><?= $i++; ?></td>
+                      <td><?= $obj['supplier_name'] . ' (' . $supplier_id_code . ')' ?></td>
+                      <td><?= $obj['category'] ?></td>
+                      <td><?= $obj['contact_person'] ?></td>
+                      <td><?= $obj['email'] ?></td>
+                      <td><?= $obj['mobile_no'] ?></td>
+                      <td><?= $obj['category_of_approval'] ?></td>
+                      <td>
+                        <div class="d-flex gap-2">
+                          <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#ViewPO<?= $obj['id']; ?>" title="View More">
+                            <i class="feather feather-eye"></i>
+                          </a>
+                          <div class="dropdown">
+                            <a href="javascript:void(0)" class="avatar-text avatar-md" data-bs-toggle="dropdown">
+                              <i class="feather feather-more-horizontal"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="<?= base_url('index.php/Suppliers/edit_supplier_view/' . $obj['id']) ?>"><i class="feather feather-edit-3 me-3"></i><?= $this->lang->line('edit') ?></a></li>
+                              <li><a class="dropdown-item printBTN" href="<?= base_url('index.php/Suppliers/print/' . $obj['id']) ?>"><i class="feather feather-printer me-3"></i><?= $this->lang->line('print') ?></a></li>
+                              <!-- <li><a class="dropdown-item" href="javascript:void(0);" onclick="deleteSupplier(<?= $obj['id'] ?>)"><i class="feather feather-trash me-3"></i><?= $this->lang->line('delete') ?></a></li> -->
+                              <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteorder<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                            <i class="feather feather-trash me-1"></i>
+                                       <?= $this->lang->line('delete') ?></a></li> 
+                            </ul>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <?php $this->load->view('leave-module/component/orderview.php', ['obj' => $obj]); ?>
+                     <?php $this->load->view('leave-module/component/deleteorder.php', ['obj' => $obj]); ?>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <script src="<?php echo base_url() . "assets/"; ?>plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+
+            jQuery('#master').on('click', function(e) {
+              if ($(this).is(':checked', true)) {
+                $(".sub_chk").prop('checked', true);
+              } else {
+                $(".sub_chk").prop('checked', false);
+              }
+            });
+            jQuery('.delete_all').on('click', function(e) {
+              var allVals = [];
+              $(".sub_chk:checked").each(function() {
+                allVals.push($(this).val());
               });
-      }); 
-  });
-</script> 
+              //alert(allVals.length); return false;  
+              if (allVals.length <= 0) {
+                alert("Please select row.");
+              } else {
+                WRN_PROFILE_DELETE = "Are you sure you want to delete all selected suppliers?";
+                var check = confirm(WRN_PROFILE_DELETE);
+                if (check == true) {
+                  var join_selected_values = allVals.join(",");
+                  $.ajax({
+                    type: "POST",
+                    url: "<?php echo base_url(); ?>index.php/Suppliers/deleteSupplier",
+                    cache: false,
+                    data: 'ids=' + join_selected_values,
+                    success: function(response) {
+                      $(".successs_mesg").html(response);
+                      location.reload();
+                    }
+                  });
+
+                }
+              }
+            });
+
+          });
+        </script>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            var base_url = '<?php echo base_url(); ?>';
+            //alert(base_url);
+            $(document).on('change', '.category', function() {
+              var category_id = $('.category').find('option:selected').val();
+              //var aa= base_url+"index.php/Meenus/rolewisedata/"+role_id;
+              //alert(category_id);
+              $.ajax({
+                type: "POST",
+                url: "<?php echo base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
+                //data: {id:role_id},
+                dataType: 'html',
+                success: function(response) {
+                  //alert(response);
+                  $(".suppliers").html(response);
+                  $('.select2').select2();
+                  //$('.category').find('option:selected').prop('required',true);
+
+                }
+              });
+            });
+          });
+        </script>

@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Building_materials extends CI_Controller {
+Class Building_materials extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -152,7 +152,7 @@ $this->load->model('categories_model');
 			$this->load->model('grades_model');
 			$data['grades'] = $this->grades_model->getGradeByCategory($data['categories_id']);
 			$data['units'] = $this->categories_model->getUnits();
-			$this->template->load('template','building_material_view',$data);
+			$this->template->load('layout/template','building_material_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -48,16 +48,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
              <!--  <th><input type="checkbox" id="master"></th> -->
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> Job Order Date </th>
-              <th style="white-space: nowrap;"> Job Order No </th>
-              <th style="white-space: nowrap;"> Work Description </th>
-              <th style="white-space: nowrap;"> location</th>
-              <th style="white-space: nowrap;"> Assigned To </th>
-              <th style="white-space: nowrap;"> Status </th>
-              <th style="white-space: nowrap;"> Completion Date </th>
-              <th style="white-space: nowrap;"> Reported By </th>
-              <th style="white-space: nowrap;"> Action Button </th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('job_order_date') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('job_order_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('work_description') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('location') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('assigned_to') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('status') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('completion_date') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('reported_by') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?> </th>
             </tr>
           </thead>
           <tbody>
@@ -137,16 +137,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to delete this Job Order <b><?php echo $obj['job_order_no'];?> </b>? </p>
+                            <p><?= $this->lang->line('confirm_delete') ?> this Job Order <b><?php echo $obj['job_order_no'];?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?> </button>
                           </div>
                         </div>
                         </form>

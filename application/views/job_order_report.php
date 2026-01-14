@@ -9,7 +9,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -18,7 +18,7 @@ $data=explode('?', $current_page);
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -35,7 +35,7 @@ $data=explode('?', $current_page);
             foreach ($conditions as $key => $value) { ?>
             <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
           <?php } }?>
-           <button type="submit" class="btn btn-info"> Export </button>
+           <button type="submit" class="btn btn-info"> <?= $this->lang->line('export') ?> </button>
          </form>
         <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
       </div>
@@ -104,21 +104,21 @@ $data=explode('?', $current_page);
               </div> -->
 
              <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?= $this->lang->line('upto_date') ?></label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
               </div>
                 <div class="row">
                   
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
+                   <label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label><br>
                   <input type="submit" class="btn btn-primary" value="Search" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > <?= $this->lang->line('reset') ?></a>
               </div>
           </div>
             
@@ -153,17 +153,17 @@ $data=explode('?', $current_page);
               <!-- <?php echo $obj['meter_id']; ?> -->
               <?php //echo "<pre>"; print_r($obj); ?>
             <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;">Job Order Date </th>
-              <th style="white-space: nowrap;"> Job Order No </th>
-              <th style="white-space: nowrap;"> Work Description </th>
-              <th style="white-space: nowrap;"> Location</th>
-              <th style="white-space: nowrap;"> Assigned To </th>
-              <th style="white-space: nowrap;"> Status </th>
-              <th style="white-space: nowrap;"> Completion date </th>
-              <th style="white-space: nowrap;"> Reported By</th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('job_order_date') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('job_order_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('work_description') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('location') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('assigned_to') ?> </th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('status') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('completion_date') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('reported_by') ?></th>
               <!-- <th style="white-space: nowrap;"> Total Amount </th> -->
-              <th style="white-space: nowrap;"> Action Button  </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?> </th>
             </tr>
             <tr>
                 <td><?php echo $i;?></td>

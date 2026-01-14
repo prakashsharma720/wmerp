@@ -4,16 +4,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
-			
+
+
+    <div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('edit_supplier_evaluation_panel') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('') ?>
+				</li>
+			</ul>
 		</div>
 
-      </div> <!-- /.card-body -->
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+				<?php $this->load->view('layout/alerts'); ?>
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+<div class="main-content">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="card stretch stretch-full">
       <div class="card-body">
 		    		<form class="form-horizontal " role="form" method="post" action="<?php echo base_url(); ?>index.php/Evaluation_result/edit_ER/<?= $id ?>">
 		    			<input type="hidden" name="er_id_old" value="<?= $id?>">
@@ -21,14 +46,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
-			                 value="<?php if($transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } echo date('d-m-Y')?>" autofocus required >
+			                 value="<?php if(@$transaction_date) { echo date('d-m-Y',strtotime($transaction_date)); } echo date('d-m-Y')?>" autofocus required >
 			            </div>
 			             <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Supplier Category <span class="required">*</span></label>
+			            	<label  class="control-label"><?= $this->lang->line('supplier_category') ?> <span class="required">*</span></label>
 			            	<select name="categories_id" class="form-control select2 category" required="required">
-			            		 <option value="0">Select Category</option>
+			            		 <option value="0"><?= $this->lang->line('select_category') ?></option>
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -41,12 +66,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 						<div class="col-md-4 col-sm-4 ">
-			            	 <label  class="control-label">Name of supplier <span class="required">*</span></label>
+			            	 <label  class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
 			            	 <select name="supplier_id" class="form-control select2 suppliers" required="required">
 						        <?php
 						         if ($suppliers): ?> 
@@ -60,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                    <?php endif;   ?>
 						            <?php   endforeach;  ?>
 						        <?php else: ?>
-						            <option value="0">No result</option>
+						            <option value="0"><?= $this->lang->line('no_result') ?></option>
 						        <?php endif; ?>
 						    </select>
 						</div>
@@ -68,30 +93,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		        <div class="form-group ajax_data">
 		        	<div class="row col-md-12">
-			            <div class="col-md-3 col-sm-3">
-			              <label  class="control-label"> Supplier Type</label>
-			                <input type="text" class="form-control" value="<?= $suppliers_data['supplier_type']?>" readonly="readonly">
+			            <div class="col-md-3 col-sm-3 mt-2">
+			              <label  class="control-label"> <?= $this->lang->line('supplier_type') ?></label>
+			                <input type="text" class="form-control" value="<?= @$suppliers_data['supplier_type']?>" readonly="readonly">
 			            </div>
-			            <div class="col-md-4 col-sm-4">
-			              <label class="control-label"> Contact Person</label>
-			                <input type="text" class="form-control" value="<?= $suppliers_data['contact_person']?>"  readonly="readonly">
+			            <div class="col-md-4 col-sm-4 mt-2">
+			              <label class="control-label"> <?= $this->lang->line('contact_person') ?></label>
+			                <input type="text" class="form-control" value="<?= @$suppliers_data['contact_person']?>"  readonly="readonly">
 			            </div>        
-			          <div class="col-md-5 col-sm-5">
-			              <label class="control-label"> Address </label>
-			               <textarea class="form-control" readonly="readonly"> <?= $suppliers_data['address']?></textarea>
+			          <div class="col-md-5 col-sm-5 mt-2">
+			              <label class="control-label"> <?= $this->lang->line('address') ?> </label>
+			               <textarea class="form-control" readonly="readonly"> </textarea>
 			            </div>
 			            
         			</div>
 		        </div>
-		        <div class="form-group">
+		        <div class="form-group p-3">
 		        	<div class="row col-md-12">
 		        		<div class="table-responsive">
 			        		<table class="table table-bordered " id="maintable" >
 			        			<thead style="background-color: #b0acb7;">
 			        				<tr>
-			        					<th> Sr.No.</th>
-			        					<th> Criteria Name</th>
-			        					<th> Marking Grade</th>
+			        					<th> <?= $this->lang->line('sr_no') ?>.</th>
+			        					<th> <?= $this->lang->line('criteria_name') ?></th>
+			        					<th> <?= $this->lang->line('marking_grade') ?></th>
 			        					<!-- <th> Total</th> -->
 			        				</tr>
 			        			</thead>
@@ -128,11 +153,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			</tbody>
 			        			<tfoot>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b>Total</b></td>
+			        					<td colspan="2" style="text-align: right;"><b><?= $this->lang->line('total') ?></b></td>
 			        					<td colspan="2">
 			        						
 			        						<div class="input-group mb-3">
-							                  <input type="text"  placeholder="Total Marks" name="total_marks_obtained" class="form-control total_marks"  value="<?= $total_marks_obtained?>" readonly >
+							                  <input type="text"  placeholder="<?= $this->lang->line('total_marks') ?>" name="total_marks_obtained" class="form-control total_marks"  value="<?= $total_marks_obtained?>" readonly >
 							                  <div class="input-group-append">
 							                    <span class="input-group-text " id="total_value"></span>
 							                    
@@ -141,15 +166,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b>Total Percentage (%)</b></td>
+			        					<td colspan="2" style="text-align: right;"><b><?= $this->lang->line('total_percentage') ?> (%)</b></td>
 			        					<td colspan="2">
 			        						<input type="text"  placeholder="Total %" name="percentage" class="form-control total_percentage"  value="<?= $percentage?>" readonly >
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b> Category of Approval</b></td>
+			        					<td colspan="2" style="text-align: right;"><b> <?= $this->lang->line('category_of_approval') ?></b></td>
 			        					<td colspan="2">
-			        						<input type="text"  placeholder="Approval Grade" name="approval_grade"  value="<?= $approval_grade; ?>" id="approval_grade" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('approval_grade') ?>" name="approval_grade"  value="<?= $approval_grade; ?>" id="approval_grade" readonly >
 			        					</td>
 			        				</tr>
 			        			</tfoot>
@@ -162,45 +187,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        		<table class="table">
 	            			<thead>
 	            				<tr>
-	            					<th> Percentage Criteria </th>
-	            					<th> Grade </th>
+	            					<th> <?= $this->lang->line('percentage_criteria') ?> </th>
+	            					<th> <?= $this->lang->line('grade') ?> </th>
 	            				</tr>
 	            			</thead>
 	            			<tbody>
 	            				<tr>
-	            					<td> Above Average (80% & Above) </td>
-	            					<td> A</td>
+	            					<td> <?= $this->lang->line('above_average') ?> (80% & Above) </td>
+	            					<td> <?= $this->lang->line('a') ?></td>
 	            				</tr>
 	            				<tr>
-	            					<td> Average (60-79%)  </td>
-	            					<td> B</td>
+	            					<td> <?= $this->lang->line('average') ?> (60-79%)  </td>
+	            					<td> <?= $this->lang->line('b') ?></td>
 	            				</tr>
 	            				<tr>
-	            					<td> Below Average (40-59%) </td>
-	            					<td> C</td>
+	            					<td> <?= $this->lang->line('below_average') ?> (40-59%) </td>
+	            					<td> <?= $this->lang->line('c') ?></td>
 	            				</tr>
 	            			</tbody>
 	            		</table>
 		        	</div>
 		        	 <div class="col-md-6 col-sm-6 ">
-		        	 	<label  class="control-label"> Marking Criteria</label><br>
-		          		<label> Good</label> : 10  <br>
-	            		<label> Average</label> : 7 <br> 
-	            		<label> Below Average</label> : 5 
+		        	 	<label  class="control-label"> <?= $this->lang->line('marking_criteria') ?></label><br>
+		          		<label> <?= $this->lang->line('good') ?></label> : 10  <br>
+	            		<label> <?= $this->lang->line('average') ?></label> : 7 <br> 
+	            		<label> <?= $this->lang->line('below_average') ?></label> : 5 
 		            </div>
 		        </div>
 		        	<div class="row col-md-12">
 			          <div class="col-md-12 col-sm-12 ">
-			          		<label  class="control-label"> Remarks</label>
-			            	<textarea type="text" placeholder=" Enter Remarks" name="comments" class="form-control" value="<?= $comments?>"><?= $comments?></textarea>
+			          		<label  class="control-label"> <?= $this->lang->line('remarks') ?></label>
+			            	<textarea type="text" placeholder=" <?= $this->lang->line('enter_remarks') ?>" name="comments" class="form-control" value="<?= $comments?>"><?= $comments?></textarea>
 			            </div>
 
 		        	</div>
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
 		        		</div>
 		        	</div>
 		        </div>

@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -40,13 +40,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> PML No </th>
-              <th style="white-space: nowrap;"> Transaction Date  </th>
-              <th style="white-space: nowrap;"> Total Bags</th>
-              <th style="white-space: nowrap;"> Department</th>
-              <th style="white-space: nowrap;"> Created By</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('pml_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('transaction_date') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('total_bags') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('created_by') ?></th>
+              <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>
@@ -98,23 +98,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <legend> <?= $po_detail['grade_name'].' ('.$po_detail['fg_code'].')' ;?> Production Details </legend>
                                     <div class="row ">
                                       <div class="col-md-4">
-                                        <label> Lot No  </label>  : 
+                                        <label> <?= $this->lang->line('lot_no') ?>  </label>  : 
                                         <?= $po_detail['lot_no'] ?>
                                       </div>
                                       <div class="col-md-4">
-                                        <label> Batch No  </label>  : 
+                                        <label> <?= $this->lang->line('batch_no') ?>  </label>  : 
                                         <?= $po_detail['batch_no'] ?>
                                       </div>
                                        <div class="col-md-4">
-                                        <label> No Of Bags </label>  : 
+                                        <label> <?= $this->lang->line('no_of_bags') ?> </label>  : 
                                         <?= $po_detail['no_of_bags'] ?>
                                       </div>
                                        <div class="col-md-4">
-                                        <label> Month Of Production </label>  : 
+                                        <label> <?= $this->lang->line('month_of_production') ?> </label>  : 
                                         <?= $po_detail['month_name'] ?>
                                       </div>
                                        <div class="col-md-4">
-                                        <label> Year Of Production </label>  : 
+                                        <label> <?= $this->lang->line('year_of_production') ?> </label>  : 
                                         <?= $po_detail['production_year'] ?>
                                       </div>
                                     </div>
@@ -123,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <br>
                              <div class="row col-md-12" >
                                  <div class="col-md-4">
-                                  <label class="control-label"> Total Bags </label>:
+                                  <label class="control-label"> <?= $this->lang->line('total_bags') ?> </label>:
                                     <span > 
                                         <?php 
                                             echo $obj['total_bags']; 
@@ -131,7 +131,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </span>
                                 </div>
                                  <div class="col-md-8">
-                                  <label class="control-label"> Remarks : </label>
+                                  <label class="control-label"> <?= $this->lang->line('remarks') ?> : </label>
                                     <span > 
                                         <?php 
                                             echo $obj['remarks']; 
@@ -141,7 +141,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               </div>
                             </div> 
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('uclose') ?></button>
                           </div>
                         </div>
                       </div>
@@ -152,7 +152,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>

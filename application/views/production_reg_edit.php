@@ -25,20 +25,20 @@ foreach ($packing_sizes as $key => $value) {
 				<input type="hidden" name="pr_id_old" value="<?= $id?>">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date Of Production <span class="required">*</span></label>
+			            	<label class="control-label"> <?=$this ->lang ->line('date_of_production')?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_production" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php if($date_of_production) { echo date('d-m-Y',strtotime($date_of_production)); } ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> PR Number <span class="required">*</span></label>
+			            	<label  class="control-label"> <?=$this ->lang ->line('pr_number')?> <span class="required">*</span></label>
 			            	
 			            	<input type="text" class="form-control" value="<?= $pr_number_view ?>" autocomplete="off" autofocus readonly >
 			            	<input type="hidden" name="pr_number" value="<?= $pr_number ?>">
 			            </div>
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"> <?=$this ->lang ->line('department')?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?=$this ->lang ->line('select_department')?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -51,16 +51,16 @@ foreach ($packing_sizes as $key => $value) {
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 		        	</div>
 			        <div class="row col-md-12 ">
 		            	<div class="col-md-6 col-sm-6">
-		            		 <label  class="control-label"> Select Mill No <span class="required">*</span></label>
+		            		 <label  class="control-label"> <?=$this ->lang ->line('select_mill_no')?> <span class="required">*</span></label>
 		            		<select name="mill_no" class="form-control" required="required">
-								<option value=""> Select Mill</option>
+								<option value=""> <?=$this ->lang ->line('select_mill')?></option>
 				                <?php
 				                 if ($equipments): ?> 
 				                  <?php 
@@ -73,13 +73,13 @@ foreach ($packing_sizes as $key => $value) {
 					                        <?php endif;   ?>
 				                    <?php   endforeach;  ?>
 				                <?php else: ?>
-				                    <option value="0">No result</option>
+				                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 				                <?php endif; ?>
 				            </select>
 		            	</div>
 		            	<div class="col-md-6 col-sm-6">
-				            <label  class="control-label"> Remarks</label>
-				    		<textarea class="form-control " rows="2" placeholder="Enter Remarks here" name="remarks" ><?= $remarks?></textarea>
+				            <label  class="control-label"> <?=$this ->lang ->line('remarks')?></label>
+				    		<textarea class="form-control " rows="2" placeholder="<?=$this ->lang ->line('enter_remarks_here')?>" name="remarks" ><?= $remarks?></textarea>
 			    		</div>
 			        </div>
 					<br>
@@ -90,17 +90,17 @@ foreach ($packing_sizes as $key => $value) {
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 			        					<th >#</th>
-			        					<th > Finsh Good </th>
-			        					<th style="white-space: nowrap;"> Lot No.</th>
-			        					<th style="white-space: nowrap;"> Batch No.</th>
-										<th > Packing Size</th> 
-										<th > No Of Bags</th> 
-										<th > Production In MT</th>
-										<th > KWH Opening </th>
-										<th > KWH Closing </th>
-										<th > KWH Consumed </th>
-										<th > Unit Per MT </th>
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th > <?=$this ->lang ->line('finish_good')?> </th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang ->line('lot_no')?>.</th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang ->line('batch_no')?>.</th>
+										<th > <?=$this ->lang ->line('packing_size')?></th> 
+										<th > <?=$this ->lang ->line('no_of_bags')?></th> 
+										<th > <?=$this ->lang ->line('production_in_mt')?></th>
+										<th > <?=$this ->lang ->line('kwh_opening')?> </th>
+										<th > <?=$this ->lang ->line('kwh_closing')?> </th>
+										<th > <?=$this ->lang ->line('kwh_consumed')?> </th>
+										<th > <?=$this ->lang ->line('unit_per_mt')?> </th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang ->line('action_button')?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -123,16 +123,16 @@ foreach ($packing_sizes as $key => $value) {
 								                        <?php endif;   ?>
 											        <?php endforeach; ?>
 									            <?php else: ?>
-									                <option value="0">No result</option>
+									                <option value="0"><?=$this ->lang ->line('no_result')?></option>
 									            <?php endif; ?>
 											</select>
 														
 								   			</td>
 								   			<td>
-												<input type="text"  placeholder="Enter Lot No" name="lot_no[]" class="form-control"  style="width: 150px;" autofocus  value="<?= $pr_detail['lot_no']?>">
+												<input type="text"  placeholder="<?=$this ->lang ->line('enter_lot_no')?>" name="lot_no[]" class="form-control"  style="width: 150px;" autofocus  value="<?= $pr_detail['lot_no']?>">
 											</td>
 								   			<td>
-												<input type="text"  placeholder="Enter Batch No" name="batch_no[]" class="form-control"  autofocus style="width: 150px;" value="<?= $pr_detail['batch_no']?>" >
+												<input type="text"  placeholder="<?=$this ->lang ->line('enter_batch_no')?>" name="batch_no[]" class="form-control"  autofocus style="width: 150px;" value="<?= $pr_detail['batch_no']?>" >
 											</td>
 											<td>
 												<!-- <textarea name="description[]"  style="width:200px;" class="form-control description" type="textarea" placeholder="Enter description"></textarea> -->
@@ -149,28 +149,28 @@ foreach ($packing_sizes as $key => $value) {
 										                        <?php endif;   ?>
 									                    <?php   endforeach;  ?>
 									                <?php else: ?>
-									                    <option value="0">No result</option>
+									                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 									                <?php endif; ?>
 								        		</select>
 											</td> 
 												<td>
-												<input type="text"  placeholder="No of Bags" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" value="<?= $pr_detail['no_of_bags']?>" >
+												<input type="text"  placeholder="<?=$this ->lang ->line('no_of_bags')?>" name="no_of_bags[]" class="form-control no_of_bags"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" value="<?= $pr_detail['no_of_bags']?>" >
 											</td>
 											
 											<td>
-												<input type="text"  placeholder="Production In MT" name="production_in_mt[]" class="form-control production_in_mt"  autofocus  style="width:150px;" readonly value="<?= $pr_detail['production_in_mt']?>" >
+												<input type="text"  placeholder="<?=$this ->lang ->line('production_in_mt')?>" name="production_in_mt[]" class="form-control production_in_mt"  autofocus  style="width:150px;" readonly value="<?= $pr_detail['production_in_mt']?>" >
 											</td>
 											<td >
-												<input type="text"  placeholder="KWH Opening" name="kwh_opening[]" class="form-control kwh_opening"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" value="<?= $pr_detail['kwh_opening']?>">
+												<input type="text"  placeholder="<?=$this ->lang ->line('kwh_opening')?>" name="kwh_opening[]" class="form-control kwh_opening"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" value="<?= $pr_detail['kwh_opening']?>">
 											</td>
 											<td >
-												<input type="text"  placeholder="KWH Closing" name="kwh_closing[]" class="form-control kwh_closing"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" value="<?= $pr_detail['kwh_closing']?>" >
+												<input type="text"  placeholder="<?=$this ->lang ->line('kwh_closing')?>" name="kwh_closing[]" class="form-control kwh_closing"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" value="<?= $pr_detail['kwh_closing']?>" >
 											</td>
 											<td>
-												<input type="text"  placeholder="Total KWH" name="kwh_consumed[]" class="form-control kwh_consumed"  autofocus style="width:150px;" readonly value="<?= $pr_detail['kwh_consumed']?>" >
+												<input type="text"  placeholder="<?=$this ->lang ->line('total_kwh')?>" name="kwh_consumed[]" class="form-control kwh_consumed"  autofocus style="width:150px;" readonly value="<?= $pr_detail['kwh_consumed']?>" >
 											</td>
 											<td>
-												<input type="text"  placeholder="Unit/MT" name="unit_per_mt[]" class="form-control unit_per_mt"  autofocus style="width:150px;" readonly value="<?= $pr_detail['unit_per_mt']?>" >
+												<input type="text"  placeholder="<?=$this ->lang ->line('unit')?>/MT" name="unit_per_mt[]" class="form-control unit_per_mt"  autofocus style="width:150px;" readonly value="<?= $pr_detail['unit_per_mt']?>" >
 											</td>
 											<td>
 												<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
@@ -186,8 +186,8 @@ foreach ($packing_sizes as $key => $value) {
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang ->line('submit')?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->

@@ -8,9 +8,9 @@
 
 		<!-- card-header -->
       	<div class="card-header">
-        	<h3 class="card-title pull-left"><?= $page_title ?></h3>
+        	<h3 class="card-title pull-left"><?= $this->lang->line('apply_for_leave') ?></h3>
 			<div class="pull-right">
-				<label> Leave Application : </label><b style="color:#37b5fe;"> <?= $lead_code?></b>
+				<label> <?= $this->lang->line('leave_application') ?> : </label><b style="color:#37b5fe;"> <?= $lead_code?></b>
 			</div>
 		</div>
 		<!-- / card-header -->
@@ -35,47 +35,47 @@
 							<div class="row">
 
 								<div class="col-md-4">
-									<label class="control-label">Today's Date </label> <span class="required">*</span>
+									<label class="control-label"><?= $this->lang->line('todays_date') ?> </label> <span class="required">*</span>
 									<!-- <input type="date" class="form-control" data-date-formate="d-m-Y" name="apply_date" value="<?php echo $date; ?>" > -->
 									<input type="text"  readonly="readonly"  data-date-formate="d-m-Y" name="apply_date" class="form-control date-picker" value="<?php echo $date; ?>" style="pointer-events:none;">
 								</div>
 
 								<div class="col-md-4">
-									<label class="control-label"> Leave Reason</label><span class="required">*</span>
-									<input type="text"  placeholder="Enter reason" name="leave_reason" class="form-control" value="" required >
+									<label class="control-label"> <?= $this->lang->line('leave_reason') ?></label><span class="required">*</span>
+									<input type="text"  placeholder="<?= $this->lang->line('enter_reason') ?>" name="leave_reason" class="form-control" value="" required >
 								</div>
 
 								<div class="col-md-4">
-									<label class="control-label"> Leave Type</label><span class="required">*</span>
+									<label class="control-label"><?= $this->lang->line('leave_type') ?></label><span class="required">*</span>
 									<?php echo form_dropdown('leave_type', $leave_types, '', 'required="required"'); ?>
 								</div>
 								
 								<div class="col-md-4">
-									<label class="control-label"> Leave category </label>
+									<label class="control-label"> <?= $this->lang->line('leave_category') ?> </label>
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="leave_category" value="full" checked="checked" /> Full
+										<input class="form-check-input" type="radio" name="leave_category" value="full" checked="checked" /> <?= $this->lang->line('full') ?>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="leave_category" value="half" /> Half
+										<input class="form-check-input" type="radio" name="leave_category" value="half" /> <?= $this->lang->line('half') ?>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="leave_category" value="gatepass" /> Gatepass
+										<input class="form-check-input" type="radio" name="leave_category" value="gatepass" /> <?= $this->lang->line('gatepass') ?>
 									</div>
 								</div>
 
 								<!-- Full Day Divs -->
 								<div class="col-md-3 full_div">
-									<label class="control-label"> From Date </label>
+									<label class="control-label"> <?= $this->lang->line('from_date') ?> </label>
 									<input type="date" class="form-control date1" id="date_picker" name="from_date">
 
 									<!-- <input type="date" class="form-control date1 fullday"  id="date_picker" name="from_date" value="" data-date-formate="dd-mm-yyyy"> -->
 								</div>
 								<div class="col-md-3 full_div">
-									<label class="control-label"> Upto Date </label>
+									<label class="control-label"> <?= $this->lang->line('upto_date') ?> </label>
 									<input type="date" class="form-control date2" id="date_picker_to" name="upto_date">
 
 									<!-- <input type="date" class="form-control date2 fullday" id="date_picker_to" name="upto_date" data-date-formate="dd-mm-yyyy"> -->
 								</div>
 								<div class="col-md-2 full_div">	
-									<label for="">Total Days</label>
+									<label for=""><?= $this->lang->line('total_days') ?></label>
 									<br>
 									<input type="text" name="leave_count"  class="form-control days full_div" class="form-control fullday" style="visibility: visible;" readonly>
 								</div>
@@ -115,8 +115,8 @@
 								<!-- / Gatepass Divs -->
 
 								<div class="col-md-12">
-									<label class="control-label"> Message <span class="required"> *</span></label>
-									<textarea class="form-control message" rows="3" placeholder="Enter Message" name="message" value="" requireds></textarea>
+									<label class="control-label"> <?= $this->lang->line('messgae') ?> <span class="required"> *</span></label>
+									<textarea class="form-control message" rows="3" placeholder="<?= $this->lang->line('enter_message') ?>" name="message" value="" requireds></textarea>
 								</div>
 
 								<span class="help-block">
@@ -125,7 +125,7 @@
 
 								<div class="col-md-12">
 									<label class="control-label" style="visibility: hidden;"> Name</label><br>
-									<button type="submit" class="btn btn-primary btn-block">  Apply
+									<button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('apply') ?>
 									</button>
 								</div>
 

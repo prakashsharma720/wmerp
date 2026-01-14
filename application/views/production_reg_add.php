@@ -24,20 +24,20 @@ foreach ($packing_sizes as $key => $value) {
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Production_registers/add_new_production">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date Of Production <span class="required">*</span></label>
+			            	<label class="control-label"> <?=$this ->lang ->line('date_of_production')?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="date_of_production" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> PR Number <span class="required">*</span></label>
+			            	<label  class="control-label"> <?=$this ->lang ->line('pr_number')?> <span class="required">*</span></label>
 			            	
 			            	<input type="text" class="form-control" value="<?= $pr_number_view ?>" autocomplete="off" autofocus readonly >
 			            	<input type="hidden" name="pr_number" value="<?= $pr_number ?>">
 			            </div>
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"> <?=$this ->lang ->line('department')?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?=$this ->lang ->line('select_department')?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -50,16 +50,16 @@ foreach ($packing_sizes as $key => $value) {
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 		        	</div>
 			        <div class="row col-md-12 ">
 		            	<div class="col-md-6 col-sm-6">
-		            		 <label  class="control-label"> Select Mill No <span class="required">*</span></label>
+		            		 <label  class="control-label"> <?=$this ->lang ->line('select_mill_no')?> <span class="required">*</span></label>
 		            		<select name="mill_no" class="form-control" required="required">
-								<option value=""> Select Mill</option>
+								<option value=""> <?=$this ->lang ->line('select_mill')?></option>
 				                <?php
 				                 if ($equipments): ?> 
 				                  <?php 
@@ -72,13 +72,13 @@ foreach ($packing_sizes as $key => $value) {
 					                        <?php endif;   ?>
 				                    <?php   endforeach;  ?>
 				                <?php else: ?>
-				                    <option value="0">No result</option>
+				                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 				                <?php endif; ?>
 				            </select>
 		            	</div>
 		            	<div class="col-md-6 col-sm-6">
-				            <label  class="control-label"> Remarks</label>
-				    		<textarea class="form-control " rows="2" placeholder="Enter Remarks here" name="remarks" ></textarea>
+				            <label  class="control-label"> <?=$this ->lang ->line('remarks')?></label>
+				    		<textarea class="form-control " rows="2" placeholder="<?=$this ->lang ->line('enter_remarks_here')?>" name="remarks" ></textarea>
 			    		</div>
 			        </div>
 					<br>
@@ -89,17 +89,17 @@ foreach ($packing_sizes as $key => $value) {
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 			        					<th >#</th>
-			        					<th > Finsh Good </th>
-			        					<th style="white-space: nowrap;"> Lot No.</th>
-			        					<th style="white-space: nowrap;"> Batch No.</th>
-										<th > Packing Size</th> 
-										<th > No Of Bags</th> 
-										<th > Production In MT</th>
-										<th > KWH Opening </th>
-										<th > KWH Closing </th>
-										<th > KWH Consumed </th>
-										<th > Unit Per MT </th>
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th > <?=$this ->lang ->line('finish_good')?> </th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang ->line('lot_no')?>.</th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang ->line('batch_no')?>.</th>
+										<th > <?=$this ->lang ->line('packing_size')?></th> 
+										<th > <?=$this ->lang ->line('no_of_bags')?></th> 
+										<th > <?=$this ->lang ->line('production_in_mt')?></th>
+										<th > <?=$this ->lang ->line('kwh_opening')?> </th>
+										<th > <?=$this ->lang ->line('kwh_closing')?>g </th>
+										<th > <?=$this ->lang ->line('kwh_consumed')?> </th>
+										<th > <?=$this ->lang ->line('unit_per_mt')?> </th>
+			        					<th style="white-space: nowrap;"> <?=$this ->lang ->line('action_button')?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -186,8 +186,8 @@ foreach ($packing_sizes as $key => $value) {
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?=$this ->lang ->line('submit')?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->

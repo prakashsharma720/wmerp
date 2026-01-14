@@ -1,3 +1,33 @@
+
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('Pending_Purchase_Orders_for_GIR') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+      </ul>
+    </div>
+ <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+     
+    
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -15,49 +45,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       float: left;
   }
 </style>
- <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<?php //  echo $data; exit; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
-      </span>
-      <div class="button-group float-right">
-        <!--  <a href="<?php echo base_url(); ?>index.php/Purchase_order/add" class="btn btn-success" data-toggle="tooltip" title="New PO"><i class="fa fa-plus"></i></a>
 
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
 
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button> -->
-        
-      </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
+
+ <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
+
+            
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> PO No </th>
-              <th> Supplier Name </th>
-              <th style="white-space: nowrap;"> Date </th>
-              <th style="white-space: nowrap;">Total Amount (&#8377;)</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th ><?=$this ->lang ->line('sr_no')?>.</th>
+              <th> <?=$this ->lang ->line('po_no')?> </th>
+              <th> <?=$this ->lang ->line('supplier_name')?> </th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('date')?></th>
+              <th style="white-space: nowrap;"><?=$this ->lang ->line('total_amount')?> (&#8377;)</th>
+              <th style="white-space: nowrap;width: 20%;"> <?=$this ->lang ->line('action_button')?></th>
             </tr>
           </thead>
           <tbody>
@@ -90,12 +99,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><?php echo $obj['supplier']; ?></td>
                 <td><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
                 <td><?php echo $obj['grand_total']; ?></td>
-                <td>
-                   <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-eye"></i></a>
+                <td style="display: flex; gap: 6px; align-items: center;">
+                 <!-- <a class="avatar-text avatar-md" data-toggle="modal" data-target="#viewPO<?= $obj['id']; ?>">
+  <i class="feather feather-eye"></i>
+</a> -->
+<a class="avatar-text avatar-md" 
+     data-bs-toggle="offcanvas" 
+     data-bs-target="#viewPO<?= $obj['id']; ?>">
+    <i class="feather feather-eye"></i>
+  </a>
 
-				            <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
+				            <a class="avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Purchase_order/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
 
-                    <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Gir_registers/add/<?php echo $obj['id'];?>" data-toggle="tooltip" title="Convert to GIR Register" ><i class="fa fa-refresh"></i> </a>
+                    <a class="avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Gir_registers/add/<?php echo $obj['id'];?>" data-toggle="tooltip" title="Convert to GIR Register" ><i class="fa fa-refresh"></i> </a>
                     
                 </td>
                 <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
@@ -242,6 +258,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     
               </tr>
+             <?php $this->load->view('leave-module/component/gir.php', ['obj' => $obj]); ?>
+
             <?php  $i++;} } ?>
           </tbody>
         </table>

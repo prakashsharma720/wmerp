@@ -1,6 +1,6 @@
 <?php defined("BASEPATH") OR exit("No direct script access allowed");
 
-class Templates extends CI_Controller {
+class Templates extends MY_Controller {
   	function __construct() {
 	    parent::__construct();
 	    //Check user login

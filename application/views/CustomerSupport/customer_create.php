@@ -38,38 +38,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									?>
                             <div class="row col-md-12">
                                 <div class="col-md-4 col-sm-4">
-                                    <label class="control-label"> Generation Date </label> <span
+                                    <label class="control-label"><?= $this->lang->line('generation_date') ?> </label> <span
                                         class="required">*</span>
                                     <input type="date" data-date-formate="d-m-Y" name="generation_date"
                                         id="generation_date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                                 </div>
                                 <div class="col-md-4 category_name">
-                                    <label class="control-label">Complaint Category</label> <span
+                                    <label class="control-label"><?= $this->lang->line('complaint_category') ?></label> <span
                                         class="required">*</span>
                                     <select class="form-control" name="category" id="complaintCategory">
-                                        <option value="">Select</option>
-                                        <option value="Billing/Order">Billing/Order</option>
-                                        <option value="Service">Service</option>
-                                        <option value="Quality Assurance">Quality Assurance</option>
-                                        <option value="Timeline">Timeline</option>
-                                        <option value="Other">Other</option>
+                                        <option value=""><?= $this->lang->line('select') ?></option>
+                                        <option value="Billing/Order"><?= $this->lang->line('billing_order') ?></option>
+                                        <option value="Service"><?= $this->lang->line('service') ?></option>
+                                        <option value="Quality Assurance"><?= $this->lang->line('quality_assurance') ?></option>
+                                        <option value="Timeline"><?= $this->lang->line('timeline') ?></option>
+                                        <option value="Other"><?= $this->lang->line('other') ?></option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-4" id="orderSourceField" style="display: none;">
-                                    <label class="control-label">Order Source ID</label> <span class="required">*</span>
+                                    <label class="control-label"><?= $this->lang->line('order_source_id') ?></label> <span class="required">*</span>
                                     </br>
                                     <?php echo form_dropdown('invoice_no', $order, '', 'class="form-control"'); ?>
                                 </div>
 
 
                                 <div class="col-md-4">
-                                    <label class="control-label"> Customer Name</label><span class="required">*</span>
+                                    <label class="control-label"><?= $this->lang->line('customer_name') ?></label><span class="required">*</span>
                                     <input type="text" placeholder="Enter Name" name="cname" class="form-control"
                                         required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="control-label">Email <span class="required">*</span></label>
+                                    <label class="control-label"><?= $this->lang->line('email') ?> <span class="required">*</span></label>
                                     <input type="email" placeholder="Enter Email" name="email" class="form-control"
                                         required>
                                 </div>
@@ -78,13 +78,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                                 <div class="col-md-4 col-sm-2 ">
-                                    <label class="control-label"> Mobile No <span class="required">*</span></label>
+                                    <label class="control-label"> <?= $this->lang->line('mobile_no') ?> <span class="required">*</span></label>
                                     <input type="text" placeholder="Enter mobile" name="mobile"
                                         class="form-control mobile" maxlength="10" value="" required autofocus>
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label class="control-label"> City </label>
+                                    <label class="control-label"> <?= $this->lang->line('city') ?> </label>
                                     <input type="text" placeholder="Enter city" name="city" class="form-control"
                                         required>
                                 </div>
@@ -92,13 +92,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                                 <div class="col-md-4 col-sm-4 ">
-                                    <label class="control-label"> Description/Remark</label>
+                                    <label class="control-label"><?= $this->lang->line('description_remark') ?></label>
                                     <textarea class="form-control description" rows="3"
                                         placeholder="Enter Description/Remark" name="description"> </textarea>
                                 </div>
 
                                 <div class="col-md-4 col-sm-4 ">
-                                    <label class="control-label"> Upload Photo </label>
+                                    <label class="control-label"><?= $this->lang->line('upload_photo') ?> </label>
 
                                     <input type="file" name="photo" class="form-control upload" autofocus>
                                     <img id="blah" src="#" alt="your image" class="hide" width="40%" />
@@ -109,8 +109,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <span class="help-block"></span>
                             <div class="row col-md-12">
-                                <label class="control-label" style="visibility: hidden;"> Name</label><br>
-                                <button type="submit" class="btn btn-primary btn-block">Save</button>
+                                <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                                <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
                             </div>
                 </div>
                 </form>

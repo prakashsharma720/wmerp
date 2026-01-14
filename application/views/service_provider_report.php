@@ -1,45 +1,49 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
-$data=explode('?', $current_page);
-/*echo $category_id=$_GET['categories_id'];
-echo $supplier_id=$_GET['supplier_id'];
-echo $category_of_approval=$_GET['category_of_approval'];*/
-//print_r($conditions);
-?>
-
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
-
-</style>
-
-<?php // echo $data; exit; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <label class="card-title"><?php  echo $title; ?></label>
-       <div class="pull-right error_msg">
-        <form method="post" action="<?php echo base_url(); ?>index.php/Service_providers/createXLS">
-
-          <?php 
-          if(!empty($conditions)){
-            foreach ($conditions as $key => $value) { ?>
-            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
-          <?php } }?>
-           <button type="submit" class="btn btn-info"> Export </button>
-         </form>
-        <!-- <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Suppliers/createXLS">Export</a>   -->
+<div class="nxl-content">
+  <div class="page-header mb-3">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"><?= $this->lang->line('service_provider_report') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-        <form method="get" id="filterForm">
-      <div class="row">
-          <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label">Service Provider Category <span class="required">*</span></label>
-                  <select name="categories_id" class="form-control select2 category" >
+      <ul class="breadcrumb ml-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-header-right ms-auto d-flex align-items-center">
+      <!-- Filter Button -->
+      <?php $this->load->view('layout/alerts'); ?>
+      <button
+        id="toggleFilter"
+        class="btn btn-icon avatar-text avatar-md"
+        type="button">
+        <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
+      </button>
+
+
+      <!-- Export Button -->
+      <form method="post" action="<?= base_url(); ?>index.php/Service_providers/createXLS" style="margin-left:5px;">
+        <?php if (!empty($conditions)) {
+          foreach ($conditions as $key => $value) { ?>
+            <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
+        <?php }
+        } ?>
+        <button type="submit" class="btn btn-icon avatar-text avatar-md">
+          <i class="feather feather-download "></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FILTER FORM (initially hidden) -->
+  <div class="card card-body" id="filterFormWrapper" style="display: none; position:relative; left:35px;right:35px;width:1553px;border-radius:10px">
+    <form method="get" id="filterForm">
+      <div class="row g-3">
+        <!-- Category -->
+        <div class="col-md-4">
+          <label class="control-label"><?= $this->lang->line('service_provider_category') ?> <span class="required">*</span></label>
+          <select name="categories_id" class="form-control select2 category" >
                      <option value="0">Select Category</option>
                         <?php
                          if ($categories): ?> 
@@ -56,10 +60,12 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
                             <option value="0">No result</option>
                         <?php endif; ?>
                     </select>
-                </div>
-              <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Service Provider <span class="required">*</span></label>
-                <select name="service_provider_id" class="form-control select2 suppliers" >
+        </div>
+
+        <!-- Service Provider -->
+        <div class="col-md-4">
+          <label class="control-label"><?= $this->lang->line('name_of_service_provider') ?> <span class="required">*</span></label>
+        <select name="service_provider_id" class="form-control select2 suppliers" >
                     <option value="0">Select Service Provider</option>
                     <?php
                          if ($all_sps): ?> 
@@ -76,9 +82,11 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
                             <option value="0">No result</option>
                         <?php endif; ?>
                 </select>
-              </div>
-               <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Category of Approval</label>
+        </div>
+
+        <!-- Approval Category -->
+        <div class="col-md-4">
+        <label  class="control-label"> Category of Approval</label>
                     <?php  $app_cat = array(
                        'No' => 'Select Option',
                           'A' => 'A',
@@ -87,96 +95,92 @@ echo $category_of_approval=$_GET['category_of_approval'];*/
                           );
                       echo form_dropdown('category_of_approval', $app_cat)
                     ?>
-                  </div>
-              </div>
-                <div class="row">
-                  <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
-              </div>
-          </div>
-            
-        </form>
-            <hr>
+        </div>
+      </div>
 
-      <div class="table-responsive">
-        <table  class="table table-bordered table-striped" >
-          <thead>
-            <tr >
-              <th> Name </th>
-              <th style="white-space: nowrap;"> Registration Date </th>
-              <th style="white-space: nowrap;"> Contact Person </th>
-              <th> Email</th>
-              <th> Mobile No</th>
-              <th> website</th>
-              <th> Category</th>
-              <th style="white-space: nowrap;"> Approval Category</th>
-              <!-- <th style="white-space: nowrap;">Bank Name</th>
-              <th> Account No</th>
-              <th  style="white-space: nowrap;"> Service State</th>
-              <th style="white-space: nowrap;">Approval Date</th>
-              <th style="white-space: nowrap;"> Next Evalution</th> -->
-            </tr>
-          </thead>
-          <tbody >
-           <?php
-          $i=1;foreach($service_providers as $obj){ ?>
-              <tr>
-                <!-- <td><?php echo $i;?></td> -->
-                <td><?php echo $obj['service_provider_name'].' ('.$obj['service_provider_code'].')'; ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['reg_date'])); ?></td>
-                <td><?php echo $obj['contact_person']; ?></td>
-                <td><?php echo $obj['email']; ?></td>
-                <td><?php echo $obj['mobile_no']; ?></td>
-                <td><?php echo $obj['website']; ?></td>
-                <td><?php echo $obj['category']; ?></td>
-                <td><?php echo $obj['category_of_approval']; ?></td>
-                <!-- <td><?php echo $obj['bank_name']; ?></td>
-                <td><?php echo $obj['account_no']; ?></td>
-                <td><?php echo $obj['state']; ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['date_of_approval'])); ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['date_of_evalution'])); ?></td> -->
+      <div class="row g-3 mt-1">
+        <div class="col-md-4">
+          <label class="control-label"><?= $this->lang->line('from_date') ?></label>
+          <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+        </div>
+        <div class="col-md-4">
+          <label class="control-label"><?= $this->lang->line('upto_date') ?></label>
+          <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+        </div>
+        <div class="col-md-4 d-flex align-items-end gap-2">
+          <input type="submit" class="btn btn-primary" value="<?= $this->lang->line('search') ?>" />
+          <a href="<?= current_url() ?>" class="btn btn-danger"><?= $this->lang->line('reset') ?></a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- TABLE SECTION -->
+
+  <div class="main-content " style="position: relative; bottom:15px">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
+
+                <th><?= $this->lang->line('name') ?></th>
+                <th><?= $this->lang->line('registration_date') ?></th>
+                <th><?= $this->lang->line('contact_person') ?></th>
+                <th><?= $this->lang->line('email') ?></th>
+                <th><?= $this->lang->line('mobile_no') ?></th>
+                <th><?= $this->lang->line('website') ?></th>
+                <th><?= $this->lang->line('category') ?></th>
+                <th><?= $this->lang->line('approval_category') ?></th>
               </tr>
-            <?php  $i++;} ?>
-          </tbody>
-        </table>
-    </div>
+            </thead>
+            <tbody>
+              <?php foreach ($service_providers as $obj): ?>
+                <tr>
+                  <td><?= $obj['service_provider_name'] . ' (' . $obj['service_provider_code'] . ')' ?></td>
+                  <td><?= date('d-M-Y', strtotime($obj['reg_date'])) ?></td>
+                  <td><?= $obj['contact_person'] ?></td>
+                  <td><?= $obj['email'] ?></td>
+                  <td><?= $obj['mobile_no'] ?></td>
+                  <td><?= $obj['website'] ?></td>
+                  <td><?= $obj['category'] ?></td>
+                  <td><?= $obj['category_of_approval'] ?></td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
 
-<script type="text/javascript">
+<!-- Scripts -->
+<script src="<?= base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
   $(document).ready(function() {
-    var base_url='<?php echo base_url() ;?>';
-    //alert(base_url);
-    $(document).on('change','.category',function(){
-        var category_id = $('.category').find('option:selected').val();
-        //var aa= base_url+"index.php/Meenus/rolewisedata/"+role_id;
-        //alert(category_id);
-        $.ajax({
-                  type: "POST",
-                  url:"<?php echo base_url('index.php/Suppliers/getSupplierByCategory/') ?>"+category_id,
-                  //data: {id:role_id},
-                  dataType: 'html',
-                  success: function (response) {
-                    //alert(response);
-                      $(".suppliers").html(response);
-                      $('.select2').select2();
-                      //$('.category').find('option:selected').prop('required',true);
+    // Toggle filter section
+    $('#toggleFilter').click(function() {
+      $('#filterFormWrapper').slideToggle();
+    });
 
-                  }
-              });
-      }); 
+    // Category -> Service Provider AJAX load
+    $('.category').change(function() {
+      let category_id = $(this).val();
+      $.ajax({
+        url: "<?= base_url('index.php/Suppliers/getSupplierByCategory/') ?>" + category_id,
+        method: "POST",
+        dataType: "html",
+        success: function(response) {
+          $('.suppliers').html(response);
+          $('.select2').select2();
+        }
+      });
+    });
   });
-</script> 
+</script>

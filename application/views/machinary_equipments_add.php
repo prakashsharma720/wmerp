@@ -17,14 +17,14 @@
 				<input type="hidden" name="pme_code" value="<?= $pme_code ?>">
 				<div class="row col-md-12">
 					<div class="col-md-4 col-sm-4 ">
-						<label class="control-label"> Date <span class="required">*</span></label>
+						<label class="control-label"> <?= $this->lang->line('date') ?> <span class="required">*</span></label>
 						<input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" value="<?php echo date('d-m-Y'); ?>" autofocus required>
 					</div>
 
 					<div class="col-md-6 col-sm-6 ">
-						<label class="control-label"> Department</label>
+						<label class="control-label"> <?= $this->lang->line('department') ?></label>
 						<select name="department_id" class="form-control select2 ">
-							<option value=""> Select Department</option>
+							<option value=""> <?= $this->lang->line('select_department') ?></option>
 							<?php
 							if ($departments) : ?>
 								<?php
@@ -37,7 +37,7 @@
 									<?php endif;   ?>
 								<?php endforeach;  ?>
 							<?php else : ?>
-								<option value="0">No result</option>
+								<option value="0"><?= $this->lang->line('no_result') ?></option>
 							<?php endif; ?>
 						</select>
 					</div>
@@ -50,13 +50,13 @@
 								<thead style="background-color: #ca6b24;">
 									<tr>
 										<th>#</th>
-										<th> Equipment Name </th>
-										<th> Equipment ID </th>
-										<th> Model / Type </th>
-										<th> Sr. No.</th>
-										<th> Make </th>
-										<th> Year of Installation </th>
-										<th style="white-space: nowrap;"> Action Button</th>
+										<th> <?= $this->lang->line('equipment_name') ?> </th>
+										<th> <?= $this->lang->line('equipment_id') ?> </th>
+										<th> <?= $this->lang->line('model_type') ?></th>
+										<th> <?= $this->lang->line('sr_no') ?>.</th>
+										<th> <?= $this->lang->line('make') ?> </th>
+										<th> <?= $this->lang->line('year_of_installation') ?> </th>
+										<th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?></th>
 									</tr>
 								</thead>
 								<tbody id="mainbody"></tbody>
@@ -66,8 +66,8 @@
 				</div>
 				<div class="row col-md-12">
 					<div class="col-md-12 col-sm-12 ">
-						<label class="control-label" style="visibility: hidden;"> Grade</label>
-						<button type="submit" class="btn btn-primary btn-block"> Submit</button>
+						<label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
+						<button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('submit') ?></button>
 					</div>
 				</div>
 			</form> <!-- /form -->
@@ -81,24 +81,24 @@
 			<td>1</td>
 			<td>
 				<select name="equipment_name[]" class="form-control equipment_name" style="width:200px;" required>
-					<option value=""> Select Name</option>
+					<option value=""> <?= $this->lang->line('select_name') ?></option>
 					<?php if ($plant_machinary_list) : ?>
 						<?php foreach ($plant_machinary_list as $k=>$value) : ?>
 								<option value="<?php echo $value['id']; ?>"><?php echo $value['name'];?></option>
 						<?php endforeach; ?>
 					<?php else : ?>
-						<option value="0">No result</option>
+						<option value="0"><?= $this->lang->line('no_result') ?></option>
 					<?php endif; ?>
 				</select>
 			</td>
 			<td>
-			<input type="text" placeholder="ID" name="equipment_id[]" class="form-control equipment_id" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
+			<input type="text" placeholder="<?= $this->lang->line('id') ?>" name="equipment_id[]" class="form-control equipment_id" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
 			</td>
 			<td>
-				<input type="text" placeholder="Model / Type" name="model_type[]" class="form-control model_type" style="width:140px;" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
+				<input type="text" placeholder="<?= $this->lang->line('model_type') ?>" name="model_type[]" class="form-control model_type" style="width:140px;" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:100px;" required>
 			</td>
 			<td>
-				<input type="text" placeholder="Sr. No." name="sr_no[]" class="form-control sr_no" autofocus style="width:100px;" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>
+				<input type="text" placeholder="<?= $this->lang->line('sr_no') ?>." name="sr_no[]" class="form-control sr_no" autofocus style="width:100px;" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" required>
 			</td>
 			<td>
 				<input type="text" data-date-formate="dd-mm-yyyy" name="equipment_make[]" style="width:140px;" class="form-control date-picker equipment_make" placeholder="dd-mm-yyyy" autocomplete="off" value="<?php echo date('d-m-Y'); ?>" autofocus required>

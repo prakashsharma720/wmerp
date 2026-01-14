@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Sub_category extends CI_Controller {
+Class Sub_category extends MY_Controller {
 
   public function __construct() {
   parent::__construct();
@@ -34,7 +34,7 @@ $this->load->model('sub_categories_model');
 
 // Show login page
 public function add() {
-  $this->template->load('template','supplier_add');
+  $this->template->load('layout/template','supplier_add');
   //$this->load->view('footer');
   }
 
@@ -74,7 +74,7 @@ public function add() {
 	  $data['categories'] = $this->sub_categories_model->getCategories();
       //echo var_dump($data['students']);
       //print_r($data['grid_name']);exit;
-      $this->template->load('template','sub_category_master',$data);
+      $this->template->load('layout/template','sub_category_master',$data);
   }
   public function add_new_sub_category() {
     

@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Lab_chemicals extends CI_Controller {
+Class Lab_chemicals extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -169,7 +169,7 @@ $this->load->model('categories_model');
 						//for add grade
 			$this->load->model('grades_model');
 			$data['grades'] = $this->grades_model->getGradeByCategory($data['categories_id']);
-			$this->template->load('template','lab_chemical_view',$data);
+			$this->template->load('layout/template','lab_chemical_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

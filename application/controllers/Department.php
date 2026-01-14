@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Department extends CI_Controller {
+Class Department extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -73,7 +73,7 @@ $this->load->model('department_model');
 			$data['departments'] = $this->department_model->departmentsList();
 			//echo var_dump($data['students']);
 			//print_r($data['department_name']);exit;
-			$this->template->load('template','department_master',$data);
+			$this->template->load('layout/template','department_master',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Employee_Review extends CI_Controller {
+Class Employee_Review extends MY_Controller {
 
   public function __construct() {
     parent::__construct();
@@ -38,7 +38,7 @@ public function index($id = "") {
     $data['review'] 	= $this->Review_model->getAllotedReviewByEmployee($login_id);
   }
 //  echo "<pre>"; print_r(  $data['review'] );exit();
-  $this->template->load('template','employee_review',$data);
+  $this->template->load('layout/template','employee_review',$data);
 }
 
 public function add_review() {

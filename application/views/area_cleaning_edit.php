@@ -37,11 +37,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <div class="form-group">
                     <div class="row ">
                        <div class="col-md-4 col-sm-4">
-                          <label class="control-label"> Date Of Cleaning</label>
+                          <label class="control-label"><?= $this->lang->line('date_of_cleaning') ?></label>
                             <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" value="<?php echo date('d-m-Y') ?>" placeholder="dd-mm-yyyy" required autofocus>
                         </div>
                          <div class="col-md-4 col-sm-4">
-                          <label class="control-label"> ACR Number</label>
+                          <label class="control-label"><?= $this->lang->line('acr_number') ?></label>
                            <input type="text" name="" class="form-control" value="<?= $acr_code_view ?>" autocomplete="off" autofocus  readonly="readonly">
                             <input type="hidden" name="voucher_code" value="<?= $acr_code_view ?>">
                         </div>
@@ -52,13 +52,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                <table id="maintable" class="table">
                                 <thead style="background-color: #ca6b24;">
                                   <tr>
-                                   <th > S.No.</th> 
-                                    <th style="white-space: nowrap;"> Area Name </th>
-                                    <th style="white-space: nowrap;"> Frequency</th>
-                                    <th style="white-space: nowrap;"> Status Of Work</th>
-                                    <th > Work By</th> 
-                                    <th > Remarks</th> 
-                                    <th > Action</th> 
+                                   <th > <?= $this->lang->line('s_no') ?>.</th> 
+                                    <th style="white-space: nowrap;"> <?= $this->lang->line('area_name') ?> </th>
+                                    <th style="white-space: nowrap;"><?= $this->lang->line('frequency') ?></th>
+                                    <th style="white-space: nowrap;"><?= $this->lang->line('status_of_work') ?></th>
+                                    <th ><?= $this->lang->line('work_by') ?></th> 
+                                    <th > <?= $this->lang->line('remarks') ?></th> 
+                                    <th ><?= $this->lang->line('action') ?></th> 
                                   </tr>
                                 </thead>
                                 <tbody id="mainbody">
@@ -103,8 +103,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  </div>
                    <div class="row col-md-12">
                       <div class="col-md-12 col-sm-12 ">
-                        <label class="control-label" style="visibility: hidden;"> Name</label><br>
-                        <button type="submit" class="btn btn-primary btn-block">Save</button>
+                        <label class="control-label" style="visibility: hidden;"> <?= $this->lang->line('name') ?></label><br>
+                        <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
                       </div>
                   </div>
               

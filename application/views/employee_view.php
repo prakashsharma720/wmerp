@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container-fluid">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?>
+            <span class="card-title"><?= $this->lang->line('employees_list') ?>
             </span>
             <div class="button-group float-right d-flex">
 
@@ -56,20 +56,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Sr.No.</th>
-                            <th> Name </th>
+                            <th><?= $this->lang->line('sr_no') ?></th>
+                            <th> <?= $this->lang->line('name') ?> </th>
 
-                            <th style="white-space: nowrap;"> Email </th>
-                            <th style="white-space: nowrap;"> Role</th>
-                            <th style="white-space: nowrap;">Mobile</th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('email') ?> </th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('role') ?></th>
+                            <th style="white-space: nowrap;"><?= $this->lang->line('mobile_no') ?></th>
 
-                            <th style="white-space: nowrap;"> Department</th>
-                            <th style="white-space: nowrap;"> Designation</th>
-                            <th style="white-space: nowrap;"> Date of joining</th>
-                            <th style="white-space: nowrap;"> Authority person </th>
-                            <th style="white-space: nowrap;"> Date of birth </th>
-                            <th style="white-space: nowrap;"> Photo</th>
-                            <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('department') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('designation') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_joining') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('select_authority_person') ?> </th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('date_of_birth') ?></th>
+                            <th style="white-space: nowrap;"> <?= $this->lang->line('photo') ?></th>
+                            <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action') ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="modal-dialog">
                                     <div class="modal-content" style="width:800px !important">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Employee Details</h4>
+                                            <h4 class="modal-title"><?= $this->lang->line('employee_detail') ?></h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                                         </div>
@@ -139,33 +139,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="card-body">
 
                                                 <fieldset>
-                                                    <legend>Personal Information</legend>
+                                                    <legend><?= $this->lang->line('personal_details') ?></legend>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Name: </label>
+                                                            <label for="name"><?= $this->lang->line('name') ?> :</label>
                                                             <span><?php echo $obj['name'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">Email:</label>
+                                                            <label for="email"><?= $this->lang->line('email') ?>:</label>
                                                             <span><?php echo $obj['email'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Mobile:</label>
+                                                            <label for="dob"><?= $this->lang->line('mobile_no') ?>:</label>
                                                             <span><?php echo $obj['mobile_no'];?></span>
 
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Role: </label>
+                                                            <label for="name"><?= $this->lang->line('role') ?> :</label>
                                                             <span><?php echo $obj['role'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">Department:</label>
+                                                            <label for="email"><?= $this->lang->line('department') ?>:</label>
                                                             <span><?php echo $obj['department_name'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Designation:</label>
+                                                            <label for="dob"><?= $this->lang->line('designation') ?>:</label>
                                                             <span><?php echo $obj['designation'];?></span>
 
                                                         </div>
@@ -173,30 +173,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Date Of Joining: </label>
+                                                            <label for="name"><?= $this->lang->line('date_of_joining') ?> :</label>
                                                             <span><?php echo $obj['date_of_joining'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">Autherity Person:</label>
+                                                            <label for="email"><?= $this->lang->line('authority_person') ?>:</label>
                                                             <span><?php echo $obj['author_email'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Date Of Birth:</label>
+                                                            <label for="dob"><?= $this->lang->line('date_of_birth') ?>:</label>
                                                             <span><?php echo $obj['dob'];?></span>
 
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Aadhar No.: </label>
+                                                            <label for="name"><?= $this->lang->line('aadhaar_no') ?> :</label>
                                                             <span><?php echo $obj['aadhaar_no'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">PAN Card no. :</label>
+                                                            <label for="email"><?= $this->lang->line('pan_no') ?>:</label>
                                                             <span><?php echo $obj['pan_no'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Address :</label>
+                                                            <label for="dob"><?= $this->lang->line('address') ?>:</label>
                                                             <span><?php echo $obj['address'];?></span>
 
                                                         </div>
@@ -204,33 +204,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                                 </fieldset>
                                                 <fieldset>
-                                                    <legend>Bank Details</legend>
+                                                    <legend><?= $this->lang->line('bank_details') ?></legend>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Account Holder : </label>
+                                                            <label for="name"><?= $this->lang->line('account_holder_name') ?> : </label>
                                                             <span><?php echo $obj['account_holder_name'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">Bank Name :</label>
+                                                            <label for="email"><?= $this->lang->line('bank_name') ?> :</label>
                                                             <span><?php echo $obj['bank_name'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Account Number :</label>
+                                                            <label for="dob"><?= $this->lang->line('account_number') ?> :</label>
                                                             <span><?php echo $obj['account_number'];?></span>
 
                                                         </div>
                                                     </div>
                                                      <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">IFSC Code : </label>
+                                                            <label for="name"><?= $this->lang->line('ifsc_code') ?> : </label>
                                                             <span><?php echo $obj['ifsc_code'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">Branch Name :</label>
+                                                            <label for="email"><?= $this->lang->line('branch_name') ?> :</label>
                                                             <span><?php echo $obj['branch_name'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Account Type :</label>
+                                                            <label for="dob"><?= $this->lang->line('account_type') ?> :</label>
                                                             <span><?php echo $obj['account_type'];?></span>
 
                                                         </div>
@@ -238,40 +238,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">UPI Id: </label>
+                                                            <label for="name"><?= $this->lang->line('upi_id') ?>: </label>
                                                             <span><?php echo $obj['upi_id'];?></span>
                                                         </div>
                                                       
                                                     </div>
                                                 </fieldset>
                                                   <fieldset>
-                                                    <legend>Salary Details</legend>
+                                                    <legend><?= $this->lang->line('salary_details') ?></legend>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Basic Salary : </label>
+                                                            <label for="name"><?= $this->lang->line('salary_details') ?>:</label>
                                                             <span><?php echo $obj['salary'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">HRA :</label>
+                                                            <label for="email"><?= $this->lang->line('hra') ?> :</label>
                                                             <span><?php echo $obj['hra'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Conveyance Allowance :</label>
+                                                            <label for="dob"><?= $this->lang->line('conveyance_allowance') ?> :</label>
                                                             <span><?php echo $obj['c_allowance'];?></span>
 
                                                         </div>
                                                     </div>
                                                      <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Medical Allowance : </label>
+                                                            <label for="name"> <?= $this->lang->line('medical_allowance') ?>: </label>
                                                             <span><?php echo $obj['m_allowance'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">Other Allowance :</label>
+                                                            <label for="email"><?= $this->lang->line('other_allowance') ?> :</label>
                                                             <span><?php echo $obj['o_allowance'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Total Net Salary :</label>
+                                                            <label for="dob"><?= $this->lang->line('total_net_salary') ?> :</label>
                                                             <span><?php echo $obj['total_net_salary'];?></span>
 
                                                         </div>
@@ -280,33 +280,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     
                                                 </fieldset>
                                                  <fieldset>
-                                                    <legend>Other Details</legend>
+                                                    <legend><?= $this->lang->line('other_details') ?></legend>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">Emergency Mobile : </label>
+                                                            <label for="name"><?= $this->lang->line('emergency_mobile_no') ?> : </label>
                                                             <span><?php echo $obj['emobile_no'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">Emergency Name :</label>
+                                                            <label for="email"><?= $this->lang->line('emergency_name') ?> :</label>
                                                             <span><?php echo $obj['ename'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">UAN No. :</label>
+                                                            <label for="dob"><?= $this->lang->line('uan_no') ?> :</label>
                                                             <span><?php echo $obj['uan'];?></span>
 
                                                         </div>
                                                     </div>
                                                      <div class="row">
                                                         <div class="col-md-4">
-                                                            <label for="name">PF No. : </label>
+                                                            <label for="name"><?= $this->lang->line('pf_no') ?> : </label>
                                                             <span><?php echo $obj['pf'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="email">ESI No. :</label>
+                                                            <label for="email"><?= $this->lang->line('esi_no') ?> :</label>
                                                             <span><?php echo $obj['esi'];?></span>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <label for="dob">Username :</label>
+                                                            <label for="dob"><?= $this->lang->line('username') ?> :</label>
                                                             <span><?php echo $obj['username'];?></span>
 
                                                         </div>

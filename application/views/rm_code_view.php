@@ -1,153 +1,138 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-//print_r($rmcodes);exit;
-
-?>
-
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
-</style>
-
-  <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
-
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?></span>
-        <div class="button-group float-right">
-
-         <a href="<?php echo base_url(); ?>index.php/Rm_code/add" class="btn btn-success" data-toggle="tooltip" title="New RM Code"><i class="fa fa-plus"></i></a>
-
-         <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i class="fa fa-refresh"></i></button>
-
-          <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete" ><i class="fa fa-trash"></i></button>
-        
+<!-- Page Header -->
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <!-- Left: Title & Breadcrumb -->
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+          <h5 class="m-b-10"><?= $this->lang->line('rm_code_list') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"><?= $this->lang->line('view_list') ?></li>
+      </ul>
+    </div>
+
+    <!-- Right: Buttons -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+
+      <a href="<?= base_url('index.php/rm_code/add'); ?>" class=" btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="New PO">
+        <i class="feather feather-plus"></i>
+      </a>
+
+      <button class="btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="Refresh" onclick="location.reload();">
+        <i class="fa fa-refresh"></i>
+      </button>
+
+      <button class="btn btn-icon avatar-text avatar-md delete_all" data-bs-toggle="tooltip" title="Bulk Delete">
+        <i class="feather feather-trash"></i>
+      </button>
+
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th> Gride Number </th>
-              <th> Supplier Name </th>
-              <th style="white-space: nowrap;"> Raw Material </th>
-              <th style="white-space: nowrap;">Grade</th>
-              <th style="white-space: nowrap;"> RM Code</th>
-              <th style="white-space: nowrap;width: 20%;"> Action</th>
+              <th><?= $this->lang->line('dsr_no') ?></th>
+              <th><?= $this->lang->line('grid_number') ?></th>
+              <th><?= $this->lang->line('supplier_name') ?></th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('raw_material') ?></th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('grade') ?></th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('rm_code') ?></th>
+              <th style="white-space: nowrap; width: 20%;"><?= $this->lang->line('action') ?></th>
             </tr>
           </thead>
           <tbody>
-           <?php
-          $i=1;foreach($rmcodes as $obj){ ?>
+            <?php $i = 1; foreach ($rmcodes as $obj): ?>
               <tr>
-                <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
-                <td><?php echo $i;?></td>
-                <td><?php echo $obj['grid_number']; ?></td>
-                <td><?php echo $obj['supplier']; ?></td>
-                <td><?php echo $obj['rm_name']; ?></td>
-                <td><?php echo $obj['grade']; ?></td>
-                <td><?php echo $obj['rm_code']; ?></td>
-                <td >
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Rm_code/edit/<?php echo $obj['id'];?>"><i class="fa fa-edit"></i></a>
-                  
-                  <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
+                <td><input type="checkbox" class="sub_chk" value="<?= $obj['id']; ?>" /></td>
+                <td><?= $i++; ?></td>
+                <td><?= $obj['grid_number']; ?></td>
+                <td><?= $obj['supplier']; ?></td>
+                <td><?= $obj['rm_name']; ?></td>
+                <td><?= $obj['grade']; ?></td>
+                <td><?= $obj['rm_code']; ?></td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <!-- Edit -->
+                    <a href="<?= base_url('index.php/Rm_code/edit/' . $obj['id']); ?>"
+                       class="btn btn-icon avatar-text avatar-md" data-bs-toggle="tooltip" title="Edit">
+                      <i class="feather feather-edit-3"></i>
+                    </a>
+
+                    <!-- Delete -->
+                   <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deleteRM<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                            <i class="feather feather-trash me-1"></i>
+                                        </a>
+
+                  </div>
                 </td>
-                    <div class="modal fade" id="delete<?php echo $obj['id'];?>" role="dialog">
-                      <div class="modal-dialog">
-                        <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Rm_code/deleteRM/<?php echo $obj['id'];?>">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
-                          </div>
-                          <div class="modal-body">
-                            <p>Are you sure, you want to delete this Grid Number <b><?php echo $obj['grid_number'];?> </b>? </p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
-                          </div>
-                        </div>
-                        </form>
-                      </div>
-                    </div>
-                    
+                <?php $this->load->view('leave-module/component/deleteRM.php', ['obj' => $obj]); ?>
               </tr>
-            <?php  $i++;} ?>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
-<script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
-<script type="text/javascript">
-  $( document ).ready(function() {
-     
-    jQuery('#master').on('click', function(e) {
-    if($(this).is(':checked',true))  
-    {
-      $(".sub_chk").prop('checked', true);  
-    }  
-    else  
-    {  
-      $(".sub_chk").prop('checked',false);  
-    }  
-  });
-    jQuery('.delete_all').on('click', function(e) { 
-    var allVals = [];  
-    $(".sub_chk:checked").each(function() {  
-      allVals.push($(this).val());
-    });  
-    //alert(allVals.length); return false;  
-    if(allVals.length <=0)  
-    {  
-      alert("Please select row.");  
-    }  
-    else {  
-      WRN_PROFILE_DELETE = "Are you sure you want to delete all selected records?";  
-      var check = confirm(WRN_PROFILE_DELETE);  
-      if(check == true){  
-        var join_selected_values = allVals.join(","); 
-        $.ajax({   
-          type: "POST",  
-          url: "<?php echo base_url(); ?>index.php/Rm_code/deleteRM",  
-          cache:false,  
-          data: 'ids='+join_selected_values,  
-          success: function(response)  
-          {   
+
+<!-- JavaScript -->
+<script src="<?= base_url("assets/plugins/jquery/jquery.min.js"); ?>"></script>
+
+<script>
+  
+
+  // Master Checkbox & Bulk Delete
+  $(document).ready(function () {
+    // Master checkbox
+    $('#master').on('click', function () {
+      $(".sub_chk").prop('checked', this.checked);
+    });
+
+    // Bulk delete selected rows
+    $('.delete_all').on('click', function () {
+      var allVals = $(".sub_chk:checked").map(function () {
+        return $(this).val();
+      }).get();
+
+      if (allVals.length <= 0) {
+        alert("Please select at least one row.");
+        return;
+      }
+
+      if (confirm("Are you sure you want to delete selected records?")) {
+        $.ajax({
+          type: "POST",
+          url: "<?= base_url('index.php/Rm_code/deleteRM'); ?>",
+          data: { ids: allVals.join(",") },
+          success: function (response) {
             $(".successs_mesg").html(response);
             location.reload();
-          }   
+          },
+          error: function () {
+            alert("Error deleting records. Please try again.");
+          }
         });
-           
-      }  
-    }  
-  });
-
+      }
+    });
   });
 </script>

@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Computer_peripherals extends CI_Controller {
+Class Computer_peripherals extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -110,7 +110,7 @@ $this->load->model('categories_model');
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
 			$data['units'] = $this->categories_model->getUnits();
-			$this->template->load('template','computer_peripherals_view',$data);
+			$this->template->load('layout/template','computer_peripherals_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

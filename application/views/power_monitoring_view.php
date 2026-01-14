@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i><?= $this->lang->line('success') ?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?= $this->lang->line('alert') ?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -40,14 +40,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <thead>
             <tr>
               <th><input type="checkbox" id="master"></th>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;"> PMR No </th>
-              <th style="white-space: nowrap;"> Transaction Date  </th>
-              <th style="white-space: nowrap;"> Total Units</th>
-              <th style="white-space: nowrap;"> Main Meter Units</th>
-              <th style="white-space: nowrap;"> Unit Variance</th>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;"><?= $this->lang->line('pmr_no') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('transaction_date') ?>  </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('total_units') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('main_meter_units') ?></th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('unit_variance') ?></th>
              <!--  <th style="white-space: nowrap;"> Production By </th> -->
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+              <th style="white-space: nowrap;width: 20%;"> <?= $this->lang->line('action_button') ?></th>
             </tr>
           </thead>
           <tbody>
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title"> Power Monitoring Register (<?php echo $inv_number1 ?>) Details </h4>
+                             <h4 class="modal-title"> <?= $this->lang->line('power_monitoring_register') ?> (<?php echo $inv_number1 ?>) Details </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -104,23 +104,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                               <?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?>
                                             </div>
                                              <div class="col-md-4">
-                                              <label> Opening Reading</label>  : 
+                                              <label> <?= $this->lang->line('opening_reading') ?></label>  : 
                                               <?= $po_detail['opening_reading'] ?>
                                             </div>
                                             <div class="col-md-4">
-                                              <label> Closing Reading</label>  : 
+                                              <label> <?= $this->lang->line('closing_reading') ?></label>  : 
                                               <?= $po_detail['closing_reading'] ?>
                                             </div>
                                             <div class="col-md-4">
-                                              <label> Total Units </label>  : 
+                                              <label> <?= $this->lang->line('total_units') ?> </label>  : 
                                               <?= $po_detail['unit_consumed'] ?>
                                             </div>
                                             <div class="col-md-4">
-                                              <label> Production </label>  : 
-                                              <?= $po_detail['production_in_mt'] ?> Ton
+                                              <label> <?= $this->lang->line('production') ?> </label>  : 
+                                              <?= $po_detail['production_in_mt'] ?> 
                                             </div>
                                             <div class="col-md-4">
-                                              <label> Unit Per Ton</label>  : 
+                                              <label> <?= $this->lang->line('unit_per_ton') ?></label>  : 
                                               <?= $po_detail['unit_per_ton'] ?>
                                             </div>
                                           </div>
@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               </div>
                               <div class="row col-md-12" >
                                  <div class="col-md-4">
-                                    <label class="control-label"> RSEB Meter Opening </label>:
+                                    <label class="control-label"> <?= $this->lang->line('rseb_meter_opening') ?> </label>:
                                     <span > 
                                       <?php 
                                           echo $obj['rseb_opening']; 
@@ -137,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </span>
                                  </div>
                                    <div class="col-md-4">
-                                    <label class="control-label"> RSEB Meter Closing </label>:
+                                    <label class="control-label"> <?= $this->lang->line('rseb_meter_closing') ?> </label>:
                                     <span > 
                                       <?php 
                                           echo $obj['rseb_closing']; 
@@ -145,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </span>
                                  </div>
                                  <div class="col-md-4">
-                                <label class="control-label"> RSEB Meter Units </label>:
+                                <label class="control-label"> <?= $this->lang->line('rseb_meter_units') ?> </label>:
                                   <span > 
                                       <?php 
                                           echo $obj['rseb_meter_units']; 
@@ -155,7 +155,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                               <div class="row col-md-12" >
                                 <div class="col-md-4">
-                                  <label class="control-label"> Total Consumed Units </label>:
+                                  <label class="control-label"> <?= $this->lang->line('total_consumed_units') ?> </label>:
                                     <span > 
                                         <?php 
                                             echo $obj['unit_consumed']; 
@@ -163,7 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </span>
                                 </div>
                                <div class="col-md-4">
-                                <label class="control-label"> Unit Variation </label>:
+                                <label class="control-label"> <?= $this->lang->line('unit_variation') ?> </label>:
                                   <span > 
                                       <?php 
                                       if($obj['unit_consumed']<$obj['rseb_meter_units']){
@@ -176,7 +176,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   </span>
                               </div>
                                <div class="col-md-4">
-                                <label class="control-label"> Total Production (MT) </label>:
+                                <label class="control-label"> T<?= $this->lang->line('total_production') ?> (MT) </label>:
                                   <span > 
                                       <?php 
                                           echo $obj['total_production_in_mt']; 
@@ -184,7 +184,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   </span>
                               </div>
                                <div class="col-md-8">
-                                <label class="control-label"> Remarks : </label>
+                                <label class="control-label"> <?= $this->lang->line('remarks') ?> : </label>
                                   <span > 
                                       <?php 
                                           echo $obj['remarks']; 
@@ -195,7 +195,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div> 
                            
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                           </div>
                         </div>
                       </div>
@@ -206,7 +206,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
+                             <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                            
                           </div>
@@ -214,8 +214,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p>Are you sure, you want to delete Production Register <b><?php echo $inv_number1?> </b>? </p>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
+                            <button type="submit" class="btn btn-primary delete_submit"> <?= $this->lang->line('yes') ?> </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('no') ?></button>
                           </div>
                         </div>
                         </form>

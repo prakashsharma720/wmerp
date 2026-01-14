@@ -28,21 +28,21 @@
     </head>
     <body >   
    
-        <h1 face="trebuchet ms, sans-serif">Dear, Management</h1>
+        <h1 face="trebuchet ms, sans-serif"><?= $this->lang->line('dear_management') ?></h1>
         <!-- <p face="trebuchet ms, sans-serif"><b>Subject:</b> <?= $subject ?></p> -->
         
        
-        <p face="trebuchet ms, sans-serif">Here is the details of today leads.</p>
+        <p face="trebuchet ms, sans-serif"><?= $this->lang->line('today_lead_details') ?></p>
         <br>
       
         <table  class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Employee</th>
-                    <th>Total Leads</th>
-                    <th>Actual Leads</th>
-                    <th>Duplicate Leads</th>
-                    <th>Target Short</th>
+                    <th><?= $this->lang->line('dear_management'); ?></th>
+<th><?= $this->lang->line('total_leads'); ?></th>
+<th><?= $this->lang->line('actual_leads'); ?></th>
+<th><?= $this->lang->line('duplicate_leads'); ?></th>
+<th><?= $this->lang->line('target_short'); ?></th>
                  
                 </tr>
             </thead>

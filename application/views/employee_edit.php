@@ -98,7 +98,7 @@ img.profile-user-img.img-fluid.img-circle {
 <div class="container-fluid">
     <div class="">
         <div class="card-header">
-            <h3 class="card-title"><?= $title ?></h3>
+            <h3 class="card-title"><?= $this->lang->line('edit_employee') ?></h3>
 
             <div class="pull-right ">
 
@@ -131,17 +131,17 @@ img.profile-user-img.img-fluid.img-circle {
                         <ul class="list-group list-group-unbordered mb-3">
                         <div class="top-progress-bar">
                             <div class="top-progress-fill">
-                                <span class="progress-text">Profile Complete: 50%</span>
+                                <span class="progress-text"><?= $this->lang->line('profile_complete') ?> : 50%</span>
                             </div>
                         </div>
                             <li class="list-group-item">
-                                <b>Email</b> <a class="float-right"><?= $email?></a>
+                                <b><?= $this->lang->line('email') ?></b> <a class="float-right"><?= $email?></a>
                             </li>
                             <li class="list-group-item">
-                                <b>Mobile No.</b> <a class="float-right"><?= $mobile_no?></a>
+                                <b><?= $this->lang->line('mobile_no') ?></b> <a class="float-right"><?= $mobile_no?></a>
                             </li>
                             <li class="list-group-item">
-                                <b>Date Of Birth</b> <a class="float-right"><?= $dob?></a>
+                                <b><?= $this->lang->line('date_of_birth') ?></b> <a class="float-right"><?= $dob?></a>
                             </li>
                         </ul>
 
@@ -154,19 +154,19 @@ img.profile-user-img.img-fluid.img-circle {
                 <!-- About Me Box -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">About Me</h3>
+                        <h3 class="card-title"><?= $this->lang->line('about_me') ?></h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
 
 
-                        <strong><i class="fa fa-map-marker mr-1"></i> Location</strong>
+                        <strong><i class="fa fa-map-marker mr-1"></i> <?= $this->lang->line('location') ?></strong>
 
                         <p class="text-muted"><?= $address?></p>
 
                         <hr>
 
-                        <strong><i class="fa fa-file-text-o mr-1"></i> Emergency No.</strong>
+                        <strong><i class="fa fa-file-text-o mr-1"></i><?= $this->lang->line('emergency_no') ?></strong>
 
                         <p class="text-muted"><?= $emobile_no?> (<?= $ename?>)</p>
                     </div>
@@ -185,16 +185,12 @@ img.profile-user-img.img-fluid.img-circle {
                         
                         <div class="card-header p-2">
                             <ul class="nav nav-pills" style="margin-bottom: -8px;">
-                                <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab" style="border-radius: 0px;color:#424747;">Personal
-                                        Details</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab" style="border-radius: 0px;color:#424747;">Bank
-                                        Details</a>
+                                <li class="nav-item"><a class="nav-link active show" href="#activity" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('personal_details') ?></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('bank_details') ?></a>
                                 </li>
-                                <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab" style="border-radius: 0px;color:#424747;">Salary
-                                        Details</a>
+                                <li class="nav-item"><a class="nav-link " href="#salary" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('salary_details') ?></a>
                                 </li>
-                                <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab" style="border-radius: 0px;color:#424747;">Other
-                                        Details</a>
+                                <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab" style="border-radius: 0px;color:#424747;"><?= $this->lang->line('other_details') ?></a>
                                 </li>
                             </ul>
                         </div><!-- /.card-header -->
@@ -205,20 +201,20 @@ img.profile-user-img.img-fluid.img-circle {
                                     <div class="form-group">
                                         <div class="row col-md-12">
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Name <span
+                                                <label class="control-label"> <?= $this->lang->line('name') ?> <span
                                                         class="required">*</span></label>
-                                                <input type="text" placeholder="Enter employees name" name="name"
+                                                <input type="text" placeholder="<?= $this->lang->line('enter_employee_name') ?>" name="name"
                                                     class="form-control" required autofocus value="<?= $name?>">
                                             </div>
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Email <span
+                                                <label class="control-label"> <?= $this->lang->line('email') ?> <span
                                                         class="required">*</span></label>
-                                                <input type="text" placeholder="Enter email" name="email"
+                                                <input type="text" placeholder="<?= $this->lang->line('enter_email') ?>" name="email"
                                                     class="form-control email" value="<?= $email?>" required autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Role <span
+                                                <label class="control-label"> <?= $this->lang->line('role') ?> <span
                                                         class="required">*</span></label>
                                                 <?php  
 						            		echo form_dropdown('role_id', $roles,$role_id)
@@ -230,49 +226,49 @@ img.profile-user-img.img-fluid.img-circle {
                                         <div class="row col-md-12">
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Mobile No <span
+                                                <label class="control-label"> <?= $this->lang->line('mobile_no') ?> <span
                                                         class="required">*</span></label>
-                                                <input type="text" placeholder="Enter mobile" name="mobile_no"
+                                                <input type="text" placeholder="<?= $this->lang->line('enter_mobile_no') ?>" name="mobile_no"
                                                     class="form-control mobile" minlenght="10" maxlength="10"
                                                     oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
                                                     value="<?= $mobile_no?>" required autofocus>
                                             </div>
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Department <span
+                                                <label class="control-label"> <?= $this->lang->line('department') ?> <span
                                                         class="required">*</span></label>
                                                 <?php  
 						            		echo form_dropdown('department_id', $departments, $department_id)
 						            	?>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Designation <span
+                                                <label class="control-label"> <?= $this->lang->line('designation') ?> <span
                                                         class="required">*</span></label>
                                                 <?php  
 						            		echo form_dropdown('designation_id', $designations, $designation_id)
 						            	?>
                                             </div>
                                             <div class="col-md-4 col-sm-4">
-                                                <label class="control-label"> Date of joining </label>
+                                                <label class="control-label"> <?= $this->lang->line('date_of_joining') ?> </label>
                                                 <input type="text" data-date-formate="dd-mm-yyyy" name="doj"
                                                     class="form-control date-picker"
-                                                    value="<?php echo $date_of_joining?>" placeholder="dd-mm-yyyy"
+                                                    value="<?php echo $date_of_joining?>" placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>"
                                                     autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4">
-                                                <label class="control-label"> Date of Birth </label>
+                                                <label class="control-label"> <?= $this->lang->line('date_of_birth') ?> </label>
                                                 <input type="text" data-date-formate="dd-mm-yyyy" name="dob"
                                                     class="form-control date-picker" value="<?php echo $dob?>"
-                                                    placeholder="dd-mm-yyyy" autofocus>
+                                                    placeholder="<?= $this->lang->line('dd_mm_yyyy') ?>" autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Username <span class="required">*</span>
+                                                <label class="control-label"> <?= $this->lang->line('username') ?> <span class="required">*</span>
                                                 </label>
-                                                <input type="text" placeholder="Enter Username" name="username"
+                                                <input type="text" placeholder="<?= $this->lang->line('username') ?>" name="username"
                                                     class="form-control" value="<?= $username?>" required autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Select Authority Person <span
+                                                <label class="control-label">Select <?= $this->lang->line('authority_person') ?> <span
                                                         class="required">*</span></label>
                                                 <?php  
 						            		        echo form_dropdown('author_id', $employees, $author_id)
@@ -281,35 +277,35 @@ img.profile-user-img.img-fluid.img-circle {
 
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Aadhaar No <span
+                                                <label class="control-label"> <?= $this->lang->line('aadhaar_no') ?> <span
                                                         class="required">*</span></label>
-                                                <input type="text" placeholder="Enter Aadhaar No" name="aadhaar_no"
+                                                <input type="text" placeholder="<?= $this->lang->line('enter_aadhaar_no') ?>" name="aadhaar_no"
                                                     class="form-control aadhaar_no" minlenght="12" maxlength="12"
                                                     oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
                                                     value="<?= $aadhaar_no?>" autofocus required>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <b> PAN </b> <span>(Parmanent Account No.) </span>
-                                                <input type="text" placeholder="Ex. ABCEDE2548K" name="pan_no"
+                                                <b> <?= $this->lang->line('pan_no') ?> </b> 
+                                                <input type="text" placeholder="<?= $this->lang->line('pan_no') ?>" name="pan_no"
                                                     class="form-control pan_no" value="<?= $pan_no?>" autofocus
                                                     maxlength="10" minlength="10" style="text-transform: uppercase;">
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Daily Target <span class="required">
+                                                <label class="control-label"> <?= $this->lang->line('daily_target') ?> <span class="required">
                                                         *</span></label>
                                                 <input class="form-control"
-                                                    placeholder="Enter 0 if not applicable" name="target" value="<?= $target ?>"
+                                                    placeholder="<?= $this->lang->line('enter_zero_if_not_applicable') ?>" name="target" value="<?= $target ?>"
                                                     required />
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Address <span class="required">
+                                                <label class="control-label"> <?= $this->lang->line('address') ?> <span class="required">
                                                         *</span></label>
                                                 <textarea class="form-control address" rows="3"
-                                                    placeholder="Enter Address" name="address" value="<?= $address ?>"
+                                                    placeholder="<?= $this->lang->line('enter_address') ?> " name="address" value="<?= $address ?>"
                                                     requireds><?= $address ?></textarea>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Upload Photo </label>
+                                                <label class="control-label"> <?= $this->lang->line('upload_photo') ?> </label>
                                                 <input type="file" name="photo" class="form-control upload" autofocus>
 
                                                 <?php if(!empty($photo)) { ?>
@@ -330,25 +326,25 @@ img.profile-user-img.img-fluid.img-circle {
                                         <div class="row col-md-12">
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Account Holder Name<span
+                                                <label class="control-label"><?= $this->lang->line('account_holder_name') ?><span
                                                         class="required">*</span></label>
                                                 <input type="text" name="account_holder_name" class="form-control "
                                                     value="<?= $account_holder_name; ?>"
-                                                    placeholder="Account Holder Name" autofocus>
+                                                    placeholder="<?= $this->lang->line('account_holder_name') ?> " autofocus>
 
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Bank Name<span
+                                                <label class="control-label"><?= $this->lang->line('bank_name') ?><span
                                                         class="required">*</span></label>
                                                 <input type="text" name="bank_name" class="form-control "
-                                                    value="<?= $bank_name; ?>" placeholder="Bank Name" autofocus>
+                                                    value="<?= $bank_name; ?>" placeholder="<?= $this->lang->line('bank_name') ?> " autofocus>
 
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Account Number<span
+                                                <label class="control-label"><?= $this->lang->line('account_number') ?><span
                                                         class="required">*</span></label>
                                                 <input type="text" name="account_number" class="form-control "
-                                                    value="<?= $account_number; ?>" placeholder="Account Number"
+                                                    value="<?= $account_number; ?>" placeholder="<?= $this->lang->line('account_number') ?> "
                                                     autofocus>
 
                                             </div>
@@ -358,21 +354,21 @@ img.profile-user-img.img-fluid.img-circle {
                                         <div class="row col-md-12">
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">IFSC Code<span
+                                                <label class="control-label"><?= $this->lang->line('ifsc') ?><span
                                                         class="required">*</span></label>
                                                 <input type="text" name="ifsc_code" class="form-control "
-                                                    value="<?= $ifsc_code; ?>" placeholder="IFSC Code" autofocus>
+                                                    value="<?= $ifsc_code; ?>" placeholder="<?= $this->lang->line('ifsc') ?>" autofocus>
 
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Branch Name<span
+                                                <label class="control-label"><?= $this->lang->line('branch_name') ?><span
                                                         class="required">*</span></label>
                                                 <input type="text" name="branch_name" class="form-control"
-                                                    value="<?= $branch_name; ?>" placeholder="Branch Name" autofocus>
+                                                    value="<?= $branch_name; ?>" placeholder="<?= $this->lang->line('branch_name') ?>" autofocus>
 
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Account Type<span
+                                                <label class="control-label"><?= $this->lang->line('account_type') ?><span
                                                         class="required">*</span></label>
                                                 <select name="account_type" class="form-control">
                                                     <option value="">Select Type</option>
@@ -392,9 +388,9 @@ img.profile-user-img.img-fluid.img-circle {
                                         <div class="row col-md-12">
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">UPI ID</label>
+                                                <label class="control-label"><?= $this->lang->line('upi_id') ?></label>
                                                 <input type="text" name="upi_id" class="form-control "
-                                                    value="<?= $upi_id?>" placeholder="UPI ID" autofocus>
+                                                    value="<?= $upi_id?>" placeholder="<?= $this->lang->line('upi_id') ?>" autofocus>
 
                                             </div>
 
@@ -409,16 +405,16 @@ img.profile-user-img.img-fluid.img-circle {
                                    <div class="form-group">
                                         <div class="row col-md-12">
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Basic Salary<span class="required">*</span></label>
-                                                <input type="text" id="basic_salary" name="salary" class="form-control" value="<?= $salary ?>" placeholder="Basic Salary" oninput="calculateTotal()" autofocus>
+                                                <label class="control-label"><?= $this->lang->line('basic_salary') ?><span class="required">*</span></label>
+                                                <input type="text" id="basic_salary" name="salary" class="form-control" value="<?= $salary ?>" placeholder="<?= $this->lang->line('basic_salary') ?>" oninput="calculateTotal()" autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">HRA</label>
-                                                <input type="text" id="hra" name="hra" class="form-control" value="<?= $hra ?>" placeholder="HRA" oninput="calculateTotal()">
+                                                <label class="control-label"><?= $this->lang->line('hra') ?></label>
+                                                <input type="text" id="hra" name="hra" class="form-control" value="<?= $hra ?>" placeholder="<?= $this->lang->line('hra') ?>" oninput="calculateTotal()">
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Conveyance Allowance</label>
-                                                <input type="text" id="c_allowance" name="c_allowance" class="form-control" value="<?= $c_allowance ?>" placeholder="Conveyance Allowance" oninput="calculateTotal()">
+                                                <label class="control-label"><?= $this->lang->line('conveyance_allowance') ?></label>
+                                                <input type="text" id="c_allowance" name="c_allowance" class="form-control" value="<?= $c_allowance ?>" placeholder="<?= $this->lang->line('conveyance_allowance') ?>" oninput="calculateTotal()">
                                             </div>
                                         </div>
                                     </div>
@@ -426,16 +422,16 @@ img.profile-user-img.img-fluid.img-circle {
                                     <div class="form-group">
                                         <div class="row col-md-12">
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Medical Allowance</label>
-                                                <input type="text" id="m_allowance" name="m_allowance" class="form-control" value="<?= $m_allowance ?>" placeholder="Medical Allowance" oninput="calculateTotal()">
+                                                <label class="control-label"><?= $this->lang->line('medical_allowance') ?></label>
+                                                <input type="text" id="m_allowance" name="m_allowance" class="form-control" value="<?= $m_allowance ?>" placeholder="<?= $this->lang->line('medical_allowance') ?>" oninput="calculateTotal()">
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Other Allowance</label>
-                                                <input type="text" id="o_allowance" name="o_allowance" class="form-control" value="<?= $o_allowance ?>" placeholder="Other Allowance" oninput="calculateTotal()">
+                                                <label class="control-label"><?= $this->lang->line('other_allowance') ?></label>
+                                                <input type="text" id="o_allowance" name="o_allowance" class="form-control" value="<?= $o_allowance ?>" placeholder="<?= $this->lang->line('other_allowance') ?>" oninput="calculateTotal()">
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Total Net Salary</label>
-                                                <input type="text" id="total_net_salary" name="total_net_salary" class="form-control" value="<?= $total_net_salary ?>" placeholder="Total Net Salary" readonly>
+                                                <label class="control-label"><?= $this->lang->line('total_net_salary') ?></label>
+                                                <input type="text" id="total_net_salary" name="total_net_salary" class="form-control" value="<?= $total_net_salary ?>" placeholder="<?= $this->lang->line('total_net_salary') ?>" readonly>
                                             </div>
                                         </div>
                                     </div>
@@ -445,23 +441,23 @@ img.profile-user-img.img-fluid.img-circle {
                                     <div class="form-group">
                                         <div class="row col-md-12">
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label">Emergency Mobile No <span
+                                                <label class="control-label"><?= $this->lang->line('emergency_mobile_no') ?> <span
                                                         class="required">*</span></label>
-                                                <input type="text" placeholder="Enter Emergency mobile"
+                                                <input type="text" placeholder="<?= $this->lang->line('emergency_mobile_no') ?>"
                                                     name="emobile_no" class="form-control mobile" minlenght="10"
                                                     maxlength="10"
                                                     oninput="this.value = this.value.replace(/[^0-9]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
                                                     value="<?= $emobile_no?>" required autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> Emergency Name <span
+                                                <label class="control-label"> <?= $this->lang->line('emergency_name') ?> <span
                                                         class="required">*</span></label>
-                                                <input type="text" placeholder="Enter Emergency name" name="ename"
+                                                <input type="text" placeholder="<?= $this->lang->line('emergency_name') ?>" name="ename"
                                                     class="form-control" value="<?= $ename?>" required autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> UAN No. </label>
-                                                <input type="text" placeholder="Enter UAN Number" name="uan"
+                                                <label class="control-label"> <?= $this->lang->line('uan_no') ?> </label>
+                                                <input type="text" placeholder="<?= $this->lang->line('uan_no') ?> " name="uan"
                                                     class="form-control" value="<?= $uan?>" autofocus>
                                             </div>
                                         </div>
@@ -470,13 +466,13 @@ img.profile-user-img.img-fluid.img-circle {
                                         <div class="row col-md-12">
 
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> PF No. </label>
-                                                <input type="text" placeholder="Enter PF Number" name="pf"
+                                                <label class="control-label"> <?= $this->lang->line('pf_no') ?> </label>
+                                                <input type="text" placeholder="<?= $this->lang->line('pf_no') ?>" name="pf"
                                                     class="form-control" value="<?= $pf?>" autofocus>
                                             </div>
                                             <div class="col-md-4 col-sm-4 ">
-                                                <label class="control-label"> ESI No.</label>
-                                                <input type="text" placeholder="Enter ESI Number" name="esi"
+                                                <label class="control-label"> <?= $this->lang->line('esi_no') ?></label>
+                                                <input type="text" placeholder=" <?= $this->lang->line('esi_no') ?>" name="esi"
                                                     class="form-control" value="<?= $esi?>" autofocus>
                                             </div>
                                         </div>
@@ -487,7 +483,7 @@ img.profile-user-img.img-fluid.img-circle {
                                 <div class="row col-md-12">
                                     <div class="col-md-12 col-sm-12 ">
                                         <label class="control-label" style="visibility: hidden;"> Name</label><br>
-                                        <button type="submit" class="btn btn-primary btn-block">Update</button>
+                                        <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('update') ?></button>
                                     </div>
                                 </div>
                             </div>

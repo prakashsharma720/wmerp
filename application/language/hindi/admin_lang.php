@@ -1,4 +1,9 @@
-<?php 
+<?php
+
+$lang['ticket_id'] = 'टिकट आईडी ';
+$lang['add_reply'] = 'उत्तर जोड़ें';
+$lang['home'] ='मुख्य';
+$lang['submit_answer'] ='उत्तर प्रस्तुत करें';
 
 $lang['dashboard'] = 'डैशबोर्ड';
 $lang['elevate'] = 'स्मार्ट समाधानों के साथ अपने व्यवसाय को ऊँचाई दें।';
@@ -15,12 +20,38 @@ $lang['login'] = 'लॉगिन';
 $lang['remember_me'] = 'मुझे याद रखें';
 $lang['loginwithfacebook'] = 'Facebook के साथ लॉगिन करें';
 $lang['loginwithgmail'] = 'Gmail के साथ लॉगिन करें';
+$lang['discount'] = 'छूट';
+$lang['add_new_finished_good'] = 'नया तैयार माल जोड़ें';
+$lang['tentative_date_of_return'] = 'अनुमानित वापसी की तिथि';
+$lang['select_customer'] = 'ग्राहक चुनें';
+$lang['suppliers_detail'] = 'आपूर्तिकर्ताओं का विवरण';
+$lang['rupees'] = 'रुपये';
+$lang['supplier_profile_details'] = 'आपूर्तिकर्ता प्रोफ़ाइल विवरण';
+$lang['approval_timeline'] = 'स्वीकृति समयरेखा';
 
+$lang['percentage'] = 'प्रतिशत';
+$lang['enter_discount'] = 'छूट दर्ज करें';
+$lang['after_discount'] = 'छूट के बाद';
+$lang['gst'] = 'जीएसटी';
+$lang['enter_tax_percent'] = 'कर प्रतिशत दर्ज करें';
+$lang['enter_tax'] = 'कर दर्ज करें';
+$lang['amount_with_tax'] = 'कर सहित राशि';
+$lang['grand_total'] = 'कुल योग';
+$lang['vendor_reference'] = 'विक्रेता संदर्भ';
+$lang['enter_reference'] = 'संदर्भ दर्ज करें';
+$lang['delivery_period'] = 'डिलीवरी अवधि';
+$lang['enter_delivery_schedule'] = 'डिलीवरी शेड्यूल दर्ज करें';
+$lang['payment_terms'] = 'भुगतान की शर्तें';
+$lang['example_cash_cheque'] = 'उदाहरण: नकद, चेक';
+$lang['freight_status'] = 'माल ढुलाई की स्थिति';
+$lang['paid'] = 'चुकाया गया';
+$lang['to_pay'] = 'भुगतान शेष';
+$lang['create_new_material_code'] = 'नया कच्चा माल कोड बनाएं';
 $lang['users'] = 'उपयोगकर्ता';
 $lang['logout'] = 'लॉगआउट';
 $lang['account'] = 'खाता';
 // account setting
-
+$lang['create_new_material_code'] = 'नई मटेरियल कोड बनाएं'; 
 $lang['account_setting'] = 'खाता सेटिंग';
 $lang['my_account'] = 'मेरा खाता';
 $lang['change_password'] = 'पासवर्ड बदलें';
@@ -30,11 +61,13 @@ $lang['sign_out'] = 'साइन आउट करें';
 // my account click
 
 //  Header Section
-$lang['total_assign'] = 'कुल असाइनमेंट: 0';
-$lang['followups'] = 'फॉलोअप्स: 0';
-$lang['pending'] = 'लंबित कार्य: 0';
-$lang['approve'] = 'स्वीकृत: 0';
-$lang['rejected'] = 'अस्वीकृत: 0';
+$lang['total_assign'] = 'कुल असाइनमेंट';
+$lang['followups'] = 'फॉलोअप्स';
+$lang['pending'] = 'लंबित कार्य';
+$lang['approve'] = 'स्वीकृत';
+$lang['rejected'] = 'अस्वीकृत';
+$lang['hold'] = 'पकड़';
+
 
 // Left Panel (Profile Section)
 $lang['edit_employee'] = 'कर्मचारी संपादित करें';
@@ -46,6 +79,7 @@ $lang['about_me'] = 'मेरे बारे में';
 $lang['location'] = 'स्थान';
 $lang['emergency_no'] = 'आपातकालीन नंबर';
 // Tabs
+$lang['employee_detail'] = 'कर्मचारी विवरण';
 $lang['personal_details'] = 'व्यक्तिगत विवरण';
 $lang['bank_details'] = 'बैंक विवरण';
 $lang['salary_details'] = 'वेतन विवरण';
@@ -70,6 +104,31 @@ $lang['upload_photo'] = 'फ़ोटो अपलोड करें';
 $lang['choose_file'] = 'फ़ाइल चुनें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल नहीं चुनी गई';
 $lang['your_image'] = 'आपकी छवि';
+$lang['update'] = 'अपडेट करें';
+
+
+$lang['account_holder_name'] = 'खाता धारक का नाम';
+$lang['bank_name'] = 'बैंक का नाम';
+$lang['account_number'] = 'खाता संख्या';
+$lang['ifsc_code'] = 'आईएफएससी कोड';
+$lang['branch_name'] = 'शाखा का नाम';
+$lang['account_type'] = 'खाते का प्रकार';
+$lang['upi_id'] = 'यूपीआई आईडी';
+
+
+$lang['basic_salary'] = 'मूल वेतन';
+$lang['hra'] = 'एचआरए (मकान किराया भत्ता)';
+$lang['conveyance_allowance'] = 'यातायात भत्ता';
+$lang['medical_allowance'] = 'चिकित्सा भत्ता';
+$lang['other_allowance'] = 'अन्य भत्ता';
+$lang['total_net_salary'] = 'कुल शुद्ध वेतन';
+
+$lang['emergency_mobile_no'] = 'आपातकालीन मोबाइल नंबर';
+$lang['emergency_name'] = 'आपातकालीन संपर्क नाम';
+$lang['uan_no'] = 'यूएएन नंबर';
+$lang['pf_no'] = 'पीएफ नंबर';
+$lang['esi_no'] = 'ईएसआई नंबर';
+
 
 // change password click
 $lang['change_password'] = 'पासवर्ड बदलें';
@@ -77,6 +136,9 @@ $lang['select_employee'] = 'कर्मचारी चुनें';
 $lang['enter_new_password'] = 'नया पासवर्ड दर्ज करें';
 $lang['confirm_password'] = 'पासवर्ड की पुष्टि करें';
 $lang['submit'] = 'सबमिट करें';
+$lang['confirm'] = 'पुष्टि करें';
+
+
 
 // List for Sidebar  half hai niche puri hai
 $lang['master_dashboard'] = 'मास्टर डैशबोर्ड';
@@ -1055,6 +1117,8 @@ $lang['select_type'] = 'प्रकार चुनें';
 $lang['all'] = 'सभी';
 $lang['from_date'] = 'प्रारंभ दिनांक';
 $lang['upto_date'] = 'समाप्ति दिनांक';
+$lang['apply_date'] = 'आवेदन की तिथि';
+$lang['leave_details'] = 'छुट्टी विवरण';
 
 // invoices report
 $lang['invoice_slip_report'] = 'चालान पर्ची रिपोर्ट';
@@ -1067,6 +1131,13 @@ $lang['invoice_no'] = 'चालान संख्या';
 $lang['invoice_date'] = 'चालान तिथि';
 $lang['vendor_code'] = 'विक्रेता कोड';
 $lang['grand_total'] = 'कुल राशि';
+$lang['destination'] = 'गंतव्य स्थान';
+$lang['enter_destination_here'] = 'गंतव्य स्थान दर्ज करें';
+$lang['buyer_item_code'] = 'क्रेता आइटम कोड';
+$lang['enter_buyer_item_code'] = 'क्रेता आइटम कोड दर्ज करें';
+$lang['vender_service_tax_no'] = 'विक्रेता सेवा कर नंबर';
+$lang['enter_invoice_no'] = 'चालान संख्या दर्ज करें';
+$lang['enter_po_no'] = 'पीओ नंबर दर्ज करें';
 
 // service provider report
 $lang['service_provider_category'] = 'सेवा प्रदाता श्रेणी';
@@ -1572,7 +1643,265 @@ $lang['customer_code'] = 'ग्राहक कोड';
 $lang['vender_service_tax_number'] = 'विक्रेता सेवा कर संख्या';
 $lang['buyer_item_code'] = 'खरीदार वस्तु कोड';
 $lang['destination'] = 'गंतव्य स्थान';
+$lang['enter_month'] = 'महीना दर्ज करें';
+$lang['enter_rate'] = 'दर दर्ज करें';
+$lang['laboratory_test_report_no'] = 'प्रयोगशाला परीक्षण रिपोर्ट संख्या';
+$lang['enter_test_report_no'] = 'परीक्षण रिपोर्ट संख्या दर्ज करें';
+$lang['laboratory_test_details'] = 'प्रयोगशाला परीक्षण विवरण';
+$lang['transporter_details'] = 'परिवहनकर्ता विवरण';
+$lang['select_transporter_name'] = 'परिवहनकर्ता का नाम चुनें';
+$lang['transport_id'] = 'परिवहनकर्ता आईडी';
+$lang['enter_transporter_id'] = 'परिवहनकर्ता आईडी दर्ज करें';
+$lang['transdoc_no'] = 'ट्रांसडॉक नंबर';
+$lang['gr_no'] = 'जीआर नंबर';
+$lang['enter_gr_no'] = 'जीआर नंबर दर्ज करें';
+$lang['e_invoice_status'] = 'ई-चालान की स्थिति';
+$lang['pending_requisition_slips_for_purchase_order'] = 'क्रय आदेश के लिए लंबित अनुरोध पर्चियां';
+$lang['import_file'] = 'फ़ाइल आयात करें';
+$lang['service_provider_evaluation_results'] = 'सेवा प्रदाता मूल्यांकन परिणाम';
+$lang['pending_purchase_order_for_approval'] = 'मंजूरी के लिए लंबित क्रय आदेश';
+$lang['pending_requisition_slips_for_action'] = 'कार्रवाई हेतु लंबित अनुरोध पर्चियां';
+$lang['billing_address_1'] = 'बिलिंग पता 1';
+$lang['billing_address_2'] = 'बिलिंग पता 2';
+$lang['gstin_urp'] = 'जीएसटीआईएन/यूआरपी';
+$lang['enter_billing_address'] = 'बिलिंग पता दर्ज करें';
+$lang['unregistered_dealer'] = 'अपंजीकृत विक्रेता/व्यक्ति';
+$lang['pincode'] = 'पिनकोड';
+$lang['gst_registration_status'] = 'जीएसटी पंजीकरण स्थिति';
+$lang['enter_pan_number'] = 'पैन नंबर दर्ज करें';
+$lang['enter_destination_here'] = 'गंतव्य दर्ज करें';
+$lang['destination'] = 'गंतव्य';
+$lang['buyer_item_code'] = 'खरीदार आइटम कोड';
+$lang['enter_payment_terms'] = 'भुगतान की शर्तें दर्ज करें';
+$lang['payment_terms'] = 'भुगतान की शर्तें';
+$lang['address_2'] = 'पता 2';
+$lang['name_of_supplier'] = 'आपूर्तिकर्ता का नाम';
+$lang['active'] = 'सक्रिय';
+$lang['de_active'] = 'निष्क्रिय';
+$lang['update_finish_good'] = "फ़िनिश गुड अपडेट करें";
+$lang['finish_good_code'] = "फ़िनिश गुड कोड";
+$lang['grade_name'] = "ग्रेड नाम";
+$lang['mineral_name'] = "खनिज का नाम";
+$lang['hsn_code'] = "एचएसएन कोड";
+$lang['packing'] = "पैकेजिंग";
+$lang['packing_type'] = "पैकेजिंग प्रकार";
+$lang['opening_stock_qty_mt'] = "प्रारंभिक स्टॉक मात्रा (टन में)";
+$lang['opening_stock_qty'] = "प्रारंभिक स्टॉक मात्रा ";
+$lang['enter_opening_stock_qty'] = "प्रारंभिक स्टॉक मात्रा दर्ज करें";
+$lang['green_plant_chemicals_list'] = "ग्रीन प्लांट रसायनों की सूची";
+$lang['protective_equipments_list'] = "सुरक्षात्मक उपकरणों की सूची";
+$lang['legal_name'] = "कानूनी नाम";
+$lang['enter_legal_name'] = "कानूनी नाम दर्ज करें";
+$lang['date_of_next_evaluation'] = "अगले मूल्यांकन की तिथि";
+$lang['account_number'] = "खाता संख्या";
+$lang['enter_account_no'] = "खाता संख्या दर्ज करें";
+$lang['enter_pan'] = "पैन संख्या दर्ज करें";
+$lang['enter_tan'] = "टैन संख्या दर्ज करें";
+$lang['po_number'] = "खरीद आदेश संख्या";
+$lang['dated'] = "दिनांक";
+$lang['vendor_code'] = "विक्रेता कोड";
+$lang['contact_person'] = "संपर्क व्यक्ति";
+$lang['contact_no'] = "संपर्क नंबर";
+$lang['email_id'] = "ईमेल आईडी";
+$lang['reference'] = "संदर्भ";
+$lang['please_supply_items_note'] = "कृपया नीचे दी गई वस्तुएँ हमारे टेलीकॉम/पिछली आपूर्ति/आपके संदर्भ अनुसार शीघ्र आपूर्ति करें:";
+$lang['item_price'] = "वस्तु मूल्य";
+$lang['total_amount'] = "कुल राशि";
+$lang['less_discount'] = "छूट घटाएँ";
+$lang['gst'] = "जीएसटी";
+$lang['quotation_no'] = "कोटेशन संख्या";
+$lang['enter_quotation_no'] = "कोटेशन संख्या दर्ज करें";
+$lang['quotation_date'] = "कोटेशन दिनांक";
+$lang['product_name'] = "उत्पाद का नाम";
+$lang['material_received_throught'] = "सामग्री प्राप्त का स्रोत";
+$lang['enter_source'] = "स्रोत दर्ज करें";
+$lang['gir_register_category'] = "जीआईआर रजिस्टर श्रेणी";
+$lang['supplier_name'] = "आपूर्तिकर्ता का नाम";
+$lang['gir_no'] = "जीआईआर नंबर";
+$lang['date'] = "तारीख";
+$lang['challan_no'] = "चालान नंबर";
+$lang['weight_slip_no'] = "वजन पर्ची नंबर";
+$lang['actual_weight'] = "वास्तविक वजन";
+$lang['documented_weight'] = "दस्तावेजी वजन";
+$lang['weight'] = "वजन";
+$lang['truck_number'] = "ट्रक नंबर";
+$lang['payment'] = "भुगतान";
+$lang['material_received_throught'] = "सामग्री प्राप्त का माध्यम";
+$lang['sr_no'] = "क्रम संख्या";
+$lang['product_name'] = "उत्पाद का नाम";
+$lang['qty'] = "मात्रा";
+$lang['unit'] = "इकाई";
+$lang['description'] = "विवरण";
+$lang['create_issue_slip'] = "इश्यू स्लिप बनाएं";
+$lang['requisition_date'] = "अनुरोध तिथि";
+$lang['issue_date'] = "जारी करने की तिथि";
+$lang['issue_slip_no'] = "इश्यू स्लिप नंबर";
+$lang['issue_to_employee'] = "जारी करें (कर्मचारी नाम)";
+$lang['employee_department'] = "कर्मचारी विभाग";
+$lang['requisition_slip_no'] = "अनुरोध स्लिप नंबर";
+$lang['material_description'] = "सामग्री का विवरण";
+$lang['stock_available'] = "उपलब्ध स्टॉक";
+$lang['required_qty'] = "आवश्यक मात्रा";
+$lang['issue_qty'] = "जारी की गई मात्रा";
+$lang['pending_qty'] = "लंबित मात्रा";
+$lang['action'] = "क्रिया";
+$lang['total'] = "कुल";
+$lang['comment'] = "टिप्पणी";
+$lang['submit'] = "जमा करें";
+$lang['approval_details'] = "अनुमोदन विवरण";
+$lang['basic_details'] = "मूल विवरण";
+$lang['contact_details'] = "संपर्क विवरण";
+$lang['bank_details'] = "बैंक विवरण";
+$lang['gst_tax_details'] = "जीएसटी और कर विवरण";
+$lang['other_details'] = "अन्य विवरण";
+$lang['select_finish_grade'] = "फिनिश ग्रेड चुनें";
+$lang['select_mineral_name'] = "खनिज का नाम चुनें";
+$lang['stock_unavailable'] = "स्टॉक उपलब्ध नहीं है";
+$lang['issue_slip_no'] = "इश्यू स्लिप नंबर";
+$lang['issue_to'] = "जारी किया गया (कर्मचारी का नाम)";
+$lang['enter_comment_here'] = "टिप्पणी यहां दर्ज करें";
+$lang['material_return_register_details'] = 'सामग्री वापसी रजिस्टर विवरण';
+$lang['equipment_name'] = "उपकरण का नाम";
+$lang['select_equipment'] = "उपकरण चुनें";
+$lang['enter_purpose_here'] = "यहां उद्देश्य दर्ज करें";
+$lang['address_first_part_note'] = "कृपया केवल पते का पहला भाग दर्ज करें, अधिकतम लंबाई 80 अक्षर।";
+$lang['is_shipping_address_different'] = "क्या शिपिंग पता बिलिंग पते से अलग है?";
+$lang['edit_customers'] = "ग्राहकों को संपादित करें";
+$lang['requisition_slip'] = "अनुसंधान पर्ची";
+$lang['requisition_slip_details'] = "अनुसंधान पर्ची विवरण";
+$lang['delete_transporter_confirm'] = "क्या आप वाकई ट्रांसपोर्टर को हटाना चाहते हैं?";
+$lang['mechanical_item_list'] = 'यांत्रिक वस्तुओं की सूची';
+$lang['select_classification'] = 'वर्गीकरण चुनें';
+$lang['edit_transporter'] = 'ट्रांसपोर्टर संपादित करें';
+$lang['Pending_Purchase_Orders_for_GIR'] = 'GIR के लिए लंबित खरीद आदेश';
+$lang['edit_supplier_evaluation_panel'] = "आपूर्तिकर्ता मूल्यांकन पैनल संपादित करें";
+$lang['sub_category_list'] = 'उप श्रेणी सूची';
+$lang['plant_and_machinery(list)'] = 'संयंत्र और मशीनरी (सूची)'; // Hindi
+$lang['material_return_register'] = "सामग्री वापसी रजिस्टर";
+$lang['details'] = "विवरण";
+$lang['select_mineral'] = 'खनिज चुनें';
+$lang['packing_type'] = 'पैकेजिंग प्रकार';
+$lang['linear'] = 'रेखीय';
+$lang['non_linear'] = 'गैर-रेखीय';
+$lang['finish_goods'] = 'समाप्त माल';  
+$lang['lab_chemical'] = 'प्रयोगशाला रसायन';
+$lang['other_details'] = 'अन्य विवरण';
+$lang['tax_details'] = 'कर विवरण';
+$lang['address_details'] = 'पता विवरण';
 
+    // Hindi
+    $lang['edit_rm_code'] = 'आरएम कोड संपादित करें';
+$lang['report'] = 'रिपोर्ट';
+$lang['edit_transporter_evaluation_panel'] = "परिवहनकर्ता मूल्यांकन पैनल संपादित करें";
+$lang['select_provider_category'] = "प्रदाता श्रेणी चुनें";
+$lang['item_name'] = "आइटम का नाम";
+$lang['out_qty'] = "निकासी मात्रा";
+$lang['description'] = "विवरण";
+$lang['gir_register'] = "जीआईआर रजिस्टर";
+$lang['material_return_record_profile'] = "सामग्री वापसी रिकॉर्ड प्रोफ़ाइल";
+$lang['company_details'] = "कंपनी का विवरण";
+$lang['address'] = "पता";
+$lang['material_return_register'] = "सामग्री वापसी रजिस्टर";
+$lang['gir_register_category'] = "GIR रजिस्टर श्रेणी";
+$lang['supplier_name'] = "आपूर्तिकर्ता का नाम";
+$lang['register_number'] = "रजिस्टर नंबर";
+$lang['date'] = "तारीख";
+$lang['gate_pass_number'] = "गेट पास नंबर";
+$lang['tentative_return_date'] = "अनुमानित वापसी तिथि";
+$lang['s_no'] = "क्र.सं.";
+$lang['product_name'] = "उत्पाद का नाम";
+$lang['quantity'] = "मात्रा";
+$lang['unit'] = "इकाई";
+$lang['description'] = "विवरण";
+$lang['total'] = "कुल";
+$lang['declaration'] = "घोषणा";
+$lang['declaration_text'] = "हम घोषणा करते हैं कि यह प्रति इस आपूर्तिकर्ता की वास्तविक जानकारी को दर्शाती है और सभी विवरण हमारे सर्वोत्तम ज्ञान के अनुसार सही हैं।";
+$lang['for'] = "के लिए";
+$lang['authorised_signatory'] = "अधिकृत हस्ताक्षरकर्ता";
+$lang['all_rights_reserved'] = "सर्वाधिकार सुरक्षित।";
+$lang['print'] = 'प्रिंट';$lang['company_name'] = 'चौधरी एंड कंपनी';
+$lang['address'] = 'पता';
+$lang['company_address'] = 'बी-133, मेवाड़ इंडस्ट्रियल एरिया (एमआईए), मादड़ी, ट्रांसपोर्ट नगर, उदयपुर, राजस्थान 313003।';
+$lang['edit_requisition_slip'] = 'अनुरोध पर्ची संपादित करें';
+$lang['payment_mode'] = 'भुगतान का तरीका';
+$lang['reference_by'] = 'संदर्भ द्वारा';
+$lang['quotation_no'] = 'कोटेशन संख्या';
+$lang['to'] = 'प्रति';
+
+$lang['price'] = 'मूल्य';
+$lang['amount'] = 'राशि';
+
+$lang['select_quotation_date'] = "कोटेशन दिनांक चुनें";
+$lang['material_description'] = "सामग्री विवरण";
+$lang['requisition_qty'] = "अनुरोधित मात्रा";
+$lang['order_qty'] = "आदेश मात्रा";
+$lang['pending_qty'] = "लंबित मात्रा";
+$lang['item_rate'] = "वस्तु दर";
+$lang['edit_gir_register'] = "जीआईआर रजिस्टर संपादित करें";
+
+$lang['create_purchase_order'] = "क्रय आदेश बनाएँ";
+$lang['date'] = "तारीख";
+$lang['name_of_supplier'] = "आपूर्तिकर्ता का नाम";
+$lang['po_number'] = "पीओ संख्या";
+$lang['enter_po_number'] = "पीओ संख्या दर्ज करें";
+$lang['quotation_no'] = "कोटेशन संख्या";
+$lang['enter_quotation_no'] = "कोटेशन संख्या दर्ज करें";
+$lang['quotation_date'] = "कोटेशन दिनांक";
+$lang['comment'] = "टिप्पणी";
+$lang['enter_comment'] = "टिप्पणी दर्ज करें";
+$lang['sr_no'] = "क्रमांक";
+$lang['material_description'] = "सामग्री विवरण";
+$lang['requisition_qty'] = "माँगी गई मात्रा";
+$lang['order_qty'] = "आदेशित मात्रा";
+$lang['pending_qty'] = "लंबित मात्रा";
+$lang['item_rate'] = "वस्तु दर";
+$lang['total_amount'] = "कुल राशि";
+$lang['action'] = "क्रिया";
+$lang['qty'] = "मात्रा";
+$lang['enter_qty'] = "मात्रा दर्ज करें";
+$lang['pending'] = "लंबित";
+$lang['enter_rate'] = "दर दर्ज करें";
+$lang['total'] = "कुल";
+$lang['total_qty'] = "कुल मात्रा";
+$lang['total_rate'] = "कुल दर";
+$lang['discount'] = "छूट";
+$lang['rupees'] = "रुपये";
+$lang['percentage'] = "प्रतिशत";
+$lang['amount_after_discount'] = "छूट के बाद राशि";
+$lang['gst'] = "जीएसटी";
+$lang['enter_tax_percent'] = "कर प्रतिशत दर्ज करें";
+$lang['enter_tax_amount'] = "कर राशि दर्ज करें";
+$lang['amount_included_tax'] = "कर सहित राशि";
+$lang['grand_total'] = "कुल योग";
+$lang['vendor_reference'] = "विक्रेता संदर्भ";
+$lang['enter_reference'] = "संदर्भ दर्ज करें";
+$lang['delivery_period'] = "वितरण अवधि";
+$lang['enter_delivery_schedule'] = "वितरण कार्यक्रम दर्ज करें";
+$lang['payment_terms'] = "भुगतान शर्तें";
+$lang['enter_payment_terms'] = "उदाहरण: नकद, चेक";
+$lang['freight_status'] = "माल भाड़ा स्थिति";
+$lang['paid'] = "भुगतान किया गया";
+$lang['to_pay'] = "भुगतान करना है";
+$lang['submit'] = "सबमिट करें";
+$lang['no_result'] = "कोई परिणाम नहीं मिला";
+
+$lang['grand_total'] = "कुल योग";
+$lang['amount_in_words'] = "शब्दों में राशि";
+$lang['terms_conditions'] = "नियम और शर्तें";
+$lang['payment_terms'] = "भुगतान की शर्तें";
+$lang['delivery_schedule'] = "वितरण समय-सारणी";
+$lang['billing_note'] = "बिलिंग एम/एस चौधरी एंड कंपनी के नाम पर की जानी चाहिए।";
+$lang['po_on_invoice'] = "कृपया चालान और इनवॉइस पर खरीद आदेश संख्या अवश्य लिखें।";
+$lang['prepared_by'] = "तैयार किया";
+$lang['checked_by'] = "जांच किया";
+$lang['approved_by'] = "अनुमोदित किया";
+$lang['create_purchase_order'] = "क्रय आदेश बनाएँ";
+$lang['supplier_name'] = "आपूर्तिकर्ता का नाम";
+$lang['department'] = "विभाग";
+$lang['po_date'] = "आदेश दिनांक";
+$lang['delivery_date'] = "डिलीवरी दिनांक";
+$lang['item_details'] = "आइटम विवरण";
+$lang['submit'] = "सबमिट करें";
 $lang['item_name'] = 'वस्तु का नाम';
 $lang['month_of_production'] = 'उत्पादन माह';
 $lang['lot_no'] = 'लॉट नंबर';
@@ -1880,6 +2209,16 @@ $lang['sr_no'] = 'क्रम संख्या';
 $lang['work_location'] = 'कार्य स्थान';
 $lang['select_worker_name'] = 'श्रमिक का नाम चुनें (एक से अधिक हो सकते हैं)';
 $lang['grade_name'] = 'ग्रेड नाम';
+$lang['weight_slip_no'] = 'वजन पर्ची संख्या';
+$lang['actual_weight'] = 'वास्तविक वजन';
+$lang['documented_weight'] = 'दस्तावेज़ित वजन';
+$lang['weight'] = 'वजन';
+$lang['truck_number'] = 'ट्रक संख्या';
+$lang['payment'] = 'भुगतान';
+$lang['material_received_from'] = 'सामग्री प्राप्त की गई';
+$lang['quantity'] = 'मात्रा';
+$lang['unit'] = 'इकाई';
+$lang['description'] = 'विवरण';
 
 // Stacking Up
 $lang['stacking_up'] = 'स्टैकिंग अप';
@@ -2078,6 +2417,8 @@ $lang['enter_kwh_opening'] = 'प्रारंभ KWH दर्ज करे�
 $lang['enter_kwh_closing'] = 'समापन KWH दर्ज करें';
 $lang['enter_tailing_qty'] = 'टेलिंग मात्रा दर्ज करें';
 $lang['enter_tailing_per'] = 'टेलिंग प्रतिशत दर्ज करें';
+$lang['enter_zero_if_not_applicable'] = 'यदि लागू नहीं है तो 0 दर्ज करें';
+
 
 // Totals
 $lang['total'] = 'कुल';
@@ -2655,12 +2996,71 @@ $lang['assign_by'] = 'असाइन करने वाला';
 $lang['reject_reason'] = 'अस्वीकृति का कारण';
 $lang['last_update'] = 'अंतिम अपडेट';
 $lang['action'] = 'क्रिया';
-
+$lang['enter_qty'] = 'मात्रा दर्ज करें';
+$lang['enter_rate'] = 'दर दर्ज करें';
+$lang['total_amount'] = 'कुल राशि';
+$lang['edit_purchase_order'] = 'क्रय आदेश संपादित करें'; 
 // mo website leads   lead report chal nahi raha hai        ----------------xxxxxxxxxxxxxx-----------------
+$lang['item_details'] = 'वस्तु विवरण';
+$lang['sr_no'] = 'क्रमांक';
+$lang['material_description'] = 'सामग्री विवरण';
+$lang['requisition_qty'] = 'अनुरोधित मात्रा';
+$lang['order_qty'] = 'आदेश मात्रा';
+$lang['pending_qty'] = 'लंबित मात्रा';
+$lang['rate'] = 'दर';
+$lang['total_amount'] = 'कुल राशि';
+$lang['no_items_added'] = 'कोई वस्तु विवरण नहीं मिला';
+$lang['purchase_order'] = 'क्रय आदेश';
+$lang['po_details'] = 'पीओ विवरण';
+$lang['po_number'] = 'पीओ नंबर';
+$lang['order_type'] = 'ऑर्डर प्रकार';
+$lang['purchase_indent'] = 'क्रय प्रपत्र';
+$lang['supplier_name'] = 'आपूर्तिकर्ता का नाम';
+$lang['po_date'] = 'पीओ तिथि';
+$lang['total_amount'] = 'कुल राशि';
+$lang['remarks'] = 'टिप्पणी';
+$lang['status'] = 'स्थिति';
+$lang['item_details'] = 'वस्तु विवरण';
+$lang['close'] = 'बंद करें';
+$lang['purchase_order'] = 'खरीद आदेश';
+$lang['po_details'] = 'पीओ विवरण';
+$lang['po_number'] = 'पीओ नंबर';
+$lang['order_type'] = 'आदेश का प्रकार';
+$lang['purchase_indent'] = 'खरीद इन्डेंट';
+$lang['po_date'] = 'पीओ दिनांक';
+
+$lang['supplier_details'] = 'आपूर्तिकर्ता विवरण';
+$lang['supplier_name'] = 'आपूर्तिकर्ता का नाम';
+$lang['vendor_reference'] = 'विक्रेता संदर्भ';
+
+$lang['financial_details'] = 'वित्तीय विवरण';
+$lang['total_amount'] = 'कुल राशि';
+$lang['discount_rupees'] = 'छूट (₹)';
+$lang['discount_percent'] = 'छूट (%)';
+$lang['gst'] = 'जीएसटी (₹)';
+$lang['grand_total'] = 'कुल योग';
+
+$lang['delivery_payment_terms'] = 'वितरण और भुगतान की शर्तें';
+$lang['delivery_period'] = 'वितरण अवधि';
+$lang['payment_terms'] = 'भुगतान की शर्तें';
+$lang['freight_status'] = 'ढुलाई स्थिति';
+
+$lang['additional_info'] = 'अतिरिक्त जानकारी';
+$lang['status'] = 'स्थिति';
+$lang['remarks'] = 'टिप्पणियाँ';
+
+$lang['bank_details'] = 'बैंक विवरण';
+$lang['bank_name'] = 'बैंक का नाम';
+$lang['account_number'] = 'खाता संख्या';
+
+$lang['close'] = 'बंद करें';
 
 // customer complaints    
 // Complaints Data 
 $lang['complaints_data'] = 'शिकायत डेटा';
+$lang['home'] = 'मुख्य';
+$lang['rate'] = 'दर';
+$lang['pending'] = 'लंबित';
 
 $lang['search_by_status'] = 'स्थिति द्वारा खोजें';
 $lang['search_by_category'] = 'श्रेणी द्वारा खोजें';
@@ -2674,6 +3074,7 @@ $lang['ticket_no'] = 'टिकट संख्या';
 $lang['name'] = 'नाम';
 $lang['email'] = 'ईमेल';
 $lang['phone_no'] = 'फोन नंबर';
+$lang['complaint_category'] = 'शिकायत श्रेणी';
 $lang['category'] = 'श्रेणी';
 $lang['order_id'] = 'ऑर्डर आईडी';
 $lang['picture'] = 'चित्र';
@@ -2697,6 +3098,8 @@ $lang['criteria_name'] = 'मापदंड नाम';
 $lang['criteria_point'] = 'मापदंड अंक';
 $lang['self_review'] = 'स्व-मूल्यांकन';
 $lang['author_review'] = 'प्राधिकृत मूल्यांकन';
+$lang['employee_id'] = 'कर्मचारी आईडी';
+$lang['review_details'] = 'समीक्षा विवरण';
 
 // notification master
 // Notifications - Hindi Translations
@@ -2722,6 +3125,10 @@ $lang['message_text'] = 'संदेश';
 $lang['department_name'] = 'विभाग';
 $lang['date_time'] = 'दिनांक और समय';
 $lang['action'] = 'क्रिया';
+$lang['read_recipients_report'] = 'पढ़ने वाले प्राप्तकर्ताओं की रिपोर्ट';
+$lang['user'] = 'उपयोगकर्ता';
+$lang['time'] = 'समय';
+
 
 // remainder master
 // All Reminders - Hindi Translations
@@ -2736,6 +3143,9 @@ $lang['reminder_date'] = 'अनुस्मारक तिथि';
 $lang['reminder_time'] = 'अनुस्मारक समय';
 $lang['status'] = 'स्थिति';
 $lang['action'] = 'क्रिया';
+$lang['edit_reminder'] = 'अनुस्मारक संपादित करें';
+$lang['snooze'] = 'स्नूज़ करें';
+$lang['select_date'] = 'तारीख़ चुनें';
 
 // mo events
 // Office Events - Hindi Translations
@@ -2751,6 +3161,8 @@ $lang['no_upcoming_anniversaries'] = 'कोई आने वाली कार
 $lang['add_new_employee'] = 'नया कर्मचारी जोड़ें';
 $lang['personal_details'] = 'व्यक्तिगत विवरण';
 $lang['bank_details'] = 'बैंक विवरण';
+$lang['savings'] = 'बचत';
+$lang['current'] = 'चालू';
 $lang['salary_details'] = 'वेतन विवरण';
 $lang['other_details'] = 'अन्य विवरण';
 
@@ -2779,16 +3191,42 @@ $lang['dd_mm_yyyy'] = 'दिन-माह-वर्ष';
 
 $lang['username'] = 'उपयोगकर्ता नाम';
 $lang['password'] = 'पासवर्ड';
-
+$lang['enter_password'] ='पासवर्ड  दर्ज करें';
+$lang['green_plant_chemicals'] = 'हरित पौधा रसायन';
 $lang['select_authority_person'] = 'अधिकार प्राप्त व्यक्ति चुनें (केवल अवकाश अनुमोदन हेतु)';
-$lang['select_employees'] = 'कर्मचारी चुनें...';
+$lang['profile_details'] = "प्रोफ़ाइल विवरण";
 
+$lang['marks'] = "अंक";
+$lang['total_marks'] = "कुल अंक";
+$lang['obtained_marks'] = "प्राप्तांक";
+$lang['total_marks_obtained'] = "कुल प्राप्तांक";
+$lang['grade'] = "श्रेणी";
+$lang['percentage'] = "प्रतिशत";
+$lang['criteria_name'] = "मापदंड का नाम";
+$lang['supplier_evaluation_results'] = "सप्लायर मूल्यांकन परिणाम";
+$lang['evaluation_details'] = "मूल्यांकन विवरण";
+$lang['supplier_details'] = "सप्लायर विवरण";
+$lang['name'] = "नाम";
+$lang['category'] = "श्रेणी";
+$lang['evaluation_date'] = "मूल्यांकन तिथि";
+$lang['comment'] = "टिप्पणी";
+$lang['close'] = "बंद करें";
+
+$lang['total_marks_obtained'] = "कुल प्राप्तांक";
+$lang['po_item_details'] = "पीओ आइटम विवरण";  // "Purchase Order Item Details"
+$lang['marks'] = "अंक";
+$lang['select_employees'] = 'कर्मचारी चुनें...';
+$lang['computer_periperals'] = 'कंप्यूटर सहायक उपकरण';
 $lang['upload_photo'] = 'फोटो अपलोड करें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल चयनित नहीं';
-
+$lang['select_state'] = "राज्य चुनें";
 $lang['gender'] = 'लिंग';
 $lang['male'] = 'पुरुष';
 $lang['female'] = 'महिला';
+
+$lang['enter_ifsc_code'] = 'IFSC कोड दर्ज करें';
+$lang['enter_branch_address'] = 'शाखा का पता दर्ज करें';
+$lang['enter_account_number'] = 'खाता नंबर दर्ज करें';
 
 $lang['address'] = 'पता';
 $lang['enter_address'] = 'पता दर्ज करें';
@@ -2797,7 +3235,7 @@ $lang['aadhaar_no'] = 'आधार नंबर';
 $lang['enter_aadhaar_no'] = 'आधार नंबर दर्ज करें';
 
 $lang['pan'] = 'पैन (स्थायी खाता संख्या)';
-$lang['pan_placeholder'] = 'उदा. ABCEDE2548K';
+$lang['pan_placeholder'] = 'उदा. एबीसीईडीई2548के';
 
 $lang['copyright'] = 'कॉपीराइट © 2025 Warrgyiz Morsch. सर्वाधिकार सुरक्षित।';
 
@@ -2822,7 +3260,11 @@ $lang['action'] = 'क्रिया';
 
 
 // leave module holidays
-
+$lang['approved'] = 'स्वीकृत';         // Hindi
+$lang['pending'] = 'लंबित';
+$lang['on_hold'] = 'स्थगित';
+$lang['rejected'] = 'अस्वीकृत';
+$lang['cancel'] = 'रद्द';
 
 $lang['holidays_master'] = 'अवकाश मास्टर';
 $lang['title_name'] = 'शीर्षक नाम';
@@ -2909,12 +3351,28 @@ $lang['action'] = 'क्रिया';
 
 $lang['export'] = 'निर्यात करें';
 $lang['apply_for_leave'] = 'अवकाश हेतु आवेदन करें';
+$lang['todays_date'] = 'आज की तारीख';
+$lang['leave_reason'] = 'अवकाश का कारण';
+$lang['leave_type'] = 'अवकाश का प्रकार';
+$lang['leave_category'] = 'अवकाश श्रेणी';
+$lang['from_date'] = 'प्रारंभ तिथि';
+$lang['upto_date'] = 'अंतिम तिथि';
+$lang['total_days'] = 'कुल दिन';
+$lang['message'] = 'संदेश';
+$lang['enter'] = 'प्रवेश करें';
+$lang['full'] = 'पूर्ण';
+$lang['half'] = 'आधा';
+$lang['gatepass'] = 'गेट पास';
+$lang['enter_reason'] = 'कारण दर्ज करें';
+$lang['apply'] = 'आवेदन करें';
 
 
 // daily tasks project
 $lang['daily_task_master'] = 'दैनिक कार्य मास्टर';
 $lang['project_name'] = 'प्रोजेक्ट का नाम';
 $lang['enter_project_name'] = 'प्रोजेक्ट का नाम दर्ज करें';
+$lang['in_process'] = 'प्रक्रिया में';
+$lang['completed'] = 'पूरा हुआ';
 
 $lang['start_date'] = 'प्रारंभ तिथि';
 $lang['end_date'] = 'अंतिम तिथि';
@@ -2958,6 +3416,25 @@ $lang['status'] = 'स्थिति';
 $lang['assign_to'] = 'सौंपा गया';
 $lang['assign_by'] = 'सौंपने वाला';
 $lang['action'] = 'क्रिया';
+$lang['create'] = 'बनाएं';
+$lang['update_task'] = 'कार्य अपडेट करें';
+$lang['task_history_description'] = 'कार्य इतिहास विवरण';
+$lang['create_task'] = 'कार्य बनाएँ';
+$lang['easy'] = 'आसान';
+$lang['medium'] = 'मध्यम';
+$lang['hard'] = 'कठिन';
+
+$lang['reference'] = 'संदर्भ';
+$lang['reference_name'] = 'संदर्भ नाम';
+$lang['write_your_reply'] = 'अपना उत्तर लिखें';
+$lang['time_taken'] = 'लगा समय (घंटों में)';
+$lang['how_much_time_take'] = 'कितना समय लगा';
+$lang['submit_your_answer'] = 'अपना उत्तर सबमिट करें';
+$lang['follow_up'] = 'अनुवर्ती';
+$lang['document'] = 'दस्तावेज़';
+$lang['followup_time'] = 'अनुवर्ती समय';
+$lang['delete_task_history_confirm'] = 'क्या आप वाकई इस कार्य इतिहास को हटाना चाहते हैं?';
+$lang['confirm_header'] = 'पुष्टि करें';
 
 
 // payroll module attendance list
@@ -2984,6 +3461,22 @@ $lang['other_cuts'] = 'अन्य कटौती';
 $lang['ecs'] = 'ईसीएस';
 $lang['total_salary'] = 'कुल वेतन';
 $lang['action'] = 'क्रिया';
+$lang['calculate'] = 'गणना करें';
+
+$lang['add_attendance'] = 'उपस्थिति जोड़ें';
+$lang['attendance_date'] = 'उपस्थिति तिथि';
+$lang['employee'] = 'कर्मचारी';
+$lang['check_in'] = 'चेक इन';
+$lang['check_out'] = 'चेक आउट';
+$lang['close'] = 'बंद करें';
+$lang['attendance_details_for'] = 'के लिए उपस्थिति विवरण';
+$lang['update_attendance'] = 'उपस्थिति अपडेट करें';
+$lang['edit_attendance'] = 'उपस्थिति संपादित करें';
+$lang['delete_salary_record_confirm'] = 'क्या आप वाकई  वेतन रिकॉर्ड हटाना चाहते हैं?';
+$lang['cancel'] = 'रद्द करें';
+$lang['download'] = 'डाउनलोड करें';
+
+
 
 // workers add
 $lang['add_new_worker'] = 'नया कर्मचारी जोड़ें';
@@ -3001,7 +3494,7 @@ $lang['female'] = 'महिला';
 $lang['aadhaar_no'] = 'आधार नंबर';
 $lang['enter_aadhaar_no'] = 'आधार नंबर दर्ज करें';
 $lang['dob'] = 'जन्म तिथि';
-$lang['dd_mm_yyyy'] = 'दि-महीना-वर्ष';
+$lang['dd_mm_yyyy'] = 'दिन-महीना-वर्ष';
 $lang['upload_photo'] = 'फोटो अपलोड करें';
 $lang['no_file_chosen'] = 'कोई फ़ाइल नहीं चुनी गई';
 $lang['medical_test'] = 'चिकित्सा परीक्षण';
@@ -3011,6 +3504,7 @@ $lang['report_number'] = 'रिपोर्ट संख्या';
 $lang['enter_report_number'] = 'रिपोर्ट संख्या दर्ज करें';
 $lang['address'] = 'पता';
 $lang['enter_address'] = 'पता दर्ज करें';
+$lang['delete_worker_confirm'] = 'क्या आप वाकई कार्यकर्ता को हटाना चाहते हैं?';
 
 // workers view list
 $lang['workers_list'] = 'कर्मचारियों की सूची';
@@ -3040,6 +3534,10 @@ $lang['customer_name'] = 'ग्राहक का नाम';
 $lang['email'] = 'ईमेल';
 $lang['phone'] = 'फोन';
 $lang['action'] = 'क्रिया';
+
+$lang['open'] = 'खुला';
+$lang['closed'] = 'बंद';
+$lang['resolved'] = 'सुलझाया गया';
 
 
 // finish             ---------------------------------------------------------------------
@@ -3155,12 +3653,38 @@ $lang['view_list'] = 'सूची देखें';
 $lang['invoices'] = 'चालान';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
+$lang['name_of_employee'] = 'कर्मचारी का नाम';
+$lang['select_employee'] = 'कर्मचारी चुनें';
+
+$lang['name_of_department'] = 'विभाग का नाम';
+$lang['select_department'] = 'विभाग चुनें';
+
+$lang['requisition_status'] = 'अनुरोध की स्थिति';
+
+$lang['no_result'] = 'कोई परिणाम नहीं';
 
 // Stock Registers
 $lang['stock_registers'] = 'स्टॉक रजिस्टर';
 $lang['material_wise'] = 'सामग्री अनुसार';
 $lang['minimum_inventory_level'] = 'न्यूनतम भंडारण स्तर';
 $lang['current_stock'] = 'वर्तमान स्टॉक';
+$lang['minimum_inventory_qty'] = 'न्यूनतम भंडारण मात्रा';
+$lang['enter_minimum_inventory_qty'] = 'न्यूनतम भंडारण मात्रा दर्ज करें';
+$lang['no_tds_declaration'] = 'कोई टीडीएस घोषणा नहीं';
+$lang['unregistered_dealer'] = 'गैर-पंजीकृत डीलर/व्यक्ति';
+$lang['service_for_state'] = 'राज्य के लिए सेवा';
+$lang['date_of_next_evaluation'] = 'अगली मूल्यांकन तिथि';
+$lang['filter_by_supplier'] = 'आपूर्तिकर्ता द्वारा छाँटें';
+$lang['filter_by_department'] = 'विभाग द्वारा छाँटें';
+$lang['po_status'] = 'PO स्थिति';
+$lang['select_type'] = 'प्रकार चुनें';
+$lang['from_date'] = 'प्रारंभ तिथि';
+$lang['upto_date'] = 'समाप्ति तिथि';
+$lang['search'] = 'खोजें';
+$lang['reset'] = 'रीसेट';
+$lang['export'] = 'निर्यात करें';
+$lang['confirm_delete'] = 'क्या आप वाकई इस मेनू को हटाना चाहते हैं';
+
 
 // FG Stock (Finished Goods)
 $lang['fg_stock'] = 'एफजी स्टॉक';
@@ -3195,21 +3719,49 @@ $lang['view_list'] = 'सूची देखें';
 $lang['daily_stitching_record'] = 'दैनिक सिलाई रिकॉर्ड';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
-
+$lang['edit_service_provider'] = 'सेवा प्रदाता को संपादित करें';
 $lang['production_logsheet'] = 'उत्पादन लॉगशीट';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
-
+$lang['service_provider_personal_details'] = 'सेवा प्रदाता के व्यक्तिगत विवरण';
 // Process Logsheet
 $lang['process_logsheet'] = 'प्रोसेस लॉगशीट (P-06)';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
-
+$lang['service_provider_account_details'] = 'सेवा प्रदाता खाता विवरण';
 // Power Monitoring Register
 $lang['power_monitoring_register'] = 'पावर मॉनिटरिंग रजिस्टर';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
-
+$lang['mineral_name'] = 'खनिज का नाम';
+$lang['grade_name'] = 'ग्रेड का नाम';
+$lang['lot_no'] = 'लॉट नंबर';
+$lang['batch_no'] = 'बैच नंबर';
+$lang['equipment_name'] = 'उपकरण का नाम';
+$lang['purpose'] = 'उद्देश्य';
+$lang['comment'] = 'टिप्पणी';
+$lang['requisition_no'] = 'अनुरोध संख्या';
+$lang['requisition_date'] = 'अनुरोध की तिथि';
+$lang['request_by'] = 'अनुरोधकर्ता';
+$lang['status'] = 'स्थिति';
+$lang['action_date'] = 'कार्रवाई की तिथि';
+$lang['action_by'] = 'द्वारा कार्रवाई';
+$lang['user_name_sign'] = 'उपयोगकर्ता (नाम और हस्ताक्षर)';
+$lang['store_incharge_sign'] = 'स्टोर प्रभारी (नाम और हस्ताक्षर)';
+$lang['request_to_indent'] = 'खरीद के लिए अनुरोध';
+$lang['store_dept_sign_date'] = 'स्टोर विभाग (हस्ताक्षर और दिनांक)';
+$lang['purchase_dept_sign_date'] = 'खरीद विभाग (हस्ताक्षर और दिनांक)';
+$lang['authorized_by_sign_date'] = 'प्राधिकृत व्यक्ति (हस्ताक्षर और दिनांक)';
+$lang['material_requisition_slip'] = 'सामग्री अनुबंध पर्ची';
+$lang['requisition_slip_print_view'] = 'अनुबंध पर्ची प्रिंट दृश्य';
+$lang['are_you_sure_you_want_to'] = 'क्या आप वाकई करना चाहते हैं';
+$lang['approve'] = 'मंज़ूरी देना';
+$lang['are_you_sure_you_want_to'] = 'क्या आप वाकई करना चाहते हैं';
+$lang['approve'] = 'मंज़ूरी देना';
+$lang['requisition_slip'] = 'अनुरोध पर्ची';
+$lang['comment'] = 'टिप्पणी';
+$lang['enter_reason_here'] = 'यहाँ कारण दर्ज करें';
+$lang['authorised_signatory'] = 'अधिकृत हस्ताक्षरकर्ता';
 // Printing Logsheet
 $lang['printing_logsheet'] = 'प्रिंटिंग लॉगशीट';
 $lang['add'] = 'जोड़ें';
@@ -3300,25 +3852,217 @@ $lang['leave_applications'] = 'अवकाश आवेदन';
 $lang['leave_types'] = 'अवकाश प्रकार';
 $lang['leave_allotment'] = 'अवकाश आवंटन';
 $lang['leave_approval'] = 'अवकाश अनुमोदन';
+$lang['total_bags'] = 'कुल बैग्स';
+$lang['total_propduction'] = 'कुल उत्पादन (मी.टन)';
+$lang['total_opening'] = 'कुल ओपनिंग';
+$lang['total_closing'] = 'कुल क्लोजिंग';
+$lang['total_kwh'] = 'कुल KWH खपत';
+$lang['finish_good_details'] = 'फिनिश गुड विवरण';      // Hindi
+
+$lang['leave_action_page'] = 'अवकाश क्रिया पृष्ठ';
+$lang['leave_status_info'] = 'अवकाश की स्थिति (अवकाश पर कोई भी कार्रवाई करें)';
+$lang['leave_application'] = 'अवकाश आवेदन';
+
 
 $lang['daily_tasks'] = 'दैनिक कार्य';
 $lang['projects'] = 'परियोजनाएं';
 $lang['tasks'] = 'कार्य';
+$lang['machine_start_datetime'] = 'मशीन प्रारंभ तिथि और समय';
+$lang['machine_stop_datetime'] = 'मशीन बंद तिथि और समय';
+$lang['bag_weight'] = 'बैग का वजन';
+$lang['tailing_qty_in_mt'] = 'टेलिंग (मीट्रिक टन में)';
+$lang['total_tailing_for_lot'] = 'लॉट के लिए कुल टेलिंग';
+$lang['used_qty'] = 'प्रयुक्त मात्रा';
+$lang['mill_rpm'] = 'मिल (RPM)';
+$lang['mill_amp'] = 'मिल (AMP)';
+$lang['blower_hz'] = 'ब्लोअर (Hz)';
+$lang['blower_amp'] = 'ब्लोअर (AMP)';
+$lang['screw_rpm'] = 'स्क्रू (RPM)';
+$lang['air_washer_rpm'] = 'एयर वॉशर (RPM)';
+$lang['mc_start_time'] = 'मशीन चालू समय';
+$lang['mc_stop_time'] = 'मशीन बंद समय';
+$lang['tailing_percent'] = 'टेलिंग %';
+$lang['mill_rpm'] = 'मिल आरपीएम';
+$lang['mill_amp'] = 'मिल एएमपी';
+$lang['blower_hrz'] = 'ब्लोअर हर्ट्ज़';
+$lang['blower_amp'] = 'ब्लोअर एएमपी';
+$lang['screw_rpw'] = 'स्क्रू आरपीडब्ल्यू';
+$lang['air_washer_rpm'] = 'एयर वॉशर आरपीएम';
+$lang['plant_and_machinery_master'] = 'प्लांट और मशीनरी मास्टर';
+$lang['service_code'] = 'सेवा कोड';
+$lang['building_material'] = 'निर्माण सामग्री';
+$lang['mechanical_items_master'] = 'यांत्रिक वस्तुएं मास्टर';
+$lang['new_item_code'] = 'नया आइटम कोड';
+$lang['general_plant_equipments_chemicals'] = 'सामान्य प्लांट उपकरण और रसायन';
+$lang['protective_equipments_master'] = 'संरक्षण उपकरण मास्टर';
+$lang['protective_equipments'] = 'संरक्षण उपकरण';
+$lang['unregistered_dealer'] = 'अपंजीकृत डीलर/व्यक्ति';
+$lang['gst_in'] = 'जीएसटी इन';
+$lang['requisition_slip_report'] = 'रसीद पर्ची रिपोर्ट';
+$lang['pending_requisition_slips_for_issue'] = 'जारी करने के लिए लंबित मांग पर्चियाँ';
+$lang['service_for_the_state'] = 'राज्य के लिए सेवा';
+$lang['add_new_service_provider'] = 'नया सेवा प्रदाता जोड़ें';
+$lang['un_registered_dealer_person'] = 'अपंजीकृत डीलर व्यक्ति';
+$lang['requistion_no'] = 'मांग संख्या';
+$lang['enter_requistion_no'] = 'मांग संख्या दर्ज करें';
+$lang['enter_gate_pass_no'] = 'गेट पास संख्या दर्ज करें';
+$lang['minimum_inventory_levels_report'] = 'न्यूनतम इन्वेंट्री स्तर रिपोर्ट';
+$lang['transdoc_no'] = 'ट्रांसडॉक नंबर';
+$lang['gr_no'] = 'जीआर नंबर';
+$lang['tp_no'] = 'टीपी नंबर';
+$lang['enter_tp_no'] = 'टीपी नंबर दर्ज करें';
+$lang['truck_no'] = 'ट्रक नंबर';
+$lang['enter_truck_no'] = 'ट्रक नंबर दर्ज करें';
+$lang['e_way_bill_needed'] = 'क्या ई-वे बिल आवश्यक है?';
+$lang['yes'] = 'हाँ';
+$lang['no'] = 'नहीं';
+$lang['driver_details'] = 'ड्राइवर विवरण';
+$lang['driver_name'] = 'ड्राइवर का नाम';
+$lang['enter_driver_name'] = 'ड्राइवर का नाम दर्ज करें';
+$lang['mobile_no'] = 'मोबाइल नंबर';
+$lang['enter_mobile_no'] = 'मोबाइल नंबर दर्ज करें';
+$lang['owner_name'] = 'मालिक का नाम';
+$lang['enter_owner_name'] = 'मालिक का नाम दर्ज करें';
+$lang['owner_no'] = 'मालिक का मोबाइल नंबर';
+$lang['sending_status'] = 'भेजने की स्थिति';
+$lang['enclosed'] = 'संलग्न';
+$lang['being_send_by_post'] = 'डाक द्वारा भेजा जा रहा है';
+$lang['testing_date'] = 'परीक्षण दिनांक';
+$lang['grade'] = 'ग्रेड';
+$lang['submit'] = 'सबमिट करें';
+
 
 $lang['payroll_module'] = 'वेतन मॉड्यूल';
 $lang['attendance_list'] = 'हाजिरी सूची';
 $lang['payroll_calculation'] = 'वेतन गणना';
+$lang['maintenance_start'] = 'रखरखाव प्रारंभ तिथि और समय';
+$lang['maintenance_stop'] = 'रखरखाव समाप्ति तिथि और समय';
+$lang['machine_down_time'] = 'मशीन डाउन टाइम (घंटों में)';
+$lang['total_time'] = 'कुल समय';
+$lang['type_of_maintenance'] = 'रखरखाव का प्रकार';
+$lang['maintenance'] = 'रखरखाव';
+$lang['details_of_maintenance'] = 'रखरखाव का विवरण';
+$lang['parts_replaced'] = 'बदले गए पुर्जे';
+$lang['enter_parts_replaced'] = 'बदले गए पुर्जे दर्ज करें';
+$lang['tan_no'] = 'टैन नंबर';
+$lang['suppliers_account_details'] = 'आपूर्तिकर्ता खाता विवरण';
+$lang['branch'] = 'शाखा';
+$lang['mobile_number'] = 'मोबाइल नंबर';
+$lang['reject_purchase_order_confirm'] = 'क्या आप वाकई <b style="color:#dc7629;">खारिज़</b> करना चाहते हैं खरीद आदेश <b>%s</b>?';
+$lang['enter_reason_here'] = 'यहाँ कारण दर्ज करें';
+$lang['close'] = 'बंद करें';
+$lang['equipment_name'] = 'उपकरण का नाम';
 
 $lang['workers'] = 'कर्मचारी';
 $lang['add'] = 'जोड़ें';
 $lang['view_list'] = 'सूची देखें';
 $lang['customer_support'] = 'ग्राहक सहायता';
 $lang['view_list'] = 'सूची देखें';
+$lang['id'] = 'पहचान संख्या';
+$lang['enter_id'] = 'पहचान संख्या दर्ज करें';
+$lang['suppliers_personal_detail'] = 'आपूर्तिकर्ता की व्यक्तिगत जानकारी';
 
+$lang['model'] = 'मॉडल';
+$lang['enter_model'] = 'मॉडल दर्ज करें';
 
+$lang['type'] = 'प्रकार';
+$lang['enter_type'] = 'प्रकार दर्ज करें';
+$lang['edit_supplier'] = 'आपूर्तिकर्ता संपादित करें';
+$lang['vendor_service_tax_number'] = 'विक्रेता सेवा कर संख्या';
+$lang['shipping_details'] = 'शिपिंग विवरण';
+$lang['shipping_address1'] = 'शिपिंग पता 1';
+$lang['shipping_address2'] = 'शिपिंग पता 2';
 // -----------------complete ------------------------------
+$lang['edit_invoice'] = 'चालान संपादित करें';
+$lang['vendor'] = 'विक्रेता';
+$lang['vehicle_no'] = 'वाहन संख्या';
+$lang['driver_name'] = 'ड्राइवर का नाम';
+$lang['shipping_address1'] = 'शिपिंग पता 1';
+$lang['enter_shipping_address1'] = 'शिपिंग पता 1 दर्ज करें';
 
+$lang['shipping_address2'] = 'शिपिंग पता 2';
+$lang['enter_shipping_address2'] = 'शिपिंग पता 2 दर्ज करें';
 
+$lang['loc'] = 'स्थान';
+$lang['enter_location'] = 'स्थान दर्ज करें';
+
+$lang['enter_state_code'] = 'राज्य कोड दर्ज करें';
+$lang['enter_distance'] = 'दूरी दर्ज करें';
+
+$lang['enter_transporter_id'] = 'परिवहन आईडी दर्ज करें';
+
+$lang['delete_service_provider_confirm'] = 'क्या आप वाकई सेवा प्रदाता को हटाना चाहते हैं?';
+
+$lang['purchase_order'] = 'क्रय आदेश';
+$lang['company_details'] = 'कंपनी विवरण';
+$lang['gstin'] = 'जीएसटी नंबर';
+$lang['pan'] = 'पैन';
+$lang['address'] = 'पता';
+$lang['to'] = 'प्रति';
+$lang['po_number'] = 'पीओ नंबर';
+$lang['dated'] = 'दिनांक';
+$lang['vendor_code'] = 'विक्रेता कोड';
+$lang['contact_person'] = 'संपर्क व्यक्ति';
+$lang['contact_no'] = 'संपर्क नंबर';
+$lang['email_id'] = 'ईमेल आईडी';
+$lang['reference'] = 'संदर्भ';
+$lang['please_supply'] = 'कृपया निम्न वस्तुएं जल्द से जल्द हमारी टेलीकॉम/पूर्व आपूर्ति/आपके संदर्भानुसार भेजें:';
+$lang['sno'] = 'क्रमांक';
+$lang['material_description'] = 'सामग्री विवरण';
+$lang['quantity'] = 'मात्रा';
+$lang['item_price'] = 'आइटम मूल्य';
+$lang['total_amount'] = 'कुल राशि';
+$lang['total'] = 'कुल';
+$lang['less_discount'] = 'छूट';
+$lang['gst'] = 'जीएसटी';
+$lang['grand_total'] = 'कुल योग';
+$lang['amount_in_words'] = 'शब्दों में राशि';
+$lang['terms'] = 'नियम और शर्तें';
+$lang['term_payment'] = 'भुगतान की शर्तें';
+$lang['term_delivery'] = 'डिलीवरी समय';
+$lang['term_billing'] = 'बिलिंग एम/एस चौधरी एंड कंपनी के नाम पर होनी चाहिए।';
+$lang['term_po_note'] = 'कृपया चालान और बिल पर पीओ नंबर अंकित करें।';
+$lang['prepared_by'] = 'तैयार किया';
+$lang['checked_by'] = 'जांच की';
+$lang['approved_by'] = 'अनुमोदित';
+$lang['purchase_dept'] = 'खरीद विभाग';
+$lang['accounts_dept'] = 'लेखा विभाग';
+$lang['director'] = 'निदेशक';
+
+$lang['transporter_regi'] = 'ट्रांसपोर्टर पंजीकरण';
+$lang['transporter_type'] = 'ट्रांसपोर्टर प्रकार';
+$lang['vendor'] = 'विक्रेता';
+$lang['gst_no'] = 'जीएसटी नंबर';
+$lang['pan_no'] = 'पैन नंबर';
+$lang['vehicle_owner_name'] = 'वाहन मालिक का नाम';
+$lang['owner_mobile_no'] = 'वाहन मालिक का मोबाइल नंबर';
+$lang['driver_name'] = 'ड्राइवर का नाम';
+$lang['driver_mobile_no'] = 'ड्राइवर का मोबाइल नंबर';
+$lang['license_no'] = 'लाइसेंस नंबर';
+$lang['aadhar_card_no'] = 'आधार कार्ड नंबर';
+$lang['vehicle_no'] = 'वाहन नंबर';
+$lang['state'] = 'राज्य';
+$lang['city'] = 'शहर';
+$lang['pin_code'] = 'पिन कोड';
+$lang['shipping_address'] = 'शिपिंग पता';
+$lang['status'] = 'स्थिति';
+$lang['remarks'] = 'टिप्पणी';
+$lang['submit'] = 'सबमिट करें';
+$lang['reset'] = 'रीसेट करें';
+$lang['cancel'] = 'रद्द करें';
+$lang['transporter_type_placeholder'] = 'कृपया ट्रांसपोर्टर प्रकार चुनें';
+$lang['vendor_placeholder'] = 'कृपया विक्रेता चुनें';
+$lang['vehicle_no_placeholder'] = 'कृपया वाहन नंबर दर्ज करें';
+$lang['owner_name_placeholder'] = 'कृपया वाहन मालिक का नाम दर्ज करें';
+$lang['owner_mobile_placeholder'] = 'कृपया मालिक का मोबाइल नंबर दर्ज करें';
+$lang['driver_name_placeholder'] = 'कृपया ड्राइवर का नाम दर्ज करें';
+$lang['driver_mobile_placeholder'] = 'कृपया ड्राइवर का मोबाइल नंबर दर्ज करें';
+$lang['license_no_placeholder'] = 'कृपया लाइसेंस नंबर दर्ज करें';
+$lang['aadhar_no_placeholder'] = 'कृपया आधार नंबर दर्ज करें';
+$lang['state_placeholder'] = 'कृपया राज्य चुनें';
+$lang['city_placeholder'] = 'कृपया शहर दर्ज करें';
+$lang['pincode_placeholder'] = 'कृपया पिन कोड दर्ज करें';
+$lang['shipping_address_placeholder'] = 'कृपया शिपिंग पता दर्ज करें';
 
 // click on setting 
 //  Theme Customization - Hindi Translations
@@ -3326,4 +4070,4 @@ $lang['customize_theme'] = 'थीम अनुकूलित करें';
 $lang['primary_theme_color'] = 'प्राथमिक थीम रंग';
 $lang['navbar_color'] = 'नेवबार रंग';
 $lang['secondary_theme_color'] = 'द्वितीयक थीम रंग';
-
+$lang['home'] ='मुख्य';

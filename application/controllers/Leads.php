@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 //session_start(); //we need to start session in order to access it through CI
 
-Class Leads extends CI_Controller {
+Class Leads extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -91,7 +91,7 @@ Class Leads extends CI_Controller {
 		$data['categories'] = $this->Leads_model->getLeadsCategories();
 		// print_r($data['auth_id']);exit;
 
-		$this->template->load('template','leads/leads_view',$data);
+		$this->template->load('layout/template','Lead Module/Lead Generation/index',$data);
 	}
 
 	public function reports() 
@@ -188,7 +188,7 @@ Class Leads extends CI_Controller {
 		//print_r($data['item_name']);exit;
 		
 		$data['categories'] = $this->Leads_model->getLeadsCategories();
-		$this->template->load('template','leads/mo_lead_view',$data);
+		$this->template->load('layout/template','leads/mo_lead_view',$data);
 	}
 	public function worshop_leads() 
 {
@@ -206,7 +206,7 @@ Class Leads extends CI_Controller {
     $data['leads'] = $this->MO_leads->MOWorkshopList($conditions);
     $data['workshopnames'] = $this->MO_leads->getWorkshop();
 
-    $this->template->load('template', 'leads/workshop_view', $data);
+    $this->template->load('layout/template', 'leads/workshop_view', $data);
 }
 
    public function mailtoAll($id=NULL)
@@ -578,7 +578,7 @@ Class Leads extends CI_Controller {
 	            $data['lead_status'] = '';
 	        endif;
 			// echo"<pre>";print_r($result);exit;
-	        $this->template->load('template','leads/lead_update',$data);
+	        $this->template->load('layout/template','Lead Module/Lead Generation/lead-create-edit',$data);
 
 		} else {
 			$data['page_title'] = ' Create New Lead';
@@ -614,7 +614,7 @@ Class Leads extends CI_Controller {
 
 		    $data['lead_code']=$rs_id_code;
 
-		    $this->template->load('template','leads/lead_create',$data);
+		    $this->template->load('layout/template','Lead Module/Lead Generation/lead-create-edit',$data);
 		}
 	}
 	
@@ -892,7 +892,7 @@ Class Leads extends CI_Controller {
 			$data['employees'] = $this->Leads_model->getEmployeeDropdown();
 			$data['categories'] = $this->Leads_model->getLeadsCategories();
 			//  echo "<pre>";print_r($data['leads']);exit;
-			$this->template->load('template','AssignLeadview',$data);
+			$this->template->load('layout/template','Lead Module/Lead Generation/assignLead',$data);
 		}
 		// public function reminder($id){
 		// 	$data['login_id']=$this->session->userdata['logged_in']['id'];

@@ -2,7 +2,7 @@
 
 //session_start(); //we need to start session in order to access it through CI
 
-Class Consultancy extends CI_Controller {
+Class Consultancy extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -96,7 +96,7 @@ $this->load->model('categories_model');
 			$data['categories'] = $this->categories_model->getMasterCategories();
 			//echo var_dump($data['students']);
 			//print_r($data['name']);exit;
-			$this->template->load('template','consultancy_view',$data);
+			$this->template->load('layout/template','consultancy_view',$data);
 		/*}
 		else{
 			redirect('User_authentication/dashboard');

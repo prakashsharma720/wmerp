@@ -21,14 +21,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Date <span class="required">*</span></label>
+			            	<label class="control-label"><?= $this->lang->line('date') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php if($date) { echo date('d-m-Y',strtotime($date)); } echo date('d-m-Y')?>" autofocus required >
 			            </div>
 			             <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Supplier Category <span class="required">*</span></label>
+			            	<label  class="control-label"><?= $this->lang->line('supplier_category') ?> <span class="required">*</span></label>
 			            	<select name="categories_id" class="form-control select2 category" required="required">
-			            		 <option value="0">Select Category</option>
+			            		 <option value="0"><?= $this->lang->line('select_category') ?></option>
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -41,12 +41,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 						<div class="col-md-4 col-sm-4 ">
-			            	 <label  class="control-label">Name of Service Provider <span class="required">*</span></label>
+			            	 <label  class="control-label"><?= $this->lang->line('name_of_service_provider') ?> <span class="required">*</span></label>
 			            	 <select name="service_provider_id" class="form-control select2 service_providers" required="required">
 						        <?php
 						         if ($sproviders): ?> 
@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                    <?php endif;   ?>
 						            <?php   endforeach;  ?>
 						        <?php else: ?>
-						            <option value="0">No result</option>
+						            <option value="0"><?= $this->lang->line('no_result') ?></option>
 						        <?php endif; ?>
 						    </select>
 						</div>
@@ -75,9 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        		<table class="table table-bordered " id="maintable" >
 			        			<thead style="background-color: #b0acb7;">
 			        				<tr>
-			        					<th> Sr.No.</th>
-			        					<th> Checklist for Evaluation</th>
-			        					<th> Marking Grade</th>
+			        					<th> <?= $this->lang->line('sr_no') ?>.</th>
+			        					<th> <?= $this->lang->line('checklist_for_evalution') ?></th>
+			        					<th> <?= $this->lang->line('marking_grade') ?></th>
 			        					<!-- <th> Total</th> -->
 			        				</tr>
 			        			</thead>
@@ -114,11 +114,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			</tbody>
 			        			<tfoot>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b>Total</b></td>
+			        					<td colspan="2" style="text-align: right;"><b><?= $this->lang->line('total') ?></b></td>
 			        					<td colspan="2">
 			        						
 			        						<div class="input-group mb-3">
-							                  <input type="text"  placeholder="Total Marks" name="total_marks_obtained" class="form-control total_marks"  value="<?= $total_marks_obtained?>" readonly >
+							                  <input type="text"  placeholder="<?= $this->lang->line('total_marks') ?>" name="total_marks_obtained" class="form-control total_marks"  value="<?= $total_marks_obtained?>" readonly >
 							                  <div class="input-group-append">
 							                    <span class="input-group-text " id="total_value"></span>
 							                    
@@ -127,15 +127,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b>Total Percentage (%)</b></td>
+			        					<td colspan="2" style="text-align: right;"><b><?= $this->lang->line('total_percentage') ?>(%)</b></td>
 			        					<td colspan="2">
 			        						<input type="text"  placeholder="Total %" name="percentage" class="form-control total_percentage"  value="<?= $percentage?>" readonly >
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b> Category of Approval</b></td>
+			        					<td colspan="2" style="text-align: right;"><b> <?= $this->lang->line('category_of_approval') ?></b></td>
 			        					<td colspan="2">
-			        						<input type="text"  placeholder="Approval Grade" name="approval_grade"  value="<?= $approval_grade; ?>" id="approval_grade" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('approval_grade') ?>" name="approval_grade"  value="<?= $approval_grade; ?>" id="approval_grade" readonly >
 			        					</td>
 			        				</tr>
 			        			</tfoot>
@@ -148,44 +148,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        		<table class="table">
 	            			<thead>
 	            				<tr>
-	            					<th> Percentage Criteria </th>
-	            					<th> Grade </th>
+	            					<th> <?= $this->lang->line('percentage_criteria') ?> </th>
+	            					<th> <?= $this->lang->line('grade') ?> </th>
 	            				</tr>
 	            			</thead>
 	            			<tbody>
 	            				<tr>
-	            					<td> Above Average (80% & Above) </td>
-	            					<td> A</td>
+	            					<td> <?= $this->lang->line('above_average') ?> (80% & Above) </td>
+	            					<td> <?= $this->lang->line('a') ?></td>
 	            				</tr>
 	            				<tr>
-	            					<td> Average (60-79%)  </td>
-	            					<td> B</td>
+	            					<td> <?= $this->lang->line('average') ?> (60-79%)  </td>
+	            					<td> <?= $this->lang->line('b') ?></td>
 	            				</tr>
 	            				<tr>
-	            					<td> Below Average (40-59%) </td>
-	            					<td> C</td>
+	            					<td> <?= $this->lang->line('below_average') ?> (40-59%) </td>
+	            					<td> <?= $this->lang->line('c') ?></td>
 	            				</tr>
 	            			</tbody>
 	            		</table>
 		        	</div>
 		        	 <div class="col-md-6 col-sm-6 ">
-		        	 	<label  class="control-label"> Marking Criteria</label><br>
-		          		<label> Good</label> : 10  <br>
-	            		<label> Average</label> : 7 <br> 
-	            		<label> Below Average</label> : 5 
+		        	 	<label  class="control-label"> <?= $this->lang->line('marking_criteria') ?></label><br>
+		          		<label> <?= $this->lang->line('good') ?></label> : 10  <br>
+	            		<label> <?= $this->lang->line('average') ?></label> : 7 <br> 
+	            		<label> <?= $this->lang->line('below_average') ?></label> : 5 
 		            </div>
 		        </div>
 	        	<div class="row col-md-12">
 		            <div class="col-md-12 col-sm12 ">
-		            	<label  class="control-label"> Remarks</label>
-	            		<textarea type="text" placeholder=" Enter Remarks" name="comments" class="form-control" value="<?= $comments?>"><?= $comments?></textarea>
+		            	<label  class="control-label"> <?= $this->lang->line('remarks') ?></label>
+	            		<textarea type="text" placeholder=" <?= $this->lang->line('enter_remarks') ?>" name="comments" class="form-control" value="<?= $comments?>"><?= $comments?></textarea>
 	        		</div>
 		       </div>
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Save</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
+			                <button type="submit" class="btn btn-primary btn-block"><?= $this->lang->line('save') ?></button>
 		        		</div>
 		        	</div>
 		        </div>

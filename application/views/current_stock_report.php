@@ -1,70 +1,88 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$base_url=  base_url();
-//print_r($base_url);exit;
-?>
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
 
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
-      </span>
-      <div class="pull-right error_msg">
-        	<form method="post" action="<?php echo base_url(); ?>index.php/Stock_registers/createXLS">
-				<?php 
-		          if(!empty($conditions)){
-		            foreach ($conditions as $key => $value) { ?>
-		            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
-	          	<?php } }?>
-	           <button type="submit" class="btn btn-info"> Export </button>
-	         </form>  
-	     </div>
-       <form method="get" id="filterForm">
 
-                <div class="row">
-                  <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger" > Reset</a>
-              </div>
-          </div>
-        </form>
-    </div> <!-- /.card-body -->
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('current_stock_report') ?></h5>
+      </div>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('report') ?></li>
+      </ul>
+    </div>
+
+<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      <!-- Filter Button -->
+      <button class="btn btn-icon avatar-text avatar-md" type="button" id="toggleFilter">
+        <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
+      </button>
+
+      <form method="post" action="<?= base_url(); ?>index.php/Stock_registers/createXLS" class="d-inline-block">
+        <?php if (!empty($conditions)) {
+          foreach ($conditions as $key => $value) { ?>
+            <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
+        <?php }} ?>
+        <button type="submit" class="btn btn-icon avatar-text avatar-md"> <i class="feather feather-download "></i></button>
+      </form>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+    
+<!--
+  
+
+     <!-- Filter Form -->
+  <div class="card mb-3" id="filterBox" style="display: none; position:relative;left:35px;right:35px;width:1553px;top:20px">
     <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;">  Material Description </th>
-               <th style="white-space: nowrap;">  Date </th>
-              <th style="white-space: nowrap;">  Total In Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Total Out Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Available Qty (Unit)</th>
+      <form method="get" id="filterForm">
+        <div class="row">
+          <div class="col-md-4">
+            <label><?= $this->lang->line('from_date') ?></label>
+            <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+          </div>
+          <div class="col-md-4">
+            <label><?= $this->lang->line('upto_date') ?></label>
+            <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off">
+          </div>
+          <div class="col-md-4 d-flex align-items-end">
+            <button type="submit" style="gap:5px" class="btn btn-primary mr-2 "><?= $this->lang->line('search') ?></button>
+            <a href="<?= base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger"><?= $this->lang->line('reset') ?></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+      
+    
+     
+     <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
+              <th ><?= $this->lang->line('sr_no') ?>.</th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('material_description') ?> </th>
+               <th style="white-space: nowrap;"> <?= $this->lang->line('date') ?></th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('total_in_qty') ?> </th>
+              <th style="white-space: nowrap;">  <?= $this->lang->line('total_out_qty') ?> </th>
+              <th style="white-space: nowrap;"> <?= $this->lang->line('available_qty') ?> </th>
             </tr>
           </thead>
           <tbody>
@@ -115,6 +133,44 @@ $base_url=  base_url();
   </div>
 </div>
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // Filter box show/hide
+    $('#toggleFilter').click(function () {
+      $('#filterBox').slideToggle(); // This toggles the filter card
+    });
+
+    // (Optional) Checkbox master toggle
+    $('#master').on('click', function () {
+      $('.sub_chk').prop('checked', this.checked);
+    });
+
+    // (Optional) Bulk delete
+    $('.delete_all').on('click', function () {
+      var allVals = $(".sub_chk:checked").map(function () {
+        return $(this).val();
+      }).get();
+
+      if (allVals.length <= 0) {
+        alert("Please select row.");
+      } else {
+        if (confirm("Are you sure you want to delete all selected records?")) {
+          $.ajax({
+            type: "POST",
+            url: "<?= base_url(); ?>index.php/Requisition_slips/deleteRequisition",
+            data: 'ids=' + allVals.join(","),
+            success: function (response) {
+              $(".successs_mesg").html(response);
+              location.reload();
+            }
+          });
+        }
+      }
+    });
+  });
+</script>
+
 <script type="text/javascript">
   $( document ).ready(function() {
      

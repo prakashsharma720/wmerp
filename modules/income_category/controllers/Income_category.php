@@ -1,6 +1,6 @@
 <?php defined("BASEPATH") OR exit("No direct script access allowed");
 
-class Income_category extends CI_Controller {
+class Income_category extends MY_Controller {
   	function __construct() {
 	    parent::__construct();
 	    $this->load->model("Income_category_model"); 

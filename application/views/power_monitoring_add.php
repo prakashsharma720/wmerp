@@ -26,19 +26,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Power_monitoring_registers/add_new_record">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date  <span class="required">*</span></label>
+			            	<label class="control-label"> <?= $this->lang->line('date') ?>  <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
+							 
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> PMR Number <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('pmr_number') ?> <span class="required">*</span></label>
 			            	
 			            	<input type="text" class="form-control" value="<?= $pl_number_view ?>" autocomplete="off" autofocus readonly >
 			            	<input type="hidden" name="pl_number" value="<?= $pl_number ?>">
 			            </div>
 			       		<div class="col-md-4 col-sm-4">
-				            <label  class="control-label"> Remarks</label>
-				    		<textarea class="form-control " rows="2" placeholder="Enter Remarks here" name="remarks" ></textarea>
+				            <label  class="control-label"> <?= $this->lang->line('remarks') ?></label>
+				    		<textarea class="form-control " rows="2" placeholder="<?= $this->lang->line('enter_remarks_here') ?>" name="remarks" ></textarea>
 			    		</div>
 		        	</div>
 			    <br>
@@ -49,13 +50,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 			        					<th >#</th>
-			        					<th > Meter Name </th>
-			        					<th > Opening Reading</th>
-			        					<th > Closing Reading</th>
-			        					<th > Units Consumed</th>
-										<th > Production (MT)</th> 
-										<th > Units / MT </th> 
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th > <?= $this->lang->line('meter_name') ?> </th>
+			        					<th > <?= $this->lang->line('opening_reading') ?></th>
+			        					<th > <?= $this->lang->line('closing_reading') ?></th>
+			        					<th > <?= $this->lang->line('units_consumed') ?></th>
+										<th > <?= $this->lang->line('production') ?> (MT)</th> 
+										<th > <?= $this->lang->line('units') ?> / MT </th> 
+			        					<th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -63,34 +64,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			</tbody>
 			        			 <tfoot>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b> Total </b></td>
+			        					<td colspan="2" style="text-align: right;"><b> <?= $this->lang->line('total') ?> </b></td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total" name="total_opening" class="form-control total_opening"  value="" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total') ?>" name="total_opening" class="form-control total_opening"  value="" readonly >
 			        					</td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total" name="total_closing" class="form-control total_closing"  value="" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total') ?>" name="total_closing" class="form-control total_closing"  value="" readonly >
 			        					</td>
 			        					<td colspan="">
-			        					<input type="text"  placeholder="Total" name="total_unit_consumed" class="form-control total_unit_consumed"  value="" readonly >
+			        					<input type="text"  placeholder="<?= $this->lang->line('total') ?>" name="total_unit_consumed" class="form-control total_unit_consumed"  value="" readonly >
 			        					</td>
 			        					<td colspan="2">
-			        						<input type="text"  placeholder="Total Propduction" name="total_production_in_mt" class="form-control total_production_in_mt"  value="" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_propductiont') ?>" name="total_production_in_mt" class="form-control total_production_in_mt"  value="" readonly >
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="2" style="text-align: right;"><b> RSEB Meter Reading </b></td>
+			        					<td colspan="2" style="text-align: right;"><b> <?= $this->lang->line('rseb_meter_reading') ?> </b></td>
 			        					<td>
-			        						<input type="text"  placeholder="RSEB Opening" name="rseb_opening" class="form-control rseb_opening"  value=""  >
+			        						<input type="text"  placeholder="<?= $this->lang->line('rseb_opening') ?>" name="rseb_opening" class="form-control rseb_opening"  value=""  >
 			        					</td>
 			        					<td>
-			        						<input type="text"  placeholder="RSEB Closing" name="rseb_closing" class="form-control rseb_closing"  value=""  >
+			        						<input type="text"  placeholder="<?= $this->lang->line('rseb_closing') ?>" name="rseb_closing" class="form-control rseb_closing"  value=""  >
 			        					</td>
 			        					<td colspan="">
-			        						<input type="text"  placeholder="Total Consumed" name="rseb_meter_units" class="form-control rseb_meter_units"  value="" readonly >
+			        						<input type="text"  placeholder="<?= $this->lang->line('total_consumed') ?>" name="rseb_meter_units" class="form-control rseb_meter_units"  value="" readonly >
 			        					</td>
 			        				</tr>
 			        				<tr>
-			        					<td colspan="4" style="text-align: right;"><b> Unit Variance </b></td>
+			        					<td colspan="4" style="text-align: right;"><b> <?= $this->lang->line('unit_variance') ?> </b></td>
 			        					<td colspan="1">
 			        						<input type="text"  placeholder="Unit Variance" name="difference_units" class="form-control difference_units"  value=""  readonly="readonly">
 			        					</td>
@@ -102,8 +103,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->
@@ -124,25 +125,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                        <option value="<?= $value['id'] ?>"><?= $value['meter_name'] ?></option>
 	                <?php endforeach; ?>
 	            <?php else: ?>
-	                <option value="0">No result</option>
+	                <option value="0"><?= $this->lang->line('no_result') ?></option>
 	            <?php endif; ?>
 	        </select>
 				
    			</td>
 			<td>
-				<input type="text"  placeholder="Enter Value" name="opening_reading[]" class="form-control opening_reading"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+				<input type="text"  placeholder="<?= $this->lang->line('enter_valuet') ?>" name="opening_reading[]" class="form-control opening_reading"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 			</td>
 			<td>
-				<input type="text"  placeholder="Enter Value" name="closing_reading[]" class="form-control closing_reading"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+				<input type="text"  placeholder="<?= $this->lang->line('enter_value') ?>" name="closing_reading[]" class="form-control closing_reading"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 			</td>
 			<td>
-				<input type="text"  placeholder="Total Units" name="unit_consumed[]" class="form-control unit_consumed"  autofocus  style="width:150px;" readonly="readonly">
+				<input type="text"  placeholder="<?= $this->lang->line('total_units') ?>" name="unit_consumed[]" class="form-control unit_consumed"  autofocus  style="width:150px;" readonly="readonly">
 			</td>
 			<td>
-				<input type="text"  placeholder="Enter Production" name="production_in_mt[]" class="form-control production_in_mt"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+				<input type="text"  placeholder="<?= $this->lang->line('enter_production') ?>" name="production_in_mt[]" class="form-control production_in_mt"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 			</td>
 			<td>
-				<input type="text"  placeholder="Units / MT" name="unit_per_ton[]" class="form-control unit_per_mt"  autofocus  style="width:150px;" >
+				<input type="text"  placeholder="<?= $this->lang->line('units') ?> / MT" name="unit_per_ton[]" class="form-control unit_per_mt"  autofocus  style="width:150px;" >
 			</td>
 			<td>
 				<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 

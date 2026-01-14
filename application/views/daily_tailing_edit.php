@@ -25,20 +25,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<input type="hidden" name="gtr_id_old" value="<?= $id?>">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date Of Tailing <span class="required">*</span></label>
+			            	<label class="control-label">  <?= $this->lang->line('date_of_tailing') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> DTR Number <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('dtr_no') ?>r <span class="required">*</span></label>
 			            	
 			            	<input type="text" class="form-control" value="<?= $dtr_code_view ?>" autocomplete="off" autofocus readonly >
 			            	<input type="hidden" name="dtr_code" value="<?= $dtr_code ?>">
 			            </div>
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label">  <?= $this->lang->line('department') ?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value="">  <?= $this->lang->line('select_department') ?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -51,16 +51,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"> <?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 		        	</div>
 			        <div class="row col-md-12 ">
 		            	<div class="col-md-6 col-sm-6">
-		            		<label  class="control-label"> Mill No <span class="required">*</span></label>
+		            		<label  class="control-label">  <?= $this->lang->line('mill_no') ?> <span class="required">*</span></label>
 		            		<select name="mill_no" class="form-control" required="required">
-								<option value=""> Select Mill No</option>
+								<option value="">  <?= $this->lang->line('select_mill_no') ?></option>
 				                <?php
 				                 if ($equipments): ?> 
 				                  <?php 
@@ -73,13 +73,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                        <?php endif;   ?>
 				                    <?php   endforeach;  ?>
 				                <?php else: ?>
-				                    <option value="0">No result</option>
+				                    <option value="0"> <?= $this->lang->line('no_result') ?></option>
 				                <?php endif; ?>
 				            </select>
 		            	</div>
 		            	<div class="col-md-6 col-sm-6">
-				            <label  class="control-label"> Remarks</label>
-				    		<textarea class="form-control " rows="2" placeholder="Enter Remarks here" name="remarks" value="<?= $remarks ?>"><?= $remarks ?></textarea>
+				            <label  class="control-label">  <?= $this->lang->line('remarks') ?></label>
+				    		<textarea class="form-control " rows="2" placeholder="enter_remarks_here" name="remarks" value="<?= $remarks ?>"><?= $remarks ?></textarea>
 			    		</div>
 			        </div>
 					<br>
@@ -90,19 +90,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        			<thead style="background-color: #ca6b24;">
 			        				<tr>
 			        					<th >#</th>
-			        					<th > Tailing Of Grade</th>
-			        					<th > Lot No.</th>
-			        					<th > Batch No.</th>
-										<th > No of Bags</th> 
-										<th > Weight of Bag (Kgs)</th> 
-										<th > Tailing QTY</th> 
-										<th > Total Tailing Qty For Lot</th> 
-										<th > Gride Name</th> 
-										<th > Re-used Grade Name</th> 
-										<th > Re-used Qty</th> 
-										<th > Balance Qty</th> 
-										<th > Color</th> 
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th >  <?= $this->lang->line('tailing_of_grade') ?></th>
+			        					<th >  <?= $this->lang->line('lot_no') ?>.</th>
+			        					<th >  <?= $this->lang->line('batch_no') ?>.</th>
+										<th >  <?= $this->lang->line('no_of_bags') ?></th> 
+										<th >  <?= $this->lang->line('weight_of_bag') ?>(Kgs)</th> 
+										<th >  <?= $this->lang->line('tailing_qty') ?></th> 
+										<th >  <?= $this->lang->line('total_tailing_qty_for_lot') ?></th> 
+										<th >  <?= $this->lang->line('gride_name') ?></th> 
+										<th >  <?= $this->lang->line('re_used_grade_name') ?></th> 
+										<th >  <?= $this->lang->line('re_used_qty') ?></th> 
+										<th >  <?= $this->lang->line('balance_qty') ?></th> 
+										<th >  <?= $this->lang->line('color') ?></th> 
+			        					<th style="white-space: nowrap;">  <?= $this->lang->line('action_button') ?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">

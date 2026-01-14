@@ -29,7 +29,7 @@ $allnotifications = $this->dynamic_menu->getNoti();
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?= $this->lang->line('all_notifications') ?> </h3>
 
         <div class="button-group float-right">
 
@@ -53,9 +53,9 @@ $allnotifications = $this->dynamic_menu->getNoti();
                   <thead>
                         <tr>
                         <th><input type="checkbox" id="master"></th>
-                          <th >Sr.No.</th>
-                          <th >Notification </th>
-                          <th >Action Time.</th>
+                          <th ><?= $this->lang->line('sr_no') ?></th>
+                          <th ><?= $this->lang->line('notification') ?> </th>
+                          <th ><?= $this->lang->line('action_time') ?></th>
                         </tr>
                     </thead>
                       <tbody>

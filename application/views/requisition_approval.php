@@ -254,25 +254,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Modal content-->
                         <div class="modal-content">
                           <div class="modal-header" style="background-color: #168c56;color: azure;">
-                             <h4 class="modal-title" >Confirm Header </h4>
+                             <h4 class="modal-title" ><?= $this->lang->line('confirm_header') ?> </h4>
                             <button type="button" class="close" data-dismiss="modal" style="color: azure;">&times;</button>
                           </div>
                           <div class="modal-body">
-                            <p>Are you sure, you want to <b style="color:#168c56;">Approve</b> Requisition Slip <b><?php echo $inv_number1 ;?> </b>? </p>
+                            <p>A  <?= $this->lang->line('are_you_sure_you_want_to') ?> <b style="color:#168c56;"><?= $this->lang->line('approve') ?></b> <?= $this->lang->line('requisition_slip') ?> <b><?php echo $inv_number1 ;?> </b>? </p>
                             <input type="hidden" name="employee_id" value="<?php echo $obj['employee_id'];?>">
                             <input type="hidden" name="requisition_id" value="<?php echo $obj['id'];?>">
                             <input type="hidden" name="status" value="Approved">
                             <input type="hidden" name="approved_date" value="<?= date('Y-m-d') ?>">
                             <div class="form-group">
                                 <div class="row col-md-12">
-                                  <label  class="control-label"> Comment </label>
-                                <textarea class="form-control Comment" rows="2" placeholder="Enter Reason here" name="approve_comment"></textarea>
+                                  <label  class="control-label"> <?= $this->lang->line('comment') ?> </label>
+                                <textarea class="form-control Comment" rows="2" placeholder="<?= $this->lang->line('enter_reason_here') ?>" name="approve_comment"></textarea>
                               </div>
                             </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="submit" class="btn btn-success modal_approve_button" style="background-color: #168c56;">Submit</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success modal_approve_button" style="background-color: #168c56;"><?= $this->lang->line('submit') ?></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><?= $this->lang->line('close') ?></button>
                           </div>
                         </div>
                         </form>

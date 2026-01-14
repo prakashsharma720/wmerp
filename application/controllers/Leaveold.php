@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-Class Leave extends CI_Controller {
+Class Leave extends MY_Controller {
 
 public function __construct() {
 parent::__construct();

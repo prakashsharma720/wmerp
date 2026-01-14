@@ -6,7 +6,7 @@ $base_url=  base_url();
       <?php if($this->session->flashdata('success')): ?>
          <div class="alert alert-success alert-dismissible" >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('success')?>!</h5>
                  <?php echo $this->session->flashdata('success'); ?>
                </div>
           <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
@@ -15,7 +15,7 @@ $base_url=  base_url();
       <?php if($this->session->flashdata('failed')): ?>
          <div class="alert alert-error alert-dismissible " >
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
+                  <h5><i class="icon fa fa-check"></i> <?=$this ->lang ->line('alert')?>!</h5>
                  <?php echo $this->session->flashdata('failed'); ?>
                </div>
       <?php endif; ?>
@@ -31,25 +31,25 @@ $base_url=  base_url();
 		            foreach ($conditions as $key => $value) { ?>
 		            <input type="hidden" name="<?= $key ?>" value="<?=$value ?>">
 	          	<?php } }?>
-	           <button type="submit" class="btn btn-info"> Export </button>
+	           <button type="submit" class="btn btn-info"> <?=$this ->lang ->line('export')?>  </button>
 	         </form>  
 	     </div>
        <form method="get" id="filterForm">
 
                 <div class="row">
                   <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
+                      <label  class="control-label"> <?=$this ->lang ->line('from_date')?> </label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                   </div>
                   <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
+                    <label  class="control-label"> <?=$this ->lang ->line('upto_date')?> </label>
                       <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
                 </div>
                  <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
+                   <label  class="control-label" style="visibility: hidden;"> <?=$this ->lang ->line('grade')?> </label><br>
                   <input type="submit" class="btn btn-primary" value="Search" /> 
                   <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger" > Reset</a>
+                  <a href="<?php echo base_url(); ?>index.php/Stock_registers/report" class="btn btn-danger" > <?=$this ->lang ->line('reset')?> </a>
               </div>
           </div>
         </form>
@@ -60,11 +60,11 @@ $base_url=  base_url();
           <thead>
             <tr>
               <th >Sr.No.</th>
-              <th style="white-space: nowrap;">  Finish Good </th>
-              <th style="white-space: nowrap;">  Date </th>
-              <th style="white-space: nowrap;">  Total In Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Total Out Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Available Qty (Unit)</th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('finish_good')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('date')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_in_qty')?>  (Unit)</th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_out_qty')?>  (Unit)</th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('available_qty')?>  (Unit)</th>
             </tr>
           </thead>
           <tbody>

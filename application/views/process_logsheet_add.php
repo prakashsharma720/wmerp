@@ -26,20 +26,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Process_logsheets/add_new_record">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label"> Date Of Process <span class="required">*</span></label>
+			            	<label class="control-label"> <?= $this->lang->line('date_of_process') ?> <span class="required">*</span></label>
 			                 <input type="text" data-date-formate="dd-mm-yyyy" name="transaction_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off"  
 			                 value="<?php echo date('d-m-Y'); ?>" autofocus required >
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> PSL Number <span class="required">*</span></label>
+			            	<label  class="control-label"> <?= $this->lang->line('psl_number') ?>r <span class="required">*</span></label>
 			            	
 			            	<input type="text" class="form-control" value="<?= $pl_number_view ?>" autocomplete="off" autofocus readonly >
 			            	<input type="hidden" name="pl_number" value="<?= $pl_number ?>">
 			            </div>
 			           <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Department</label>
+			            	<label  class="control-label"> <?= $this->lang->line('department') ?></label>
 				            	<select name="department_id" class="form-control select2 ">
-									<option value=""> Select Department</option>
+									<option value=""> <?= $this->lang->line('select_department') ?></option>
 					                <?php
 					                 if ($departments): ?> 
 					                  <?php 
@@ -52,16 +52,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 		        	</div>
 			        <div class="row col-md-12 ">
 		            	<div class="col-md-6 col-sm-6">
-		            		 <label  class="control-label"> Mill No <span class="required">*</span></label>
+		            		 <label  class="control-label"> <?= $this->lang->line('mill_no') ?> <span class="required">*</span></label>
 		            		<select name="mill_no" class="form-control" required="required">
-								<option value=""> Select Mill No</option>
+								<option value=""> <?= $this->lang->line('select_mill_no') ?></option>
 				                <?php
 				                 if ($equipments): ?> 
 				                  <?php 
@@ -74,13 +74,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					                        <?php endif;   ?>
 				                    <?php   endforeach;  ?>
 				                <?php else: ?>
-				                    <option value="0">No result</option>
+				                    <option value="0"><?= $this->lang->line('no_result') ?></option>
 				                <?php endif; ?>
 				            </select>
 		            	</div>
 		            	<div class="col-md-6 col-sm-6">
-				            <label  class="control-label"> Remarks</label>
-				    		<textarea class="form-control " rows="2" placeholder="Enter Remarks here" name="remarks" ></textarea>
+				            <label  class="control-label"> <?= $this->lang->line('remarks') ?></label>
+				    		<textarea class="form-control " rows="2" placeholder="<?= $this->lang->line('enter_remarks_here') ?>" name="remarks" ></textarea>
 			    		</div>
 			        </div>
 					<br>
@@ -92,17 +92,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        				<tr>
 			        					<th >#</th>
 			        					<th > M/c Start Date-Time </th> 
-			        					<th > Finsh Good </th>
-			        					<th > Lot No.</th>
-			        					<th > Batch No.</th>
-										<th > Previous Bag No</th> 
-										<th > Plate Weight</th> 
-										<th > Grate Weight</th> 
-										<th > Avg Temp Pulverizer</th> 
-										<th > Avg Temp Pribbon</th> 
-										<th > Avg Temp Hopper</th> 
-										<th > Oversize Weight</th> 
-			        					<th style="white-space: nowrap;"> Action Button</th>
+			        					<th > <?= $this->lang->line('finish_good') ?> </th>
+			        					<th > <?= $this->lang->line('lot_no') ?>.</th>
+			        					<th > <?= $this->lang->line('batch_no') ?>.</th>
+										<th > <?= $this->lang->line('previous_bag_no') ?></th> 
+										<th > <?= $this->lang->line('plate_weight') ?></th> 
+										<th > <?= $this->lang->line('grate_weight') ?></th> 
+										<th ><?= $this->lang->line('avg_temp_pulverizer') ?> </th> 
+										<th ><?= $this->lang->line('avg_temp_pribbon') ?></th> 
+										<th > <?= $this->lang->line('avg_temp_hopper') ?></th>
+										<th > <?= $this->lang->line('oversize_weight') ?></th> 
+			        					<th style="white-space: nowrap;"> <?= $this->lang->line('action_button') ?></th>
 			        				</tr>
 			        			</thead>
 			        			<tbody id="mainbody">
@@ -132,45 +132,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 									</td>
 									<td > 
 									<select name="finish_good_id[]" class="form-control select2" style="width:350px !important;" required>
-										<option value=""> Select Grade</option>
+										<option value=""><?= $this->lang->line('select_grade') ?></option>
 							            <?php if ($items): ?> 
 							                <?php foreach ($items as $value) : ?>
 							                       <!--  <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].','.$value['packing_type'].','.$value['hsn_code'].')' ?></option> -->
 							                        <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].')' ?></option>
 							                <?php endforeach; ?>
 							            <?php else: ?>
-							                <option value="0">No result</option>
+							                <option value="0"><?= $this->lang->line('no_result') ?></option>
 							            <?php endif; ?>
 							        </select>
 										
 						   			</td>
 						   			<td>
-										<input type="text"  placeholder="Enter Lot No" name="lot_no[]" class="form-control"  style="width: 150px;" autofocus  >
+										<input type="text"  placeholder="<?= $this->lang->line('enter_lot_no') ?>" name="lot_no[]" class="form-control"  style="width: 150px;" autofocus  >
 									</td>
 						   			<td>
-										<input type="text"  placeholder="Enter Batch No" name="batch_no[]" class="form-control"  autofocus style="width: 150px;" >
+										<input type="text"  placeholder="<?= $this->lang->line('enter_batch_no') ?>" name="batch_no[]" class="form-control"  autofocus style="width: 150px;" >
 									</td>
 									<td>
-										<input type="text"  placeholder="Previous Bag No" name="previous_bag_no[]" class="form-control previous_bag_no"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+										<input type="text"  placeholder="<?= $this->lang->line('previous_bag_no') ?>" name="previous_bag_no[]" class="form-control previous_bag_no"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 									</td>
 									
 									<td>
-										<input type="text"  placeholder="Plate Weight" name="plate_weight[]" class="form-control plate_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+										<input type="text"  placeholder="<?= $this->lang->line('plate_weight') ?>" name="plate_weight[]" class="form-control plate_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 									</td>
 									<td>
-										<input type="text"  placeholder="Grate Weight" name="grate_weight[]" class="form-control grate_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+										<input type="text"  placeholder="<?= $this->lang->line('grate_weight') ?>" name="grate_weight[]" class="form-control grate_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 									</td>
 									<td>
-										<input type="text"  placeholder="Avg Temp" name="avg_temp_pulverizer[]" class="form-control avg_temp_pulverizer"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+										<input type="text"  placeholder="AVG temp" name="avg_temp_pulverizer[]" class="form-control avg_temp_pulverizer"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 									</td>
 									<td>
-										<input type="text"  placeholder="Avg Temp" name="avg_temp_pribbon[]" class="form-control avg_temp_pribbon"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+										<input type="text"  placeholder="AVG temp" name="avg_temp_pribbon[]" class="form-control avg_temp_pribbon"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 									</td>
 									<td>
-										<input type="text"  placeholder="Avg Temp" name="avg_temp_hopper[]" class="form-control avg_temp_hopper"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+										<input type="text"  placeholder="AVG temp" name="avg_temp_hopper[]" class="form-control avg_temp_hopper"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 									</td>
 									<td>
-										<input type="text"  placeholder="Oversize Weight" name="oversize_weight[]" class="form-control oversize_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
+										<input type="text"  placeholder="<?= $this->lang->line('oversize_weight') ?>" name="oversize_weight[]" class="form-control oversize_weight"  autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" style="width:150px;" >
 									</td>
 									<td>
 										<button type="button" class="btn btn-xs btn-primary addrow"  href="#" role='button'><i class="fa fa-plus"></i></button> 
@@ -196,8 +196,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		        	<div class="row col-md-12">
 			            <div class="col-md-12 col-sm-12 ">
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Submit</button>
+			            	<label  class="control-label" style="visibility: hidden;"> <?= $this->lang->line('grade') ?></label>
+			                <button type="submit" class="btn btn-primary btn-block"> <?= $this->lang->line('submit') ?></button>
 		        		</div>
 		        	</div>
 		    </form> <!-- /form -->
@@ -233,14 +233,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</td>
 			<td> 
 			<select name="finish_good_id[]" class="form-control products" style="width:350px;" required>
-				<option value=""> Select Grade</option>
+				<option value=""> <?= $this->lang->line('select_grade') ?></option>
 	            <?php if ($items): ?> 
 	                <?php foreach ($items as $value) : ?>
 	                       <!--  <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].','.$value['packing_type'].','.$value['hsn_code'].')' ?></option> -->
 	                        <option value="<?= $value['id'] ?>"><?= $value['mineral_name'].' ('.$value['grade_name'].')' ?></option>
 	                <?php endforeach; ?>
 	            <?php else: ?>
-	                <option value="0">No result</option>
+	                <option value="0"><?= $this->lang->line('no_result') ?></option>
 	            <?php endif; ?>
 	        </select>
 				

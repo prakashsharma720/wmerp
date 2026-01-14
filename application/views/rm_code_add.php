@@ -1,35 +1,53 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-//echo $grid_number;exit;
-?>
 
 
-  <div class="container-fluid">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
-        <div class="pull-right error_msg">
-			<?php echo validation_errors();?>
 
-			<?php if (isset($message_display)) {
-			echo $message_display;
-			} ?>		
+
+
+<div class="nxl-content">
+	<div class="page-header">
+		<div class="page-header-left d-flex align-items-center">
+			<div class="page-header-title">
+				<h5 class="m-b-10"><?= $this->lang->line('create_new_material_code') ?></h5>
+			</div>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="<?php echo base_url('index.php/User_authentication/admin_dashboard'); ?>"><?= $this->lang->line('home') ?></a>
+				</li>
+				<li class="breadcrumb-item"><?= $this->lang->line('add') ?>
+				</li>
+			</ul>
+
+</div>
+
+		<div class="page-header-right ms-auto">
+			<div class="page-header-right-items">
+
+      <?php $this->load->view('layout/alerts'); ?>
+			</div>
+
+			<!-- Mobile Toggle -->
+			<div class="d-md-none d-flex align-items-center">
+				<a href="javascript:void(0)" class="page-header-right-open-toggle">
+					<i class="feather-align-right fs-20"></i>
+				</a>
+			</div>
 		</div>
-
-      </div> <!-- /.card-body -->
-      <div class="card-body">
+	</div>
+	<div class="main-content">
+		<div class="card card-primary card-outline">
+			<div class="card-body">
 					<form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Rm_code/add_new_rmcode">
 		        <div class="form-group">
 		        	<div class="row col-md-12">
 		        		<div class="col-md-4 col-sm-4 ">
-			            	<label class="control-label">Grid Number <span class="required">*</span></label>
+			            	<label class="control-label"><?=$this ->lang ->line('grid_number')?> <span class="required">*</span></label>
 			            	<?php echo form_dropdown('grid_number',$grids);?>
 			                <!--<input type="text"  placeholder="Enter Grid Number" name="grid_number" class="form-control"  required autofocus>-->
 			            </div>
 			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label">Supplier Category <span class="required">*</span></label>
+			            	<label  class="control-label"><?=$this ->lang ->line('supplier_category')?><span class="required">*</span></label>
 			            	<select name="categories_id" class="form-control select2 category" >
-			            		 <option value="0">Select Category</option>
+			            		 <option value="0"><?=$this ->lang ->line('select_category')?></option>
 					                <?php
 					                 if ($categories): ?> 
 					                  <?php 
@@ -42,12 +60,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						                        <?php endif;   ?>
 					                    <?php   endforeach;  ?>
 					                <?php else: ?>
-					                    <option value="0">No result</option>
+					                    <option value="0"><?=$this ->lang ->line('no_result')?></option>
 					                <?php endif; ?>
 					            </select>
 			            </div>
 			        <div class="col-md-4 col-sm-4 ">
-			          <label  class="control-label">Name of Supplier <span class="required">*</span></label>
+			          <label  class="control-label"><?=$this ->lang ->line('name_of_supplier')?> <span class="required">*</span></label>
 							<select name="supplier_id" class="form-control select2 suppliers" required="required">
 
 						    </select>
@@ -57,14 +75,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        </div>
 		        <div class="form-group">
 		        	<div class="row col-md-12">
-			            <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Raw Material <span class="required">*</span></label>	
+			            <div class="col-md-4 col-sm-4  mt-2">
+			            	<label  class="control-label"> <?=$this ->lang ->line('raw_material')?><span class="required">*</span></label>	
 			            	<?php echo form_dropdown('rm_name',$raw_materials);?>
 			            	<!--<input type="text"  placeholder="Enter raw material name" name="rm_name" class="form-control"  required autofocus>-->
 			            </div>
 			   
-			         <div class="col-md-4 col-sm-4 ">
-				            <label class="control-label"> Grade</label>
+			         <div class="col-md-4 col-sm-4 mt-2">
+				            <label class="control-label"> <?=$this ->lang ->line('grade')?></label>
 			                	<?php  $grades = array(
 			            		 'No' => 'Select Option',
 				                  'Food' => 'Food (F)',
@@ -73,17 +91,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			            		echo form_dropdown('grade', $grades)
 			            		?>
 				        </div>
-				          <div class="col-md-4 col-sm-4 ">
-			            	<label  class="control-label"> Code <span class="required">*</span></label>	
-			            	<input type="text"  placeholder="Enter code" name="rm_code" class="form-control"  required autofocus>
+				          <div class="col-md-4 col-sm-4 mt-2 ">
+			            	<label  class="control-label"><?=$this ->lang ->line('code')?> <span class="required">*</span></label>	
+			            	<input type="text"  placeholder="<?=$this ->lang ->line('enter_code')?>" name="rm_code" class="form-control"  required autofocus>
 			            </div>
 						        
 		        	</div>
 		        </div>
 		         <div class="form-group">
 		        	<div class="row col-md-12">			   
-			            	<label  class="control-label" style="visibility: hidden;"> Grade</label>
-			                <button type="submit" class="btn btn-primary btn-block"> Save</button>
+			            	<label  class="control-label" style="visibility: hidden;"><?=$this ->lang ->line('grade')?></label>
+			                <button type="submit" class="btn btn-primary btn-block"><?=$this ->lang ->line('save')?></button>
 		        	</div>
 		        </div>
 		        
@@ -116,3 +134,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			}); 
 	});
 </script> 
+
+
+

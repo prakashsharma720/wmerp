@@ -3,41 +3,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $base_url=  base_url();
 //print_r($base_url);exit;
 ?>
-      <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
-
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
-      </span>
-       <div class="button-group float-right">
-        
+      <div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('fg_stock_report') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th >Sr.No.</th>
-              <th style="white-space: nowrap;">  Finish Good </th>
-              <th style="white-space: nowrap;">  Total In Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Total Out Qty (Unit)</th>
-              <th style="white-space: nowrap;">  Available Qty (Unit)</th>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+    <!-- Add New Button -->
+    <div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      
+
+                        
+
+    </div>
+  </div>
+
+      <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
+              <th ><?=$this ->lang ->line('sr_no')?> .</th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('finish_good')?>  </th>
+              <th style="white-space: nowrap;"> <?=$this ->lang ->line('total_in_qty')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('total_out_qty')?>  </th>
+              <th style="white-space: nowrap;">  <?=$this ->lang ->line('available_qty')?>  </th>
             </tr>
           </thead>
           <tbody>

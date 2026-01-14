@@ -1,6 +1,6 @@
 <?php defined("BASEPATH") OR exit("No direct script access allowed");
 
-class Expenses extends CI_Controller {
+class Expenses extends MY_Controller {
   	function __construct() {
 	    parent::__construct();
 	    $this->load->model("Expenses_model"); 

@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-Class Leads_marketing extends CI_Controller {
+Class Leads_marketing extends MY_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -81,7 +81,7 @@ Class Leads_marketing extends CI_Controller {
 		// echo "<pre>";print_r($data['leads']);exit;
 		$data['employees'] = $this->Leads_marketing_model->getEmployeeDropdown();
 		$data['categories'] = $this->Leads_marketing_model->getLeadsCategories();
-		$this->template->load('template','lead_marketing/marketing_view',$data);
+		$this->template->load('layout/template','lead_marketing/marketing_view',$data);
 	}
 
 	public function Nofollowupsview(){

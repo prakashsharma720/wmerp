@@ -20,39 +20,51 @@ $data=explode('?', $current_page);
 }
 </style>
 
-<?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success alert-dismissible">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Success!</h5>
-    <?php echo $this->session->flashdata('success'); ?>
-</div>
-<!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-<?php endif; ?>
+<div class="nxl-content">
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <div class="page-header-left d-flex align-items-center">
+            <div class="page-header-title">
+                <h5 class="m-b-10"> <?= $this->lang->line('customers_list') ?></h5>
+            </div>
+            <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+                <li class="breadcrumb-item">
+                    <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+                        <?= $this->lang->line('home') ?>
+                    </a>
+                </li>
+                <li class="breadcrumb-item"> <?= $this->lang->line('view_list') ?></li>
+            </ul>
+        </div>
 
-<?php if($this->session->flashdata('failed')): ?>
-<div class="alert alert-error alert-dismissible ">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h5><i class="icon fa fa-check"></i> Alert!</h5>
-    <?php echo $this->session->flashdata('failed'); ?>
-</div>
-<?php endif; ?>
-<div class="container-fluid">
-    <div class="card card-primary card-outline">
-        <div class="card-header">
-            <span class="card-title"><?php  echo $title; ?></span>
-            <div class="pull-right error_msg">
-                <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-success" data-toggle="tooltip"
-                    title="New customer"><i class="fa fa-plus"></i></a>
+        <!-- Add New Button -->
+        <div class="page-header-right d-flex align-items-center gap-2">
+            <?php $this->load->view('layout/alerts'); ?>
+            <a href="javascript:void(0);" class="btn btn-icon avatar-text avatar-md" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" title="Filter">
+          <i class="feather-filter"></i>
+        </a>
+ <a href="<?php echo base_url(); ?>index.php/Customers/add" class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip"
+                    title="New customer"><i class="feather feather-plus"></i></a>
 
-                <button class="btn btn-default" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
+                <button class="btn btn-icon avatar-text avatar-md" data-toggle="tooltip" title="Refresh" onclick="location.reload();"><i
                         class="fa fa-refresh"></i></button>
 
-                <button class="btn btn-danger delete_all" data-toggle="tooltip" title="Bulk Delete"><i
-                        class="fa fa-trash"></i></button>
+                <button class="btn btn-icon avatar-text avatar-md delete_all" data-toggle="tooltip" title="Bulk Delete"><i
+                        class="feather feather-trash"></i></button>
+            <!-- Mobile Toggle -->
+            <div class="d-md-none d-flex align-items-center">
+
+                <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                    <i class="feather-align-right fs-20"></i>
+                </a>
             </div>
-        </div> <!-- /.card-body -->
-        <div class="card-body">
-            <form method="get" id="filterForm">
+        </div>
+    </div>
+    
+
+ <!-- ✅ Collapsible Filter Form -->
+  <div class="collapse bg-white" id="filterFormWrapper"style="position: relative; left:35px; right:35px;width:1553px;border-radius: 10px; top:20px ">
+    <form method="get" id="filterForm" class="mb-3 border p-3 rounded ">
+        
                 <div class="row">
                     <!-- <div class="col-md-4 col-sm-4 ">
                   <label  class="control-label">Customer Category <span class="required">*</span></label>
@@ -75,9 +87,9 @@ $data=explode('?', $current_page);
                     </select>
                 </div>-->
                     <div class="col-md-3 col-sm-3 ">
-                        <label class="control-label">Name of Customer <span class="required">*</span></label>
+                        <label class="control-label"><?= $this->lang->line('name_of_customer') ?> <span class="required">*</span></label>
                         <select name="customer_id" class="form-control select2 customers">
-                            <option value="0"> Select customer</option>
+                            <option value="0"> <?= $this->lang->line('select_customer') ?></option>
                             <?php
                          if ($all_customers): ?>
                             <?php 
@@ -90,7 +102,7 @@ $data=explode('?', $current_page);
                             <?php endif;   ?>
                             <?php   endforeach;  ?>
                             <?php else: ?>
-                            <option value="0">No result</option>
+                            <option value="0"><?= $this->lang->line('no_result') ?></option>
                             <?php endif; ?>
                         </select>
                     </div>
@@ -106,22 +118,22 @@ $data=explode('?', $current_page);
                     ?>
                   </div>-->
                     <div class="col-md-3 col-sm-3">
-                        <label class="control-label"> From Date</label>
+                        <label class="control-label"> <?= $this->lang->line('from_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="from_date"
                             class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus
                             autocomplete="off" autocomplete="off">
                     </div>
                     <div class="col-md-3 col-sm-3">
-                        <label class="control-label"> Upto Date</label>
+                        <label class="control-label"><?= $this->lang->line('upto_date') ?></label>
                         <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date"
                             class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus
                             autocomplete="off" autocomplete="off">
                     </div>
                     <div class="col-md-3 col-sm-3 ">
-                        <label class="control-label" style="visibility: hidden;"> Grade</label><br>
-                        <input type="submit" class="btn btn-primary" value="Search" />
+                        <label class="control-label" style="visibility: hidden;"><?= $this->lang->line('grade') ?></label><br>
+                        <input type="submit" class="btn btn-primary" value="<?=$this ->lang ->line('search')?>" />
                         <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                        <a href="<?php echo $data[0]?>" class="btn btn-danger"> Reset</a>
+                        <a href="<?php echo $data[0]?>" class="btn btn-danger" style="position:relative;width:80px; left:85px; bottom:38px"> <?= $this->lang->line('reset') ?></a>
                     </div>
                 </div>
                 <!-- <div class="row col-md-12">
@@ -130,18 +142,23 @@ $data=explode('?', $current_page);
         </div>
 
         </form>
-        <hr>
-        <div class="table-responsive">
-            <table id="example1" class="table table-bordered table-striped">
+         <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
                 <thead>
-                    <tr>
+                  <tr>
+        
                         <th><input type="checkbox" id="master"></th>
-                        <th>Sr.No.</th>
-                        <th> Name </th>
-                        <th style="white-space: nowrap;"> Reg date </th>
-                        <th> Destination</th>
-                        <th> State</th>
-                        <th style="white-space: nowrap;width: 20%;"> Action Button</th>
+                        <th><?= $this->lang->line('sr_no') ?>.</th>
+                        <th> <?= $this->lang->line('name') ?></th>
+                        <th style="white-space: nowrap;"> <?= $this->lang->line('reg_date') ?> </th>
+                        <th> <?= $this->lang->line('destination') ?></th>
+                        <th> <?= $this->lang->line('state') ?></th>
+                        <th style="white-space: nowrap;width: 20%;"><?= $this->lang->line('action_button') ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -154,46 +171,47 @@ $data=explode('?', $current_page);
                         <td><?php echo date('d-M-Y',strtotime($obj['reg_date'])); ?></td>
                         <td><?php echo $obj['destination'];?></td>
                         <td><?php echo $obj['state'];?></td>
-                        <td>
-                            <a class="btn btn-xs btn-info btnEdit" data-toggle="modal"
-                                data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"
-                                    class="fa fa-eye"></i></a>
-                            <!--  <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Customers/print/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a> -->
+                        <td style="display:flex;align-items:center;gap:8px">
+                           
+                           <a class="btn btn-icon avatar-text avatar-md" data-bs-toggle="offcanvas" data-bs-target="#custom<?= $obj['id']; ?>" title="View Details">
+                            <i class="feather feather-eye"></i>
+                          </a>
 
-                            <a class="btn btn-xs btn-primary btnEdit"
+                            <a class="btn btn-icon avatar-text avatar-md"
                                 href="<?php echo base_url(); ?>index.php/Customers/edit_customer_view/<?php echo $obj['id'];?>"><i
-                                    class="fa fa-edit"></i></a>
+                                    class="feather feather-edit-3"></i></a>
 
-                            <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal"
-                                data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"
-                                    class="fa fa-trash"></i></a>
-                            <!--   <a href="<?php //echo base_url(); ?>index.php/welcome/deletecustomer/<?php echo $obj['id'];?>"
-                   onclick="return confirm(\'Confirm Deletion.\')">Delete</a> -->
+                           <a href="javascript:void(0);" data-bs-toggle="offcanvas" data-bs-target="#deletecustomer<?= $obj['id']; ?>" class="btn btn-icon avatar-text avatar-md">
+                                            <i class="feather feather-trash me-1"></i>
+                                        </a>
+    
                         </td>
+                          <?php $this->load->view('leave-module/component/custom.php', ['obj' => $obj]); ?>
+                          <?php $this->load->view('leave-module/component/deletecustomer.php', ['obj' => $obj]); ?>
                         <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
                             <div class="modal-dialog modal-lg">
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title"><?php echo $obj['customer_name'];?> Details </h4>
+                                        <h4 class="modal-title"><?php echo $obj['customer_name'];?> <?= $this->lang->line('details') ?> </h4>
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                                     </div>
                                     <div class="modal-body">
                                         <fieldset>
-                                            <legend>Billing Details</legend>
+                                            <legend><?= $this->lang->line('billing_details') ?></legend>
                                             <div class="row">
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label"> Customer Code :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('customer_code') ?> :</label>
                                                     <span> <?php echo $obj['customer_code'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label"> Contact Person :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('contact_person') ?> :</label>
                                                     <span> <?php echo $obj['contact_person'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">Email :</label>
+                                                    <label class="control-label"><?= $this->lang->line('email') ?> :</label>
                                                     <span> <?php echo $obj['email'];?></span>
                                                 </div>
 
@@ -202,15 +220,15 @@ $data=explode('?', $current_page);
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Mobile :</label>
+                                                    <label class="control-label"><?= $this->lang->line('mobile') ?>:</label>
                                                     <span> <?php echo $obj['mobile_no'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">Buyer Item Code :</label>
+                                                    <label class="control-label"><?= $this->lang->line('buyer_item_code') ?>:</label>
                                                     <span> <?php echo @$obj['buyer_item_code'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">Destination :</label>
+                                                    <label class="control-label"><?= $this->lang->line('destination') ?> :</label>
                                                     <span> <?php echo @$obj['destination'];?></span>
                                                 </div>
 
@@ -219,15 +237,15 @@ $data=explode('?', $current_page);
                                             <div class="row">
 
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label"> Website :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('website') ?> :</label>
                                                     <span> <?php echo $obj['website'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label"> Vendor Code :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('vendor_code') ?> :</label>
                                                     <span> <?php echo $obj['vendor_code'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4">
-                                                    <label class="control-label">GST No :</label>
+                                                    <label class="control-label"><?= $this->lang->line('gst_no') ?> :</label>
                                                     <span> <?php echo $obj['gst_no'];?></span>
                                                 </div>
 
@@ -236,11 +254,11 @@ $data=explode('?', $current_page);
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label"> PAN No :</label>
+                                                    <label class="control-label"> <?= $this->lang->line('pan_no') ?> :</label>
                                                     <span> <?php echo $obj['pan_no'];?></span>
                                                 </div>
                                                 <div class="col-md-8 col-sm-8 ">
-                                                    <label class="control-label">Address:</label>
+                                                    <label class="control-label"><?= $this->lang->line('address') ?>:</label>
                                                     <span>
                                                         <?php echo $obj['shipping_address'].', '.$obj['billing_address'].', '.$obj['city'].', '.$obj['state'];?></span>
                                                 </div>
@@ -251,20 +269,20 @@ $data=explode('?', $current_page);
 
                                         </fieldset>
                                         <fieldset>
-                                            <legend>Shipping Details</legend>
+                                            <legend><?= $this->lang->line('shipping_details') ?></legend>
                                             <div class="row">
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">GST No.:</label>
+                                                    <label class="control-label"><?= $this->lang->line('gst_no') ?>.:</label>
                                                     <span> <?php echo $obj['shipping_gst_no']?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Legal Name:</label>
+                                                    <label class="control-label"><?= $this->lang->line('legal_name') ?>:</label>
                                                     <span> <?php echo $obj['shipping_legal_name']?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Loc:</label>
+                                                    <label class="control-label"><?= $this->lang->line('loc') ?>:</label>
                                                     <span> <?php echo $obj['loc'];?></span>
                                                 </div>
 
@@ -272,16 +290,16 @@ $data=explode('?', $current_page);
                                             <div class="row">
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Address:</label>
+                                                    <label class="control-label"><?= $this->lang->line('address') ?>:</label>
                                                     <span>
                                                         <?php echo $obj['saddress1'].', '.$obj['saddress2'];?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Shipping Pincode:</label>
+                                                    <label class="control-label"><?= $this->lang->line('shipping_pincode') ?>:</label>
                                                     <span> <?php echo $obj['ship_pincode']?></span>
                                                 </div>
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Shipping State Code:</label>
+                                                    <label class="control-label"><?= $this->lang->line('shipping_state_code') ?>:</label>
                                                     <span> <?php echo $obj['ship_state_code']?></span>
                                                 </div>
 
@@ -290,7 +308,7 @@ $data=explode('?', $current_page);
 
 
                                                 <div class="col-md-4 col-sm-4 ">
-                                                    <label class="control-label">Shipping Distance:</label>
+                                                    <label class="control-label"><?= $this->lang->line('shipping_destination') ?>:</label>
                                                     <span> <?php echo $obj['ship_destination']?></span>
                                                 </div>
 
@@ -382,6 +400,13 @@ $(document).ready(function() {
 
 });
 </script>
+ <script>
+          function deletecustomer(id) {
+            if (confirm("Are you sure you want to delete this customer?")) {
+              window.location.href = "<?= base_url('index.php/customers/deletecustomer/') ?>" + id;
+            }
+          }
+        </script>
 <script type="text/javascript">
 $(document).ready(function() {
     var base_url = '<?php echo base_url() ;?>';

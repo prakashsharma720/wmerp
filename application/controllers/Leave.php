@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-Class Leave extends CI_Controller {
+Class Leave extends MY_Controller {
 
 public function __construct() {
 parent::__construct();
@@ -67,26 +67,28 @@ $this->load->model('notifications_model');
 			}
 
 			$conditions['login_id'] = $login_id;
-			
-			$data['leaves']			= $this->Leave_model->LeaveListCSV($conditions);
-			
 			$data['filtered_value'] = $conditions;
+			
+			$data['leaves']= $this->Leave_model->LeaveListCSV($conditions);
 		}
 		else
 		{
-			$conditions['login_id'] 	= $login_id;
+			$conditions['login_id'] = $login_id;
+			$conditions['category_name']="";
 			$conditions['employee_id'] 	= "";
 			$conditions['leave_status'] = "";
 			$conditions['upto_date'] 	= "";
 			$conditions['from_date'] 	= "";
+			$data['filtered_value'] = $conditions; 
 			$data['leaves']			= $this->Leave_model->LeaveListCSV($conditions);
 			$data['filtered_value'] = "";
 		}
 	
 		$data['employees'] = $this->Leave_model->getEmployeeDropdown();
 		// $this->Leave_model->sendMail('42') ;
-		//echo "<pre>"; print_r($data); exit;
-		$this->template->load('template','leave_view',$data);
+		// echo "<pre>"; print_r($data['filtered_value']); exit;
+		$this->template->load('layout/template', 'leave-module/leave_view', $data);
+		// $this->template->load('template','leave_view',$data);
 	}
 
 	
@@ -146,7 +148,7 @@ $this->load->model('notifications_model');
 
 		// $this->Leave_model->sendMail('42') ;
 		//echo "<pre>"; print_r($data); exit;
-		$this->template->load('template','leave_approval',$data);
+		$this->template->load('layout/template','leave-module/leave_approval',$data);
 	}
 	
 
@@ -157,7 +159,7 @@ $this->load->model('notifications_model');
 		$data['leaves'] 	= $this->Leave_model->getAllotedLeaves();
 		$data['months'] 	= $this->Leave_model->getMonths();
 		$data['employees']  = $this->Leave_model->getEmployeesList();
-		$this->template->load('template','leave_allotment',$data);
+		$this->template->load('layout/template','leave-module/leave_allotment',$data);
 	}
 
 	public function add_leave_allotment() {
@@ -361,7 +363,7 @@ $this->load->model('notifications_model');
 
   
 		$data['categories'] = $this->Leave_model->categoriesList();
-		$this->template->load('template','holiday_view',$data);
+		$this->template->load('layout/template','leave-module/holiday_view',$data);
 	}
 	public function balance($id = NULL) 
 	{
@@ -410,7 +412,7 @@ $this->load->model('notifications_model');
 
 		
 		// echo "<pre>"; print_r($data);exit;
-		$this->template->load('template','leave_balance_view',$data);
+		$this->template->load('layout/template','leave-module/leave_balance_view',$data);
 	}
 	public function types($id = NULL) 
 	{
@@ -446,7 +448,7 @@ $this->load->model('notifications_model');
 
   
 		$data['types'] = $this->Leave_model->typesList();
-		$this->template->load('template','leavetype_view',$data);
+		$this->template->load('layout/template','leave-module/leavetype_view',$data);
 	}
 
 	public function add_new_leavetype() {
@@ -783,7 +785,7 @@ $this->load->model('notifications_model');
 		// get holidays
     	$data['holidays'] = $this->Leave_model->get_all_holiday_dates();
 
-	    $this->template->load('template','leave_add',$data);
+	    $this->template->load('layout/template','leave-module/leave_add',$data);
 	}
 			
 	
@@ -828,7 +830,7 @@ $this->load->model('notifications_model');
 			// $data['categories'] = $this->Leave_model->getCategories();
 		 
 		
-			$this->template->load('template','leave_action',$data);
+			$this->template->load('layout/template','leave-module/leave_action',$data);
 	}
 	
 	public function add_new_item() {

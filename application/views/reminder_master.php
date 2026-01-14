@@ -37,7 +37,7 @@ $allnotifications = $this->dynamic_menu->getReminder();
   <div class="container-fluid">
     <div class="card card-primary card-outline">
       <div class="card-header">
-        <h3 class="card-title"><?= $title?></h3>
+        <h3 class="card-title"><?= $this->lang->line('all_reminders') ?></h3>
 
         <div class="button-group float-right">
 
@@ -61,13 +61,13 @@ $allnotifications = $this->dynamic_menu->getReminder();
                   <thead>
                         <tr>
                         <th><input type="checkbox" id="master"></th>
-                          <th >Sr.No.</th>
-                          <th>  Lead id</th>
-                          <th >Reminder Title </th>
-                          <th >Reminder Date </th>
-                          <th >Reminder Time </th>
-                          <th > Status</th>
-                          <th> Action</th>
+                          <th ><?= $this->lang->line('sr_no') ?></th>
+                          <th><?= $this->lang->line('lead_id') ?></th>
+                          <th ><?= $this->lang->line('reminder_title') ?></th>
+                          <th ><?= $this->lang->line('reminder_date') ?> </th>
+                          <th ><?= $this->lang->line('reminder_time') ?> </th>
+                          <th > <?= $this->lang->line('status') ?></th>
+                          <th> <?= $this->lang->line('action') ?></th>
                         </tr>
                     </thead>
                       <tbody>
@@ -135,27 +135,27 @@ $allnotifications = $this->dynamic_menu->getReminder();
 									
 										<div class="modal-content">
 											<div class="modal-header">
-												<h4 class="modal-title"> Edit Reminder </h4>
+												<h4 class="modal-title"> <?= $this->lang->line('edit_reminder') ?> </h4>
 												<button type="button" class="close" data-dismiss="modal">&times;</button>                           
 											</div>
 											<div class="row col-md-12">
 											
 																	
 											<div class="col-md-6">
-												<label class="control-label">Select Date </label> <span class="required">*</span>
+												<label class="control-label"><?= $this->lang->line('dd_mm_yyyy') ?> </label> <span class="required">*</span>
 												
 												<input type="date" class="form-control reminder" id="rdate" name="reminder_date" value="<?php echo $value['reminder_date'];?>" required="required">
 											</div>
 											<div class="col-md-6">
-												<label class="control-label"> Time</label><span class="required">*</span>
+												<label class="control-label"> <?= $this->lang->line('time') ?></label><span class="required">*</span>
 												
 												<input type="time" id="reminder_time" name="reminder_time" min="10`:00" max="18:00" class="form-control" value="<?php echo  $value['reminder_time']?>" required="required">
 											</div>
 
 											</div>
 											<div class="modal-footer">
-												<button type="submit" class="btn btn-success"> Snooze </button>
-												<button type="button" class="btn btn-danger" data-dismiss="modal"> Cancel </button>
+												<button type="submit" class="btn btn-success"> <?= $this->lang->line('snooze') ?> </button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal"> <?= $this->lang->line('cancel') ?> </button>
 											</div>
 										</div>
                   

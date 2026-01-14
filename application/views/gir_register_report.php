@@ -1,274 +1,290 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-$current_page=current_url();
-//$current_page='https://www.muskowl.com/chaudhary_minerals/index.php/Meenus/UserRights';
-$data=explode('?', $current_page);
-//print_r($data[0]);exit;
-?>
-
-<style type="text/css">
- 
-  .col-sm-6 ,.col-md-6{
-      float: left;
-  }
- 
-</style>
-
-    <?php if($this->session->flashdata('success')): ?>
-         <div class="alert alert-success alert-dismissible" >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Success!</h5>
-                 <?php echo $this->session->flashdata('success'); ?>
-               </div>
-          <!-- <span class="successs_mesg"><?php echo $this->session->flashdata('success'); ?></span> -->
-      <?php endif; ?>
-
-      <?php if($this->session->flashdata('failed')): ?>
-         <div class="alert alert-error alert-dismissible " >
-                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                  <h5><i class="icon fa fa-check"></i> Alert!</h5>
-                 <?php echo $this->session->flashdata('failed'); ?>
-               </div>
-      <?php endif; ?>
-<div class="container-fluid">
-  <div class="card card-primary card-outline">
-    <div class="card-header">
-      <span class="card-title"><?php  echo $title; ?>
-      </span>
-        <div class="pull-right error_msg">
-        <a class="btn btn-info" href="<?php echo base_url(); ?>index.php/Gir_registers/createXLS">Export</a>  
+<div class="nxl-content">
+  <div class="page-header d-flex justify-content-between align-items-center">
+    <div class="page-header-left d-flex align-items-center">
+      <div class="page-header-title">
+        <h5 class="m-b-10"> <?= $this->lang->line('gir_register_report') ?></h5>
       </div>
-    </div> <!-- /.card-body -->
-    <div class="card-body">
-  <form method="get" id="filterForm">
-      <div class="row">
-          <div class="col-md-4 col-sm-4 ">
-                  <label  class="control-label">Category <span class="required">*</span></label>
-                  <select name="categories_id" class="form-control select2 category" >
-                     <option value="0">Select Category</option>
-                        <?php
-                         if ($categories): ?> 
-                          <?php 
-                            foreach ($categories as $value) : ?>
-                                <?php 
-                                  if ($value['id'] == $current[0]->categories_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['category_name'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['category_name'] ?></option>
-                                  <?php endif;   ?>
-                            <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0">No result</option>
-                        <?php endif; ?>
-                    </select>
-            </div>
-      
-            <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">Name of Supplier <span class="required">*</span></label>
-                <select name="supplier_id" class="form-control select2 suppliers" >
-                    <option value="0"> Select Supplier</option>
-                    <?php
-                         if ($all_suppliers): ?> 
-                          <?php 
-                            foreach ($all_suppliers as $value) : ?>
-                              <?php 
-                                  if ($value['id'] == $supplier_id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['supplier_name'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['supplier_name'] ?></option>
-                                  <?php endif;   ?>
-                                   <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0">No result</option>
-                        <?php endif; ?>
-                </select>
+      <ul class="breadcrumb d-flex align-items-center mb-0 ms-3">
+        <li class="breadcrumb-item">
+          <a href="<?= base_url('index.php/User_authentication/admin_dashboard'); ?>">
+            <?= $this->lang->line('home') ?>
+          </a>
+        </li>
+        <li class="breadcrumb-item"> <?= $this->lang->line('report') ?></li>
+      </ul>
+    </div>
+<div class="page-header-right d-flex align-items-center gap-2">
+      <?php $this->load->view('layout/alerts'); ?>
+      <!-- Filter Button -->
+      <button class="btn btn-icon avatar-text avatar-md" type="button" data-bs-toggle="collapse" data-bs-target="#filterFormWrapper" aria-expanded="<?= !empty($_GET) ? 'true' : 'false' ?>" aria-controls="filterFormWrapper">
+        <i class="feather feather-filter"></i> <?= $this->lang->line('filter') ?>
+      </button>
+
+      <!-- Export Button -->
+      <form method="post" action="<?= base_url(); ?>index.php/Customers/createXLS" class="ms-2">
+        <?php if (!empty($conditions)) {
+          foreach ($conditions as $key => $value) { ?>
+            <input type="hidden" name="<?= $key ?>" value="<?= $value ?>">
+        <?php }
+        } ?>
+       <button type="submit" class="btn btn-icon avatar-text avatar-md">
+          <i class="feather feather-download "></i>
+        </button>
+      </form>
+      <!-- Mobile Toggle -->
+      <div class="d-md-none d-flex align-items-center">
+
+        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+          <i class="feather-align-right fs-20"></i>
+        </a>
       </div>
-            <div class="col-md-4 col-sm-4 ">
-                <label  class="control-label">GIR Number <span class="required">*</span></label>
-                <select name="gir_no" class="form-control select2 suppliers" >
-                    <option value="0"> Select GIR Number</option>
-                    <?php
-                         if ($gir_nos): ?> 
-                          <?php 
-                            foreach ($gir_nos as $value) : ?>
-                              <?php 
-                                  if ($value['id'] == $id): ?>
-                                      <option value="<?= $value['id'] ?>" selected><?= $value['gir_no'] ?></option>
-                                  <?php else: ?>
-                                      <option value="<?= $value['id'] ?>"><?= $value['gir_no'] ?></option>
-                                  <?php endif;   ?>
-                                   <?php   endforeach;  ?>
-                        <?php else: ?>
-                            <option value="0">No result</option>
-                        <?php endif; ?>
-                </select>
-      </div>
-        </div>
-                <div class="row">
-                  <div class="col-md-4 col-sm-4">
-                      <label  class="control-label"> From Date</label>
-                        <input type="text" data-date-formate="dd-mm-yyyy" name="from_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                  </div>
-                  <div class="col-md-4 col-sm-4">
-                    <label  class="control-label"> Upto Date</label>
-                      <input type="text" data-date-formate="dd-mm-yyyy" name="upto_date" class="form-control date-picker" value="" placeholder="dd-mm-yyyy" autofocus autocomplete="off" autocomplete="off">
-                </div>
-                 <div class="col-md-4 col-sm-4 ">
-                   <label  class="control-label" style="visibility: hidden;"> Grade</label><br>
-                  <input type="submit" class="btn btn-primary" value="Search" /> 
-                  <!-- <label  class="control-label" style="visibility: hidden;"> Grade</label> -->
-                  <a href="<?php echo $data[0]?>" class="btn btn-danger" > Reset</a>
-              </div>
+    </div>
+  </div>
+    
+  <style>
+    .col-sm-6, .col-md-6 { float: left; }
+  </style>
+
+  <!-- Filter Form inside Collapse -->
+  <div class="collapse <?= !empty($_GET) ? 'show' : '' ?>" id="filterFormWrapper" style="position:relative;left:35px;right:35px;width:1553px;top:20px">
+    <div class="card card-body border bg-white">
+      <form method="get" id="filterForm">
+        <div class="row">
+          <!-- Category Select -->
+          <div class="col-md-4 col-sm-4">
+            <label class="control-label"><?= $this->lang->line('category') ?> <span class="required">*</span></label>
+            <select name="categories_id" class="form-control select2 category">
+              <option value="0"><?= $this->lang->line('select_category') ?></option>
+              <?php if ($categories): ?>
+                <?php foreach ($categories as $value): ?>
+                  <option value="<?= $value['id'] ?>" <?= (isset($current[0]) && $value['id'] == $current[0]->categories_id) ? 'selected' : '' ?>>
+                    <?= $value['category_name'] ?>
+                  </option>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <option value="0"><?= $this->lang->line('no_result') ?></option>
+              <?php endif; ?>
+            </select>
           </div>
-        </form>
-      <div class="table-responsive">
-        <table id="example1" class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th><input type="checkbox" id="master"></th>
-              <th style="white-space: nowrap;">Sr.No.</th>
-              <th style="white-space: nowrap;"> GIR No </th>
-              <th style="white-space: nowrap;"> Invoice/Challan No </th>
-              <th style="white-space: nowrap;"> Supplier Name </th>
-              <th style="white-space: nowrap;"> Date </th>
-              <th style="white-space: nowrap;">Total Qty</th>
-              <th style="white-space: nowrap;width: 20%;"> Action Button</th>
-            </tr>
-          </thead>
-          <tbody>
-      
-           <?php $i=1;foreach($gir_data as $obj){ ?>
-              <tr>
-                <td><input type="checkbox" class="sub_chk" value="<?php echo $obj['id']; ?>" /></td>
-                <td><?php echo $i;?></td>
-                <td>
-                  <?php
-                    $voucher_no= $obj['gir_no']; 
-                    if($voucher_no<10){
-                    $gir_id_code='GIR000'.$voucher_no;
-                    }
-                    else if(($voucher_no>=10) && ($voucher_no<=99)){
-                      $gir_id_code='GIR00'.$voucher_no;
-                    }
-                    else if(($voucher_no>=100) && ($voucher_no<=999)){
-                      $gir_id_code='GIR0'.$voucher_no;
-                    }
-                    else{
-                      $gir_id_code='GIR'.$voucher_no;
-                    }
-                    echo $gir_id_code;
-                    ?>
-          
-                 </td>
-                <td><?php echo $obj['challan_no']; ?></td>
-                <td><?php echo $obj['supplier']; ?></td>
-                <td><?php echo date('d-M-Y',strtotime($obj['transaction_date'])); ?></td>
-                <td><?php echo $obj['total_qty']; ?></td>
-                <td >
-                   <a class="btn btn-xs btn-info btnEdit" data-toggle="modal" data-target="#view<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-eye"></i></a>
-          
-            <a class="btn btn-xs btn-success btnEdit" href="<?php echo base_url(); ?>index.php/Gir_registers/print_gen/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
 
-        
-                  <a class="btn btn-xs btn-primary btnEdit" href="<?php echo base_url(); ?>index.php/Gir_registers/edit/<?php echo $obj['id'];?> "><i class="fa fa-edit"></i></a>
+          <!-- Supplier Select -->
+          <div class="col-md-4 col-sm-4">
+            <label class="control-label"><?= $this->lang->line('name_of_supplier') ?> <span class="required">*</span></label>
+            <select name="supplier_id" class="form-control select2 suppliers">
+              <option value="0"><?= $this->lang->line('select_supplier') ?></option>
+              <?php if ($all_suppliers): ?>
+                <?php foreach ($all_suppliers as $value): ?>
+                  <option value="<?= $value['id'] ?>" <?= (isset($supplier_id) && $value['id'] == $supplier_id) ? 'selected' : '' ?>>
+                    <?= $value['supplier_name'] ?>
+                  </option>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <option value="0"><?= $this->lang->line('no_result') ?></option>
+              <?php endif; ?>
+            </select>
+          </div>
+
+          <!-- GIR Number Select -->
+          <div class="col-md-4 col-sm-4">
+            <label class="control-label"><?= $this->lang->line('gir_number') ?> <span class="required">*</span></label>
+            <select name="gir_no" class="form-control select2 suppliers">
+              <option value="0"><?= $this->lang->line('select_gir_number') ?></option>
+              <?php if ($gir_nos): ?>
+                <?php foreach ($gir_nos as $value): ?>
+                  <option value="<?= $value['id'] ?>" <?= (isset($id) && $value['id'] == $id) ? 'selected' : '' ?>>
+                    <?= $value['gir_no'] ?>
+                  </option>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <option value="0"><?= $this->lang->line('no_result') ?></option>
+              <?php endif; ?>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mt-3 bg-white">
+          <!-- From Date -->
+          <div class="col-md-4 col-sm-4">
+            <label class="control-label"><?= $this->lang->line('from_date') ?></label>
+            <input type="text" name="from_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" />
+          </div>
+
+          <!-- Upto Date -->
+          <div class="col-md-4 col-sm-4">
+            <label class="control-label"><?= $this->lang->line('upto_date') ?></label>
+            <input type="text" name="upto_date" class="form-control date-picker" placeholder="dd-mm-yyyy" autocomplete="off" />
+          </div>
+
+          <!-- Buttons -->
+          <div class="col-md-4 col-sm-4 d-flex align-items-end gap-2">
+            <input type="submit" class="btn btn-primary" value="<?= $this->lang->line('search'); ?>" />
+            <a href="<?= current_url(); ?>" class="btn btn-danger"><?= $this->lang->line('reset'); ?></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Table: Always Visible -->
+  <div class="main-content ">
+    <div class="card card-primary card-outline">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered table-striped" id="proposalList">
+                <thead>
+                  <tr>
+          <th><input type="checkbox" id="master"></th>
+          <th><?= $this->lang->line('sr_no') ?></th>
+          <th><?= $this->lang->line('gir_no') ?></th>
+          <th><?= $this->lang->line('invoice_no') ?></th>
+          <th><?= $this->lang->line('supplier_name') ?></th>
+          <th><?= $this->lang->line('date') ?></th>
+          <th><?= $this->lang->line('total_qty') ?></th>
+          <th><?= $this->lang->line('action_button') ?></th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $i = 1;
+        foreach ($gir_data as $obj) { ?>
+          <tr>
+            <td><input type="checkbox" class="sub_chk" value="<?= $obj['id']; ?>" /></td>
+            <td><?= $i; ?></td>
+            <td>
+              <?php
+              $voucher_no = $obj['gir_no'];
+              if ($voucher_no < 10) {
+                echo 'GIR000' . $voucher_no;
+              } elseif ($voucher_no <= 99) {
+                echo 'GIR00' . $voucher_no;
+              } elseif ($voucher_no <= 999) {
+                echo 'GIR0' . $voucher_no;
+              } else {
+                echo 'GIR' . $voucher_no;
+              }
+              ?>
+            </td>
+            <td><?= $obj['challan_no']; ?></td>
+            <td><?= $obj['supplier']; ?></td>
+            <td><?= date('d-M-Y', strtotime($obj['transaction_date'])); ?></td>
+            <td><?= $obj['total_qty']; ?></td>
+            <td>
+              <div class="d-flex gap-1">
+                <a class="btn btn-icon avatar-text avatar-md" data-toggle="modal" data-target="#view<?= $obj['id']; ?>">
+                  <i class="feather feather-eye "></i>
+                </a>
+                <a class="btn btn-icon avatar-text avatar-md" href="<?php echo base_url(); ?>index.php/Gir_registers/print_gen/<?php echo $obj['id'];?>"><i class="fa fa-print"></i></a>
+                <a class="btn btn-icon avatar-text avatar-md" href="<?= base_url(); ?>index.php/Gir_registers/edit/<?= $obj['id']; ?>">
+                  <i class="feather feather-edit "></i>
+                </a>
+                <a class="btn btn-icon avatar-text avatar-md"
+   href="javascript:void(0);"
+   onclick="deletegirRM(<?= $obj['id'] ?>)">
+  <i class="fa fa-trash "></i>
+</a>
+
                 
-          <a class="btn btn-xs btn-danger btnEdit" data-toggle="modal" data-target="#delete<?php echo $obj['id'];?>"><i style="color:#fff;"class="fa fa-trash"></i></a>
-                </td>
-                <div class="modal fade" id="view<?php echo $obj['id'];?>" role="dialog">
-                    <div class="modal-dialog modal-lg">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title">GIR Register (<?php echo $obj['gir_no']?>) Details </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
-                          </div>
-                          <div class="modal-body">
-                              <div class="row col-md-12" style="border: 1px solid #f3ecec;
-                                  height: 45px;
-                                  padding: 10px;
-                                  margin: 0px;
-                                  margin-bottom: 6px; font-weight: 500;" >
-                                                             
-                                <div class="col-md-1">#</div>
-                                <div class="col-md-3">Item Name</div>
-                                <div class="col-md-3">Qty </div>
-                                <div class="col-md-5">Description </div>
-                              </div>
+              </div>
+            </td>
+          </tr>
 
-                                    <?php
-                                      $j=1;foreach($obj['gir_details'] as $gir_detail)
-                                      { ?>
-                                        <div class="row col-md-12" style="border: 0px solid #f3ecec;
-                                          height: 45px;
-                                          padding: 10px;
-                                          margin: 0px;
-                                          margin-bottom: 6px;">
-                                          <div class="col-md-1"><?= $j;?> </div>
-                                          <div class="col-md-3"><?= $gir_detail['item'] ;?> </div>
-                                          <div class="col-md-3"><?= $gir_detail['quantity'] ;?> </div>
-                                          <div class="col-md-5"><?= $gir_detail['description'] ;?> </div>
-                                        </div>
-                                  <?php $j++; }  ?>
-                                  <hr>
-                            <div class="row col-md-12" style="
-                                  margin: 0px;
-                                  margin-bottom: 6px;" >
-                              <div class="col-md-6">
-                                <label class="control-label"> Material Received Throught : </label>
-                                  <span > 
-                                      <?php 
-                                          echo $obj['material_received_from']; 
-                                        ?>
-                                  </span>
-                              </div><div class="col-md-6">
-                                <label class="control-label"> Comment : </label>
-                                  <span > 
-                                      <?php 
-                                          echo $obj['comments']; 
-                                        ?>
-                                  </span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          <!-- View Modal -->
+          <div class="modal fade" id="view<?= $obj['id']; ?>" role="dialog" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title"><?= $this->lang->line('gir_register') ?> (<?= $obj['gir_no'] ?>) Details</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row col-md-12" style="border: 1px solid #f3ecec; height: 45px; padding: 10px; margin: 0px 0 6px; font-weight: 500;">
+                    <div class="col-md-1">#</div>
+                    <div class="col-md-3"><?= $this->lang->line('item_name') ?></div>
+                    <div class="col-md-3"><?= $this->lang->line('qty') ?></div>
+                    <div class="col-md-5"><?= $this->lang->line('description') ?></div>
+                  </div>
 
-                    <div class="modal fade" id="delete<?php echo $obj['id'];?>" role="dialog">
-                      <div class="modal-dialog">
-                        <form class="form-horizontal" role="form" method="post" action="<?php echo base_url(); ?>index.php/Gir_registers/deletegirGEN/<?php echo $obj['id'];?>">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                          <div class="modal-header">
-                             <h4 class="modal-title">Confirm Header </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                           
-                          </div>
-                          <div class="modal-body">
-                            <p>Are you sure, you want to delete GIR <b><?php echo $obj['gir_no'];?> </b>? </p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary delete_submit"> Yes </button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal"> No </button>
-                          </div>
-                        </div>
-                        </form>
-                      </div>
+                  <?php
+                  $j = 1;
+                  foreach ($obj['gir_details'] as $gir_detail) { ?>
+                    <div class="row col-md-12" style="height: 45px; padding: 10px; margin: 0 0 6px;">
+                      <div class="col-md-1"><?= $j; ?></div>
+                      <div class="col-md-3"><?= $gir_detail['item']; ?></div>
+                      <div class="col-md-3"><?= $gir_detail['quantity']; ?></div>
+                      <div class="col-md-5"><?= $gir_detail['description']; ?></div>
                     </div>
-                    
-              </tr>
-        <?php  $i++;} ?>
-          </tbody>
-        </table>
-      </div>
+                  <?php $j++;
+                  } ?>
+
+                  <hr>
+                  <div class="row col-md-12 mb-3">
+                    <div class="col-md-6">
+                      <label><?= $this->lang->line('material_received_through') ?? 'Material Received Through' ?>: </label>
+                      <span><?= $obj['material_received_from']; ?></span>
+                    </div>
+                    <div class="col-md-6">
+                      <label><?= $this->lang->line('comment') ?>: </label>
+                      <span><?= $obj['comments']; ?></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><?= $this->lang->line('close') ?></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delete Modal -->
+          <div class="modal fade" id="delete<?= $obj['id']; ?>" role="dialog" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <form method="post" action="<?= base_url(); ?>index.php/Gir_registers/deletegirGEN/<?= $obj['id']; ?>">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title"><?= $this->lang->line('confirm_header') ?></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure, you want to delete GIR <b><?= $obj['gir_no']; ?></b>?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary delete_submit"><?= $this->lang->line('yes') ?></button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><?= $this->lang->line('no') ?></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        <?php $i++;
+        } ?>
+      </tbody>
+    </table
+</div>
     </div>
   </div>
 </div>
 <script src="<?php echo base_url()."assets/"; ?>plugins/jquery/jquery.min.js"></script>
+<script>
+function deletegirRM(id) {
+  if (confirm("Are you sure you want to delete this GIR entry?")) {
+    $.ajax({
+      url: "<?= base_url(); ?>index.php/Gir_registers/deletegirGEN/" + id,
+      type: "POST",
+      success: function (response) {
+        alert("Deleted successfully.");
+        location.reload();
+      },
+      error: function () {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
+}
+</script>
+
 <script type="text/javascript">
   $( document ).ready(function() {
      
